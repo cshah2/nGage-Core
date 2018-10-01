@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Validate once a document is removed from Favorite list is not displayed in Favorite result grid</description>
+   <name>HOME_006</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>73539946-b851-4507-9dff-c6702911cfa2</testCaseGuid>
+</TestCaseEntity>

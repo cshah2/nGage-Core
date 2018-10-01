@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>create new doc/ having reference grid/ create new doc from reference grid/ Dropdown</description>
+   <name>WMI006</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>1d69c9a7-9212-4314-aad0-7576f14b0871</testCaseGuid>
+</TestCaseEntity>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Regression test My Work: Reset a Search</description>
+   <name>MW002</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>79daa6b6-de16-4795-b27c-49250e437592</testCaseGuid>
+</TestCaseEntity>

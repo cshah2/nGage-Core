@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Regression test My Work: Admin actions (only visible to admin user groups) - Unassign Work Items</description>
+   <name>MW019</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>dfdca672-729c-449f-8f16-603120dea9af</testCaseGuid>
+</TestCaseEntity>

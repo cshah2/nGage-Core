@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>create new doc/ inline view is loaded</description>
+   <name>WMI002</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>3aea2bfc-956d-4d0c-b7bc-3633d43213d9</testCaseGuid>
+</TestCaseEntity>

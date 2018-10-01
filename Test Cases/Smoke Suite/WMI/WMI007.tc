@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>create new doc/ having reference grid/ create new doc from reference grid/ Category Menu</description>
+   <name>WMI007</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>36c0e519-9b95-4274-a251-e544f37368d9</testCaseGuid>
+</TestCaseEntity>

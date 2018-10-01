@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Validate Documents added to favorites are displayed in grid and user is able to open the document.</description>
+   <name>HOME_004</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>d36cf9d5-337a-4043-842c-f2cb4a1b13cd</testCaseGuid>
+</TestCaseEntity>

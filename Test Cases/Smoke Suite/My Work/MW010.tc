@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Regression test My Work: Admin actions (only visible to admin user groups)</description>
+   <name>MW010</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>92f6b31c-c800-492b-a6d9-fc6257cc1a68</testCaseGuid>
+</TestCaseEntity>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Validate user is able to save the search criteria</description>
+   <name>REPO006</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>ced6cc2d-5cbd-4dda-bb37-0d5fe51174ab</testCaseGuid>
+</TestCaseEntity>

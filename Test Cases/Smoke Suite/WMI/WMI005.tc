@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>create new doc/ having reference grid/ create new doc from reference grid/ New link</description>
+   <name>WMI005</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>a7ec2581-645c-4a92-997f-9f205bbe7668</testCaseGuid>
+</TestCaseEntity>

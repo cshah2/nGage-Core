@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>input_Page_Number</name>
+   <tag></tag>
+   <elementGuidId>e98e895d-c9a7-40f2-ba7b-3d415754e3e8</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>XPATH</key>
+         <value>id(&quot;SimplifiedWorkflowSearchResultsTable_toppager_center&quot;)/table[@class=&quot;ui-pg-table&quot;]/tbody[1]/tr[1]/td[4]/input[@class=&quot;ui-pg-input&quot;]</value>
+      </entry>
+      <entry>
+         <key>BASIC</key>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>BASIC</selectorMethod>
+   <useRalativeImagePath>false</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>id(&quot;SimplifiedWorkflowSearchResultsTable_toppager_center&quot;)/table[@class=&quot;ui-pg-table&quot;]/tbody[1]/tr[1]/td[4]/input[@class=&quot;ui-pg-input&quot;]</value>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>ref_element</name>
+      <type>Main</type>
+      <value>Object Repository/Page_nGage_Dashboard/My_Work_Simplified/iframe_iframe_110</value>
+   </webElementProperties>
+</WebElementEntity>

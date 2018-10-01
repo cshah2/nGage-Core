@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Create new document with attachement</description>
+   <name>HOME_007</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>febce554-8a35-4fa1-9805-0888c4590b30</testCaseGuid>
+</TestCaseEntity>

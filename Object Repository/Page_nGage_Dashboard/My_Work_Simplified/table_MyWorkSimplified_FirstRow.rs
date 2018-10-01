@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>table_MyWorkSimplified_FirstRow</name>
+   <tag></tag>
+   <elementGuidId>0cccdea4-b109-462b-863a-62bc3512e58e</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>//table[@id='SimplifiedWorkflowSearchResultsTable']/tbody/tr[2]</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <useRalativeImagePath>false</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>ref_element</name>
+      <type>Main</type>
+      <value>Object Repository/Page_nGage_Dashboard/My_Work_Simplified/iframe_iframe_110</value>
+   </webElementProperties>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <value>//table[@id='SimplifiedWorkflowSearchResultsTable']/tbody/tr[2]</value>
+   </webElementXpaths>
+</WebElementEntity>
