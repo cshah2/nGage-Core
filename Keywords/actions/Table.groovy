@@ -5,6 +5,7 @@ import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 
+import org.apache.commons.lang3.StringUtils
 import org.openqa.selenium.By
 import org.openqa.selenium.WebDriver
 import org.openqa.selenium.WebElement
@@ -90,7 +91,42 @@ public class Table {
 		else
 			KeywordUtil.markPassed('Records are sorted')
 	}
+	
+	def getRecordCountInTableSummary(TestObject element) {
+		WebUI.waitForElementPresent(element, GlobalVariable.G_LongTimeout)
+		WebUI.waitForElementVisible(element, GlobalVariable.G_LongTimeout)
+		String pageSummary = WebUI.getText(element).trim()
 
+		try {
+			String recordCountInString = pageSummary.split(" of ")[1].trim()
+			return Integer.parseInt(recordCountInString)
+		} catch (Exception e) {
+			return -1
+		}
+	}
+	
+	private List<WebElement> getAllHeaders(WebElement table) {
+		
+		List<WebElement> allHeaders = table.findElements(By.tagName("th"))
+		List<WebElement> visibleHeaders = new ArrayList<WebElement>()
+		for(WebElement header in allHeaders) {
+			if(header.isDisplayed())
+				visibleHeaders.add(header)
+		}
+		return visibleHeaders
+	}
+	
+	private int getColumnNumberOfHeader(List<WebElement> headers , String columnName) {
+		
+		for(int i = 0; i < headers.size() ; i++) {
+			String actColumnName = headers[i].getText().replace('\u00A0',' ').trim()
+			if(StringUtils.isNotEmpty(actColumnName) && actColumnName.equalsIgnoreCase(columnName)) {
+				i = i+1;
+				return i
+			}
+		}
+		return -1;
+	}
 
 
 	/* ##################### KEYWORDS ##################### */
@@ -242,16 +278,10 @@ public class Table {
 		new Common().waitForFrameToLoad(parentObject)
 	}
 
-	def getRecordCountInTableSummary(TestObject element) {
-		WebUI.waitForElementPresent(element, GlobalVariable.G_LongTimeout)
-		WebUI.waitForElementVisible(element, GlobalVariable.G_LongTimeout)
-		String pageSummary = WebUI.getText(element).trim()
-
-		try {
-			String recordCountInString = pageSummary.split(" of ")[1].trim()
-			return Integer.parseInt(recordCountInString)
-		} catch (Exception e) {
-			return -1
-		}
+	@Keyword
+	def getColumnNumber(TestObject headerTable, String columnName) {
+		WebElement table = WebUtil.getWebElement(headerTable)
+		List<WebElement> headers = getAllHeaders(table)	
+		return getColumnNumberOfHeader(headers, columnName)
 	}
 }
