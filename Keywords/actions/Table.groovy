@@ -91,7 +91,7 @@ public class Table {
 		else
 			KeywordUtil.markPassed('Records are sorted')
 	}
-	
+
 	def getRecordCountInTableSummary(TestObject element) {
 		WebUI.waitForElementPresent(element, GlobalVariable.G_LongTimeout)
 		WebUI.waitForElementVisible(element, GlobalVariable.G_LongTimeout)
@@ -104,9 +104,9 @@ public class Table {
 			return -1
 		}
 	}
-	
+
 	private List<WebElement> getAllHeaders(WebElement table) {
-		
+
 		List<WebElement> allHeaders = table.findElements(By.tagName("th"))
 		List<WebElement> visibleHeaders = new ArrayList<WebElement>()
 		for(WebElement header in allHeaders) {
@@ -115,9 +115,9 @@ public class Table {
 		}
 		return visibleHeaders
 	}
-	
+
 	private int getColumnNumberOfHeader(List<WebElement> headers , String columnName) {
-		
+
 		for(int i = 0; i < headers.size() ; i++) {
 			String actColumnName = headers[i].getText().replace('\u00A0',' ').trim()
 			if(StringUtils.isNotEmpty(actColumnName) && actColumnName.equalsIgnoreCase(columnName)) {
@@ -281,7 +281,7 @@ public class Table {
 	@Keyword
 	def getColumnNumber(TestObject headerTable, String columnName) {
 		WebElement table = WebUtil.getWebElement(headerTable)
-		List<WebElement> headers = getAllHeaders(table)	
+		List<WebElement> headers = getAllHeaders(table)
 		return getColumnNumberOfHeader(headers, columnName)
 	}
 }

@@ -24,8 +24,8 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.common.WebUiCommonHelper
 import com.kms.katalon.core.webui.driver.DriverFactory
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
-import internal.GlobalVariable as GlobalVariable
 
+import internal.GlobalVariable
 import utils.WebUtil
 
 public class Chart {
@@ -87,6 +87,7 @@ public class Chart {
 		List<WebElement> slices = chart.findElements(By.xpath(sliceLocator))
 		WebElement slice = slices.get(sliceNo - 1)
 		slice.click()
+
 		WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 		WebUI.switchToDefaultContent()
 	}
