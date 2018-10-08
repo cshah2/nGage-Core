@@ -13,41 +13,22 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-//Login Into Application
+//Login into application
 CustomKeywords.'actions.Common.login'()
 
-//click on My Work Simplified
+//Click on "My Work Simplified" link
+WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/a_My Work Simplified'))
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/iframe_iframe_110'))
 
-WebUI.click(findTestObject("Object Repository/Page_Savana nGage/MyWorkSimplified_Objects/a_My Work Simplified"))
+//Select Activity 'Correspondence Generation - Correspondence' from Drop down
+WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/select_Auto Import Controlled'), GlobalVariable.G_LongTimeout)
+WebUI.selectOptionByLabel(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/select_Auto Import Controlled'), 'Correspondence Generation - Correspondence', false)
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/iframe_iframe_110'))
 
-// Wait for Pageload
-
-WebUI.waitForPageLoad(60)
-WebUI.verifyElementPresent(findTestObject("Object Repository/Page_Savana nGage/MyWorkSimplified_Objects/select_Auto Import Controlled"), 5)
-
-//select/click on Auto-Import Activity from dropdown
-WebUI.click(findTestObject("Object Repository/Page_Savana nGage/MyWorkSimplified_Objects/select_Auto Import Controlled"))
-
-//select Activity A from dropdown
-
-WebUI.selectOptionByValue(findTestObject("Object Repository/Page_Savana nGage/MyWorkSimplified_Objects/select_Auto Import Controlled"), '100027', false)
+//check row count of table should be 25rows
+CustomKeywords.'actions.Table.checkRecordInTable'(findTestObject("Page_nGage_Dashboard/My_Work_Simplified/table_SearchResult"), 25)
 //close the browser
 
 WebUI.closeBrowser()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
