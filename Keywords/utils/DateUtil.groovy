@@ -21,7 +21,7 @@ import internal.GlobalVariable as GlobalVariable
 
 public class DateUtil {
 	public static boolean validateRecordIsBetweenDateRange(String actualValue, String fromDateValue,String toDateValue) {
-		def actualDate = new Date().parse("MM/dd/yyyy",actualValue)
+		def actualDate = new Date().parse("MM-dd-yyyy",actualValue)
 		def fromDate = new Date().parse("MM-dd-yyyy",fromDateValue)
 		def toDate = new Date().parse("MM-dd-yyyy",toDateValue)
 
@@ -36,7 +36,7 @@ public class DateUtil {
 	}
 
 	public static boolean isRecordBetweenDateRange(String actualValue, String fromDateValue, String toDateValue) {
-		def actualDate = new Date().parse("MM/dd/yyyy",actualValue)
+		def actualDate = new Date().parse("MM-dd-yyyy",actualValue)
 		def fromDate = new Date().parse("MM-dd-yyyy",fromDateValue)
 		def toDate = new Date().parse("MM-dd-yyyy",toDateValue)
 
@@ -51,7 +51,7 @@ public class DateUtil {
 	}
 
 	public static boolean isRecordDateMoreThanFilterDate(String actualValue, String fromDateValue) {
-		def actualDate = new Date().parse("MM/dd/yyyy",actualValue)
+		def actualDate = new Date().parse("MM-dd-yyyy",actualValue)
 		def fromDate = new Date().parse("MM-dd-yyyy",fromDateValue)
 
 		if((actualDate.after(fromDate) || DateUtils.isSameDay(actualDate, fromDate))) {
@@ -65,7 +65,7 @@ public class DateUtil {
 	}
 
 	public static boolean isRecordDateLessThanFilterDate(String actualValue, String toDateValue) {
-		def actualDate = new Date().parse("MM/dd/yyyy",actualValue)
+		def actualDate = new Date().parse("MM-dd-yyyy",actualValue)
 		def toDate = new Date().parse("MM-dd-yyyy",toDateValue)
 
 		if((actualDate.before(toDate) || DateUtils.isSameDay(actualDate, toDate))) {
