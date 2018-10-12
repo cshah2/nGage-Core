@@ -12,10 +12,12 @@ import org.openqa.selenium.Dimension
 import org.openqa.selenium.Point
 import org.openqa.selenium.WebDriver
 import org.openqa.selenium.WebElement
+import org.openqa.selenium.interactions.Actions
 import org.openqa.selenium.support.ui.Select
 
 import com.kms.katalon.core.annotation.Keyword
 import com.kms.katalon.core.checkpoint.Checkpoint
+import com.kms.katalon.core.configuration.RunConfiguration
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
 import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
 import com.kms.katalon.core.model.FailureHandling
@@ -168,7 +170,20 @@ public class Common {
 		WebUtil.switchFrameAndWaitForLoad(iFrame, GlobalVariable.G_LongTimeout)
 		WebUI.switchToDefaultContent()
 	}
+	
+	@Keyword
+	def dragAndDropByXOffset(TestObject to, int xOffset) {
+		WebElement source = WebUtil.getWebElement(to)
+		int height = source.getSize().getHeight()
+		int width = source.getSize().getWidth()
+		
+		WebDriver driver = DriverFactory.getWebDriver()
+		Actions actions = new Actions(driver)
+		int heightOffset = (int)height / 4
+		actions.moveToElement(source).moveByOffset(0, heightOffset).clickAndHold().moveByOffset(xOffset, heightOffset).release().build().perform()
+	}
 
+	/* ############################  Common Action Keywords ############################ */
 	@Keyword
 	def selectDocClassAndDocTypeForGlobalNew(String docClass, String docType) {
 		waitForFrameToLoad(findTestObject('Page_nGage_Dashboard/iframe_ifrmCreateNew'))
@@ -177,4 +192,45 @@ public class Common {
 		WebUI.selectOptionByLabel(findTestObject('Page_nGage_Dashboard/Home/select_DefaultExpandedAuto wit'), docType, false)
 		waitForFrameToLoad(findTestObject('Page_nGage_Dashboard/iframe_ifrmCreateNew'))
 	}
+
+	@Keyword
+	def createDocument_WMIMenuBovVertical() {
+
+		WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))
+		selectDocClassAndDocTypeForGlobalNew('WMI Menu', 'WMI Menu BOV Vertical')
+		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'))
+
+		WebUI.switchToWindowTitle('(Doc ID: NEW )')
+		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+
+		String filePath = RunConfiguration.getProjectDir().replace('/', '\\')+'\\Data Files\\FileUploads\\50 Pages PDF file.pdf'
+		WebUI.setText(findTestObject('Page_WMI_NEW/WMI_Menu_BOV_Vertical/input_String field'), 'New Document with Attachement')
+		WebUI.uploadFile(findTestObject('Page_WMI_NEW/WMI_Menu_BOV_Vertical/input__file_upload'), filePath)
+
+		WebUI.mouseOver(findTestObject('Page_WMI_NEW/WMI_Menu_BOV_Vertical/menu_Standard Actions'))
+		WebUI.waitForElementVisible(findTestObject('Page_WMI_NEW/WMI_Menu_BOV_Vertical/button_Save'), GlobalVariable.G_LongTimeout)
+		new Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI_NEW/WMI_Menu_BOV_Vertical/button_Save'), GlobalVariable.G_LongTimeout)
+
+		WebUI.switchToWindowTitle('Savana nGage')
+		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/span_ui-button-icon-primary ui'))
+	}
+
+	@Keyword
+	def openDocumentFromRecentGrid(String documentTitle) {
+		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/a_Recent Documents'))
+		waitForFrameToLoad(findTestObject('Page_nGage_Dashboard/iframe_iframe_103'))
+
+		//Validate atleast 1 record is present in the grid.
+		WebUI.verifyElementPresent(findTestObject('Page_nGage_Dashboard/Home/tableRow_recentDocuments_firstRow'), GlobalVariable.G_LongTimeout);
+
+		//Sort Record in grid by DocID Descending
+		new Table().clickColumnHeader(findTestObject('Page_nGage_Dashboard/Home/div_Doc ID'))
+		new Table().clickColumnHeader(findTestObject('Page_nGage_Dashboard/Home/div_Doc ID'))
+
+		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/column_RecentDocuments LastAction'))
+		WebUI.switchToWindowTitle(documentTitle)
+		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+		waitForFrameToLoad(findTestObject('Page_WMI/WMI_Menu_BOV_Vertical/iframe_westContainerFrame'))
+	}
+
 }

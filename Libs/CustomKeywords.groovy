@@ -182,12 +182,30 @@ def static "actions.Common.waitForFrameToLoad"(
         	iFrame)
 }
 
+def static "actions.Common.dragAndDropByXOffset"(
+    	TestObject to	
+     , 	int xOffset	) {
+    (new actions.Common()).dragAndDropByXOffset(
+        	to
+         , 	xOffset)
+}
+
 def static "actions.Common.selectDocClassAndDocTypeForGlobalNew"(
     	String docClass	
      , 	String docType	) {
     (new actions.Common()).selectDocClassAndDocTypeForGlobalNew(
         	docClass
          , 	docType)
+}
+
+def static "actions.Common.createDocument_WMIMenuBovVertical"() {
+    (new actions.Common()).createDocument_WMIMenuBovVertical()
+}
+
+def static "actions.Common.openDocumentFromRecentGrid"(
+    	String documentTitle	) {
+    (new actions.Common()).openDocumentFromRecentGrid(
+        	documentTitle)
 }
 
 def static "actions.MenuBar.refreshActivityUntilRecordCountIncreases"(

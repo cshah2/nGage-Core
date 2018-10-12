@@ -27,7 +27,8 @@ public class WebUtil {
 
 	public static WebElement getWebElement(TestObject element) {
 		TestObject parentFrame = element.getParentObject()
-		switchFrameAndWaitForLoad(parentFrame, GlobalVariable.G_LongTimeout)
+		if(parentFrame != null)
+			switchFrameAndWaitForLoad(parentFrame, GlobalVariable.G_LongTimeout)
 
 		return WebUiCommonHelper.findWebElement(element, GlobalVariable.G_LongTimeout)
 	}
