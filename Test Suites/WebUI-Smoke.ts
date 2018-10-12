@@ -4,7 +4,7 @@
    <name>WebUI-Smoke</name>
    <tag></tag>
    <isRerun>false</isRerun>
-   <lastRun>2018-09-30T12:29:36</lastRun>
+   <lastRun>2018-10-12T07:56:59</lastRun>
    <mailRecipient>apatil@savanainc.com;cshah@savanainc.com;</mailRecipient>
    <numberOfRerun>0</numberOfRerun>
    <pageLoadTimeout>30</pageLoadTimeout>
