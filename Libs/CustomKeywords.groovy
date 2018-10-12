@@ -128,28 +128,6 @@ def static "actions.Table.getColumnNumber"(
          , 	columnName)
 }
 
-def static "actions.Window.clickElementAndWaitForWindowClose"(
-    	TestObject saveButton	
-     , 	int timeout	) {
-    (new actions.Window()).clickElementAndWaitForWindowClose(
-        	saveButton
-         , 	timeout)
-}
-
-def static "actions.Window.switchToUrlContains"(
-    	String text	) {
-    (new actions.Window()).switchToUrlContains(
-        	text)
-}
-
-def static "actions.Window.setScreenSize"(
-    	int width	
-     , 	int height	) {
-    (new actions.Window()).setScreenSize(
-        	width
-         , 	height)
-}
-
 def static "actions.Common.maximizeWindow"() {
     (new actions.Common()).maximizeWindow()
 }
@@ -206,6 +184,28 @@ def static "actions.Common.openDocumentFromRecentGrid"(
     	String documentTitle	) {
     (new actions.Common()).openDocumentFromRecentGrid(
         	documentTitle)
+}
+
+def static "actions.Window.clickElementAndWaitForWindowClose"(
+    	TestObject saveButton	
+     , 	int timeout	) {
+    (new actions.Window()).clickElementAndWaitForWindowClose(
+        	saveButton
+         , 	timeout)
+}
+
+def static "actions.Window.switchToUrlContains"(
+    	String text	) {
+    (new actions.Window()).switchToUrlContains(
+        	text)
+}
+
+def static "actions.Window.setScreenSize"(
+    	int width	
+     , 	int height	) {
+    (new actions.Window()).setScreenSize(
+        	width
+         , 	height)
 }
 
 def static "actions.MenuBar.refreshActivityUntilRecordCountIncreases"(
