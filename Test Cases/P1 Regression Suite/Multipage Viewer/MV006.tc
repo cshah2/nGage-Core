@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
-   <description>Regression test Multipage viewer: page navigation - Valid test cases</description>
+   <description>Regression test Multipage viewer: thumbnail, viewer pane - expand to full size</description>
    <name>MV006</name>
    <tag></tag>
    <comment></comment>
-   <testCaseGuid>f7a1f518-1202-4e0f-bff0-1e96f0c0e70d</testCaseGuid>
+   <testCaseGuid>bbe93ca1-435f-4ec8-9180-2e6f608f3e42</testCaseGuid>
 </TestCaseEntity>

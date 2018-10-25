@@ -23,6 +23,7 @@ CustomKeywords.'actions.Common.createDocument_WMIMenuBovVertical'()
 CustomKeywords.'actions.Common.openDocumentFromRecentGrid'('WMI Menu BOV Vertical')
 
 WebUI.maximizeWindow()
+WebUI.delay(2)
 
 WebUI.verifyElementVisible(findTestObject('Page_WMI/WMI_Menu_BOV_Vertical/div_westContentSplitter'))
 WebUI.verifyElementVisible(findTestObject('Page_WMI/WMI_Menu_BOV_Vertical/div_mainContentSplitter'))
@@ -38,17 +39,3 @@ WebUI.click(findTestObject('Page_WMI/WMI_Menu_BOV_Vertical/splitter_Close'))
 WebUI.verifyElementNotVisible(findTestObject('Page_WMI/WMI_Menu_BOV_Vertical/div_westContentSplitter'))
 WebUI.verifyElementVisible(findTestObject('Page_WMI/WMI_Menu_BOV_Vertical/div_mainContentSplitter'))
 WebUI.verifyEqual(WebUI.getElementWidth(findTestObject('Page_WMI/WMI_Menu_BOV_Vertical/div_mainContentSplitter')), totalWidth)
-
-'Click on Expand to full view'
-WebUI.click(findTestObject('Page_WMI/WMI_Menu_BOV_Vertical/splitter_ExpandToFullSize'))
-
-WebUI.verifyElementVisible(findTestObject('Page_WMI/WMI_Menu_BOV_Vertical/div_westContentSplitter'))
-WebUI.verifyLessThanOrEqual(WebUI.getElementWidth(findTestObject('Page_WMI/WMI_Menu_BOV_Vertical/div_mainContentSplitter')), 5)
-
-'Click on Reset size to default'
-WebUI.click(findTestObject('Page_WMI/WMI_Menu_BOV_Vertical/splitter_ResetSizeToDefault'))
-
-WebUI.verifyElementVisible(findTestObject('Page_WMI/WMI_Menu_BOV_Vertical/div_westContentSplitter'))
-WebUI.verifyElementVisible(findTestObject('Page_WMI/WMI_Menu_BOV_Vertical/div_mainContentSplitter'))
-WebUI.verifyEqual(WebUI.getElementWidth(findTestObject('Page_WMI/WMI_Menu_BOV_Vertical/div_mainContentSplitter')), mainContainerWidth)
-WebUI.verifyEqual(WebUI.getElementWidth(findTestObject('Page_WMI/WMI_Menu_BOV_Vertical/div_westContentSplitter')), westContainerWidth)

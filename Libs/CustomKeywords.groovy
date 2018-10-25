@@ -7,6 +7,8 @@ import com.kms.katalon.core.testobject.TestObject
 
 import java.lang.String
 
+import java.util.List
+
 
 def static "actions.Table.verifyRecordsCount"(
     	TestObject tableLocator	
@@ -184,6 +186,16 @@ def static "actions.Common.openDocumentFromRecentGrid"(
     	String documentTitle	) {
     (new actions.Common()).openDocumentFromRecentGrid(
         	documentTitle)
+}
+
+def static "actions.Common.clearClipBoard"() {
+    (new actions.Common()).clearClipBoard()
+}
+
+def static "actions.Common.clickMultipleElements"(
+    	java.util.List<TestObject> elements	) {
+    (new actions.Common()).clickMultipleElements(
+        	elements)
 }
 
 def static "actions.Window.clickElementAndWaitForWindowClose"(

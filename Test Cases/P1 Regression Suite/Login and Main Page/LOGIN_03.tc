@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TestCaseEntity>
-   <description>Forgot Password-Back to Login</description>
-   <name>LOGIN_03</name>
-   <tag></tag>
-   <comment></comment>
-   <testCaseGuid>19471534-027e-41b1-8f2d-65c64289b184</testCaseGuid>
-</TestCaseEntity>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Regression test Multipage viewer: clipboard, drag and drop pages</description>
+   <name>MV042</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>a5f9a7f5-9977-4f13-9d1c-943b04090f80</testCaseGuid>
+</TestCaseEntity>

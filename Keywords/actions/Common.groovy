@@ -5,10 +5,13 @@ import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 
+import java.awt.Robot
 import java.awt.Toolkit
+import java.awt.event.KeyEvent
 import java.util.concurrent.TimeUnit
 
 import org.openqa.selenium.Dimension
+import org.openqa.selenium.Keys
 import org.openqa.selenium.Point
 import org.openqa.selenium.WebDriver
 import org.openqa.selenium.WebElement
@@ -100,9 +103,10 @@ public class Common {
 
 	def loginAction() {
 		WebUI.openBrowser('')
-		if(DriverFactory.getExecutedBrowser().getName() != 'EDGE_DRIVER') {
-			WebUI.maximizeWindow()
-		}
+		//		if(DriverFactory.getExecutedBrowser().getName() != 'EDGE_DRIVER') {
+		//			WebUI.maximizeWindow()
+		//		}
+		WebUI.maximizeWindow()
 		WebUI.deleteAllCookies()
 		WebUI.navigateToUrl(WebUI.concatenate(GlobalVariable.BaseURL, '/login.aspx'));
 		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
@@ -174,13 +178,22 @@ public class Common {
 	@Keyword
 	def dragAndDropByXOffset(TestObject to, int xOffset) {
 		WebElement source = WebUtil.getWebElement(to)
+
+		int lPosition = source.getLocation().getX()
+		int tPosition = source.getLocation().getY()
+
 		int height = source.getSize().getHeight()
 		int width = source.getSize().getWidth()
+
+		println "Element position is = "+lPosition+","+tPosition
+		println "Element size is = "+width+","+height
 
 		WebDriver driver = DriverFactory.getWebDriver()
 		Actions actions = new Actions(driver)
 		int heightOffset = (int)height / 4
+		int widthOffset = lPosition + (int)width / 2
 		actions.moveToElement(source).moveByOffset(0, heightOffset).clickAndHold().moveByOffset(xOffset, heightOffset).release().build().perform()
+		WebUI
 	}
 
 	/* ############################  Common Action Keywords ############################ */
@@ -231,6 +244,52 @@ public class Common {
 		WebUI.switchToWindowTitle(documentTitle)
 		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 		waitForFrameToLoad(findTestObject('Page_WMI/WMI_Menu_BOV_Vertical/iframe_westContainerFrame'))
+
+		WebUI.switchToDefaultContent()
 	}
 
+	@Keyword
+	def clearClipBoard() {
+
+		//Clear clipboard items
+		'Click on clipboard menu'
+		WebUI.click(findTestObject('Page_WMI/WMI_Menu_BOV_Vertical/ContentFrame/menu_Clipboard'))
+
+		'Click on Clear clipboard'
+		WebUI.click(findTestObject('Page_WMI/WMI_Menu_BOV_Vertical/ContentFrame/subMenu_Clipboard_Clear Clipboard'))
+		waitForFrameToLoad(findTestObject('Page_WMI/WMI_Menu_BOV_Vertical/iframe_westContainerFrame'))
+
+		'Click OK on confirmation dialog'
+		String confirmPrompt = WebUI.getText(findTestObject('Page_WMI/WMI_Menu_BOV_Vertical/ContentFrame/ConfirmationDialog_message')).trim()
+		if(confirmPrompt.contains('Are you sure you want to Clear ClipBoard?'))
+			WebUI.click(findTestObject('Page_WMI/WMI_Menu_BOV_Vertical/ContentFrame/ConfirmationDialog_Ok_button'))
+		else
+			WebUI.click(findTestObject('Page_WMI/WMI_Menu_BOV_Vertical/ContentFrame/alertDialog_Ok_button'))
+		waitForFrameToLoad(findTestObject('Page_WMI/WMI_Menu_BOV_Vertical/iframe_westContainerFrame'))
+	}
+
+	@Keyword
+	def clickMultipleElements(List<TestObject> elements) {
+
+		boolean isException = false
+		TestObject firstElement = elements.get(0)
+		TestObject parentElement = firstElement.getParentObject()
+		if(parentElement != null)
+			WebUtil.switchFrameAndWaitForLoad(parentElement, GlobalVariable.G_LongTimeout)
+
+		List<WebElement> selElements = new ArrayList<WebElement>()
+		for(TestObject to in elements) {
+			selElements.add(WebUiCommonHelper.findWebElement(to, GlobalVariable.G_LongTimeout))
+		}
+
+		Actions actions = new Actions(DriverFactory.getWebDriver())
+		actions.keyDown(Keys.CONTROL)
+		for(WebElement e in selElements) {
+			actions.click(e)
+		}
+		actions.keyUp(Keys.CONTROL)
+		actions.build().perform()
+
+		WebUI.switchToDefaultContent()
+	}
 }

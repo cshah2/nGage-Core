@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Login Page-Forgot Password-Back to login button</description>
+   <name>LOGIN002</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>70bc3657-eb81-40d7-a6c1-b14ac322ca55</testCaseGuid>
+</TestCaseEntity>
