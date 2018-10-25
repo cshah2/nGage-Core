@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Regression test Search Repository: EDM tree folder</description>
+   <name>REPO002</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>0c5b559c-d97a-49ed-8fa3-16fdefae1a10</testCaseGuid>
+</TestCaseEntity>

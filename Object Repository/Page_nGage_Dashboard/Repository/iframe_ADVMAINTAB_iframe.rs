@@ -6,8 +6,12 @@
    <elementGuidId>5769a14b-bef1-4fc0-8fd6-773e42de197d</elementGuidId>
    <selectorCollection>
       <entry>
+         <key>XPATH</key>
+         <value></value>
+      </entry>
+      <entry>
          <key>BASIC</key>
-         <value>//iframe[@id = 'ADVMAINTAB_iframe' and @ref_element = 'Object Repository/Page_Savana nGage/Repository_Obj/iframe_iframe_104']</value>
+         <value>//iframe[@id = 'ADVMAINTAB_iframe' and @ref_element = 'Object Repository/Page_nGage_Dashboard/Repository/iframe_iframe_104']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>

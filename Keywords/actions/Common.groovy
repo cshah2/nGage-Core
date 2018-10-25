@@ -170,13 +170,13 @@ public class Common {
 		WebUtil.switchFrameAndWaitForLoad(iFrame, GlobalVariable.G_LongTimeout)
 		WebUI.switchToDefaultContent()
 	}
-	
+
 	@Keyword
 	def dragAndDropByXOffset(TestObject to, int xOffset) {
 		WebElement source = WebUtil.getWebElement(to)
 		int height = source.getSize().getHeight()
 		int width = source.getSize().getWidth()
-		
+
 		WebDriver driver = DriverFactory.getWebDriver()
 		Actions actions = new Actions(driver)
 		int heightOffset = (int)height / 4
