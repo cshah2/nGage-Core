@@ -282,6 +282,8 @@ public class Table {
 	def getColumnNumber(TestObject headerTable, String columnName) {
 		WebElement table = WebUtil.getWebElement(headerTable)
 		List<WebElement> headers = getAllHeaders(table)
-		return getColumnNumberOfHeader(headers, columnName)
+		int columnNo = getColumnNumberOfHeader(headers, columnName)
+		WebUI.switchToDefaultContent()
+		return columnNo
 	}
 }
