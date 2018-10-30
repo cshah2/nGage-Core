@@ -58,6 +58,12 @@ def setupTestCase() {
 @TearDownTestCase(skipped = true) // Please change skipped to be false to activate this method.
 def tearDownTestCase() {
 	// Put your code here.
+	try {
+		WebUI.closeBrowser()
+		CustomKeywords.'actions.Common.killDriverProcesses'()
+	} catch(Exception e) {
+		println "Error killing processes "+e.toString()
+	}
 }
 
 /**

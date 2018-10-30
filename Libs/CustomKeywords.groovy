@@ -273,3 +273,21 @@ def static "actions.Chart.clickSlice"(
          , 	sliceNo
          , 	sliceLocator)
 }
+
+def static "actions.ContextMenu.verifyAllOptions"(
+    	String[] options	) {
+    (new actions.ContextMenu()).verifyAllOptions(
+        	options)
+}
+
+def static "actions.ContextMenu.verifyOptionPresent"(
+    	String option	) {
+    (new actions.ContextMenu()).verifyOptionPresent(
+        	option)
+}
+
+def static "actions.ContextMenu.clickOption"(
+    	String option	) {
+    (new actions.ContextMenu()).clickOption(
+        	option)
+}
