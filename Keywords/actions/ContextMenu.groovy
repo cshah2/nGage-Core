@@ -25,31 +25,31 @@ import utils.WebUtil
 
 public class ContextMenu {
 	Map<String, WebElement> contextOptions
-	
+
 	private void setContextVariables() {
 		contextOptions = new HashMap<String, WebElement>()
 		//WebElement contextMenu = WebUtil.getWebElement(findTestObject('Page_nGage_Dashboard/contextMenu'))
-		
+
 		List<WebElement> allOptions = WebUtil.getWebElements(findTestObject('Page_nGage_Dashboard/contextMenuOptions'))
-		
+
 		for(WebElement e in allOptions) {
 			String key = e.getText().replace("\u00a0", " ").trim()
 			contextOptions.put(key, e)
 		}
 	}
-	
+
 	@Keyword
 	def verifyAllOptions(String... options) {
-		
+
 		setContextVariables()
-		
+
 		int actualOptionsSize = this.contextOptions.size()
 		int expectedOptionsSize = options.length
 		WebUI.verifyEqual(actualOptionsSize, expectedOptionsSize)
-		
+
 		boolean isEntryPresent = true
 		String entryNotFound
-		
+
 		for(String option in options) {
 			if(!contextOptions.containsKey(option)) {
 				isEntryPresent = false
@@ -57,9 +57,9 @@ public class ContextMenu {
 				break
 			}
 		}
-		
+
 		WebUI.switchToDefaultContent()
-		
+
 		if(isEntryPresent) {
 			KeywordUtil.markPassed("All Entries are present.")
 		}
@@ -67,17 +67,17 @@ public class ContextMenu {
 			KeywordUtil.markFailedAndStop("Entry "+entryNotFound+" is not found in the context Menu")
 		}
 	}
-	
+
 	@Keyword
 	def verifyOptionPresent(String option) {
 		setContextVariables()
-		
+
 		boolean isEntryPresent = true
 		if(!contextOptions.containsKey(option)) {
 			isEntryPresent = false
 		}
 		WebUI.switchToDefaultContent()
-		
+
 		if(isEntryPresent) {
 			KeywordUtil.markPassed("All Entries are present.")
 		}
@@ -85,7 +85,7 @@ public class ContextMenu {
 			KeywordUtil.markFailedAndStop("Entry "+option+" is not found in the context Menu")
 		}
 	}
-	
+
 	@Keyword
 	def clickOption(String option) {
 		setContextVariables()

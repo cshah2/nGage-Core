@@ -4,6 +4,16 @@
    <name>iframe_iframe_105</name>
    <tag></tag>
    <elementGuidId>0d7c1f3d-78fd-4a40-b97e-e8a34b89093e</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>//iframe[@id = 'iframe_105']</value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value></value>
+      </entry>
+   </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
    <webElementProperties>

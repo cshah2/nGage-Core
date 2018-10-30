@@ -28,6 +28,7 @@ public class MenuBar {
 	 * @param element
 	 * @return
 	 */
+	
 	def getRecordCountInActivity(TestObject element) {
 		WebUI.waitForElementPresent(element, GlobalVariable.G_LongTimeout)
 		WebUI.waitForElementVisible(element, GlobalVariable.G_LongTimeout)
