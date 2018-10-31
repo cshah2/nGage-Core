@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>EDM_Customer_SubMenu_100019</name>
+   <name>EDM_WMI005_Chintan_RenderAllFields_SubMenu</name>
    <tag></tag>
-   <elementGuidId>5345843b-b619-40d7-831e-7ad0af5ec7c5</elementGuidId>
+   <elementGuidId>5bbb1a1c-3ab6-497f-bcba-4ed56d6059ee</elementGuidId>
    <selectorCollection>
-      <entry>
-         <key>XPATH</key>
-         <value>//a[text()='100019 (14)']</value>
-      </entry>
       <entry>
          <key>BASIC</key>
          <value></value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>//a[@id='SCF_1ad44309-e2ca-4adc-a17c-b469c244b809_anchor']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

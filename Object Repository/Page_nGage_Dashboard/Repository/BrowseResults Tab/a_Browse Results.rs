@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//a[@id = 'ui-id-1' and (text() = 'Browse Results ' or . = 'Browse Results ') and @ref_element = 'Object Repository/Page_nGage_Dashboard/Repository/iframe_iframe_104']</value>
+         <value>//a[@href = '#BROWSETAB' and @id = 'ui-id-1' and @ref_element = 'Object Repository/Page_nGage_Dashboard/Repository/BrowseResults Tab/iframe_BROWSETAB_iframe']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -20,7 +20,7 @@
       <value>a</value>
    </webElementProperties>
    <webElementProperties>
-      <isSelected>false</isSelected>
+      <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
       <name>href</name>
       <type>Main</type>
@@ -83,7 +83,7 @@
       <value>ui-id-1</value>
    </webElementProperties>
    <webElementProperties>
-      <isSelected>true</isSelected>
+      <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>text</name>
       <type>Main</type>
@@ -101,7 +101,7 @@
       <matchCondition>equals</matchCondition>
       <name>ref_element</name>
       <type>Main</type>
-      <value>Object Repository/Page_nGage_Dashboard/Repository/BrowseResults Tab/iframe_BROWSETAB_iframe</value>
+      <value>Object Repository/Page_nGage_Dashboard/Repository/iframe_iframe_104</value>
    </webElementProperties>
    <webElementXpaths>
       <isSelected>true</isSelected>

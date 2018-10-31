@@ -26,17 +26,17 @@ WebUI.verifyElementVisible(findTestObject('Object Repository/Page_nGage_Dashboar
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/h3_Repository Menu'))
 
 'Click on Cutomer in EDM'
-WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/EDM_Customer'))
+WebUI.click(findTestObject('Page_nGage_Dashboard/Repository/Business_Model_Tree/EDM_Customer'))
 
 'Click on EDM to expand. select search class which has fields configured as folder'
-WebUI.doubleClick(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/EDM_Customer'))
+WebUI.doubleClick(findTestObject('Page_nGage_Dashboard/Repository/Business_Model_Tree/EDM_Customer'))
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
 'Click on field in EDM list'
-WebUI.doubleClick(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/EDM-Customer_SubItem'))
+WebUI.doubleClick(findTestObject('Page_nGage_Dashboard/Repository/Business_Model_Tree/EDM-Customer_SubItem'))
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
-WebUI.click(findTestObject('Page_nGage_Dashboard/Repository/EDM_Customer_SubMenu_100019'))
+WebUI.click(findTestObject('Page_nGage_Dashboard/Repository/Business_Model_Tree/EDM_Customer_SubMenu_100019'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/BrowseResults Tab/iframe_BROWSETAB_iframe'))
 
 'Verify 10 Records are present in table'
@@ -45,3 +45,10 @@ CustomKeywords.'actions.Table.verifyRecordsCount'(findTestObject('Page_nGage_Das
 'Verify the Search result grid '
 WebUI.verifyElementText(findTestObject('Page_nGage_Dashboard/Repository/BrowseResults Tab/Table_PageResults'), "Showing 1 - 10 of 14")
 
+'Verify Browser tab tool tip'
+WebUI.mouseOver(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/BrowseResults Tab/a_Browse Results'))
+WebUI.waitForElementVisible(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/BrowseResults Tab/Browser_ToolTip'), GlobalVariable.G_LongTimeout)
+
+String toolTipValue = WebUI.getText(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/BrowseResults Tab/Browser_ToolTip')).trim()
+WebUI.verifyMatch(toolTipValue, '.*Customers - Customers.*', true)
+WebUI.verifyMatch(toolTipValue, '.*Customer Name = 100019.*', true)

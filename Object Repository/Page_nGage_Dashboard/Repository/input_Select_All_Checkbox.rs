@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>table_SearchResult</name>
+   <name>input_Select_All_Checkbox</name>
    <tag></tag>
-   <elementGuidId>0cd15c0f-5a54-4e02-bcda-5e8533ce024e</elementGuidId>
+   <elementGuidId>eef904f4-6e4a-43f1-948f-2d86212e3391</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//*[@ref_element = 'Object Repository/Page_nGage_Dashboard/My_Work_Simplified/iframe_iframe_110']</value>
+         <value></value>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//table[@id='SimplifiedWorkflowSearchResultsTable']</value>
+         <value>//input[@id='cb_divSearchResultsTable']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
@@ -21,6 +21,6 @@
       <matchCondition>equals</matchCondition>
       <name>ref_element</name>
       <type>Main</type>
-      <value>Object Repository/Page_nGage_Dashboard/My_Work_Simplified/iframe_iframe_110</value>
+      <value>Object Repository/Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe</value>
    </webElementProperties>
 </WebElementEntity>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>EDM_08-10-2018_Empty_WMI005_Chintan_BusinessModel</name>
+   <tag></tag>
+   <elementGuidId>1d7623f6-d920-469c-8ffc-9fb0f0a05b2d</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value></value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>//a[@id='SCF_16178e8e-7c97-4404-986d-cade2711efed_anchor']</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <useRalativeImagePath>false</useRalativeImagePath>
+</WebElementEntity>

@@ -7,7 +7,11 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//input[@id = '-100' and @ref_element = 'Object Repository/Page_Savana nGage/MyWorkSimplified_Objects/iframe_iframe_110New']</value>
+         <value>//input[@id = '-100' and @ref_element = 'Object Repository/Page_nGage_Dashboard/My_Work_Simplified/iframe_iframe_110']</value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value></value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>

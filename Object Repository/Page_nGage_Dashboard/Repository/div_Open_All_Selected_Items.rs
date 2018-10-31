@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>table_SearchResult</name>
+   <name>div_Open_All_Selected_Items</name>
    <tag></tag>
-   <elementGuidId>0cd15c0f-5a54-4e02-bcda-5e8533ce024e</elementGuidId>
+   <elementGuidId>48f4e4c1-cbe0-4096-b251-923bf233489f</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//*[@ref_element = 'Object Repository/Page_nGage_Dashboard/My_Work_Simplified/iframe_iframe_110']</value>
+         <value></value>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//table[@id='SimplifiedWorkflowSearchResultsTable']</value>
+         <value>//td[@id='divSearchResultsTable_btnOpenAllSelected']/div</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
@@ -21,6 +21,6 @@
       <matchCondition>equals</matchCondition>
       <name>ref_element</name>
       <type>Main</type>
-      <value>Object Repository/Page_nGage_Dashboard/My_Work_Simplified/iframe_iframe_110</value>
+      <value>Object Repository/Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe</value>
    </webElementProperties>
 </WebElementEntity>

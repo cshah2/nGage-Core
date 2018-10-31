@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Regression test Search Repository: Search Results, set layout - STRING field</description>
+   <name>REPO008</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>e2b6a09c-8dac-4ceb-b308-aaabbdf3c5cd</testCaseGuid>
+</TestCaseEntity>
