@@ -89,4 +89,9 @@
       <initValue>60</initValue>
       <name>Standard_Timeout</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>''</initValue>
+      <name>Copy_Report_Name</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>

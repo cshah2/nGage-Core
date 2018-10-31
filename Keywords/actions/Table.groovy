@@ -268,17 +268,16 @@ public class Table {
 		WebElement cell = cells.get(0)
 		if(cell.isSelected())
 			cell.click()
-			
+
 		WebElement checkboxField = cell.findElement(By.tagName("input"))
 		if(!checkboxField.isSelected()) {
 			c
 		}
 		WebUI.switchToDefaultContent()
 	}
-	
+
 	@Keyword
-	def verifyAllRecordsAreChecked(TestObject tableLocator)
-	{
+	def verifyAllRecordsAreChecked(TestObject tableLocator) {
 		WebElement table = WebUtil.getWebElement(tableLocator)
 		List<WebElement> rows = getAllRows(table)
 		boolean isAllSelected = true
@@ -293,14 +292,13 @@ public class Table {
 				break;
 			}
 		}
-		
+
 		if(isAllSelected) {
 			KeywordUtil.markPassed('All Records are selected')
 		}
 		else {
 			KeywordUtil.markFailedAndStop('Record at row no '+failedRowNo+' is not selected')
 		}
-		
 	}
 
 	@Keyword

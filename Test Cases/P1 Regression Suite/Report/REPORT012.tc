@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Regression test Reports: Delete reports</description>
+   <name>REPORT012</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>4648ae40-fd31-48e0-acc2-8c481e7354a0</testCaseGuid>
+</TestCaseEntity>

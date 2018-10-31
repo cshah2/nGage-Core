@@ -3,12 +3,86 @@
  * This class is generated automatically by Katalon Studio and should not be modified or deleted.
  */
 
-import com.kms.katalon.core.testobject.TestObject
-
 import java.lang.String
+
+import com.kms.katalon.core.testobject.TestObject
 
 import java.util.List
 
+
+def static "actions.Report.clickReport"(
+    	String lvl_one	
+     , 	String lvl_two	
+     , 	String lvl_three	) {
+    (new actions.Report()).clickReport(
+        	lvl_one
+         , 	lvl_two
+         , 	lvl_three)
+}
+
+def static "actions.Report.rightClickReport"(
+    	String lvl_one	
+     , 	String lvl_two	
+     , 	String lvl_three	) {
+    (new actions.Report()).rightClickReport(
+        	lvl_one
+         , 	lvl_two
+         , 	lvl_three)
+}
+
+def static "actions.Report.verifyReportIsPresentUnderSubGroup"(
+    	String lvl_one	
+     , 	String lvl_two	
+     , 	String reportName	) {
+    (new actions.Report()).verifyReportIsPresentUnderSubGroup(
+        	lvl_one
+         , 	lvl_two
+         , 	reportName)
+}
+
+def static "actions.Report.verifyReportIsNotPresentUnderSubGroup"(
+    	String lvl_one	
+     , 	String lvl_two	
+     , 	String reportName	) {
+    (new actions.Report()).verifyReportIsNotPresentUnderSubGroup(
+        	lvl_one
+         , 	lvl_two
+         , 	reportName)
+}
+
+def static "actions.Report.verifySubGroupIsPresentUnderGroup"(
+    	String lvl_one	
+     , 	String subGroupName	) {
+    (new actions.Report()).verifySubGroupIsPresentUnderGroup(
+        	lvl_one
+         , 	subGroupName)
+}
+
+def static "actions.Report.verifySubGroupIsNotPresentUnderGroup"(
+    	String lvl_one	
+     , 	String subGroupName	) {
+    (new actions.Report()).verifySubGroupIsNotPresentUnderGroup(
+        	lvl_one
+         , 	subGroupName)
+}
+
+def static "actions.Report.verifyAllReportsUnderSubGroup"(
+    	String lvl_one	
+     , 	String lvl_two	
+     , 	String[] reportNames	) {
+    (new actions.Report()).verifyAllReportsUnderSubGroup(
+        	lvl_one
+         , 	lvl_two
+         , 	reportNames)
+}
+
+def static "actions.Report.verifyAllSubGroupsUnderGroup"(
+    	String lvl_one	
+     , 	String[] subGroups	) {
+    (new actions.Report()).verifyAllSubGroupsUnderGroup(
+        	lvl_one
+         , 	subGroups)
+}
 
 def static "actions.Table.verifyRecordsCount"(
     	TestObject tableLocator	
@@ -136,28 +210,6 @@ def static "actions.Table.getColumnNumber"(
          , 	columnName)
 }
 
-def static "actions.Window.clickElementAndWaitForWindowClose"(
-    	TestObject saveButton	
-     , 	int timeout	) {
-    (new actions.Window()).clickElementAndWaitForWindowClose(
-        	saveButton
-         , 	timeout)
-}
-
-def static "actions.Window.switchToUrlContains"(
-    	String text	) {
-    (new actions.Window()).switchToUrlContains(
-        	text)
-}
-
-def static "actions.Window.setScreenSize"(
-    	int width	
-     , 	int height	) {
-    (new actions.Window()).setScreenSize(
-        	width
-         , 	height)
-}
-
 def static "actions.Common.maximizeWindow"() {
     (new actions.Common()).maximizeWindow()
 }
@@ -234,30 +286,34 @@ def static "actions.Common.verifyRecordCountMatchesInActivityAndGrid"(
          , 	gridSummary)
 }
 
+def static "actions.Window.clickElementAndWaitForWindowClose"(
+    	TestObject saveButton	
+     , 	int timeout	) {
+    (new actions.Window()).clickElementAndWaitForWindowClose(
+        	saveButton
+         , 	timeout)
+}
+
+def static "actions.Window.switchToUrlContains"(
+    	String text	) {
+    (new actions.Window()).switchToUrlContains(
+        	text)
+}
+
+def static "actions.Window.setScreenSize"(
+    	int width	
+     , 	int height	) {
+    (new actions.Window()).setScreenSize(
+        	width
+         , 	height)
+}
+
 def static "actions.MenuBar.refreshActivityUntilRecordCountIncreases"(
     	TestObject element	
      , 	int timeout	) {
     (new actions.MenuBar()).refreshActivityUntilRecordCountIncreases(
         	element
          , 	timeout)
-}
-
-def static "actions.ContextMenu.verifyAllOptions"(
-    	String[] options	) {
-    (new actions.ContextMenu()).verifyAllOptions(
-        	options)
-}
-
-def static "actions.ContextMenu.verifyOptionPresent"(
-    	String option	) {
-    (new actions.ContextMenu()).verifyOptionPresent(
-        	option)
-}
-
-def static "actions.ContextMenu.clickOption"(
-    	String option	) {
-    (new actions.ContextMenu()).clickOption(
-        	option)
 }
 
 def static "actions.Chart.verifyNumberOfSlices"(
@@ -304,4 +360,28 @@ def static "actions.Chart.clickSlice"(
         	chartLocator
          , 	sliceNo
          , 	sliceLocator)
+}
+
+def static "actions.ContextMenu.verifyAllOptions"(
+    	TestObject contextMenuOptions	
+     , 	String[] options	) {
+    (new actions.ContextMenu()).verifyAllOptions(
+        	contextMenuOptions
+         , 	options)
+}
+
+def static "actions.ContextMenu.verifyOptionPresent"(
+    	TestObject contextMenuOptions	
+     , 	String option	) {
+    (new actions.ContextMenu()).verifyOptionPresent(
+        	contextMenuOptions
+         , 	option)
+}
+
+def static "actions.ContextMenu.clickOption"(
+    	TestObject contextMenuOptions	
+     , 	String option	) {
+    (new actions.ContextMenu()).clickOption(
+        	contextMenuOptions
+         , 	option)
 }

@@ -26,12 +26,10 @@ import utils.WebUtil
 public class ContextMenu {
 	Map<String, WebElement> contextOptions
 
-	private void setContextVariables() {
+	private void setContextVariables(TestObject contextMenuOptions) {
 		contextOptions = new HashMap<String, WebElement>()
-		//WebElement contextMenu = WebUtil.getWebElement(findTestObject('Page_nGage_Dashboard/contextMenu'))
-
-		List<WebElement> allOptions = WebUtil.getWebElements(findTestObject('Page_nGage_Dashboard/contextMenuOptions'))
-
+		List<WebElement> allOptions = WebUtil.getWebElements(contextMenuOptions)
+		
 		for(WebElement e in allOptions) {
 			String key = e.getText().replace("\u00a0", " ").trim()
 			contextOptions.put(key, e)
@@ -39,9 +37,9 @@ public class ContextMenu {
 	}
 
 	@Keyword
-	def verifyAllOptions(String... options) {
+	def verifyAllOptions(TestObject contextMenuOptions, String... options) {
 
-		setContextVariables()
+		setContextVariables(contextMenuOptions)
 
 		int actualOptionsSize = this.contextOptions.size()
 		int expectedOptionsSize = options.length
@@ -69,8 +67,8 @@ public class ContextMenu {
 	}
 
 	@Keyword
-	def verifyOptionPresent(String option) {
-		setContextVariables()
+	def verifyOptionPresent(TestObject contextMenuOptions, String option) {
+		setContextVariables(contextMenuOptions)
 
 		boolean isEntryPresent = true
 		if(!contextOptions.containsKey(option)) {
@@ -87,8 +85,8 @@ public class ContextMenu {
 	}
 
 	@Keyword
-	def clickOption(String option) {
-		setContextVariables()
+	def clickOption(TestObject contextMenuOptions,String option) {
+		setContextVariables(contextMenuOptions)
 		WebElement e = contextOptions.get(option)
 		if(e != null) {
 			e.click()

@@ -30,8 +30,7 @@ WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/Report/Report_U
 WebUI.rightClick(findTestObject('Page_nGage_Dashboard/Report/Report_User Listing'))
 
 'Verify Following options are available in right-click'
-CustomKeywords.'actions.ContextMenu.verifyAllOptions'('Rename', 'Copy', 'Delete', 'Schedule')
+CustomKeywords.'actions.ContextMenu.verifyAllOptions'(findTestObject('Page_nGage_Dashboard/contextMenuOptions'), 'Rename', 'Copy', 'Delete', 'Schedule')
 
 'Click Schedule option from ContextMenu'
-CustomKeywords.'actions.ContextMenu.clickOption'('Schedule')
-WebUI.delay(10)
+CustomKeywords.'actions.ContextMenu.clickOption'(findTestObject('Page_nGage_Dashboard/contextMenuOptions'), 'Schedule')
