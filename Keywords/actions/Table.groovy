@@ -127,7 +127,7 @@ public class Table {
 		}
 		return -1;
 	}
-	
+
 
 	/* ##################### KEYWORDS ##################### */
 
@@ -268,7 +268,39 @@ public class Table {
 		WebElement cell = cells.get(0)
 		if(cell.isSelected())
 			cell.click()
+			
+		WebElement checkboxField = cell.findElement(By.tagName("input"))
+		if(!checkboxField.isSelected()) {
+			c
+		}
 		WebUI.switchToDefaultContent()
+	}
+	
+	@Keyword
+	def verifyAllRecordsAreChecked(TestObject tableLocator)
+	{
+		WebElement table = WebUtil.getWebElement(tableLocator)
+		List<WebElement> rows = getAllRows(table)
+		boolean isAllSelected = true
+		int failedRowNo
+		for(int i = 0; i < rows.size(); i++) {
+			List<WebElement> cells = getAllCells(rows.get(i))
+			WebElement cell = cells.get(0)
+			WebElement checkboxField = cell.findElement(By.tagName("input"))
+			if(!checkboxField.isSelected()) {
+				isAllSelected = false
+				failedRowNo = i+1
+				break;
+			}
+		}
+		
+		if(isAllSelected) {
+			KeywordUtil.markPassed('All Records are selected')
+		}
+		else {
+			KeywordUtil.markFailedAndStop('Record at row no '+failedRowNo+' is not selected')
+		}
+		
 	}
 
 	@Keyword

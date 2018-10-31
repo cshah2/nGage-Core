@@ -116,6 +116,12 @@ def static "actions.Table.uncheckRecordInTable"(
          , 	rowNo)
 }
 
+def static "actions.Table.verifyAllRecordsAreChecked"(
+    	TestObject tableLocator	) {
+    (new actions.Table()).verifyAllRecordsAreChecked(
+        	tableLocator)
+}
+
 def static "actions.Table.clickColumnHeader"(
     	TestObject column	) {
     (new actions.Table()).clickColumnHeader(
@@ -236,6 +242,24 @@ def static "actions.MenuBar.refreshActivityUntilRecordCountIncreases"(
          , 	timeout)
 }
 
+def static "actions.ContextMenu.verifyAllOptions"(
+    	String[] options	) {
+    (new actions.ContextMenu()).verifyAllOptions(
+        	options)
+}
+
+def static "actions.ContextMenu.verifyOptionPresent"(
+    	String option	) {
+    (new actions.ContextMenu()).verifyOptionPresent(
+        	option)
+}
+
+def static "actions.ContextMenu.clickOption"(
+    	String option	) {
+    (new actions.ContextMenu()).clickOption(
+        	option)
+}
+
 def static "actions.Chart.verifyNumberOfSlices"(
     	TestObject chartLocator	
      , 	int expCount	
@@ -280,22 +304,4 @@ def static "actions.Chart.clickSlice"(
         	chartLocator
          , 	sliceNo
          , 	sliceLocator)
-}
-
-def static "actions.ContextMenu.verifyAllOptions"(
-    	String[] options	) {
-    (new actions.ContextMenu()).verifyAllOptions(
-        	options)
-}
-
-def static "actions.ContextMenu.verifyOptionPresent"(
-    	String option	) {
-    (new actions.ContextMenu()).verifyOptionPresent(
-        	option)
-}
-
-def static "actions.ContextMenu.clickOption"(
-    	String option	) {
-    (new actions.ContextMenu()).clickOption(
-        	option)
 }
