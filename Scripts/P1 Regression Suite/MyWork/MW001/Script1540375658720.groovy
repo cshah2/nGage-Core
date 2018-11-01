@@ -25,12 +25,8 @@ CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Da
 'Expand Closure Action process'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/icon_Expand_Closure Actions'))
 
-'check daisy(pre loader) status'
-String attribute = WebUI.getAttribute(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/li_closureAction'), 'aria-busy')
-System.out.println('first time  '+attribute)
-
 'verify daisy(pre loader) status'
-WebUI.verifyMatch(attribute.toString(), 'true', false)
+WebUI.verifyElementAttributeValue(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/li_closureAction'), 'aria-busy', 'true', GlobalVariable.G_LongTimeout)
 
 'wait for jquery to render'
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
@@ -38,15 +34,11 @@ WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 'Minimize Closure Action process'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/icon_Expand_Closure Actions'))
 
-
 'Expand Closure Action process again'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/icon_Expand_Closure Actions'))
 
-attribute = WebUI.getAttribute(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/li_closureAction'), 'aria-busy')
-System.out.println('second time '+attribute)
-
 'verify daisy(pre loader) status'
-WebUI.verifyMatch(attribute.toString(), 'false', false)
+WebUI.verifyElementAttributeValue(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/li_closureAction'), 'aria-busy', 'false', GlobalVariable.G_LongTimeout)
 
 'wait for jquery to render'
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)

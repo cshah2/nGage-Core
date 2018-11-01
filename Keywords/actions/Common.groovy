@@ -292,12 +292,25 @@ public class Common {
 
 		WebUI.switchToDefaultContent()
 	}
-	
+
 	@Keyword
 	def verifyRecordCountMatchesInActivityAndGrid(TestObject activity, TestObject gridSummary) {
 		int activityCount = new MenuBar().getRecordCountInActivity(activity)
 		String pageSummaryText=WebUI.getText(gridSummary)
 		int gridCount=Integer.parseInt(pageSummaryText.split(' of ')[1].trim())
 		WebUI.verifyEqual(activityCount, gridCount)
+	}
+
+	@Keyword
+	def verifyElementAttributeValueContains(TestObject element, String attrName, String expValue) {
+		String actualValue= WebUI.getAttribute(element, attrName)
+		if(actualValue.contains(expValue))
+		{
+			KeywordUtil.markPassed("atribute contains expected value")
+		}
+		else
+		{
+			KeywordUtil.markFailedAndStop("attribute: "+actualValue +" not contains "+expValue)
+		}
 	}
 }

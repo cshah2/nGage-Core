@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>div_ActivityState</name>
+   <name>span_nextTTopPager</name>
    <tag></tag>
-   <elementGuidId>1c5ec14c-dfdf-49ba-975a-9b30cffb846a</elementGuidId>
+   <elementGuidId>e3616b00-e11f-42f8-aa61-7b0d187078bd</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//div[@id='jqgh_MyWorkSearchResultsTable_Activity State']</value>
+         <value>//td[@id='next_t_MyWorkSearchResultsTable_toppager']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

@@ -57,7 +57,8 @@ public class Table {
 	 */
 	private List<WebElement> getAllCells(WebElement row) {
 		List<WebElement> visibleCells = new ArrayList<WebElement>()
-		List<WebElement> cells = row.findElements(By.tagName("td"))
+		List<WebElement> cells = new ArrayList<WebElement>() 
+		cells = row.findElements(By.tagName("td"))
 		for(WebElement cell in cells) {
 			if(cell.isDisplayed()) {
 				visibleCells.add(cell)

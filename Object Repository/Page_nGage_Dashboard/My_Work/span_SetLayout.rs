@@ -7,7 +7,6 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value></value>
       </entry>
       <entry>
          <key>XPATH</key>
@@ -21,6 +20,6 @@
       <matchCondition>equals</matchCondition>
       <name>ref_element</name>
       <type>Main</type>
-      <value>Object Repository/Page_nGage_Dashboard/My_Work/iframe_Iframe</value>
+      <value>Object Repository/Page_nGage_Dashboard/My_Work/iframe_work_items</value>
    </webElementProperties>
 </WebElementEntity>

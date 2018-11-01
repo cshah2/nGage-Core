@@ -210,6 +210,28 @@ def static "actions.Table.getColumnNumber"(
          , 	columnName)
 }
 
+def static "actions.Window.clickElementAndWaitForWindowClose"(
+    	TestObject saveButton	
+     , 	int timeout	) {
+    (new actions.Window()).clickElementAndWaitForWindowClose(
+        	saveButton
+         , 	timeout)
+}
+
+def static "actions.Window.switchToUrlContains"(
+    	String text	) {
+    (new actions.Window()).switchToUrlContains(
+        	text)
+}
+
+def static "actions.Window.setScreenSize"(
+    	int width	
+     , 	int height	) {
+    (new actions.Window()).setScreenSize(
+        	width
+         , 	height)
+}
+
 def static "actions.Common.maximizeWindow"() {
     (new actions.Common()).maximizeWindow()
 }
@@ -286,26 +308,14 @@ def static "actions.Common.verifyRecordCountMatchesInActivityAndGrid"(
          , 	gridSummary)
 }
 
-def static "actions.Window.clickElementAndWaitForWindowClose"(
-    	TestObject saveButton	
-     , 	int timeout	) {
-    (new actions.Window()).clickElementAndWaitForWindowClose(
-        	saveButton
-         , 	timeout)
-}
-
-def static "actions.Window.switchToUrlContains"(
-    	String text	) {
-    (new actions.Window()).switchToUrlContains(
-        	text)
-}
-
-def static "actions.Window.setScreenSize"(
-    	int width	
-     , 	int height	) {
-    (new actions.Window()).setScreenSize(
-        	width
-         , 	height)
+def static "actions.Common.verifyElementAttributeValueContains"(
+    	TestObject element	
+     , 	String attrName	
+     , 	String expValue	) {
+    (new actions.Common()).verifyElementAttributeValueContains(
+        	element
+         , 	attrName
+         , 	expValue)
 }
 
 def static "actions.MenuBar.refreshActivityUntilRecordCountIncreases"(
@@ -314,6 +324,30 @@ def static "actions.MenuBar.refreshActivityUntilRecordCountIncreases"(
     (new actions.MenuBar()).refreshActivityUntilRecordCountIncreases(
         	element
          , 	timeout)
+}
+
+def static "actions.ContextMenu.verifyAllOptions"(
+    	TestObject contextMenuOptions	
+     , 	String[] options	) {
+    (new actions.ContextMenu()).verifyAllOptions(
+        	contextMenuOptions
+         , 	options)
+}
+
+def static "actions.ContextMenu.verifyOptionPresent"(
+    	TestObject contextMenuOptions	
+     , 	String option	) {
+    (new actions.ContextMenu()).verifyOptionPresent(
+        	contextMenuOptions
+         , 	option)
+}
+
+def static "actions.ContextMenu.clickOption"(
+    	TestObject contextMenuOptions	
+     , 	String option	) {
+    (new actions.ContextMenu()).clickOption(
+        	contextMenuOptions
+         , 	option)
 }
 
 def static "actions.Chart.verifyNumberOfSlices"(
@@ -360,28 +394,4 @@ def static "actions.Chart.clickSlice"(
         	chartLocator
          , 	sliceNo
          , 	sliceLocator)
-}
-
-def static "actions.ContextMenu.verifyAllOptions"(
-    	TestObject contextMenuOptions	
-     , 	String[] options	) {
-    (new actions.ContextMenu()).verifyAllOptions(
-        	contextMenuOptions
-         , 	options)
-}
-
-def static "actions.ContextMenu.verifyOptionPresent"(
-    	TestObject contextMenuOptions	
-     , 	String option	) {
-    (new actions.ContextMenu()).verifyOptionPresent(
-        	contextMenuOptions
-         , 	option)
-}
-
-def static "actions.ContextMenu.clickOption"(
-    	TestObject contextMenuOptions	
-     , 	String option	) {
-    (new actions.ContextMenu()).clickOption(
-        	contextMenuOptions
-         , 	option)
 }
