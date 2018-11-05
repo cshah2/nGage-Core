@@ -210,6 +210,28 @@ def static "actions.Table.getColumnNumber"(
          , 	columnName)
 }
 
+def static "actions.Table.verifyCellContainsValue"(
+    	TestObject tableLocator	
+     , 	int rowNo	
+     , 	int colNo	
+     , 	String expText	) {
+    (new actions.Table()).verifyCellContainsValue(
+        	tableLocator
+         , 	rowNo
+         , 	colNo
+         , 	expText)
+}
+
+def static "actions.Table.clickCell"(
+    	TestObject tableLocator	
+     , 	int rowNo	
+     , 	int colNo	) {
+    (new actions.Table()).clickCell(
+        	tableLocator
+         , 	rowNo
+         , 	colNo)
+}
+
 def static "actions.Common.maximizeWindow"() {
     (new actions.Common()).maximizeWindow()
 }
@@ -291,6 +313,16 @@ def static "actions.Common.verifyElementAttributeValueContains"(
      , 	String attrName	
      , 	String expValue	) {
     (new actions.Common()).verifyElementAttributeValueContains(
+        	element
+         , 	attrName
+         , 	expValue)
+}
+
+def static "actions.Common.verifyElementAttributeValueNotContains"(
+    	TestObject element	
+     , 	String attrName	
+     , 	String expValue	) {
+    (new actions.Common()).verifyElementAttributeValueNotContains(
         	element
          , 	attrName
          , 	expValue)

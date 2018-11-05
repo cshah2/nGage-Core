@@ -5,3 +5,4 @@
 .svn/
 /Reports/
 .project
+/Libs/TempTestCase*.groovy

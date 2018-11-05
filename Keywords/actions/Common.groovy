@@ -313,4 +313,18 @@ public class Common {
 			KeywordUtil.markFailedAndStop("attribute: "+actualValue +" not contains "+expValue)
 		}
 	}
+	
+	@Keyword
+	def verifyElementAttributeValueNotContains(TestObject element, String attrName, String expValue) {
+		String actualValue= WebUI.getAttribute(element, attrName)
+		if(!actualValue.contains(expValue))
+		{
+			KeywordUtil.markPassed("attribute: "+actualValue +" not contains "+expValue)
+		}
+		else
+		{
+			KeywordUtil.markFailedAndStop("attribute: "+actualValue +" contains "+expValue)
+		}
+	}
+
 }

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Regression test cases Reports: Schedule Report-Standard filter tab-Add Modify and Delete Filters</description>
+   <name>REPORT005</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>c6980143-3076-46af-906a-502948a4e424</testCaseGuid>
+</TestCaseEntity>

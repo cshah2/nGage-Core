@@ -2,6 +2,9 @@ import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
 import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
+
+import org.junit.After
+
 import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
 import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
@@ -36,30 +39,42 @@ CustomKeywords.'actions.ContextMenu.verifyAllOptions'(findTestObject('Page_nGage
 CustomKeywords.'actions.ContextMenu.clickOption'(findTestObject('Page_nGage_Dashboard/contextMenuOptions'), 'Schedule')
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Report/ScheduleReport/TAB_ScheduleReport/iframe_ScheduleReportTab'))
 
-'Verify all 5 tabs are displayed on the page'
-WebUI.verifyElementVisible(findTestObject('Page_nGage_Dashboard/Report/ScheduleReport/TAB_ScheduleReport/tab_ScheduleReport'))
-WebUI.verifyElementVisible(findTestObject('Page_nGage_Dashboard/Report/ScheduleReport/TAB_StandardFilter/tab_StandardFilter'))
-WebUI.verifyElementVisible(findTestObject('Page_nGage_Dashboard/Report/ScheduleReport/TAB_AdvanceFilter/tab_AdvanceFilter'))
-WebUI.verifyElementVisible(findTestObject('Page_nGage_Dashboard/Report/ScheduleReport/TAB_Storage/tab_Storage'))
-WebUI.verifyElementVisible(findTestObject('Page_nGage_Dashboard/Report/ScheduleReport/TAB_Distribution/tab_Distribution'))
+'Verify Name of filter in first row'
+CustomKeywords.'actions.Table.verifyCellContainsValue'(findTestObject('Page_nGage_Dashboard/Report/ScheduleReport/TAB_ScheduleReport/table_ScheduleReport_Data'), 1, 2, 'standard filter')
+
+'Verify Filter Type of filter in first row'
+CustomKeywords.'actions.Table.verifyCellContainsValue'(findTestObject('Page_nGage_Dashboard/Report/ScheduleReport/TAB_ScheduleReport/table_ScheduleReport_Data'), 1, 4, 'Standard')
+
+'Click on  any cell of first row'
+CustomKeywords.'actions.Table.clickCell'(findTestObject('Page_nGage_Dashboard/Report/ScheduleReport/TAB_ScheduleReport/table_ScheduleReport_Data'), 1, 1)
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Report/ScheduleReport/TAB_ScheduleReport/iframe_ScheduleReportTab'))
+
+'Verify name is displayed in Schedule Name input field'
+WebUI.verifyElementAttributeValue(findTestObject('Page_nGage_Dashboard/Report/ScheduleReport/TAB_ScheduleReport/input_ScheduleName'), 'value', 'standard filter', GlobalVariable.G_LongTimeout)
+
+'Verify Standard filter radio button is selected'
+WebUI.verifyElementChecked(findTestObject('Page_nGage_Dashboard/Report/ScheduleReport/TAB_ScheduleReport/radio_FilterType_Standard'), GlobalVariable.G_LongTimeout)
+
+'Verify Standard filter radio button is disabled'
+WebUI.verifyElementNotClickable(findTestObject('Page_nGage_Dashboard/Report/ScheduleReport/TAB_ScheduleReport/radio_FilterType_Standard'))
+
+'Verify Advance filter radio button is not selected'
+WebUI.verifyElementNotChecked(findTestObject('Page_nGage_Dashboard/Report/ScheduleReport/TAB_ScheduleReport/radio_FilterType_Advance'), GlobalVariable.G_LongTimeout)
+
+'Verify Advance filter radio button is not disabled'
+WebUI.verifyElementNotClickable(findTestObject('Page_nGage_Dashboard/Report/ScheduleReport/TAB_ScheduleReport/radio_FilterType_Advance'))
 
 'Verify Schedule Report tab is enabled'
 CustomKeywords.'actions.Common.verifyElementAttributeValueNotContains'(findTestObject('Page_nGage_Dashboard/Report/ScheduleReport/TAB_ScheduleReport/tab_ScheduleReport'),'class','tabdisable')
 
-'Verify Standard Filter tab is disabled'
-CustomKeywords.'actions.Common.verifyElementAttributeValueContains'(findTestObject('Page_nGage_Dashboard/Report/ScheduleReport/TAB_StandardFilter/tab_StandardFilter'), 'class', 'tabdisable')
+'Verify Standard Filter tab is enabled'
+CustomKeywords.'actions.Common.verifyElementAttributeValueNotContains'(findTestObject('Page_nGage_Dashboard/Report/ScheduleReport/TAB_StandardFilter/tab_StandardFilter'), 'class', 'tabdisable')
 
 'Verify Advance Filter tab is disabled'
 CustomKeywords.'actions.Common.verifyElementAttributeValueContains'(findTestObject('Page_nGage_Dashboard/Report/ScheduleReport/TAB_AdvanceFilter/tab_AdvanceFilter'), 'class', 'tabdisable')
 
-'Verify Storage tab is disabled'
-CustomKeywords.'actions.Common.verifyElementAttributeValueContains'(findTestObject('Page_nGage_Dashboard/Report/ScheduleReport/TAB_Storage/tab_Storage'), 'class', 'tabdisable')
+'Verify Storage tab is enabled'
+CustomKeywords.'actions.Common.verifyElementAttributeValueNotContains'(findTestObject('Page_nGage_Dashboard/Report/ScheduleReport/TAB_Storage/tab_Storage'), 'class', 'tabdisable')
 
-'Verify Distribution tab is disabled'
-CustomKeywords.'actions.Common.verifyElementAttributeValueContains'(findTestObject('Page_nGage_Dashboard/Report/ScheduleReport/TAB_Distribution/tab_Distribution'), 'class', 'tabdisable')
-
-'Verify Report name'
-WebUI.verifyElementText(findTestObject('Page_nGage_Dashboard/Report/ScheduleReport/TAB_ScheduleReport/label_ReportName'), 'User Listing')
-
-'Verify Report Schedule table is visible'
-WebUI.verifyElementVisible(findTestObject('Page_nGage_Dashboard/Report/ScheduleReport/TAB_ScheduleReport/table_ScheduleReport_Data'))
+'Verify Distribution tab is enabled'
+CustomKeywords.'actions.Common.verifyElementAttributeValueNotContains'(findTestObject('Page_nGage_Dashboard/Report/ScheduleReport/TAB_Distribution/tab_Distribution'), 'class', 'tabdisable')

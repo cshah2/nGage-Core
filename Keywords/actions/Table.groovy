@@ -256,7 +256,8 @@ public class Table {
 		List<WebElement> rows = getAllRows(table)
 		List<WebElement> cells = getAllCells(rows.get(rowNo-1))
 		WebElement cell = cells.get(0)
-		if(!cell.isSelected())
+		WebElement checkboxField = cell.findElement(By.tagName("input"))
+		if(!checkboxField.isSelected())
 			cell.click()
 		WebUI.switchToDefaultContent()
 	}
@@ -267,13 +268,9 @@ public class Table {
 		List<WebElement> rows = getAllRows(table)
 		List<WebElement> cells = getAllCells(rows.get(rowNo-1))
 		WebElement cell = cells.get(0)
-		if(cell.isSelected())
-			cell.click()
-
 		WebElement checkboxField = cell.findElement(By.tagName("input"))
-		if(!checkboxField.isSelected()) {
-			c
-		}
+		if(checkboxField.isSelected())
+			cell.click()
 		WebUI.switchToDefaultContent()
 	}
 
@@ -316,5 +313,32 @@ public class Table {
 		int columnNo = getColumnNumberOfHeader(headers, columnName)
 		WebUI.switchToDefaultContent()
 		return columnNo
+	}
+
+	@Keyword
+	def verifyCellContainsValue(TestObject tableLocator, int rowNo, int colNo, String expText) {
+		WebElement table = WebUtil.getWebElement(tableLocator)
+		List<WebElement> rows = getAllRows(table)
+		List<WebElement> cells = getAllCells(rows.get(rowNo-1))
+		WebElement cell = cells.get(colNo-1)
+		String actText = cell.getText().trim()
+		WebUI.switchToDefaultContent()
+		if(actText.contains(expText)) {
+			KeywordUtil.markPassed('Expected String '+expText+' is found in actual String '+actText)
+		}
+		else {
+			KeywordUtil.markFailedAndStop('Expected String '+expText+' is not found in actual String '+actText)
+		}
+	}
+
+	@Keyword
+	def clickCell(TestObject tableLocator, int rowNo, int colNo) {
+
+		WebElement table = WebUtil.getWebElement(tableLocator)
+		List<WebElement> rows = getAllRows(table)
+		List<WebElement> cells = getAllCells(rows.get(rowNo-1))
+		WebElement cell = cells.get(colNo-1)
+		cell.click()
+		WebUI.switchToDefaultContent()
 	}
 }
