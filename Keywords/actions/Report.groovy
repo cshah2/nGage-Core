@@ -127,7 +127,7 @@ public class Report {
 			KeywordUtil.markFailedAndStop('Report '+reportName+' is not found under subGroup '+lvl_two)
 		}
 	}
-	
+
 	@Keyword
 	def verifyReportIsNotPresentUnderSubGroup(String lvl_one, String lvl_two, String reportName) {
 		setLevelOne()
@@ -152,7 +152,7 @@ public class Report {
 			KeywordUtil.markFailedAndStop('Sub Group '+subGroupName+' is not found under Group '+lvl_one)
 		}
 	}
-	
+
 	@Keyword
 	def verifySubGroupIsNotPresentUnderGroup(String lvl_one, String subGroupName) {
 		setLevelOne()
@@ -218,5 +218,52 @@ public class Report {
 		else {
 			KeywordUtil.markFailedAndStop('Sub Group '+notFoundSubGroup+' is not present in Group '+lvl_one)
 		}
+	}
+
+	@Keyword
+	def verifyReportIsLoaded(String tabName, String reportName, String reportDescription) {
+		//Verify Tab name of opened report
+		WebUI.verifyElementText(findTestObject('Page_nGage_Dashboard/Report/Data_CommonFields/tab_visibleReportName'), tabName)
+
+		//Verify Toolbar1 is visible
+		WebUI.verifyElementVisible(findTestObject('Page_nGage_Dashboard/Report/Data_CommonFields/ToolBar1'))
+
+		//Verify Tooblar2 is visible
+		WebUI.verifyElementVisible(findTestObject('Page_nGage_Dashboard/Report/Data_CommonFields/ToolBar2'))
+
+		//Verify ReportDiv section is visible
+		WebUI.verifyElementVisible(findTestObject('Page_nGage_Dashboard/Report/Data_CommonFields/ReportDiv'))
+
+		//Verify report name is set
+		if(reportName != null) {
+			WebUI.verifyElementText(findTestObject('Page_nGage_Dashboard/Report/Data_CommonFields/ReportDiv_ReportName'), reportName)
+		}
+		else {
+			WebUI.verifyElementNotPresent(findTestObject('Page_nGage_Dashboard/Report/Data_CommonFields/ReportDiv_ReportName'), GlobalVariable.G_LongTimeout)
+		}
+
+		//Verify report description is set
+		if(reportDescription != null) {
+			WebUI.verifyElementText(findTestObject('Page_nGage_Dashboard/Report/Data_CommonFields/ReportDiv_ReportDescription'), reportDescription)
+		}
+		else {
+			WebUI.verifyElementNotPresent(findTestObject('Page_nGage_Dashboard/Report/Data_CommonFields/ReportDiv_ReportDescription'), GlobalVariable.G_LongTimeout)
+		}
+	}
+
+	@Keyword
+	def verifyDesignPageIsLoaded(String expectedDataSource) {
+		
+		WebUI.verifyElementVisible(findTestObject('Page_nGage_Dashboard/Report/Design_CommonFields/tab_DataSource'))
+		WebUI.verifyElementVisible(findTestObject('Page_nGage_Dashboard/Report/Design_CommonFields/tab_Fields'))
+		WebUI.verifyElementVisible(findTestObject('Page_nGage_Dashboard/Report/Design_CommonFields/tab_Summary'))
+		WebUI.verifyElementVisible(findTestObject('Page_nGage_Dashboard/Report/Design_CommonFields/tab_Chart'))
+		WebUI.verifyElementVisible(findTestObject('Page_nGage_Dashboard/Report/Design_CommonFields/tab_Gauge'))
+		WebUI.verifyElementVisible(findTestObject('Page_nGage_Dashboard/Report/Design_CommonFields/tab_Misc'))
+		WebUI.verifyElementVisible(findTestObject('Page_nGage_Dashboard/Report/Design_CommonFields/tab_Style'))
+		WebUI.verifyElementVisible(findTestObject('Page_nGage_Dashboard/Report/Design_CommonFields/tab_Filters'))
+		WebUI.verifyElementVisible(findTestObject('Page_nGage_Dashboard/Report/Design_CommonFields/tab_Preview'))
+		
+		WebUI.verifyOptionSelectedByLabel(findTestObject('Page_nGage_Dashboard/Report/Design_CommonFields/select_DataSource'), expectedDataSource, false, GlobalVariable.G_LongTimeout)
 	}
 }
