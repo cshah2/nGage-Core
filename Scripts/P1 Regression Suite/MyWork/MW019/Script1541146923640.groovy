@@ -13,6 +13,7 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
+import org.openqa.selenium.Keys
 'Login Into Application'
 CustomKeywords.'actions.Common.login'()
 
@@ -22,11 +23,22 @@ WebUI.waitForElementVisible(findTestObject('Object Repository/Page_nGage_Dashboa
 
 'expand postman process1'
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/i_PostmanProcesses1'))
-WebUI.waitForElementVisible(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/a_NewProcessHoldActivity'), GlobalVariable.G_LongTimeout)
+WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
-'click on new process link'
+'click on new process hold activity(link)'
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/a_NewProcessHoldActivity'))
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_iframe_105'))
+//CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_work_items'))
 
-//WebUI.rightClick(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/div_PageCount'))
-'verify count (total count and activity count)'
-CustomKeywords.'actions.Common.verifyRecordCountInActivityMatchesWithResultGrid'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/a_NewProcessHoldActivity'),findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/div_PageCount'))
+'enter page valid number in (Page number)text box and hit ENTER key'
+WebUI.setText(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/table_page_number_input'), '50')
+WebUI.sendKeys(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/table_page_number_input'), Keys.chord(Keys.ENTER))
+
+'wait for table grid(iframe to refresh)'
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_work_items'))
+
+'verify current page number'
+WebUI.verifyMatch(WebUI.getText(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/div_PageCount')), '.*No records to view.*', true)
+
+'verify table grid contains no records'
+CustomKeywords.'actions.Table.verifyRecordsCount'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), 0)

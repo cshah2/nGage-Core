@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>28270 Regression test My Work: Actions - Unlock Work Items</description>
+   <name>MW025</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>d7f26b62-ce55-458c-a8a6-e83f6ce46842</testCaseGuid>
+</TestCaseEntity>

@@ -33,15 +33,16 @@ CustomKeywords.'actions.Common.verifyRecordCountInActivityMatchesWithResultGrid'
 
 'click on toppager next T button'
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/span_nextTTopPager'))
-WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
-
+//WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_work_items'))
 
 //println WebUI.getAttribute(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/table_page_number_input'), 'value')
 int beforeCount=Integer.parseInt(WebUI.getAttribute(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/table_page_number_input'), 'value'))
 
 'click on toppager previous T button'
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/span_prevTTopPager'))
-WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
+//WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_work_items'))
 
 //println WebUI.getAttribute(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/table_page_number_input'), 'value')
 int afterCount=Integer.parseInt(WebUI.getAttribute(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/table_page_number_input'), 'value'))

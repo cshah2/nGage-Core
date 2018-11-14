@@ -26,21 +26,19 @@ WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
 'click on new process hold activity(link)'
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/a_NewProcessHoldActivity'))
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_iframe_105'))
+//CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_work_items'))
+
+'click on toppager last T button'
+WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/td_LastPageNavigation'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_work_items'))
 
-'verify count (total count and activity count)'
-CustomKeywords.'actions.Common.verifyRecordCountInActivityMatchesWithResultGrid'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/a_NewProcessHoldActivity'),findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/div_PageCount'))
+'Verify Page number'
+//println  WebUI.getText(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/span_DisplayedTotalCount'))
+WebUI.verifyMatch(WebUI.getText(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/span_DisplayedTotalCount')),WebUI.getAttribute(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/table_page_number_input'), 'value') , false)
 
-//println WebUI.getAttribute(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/table_page_number_input'), 'value')
-int beforeCount=Integer.parseInt(WebUI.getAttribute(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/table_page_number_input'), 'value'))
-
-'click on toppager next T button'
-WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/span_nextTTopPager'))
-//WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
-CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_work_items'))
-
-//println WebUI.getAttribute(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/table_page_number_input'), 'value')
-int afterCount=Integer.parseInt(WebUI.getAttribute(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/table_page_number_input'), 'value'))
-
-'verify changed page number'
-WebUI.verifyMatch(beforeCount.toString(), (afterCount-1).toString(), false)
+'Verify element(span_prev,span_first) is not clickable'
+CustomKeywords.'actions.Common.verifyElementAttributeValueContains'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/td_LastPageNavigation'), 'class', 'ui-state-disabled')
+//WebUI.verifyElementClickable(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/span_firstTTopPager'))
+//WebUI.verifyElementClickable(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/span_prevTTopPager'))
+CustomKeywords.'actions.Common.verifyElementAttributeValueContains'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/span_nextTTopPager'), 'class', 'ui-state-disabled')

@@ -17,4 +17,3 @@ WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/icon_
 
 'verify Correspondence no foldering structure'
 WebUI.verifyElementNotPresent(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/i_Correspondence'), GlobalVariable.G_LongTimeout)
-

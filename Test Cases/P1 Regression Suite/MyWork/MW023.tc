@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>28268 Regression test My Work: Actions - Assign work items, Users</description>
+   <name>MW023</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>2ce328bc-ee05-41c9-ba9d-07b71e0460b5</testCaseGuid>
+</TestCaseEntity>

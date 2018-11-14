@@ -38,6 +38,7 @@ CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Da
 //click on Set Layout
 
 WebUI.verifyElementPresent(findTestObject("Page_nGage_Dashboard/My_Work_Simplified/Set Layout"), 3)
+
 WebUI.click(findTestObject("Page_nGage_Dashboard/My_Work_Simplified/Set Layout"))
 
 

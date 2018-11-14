@@ -24,9 +24,12 @@ WebUI.waitForElementVisible(findTestObject('Object Repository/Page_nGage_Dashboa
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/i_PostmanProcesses1'))
 WebUI.waitForElementVisible(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/a_NewProcessHoldActivity'), GlobalVariable.G_LongTimeout)
 
-'click on new process link'
+'click on newProcessHoldActivity'
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/a_NewProcessHoldActivity'))
 
-//WebUI.rightClick(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/div_PageCount'))
+'wait for jQuery Loading'
+WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
+
 'verify count (total count and activity count)'
 CustomKeywords.'actions.Common.verifyRecordCountInActivityMatchesWithResultGrid'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/a_NewProcessHoldActivity'),findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/div_PageCount'))
+

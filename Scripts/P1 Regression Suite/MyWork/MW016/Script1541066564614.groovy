@@ -13,7 +13,6 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-
 'Login Into Application'
 CustomKeywords.'actions.Common.login'()
 
@@ -44,8 +43,8 @@ CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Da
 'Verify Page number'
 WebUI.verifyElementAttributeValue(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/table_page_number_input'), 'value', '1', 2)
 
-
 'Verify element(span_prev,span_first) is not clickable'
 CustomKeywords.'actions.Common.verifyElementAttributeValueContains'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/span_firstTTopPager'), 'class', 'ui-state-disabled')
 //WebUI.verifyElementClickable(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/span_firstTTopPager'))
 //WebUI.verifyElementClickable(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/span_prevTTopPager'))
+CustomKeywords.'actions.Common.verifyElementAttributeValueContains'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/span_prevTTopPager'), 'class', 'ui-state-disabled')

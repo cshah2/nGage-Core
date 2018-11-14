@@ -44,6 +44,7 @@ WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Folde
 'click close button'
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Folder_Configuration/button_Close'))
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
+WebUI.delay(2)
 
 'verify icon presence'
 println "1st"+WebUI.getCSSValue(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/i_LoanApplication'), 'background-image')
@@ -81,8 +82,15 @@ WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Folder_Configuration/button_Close'))
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
+'right click on (Option) Loan_Application(59)'
+WebUI.rightClick(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/a_LoanApplication(59)'))
+WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
+
+'click on refresh'
+WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/contextMenu_Refresh'))
+WebUI.delay(2)
+
 'verify icon not present'
 //WebUI.verifyElementNotVisible(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/i_LoanApplication'))
 println "2nd"+WebUI.getCSSValue(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/i_LoanApplication'), 'background-image')
-WebUI.verifyMatch(WebUI.getCSSValue(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/i_LoanApplication'), 'background-image'), '.*none.*', true)
-	
+WebUI.verifyMatch(WebUI.getCSSValue(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/i_LoanApplication'), 'background-image'), '.*none.*', true)	

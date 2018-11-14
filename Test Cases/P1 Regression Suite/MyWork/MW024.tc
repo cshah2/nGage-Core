@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>28269 Regression test My Work: Actions - Unassign work items</description>
+   <name>MW024</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>2a55eaae-177c-4a23-b197-945352b5609f</testCaseGuid>
+</TestCaseEntity>

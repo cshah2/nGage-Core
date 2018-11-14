@@ -1,7 +1,10 @@
-import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
+import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint 
 import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
+
+import org.openqa.selenium.Keys
+
 import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
 import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
@@ -22,11 +25,24 @@ WebUI.waitForElementVisible(findTestObject('Object Repository/Page_nGage_Dashboa
 
 'expand postman process1'
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/i_PostmanProcesses1'))
-WebUI.waitForElementVisible(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/a_NewProcessHoldActivity'), GlobalVariable.G_LongTimeout)
+WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
-'click on new process link'
+'click on new process hold activity(link)'
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/a_NewProcessHoldActivity'))
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_iframe_105'))
+//CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_work_items'))
 
-//WebUI.rightClick(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/div_PageCount'))
-'verify count (total count and activity count)'
-CustomKeywords.'actions.Common.verifyRecordCountInActivityMatchesWithResultGrid'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/a_NewProcessHoldActivity'),findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/div_PageCount'))
+'enter page valid number in (Page number)text box and hit ENTER key'
+WebUI.setText(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/table_page_number_input'), '2')
+WebUI.sendKeys(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/table_page_number_input'), Keys.chord(Keys.ENTER))
+
+'wait for table grid(iframe to refresh)'
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_work_items'))
+
+'verify current page number'
+WebUI.verifyMatch(WebUI.getText(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/div_PageCount')), '.*Showing 11 - 20 of.*', true)
+
+'verify table grid contains 10 records'
+CustomKeywords.'actions.Table.verifyRecordsCount'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), 10)
+
+//println  WebUI.getText(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/div_PageCount'))

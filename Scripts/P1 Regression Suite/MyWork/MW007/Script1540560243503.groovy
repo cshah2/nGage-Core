@@ -42,4 +42,3 @@ WebUI.verifyMatch(WebUI.getText(findTestObject('Object Repository/Page_nGage_Das
 'click close button'
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Folder_Configuration/button_Close'))
 
-WebUI.delay(GlobalVariable.G_LongTimeout)
