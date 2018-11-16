@@ -6,6 +6,14 @@ import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 
 import java.util.concurrent.TimeUnit
+import org.openqa.selenium.By
+import org.openqa.selenium.WebDriver
+import org.openqa.selenium.WebElement
+import org.openqa.selenium.interactions.Actions
+import org.openqa.selenium.support.ui.ExpectedConditions
+import org.openqa.selenium.support.ui.WebDriverWait
+
+import org.openqa.selenium.WebElement
 
 import com.kms.katalon.core.annotation.Keyword
 import com.kms.katalon.core.checkpoint.Checkpoint
@@ -19,6 +27,7 @@ import com.kms.katalon.core.util.KeywordUtil
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
+import utils.WebUtil
 
 public class MenuBar {
 
@@ -42,7 +51,7 @@ public class MenuBar {
 		}
 		catch(Exception e) {
 			println "Coult not get record count "+e.toString()
-			return -1;
+			return -1
 		}
 	}
 
@@ -79,5 +88,82 @@ public class MenuBar {
 		else {
 			KeywordUtil.markFailedAndStop("Activity count not refreshed in given time "+timeout+" Seconds")
 		}
+	}
+
+	@Keyword
+	def getAllSubMenu(TestObject menu) {
+		WebElement menuWebElement=WebUtil.getWebElement(menu)
+		WebElement parent = menuWebElement.findElement(By.xpath(".."))
+		List<WebElement> elements = parent.findElements(By.xpath('./ul/li/a'))
+
+		List<String> subMenu=new ArrayList()
+		for(WebElement element in elements) {
+			subMenu.add(element.getText().trim())
+		}
+		return subMenu
+	}
+
+	@Keyword
+	def verifyAllSubmenuAreSortedByActivityCount(List<String> subMenus,String sortOrder) {
+		boolean isSorted;
+		List<Integer> activityCounts=new ArrayList<Integer>()
+		for(String subMenuText in subMenus) {
+			try {
+				int startIndex = subMenuText.lastIndexOf('(')+1
+				int lastIndex = subMenuText.length()-1
+				String recordCountInString = subMenuText.substring(startIndex, lastIndex).trim()
+				activityCounts.add(Integer.parseInt(recordCountInString))
+			}
+			catch(Exception e) {
+				println "Coult not get record count "+e.toString()
+				KeywordUtil.markErrorAndStop('Cannot fetch activity record count. Activity name = '+subMenuText)
+			}
+		}
+
+		List<Integer> sortedActivityCountsList=new ArrayList<Integer>()
+		sortedActivityCountsList.addAll(activityCounts)
+		Collections.sort(sortedActivityCountsList)
+
+		if(sortOrder.equalsIgnoreCase('desc'))
+			Collections.reverse(sortedActivityCountsList)
+
+		isSorted=activityCounts.equals(sortedActivityCountsList)
+		if(!isSorted)
+			KeywordUtil.markErrorAndStop("submenus are not sorted")
+		else
+			KeywordUtil.markPassed("submenus are in sorted order")
+	}
+
+	@Keyword
+	def verifyAllSubmenuAreSortedByActivityName(List<String> subMenus,String sortOrder) {
+		//converting sub menu items to lower case
+		List<String> subMenusLowerCase=new ArrayList<String>()
+		for(String subMenu in subMenus)
+		{
+			subMenusLowerCase.add(subMenu.toLowerCase())
+		}
+		subMenus.clear()
+		subMenus.addAll(subMenusLowerCase)
+
+		if(sortOrder.equalsIgnoreCase('asc'))
+			subMenus.remove(0)
+		else
+			subMenus.remove(subMenus.size()-1)
+
+		boolean isSorted;
+		List<String> sortedActivityNameList=new ArrayList<String>()
+		sortedActivityNameList.addAll(subMenus)
+		Collections.sort(sortedActivityNameList)
+
+		if(sortOrder.equalsIgnoreCase('desc'))
+			Collections.reverse(sortedActivityNameList)
+
+		println 'Actual: '+subMenus
+		println 'Exp: '+sortedActivityNameList
+		isSorted=subMenus.equals(sortedActivityNameList)
+		if(!isSorted)
+			KeywordUtil.markErrorAndStop("submenus are not sorted")
+		else
+			KeywordUtil.markPassed("submenus are in sorted order")
 	}
 }

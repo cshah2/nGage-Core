@@ -3,12 +3,102 @@
  * This class is generated automatically by Katalon Studio and should not be modified or deleted.
  */
 
-import com.kms.katalon.core.testobject.TestObject
-
 import java.lang.String
+
+import com.kms.katalon.core.testobject.TestObject
 
 import java.util.List
 
+
+def static "actions.Report.clickReport"(
+    	String lvl_one	
+     , 	String lvl_two	
+     , 	String lvl_three	) {
+    (new actions.Report()).clickReport(
+        	lvl_one
+         , 	lvl_two
+         , 	lvl_three)
+}
+
+def static "actions.Report.rightClickReport"(
+    	String lvl_one	
+     , 	String lvl_two	
+     , 	String lvl_three	) {
+    (new actions.Report()).rightClickReport(
+        	lvl_one
+         , 	lvl_two
+         , 	lvl_three)
+}
+
+def static "actions.Report.verifyReportIsPresentUnderSubGroup"(
+    	String lvl_one	
+     , 	String lvl_two	
+     , 	String reportName	) {
+    (new actions.Report()).verifyReportIsPresentUnderSubGroup(
+        	lvl_one
+         , 	lvl_two
+         , 	reportName)
+}
+
+def static "actions.Report.verifyReportIsNotPresentUnderSubGroup"(
+    	String lvl_one	
+     , 	String lvl_two	
+     , 	String reportName	) {
+    (new actions.Report()).verifyReportIsNotPresentUnderSubGroup(
+        	lvl_one
+         , 	lvl_two
+         , 	reportName)
+}
+
+def static "actions.Report.verifySubGroupIsPresentUnderGroup"(
+    	String lvl_one	
+     , 	String subGroupName	) {
+    (new actions.Report()).verifySubGroupIsPresentUnderGroup(
+        	lvl_one
+         , 	subGroupName)
+}
+
+def static "actions.Report.verifySubGroupIsNotPresentUnderGroup"(
+    	String lvl_one	
+     , 	String subGroupName	) {
+    (new actions.Report()).verifySubGroupIsNotPresentUnderGroup(
+        	lvl_one
+         , 	subGroupName)
+}
+
+def static "actions.Report.verifyAllReportsUnderSubGroup"(
+    	String lvl_one	
+     , 	String lvl_two	
+     , 	String[] reportNames	) {
+    (new actions.Report()).verifyAllReportsUnderSubGroup(
+        	lvl_one
+         , 	lvl_two
+         , 	reportNames)
+}
+
+def static "actions.Report.verifyAllSubGroupsUnderGroup"(
+    	String lvl_one	
+     , 	String[] subGroups	) {
+    (new actions.Report()).verifyAllSubGroupsUnderGroup(
+        	lvl_one
+         , 	subGroups)
+}
+
+def static "actions.Report.verifyReportIsLoaded"(
+    	String tabName	
+     , 	String reportName	
+     , 	String reportDescription	) {
+    (new actions.Report()).verifyReportIsLoaded(
+        	tabName
+         , 	reportName
+         , 	reportDescription)
+}
+
+def static "actions.Report.verifyDesignPageIsLoaded"(
+    	String expectedDataSource	) {
+    (new actions.Report()).verifyDesignPageIsLoaded(
+        	expectedDataSource)
+}
 
 def static "actions.Table.verifyRecordsCount"(
     	TestObject tableLocator	
@@ -158,96 +248,6 @@ def static "actions.Table.clickCell"(
          , 	colNo)
 }
 
-def static "actions.Report.clickReport"(
-    	String lvl_one	
-     , 	String lvl_two	
-     , 	String lvl_three	) {
-    (new actions.Report()).clickReport(
-        	lvl_one
-         , 	lvl_two
-         , 	lvl_three)
-}
-
-def static "actions.Report.rightClickReport"(
-    	String lvl_one	
-     , 	String lvl_two	
-     , 	String lvl_three	) {
-    (new actions.Report()).rightClickReport(
-        	lvl_one
-         , 	lvl_two
-         , 	lvl_three)
-}
-
-def static "actions.Report.verifyReportIsPresentUnderSubGroup"(
-    	String lvl_one	
-     , 	String lvl_two	
-     , 	String reportName	) {
-    (new actions.Report()).verifyReportIsPresentUnderSubGroup(
-        	lvl_one
-         , 	lvl_two
-         , 	reportName)
-}
-
-def static "actions.Report.verifyReportIsNotPresentUnderSubGroup"(
-    	String lvl_one	
-     , 	String lvl_two	
-     , 	String reportName	) {
-    (new actions.Report()).verifyReportIsNotPresentUnderSubGroup(
-        	lvl_one
-         , 	lvl_two
-         , 	reportName)
-}
-
-def static "actions.Report.verifySubGroupIsPresentUnderGroup"(
-    	String lvl_one	
-     , 	String subGroupName	) {
-    (new actions.Report()).verifySubGroupIsPresentUnderGroup(
-        	lvl_one
-         , 	subGroupName)
-}
-
-def static "actions.Report.verifySubGroupIsNotPresentUnderGroup"(
-    	String lvl_one	
-     , 	String subGroupName	) {
-    (new actions.Report()).verifySubGroupIsNotPresentUnderGroup(
-        	lvl_one
-         , 	subGroupName)
-}
-
-def static "actions.Report.verifyAllReportsUnderSubGroup"(
-    	String lvl_one	
-     , 	String lvl_two	
-     , 	String[] reportNames	) {
-    (new actions.Report()).verifyAllReportsUnderSubGroup(
-        	lvl_one
-         , 	lvl_two
-         , 	reportNames)
-}
-
-def static "actions.Report.verifyAllSubGroupsUnderGroup"(
-    	String lvl_one	
-     , 	String[] subGroups	) {
-    (new actions.Report()).verifyAllSubGroupsUnderGroup(
-        	lvl_one
-         , 	subGroups)
-}
-
-def static "actions.Report.verifyReportIsLoaded"(
-    	String tabName	
-     , 	String reportName	
-     , 	String reportDescription	) {
-    (new actions.Report()).verifyReportIsLoaded(
-        	tabName
-         , 	reportName
-         , 	reportDescription)
-}
-
-def static "actions.Report.verifyDesignPageIsLoaded"(
-    	String expectedDataSource	) {
-    (new actions.Report()).verifyDesignPageIsLoaded(
-        	expectedDataSource)
-}
-
 def static "actions.Common.maximizeWindow"() {
     (new actions.Common()).maximizeWindow()
 }
@@ -378,6 +378,28 @@ def static "actions.MenuBar.refreshActivityUntilRecordCountIncreases"(
     (new actions.MenuBar()).refreshActivityUntilRecordCountIncreases(
         	element
          , 	timeout)
+}
+
+def static "actions.MenuBar.getAllSubMenu"(
+    	TestObject menu	) {
+    (new actions.MenuBar()).getAllSubMenu(
+        	menu)
+}
+
+def static "actions.MenuBar.verifyAllSubmenuAreSortedByActivityCount"(
+    	java.util.List<String> subMenus	
+     , 	String sortOrder	) {
+    (new actions.MenuBar()).verifyAllSubmenuAreSortedByActivityCount(
+        	subMenus
+         , 	sortOrder)
+}
+
+def static "actions.MenuBar.verifyAllSubmenuAreSortedByActivityName"(
+    	java.util.List<String> subMenus	
+     , 	String sortOrder	) {
+    (new actions.MenuBar()).verifyAllSubmenuAreSortedByActivityName(
+        	subMenus
+         , 	sortOrder)
 }
 
 def static "actions.Chart.verifyNumberOfSlices"(

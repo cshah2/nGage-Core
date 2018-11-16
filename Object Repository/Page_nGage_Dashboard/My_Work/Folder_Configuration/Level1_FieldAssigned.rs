@@ -4,7 +4,41 @@
    <name>Level1_FieldAssigned</name>
    <tag></tag>
    <elementGuidId>98a0dd40-4615-48ae-9a6c-8780a6624994</elementGuidId>
-   <selectorMethod>BASIC</selectorMethod>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>//select[@name = 'drpFieldLevel1' and @id = 'drpFieldLevel1' and (text() = '
+	Select a Field
+	Assigned User Group/No User Group*
+	Assigned User/No User*
+	Assigned/UnAssigned*
+	First Name
+	Loan create dt
+	Loan Created DateTime
+	Locked/Unlocked*
+	Object Type*
+	SLA Indicator*
+
+' or . = '
+	Select a Field
+	Assigned User Group/No User Group*
+	Assigned User/No User*
+	Assigned/UnAssigned*
+	First Name
+	Loan create dt
+	Loan Created DateTime
+	Locked/Unlocked*
+	Object Type*
+	SLA Indicator*
+
+') and @ref_element = 'Object Repository/Page_nGage_Dashboard/My_Work/Folder_Configuration/iframe_Close_iframe_folderingC']</value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>//select[@id='drpFieldLevel1']</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
    <webElementProperties>
       <isSelected>true</isSelected>

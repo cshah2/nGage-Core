@@ -32,7 +32,7 @@ public class WebUtil {
 
 		return WebUiCommonHelper.findWebElement(element, GlobalVariable.G_LongTimeout)
 	}
-	
+
 	public static List<WebElement> getWebElements(TestObject elements) {
 		TestObject parentFrame = elements.getParentObject()
 		if(parentFrame != null)
@@ -40,7 +40,7 @@ public class WebUtil {
 
 		return WebUiCommonHelper.findWebElements(elements, GlobalVariable.G_LongTimeout)
 	}
-	
+
 	/**
 	 * Method to switch to Iframes and wait for Frames to load
 	 * @param frame

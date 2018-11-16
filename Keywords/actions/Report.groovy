@@ -1,6 +1,6 @@
 package actions
 
-import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
+import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint 
 import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
@@ -253,7 +253,7 @@ public class Report {
 
 	@Keyword
 	def verifyDesignPageIsLoaded(String expectedDataSource) {
-		
+
 		WebUI.verifyElementVisible(findTestObject('Page_nGage_Dashboard/Report/Design_CommonFields/tab_DataSource'))
 		WebUI.verifyElementVisible(findTestObject('Page_nGage_Dashboard/Report/Design_CommonFields/tab_Fields'))
 		WebUI.verifyElementVisible(findTestObject('Page_nGage_Dashboard/Report/Design_CommonFields/tab_Summary'))
@@ -263,7 +263,7 @@ public class Report {
 		WebUI.verifyElementVisible(findTestObject('Page_nGage_Dashboard/Report/Design_CommonFields/tab_Style'))
 		WebUI.verifyElementVisible(findTestObject('Page_nGage_Dashboard/Report/Design_CommonFields/tab_Filters'))
 		WebUI.verifyElementVisible(findTestObject('Page_nGage_Dashboard/Report/Design_CommonFields/tab_Preview'))
-		
+
 		WebUI.verifyOptionSelectedByLabel(findTestObject('Page_nGage_Dashboard/Report/Design_CommonFields/select_DataSource'), expectedDataSource, false, GlobalVariable.G_LongTimeout)
 	}
 }

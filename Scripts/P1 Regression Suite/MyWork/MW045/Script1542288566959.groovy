@@ -19,7 +19,6 @@ CustomKeywords.'actions.Common.login'()
 'Click on My Work link from left menu'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_My Work Left Menu'))
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
-CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_iframe_105'))
 
 'expand loan interactive link from left menu'
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/i_LoanInteractive'))
@@ -27,21 +26,17 @@ WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/i_Loa
 'wait for (option) Loan application visible'
 WebUI.waitForElementVisible(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/a_LoanApplication(59)'), GlobalVariable.G_LongTimeout)
 
-'right click on (option)loan approval(21)'
+'right click on (option)loan approval'
 WebUI.rightClick(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/LoanInteractive_MyWork/a_LoanApproval(21)'))
+WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
 'click on (option)foldering configuration'
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/LoanInteractive_MyWork/a_Foldering Configuration'))
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
-
-'verify labels'
-WebUI.verifyMatch(WebUI.getText(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Folder_Configuration/Label_ActivityName')), 'Loan Approval', false)
-WebUI.verifyMatch(WebUI.getText(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Folder_Configuration/Label_ProcessName')), 'Loan Interactive', false)
-WebUI.verifyMatch(WebUI.getText(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Folder_Configuration/Label_SearchClassID')), '100009', false)
 
 'select drpdown options'
-WebUI.selectOptionByLabel(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Folder_Configuration/Level1_FieldAssigned'),'Assigned User Group/No User Group*',false)
-WebUI.selectOptionByLabel(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Folder_Configuration/Level1_Sorting'), 'Desc by Field',false)
+WebUI.selectOptionByLabel(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Folder_Configuration/Level1_FieldAssigned'),'First Name',false)
+WebUI.selectOptionByLabel(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Folder_Configuration/Level1_Sorting'), 'Asc by Field',false)
 
 'click submit button'
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Folder_Configuration/button_Save'))
@@ -50,23 +45,9 @@ WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Folde
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Folder_Configuration/button_Close'))
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
-'right click on (option)loan approval(21)'
-WebUI.rightClick(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/LoanInteractive_MyWork/a_LoanApproval(21)'))
-
-'click on (option)foldering configuration'
-WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/LoanInteractive_MyWork/a_Foldering Configuration'))
+'expand loan approval'
+WebUI.doubleClick(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/LoanInteractive_MyWork/a_LoanApproval(21)'))
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
-'verify assigned fields'
-WebUI.verifyOptionSelectedByLabel(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Folder_Configuration/Level1_FieldAssigned'), '.*Assigned User Group/No User Group*.*', true, GlobalVariable.G_LongTimeout)
-WebUI.verifyOptionSelectedByLabel(findTestObject('Page_nGage_Dashboard/My_Work/Folder_Configuration/Level1_Sorting'), '.*Desc by Field.*', true, GlobalVariable.G_LongTimeout)
-
-'click restore default button'
-WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Folder_Configuration/button_Restore Default'))
-
-'click submit button'
-WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Folder_Configuration/button_Save'))
-
-'click close button'
-WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Folder_Configuration/button_Close'))
-WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
+'verify sorted order of sub menus'
+CustomKeywords.'actions.MenuBar.verifyAllSubmenuAreSortedByActivityName'(CustomKeywords.'actions.MenuBar.getAllSubMenu'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/LoanInteractive_MyWork/a_LoanApproval(21)')),'asc')
