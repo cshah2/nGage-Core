@@ -15,25 +15,25 @@
       <guid>8e419c94-2dae-4bdd-a554-7e46f38704aa</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/P1 Regression Suite/Login and Main Page/LOGIN001</testCaseId>
+      <testCaseId>Test Cases/P1 Regression Suite/Login and Main Page/LOGIN003</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>3c999222-e656-45f7-9bc5-d45e65b8eb0e</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/P1 Regression Suite/Login and Main Page/LOGIN002</testCaseId>
+      <testCaseId>Test Cases/P1 Regression Suite/Login and Main Page/LOGIN004</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>6df986c8-4db6-4847-842b-ab69847c804e</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/P1 Regression Suite/Login and Main Page/LOGIN003</testCaseId>
+      <testCaseId>Test Cases/P1 Regression Suite/Login and Main Page/LOGIN005</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>b7a6afc2-e8a1-430d-abb6-2334a5ca7069</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/P1 Regression Suite/Login and Main Page/LOGIN004</testCaseId>
+      <testCaseId>Test Cases/P1 Regression Suite/Login and Main Page/LOGIN006</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>2fcf0a45-c87d-4d10-86e0-8689f3265315</guid>

@@ -5,6 +5,10 @@ import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 
+import java.time.LocalDateTime
+import java.time.ZonedDateTime
+import java.time.format.DateTimeFormatter
+
 import org.apache.commons.lang.time.DateUtils
 
 import com.kms.katalon.core.annotation.Keyword
@@ -86,5 +90,13 @@ public class DateUtil {
 	public static String getCurrentDateTime(String _format) {
 		Date now = new Date()
 		return now.format(_format, TimeZone.getTimeZone('UTC')).toString()
+	}
+	
+	public static String getCurrentDateTimeMinusDays(int days) {
+		
+		ZonedDateTime date = ZonedDateTime.now().minusDays(days)
+		String dateString = date.format(DateTimeFormatter.ISO_OFFSET_DATE_TIME)
+		println "Date is :"+dateString
+		return dateString
 	}
 }

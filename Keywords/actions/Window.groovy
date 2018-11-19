@@ -80,23 +80,4 @@ public class Window {
 			KeywordUtil.markFailedAndStop("Could not find window containing URL text "+text)
 		}
 	}
-
-	/**
-	 * Command to set Browser screen size
-	 * @param width
-	 * @param height
-	 * @return
-	 */
-	@Keyword
-	def setScreenSize(int width, int height) {
-		try {
-			Dimension resolution = new Dimension(width, height)
-			WebDriver driver = DriverFactory.getWebDriver()
-			driver.manage().window().setPosition(new Point(0, 0))
-			driver.manage().window().setSize(resolution)
-			KeywordUtil.markPassed("Screen resolution set to : "+width+" x "+height)
-		} catch(Exception e) {
-			KeywordUtil.markFailedAndStop("Could not set screen size :"+e.toString())
-		}
-	}
 }

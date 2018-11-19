@@ -94,4 +94,9 @@
       <initValue>''</initValue>
       <name>Copy_Report_Name</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>''</initValue>
+      <name>BaseAdminApiURL</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalVariableEntities>
+   <description></description>
+   <name>18.2HF</name>
+   <tag></tag>
+   <defaultProfile>false</defaultProfile>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>120</initValue>
+      <name>G_LongTimeout</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>30</initValue>
+      <name>G_SmallTimeout</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'http://savphlpetest64/Sav.1820.HF.UI'</initValue>
+      <name>BaseURL</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'cshah_admin'</initValue>
+      <name>Username</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'Password1234!'</initValue>
+      <name>Password</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'IPM_EPM50MASTER_502_AUTOMATION'</initValue>
+      <name>Database</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>Business Model View</description>
+      <initValue>'100005'</initValue>
+      <name>DocumentClass</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>Multipage viewer with Drag and Drop</description>
+      <initValue>'100153'</initValue>
+      <name>DocumentType</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>Document ID Generated in Script</description>
+      <initValue>''</initValue>
+      <name>DocumentID</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>Store number of records displayed in filter</description>
+      <initValue>''</initValue>
+      <name>RecordsInFilter</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>Name of the search filter to be saved</description>
+      <initValue>''</initValue>
+      <name>FilterName</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>[('Field1') : '50', ('Field2') : 'WMI005_Auto_test', ('Field3') : 'Value 2', ('Field4') : '20', ('Field5') : '08-10-2018', ('Field6') : '60.129', ('Field7') : '25', ('Field8') : 'Text Field', ('Field9') : '08-10-2018 12:00:00 AM', ('Field10') : 'String Field', ('Field11') : 'Last Name', ('Field4_View') : '$20.00']</initValue>
+      <name>WMI005</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>[('Field1') : '40', ('Field2') : 'WMI006_Auto_test', ('Field3') : 'Value 3', ('Field4') : '10', ('Field5') : '08-16-2018', ('Field6') : '70.854', ('Field7') : '60', ('Field8') : 'Text Field', ('Field9') : '08-16-2018 12:00:00 AM', ('Field10') : 'String Field', ('Field11') : 'Middle Name', ('Field4_View') : '$10.00']</initValue>
+      <name>WMI006</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>[('Field1') : '90', ('Field2') : 'WMI007_Auto_test', ('Field3') : 'Value 1', ('Field4') : '30', ('Field5') : '08-20-2018', ('Field6') : '90.113', ('Field7') : '30', ('Field8') : 'Text Field', ('Field9') : '08-20-2018 12:00:00 AM', ('Field10') : 'String Field', ('Field11') : 'First Name', ('Field4_View') : '$30.00']</initValue>
+      <name>WMI007</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>''</initValue>
+      <name>MW018_DocID</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>[('PIE') : '//*[name() = \'g\' and contains(@class,\'nv-slice\')]', ('V_BAR') : '//*[name()=\'rect\' and not(@height = \'0\') and contains(@class, \'nv-bar\')]', ('H_BAR') : '//*[name()=\'rect\' and not(@width = \'0\')]']</initValue>
+      <name>ChartType</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>60</initValue>
+      <name>Standard_Timeout</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>''</initValue>
+      <name>Copy_Report_Name</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'http://savphlpedev64/Sav.Maint.AdminApi'</initValue>
+      <name>BaseAdminApiURL</name>
+   </GlobalVariableEntity>
+</GlobalVariableEntities>

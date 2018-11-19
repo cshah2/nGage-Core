@@ -88,7 +88,7 @@ public class Common {
 		int retryAttempt = 0
 		while(retryAttempt < 3) {
 			try {
-				loginAction()
+				login(GlobalVariable.Username, GlobalVariable.Password, GlobalVariable.Database)
 				break
 			}
 			catch(Exception  e) {
@@ -100,8 +100,8 @@ public class Common {
 		}
 	}
 
-
-	def loginAction() {
+	@Keyword
+	def login(String username, String password, String database) {
 		WebUI.openBrowser('')
 		//		if(DriverFactory.getExecutedBrowser().getName() != 'EDGE_DRIVER') {
 		//			WebUI.maximizeWindow()
@@ -110,11 +110,12 @@ public class Common {
 		WebUI.deleteAllCookies()
 		WebUI.navigateToUrl(WebUI.concatenate(GlobalVariable.BaseURL, '/login.aspx'));
 		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
-		WebUI.waitForElementVisible(findTestObject('Page_Login/input_Login1UserName'), GlobalVariable.G_LongTimeout)
-		WebUI.setText(findTestObject('Page_Login/input_Login1UserName'), GlobalVariable.Username)
-		WebUI.setText(findTestObject('Page_Login/input_Login1Password'), GlobalVariable.Password)
-		WebUI.selectOptionByValue(findTestObject('Page_Login/select_ALLIANCE_50CMDRDRC20160'), GlobalVariable.Database, true)
-		WebUI.click(findTestObject('Page_Login/input_Login1LoginImageButton'))
+		WebUI.waitForElementVisible(findTestObject('Page_Login/input_UserName'), GlobalVariable.G_LongTimeout)
+		WebUI.setText(findTestObject('Page_Login/input_UserName'), username)
+		WebUI.setText(findTestObject('Page_Login/input_Password'), password)
+		//WebUI.selectOptionByValue(findTestObject('Page_Login/select_Schema'), database, true)
+		WebUI.selectOptionByLabel(findTestObject('Page_Login/select_Schema'), GlobalVariable.Database, false)
+		WebUI.click(findTestObject('Page_Login/button_Login'))
 		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 		WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 	}
