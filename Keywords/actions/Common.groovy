@@ -326,5 +326,92 @@ public class Common {
 			KeywordUtil.markFailedAndStop("attribute: "+actualValue +" contains "+expValue)
 		}
 	}
+	
+	@Keyword
+	def createDocument_WMIMenuBov() {
+
+		'Create a new BovDocTwoRow Document'
+		WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))
+		selectDocClassAndDocTypeForGlobalNew('WMI Menu', 'WMI Menu BOV')
+		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'))
+
+		'Switch to new Window'
+		WebUI.switchToWindowTitle('(Doc ID: NEW )')
+		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+
+		'Fill the details required'
+		String filePath = RunConfiguration.getProjectDir().replace('/', '\\')+'\\Data Files\\FileUploads\\50 Pages PDF file.pdf'
+		WebUI.selectOptionByLabel(findTestObject('Object Repository/Page_WMI_NEW/WMI_Menu_BOV/selectCustomerId'), '200',false)
+		WebUI.sendKeys(findTestObject('Object Repository/Page_WMI_NEW/WMI_Menu_BOV/inputBMString'), 'Test1')
+		WebUI.sendKeys(findTestObject('Object Repository/Page_WMI_NEW/WMI_Menu_BOV/inputCustomerName'), 'Roshan')
+		WebUI.uploadFile(findTestObject('Object Repository/Page_WMI_NEW/WMI_Menu_BOV/inputUpload'), filePath)
+
+		'Save details and close'
+		WebUI.mouseOver(findTestObject('Object Repository/Page_WMI_NEW/WMI_Menu_BOV/buttonStandardActions'))
+		WebUI.waitForElementVisible(findTestObject('Object Repository/Page_WMI_NEW/WMI_Menu_BOV/buttonSave'), GlobalVariable.G_LongTimeout)
+		new Window().clickElementAndWaitForWindowClose(findTestObject('Object Repository/Page_WMI_NEW/WMI_Menu_BOV/buttonSave'),GlobalVariable.G_LongTimeout)
+
+		'Switch to main window and close'
+		WebUI.switchToWindowTitle('Savana nGage')
+		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/span_ui-button-icon-primary ui'))
+	}
+
+	@Keyword
+	def createDocument_WMIMenuBovDefault() {
+
+		'Create a new BovDefault Document'
+		WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))
+		selectDocClassAndDocTypeForGlobalNew('WMI Menu', 'WMI Menu Default')
+		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'))
+
+		'Switch to new Window'
+		WebUI.switchToWindowTitle('(Doc ID: NEW )')
+		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+
+		'Fill the details required'
+		String filePath = RunConfiguration.getProjectDir().replace('/', '\\')+'\\Data Files\\FileUploads\\50 Pages PDF file.pdf'
+		WebUI.selectOptionByLabel(findTestObject('Object Repository/Page_WMI_NEW/WMI_Menu_BOV_Default/customerID'), '200',false)
+		WebUI.sendKeys(findTestObject('Object Repository/Page_WMI_NEW/WMI_Menu_BOV_Default/BMString'), 'Test1')
+		WebUI.sendKeys(findTestObject('Object Repository/Page_WMI_NEW/WMI_Menu_BOV_Default/customerName'), 'Roshan')
+		WebUI.uploadFile(findTestObject('Object Repository/Page_WMI_NEW/WMI_Menu_BOV_Default/chooseFile'), filePath)
+
+		'Save details and close'
+		WebUI.mouseOver(findTestObject('Object Repository/Page_WMI_NEW/WMI_Menu_BOV_Default/standardActionsUIButton'))
+		WebUI.waitForElementVisible(findTestObject('Object Repository/Page_WMI_NEW/WMI_Menu_BOV_Default/Save'), GlobalVariable.G_LongTimeout)
+		new Window().clickElementAndWaitForWindowClose(findTestObject('Object Repository/Page_WMI_NEW/WMI_Menu_BOV_Default/Save'),GlobalVariable.G_LongTimeout)
+
+		'Switch to main window and close'
+		WebUI.switchToWindowTitle('Savana nGage')
+		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/span_ui-button-icon-primary ui'))
+	}
+
+	@Keyword
+	def createDocument_WMIMenuBovDocTwoRow() {
+
+		'Create a new BovDocTwoRow Document'
+		WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))
+		selectDocClassAndDocTypeForGlobalNew('WMI Menu', 'WMI Menu DocTwoRow')
+		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'))
+
+		'Switch to new Window'
+		WebUI.switchToWindowTitle('(Doc ID: NEW )')
+		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+
+		'Fill the details required'
+		String filePath = RunConfiguration.getProjectDir().replace('/', '\\')+'\\Data Files\\FileUploads\\50 Pages PDF file.pdf'
+		WebUI.selectOptionByLabel(findTestObject('Object Repository/Page_WMI_NEW/WMI_Menu_BOV_DocTwoRow/customerId'), '200',false)
+		WebUI.sendKeys(findTestObject('Object Repository/Page_WMI_NEW/WMI_Menu_BOV_DocTwoRow/BMString'), 'Test1')
+		WebUI.sendKeys(findTestObject('Object Repository/Page_WMI_NEW/WMI_Menu_BOV_DocTwoRow/customerName'), 'Roshan')
+		WebUI.uploadFile(findTestObject('Object Repository/Page_WMI_NEW/WMI_Menu_BOV_DocTwoRow/chooseFile'), filePath)
+
+		'Save details and close'
+		WebUI.mouseOver(findTestObject('Object Repository/Page_WMI_NEW/WMI_Menu_BOV_DocTwoRow/dropdownStandardActions'))
+		WebUI.waitForElementVisible(findTestObject('Object Repository/Page_WMI_NEW/WMI_Menu_BOV_DocTwoRow/Save'), GlobalVariable.G_LongTimeout)
+		new Window().clickElementAndWaitForWindowClose(findTestObject('Object Repository/Page_WMI_NEW/WMI_Menu_BOV_DocTwoRow/Save'),GlobalVariable.G_LongTimeout)
+
+		'Switch to main window and close'
+		WebUI.switchToWindowTitle('Savana nGage')
+		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/span_ui-button-icon-primary ui'))
+	}
 
 }
