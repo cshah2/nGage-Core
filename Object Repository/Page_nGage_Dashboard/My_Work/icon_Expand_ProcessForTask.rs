@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>input_New</name>
+   <name>icon_Expand_ProcessForTask</name>
    <tag></tag>
-   <elementGuidId>5687fec5-c43e-458c-b2ec-61df87ebb666</elementGuidId>
+   <elementGuidId>33f27956-6769-4e59-b2bd-428c9777f71d</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
@@ -11,7 +11,7 @@
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//input[@id='btnGlobalNew']</value>
+         <value>//li[@aria-labelledby='PROCESS_100013_anchor']/i</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>input_New</name>
+   <name>a_UnLocked Activity A</name>
    <tag></tag>
-   <elementGuidId>5687fec5-c43e-458c-b2ec-61df87ebb666</elementGuidId>
+   <elementGuidId>a986a811-babb-46d0-b752-67c68ea27b90</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
@@ -11,7 +11,7 @@
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//input[@id='btnGlobalNew']</value>
+         <value>//a[@id='ASF_-500_UnLocked_100056_100013_anchor']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

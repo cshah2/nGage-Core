@@ -9,6 +9,8 @@ import java.lang.String
 
 import java.util.List
 
+import java.text.SimpleDateFormat
+
 
 def static "actions.Table.verifyRecordsCount"(
     	TestObject tableLocator	
@@ -300,6 +302,20 @@ def static "apis.UserManagement.updateLastLoginDate"(
          , 	date)
 }
 
+def static "actions.Window.clickElementAndWaitForWindowClose"(
+    	TestObject saveButton	
+     , 	int timeout	) {
+    (new actions.Window()).clickElementAndWaitForWindowClose(
+        	saveButton
+         , 	timeout)
+}
+
+def static "actions.Window.switchToUrlContains"(
+    	String text	) {
+    (new actions.Window()).switchToUrlContains(
+        	text)
+}
+
 def static "actions.Common.maximizeWindow"() {
     (new actions.Common()).maximizeWindow()
 }
@@ -418,18 +434,12 @@ def static "actions.Common.createDocument_WMIMenuBovDocTwoRow"() {
     (new actions.Common()).createDocument_WMIMenuBovDocTwoRow()
 }
 
-def static "actions.Window.clickElementAndWaitForWindowClose"(
-    	TestObject saveButton	
-     , 	int timeout	) {
-    (new actions.Window()).clickElementAndWaitForWindowClose(
-        	saveButton
-         , 	timeout)
-}
-
-def static "actions.Window.switchToUrlContains"(
-    	String text	) {
-    (new actions.Window()).switchToUrlContains(
-        	text)
+def static "actions.Common.verifyDateFormat"(
+    	String inputDate	
+     , 	SimpleDateFormat dateFormat	) {
+    (new actions.Common()).verifyDateFormat(
+        	inputDate
+         , 	dateFormat)
 }
 
 def static "apis.Users.getUserIdFromUserName"(

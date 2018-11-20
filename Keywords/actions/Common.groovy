@@ -8,6 +8,7 @@ import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 import java.awt.Robot
 import java.awt.Toolkit
 import java.awt.event.KeyEvent
+import java.text.SimpleDateFormat
 import java.util.concurrent.TimeUnit
 
 import org.openqa.selenium.Dimension
@@ -327,7 +328,7 @@ public class Common {
 			KeywordUtil.markFailedAndStop("attribute: "+actualValue +" contains "+expValue)
 		}
 	}
-	
+
 	@Keyword
 	def createDocument_WMIMenuBov() {
 
@@ -415,4 +416,15 @@ public class Common {
 		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/span_ui-button-icon-primary ui'))
 	}
 
+	@Keyword
+	def verifyDateFormat(String inputDate,SimpleDateFormat dateFormat)
+	{
+		try {
+			dateFormat.parse(inputDate)
+			KeywordUtil.markPassed("string is in given date  format")
+		} catch (Exception e) {
+			e.printStackTrace()
+			KeywordUtil.markFailedAndStop("string isnt in given  date format")
+		}
+	}
 }

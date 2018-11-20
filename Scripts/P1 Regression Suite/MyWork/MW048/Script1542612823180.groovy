@@ -2,9 +2,6 @@ import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
 import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
-
-import org.junit.After
-
 import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
 import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
@@ -40,7 +37,7 @@ WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
 'select drpdown options'
 WebUI.selectOptionByLabel(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Folder_Configuration/Level1_FieldAssigned'),'To Activity State',false)
-WebUI.selectOptionByLabel(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Folder_Configuration/Level1_Sorting'), 'Asc by Field',false)
+WebUI.selectOptionByLabel(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Folder_Configuration/Level1_Sorting'), 'Asc by Item Count',false)
 
 'click submit button'
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Folder_Configuration/button_Save'))
@@ -53,11 +50,11 @@ WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 WebUI.doubleClick(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/a_NewProcessHoldActivity'))
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
+'verify sorted order of sub menus (Asc by activity count)'
+CustomKeywords.'actions.MenuBar.verifyAllSubmenuAreSortedByActivityCount'(CustomKeywords.'actions.MenuBar.getAllSubMenu'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/a_NewProcessHoldActivity')),'asc')
+
 'verify count (total count and activity count)'
 CustomKeywords.'actions.Common.verifyRecordCountInActivityMatchesWithResultGrid'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/a_NewProcessHoldActivity'),findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/div_PageCount'))
-
-'verify sorted order of sub menus'
-CustomKeywords.'actions.MenuBar.verifyAllSubmenuAreSortedByActivityName'(CustomKeywords.'actions.MenuBar.getAllSubMenu'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/a_NewProcessHoldActivity')),'asc')
 
 'click on submenu closure'
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/a_SubMenuClosure'))

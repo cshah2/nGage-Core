@@ -44,7 +44,7 @@ public class Users {
 		}
 		return res
 	}
-	
+
 	private ResponseObject patch_SinglUser(int userId, String body, boolean isExpectedToWork) {
 		String url = siteUrl+'('+userId+')'
 		ResponseObject res = ApiUtil.getResponse(url, body, 'PATCH', null)

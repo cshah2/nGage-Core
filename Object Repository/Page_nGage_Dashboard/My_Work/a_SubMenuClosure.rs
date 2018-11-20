@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>input_New</name>
+   <name>a_SubMenuClosure</name>
    <tag></tag>
-   <elementGuidId>5687fec5-c43e-458c-b2ec-61df87ebb666</elementGuidId>
+   <elementGuidId>beb0a783-28d7-418d-a06a-3963b7ccdbe0</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
@@ -11,7 +11,7 @@
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//input[@id='btnGlobalNew']</value>
+         <value>//a[@id='ASF_100125_CLOSURE_100041_100007_anchor']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

@@ -50,7 +50,7 @@ public class UserManagement {
 
 		patch_SingleUser(userId, bodyObj.toJSONString(), true)
 	}
-	
+
 	@Keyword
 	def updateLastLoginDate(int userId, String date) {
 		JSONObject bodyObj = new JSONObject()

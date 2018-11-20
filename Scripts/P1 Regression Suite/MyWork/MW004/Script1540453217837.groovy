@@ -93,4 +93,4 @@ WebUI.delay(2)
 'verify icon not present'
 //WebUI.verifyElementNotVisible(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/i_LoanApplication'))
 println "2nd"+WebUI.getCSSValue(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/i_LoanApplication'), 'background-image')
-WebUI.verifyMatch(WebUI.getCSSValue(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/i_LoanApplication'), 'background-image'), '.*none.*', true)	
+WebUI.verifyMatch(WebUI.getCSSValue(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/i_LoanApplication'), 'background-image'), '.*none.*', true)
