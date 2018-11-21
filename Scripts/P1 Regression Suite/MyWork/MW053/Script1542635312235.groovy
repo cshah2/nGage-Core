@@ -170,5 +170,3 @@ println Integer.parseInt(CustomKeywords.'actions.Table.getCellText'(findTestObje
 
 'verify unlocked'
 WebUI.verifyMatch(DocID_UnLockedRecord.toString(), CustomKeywords.'actions.Table.getCellText'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), 1,indexDocID ), false)
-
-WebUI.delay(10)

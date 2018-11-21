@@ -9,8 +9,6 @@ import java.lang.String
 
 import java.util.List
 
-import java.text.SimpleDateFormat
-
 
 def static "actions.Table.verifyRecordsCount"(
     	TestObject tableLocator	
@@ -436,10 +434,10 @@ def static "actions.Common.createDocument_WMIMenuBovDocTwoRow"() {
 
 def static "actions.Common.verifyDateFormat"(
     	String inputDate	
-     , 	SimpleDateFormat dateFormat	) {
+     , 	String inputDateFormat	) {
     (new actions.Common()).verifyDateFormat(
         	inputDate
-         , 	dateFormat)
+         , 	inputDateFormat)
 }
 
 def static "apis.Users.getUserIdFromUserName"(
@@ -452,6 +450,30 @@ def static "apis.Users.unlockUserAccount"(
     	int userId	) {
     (new apis.Users()).unlockUserAccount(
         	userId)
+}
+
+def static "actions.ContextMenu.verifyAllOptions"(
+    	TestObject contextMenuOptions	
+     , 	String[] options	) {
+    (new actions.ContextMenu()).verifyAllOptions(
+        	contextMenuOptions
+         , 	options)
+}
+
+def static "actions.ContextMenu.verifyOptionPresent"(
+    	TestObject contextMenuOptions	
+     , 	String option	) {
+    (new actions.ContextMenu()).verifyOptionPresent(
+        	contextMenuOptions
+         , 	option)
+}
+
+def static "actions.ContextMenu.clickOption"(
+    	TestObject contextMenuOptions	
+     , 	String option	) {
+    (new actions.ContextMenu()).clickOption(
+        	contextMenuOptions
+         , 	option)
 }
 
 def static "actions.Chart.verifyNumberOfSlices"(
@@ -498,28 +520,4 @@ def static "actions.Chart.clickSlice"(
         	chartLocator
          , 	sliceNo
          , 	sliceLocator)
-}
-
-def static "actions.ContextMenu.verifyAllOptions"(
-    	TestObject contextMenuOptions	
-     , 	String[] options	) {
-    (new actions.ContextMenu()).verifyAllOptions(
-        	contextMenuOptions
-         , 	options)
-}
-
-def static "actions.ContextMenu.verifyOptionPresent"(
-    	TestObject contextMenuOptions	
-     , 	String option	) {
-    (new actions.ContextMenu()).verifyOptionPresent(
-        	contextMenuOptions
-         , 	option)
-}
-
-def static "actions.ContextMenu.clickOption"(
-    	TestObject contextMenuOptions	
-     , 	String option	) {
-    (new actions.ContextMenu()).clickOption(
-        	contextMenuOptions
-         , 	option)
 }
