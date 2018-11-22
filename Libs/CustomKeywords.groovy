@@ -70,6 +70,18 @@ def static "actions.Table.verifyRecordsInTableAreMoreThanStartDate"(
          , 	fromDate)
 }
 
+def static "actions.Table.verifyDateFilter"(
+    	TestObject tableLocator	
+     , 	int colNo	
+     , 	String referenceDate	
+     , 	String operator	) {
+    (new actions.Table()).verifyDateFilter(
+        	tableLocator
+         , 	colNo
+         , 	referenceDate
+         , 	operator)
+}
+
 def static "actions.Table.verifyRecordsInTableAreLessThanEndDate"(
     	TestObject tableLocator	
      , 	int colNo	

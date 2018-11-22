@@ -421,47 +421,46 @@ public class Common {
 	@Keyword
 	def verifyDateFormat(String inputDate,String inputDateFormat)
 	{
-//		Date date=dateFormat.parse(inputDate)
-//
-//		//int dd=12, mm=12, yy=2012;
-//		int dd=date.getDate()
-//		int mm=date.getMonth()
-//		int yy=date.getYear()
-//		
-//		String output="";
-//		// check year
-//		if (yy >= 1900 && yy <= 9999) {
-//			// check month
-//			if (mm >= 1 && mm <= 12) {
-//				// check days
-//				if ((dd >= 1 && dd <= 31) && (mm == 1 || mm == 3 || mm == 5 || mm == 7 ||
-//				mm == 8 || mm == 10 || mm == 12))
-//					output+="Date is valid.\n";  //printf("Date is valid.\n");
-//				else if ((dd >= 1 && dd <= 30) &&
-//				(mm == 4 || mm == 6 || mm == 9 || mm == 11))
-//					output+="Date is valid.\n";
-//				else if ((dd >= 1 && dd <= 28) && (mm == 2))
-//					output+="Date is valid.\n";
-//				else if (dd == 29 && mm == 2 &&
-//				(yy % 400 == 0 || (yy % 4 == 0 && yy % 100 != 0)))
-//					output+="Date is valid.\n";
-//				else
-//					output+="Date is invalid.\n";
-//			} else {
-//				output+="Month is not valid\n";
-//			}
-//		} else {
-//			output+="Year is not valid\n";
-//		}
-//		System.out.println(output);
-		
-				try {
-					SimpleDateFormat dateFormat=new SimpleDateFormat(inputDateFormat)
-					dateFormat.parse(inputDate)
-					KeywordUtil.markPassed("string is in given date  format")
-				} catch (Exception e) {
-					e.printStackTrace()
-					KeywordUtil.markFailedAndStop("string isnt in given  date format")
-				}
+		//		Date date=dateFormat.parse(inputDate)
+		//
+		//		//int dd=12, mm=12, yy=2012;
+		//		int dd=date.getDate()
+		//		int mm=date.getMonth()
+		//		int yy=date.getYear()
+		//
+		//		String output="";
+		//		// check year
+		//		if (yy >= 1900 && yy <= 9999) {
+		//			// check month
+		//			if (mm >= 1 && mm <= 12) {
+		//				// check days
+		//				if ((dd >= 1 && dd <= 31) && (mm == 1 || mm == 3 || mm == 5 || mm == 7 ||
+		//				mm == 8 || mm == 10 || mm == 12))
+		//					output+="Date is valid.\n";  //printf("Date is valid.\n");
+		//				else if ((dd >= 1 && dd <= 30) &&
+		//				(mm == 4 || mm == 6 || mm == 9 || mm == 11))
+		//					output+="Date is valid.\n";
+		//				else if ((dd >= 1 && dd <= 28) && (mm == 2))
+		//					output+="Date is valid.\n";
+		//				else if (dd == 29 && mm == 2 &&
+		//				(yy % 400 == 0 || (yy % 4 == 0 && yy % 100 != 0)))
+		//					output+="Date is valid.\n";
+		//				else
+		//					output+="Date is invalid.\n";
+		//			} else {
+		//				output+="Month is not valid\n";
+		//			}
+		//		} else {
+		//			output+="Year is not valid\n";
+		//		}
+		//		System.out.println(output);
+		try {
+			SimpleDateFormat dateFormat=new SimpleDateFormat(inputDateFormat)
+			dateFormat.parse(inputDate)
+			KeywordUtil.markPassed("string is in given date  format")
+		} catch (Exception e) {
+			e.printStackTrace()
+			KeywordUtil.markFailedAndStop("string isnt in given  date format")
+		}
 	}
 }

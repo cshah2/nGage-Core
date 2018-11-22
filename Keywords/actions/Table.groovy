@@ -213,6 +213,21 @@ public class Table {
 	}
 
 	@Keyword
+	def verifyDateFilter(TestObject tableLocator, int colNo, String referenceDate,String operator)
+	{
+		WebElement table = WebUtil.getWebElement(tableLocator)
+		List<String> cellValues = getAllValuesFromColumn(table, colNo)
+		WebUI.switchToDefaultContent()
+
+		for(String value in cellValues) {
+			boolean result = DateUtil.verifyDateFilter(operator, value, referenceDate)
+			if(!result) {
+				KeywordUtil.markFailedAndStop("Value : "+value+" does not satisfy filter criteria")
+			}
+		}
+	}
+	
+	@Keyword
 	def verifyRecordsInTableAreLessThanEndDate(TestObject tableLocator, int colNo, String toDate) {
 		WebElement table = WebUtil.getWebElement(tableLocator)
 		List<String> cellValues = getAllValuesFromColumn(table, colNo)

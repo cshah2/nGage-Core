@@ -82,6 +82,61 @@ public class DateUtil {
 		}
 	}
 
+	public static boolean verifyDateFilter(String operator,String actualValue,String referenceDateValue) {
+		def actualDate,referenceDate
+
+		if(actualValue=="")
+			actualDate="";
+		else
+			actualDate = new Date().parse("MM-dd-yyyy",actualValue)
+
+		if(referenceDateValue=="")
+			referenceDate="";
+		else
+			referenceDate = new Date().parse("MM-dd-yyyy",referenceDateValue)
+
+		boolean status=false
+		switch(operator) {
+			case '='://equal to
+				if(actualDate.compareTo(referenceDate)==0)
+					status=true
+				break
+
+			case '>':  //greater than
+				if(actualDate.compareTo(referenceDate)>0)
+					status= true
+				break
+
+			case '<'://less than
+				if(actualDate.compareTo(referenceDate)<0)
+					status= true
+				break
+
+			case '>=':  //greater than or equal
+				if(actualDate.compareTo(referenceDate)>=0)
+					status= true
+				break
+
+			case '<='://less than or equal
+				if(actualDate.compareTo(referenceDate)<=0)
+					status= true
+				break
+
+			case 'null'://less than or equal
+				if(actualDate.equals(""))
+					status= true
+				break
+		}
+		if(status)
+		{
+			println 'date verified success'
+			return status
+		}
+		else
+			println 'date not verified'
+			return status
+	}
+
 	public static String getCurrentDateTime() {
 		Date now = new Date()
 		return now.format('yyyyMMdd_HHmmss', TimeZone.getTimeZone('UTC')).toString()
@@ -91,9 +146,9 @@ public class DateUtil {
 		Date now = new Date()
 		return now.format(_format, TimeZone.getTimeZone('UTC')).toString()
 	}
-	
+
 	public static String getCurrentDateTimeMinusDays(int days) {
-		
+
 		ZonedDateTime date = ZonedDateTime.now().minusDays(days)
 		String dateString = date.format(DateTimeFormatter.ISO_OFFSET_DATE_TIME)
 		println "Date is :"+dateString
