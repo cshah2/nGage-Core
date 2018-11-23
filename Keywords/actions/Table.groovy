@@ -219,7 +219,7 @@ public class Table {
 		WebUI.switchToDefaultContent()
 
 		for(String value in cellValues) {
-			boolean result = DateUtil.verifyDateFilter(operator, value.split(" ")[0].replaceAll('/', '-'), referenceDate.split(" ")[0],"MM-dd-yyyy")
+			boolean result = DateUtil.verifyDateFilter(operator, value.split(" ")[0].replaceAll('/', '-'), referenceDate.split(" ")[0].replaceAll('/', '-'),"MM-dd-yyyy")
 			if(!result) {
 				KeywordUtil.markFailedAndStop("Value : "+value+" does not satisfy filter criteria")
 			}
@@ -232,7 +232,7 @@ public class Table {
 		WebUI.switchToDefaultContent()
 
 		for(String value in cellValues) {
-			boolean result = DateUtil.verifyDateFilter(operator, value.replaceAll('/', '-'), referenceDate,"MM-dd-yyyy HH:mm:ss a")
+			boolean result = DateUtil.verifyDateFilter(operator, value.replaceAll('/', '-'), referenceDate.replaceAll('/', '-'),"MM-dd-yyyy HH:mm:ss a")
 			if(!result) {
 				KeywordUtil.markFailedAndStop("Value : "+value+" does not satisfy filter criteria")
 			}

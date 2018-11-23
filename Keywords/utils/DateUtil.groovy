@@ -126,16 +126,26 @@ public class DateUtil {
 				if(actualDate.equals(""))
 					status= true
 				break
+
+			case 'not null':
+				if(!actualDate.equals(""))
+					status= true
+				break
+
+			default:
+				status = false
+				break
+
 		}
-		if(status) {
-			println 'date verified success'
-			return status
-		}
-		else
-			println 'date not verified'
+		//		if(status) {
+		//			println 'date verified success'
+		//			return status
+		//		}
+		//		else
+		//			println 'date not verified'
 		return status
 	}
-	
+
 	@Keyword
 	public static boolean verifyDateFilter(String operator,String actualValue,String referenceDateValue,String dateTimeFormat) {
 		def actualDate,referenceDate
@@ -186,6 +196,7 @@ public class DateUtil {
 				if(!actualDate.equals(""))
 					status= true
 				break
+
 			default:
 				status = false
 				break
@@ -217,7 +228,7 @@ public class DateUtil {
 		println "Date is :"+dateString
 		return dateString
 	}
-	
+
 	public static String getCurrentDateTime(DateTimeFormatter _format) {
 		ZonedDateTime date = ZonedDateTime.now()
 		String dateString = date.format(_format)
