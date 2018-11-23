@@ -127,14 +127,13 @@ public class DateUtil {
 					status= true
 				break
 		}
-		if(status)
-		{
+		if(status) {
 			println 'date verified success'
 			return status
 		}
 		else
 			println 'date not verified'
-			return status
+		return status
 	}
 
 	public static String getCurrentDateTime() {
@@ -152,6 +151,12 @@ public class DateUtil {
 		ZonedDateTime date = ZonedDateTime.now().minusDays(days)
 		String dateString = date.format(DateTimeFormatter.ISO_OFFSET_DATE_TIME)
 		println "Date is :"+dateString
+		return dateString
+	}
+	
+	public static String getCurrentDateTime(DateTimeFormatter _format) {
+		ZonedDateTime date = ZonedDateTime.now()
+		String dateString = date.format(_format)
 		return dateString
 	}
 }

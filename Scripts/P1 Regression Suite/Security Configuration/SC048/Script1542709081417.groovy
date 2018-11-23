@@ -16,16 +16,16 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-'Get User ID using username'
+'Get User ID for user'
 String username = 'CNF1_USERA'
 int userId = CustomKeywords.'apis.Users.getUserIdFromUserName'(username)
 
-'Update password for user'
+'Unlock user account is already locked'
+CustomKeywords.'apis.Users.unlockUserAccount'(userId)
+
+'Set password for user'
 String currentPassword = "A#1"+RandomStringUtils.randomAlphabetic(3)
 CustomKeywords.'apis.UserManagement.updateUserManagement'(userId, currentPassword, null, null, 0, true, false)
-
-'Generate random pasword to be set as new password'
-String newPassword = "A#1"+RandomStringUtils.randomAlphabetic(3)
 
 'Open Browser'
 WebUI.openBrowser('')
@@ -57,14 +57,16 @@ WebUI.verifyElementAttributeValue(findTestObject('Page_ChangePassword/input_Logi
 WebUI.setText(findTestObject('Page_ChangePassword/input_Old Password'), currentPassword)
 
 'Enter new password value'
-WebUI.setText(findTestObject('Page_ChangePassword/input_New Password'), newPassword)
+WebUI.setText(findTestObject('Page_ChangePassword/input_New Password'), currentPassword)
 
 'Enter confirm new password value'
-WebUI.setText(findTestObject('Page_ChangePassword/input_Confirm Password'), newPassword)
+WebUI.setText(findTestObject('Page_ChangePassword/input_Confirm Password'), currentPassword)
 
 'Click on change password button'
 WebUI.click(findTestObject('Page_ChangePassword/btn_Change_Password'))
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
+println "Error message is - "+WebUI.getText(findTestObject('Page_ChangePassword/label_ErrorMessage'))
+
 'Verify error message'
-WebUI.verifyMatch(WebUI.getText(findTestObject('Page_ChangePassword/label_ErrorMessage')).trim(), 'The username and password entered do not match.', false)
+WebUI.verifyMatch(WebUI.getText(findTestObject('Page_ChangePassword/label_ErrorMessage')).trim(), 'New password can not be same as old password.', false)

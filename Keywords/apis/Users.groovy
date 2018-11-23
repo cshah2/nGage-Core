@@ -27,6 +27,7 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 
 import internal.GlobalVariable
 import utils.ApiUtil
+import utils.DateUtil
 
 public class Users {
 
@@ -40,6 +41,20 @@ public class Users {
 			int statusCode = res.getStatusCode()
 			if(!(statusCode == 200 || statusCode == 201 || statusCode == 204)) {
 				KeywordUtil.markFailedAndStop('call to get all user api failed')
+			}
+		}
+		return res
+	}
+
+	private ResponseObject get_SinglUser(int userId, boolean isExpectedToWork) {
+
+		String url = siteUrl+'('+userId+')'
+		ResponseObject res = ApiUtil.getResponse(url, '', 'GET', null)
+		println "Response is = "+res.getResponseText()
+		if(isExpectedToWork) {
+			int statusCode = res.getStatusCode()
+			if(!(statusCode == 200 || statusCode == 201 || statusCode == 204)) {
+				KeywordUtil.markFailedAndStop('call to get single user api failed')
 			}
 		}
 		return res
@@ -98,10 +113,44 @@ public class Users {
 
 		JSONObject bodyObj = new JSONObject()
 		bodyObj.put('Id',new Integer(userId))
+		String startDate = DateUtil.getCurrentDateTimeMinusDays(0)
+		bodyObj.put('StartDate', startDate)
 		bodyObj.put('IsDisabled',new Boolean(false))
 		String body = bodyObj.toJSONString()
 
 		ResponseObject res = patch_SinglUser(userId, body, true)
 		println res.getResponseText()
+	}
+
+	@Keyword
+	def verifyIsUserAccountLocked(int userId) {
+		ResponseObject res = get_SinglUser(userId, true)
+
+		Object obj = new JSONParser().parse(res.getResponseText())
+		JSONObject jo = (JSONObject) obj
+
+		Boolean isDisabled = (Boolean) jo.get('IsDisabled')
+		if(isDisabled) {
+			KeywordUtil.markPassed('User account is locked')
+		}
+		else {
+			KeywordUtil.markFailedAndStop('User account is not locked')
+		}
+	}
+
+	@Keyword
+	def verifyIsUserAccountUnlocked(int userId){
+		ResponseObject res = get_SinglUser(userId, true)
+
+		Object obj = new JSONParser().parse(res.getResponseText())
+		JSONObject jo = (JSONObject) obj
+
+		Boolean isDisabled = (Boolean) jo.get('IsDisabled')
+		if(!isDisabled) {
+			KeywordUtil.markPassed('User account is not locked')
+		}
+		else {
+			KeywordUtil.markFailedAndStop('User account is locked')
+		}
 	}
 }

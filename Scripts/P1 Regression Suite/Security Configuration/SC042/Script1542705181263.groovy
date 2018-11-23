@@ -16,22 +16,23 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-'Get User ID using username'
-String username = 'CNF2_USERA'
+'Get User ID for user'
+String username = 'CNF3_USERA'
 int userId = CustomKeywords.'apis.Users.getUserIdFromUserName'(username)
 
-'Update password for user'
-String currentPassword = "Admin#1"+RandomStringUtils.randomAlphabetic(3)
-CustomKeywords.'apis.UserManagement.updateUserManagement'(userId, currentPassword, null, null, 0, true, false)
+'Unlock user account is already locked'
+CustomKeywords.'apis.Users.unlockUserAccount'(userId)
 
-'Generate random pasword to be set as new password'
-String newPassword1 = "Admin#1"+RandomStringUtils.randomAlphabetic(3)
+'Set password for user'
+String password1 = "A#1"+RandomStringUtils.randomAlphabetic(4)
+CustomKeywords.'apis.UserManagement.updatePasswordForUser'(userId, password1)
 
-'Generate random pasword to be set as new password'
-String newPassword2 = "Admin#2"+RandomStringUtils.randomAlphabetic(3)
+'Set password for user'
+String password2 = "A#1"+RandomStringUtils.randomAlphabetic(4)
+CustomKeywords.'apis.UserManagement.updatePasswordForUser'(userId, password2)
 
 'Login with User - {username}'
-CustomKeywords.'actions.Common.login'(username, currentPassword, GlobalVariable.Database)
+CustomKeywords.'actions.Common.login'(username, password2, GlobalVariable.Database)
 
 'Click on Change Password link under home menu'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Home/ChangePassword/menu_Change Password'))
@@ -41,17 +42,17 @@ CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Da
 WebUI.verifyElementAttributeValue(findTestObject('Page_nGage_Dashboard/Home/ChangePassword/input_Login Name'), 'value', username, GlobalVariable.G_LongTimeout)
 
 'Enter old password in input field'
-WebUI.setText(findTestObject('Page_nGage_Dashboard/Home/ChangePassword/input_Old Password'), newPassword1)
+WebUI.setText(findTestObject('Page_nGage_Dashboard/Home/ChangePassword/input_Old Password'), password2)
 
 'Enter new password in input field'
-WebUI.setText(findTestObject('Page_nGage_Dashboard/Home/ChangePassword/input_New Password'), newPassword2)
+WebUI.setText(findTestObject('Page_nGage_Dashboard/Home/ChangePassword/input_New Password'), password1)
 
 'Enter new password in confirm password field'
-WebUI.setText(findTestObject('Page_nGage_Dashboard/Home/ChangePassword/input_Confirm Password'), newPassword2)
+WebUI.setText(findTestObject('Page_nGage_Dashboard/Home/ChangePassword/input_Confirm Password'), password1)
 
 'Click on Save button'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Home/ChangePassword/button_Save'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Home/ChangePassword/iframe_103'))
 
 'Verify error message'
-WebUI.verifyElementText(findTestObject('Page_nGage_Dashboard/Home/ChangePassword/label_ErrorMessage'), 'The username and password entered do not match.')
+WebUI.verifyElementText(findTestObject('Page_nGage_Dashboard/Home/ChangePassword/label_ErrorMessage'), 'Password must contain letter, digit and special character; start with letter or digit; be between 10 and 15 characters long.')

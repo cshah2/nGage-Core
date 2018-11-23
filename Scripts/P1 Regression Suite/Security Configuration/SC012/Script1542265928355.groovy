@@ -16,11 +16,13 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-'Set Password for user account using Admin API'
+'Get User ID using username'
 String username = 'CNF2_USERA'
 int userId = CustomKeywords.'apis.Users.getUserIdFromUserName'(username)
-String oldPassword = "Admin#1"+RandomStringUtils.randomAlphabetic(3)
-CustomKeywords.'apis.UserManagement.updatePasswordForUser'(userId, oldPassword)
+
+'Update password for user'
+String currentPassword = "Admin#1"+RandomStringUtils.randomAlphabetic(3)
+CustomKeywords.'apis.UserManagement.updateUserManagement'(userId, currentPassword, null, null, 0, true, false)
 
 'Generate random pasword to be set as new password'
 String newPassword1 = "Admin#1"+RandomStringUtils.randomAlphabetic(3)
@@ -29,7 +31,7 @@ String newPassword1 = "Admin#1"+RandomStringUtils.randomAlphabetic(3)
 String newPassword2 = "Admin#2"+RandomStringUtils.randomAlphabetic(3)
 
 'Login with User - {username}'
-CustomKeywords.'actions.Common.login'(username, oldPassword, GlobalVariable.Database)
+CustomKeywords.'actions.Common.login'(username, currentPassword, GlobalVariable.Database)
 
 'Click on Change Password link under home menu'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Home/ChangePassword/menu_Change Password'))
@@ -39,7 +41,7 @@ CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Da
 WebUI.verifyElementAttributeValue(findTestObject('Page_nGage_Dashboard/Home/ChangePassword/input_Login Name'), 'value', username, GlobalVariable.G_LongTimeout)
 
 'Enter old password in input field'
-WebUI.setText(findTestObject('Page_nGage_Dashboard/Home/ChangePassword/input_Old Password'), oldPassword)
+WebUI.setText(findTestObject('Page_nGage_Dashboard/Home/ChangePassword/input_Old Password'), currentPassword)
 
 'Enter new password in input field'
 WebUI.setText(findTestObject('Page_nGage_Dashboard/Home/ChangePassword/input_New Password'), newPassword1)

@@ -16,16 +16,17 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-'Get User ID using username'
+'Get User ID for user'
 String username = 'CNF1_USERE'
 int userId = CustomKeywords.'apis.Users.getUserIdFromUserName'(username)
 
-'Unlock user account if already locked'
+'Unlock user account is already locked'
 CustomKeywords.'apis.Users.unlockUserAccount'(userId)
 
 'Update password for user'
 String currentPassword = "A#1"+RandomStringUtils.randomAlphabetic(3)
 CustomKeywords.'apis.UserManagement.updateUserManagement'(userId, currentPassword, null, null, 0, true, false)
+
 
 String invalidPassword = "Iv@123"
 
@@ -47,11 +48,19 @@ CustomKeywords.'actions.Common.login'(username, invalidPassword, GlobalVariable.
 'Verify error message is Present'
 WebUI.verifyElementVisible(findTestObject('Page_Login/label_ErrorMessage'))
 
-'Provide valid credential while login - Attempt 4'
+'Provide invalid credential while login - Attempt 4'
+CustomKeywords.'actions.Common.login'(username, invalidPassword, GlobalVariable.Database)
+
+'Verify error message is Present'
+WebUI.verifyElementVisible(findTestObject('Page_Login/label_ErrorMessage'))
+WebUI.delay(2)
+
+'Verify user account is locked'
+CustomKeywords.'apis.Users.verifyIsUserAccountLocked'(userId)
+
+'Verify error message when user enters valid password - Attempt 5'
 CustomKeywords.'actions.Common.login'(username, currentPassword, GlobalVariable.Database)
 
-'Verify user is redirected to dashboard page'
-String actualUrl = WebUI.getUrl().trim()
-String expectedUrl = GlobalVariable.BaseURL+'/main.aspx'
-WebUI.verifyEqual(actualUrl, expectedUrl)
-WebUI.verifyElementVisible(findTestObject('Page_nGage_Dashboard/input_btnLogout'))
+'Verify error message'
+WebUI.verifyElementVisible(findTestObject('Page_Login/label_ErrorMessage'))
+WebUI.verifyMatch(WebUI.getText(findTestObject('Page_Login/label_ErrorMessage')).trim(), '.*This session has been locked because of too many failed login attempts. Please contact your system administrator..*', true)

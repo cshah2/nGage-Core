@@ -17,41 +17,19 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
 'Get User ID using username'
-String username = 'CNF1_USERA'
+String username = 'CNF2_USERA'
 int userId = CustomKeywords.'apis.Users.getUserIdFromUserName'(username)
 
 'Update password for user'
-String currentPassword = "A#1"+RandomStringUtils.randomAlphabetic(3)
+String currentPassword = "Admin#1"+RandomStringUtils.randomAlphabetic(3)
 CustomKeywords.'apis.UserManagement.updateUserManagement'(userId, currentPassword, null, null, 0, true, false)
+//Maximum length set is 15
 
-'Open Browser'
-WebUI.openBrowser('')
+'Generate random pasword to be set as new password'
+String newPasswordWrong = "Admin#1"+RandomStringUtils.randomAlphabetic(9)
 
-'Maximize window'
-WebUI.maximizeWindow()
+'Try to Change Password using password length more than 15 chars'
+CustomKeywords.'actions.Common.changePasswordPageFormFill_Login'(username, currentPassword, newPasswordWrong, newPasswordWrong)
 
-'Delet all cookies'
-WebUI.deleteAllCookies()
-
-'Navigate to login page'
-WebUI.navigateToUrl(WebUI.concatenate(GlobalVariable.BaseURL, '/login.aspx'));
-WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
-WebUI.waitForElementVisible(findTestObject('Page_Login/input_UserName'), GlobalVariable.G_LongTimeout)
-
-'Enter username'
-WebUI.setText(findTestObject('Page_Login/input_UserName'), username)
-
-'Select Database'
-WebUI.selectOptionByLabel(findTestObject('Page_Login/select_Schema'), GlobalVariable.Database, false)
-
-'Click on Forgot password link'
-WebUI.click(findTestObject('Page_Login/link_Forgot Password'))
-
-'Verify title on the page'
-WebUI.verifyElementText(findTestObject('Page_ForgotPassword/label_Title'), 'Lost Password?')
-
-'Click on Submit button'
-WebUI.click(findTestObject('Page_ForgotPassword/button_Submit'))
-
-'Verify message'
-//TODO: This issue needs to be clarified as Message displayed to user is Success instead of Error
+'Verify error message'
+WebUI.verifyMatch(WebUI.getText(findTestObject('Page_ChangePassword/label_ErrorMessage2')).trim(), '.*Password must contain letter, digit and special character; start with letter or digit; be between 10 and 15 characters long..*', true)

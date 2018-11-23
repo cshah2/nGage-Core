@@ -16,16 +16,20 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-'Get User ID using username'
-String username = 'CNF1_USERA'
+'Get User ID for user'
+String username = 'CNF2_USERB'
 int userId = CustomKeywords.'apis.Users.getUserIdFromUserName'(username)
 
-'Update password for user'
-String currentPassword = "A#1"+RandomStringUtils.randomAlphabetic(3)
-CustomKeywords.'apis.UserManagement.updateUserManagement'(userId, currentPassword, null, null, 0, true, false)
+'Set password 1 for user'
+String password1 = "A#1"+RandomStringUtils.randomAlphabetic(12)
+CustomKeywords.'apis.UserManagement.updateUserManagement'(userId, password1, null, null, 0, false, false)
 
-'Generate random pasword to be set as new password'
-String newPassword = "A#1"+RandomStringUtils.randomAlphabetic(3)
+'password 2 for user'
+String password2 = "A#1"+RandomStringUtils.randomAlphabetic(12)
+CustomKeywords.'apis.UserManagement.updateUserManagement'(userId, password2, null, null, 0, false, false)
+
+'password 3 for user'
+String password3 = "A#1"+RandomStringUtils.randomAlphabetic(12)
 
 'Open Browser'
 WebUI.openBrowser('')
@@ -54,17 +58,27 @@ WebUI.click(findTestObject('Page_Login/link_Change Password'))
 WebUI.verifyElementAttributeValue(findTestObject('Page_ChangePassword/input_Login ID'), 'value', username, GlobalVariable.G_LongTimeout)
 
 'Enter old password value'
-WebUI.setText(findTestObject('Page_ChangePassword/input_Old Password'), currentPassword)
+WebUI.setText(findTestObject('Page_ChangePassword/input_Old Password'), password2)
 
 'Enter new password value'
-WebUI.setText(findTestObject('Page_ChangePassword/input_New Password'), newPassword)
+WebUI.setText(findTestObject('Page_ChangePassword/input_New Password'), password1)
 
 'Enter confirm new password value'
-WebUI.setText(findTestObject('Page_ChangePassword/input_Confirm Password'), newPassword)
+WebUI.setText(findTestObject('Page_ChangePassword/input_Confirm Password'), password1)
 
 'Click on change password button'
 WebUI.click(findTestObject('Page_ChangePassword/btn_Change_Password'))
+WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
-'Verify error message'
-WebUI.verifyMatch(WebUI.getText(findTestObject('Page_ChangePassword/label_ErrorMessage')).trim(), 'The username and password entered do not match.', false)
+'Verify user is redirected to dashboard page'
+String actualUrl = WebUI.getUrl().trim()
+String expectedUrl = GlobalVariable.BaseURL+'/main.aspx'
+WebUI.verifyEqual(actualUrl, expectedUrl)
+WebUI.verifyElementVisible(findTestObject('Page_nGage_Dashboard/input_btnLogout'))
+
+'Click on Logout button'
+WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnLogout'))
+WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+
+

@@ -15,17 +15,19 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
+import utils.DateUtil
 
-'Get User ID using username'
-String username = 'CNF1_USERA'
+'Set Password for user account using Admin API'
+String username = 'Auto_Test4'
 int userId = CustomKeywords.'apis.Users.getUserIdFromUserName'(username)
 
-'Update password for user'
-String currentPassword = "A#1"+RandomStringUtils.randomAlphabetic(3)
-CustomKeywords.'apis.UserManagement.updateUserManagement'(userId, currentPassword, null, null, 0, true, false)
+'Set password for user'
+String currentPassword = "Admin#1"+RandomStringUtils.randomAlphabetic(3)
+CustomKeywords.'apis.UserManagement.updatePasswordForUser'(userId, currentPassword)
 
-'Generate random pasword to be set as new password'
-String newPassword = "A#1"+RandomStringUtils.randomAlphabetic(3)
+'Set Last login time as current date - 366 days'
+//String loginDate = DateUtil.getCurrentDateTimeMinusDays(366)
+//CustomKeywords.'apis.UserManagement.updateLastLoginDate'(userId, loginDate)
 
 'Open Browser'
 WebUI.openBrowser('')
@@ -44,27 +46,16 @@ WebUI.waitForElementVisible(findTestObject('Page_Login/input_UserName'), GlobalV
 'Enter username'
 WebUI.setText(findTestObject('Page_Login/input_UserName'), username)
 
+'Enter password'
+WebUI.setText(findTestObject('Page_Login/input_Password'), currentPassword)
+
 'Select Database'
 WebUI.selectOptionByLabel(findTestObject('Page_Login/select_Schema'), GlobalVariable.Database, false)
 
-'Click on change password link'
-WebUI.click(findTestObject('Page_Login/link_Change Password'))
-
-'Verify login name field retains input value'
-WebUI.verifyElementAttributeValue(findTestObject('Page_ChangePassword/input_Login ID'), 'value', username, GlobalVariable.G_LongTimeout)
-
-'Enter old password value'
-WebUI.setText(findTestObject('Page_ChangePassword/input_Old Password'), currentPassword)
-
-'Enter new password value'
-WebUI.setText(findTestObject('Page_ChangePassword/input_New Password'), newPassword)
-
-'Enter confirm new password value'
-WebUI.setText(findTestObject('Page_ChangePassword/input_Confirm Password'), newPassword)
-
-'Click on change password button'
-WebUI.click(findTestObject('Page_ChangePassword/btn_Change_Password'))
+'Click on Login'
+WebUI.click(findTestObject('Page_Login/button_Login'))
+WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
 'Verify error message'
-WebUI.verifyMatch(WebUI.getText(findTestObject('Page_ChangePassword/label_ErrorMessage')).trim(), 'The username and password entered do not match.', false)
+WebUI.verifyElementText(findTestObject('Page_Login/label_ErrorMessage'), 'Account suspended due to inactivity. Please contact system administrator.')

@@ -16,19 +16,16 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-'Get User ID using username'
-String username = 'CNF2_USERA'
+'Get User ID for user'
+String username = 'CNF1_USERA'
 int userId = CustomKeywords.'apis.Users.getUserIdFromUserName'(username)
 
-'Update password for user'
-String currentPassword = "Admin#1"+RandomStringUtils.randomAlphabetic(3)
+'Unlock user account is already locked'
+CustomKeywords.'apis.Users.unlockUserAccount'(userId)
+
+'Set password for user'
+String currentPassword = "A#1"+RandomStringUtils.randomAlphabetic(3)
 CustomKeywords.'apis.UserManagement.updateUserManagement'(userId, currentPassword, null, null, 0, true, false)
-
-'Generate random pasword to be set as new password'
-String newPassword1 = "Admin#1"+RandomStringUtils.randomAlphabetic(3)
-
-'Generate random pasword to be set as new password'
-String newPassword2 = "Admin#2"+RandomStringUtils.randomAlphabetic(3)
 
 'Login with User - {username}'
 CustomKeywords.'actions.Common.login'(username, currentPassword, GlobalVariable.Database)
@@ -41,17 +38,17 @@ CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Da
 WebUI.verifyElementAttributeValue(findTestObject('Page_nGage_Dashboard/Home/ChangePassword/input_Login Name'), 'value', username, GlobalVariable.G_LongTimeout)
 
 'Enter old password in input field'
-WebUI.setText(findTestObject('Page_nGage_Dashboard/Home/ChangePassword/input_Old Password'), newPassword1)
+WebUI.setText(findTestObject('Page_nGage_Dashboard/Home/ChangePassword/input_Old Password'), currentPassword)
 
 'Enter new password in input field'
-WebUI.setText(findTestObject('Page_nGage_Dashboard/Home/ChangePassword/input_New Password'), newPassword2)
+WebUI.setText(findTestObject('Page_nGage_Dashboard/Home/ChangePassword/input_New Password'), currentPassword)
 
 'Enter new password in confirm password field'
-WebUI.setText(findTestObject('Page_nGage_Dashboard/Home/ChangePassword/input_Confirm Password'), newPassword2)
+WebUI.setText(findTestObject('Page_nGage_Dashboard/Home/ChangePassword/input_Confirm Password'), currentPassword)
 
 'Click on Save button'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Home/ChangePassword/button_Save'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Home/ChangePassword/iframe_103'))
 
 'Verify error message'
-WebUI.verifyElementText(findTestObject('Page_nGage_Dashboard/Home/ChangePassword/label_ErrorMessage'), 'The username and password entered do not match.')
+WebUI.verifyElementText(findTestObject('Page_nGage_Dashboard/Home/ChangePassword/label_ErrorMessage'), 'New password can not be same as old password.')

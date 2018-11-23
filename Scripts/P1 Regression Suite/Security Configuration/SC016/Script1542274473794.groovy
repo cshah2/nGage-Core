@@ -17,11 +17,13 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 import utils.DateUtil
 
-'Set Password for user account using Admin API'
+'Get User ID using username'
 String username = 'CNF1_USERD'
 int userId = CustomKeywords.'apis.Users.getUserIdFromUserName'(username)
-String oldPassword = "A#1"+RandomStringUtils.randomAlphabetic(3)
-CustomKeywords.'apis.UserManagement.updatePasswordForUser'(userId, oldPassword)
+
+'Update password for user'
+String currentPassword = "A#1"+RandomStringUtils.randomAlphabetic(3)
+CustomKeywords.'apis.UserManagement.updateUserManagement'(userId, currentPassword, null, null, 0, false, false)
 
 'Set Last login time as current date - 401 days'
 String loginDate = DateUtil.getCurrentDateTimeMinusDays(401)

@@ -463,4 +463,70 @@ public class Common {
 			KeywordUtil.markFailedAndStop("string isnt in given  date format")
 		}
 	}
+
+
+	@Keyword
+	def changePasswordPageFormFill(String username, String currentPassword, String newPassword, String confirmPassword) {
+		'Click on Change Password link under home menu'
+		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/ChangePassword/menu_Change Password'))
+		waitForFrameToLoad(findTestObject('Page_nGage_Dashboard/Home/ChangePassword/iframe_103'))
+
+		'Verify username in login name input field'
+		WebUI.verifyElementAttributeValue(findTestObject('Page_nGage_Dashboard/Home/ChangePassword/input_Login Name'), 'value', username, GlobalVariable.G_LongTimeout)
+
+		'Enter old password in input field'
+		WebUI.setText(findTestObject('Page_nGage_Dashboard/Home/ChangePassword/input_Old Password'), currentPassword)
+
+		'Enter new password in input field'
+		WebUI.setText(findTestObject('Page_nGage_Dashboard/Home/ChangePassword/input_New Password'), newPassword)
+
+		'Enter new password in confirm password field'
+		WebUI.setText(findTestObject('Page_nGage_Dashboard/Home/ChangePassword/input_Confirm Password'), confirmPassword)
+
+		'Click on Save button'
+		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/ChangePassword/button_Save'))
+		waitForFrameToLoad(findTestObject('Page_nGage_Dashboard/Home/ChangePassword/iframe_103'))
+	}
+
+	@Keyword
+	def changePasswordPageFormFill_Login(String username, String currentPassword, String newPassword, String confirmPassword) {
+
+		'Open Browser'
+		WebUI.openBrowser('')
+		
+		'Maximize window'
+		WebUI.maximizeWindow()
+		
+		'Delet all cookies'
+		WebUI.deleteAllCookies()
+		
+		'Navigate to login page'
+		WebUI.navigateToUrl(WebUI.concatenate(GlobalVariable.BaseURL, '/login.aspx'));
+		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+		WebUI.waitForElementVisible(findTestObject('Page_Login/input_UserName'), GlobalVariable.G_LongTimeout)
+		
+		'Enter username'
+		WebUI.setText(findTestObject('Page_Login/input_UserName'), username)
+
+		'Select Database'
+		WebUI.selectOptionByLabel(findTestObject('Page_Login/select_Schema'), GlobalVariable.Database, false)
+
+		'Click on ChangePassword link'
+		WebUI.click(findTestObject('Page_Login/link_Change Password'))
+		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+
+		'Set old password'
+		WebUI.setText(findTestObject('Page_ChangePassword/input_Old Password'), currentPassword)
+
+		'Set new password'
+		WebUI.setText(findTestObject('Page_ChangePassword/input_New Password'), newPassword)
+
+		'Set confirm password'
+		WebUI.setText(findTestObject('Page_ChangePassword/input_Confirm Password'), confirmPassword)
+
+		'Click on Change Password button'
+		WebUI.click(findTestObject('Page_ChangePassword/btn_Change_Password'))
+		WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
+		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+	}
 }

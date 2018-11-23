@@ -3,6 +3,7 @@
    <description>Regression test security config/ perform forgot password for user/ lastlogindate is greater than the days of inactivity in the security config</description>
    <name>SC016</name>
    <tag></tag>
-   <comment></comment>
+   <comment>Verify message
+Verify message</comment>
    <testCaseGuid>6fee0982-4ec1-4013-8053-5b89966e5c4a</testCaseGuid>
 </TestCaseEntity>

@@ -5,6 +5,8 @@ import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 
+import java.time.format.DateTimeFormatter
+
 import org.json.simple.JSONObject
 
 import com.kms.katalon.core.annotation.Keyword
@@ -41,14 +43,67 @@ public class UserManagement {
 		return res
 	}
 
+	private ResponseObject put_SingleUser(int userId, String body, boolean isExpectedToWork) {
+		String url = siteUrl+'('+userId+')'
+		ResponseObject res = ApiUtil.getResponse(url, body, 'PUT', null)
+		println "Response is "+res.getResponseText()
+		if(isExpectedToWork) {
+			int statusCode = res.getStatusCode()
+			if(!(statusCode == 200 || statusCode == 204)) {
+				KeywordUtil.markFailedAndStop('call to patch single user api failed')
+			}
+		}
+		return res
+	}
+
+	@Keyword
+	def updateUserManagement(int userId, String password, String pwdChangedDate, String lastLoginDate, int invalidLoginCount, boolean pwdNeverExpires, boolean mustChangePwd) {
+		
+		JSONObject bodyObj = new JSONObject()
+		bodyObj.put('Id', new Integer(userId))
+		bodyObj.put('UPwd', password)
+		
+		if(pwdChangedDate == null) {
+			bodyObj.put('PwdLastChanged',DateUtil.getCurrentDateTime(DateTimeFormatter.ISO_OFFSET_DATE_TIME))
+		}
+		else {
+			bodyObj.put('PwdLastChanged',pwdChangedDate)
+		}
+		
+		if(lastLoginDate == null) {
+			bodyObj.put('LastLoginDate',DateUtil.getCurrentDateTime(DateTimeFormatter.ISO_OFFSET_DATE_TIME))
+		}
+		else {
+			bodyObj.put('LastLoginDate',lastLoginDate)
+		}
+		bodyObj.put('InvalidLoginCount',new Integer(invalidLoginCount))
+		bodyObj.put('PwdNeverExpires', new Boolean(pwdNeverExpires))
+		bodyObj.put('MustChangePwd', new Boolean(mustChangePwd))
+		bodyObj.put('SendWelcomeMessage', new Boolean(false))
+		
+		put_SingleUser(userId, bodyObj.toJSONString(), true)
+
+	} 
+	
+	
 	@Keyword
 	def updatePasswordForUser(int userId, String password) {
 
 		JSONObject bodyObj = new JSONObject()
 		bodyObj.put('Id', new Integer(userId))
 		bodyObj.put('UPwd', password)
+		String pwdDate = DateUtil.getCurrentDateTimeMinusDays(0)
+		String date = DateUtil.getCurrentDateTimeMinusDays(370)
+		bodyObj.put('PwdLastChanged',date)
+		bodyObj.put('LastLoginDate','2017-11-01T10:31:02.753Z')
+		bodyObj.put('InvalidLoginCount',new Integer(0))
+		bodyObj.put('PwdNeverExpires', new Boolean(false))
+		bodyObj.put('MustChangePwd', new Boolean(false))
+		bodyObj.put('SendWelcomeMessage', new Boolean(false))
+		
+		put_SingleUser(userId, bodyObj.toJSONString(), true)
 
-		patch_SingleUser(userId, bodyObj.toJSONString(), true)
+		//patch_SingleUser(userId, bodyObj.toJSONString(), true)
 	}
 
 	@Keyword

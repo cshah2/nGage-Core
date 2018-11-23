@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Regression test security config/ password more than maximum length/ change password from runtimeUrl login screen</description>
+   <name>SC072</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>abe43340-efdd-490f-8df7-f3e98421496c</testCaseGuid>
+</TestCaseEntity>

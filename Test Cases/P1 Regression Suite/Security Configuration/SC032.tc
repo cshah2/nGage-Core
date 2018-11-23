@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Regression test security config/ configure invalid login attempts in security configuration/ exceed user login in runtimeUrl</description>
+   <name>SC032</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>387fe6bd-fcac-42d2-9594-2820562353b7</testCaseGuid>
+</TestCaseEntity>

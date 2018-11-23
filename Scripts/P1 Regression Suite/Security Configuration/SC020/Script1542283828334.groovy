@@ -16,11 +16,13 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-'Set Password for user account using Admin API'
+'Get User ID using username'
 String username = 'CNF1_USERA'
 int userId = CustomKeywords.'apis.Users.getUserIdFromUserName'(username)
-String oldPassword = "A#1"+RandomStringUtils.randomAlphabetic(3)
-CustomKeywords.'apis.UserManagement.updatePasswordForUser'(userId, oldPassword)
+
+'Update password for user'
+String currentPassword = "A#1"+RandomStringUtils.randomAlphabetic(3)
+CustomKeywords.'apis.UserManagement.updateUserManagement'(userId, currentPassword, null, null, 0, true, false)
 
 'Generate random simple password'
 String simplePassword = "abc"+RandomStringUtils.randomAlphabetic(3)
@@ -55,7 +57,7 @@ WebUI.click(findTestObject('Page_Login/link_Change Password'))
 WebUI.verifyElementAttributeValue(findTestObject('Page_ChangePassword/input_Login ID'), 'value', username, GlobalVariable.G_LongTimeout)
 
 'Enter old password value'
-WebUI.setText(findTestObject('Page_ChangePassword/input_Old Password'), oldPassword)
+WebUI.setText(findTestObject('Page_ChangePassword/input_Old Password'), currentPassword)
 
 'Enter new password value'
 WebUI.setText(findTestObject('Page_ChangePassword/input_New Password'), simplePassword)
@@ -71,7 +73,7 @@ WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 WebUI.verifyMatch(WebUI.getText(findTestObject('Page_ChangePassword/label_ErrorMessage')).trim(), 'Password must contain letter, digit and special character; be between 3 and 6 characters long.', false)
 
 'Enter old password value'
-WebUI.setText(findTestObject('Page_ChangePassword/input_Old Password'), oldPassword)
+WebUI.setText(findTestObject('Page_ChangePassword/input_Old Password'), currentPassword)
 
 'Enter new password value'
 WebUI.setText(findTestObject('Page_ChangePassword/input_New Password'), strongPassword)

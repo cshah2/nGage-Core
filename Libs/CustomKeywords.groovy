@@ -296,6 +296,24 @@ def static "actions.Report.verifyDesignPageIsLoaded"(
         	expectedDataSource)
 }
 
+def static "apis.UserManagement.updateUserManagement"(
+    	int userId	
+     , 	String password	
+     , 	String pwdChangedDate	
+     , 	String lastLoginDate	
+     , 	int invalidLoginCount	
+     , 	boolean pwdNeverExpires	
+     , 	boolean mustChangePwd	) {
+    (new apis.UserManagement()).updateUserManagement(
+        	userId
+         , 	password
+         , 	pwdChangedDate
+         , 	lastLoginDate
+         , 	invalidLoginCount
+         , 	pwdNeverExpires
+         , 	mustChangePwd)
+}
+
 def static "apis.UserManagement.updatePasswordForUser"(
     	int userId	
      , 	String password	) {
@@ -310,20 +328,6 @@ def static "apis.UserManagement.updateLastLoginDate"(
     (new apis.UserManagement()).updateLastLoginDate(
         	userId
          , 	date)
-}
-
-def static "actions.Window.clickElementAndWaitForWindowClose"(
-    	TestObject saveButton	
-     , 	int timeout	) {
-    (new actions.Window()).clickElementAndWaitForWindowClose(
-        	saveButton
-         , 	timeout)
-}
-
-def static "actions.Window.switchToUrlContains"(
-    	String text	) {
-    (new actions.Window()).switchToUrlContains(
-        	text)
 }
 
 def static "actions.Common.maximizeWindow"() {
@@ -452,6 +456,44 @@ def static "actions.Common.verifyDateFormat"(
          , 	inputDateFormat)
 }
 
+def static "actions.Common.changePasswordPageFormFill"(
+    	String username	
+     , 	String currentPassword	
+     , 	String newPassword	
+     , 	String confirmPassword	) {
+    (new actions.Common()).changePasswordPageFormFill(
+        	username
+         , 	currentPassword
+         , 	newPassword
+         , 	confirmPassword)
+}
+
+def static "actions.Common.changePasswordPageFormFill_Login"(
+    	String username	
+     , 	String currentPassword	
+     , 	String newPassword	
+     , 	String confirmPassword	) {
+    (new actions.Common()).changePasswordPageFormFill_Login(
+        	username
+         , 	currentPassword
+         , 	newPassword
+         , 	confirmPassword)
+}
+
+def static "actions.Window.clickElementAndWaitForWindowClose"(
+    	TestObject saveButton	
+     , 	int timeout	) {
+    (new actions.Window()).clickElementAndWaitForWindowClose(
+        	saveButton
+         , 	timeout)
+}
+
+def static "actions.Window.switchToUrlContains"(
+    	String text	) {
+    (new actions.Window()).switchToUrlContains(
+        	text)
+}
+
 def static "apis.Users.getUserIdFromUserName"(
     	String userName	) {
     (new apis.Users()).getUserIdFromUserName(
@@ -464,28 +506,16 @@ def static "apis.Users.unlockUserAccount"(
         	userId)
 }
 
-def static "actions.ContextMenu.verifyAllOptions"(
-    	TestObject contextMenuOptions	
-     , 	String[] options	) {
-    (new actions.ContextMenu()).verifyAllOptions(
-        	contextMenuOptions
-         , 	options)
+def static "apis.Users.verifyIsUserAccountLocked"(
+    	int userId	) {
+    (new apis.Users()).verifyIsUserAccountLocked(
+        	userId)
 }
 
-def static "actions.ContextMenu.verifyOptionPresent"(
-    	TestObject contextMenuOptions	
-     , 	String option	) {
-    (new actions.ContextMenu()).verifyOptionPresent(
-        	contextMenuOptions
-         , 	option)
-}
-
-def static "actions.ContextMenu.clickOption"(
-    	TestObject contextMenuOptions	
-     , 	String option	) {
-    (new actions.ContextMenu()).clickOption(
-        	contextMenuOptions
-         , 	option)
+def static "apis.Users.verifyIsUserAccountUnlocked"(
+    	int userId	) {
+    (new apis.Users()).verifyIsUserAccountUnlocked(
+        	userId)
 }
 
 def static "actions.Chart.verifyNumberOfSlices"(
@@ -532,4 +562,28 @@ def static "actions.Chart.clickSlice"(
         	chartLocator
          , 	sliceNo
          , 	sliceLocator)
+}
+
+def static "actions.ContextMenu.verifyAllOptions"(
+    	TestObject contextMenuOptions	
+     , 	String[] options	) {
+    (new actions.ContextMenu()).verifyAllOptions(
+        	contextMenuOptions
+         , 	options)
+}
+
+def static "actions.ContextMenu.verifyOptionPresent"(
+    	TestObject contextMenuOptions	
+     , 	String option	) {
+    (new actions.ContextMenu()).verifyOptionPresent(
+        	contextMenuOptions
+         , 	option)
+}
+
+def static "actions.ContextMenu.clickOption"(
+    	TestObject contextMenuOptions	
+     , 	String option	) {
+    (new actions.ContextMenu()).clickOption(
+        	contextMenuOptions
+         , 	option)
 }
