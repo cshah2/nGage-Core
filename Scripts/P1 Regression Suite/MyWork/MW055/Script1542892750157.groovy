@@ -57,8 +57,7 @@ CustomKeywords.'actions.Common.verifyRecordCountInActivityMatchesWithResultGrid'
 
 'click on assigned group activity '
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Process_ProcessForTask/a_Global Process Admin_Activity A'))
-CustomKeywords.'actions.Common.waitForFrameToLoad'()
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_iframe_105'))
 
-
-
-WebUI.delay(10)
+'verify grid records present'
+CustomKeywords.'actions.Common.verifyRecordCountInActivityMatchesWithResultGrid'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Process_ProcessForTask/a_Global Process Admin_Activity A'),findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/div_PageCount'))

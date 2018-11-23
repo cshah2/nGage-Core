@@ -11,7 +11,7 @@
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//a[@id='ASF_-502_Global_Process_Admins_100056_100013_anchor']</value>
+         <value>//a[@id='ASF_-501_cshah_admin_100056_100013_anchor']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
