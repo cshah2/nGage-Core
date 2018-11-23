@@ -135,6 +135,70 @@ public class DateUtil {
 			println 'date not verified'
 		return status
 	}
+	
+	@Keyword
+	public static boolean verifyDateFilter(String operator,String actualValue,String referenceDateValue,String dateTimeFormat) {
+		def actualDate,referenceDate
+
+		if(actualValue=="")
+			actualDate="";
+		else
+			actualDate = new Date().parse(dateTimeFormat,actualValue)
+
+		if(referenceDateValue=="")
+			referenceDate="";
+		else
+			referenceDate = new Date().parse(dateTimeFormat,referenceDateValue)
+
+		boolean status=false
+		switch(operator) {
+			case '='://equal to
+				if(actualDate.compareTo(referenceDate)==0)
+					status=true
+				break
+
+			case '>':  //greater than
+				if(actualDate.compareTo(referenceDate)>0)
+					status= true
+				break
+
+			case '<'://less than
+				if(actualDate.compareTo(referenceDate)<0)
+					status= true
+				break
+
+			case '>=':  //greater than or equal
+				if(actualDate.compareTo(referenceDate)>=0)
+					status= true
+				break
+
+			case '<='://less than or equal
+				if(actualDate.compareTo(referenceDate)<=0)
+					status= true
+				break
+
+			case 'null'://less than or equal
+				if(actualDate.equals(""))
+					status= true
+				break
+
+			case 'not null':
+				if(!actualDate.equals(""))
+					status= true
+				break
+			default:
+				status = false
+				break
+		}
+		//		if(status) {
+		//			println 'date verified success'
+		//			return status
+		//		}
+		//		else
+		//			println 'date not verified'
+		return status
+	}
+
 
 	public static String getCurrentDateTime() {
 		Date now = new Date()

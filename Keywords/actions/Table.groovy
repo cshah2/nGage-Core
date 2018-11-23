@@ -213,20 +213,32 @@ public class Table {
 	}
 
 	@Keyword
-	def verifyDateFilter(TestObject tableLocator, int colNo, String referenceDate,String operator)
-	{
+	def verifyDateFilter(TestObject tableLocator, int colNo, String referenceDate,String operator) {
 		WebElement table = WebUtil.getWebElement(tableLocator)
 		List<String> cellValues = getAllValuesFromColumn(table, colNo)
 		WebUI.switchToDefaultContent()
 
 		for(String value in cellValues) {
-			boolean result = DateUtil.verifyDateFilter(operator, value, referenceDate)
+			boolean result = DateUtil.verifyDateFilter(operator, value.split(" ")[0], referenceDate.split(" ")[0],"MM-dd-yyyy")
 			if(!result) {
 				KeywordUtil.markFailedAndStop("Value : "+value+" does not satisfy filter criteria")
 			}
 		}
 	}
-	
+
+	def verifyDateTimeFilter(TestObject tableLocator, int colNo, String referenceDate,String operator) {
+		WebElement table = WebUtil.getWebElement(tableLocator)
+		List<String> cellValues = getAllValuesFromColumn(table, colNo)
+		WebUI.switchToDefaultContent()
+
+		for(String value in cellValues) {
+			boolean result = DateUtil.verifyDateFilter(operator, value, referenceDate,"MM-dd-yyyy HH:mm:ss a")
+			if(!result) {
+				KeywordUtil.markFailedAndStop("Value : "+value+" does not satisfy filter criteria")
+			}
+		}
+	}
+
 	@Keyword
 	def verifyRecordsInTableAreLessThanEndDate(TestObject tableLocator, int colNo, String toDate) {
 		WebElement table = WebUtil.getWebElement(tableLocator)

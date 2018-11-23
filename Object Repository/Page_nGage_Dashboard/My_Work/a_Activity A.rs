@@ -4,6 +4,16 @@
    <name>a_Activity A</name>
    <tag></tag>
    <elementGuidId>e7166f45-3e5e-47bb-9167-6242b4ebeb3a</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>//a[@id = 'ACTIVITY_100027_100004_anchor']</value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value></value>
+      </entry>
+   </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
    <webElementProperties>
