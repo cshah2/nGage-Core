@@ -29,7 +29,7 @@ public class ContextMenu {
 	private void setContextVariables(TestObject contextMenuOptions) {
 		contextOptions = new HashMap<String, WebElement>()
 		List<WebElement> allOptions = WebUtil.getWebElements(contextMenuOptions)
-		
+
 		for(WebElement e in allOptions) {
 			String key = e.getText().replace("\u00a0", " ").trim()
 			contextOptions.put(key, e)

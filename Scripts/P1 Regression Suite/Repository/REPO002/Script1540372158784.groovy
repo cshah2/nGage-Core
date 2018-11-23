@@ -28,14 +28,20 @@ WebUI.waitForElementVisible(findTestObject('Object Repository/Page_nGage_Dashboa
 WebUI.verifyElementVisible(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/table_SavedSearch'))
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/Icon_Expand_SavedSearch'))
 
+
 'Verify daisy (loding icon) is appearing'
-String backGroundcss = WebUI.getCSSValue(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/Icon_Expand_SavedSearch'), 'background')
+//TODO: Need to verify data instead of loading div
+
+WebUI.verifyElementAttributeValue(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/li_SavedSearch'), 'aria-busy', 'true', GlobalVariable.G_LongTimeout)
+WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
+/*String backGroundcss = WebUI.getCSSValue(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/Icon_Expand_SavedSearch'), 'background')
 WebUI.verifyMatch(backGroundcss, '.*throbber.gif.*', true)
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
-
+*/
 'Verify daisy is NOT appearing on second click(Re-clicking on EDM)'
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/Icon_Expand_SavedSearch'))
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/Icon_Expand_SavedSearch'))
 
-backGroundcss = WebUI.getCSSValue(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/Icon_Expand_SavedSearch'), 'background')
-WebUI.verifyMatch(backGroundcss, '.*jstree.*', true)
+WebUI.verifyElementAttributeValue(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/li_SavedSearch'), 'aria-busy', 'false', GlobalVariable.G_LongTimeout)
+/*backGroundcss = WebUI.getCSSValue(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/Icon_Expand_SavedSearch'), 'background')
+WebUI.verifyMatch(backGroundcss, '.*jstree.*', true)*/

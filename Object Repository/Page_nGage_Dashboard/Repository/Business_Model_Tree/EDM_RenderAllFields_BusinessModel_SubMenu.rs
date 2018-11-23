@@ -7,11 +7,10 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value></value>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//a[@id='SCF_1a12033d-1746-404c-a037-4563b5b7cd11_anchor']</value>
+         <value>//a[contains(text(),'Render All Field Types')]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

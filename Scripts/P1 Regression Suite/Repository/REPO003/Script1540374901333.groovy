@@ -36,6 +36,8 @@ WebUI.verifyElementPresent(findTestObject('Object Repository/Page_nGage_Dashboar
 
 'Click on refresh Context Menu.'
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/Icon_Expand_SavedSearch'))
-String backGroundcss = WebUI.getCSSValue(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/Icon_Expand_SavedSearch'), 'background')
-WebUI.verifyMatch(backGroundcss, '.*throbber.gif.*', true)
+
+WebUI.verifyElementAttributeValue(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/li_SavedSearch'), 'aria-busy', 'true', GlobalVariable.G_LongTimeout)
+/*String backGroundcss = WebUI.getCSSValue(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/Icon_Expand_SavedSearch'), 'background')
+WebUI.verifyMatch(backGroundcss, '.*throbber.gif.*', true)*/
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)

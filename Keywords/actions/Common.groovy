@@ -493,18 +493,18 @@ public class Common {
 
 		'Open Browser'
 		WebUI.openBrowser('')
-		
+
 		'Maximize window'
 		WebUI.maximizeWindow()
-		
+
 		'Delet all cookies'
 		WebUI.deleteAllCookies()
-		
+
 		'Navigate to login page'
 		WebUI.navigateToUrl(WebUI.concatenate(GlobalVariable.BaseURL, '/login.aspx'));
 		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 		WebUI.waitForElementVisible(findTestObject('Page_Login/input_UserName'), GlobalVariable.G_LongTimeout)
-		
+
 		'Enter username'
 		WebUI.setText(findTestObject('Page_Login/input_UserName'), username)
 

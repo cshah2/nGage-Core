@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>EDM-Closure</name>
+   <name>EDM_TopOneRowSC</name>
    <tag></tag>
-   <elementGuidId>eb744cca-bf2c-42d4-85a9-c9956febfde1</elementGuidId>
+   <elementGuidId>0ed5e8f4-2296-4911-b1ff-8efb35450f03</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//li[@id='SC_100015']/i</value>
+         <value>//a[@id='SC_100002_anchor']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

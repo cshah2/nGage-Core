@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Regression test My Work (Date time field+DM):Field Display type as DATEFIELD - Search should work on Date control for DATETIME Field</description>
+   <name>REPO051</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>fe64babd-43e3-454b-a9f3-0b27f87b9609</testCaseGuid>
+</TestCaseEntity>

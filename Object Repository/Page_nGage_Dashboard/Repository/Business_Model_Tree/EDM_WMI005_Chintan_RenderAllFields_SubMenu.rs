@@ -7,11 +7,10 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value></value>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//a[@id='SCF_1ad44309-e2ca-4adc-a17c-b469c244b809_anchor']</value>
+         <value>//a[contains(text(),'WMI005_Auto_test')]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

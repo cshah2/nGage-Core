@@ -6,11 +6,11 @@
    <elementGuidId>c90d2dcf-c992-4cc1-8d57-a148cd3e1b20</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>XPATH</key>
-         <value>//div[@id='divSearchResults']//table[@id='divSearchResultsTable']</value>
+         <key>BASIC</key>
       </entry>
       <entry>
-         <key>BASIC</key>
+         <key>XPATH</key>
+         <value>//div[@id='divSearchResults']//table[@id='divSearchResultsTable' and @aria-labelledby='gbox_divSearchResultsTable']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

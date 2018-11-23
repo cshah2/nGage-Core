@@ -6,12 +6,11 @@
    <elementGuidId>6530c806-37be-4d93-82b6-554f5faa67d5</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>BASIC</key>
-         <value></value>
+         <key>XPATH</key>
+         <value>//a[text()='[Empty] (121)']</value>
       </entry>
       <entry>
-         <key>XPATH</key>
-         <value>//a[@id='SCF_68bf3385-84ae-4cbc-bb7c-77c77ac26746_anchor']</value>
+         <key>BASIC</key>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

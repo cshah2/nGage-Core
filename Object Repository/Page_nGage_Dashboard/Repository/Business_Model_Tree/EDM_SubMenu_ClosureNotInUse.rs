@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>list_Saved Search</name>
+   <name>EDM_SubMenu_ClosureNotInUse</name>
    <tag></tag>
-   <elementGuidId>67cccc87-d13a-4d26-a8c1-9a38b9eba5f6</elementGuidId>
+   <elementGuidId>c16b27aa-f162-4b52-802d-2172a2e409d5</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
@@ -11,7 +11,7 @@
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//li[@id='SAVEDSEARCH']/ul/li/a</value>
+         <value>//a[@id='SC_100028_anchor']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

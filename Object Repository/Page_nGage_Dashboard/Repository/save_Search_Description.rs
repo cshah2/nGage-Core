@@ -6,12 +6,12 @@
    <elementGuidId>e85e044f-777a-4cee-b825-7a991bfb501a</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>BASIC</key>
-         <value></value>
+         <key>XPATH</key>
+         <value>//input[@id='txtSaveDesc']</value>
       </entry>
       <entry>
-         <key>XPATH</key>
-         <value>input[@id='txtSaveDesc']</value>
+         <key>BASIC</key>
+         <value>//*[@ref_element = 'Object Repository/Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

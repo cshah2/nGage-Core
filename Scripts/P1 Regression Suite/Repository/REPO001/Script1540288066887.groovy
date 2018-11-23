@@ -41,6 +41,6 @@ WebUI.verifyElementVisible(findTestObject('Object Repository/Page_nGage_Dashboar
 
 'Verify Advance Search Tab'
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/a_Advanced Search Tab'))
-WebUI.waitForElementVisible(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/list_Saved Search'), GlobalVariable.G_LongTimeout)
+WebUI.waitForElementVisible((findTestObject('Object Repository/Page_nGage_Dashboard/Repository/li_SavedSearch')), GlobalVariable.G_LongTimeout)
 
 

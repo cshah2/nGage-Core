@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Regression test Search Repository: SAVBPM-53653 -After click on refresh sorting is not done on the column whch is sorted before click on refresh button.</description>
+   <name>REPO041</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>36f9028e-eb19-4cb6-af78-c8fdf02b6f67</testCaseGuid>
+</TestCaseEntity>

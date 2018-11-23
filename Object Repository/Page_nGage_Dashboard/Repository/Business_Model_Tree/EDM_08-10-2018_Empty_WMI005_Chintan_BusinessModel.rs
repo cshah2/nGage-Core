@@ -6,12 +6,11 @@
    <elementGuidId>1d7623f6-d920-469c-8ffc-9fb0f0a05b2d</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>BASIC</key>
-         <value></value>
+         <key>XPATH</key>
+         <value>//a[text()='08/10/2018 (6)']</value>
       </entry>
       <entry>
-         <key>XPATH</key>
-         <value>//a[@id='SCF_16178e8e-7c97-4404-986d-cade2711efed_anchor']</value>
+         <key>BASIC</key>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

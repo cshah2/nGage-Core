@@ -39,7 +39,7 @@ WebUI.doubleClick(findTestObject('Page_nGage_Dashboard/Repository/Business_Model
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
 'Click on Chintan from Render All Fields Sub Menu'
-WebUI.doubleClick(findTestObject('Page_nGage_Dashboard/Repository/Business_Model_Tree/EDM_Chintan_BusinessModel_RenderAllSubMenu'))
+WebUI.doubleClick(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/Business_Model_Tree/EDM_Chintan'))
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
 'Click on WMI005_Auto_Test from Chintan Sub Menu'

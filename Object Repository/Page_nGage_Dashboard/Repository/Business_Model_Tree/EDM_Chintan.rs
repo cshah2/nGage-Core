@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>EDM_Chintan_BusinessModel_RenderAllSubMenu</name>
+   <name>EDM_Chintan</name>
    <tag></tag>
-   <elementGuidId>2ce540a6-18bd-4f29-b504-f1e96599d567</elementGuidId>
+   <elementGuidId>4f318dce-35c6-4b94-a0d1-c71df2a26141</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
@@ -11,7 +11,7 @@
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//a[@id='SCF_10ec91ee-c8e0-4f0d-a7ad-3c717c5d3f18_anchor']</value>
+         <value>//a[contains(text(),'Chintan Shah ')]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

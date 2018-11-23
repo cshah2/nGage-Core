@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Regression test Search Repository: search class, context menu tab - Close tabs to right</description>
+   <name>REPO030</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>a3a95a71-5732-4fc3-ab71-af5e167a52f0</testCaseGuid>
+</TestCaseEntity>
