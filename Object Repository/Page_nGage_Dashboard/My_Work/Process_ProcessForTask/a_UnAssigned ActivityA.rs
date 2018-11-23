@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>a_No User_Activity A</name>
+   <name>a_UnAssigned ActivityA</name>
    <tag></tag>
-   <elementGuidId>d1cee3f9-fd0b-475f-8c27-090d7a1d37b2</elementGuidId>
+   <elementGuidId>cbf1647f-6ec2-45e6-a714-a2b4cd27bf8d</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
@@ -11,7 +11,7 @@
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//a[@id='ASF_-501_No_User_100056_100013_anchor']</value>
+         <value>//a[@id='ASF_-505_UnAssigned_100056_100013_anchor']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

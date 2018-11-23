@@ -1,4 +1,4 @@
-import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint 
+import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
 import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
@@ -34,7 +34,7 @@ WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/LoanI
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
 'select drpdown options'
-WebUI.selectOptionByLabel(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Folder_Configuration/Level1_FieldAssigned'),'Assigned User/No User*',false)
+WebUI.selectOptionByLabel(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Folder_Configuration/Level1_FieldAssigned'),'Assigned/UnAssigned*',false)
 WebUI.selectOptionByLabel(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Folder_Configuration/Level1_Sorting'), 'Asc by Field',false)
 
 'click submit button'
@@ -49,15 +49,15 @@ WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Proce
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
 'click on un assigned user'
-WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/Process_ProcessForTask/a_UnAssigned User_Activity A'))
+WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Process_ProcessForTask/a_UnAssigned ActivityA'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_iframe_105'))
 
 'verify grid records present'
-CustomKeywords.'actions.Common.verifyRecordCountInActivityMatchesWithResultGrid'(findTestObject('Page_nGage_Dashboard/My_Work/Process_ProcessForTask/a_UnAssigned User_Activity A'),findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/div_PageCount'))
+CustomKeywords.'actions.Common.verifyRecordCountInActivityMatchesWithResultGrid'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Process_ProcessForTask/a_UnAssigned ActivityA'),findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/div_PageCount'))
 
 'click on assigned user '
-WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/Process_ProcessForTask/a_Assigned User_Activity A'))
+WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Process_ProcessForTask/a_Assigned ActivityA'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_iframe_105'))
 
 'verify grid records present'
-CustomKeywords.'actions.Common.verifyRecordCountInActivityMatchesWithResultGrid'(findTestObject('Page_nGage_Dashboard/My_Work/Process_ProcessForTask/a_Assigned User_Activity A'),findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/div_PageCount'))
+CustomKeywords.'actions.Common.verifyRecordCountInActivityMatchesWithResultGrid'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Process_ProcessForTask/a_Assigned ActivityA'),findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/div_PageCount'))
