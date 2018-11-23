@@ -102,6 +102,11 @@ public class DateUtil {
 					status=true
 				break
 
+			case '<>'://not equal to
+				if(actualDate.compareTo(referenceDate)!=0)
+					status=true
+				break
+
 			case '>':  //greater than
 				if(actualDate.compareTo(referenceDate)>0)
 					status= true
@@ -164,6 +169,11 @@ public class DateUtil {
 		switch(operator) {
 			case '='://equal to
 				if(actualDate.compareTo(referenceDate)==0)
+					status=true
+				break
+
+			case '<>'://not equal to
+				if(actualDate.compareTo(referenceDate)!=0)
 					status=true
 				break
 
