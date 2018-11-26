@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Regression test WMI :  Menu Testing for showdocsintabs.aspx</description>
+   <name>WMIMENU019</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>5e074ff8-18a3-48e6-9200-b1ffcee5db31</testCaseGuid>
+</TestCaseEntity>

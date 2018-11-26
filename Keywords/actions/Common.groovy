@@ -1,16 +1,9 @@
 package actions
 
-import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
-import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
-import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.awt.Robot
-import java.awt.Toolkit
-import java.awt.event.KeyEvent
 
-import java.text.SimpleDateFormat
+import java.awt.Toolkit
+import java.text.SimpleDateFormat;
 import java.util.concurrent.TimeUnit
 
 import org.openqa.selenium.Dimension
@@ -19,24 +12,16 @@ import org.openqa.selenium.Point
 import org.openqa.selenium.WebDriver
 import org.openqa.selenium.WebElement
 import org.openqa.selenium.interactions.Actions
-import org.openqa.selenium.support.ui.Select
 
 import com.kms.katalon.core.annotation.Keyword
-import com.kms.katalon.core.checkpoint.Checkpoint
 import com.kms.katalon.core.configuration.RunConfiguration
-import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
-import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
-import com.kms.katalon.core.model.FailureHandling
-import com.kms.katalon.core.testcase.TestCase
-import com.kms.katalon.core.testdata.TestData
 import com.kms.katalon.core.testobject.TestObject
 import com.kms.katalon.core.util.KeywordUtil
-import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.common.WebUiCommonHelper
 import com.kms.katalon.core.webui.driver.DriverFactory
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
-import internal.GlobalVariable as GlobalVariable
 
+import internal.GlobalVariable as GlobalVariable
 import utils.WebUtil
 
 public class Common {
@@ -333,7 +318,10 @@ public class Common {
 
 	@Keyword
 	def createDocument_WMIMenuBov() {
-
+		
+		'Switch to main window'
+		WebUI.switchToWindowTitle('Savana nGage')
+		
 		'Create a new BovDocTwoRow Document'
 		WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))
 		selectDocClassAndDocTypeForGlobalNew('WMI Menu', 'WMI Menu BOV')
@@ -363,6 +351,9 @@ public class Common {
 	@Keyword
 	def createDocument_WMIMenuBovDefault() {
 
+		'Switch to main window'
+		WebUI.switchToWindowTitle('Savana nGage')
+		
 		'Create a new BovDefault Document'
 		WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))
 		selectDocClassAndDocTypeForGlobalNew('WMI Menu', 'WMI Menu Default')
@@ -392,6 +383,9 @@ public class Common {
 	@Keyword
 	def createDocument_WMIMenuBovDocTwoRow() {
 
+		'Switch to main window'
+		WebUI.switchToWindowTitle('Savana nGage')
+		
 		'Create a new BovDocTwoRow Document'
 		WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))
 		selectDocClassAndDocTypeForGlobalNew('WMI Menu', 'WMI Menu DocTwoRow')
