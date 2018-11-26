@@ -2,7 +2,6 @@ import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
 import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
-import org.junit.After
 import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
 import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
@@ -31,27 +30,41 @@ WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/a_New
 'wait for jQuery Loading'
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
-//println 'DocID_PositionBefore : '+CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/tableHeader_MyWorkSearchResult'), 'Doc ID')
+//println 'DocID_Position Before Drag  : '+CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/tableHeader_MyWorkSearchResult'), 'Doc ID')
 //println 'ToActivityState_PositionAfter :'+CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/tableHeader_MyWorkSearchResult'), 'To Activity State')
 
-int DocID_PositionBefore=CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/tableHeader_MyWorkSearchResult'), 'Doc ID')
+int DocID_BeforeDrag=CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/tableHeader_MyWorkSearchResult'), 'Doc ID')
+
+println 'DocID_PositionBefore : '+DocID_BeforeDrag
 
 'drag and drop item/Change Layout'
 WebUI.dragAndDropToObject(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/div_ToActivityState'), findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/div_DocID'))
 
-'click on set layout'
+
+
+'click on set layout to save Drag and Drop'
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/span_SetLayout'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/iframe_work_items'))
 
-//println 'DocID_PositionBefore : '+CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/tableHeader_MyWorkSearchResult'), 'Doc ID')
+int DocID_PositionAfter=CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/tableHeader_MyWorkSearchResult'), 'Doc ID')
+
+println 'DocID Position After Drag and drop :'+DocID_PositionAfter
+
 //println 'ToActivityState_PositionAfter :'+CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/tableHeader_MyWorkSearchResult'), 'To Activity State')
 
-int ToActivityState_PositionAfter=CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/tableHeader_MyWorkSearchResult'), 'To Activity State')
+//int ToActivityState_PositionAfter=CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/tableHeader_MyWorkSearchResult'), 'To Activity State')
 
 'verify column index'
-WebUI.verifyMatch(DocID_PositionBefore.toString().trim(), ToActivityState_PositionAfter.toString().trim(), false)
+//WebUI.verifyMatch(DocID_BeforeDrag.toString().trim(), ToActivityState_PositionAfter.toString().trim(), false)
 
 
 'reset layout'
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/td_ResetLayout'))
+
+int DocID_ResetPosition = CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/tableHeader_MyWorkSearchResult'), 'Doc ID')
+
+println 'DocID After reset position :'+DocID_ResetPosition
+
+WebUI.verifyMatch( DocID_ResetPosition.toString(),DocID_BeforeDrag.toString(), true)
+
 
