@@ -18,28 +18,35 @@ CustomKeywords.'actions.Common.login'()
 
 'Click on My Work link from left menu'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_My Work Left Menu'))
-WebUI.waitForElementVisible(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/i_PostmanProcesses1'), GlobalVariable.G_LongTimeout)
+WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_iframe_105'))
 
-'expand postman process1'
-WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/i_PostmanProcesses1'))
+'Expand Closure Action process'
+WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/icon_Expand_Closure Actions'))
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
-'click on new process hold activity(link)'
-WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/a_NewProcessHoldActivity'))
+'Select Activity A'
+WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/My_Work/a_Activity A'), GlobalVariable.G_LongTimeout)
+WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_Activity A'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_work_items'))
 
-'click on doc id column (for sorting Ascending)'
-WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/div_DocID'))
+'Store total no of records message in result table'
+String expectedPagination = WebUI.getText(findTestObject('Page_nGage_Dashboard/My_Work/table_pagination_summary'))
 
-'verify sorted column elements(Ascending)'
-CustomKeywords.'actions.Table.verifyColumnIsSortedInteger'(findTestObject('Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), 4, 'ASC')
+'Open Search bar'
+WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/h3_Search Bar'))
 
-'click on doc id column (for sorting Descending)'
-WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/div_DocID'))
+'Enter DocID value for search'
+String _docID = '101756'
+WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/My_Work/search_DocID'), GlobalVariable.G_LongTimeout)
+WebUI.setText(findTestObject('Page_nGage_Dashboard/My_Work/search_DocID'), _docID)
 
-'wait for frame to load'
+'Click on Search button'
+WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/btn_Search'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_work_items'))
 
-'verify sorted column elements(Descending)'
-CustomKeywords.'actions.Table.verifyColumnIsSortedInteger'(findTestObject('Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), 4, 'DESC')
+'Verify result in table'
+WebUI.verifyElementText(findTestObject('Page_nGage_Dashboard/My_Work/table_pagination_summary'), 'Showing 1 - 1 of 1')
 
+'Open Search bar'
+WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/h3_Search Bar'))

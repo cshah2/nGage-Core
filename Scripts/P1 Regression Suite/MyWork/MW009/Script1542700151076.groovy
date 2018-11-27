@@ -40,8 +40,6 @@ println 'DocID_PositionBefore : '+DocID_BeforeDrag
 'drag and drop item/Change Layout'
 WebUI.dragAndDropToObject(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/div_ToActivityState'), findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/div_DocID'))
 
-
-
 'click on set layout to save Drag and Drop'
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/span_SetLayout'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/iframe_work_items'))
@@ -50,14 +48,6 @@ int DocID_PositionAfter=CustomKeywords.'actions.Table.getColumnNumber'(findTestO
 
 println 'DocID Position After Drag and drop :'+DocID_PositionAfter
 
-//println 'ToActivityState_PositionAfter :'+CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/tableHeader_MyWorkSearchResult'), 'To Activity State')
-
-//int ToActivityState_PositionAfter=CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/tableHeader_MyWorkSearchResult'), 'To Activity State')
-
-'verify column index'
-//WebUI.verifyMatch(DocID_BeforeDrag.toString().trim(), ToActivityState_PositionAfter.toString().trim(), false)
-
-
 'reset layout'
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/td_ResetLayout'))
 
@@ -65,6 +55,7 @@ int DocID_ResetPosition = CustomKeywords.'actions.Table.getColumnNumber'(findTes
 
 println 'DocID After reset position :'+DocID_ResetPosition
 
+'verify reset layout'
 WebUI.verifyMatch( DocID_ResetPosition.toString(),DocID_BeforeDrag.toString(), true)
 
 

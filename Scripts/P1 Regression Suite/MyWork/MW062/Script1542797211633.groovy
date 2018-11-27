@@ -24,14 +24,26 @@ WebUI.waitForElementVisible(findTestObject('Object Repository/Page_nGage_Dashboa
 'Expand closure action'
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/icon_Expand_Closure Actions'))
 
-'right click on Activity A'
-WebUI.doubleClick(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/a_Activity A'))
-WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
+'Click on Activity A'
+WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/a_Activity A'))
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_work_items'))
 
+
+'verify grid records present'
+CustomKeywords.'actions.Common.verifyRecordCountInActivityMatchesWithResultGrid'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/a_Activity A'),findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/div_PageCount'))
+
+'Open Work Item'
 CustomKeywords.'actions.Table.clickCell'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'),1,4)
 
 WebUI.delay(10)
+WebUI.switchToWindowIndex(1)
 
+'Verify Closure Action is not Present'
+WebUI.verifyElementNotPresent( findTestObject('Object Repository/Page_WMI/Route Advance/span_ClosureAction_RouteAdvance'), 5)
 
+'Click on Customer Information'
+WebUI.click(findTestObject('Object Repository/Page_WMI/Closure Action/span_Customer Information'))
+WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
-
+'Verify field Customer Name Present'
+WebUI.verifyElementPresent(findTestObject('Object Repository/Page_WMI_NEW/Closure_Action/input_Customer Name'), 5)
