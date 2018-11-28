@@ -40,6 +40,8 @@ public class DateUtil {
 	}
 
 	public static boolean isRecordBetweenDateRange(String actualValue, String fromDateValue, String toDateValue) {
+		fromDateValue.replaceAll('/', '-')
+		toDateValue.replaceAll('/', '-')
 		def actualDate = new Date().parse("MM-dd-yyyy",actualValue)
 		def fromDate = new Date().parse("MM-dd-yyyy",fromDateValue)
 		def toDate = new Date().parse("MM-dd-yyyy",toDateValue)

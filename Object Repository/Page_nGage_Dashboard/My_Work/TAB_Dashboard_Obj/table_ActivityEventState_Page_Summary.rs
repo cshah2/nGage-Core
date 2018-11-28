@@ -4,6 +4,16 @@
    <name>table_ActivityEventState_Page_Summary</name>
    <tag></tag>
    <elementGuidId>cfe40ada-71f1-465f-90ee-e2a64f4dfb08</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>id(&quot;MyWorkSearchResultsTable_toppager_right&quot;)/div[@class=&quot;ui-paging-info&quot;][count(. | //*[@ref_element = 'Object Repository/Page_nGage_Dashboard/My_Work/TAB_Dashboard_Obj/iframe_BAMActivityWorkIt_ActivityEvent']) = count(//*[@ref_element = 'Object Repository/Page_nGage_Dashboard/My_Work/TAB_Dashboard_Obj/iframe_BAMActivityWorkIt_ActivityEvent'])]</value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value></value>
+      </entry>
+   </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
    <webElementProperties>
