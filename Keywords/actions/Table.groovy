@@ -191,7 +191,7 @@ public class Table {
 		WebUI.switchToDefaultContent()
 
 		for(String value in cellValues) {
-			boolean result = DateUtil.isRecordBetweenDateRange(value, fromDate, toDate)
+			boolean result = DateUtil.isRecordBetweenDateRange(value.replaceAll('/', '-'), fromDate.replaceAll('/', '-'), toDate.replaceAll('/', '-'))
 			if(!result) {
 				KeywordUtil.markFailedAndStop("Value : "+value+" is not within date range : "+fromDate+" - "+toDate)
 			}
