@@ -20,35 +20,35 @@ CustomKeywords.'actions.Common.login'()
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_My Work Left Menu'))
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
-'Click On Date Required icon to expand'
-WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/Process_Date Required/icon_expand_DateRequired'))
+'Click on DateRangeRequired icon to expand'
+WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Process_DateRangeRequired/icon_expand_DateRangeRequired'))
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
-'Click On DateRequiredSearch to load Frame'
-WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Process_Date Required/a_DateRequiredSearch'))
-CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/iframe_work_items'))
+'Click on DateRangeRequired to see work items'
+WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Process_DateRangeRequired/a_click_DateRangeRequired'))
 
 'Click On Search Button'
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/h3_Search Bar'))
 
 'Verify Fields from Search Form'
-WebUI.verifyElementPresent(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Process_Date Required/input_Start Test Date'), 5)
 WebUI.verifyElementPresent(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/btn_Search'), 5)
 WebUI.verifyElementPresent(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/btn_Reset'), 5)
 
-'Select Date Operator (>)from Dropdown Menu'
-WebUI.selectOptionByLabel(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Process_Date Required/icon_select_DateOperator'), '>', true)
+'Enter date range'
+WebUI.setText(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Process_DateRangeRequired/input_EndTestDate_from'),'01-01-2019')
 
-'Enter Date'
-WebUI.setText(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Process_Date Required/input_Start Test Date'),'06-28-2016')
+//WebUI.rightClick(findTestObject('Page_nGage_Dashboard/My_Work/Process_DateRangeRequired/input__from'),'01-01-2011')
+WebUI.setText(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Process_DateRangeRequired/input_EndTestDate_To'),'01-01-2025')
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/btn_Search'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/iframe_work_items'))
 
 'Uncheck Show Assigned Only if Checked'
 WebUI.uncheck(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/chexkbox_ShowAssignedOnly'))
 
+WebUI.delay(10)
+
 int StartTestDate_ColumnPosition= CustomKeywords.'actions.Table.getColumnNumber'( findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/tableHeader_MyWorkSearchResult'), 'Start test date')
 println 'Column Position of Search date is ' +StartTestDate_ColumnPosition
 
-'Verify Search Result'
-CustomKeywords.'actions.Table.verifyDateFilter'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), StartTestDate_ColumnPosition , '06/28/2016','>')
+'Verify Search Results'
+CustomKeywords.'actions.Table.verifyRecordsWithinDateRange'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'),5,'01/01/2011','01/01/2025')

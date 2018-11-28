@@ -36,11 +36,11 @@ WebUI.verifyElementPresent(findTestObject('Object Repository/Page_nGage_Dashboar
 WebUI.verifyElementPresent(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/btn_Search'), 5)
 WebUI.verifyElementPresent(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/btn_Reset'), 5)
 
-'Select Date Operator (>)from Dropdown Menu'
-WebUI.selectOptionByLabel(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Process_Date Required/icon_select_DateOperator'), '>', true)
+'Select Date Operator (<)from Dropdown Menu'
+WebUI.selectOptionByLabel(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Process_Date Required/icon_select_DateOperator'), '<', true)
 
 'Enter Date'
-WebUI.setText(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Process_Date Required/input_Start Test Date'),'06-28-2016')
+WebUI.setText(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Process_Date Required/input_Start Test Date'),'01-01-2019')
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/btn_Search'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/iframe_work_items'))
 
@@ -51,4 +51,4 @@ int StartTestDate_ColumnPosition= CustomKeywords.'actions.Table.getColumnNumber'
 println 'Column Position of Search date is ' +StartTestDate_ColumnPosition
 
 'Verify Search Result'
-CustomKeywords.'actions.Table.verifyDateFilter'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), StartTestDate_ColumnPosition , '06/28/2016','>')
+CustomKeywords.'actions.Table.verifyDateFilter'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), StartTestDate_ColumnPosition , '01/01/2019','<')
