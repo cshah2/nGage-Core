@@ -168,7 +168,7 @@ public class MenuBar {
 		List<String> treePath = new ArrayList<String>(Arrays.asList(menuPath))
 		int lastIndex = treePath.size()-1
 		treePath.remove(lastIndex)
-		expandTree(treePath)
+		expandTree(moduleName, treePath)
 
 		String appendBrace = lastIndex>1?" (":""
 		treeXpath.append("/ul/li/a[contains(text(),'"+menuPath[size-1]+appendBrace+"')]")
@@ -184,7 +184,7 @@ public class MenuBar {
 		List<String> treePath = new ArrayList<String>(Arrays.asList(menuPath))
 		int lastIndex = treePath.size()-1
 		treePath.remove(lastIndex)
-		expandTree(treePath)
+		expandTree(moduleName, treePath)
 
 		String appendBrace = lastIndex>1?" (":""
 		treeXpath.append("/ul/li/a[contains(text(),'"+menuPath[size-1]+appendBrace+"')]")
@@ -209,9 +209,7 @@ public class MenuBar {
 		int size = menuPath.length
 
 		List<String> treePath = new ArrayList<String>(Arrays.asList(menuPath))
-//		int lastIndex = treePath.size()-1
-//		treePath.remove(lastIndex)
-		expandTree(treePath)
+		expandTree(moduleName, treePath)
 
 		WebDriver driver = DriverFactory.getWebDriver()
 		treeXpath.append("/ul/li/a")
@@ -228,9 +226,22 @@ public class MenuBar {
 	 * 
 	 * @param treePath
 	 */
-	private void expandTree(List<String> treePath) {
+	private void expandTree(String moduleName, List<String> treePath) {
 		WebDriver driver = DriverFactory.getWebDriver()
-		treeXpath = new StringBuilder("//div[@id='menudiv_104']")
+		
+		
+		switch(moduleName.toUpperCase()) {
+			case 'REPO':
+				treeXpath = new StringBuilder("//div[@id='menudiv_104']")
+				break
+			case 'MY WORK':
+				treeXpath = new StringBuilder("//div[@id='menudiv_105']")
+				break
+			default:
+				break
+		}
+		
+		
 		WebElement a
 		WebElement li
 
