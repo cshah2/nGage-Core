@@ -101,7 +101,6 @@ public class Common {
 		WebUI.waitForElementVisible(findTestObject('Page_Login/input_UserName'), GlobalVariable.G_LongTimeout)
 		WebUI.setText(findTestObject('Page_Login/input_UserName'), username)
 		WebUI.setText(findTestObject('Page_Login/input_Password'), password)
-		//WebUI.selectOptionByValue(findTestObject('Page_Login/select_Schema'), database, true)
 		WebUI.selectOptionByLabel(findTestObject('Page_Login/select_Schema'), GlobalVariable.Database, false)
 		WebUI.click(findTestObject('Page_Login/button_Login'))
 		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)

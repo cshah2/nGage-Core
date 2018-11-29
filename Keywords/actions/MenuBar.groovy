@@ -4,9 +4,11 @@ import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 
 import java.util.concurrent.TimeUnit
 
+import org.apache.commons.lang3.StringUtils
 import org.openqa.selenium.By
 import org.openqa.selenium.WebDriver
 import org.openqa.selenium.WebElement
+import org.openqa.selenium.interactions.Actions
 
 import com.kms.katalon.core.annotation.Keyword
 import com.kms.katalon.core.testobject.TestObject
@@ -154,26 +156,108 @@ public class MenuBar {
 		else
 			KeywordUtil.markPassed("submenus are in sorted order")
 	}
-	
-//	@Keyword
-//	def selectRepositoryMenu(String... menuPath) {
-//		
-//		WebDriver driver = DriverFactory.getWebDriver()
-//		WebElement mainList = driver.findElement(By.xpath("//div[@id='menudiv_104']/ul"))
-//		
-//		
-//		String a_Name = ''
-//		String a_Xpath = "./li/a[text()='"+a_Name+"']"
-//		WebElement a = mainList.findElement(By.xpath(a_Xpath))
-//		WebElement li = a.findElement(By.xpath(".."))
-//		WebElement ul = li.findElement(By.xpath("./ul"))
-//		
-//	}
-//	
-//	@Keyword
-//	def expandRepositoryMenu(String... menuPath) {
-//		
-//	}
-	
-	
+
+	StringBuilder treeXpath;
+
+
+	@Keyword
+	def clickTreeMenu(String moduleName, String... menuPath) {
+
+		int size = menuPath.length
+
+		List<String> treePath = new ArrayList<String>(Arrays.asList(menuPath))
+		int lastIndex = treePath.size()-1
+		treePath.remove(lastIndex)
+		expandTree(treePath)
+
+		String appendBrace = lastIndex>1?" (":""
+		treeXpath.append("/ul/li/a[contains(text(),'"+menuPath[size-1]+appendBrace+"')]")
+		WebDriver driver = DriverFactory.getWebDriver()
+		driver.findElement(By.xpath(treeXpath.toString())).click()
+	}
+
+	@Keyword
+	def getRecordCountInActivity(String moduleName, String... menuPath) {
+
+		int size = menuPath.length
+
+		List<String> treePath = new ArrayList<String>(Arrays.asList(menuPath))
+		int lastIndex = treePath.size()-1
+		treePath.remove(lastIndex)
+		expandTree(treePath)
+
+		String appendBrace = lastIndex>1?" (":""
+		treeXpath.append("/ul/li/a[contains(text(),'"+menuPath[size-1]+appendBrace+"')]")
+		WebDriver driver = DriverFactory.getWebDriver()
+		String nodeText = driver.findElement(By.xpath(treeXpath.toString())).getText()
+
+		try {
+			int startIndex = nodeText.lastIndexOf('(')+1
+			int endIndex = nodeText.length()-1
+			String recordCountInString = nodeText.substring(startIndex, endIndex).trim()
+			return Integer.parseInt(recordCountInString)
+		}
+		catch(Exception e) {
+			println "Coult not get record count "+e.toString()
+			return -1
+		}
+	}
+
+	@Keyword
+	def verifyAllActivityNamesAreValidDate(String moduleName, String dateFormat, String... menuPath) {
+
+		int size = menuPath.length
+
+		List<String> treePath = new ArrayList<String>(Arrays.asList(menuPath))
+//		int lastIndex = treePath.size()-1
+//		treePath.remove(lastIndex)
+		expandTree(treePath)
+
+		WebDriver driver = DriverFactory.getWebDriver()
+		treeXpath.append("/ul/li/a")
+		List<WebElement> eleList = driver.findElements(By.xpath(treeXpath.toString()))
+
+		for(WebElement e in eleList) {
+			String dateValue = e.getText().split(' \\(')[0].trim()
+			if(!dateValue.equalsIgnoreCase('[Empty]'))
+				(new Common()).verifyDateFormat(dateValue, dateFormat)
+		}
+	}
+
+	/**
+	 * 
+	 * @param treePath
+	 */
+	private void expandTree(List<String> treePath) {
+		WebDriver driver = DriverFactory.getWebDriver()
+		treeXpath = new StringBuilder("//div[@id='menudiv_104']")
+		WebElement a
+		WebElement li
+
+		int i = 0
+		for(String path in treePath) {
+
+			String appendBrace = i>1?" (":""
+			treeXpath.append("/ul/li/a[contains(text(),'"+path+appendBrace+"')]")
+			a = driver.findElement(By.xpath(treeXpath.toString()))
+			treeXpath.append("/..")
+			li = a.findElement(By.xpath(".."))
+
+			if(!isAreaExpanded(li)) {
+				Actions asDriver = new Actions(driver)
+				asDriver.doubleClick(a).build().perform()
+				WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
+			}
+			i++
+		}
+	}
+
+	/**
+	 * 
+	 * @param li
+	 * @return
+	 */
+	private boolean isAreaExpanded(WebElement li) {
+		return Boolean.parseBoolean(li.getAttribute("aria-expanded"))
+	}
 }

@@ -206,6 +206,32 @@ def static "actions.MenuBar.verifyAllSubmenuAreSortedByActivityName"(
          , 	sortOrder)
 }
 
+def static "actions.MenuBar.clickTreeMenu"(
+    	String moduleName	
+     , 	String[] menuPath	) {
+    (new actions.MenuBar()).clickTreeMenu(
+        	moduleName
+         , 	menuPath)
+}
+
+def static "actions.MenuBar.getRecordCountInActivity"(
+    	String moduleName	
+     , 	String[] menuPath	) {
+    (new actions.MenuBar()).getRecordCountInActivity(
+        	moduleName
+         , 	menuPath)
+}
+
+def static "actions.MenuBar.verifyAllActivityNamesAreValidDate"(
+    	String moduleName	
+     , 	String dateFormat	
+     , 	String[] menuPath	) {
+    (new actions.MenuBar()).verifyAllActivityNamesAreValidDate(
+        	moduleName
+         , 	dateFormat
+         , 	menuPath)
+}
+
 def static "actions.Report.clickReport"(
     	String lvl_one	
      , 	String lvl_two	
