@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Regression test WMI- Render as CheckBox List  (renderas=checkboxlist)</description>
+   <name>WMI_MO005</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>e9664dcb-0a2d-4ce5-a004-4bc4469aa3be</testCaseGuid>
+</TestCaseEntity>

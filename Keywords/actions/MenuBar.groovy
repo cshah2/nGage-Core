@@ -5,11 +5,13 @@ import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 import java.util.concurrent.TimeUnit
 
 import org.openqa.selenium.By
+import org.openqa.selenium.WebDriver
 import org.openqa.selenium.WebElement
 
 import com.kms.katalon.core.annotation.Keyword
 import com.kms.katalon.core.testobject.TestObject
 import com.kms.katalon.core.util.KeywordUtil
+import com.kms.katalon.core.webui.driver.DriverFactory
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 
 import internal.GlobalVariable as GlobalVariable
@@ -152,4 +154,26 @@ public class MenuBar {
 		else
 			KeywordUtil.markPassed("submenus are in sorted order")
 	}
+	
+//	@Keyword
+//	def selectRepositoryMenu(String... menuPath) {
+//		
+//		WebDriver driver = DriverFactory.getWebDriver()
+//		WebElement mainList = driver.findElement(By.xpath("//div[@id='menudiv_104']/ul"))
+//		
+//		
+//		String a_Name = ''
+//		String a_Xpath = "./li/a[text()='"+a_Name+"']"
+//		WebElement a = mainList.findElement(By.xpath(a_Xpath))
+//		WebElement li = a.findElement(By.xpath(".."))
+//		WebElement ul = li.findElement(By.xpath("./ul"))
+//		
+//	}
+//	
+//	@Keyword
+//	def expandRepositoryMenu(String... menuPath) {
+//		
+//	}
+	
+	
 }

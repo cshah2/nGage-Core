@@ -318,10 +318,10 @@ public class Common {
 
 	@Keyword
 	def createDocument_WMIMenuBov() {
-		
+
 		'Switch to main window'
 		WebUI.switchToWindowTitle('Savana nGage')
-		
+
 		'Create a new BovDocTwoRow Document'
 		WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))
 		selectDocClassAndDocTypeForGlobalNew('WMI Menu', 'WMI Menu BOV')
@@ -353,7 +353,7 @@ public class Common {
 
 		'Switch to main window'
 		WebUI.switchToWindowTitle('Savana nGage')
-		
+
 		'Create a new BovDefault Document'
 		WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))
 		selectDocClassAndDocTypeForGlobalNew('WMI Menu', 'WMI Menu Default')
@@ -385,7 +385,7 @@ public class Common {
 
 		'Switch to main window'
 		WebUI.switchToWindowTitle('Savana nGage')
-		
+
 		'Create a new BovDocTwoRow Document'
 		WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))
 		selectDocClassAndDocTypeForGlobalNew('WMI Menu', 'WMI Menu DocTwoRow')
