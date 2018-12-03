@@ -175,6 +175,13 @@ public class MenuBar {
 		WebDriver driver = DriverFactory.getWebDriver()
 		driver.findElement(By.xpath(treeXpath.toString())).click()
 	}
+	
+	@Keyword
+	def doubleClickTreeMenu(String moduleName, String... menuPath) {
+		
+		List<String> menus = new ArrayList<String>(Arrays.asList(menuPath))
+		expandTree(moduleName, menus)
+	}
 
 	@Keyword
 	def getRecordCountInActivity(String moduleName, String... menuPath) {
@@ -228,8 +235,8 @@ public class MenuBar {
 	 */
 	private void expandTree(String moduleName, List<String> treePath) {
 		WebDriver driver = DriverFactory.getWebDriver()
-		
-		
+
+
 		switch(moduleName.toUpperCase()) {
 			case 'REPO':
 				treeXpath = new StringBuilder("//div[@id='menudiv_104']")
@@ -240,8 +247,8 @@ public class MenuBar {
 			default:
 				break
 		}
-		
-		
+
+
 		WebElement a
 		WebElement li
 

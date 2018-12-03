@@ -4,7 +4,17 @@
    <name>p_TextField_JS</name>
    <tag></tag>
    <elementGuidId>84c60589-d554-44cc-b8c2-f0ef079eddd5</elementGuidId>
-   <selectorMethod>BASIC</selectorMethod>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>id(&quot;tinymce&quot;)/p[1][count(. | //p[@ref_element = 'Object Repository/Page_WMI_NEW/Master_Object_Feature/Render_As_HtmlEdit/iframe_Font Sizes_eform_mcb676']) = count(//p[@ref_element = 'Object Repository/Page_WMI_NEW/Master_Object_Feature/Render_As_HtmlEdit/iframe_Font Sizes_eform_mcb676'])]</value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>//body[@id='tinymce']</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
    <webElementProperties>
       <isSelected>true</isSelected>
@@ -25,7 +35,7 @@
       <matchCondition>equals</matchCondition>
       <name>ref_element</name>
       <type>Main</type>
-      <value>Object Repository/Page_WMI_NEW/Master_Object_Feature/Render_As_HtmlEdit/iframe_Font Sizes_eform_mcb676</value>
+      <value>Object Repository/Page_WMI_NEW/Master_Object_Feature/Render_As_HtmlEdit/iframe_Text Field JS</value>
    </webElementProperties>
    <webElementXpaths>
       <isSelected>true</isSelected>

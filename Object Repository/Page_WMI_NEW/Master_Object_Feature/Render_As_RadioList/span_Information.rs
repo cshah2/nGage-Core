@@ -4,7 +4,17 @@
    <name>span_Information</name>
    <tag></tag>
    <elementGuidId>798ae063-11e2-43f5-8a58-8b0b403ace9f</elementGuidId>
-   <selectorMethod>BASIC</selectorMethod>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>//span[(text() = 'This WMI imparts - Control renderas RadioList' or . = 'This WMI imparts - Control renderas RadioList') and @ref_element = 'Object Repository/Page_WMI_NEW/Master_Object_Feature/Render_As_RadioList/iframe_Close Window_ContentPla']</value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>//div[contains(@id,'eform_mcb67676_phBO_3_BO_secpnl')]//span[@class='FieldVal']</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
    <webElementProperties>
       <isSelected>true</isSelected>

@@ -4,7 +4,17 @@
    <name>span_Information</name>
    <tag></tag>
    <elementGuidId>3fa71355-ccea-4ead-97cd-2070c3545ead</elementGuidId>
-   <selectorMethod>BASIC</selectorMethod>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>//span[(text() = 'This WMI imparts - Control renderas LinkButton' or . = 'This WMI imparts - Control renderas LinkButton') and @ref_element = 'Object Repository/Page_WMI_NEW/Master_Object_Feature/Render_As_LinkButton/iframe_Close Window_ContentPla']</value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>//div[contains(@id,'eform_mcb67676_phBO_3_BO_secpnl')]//span[@class='FieldVal']</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
    <webElementProperties>
       <isSelected>true</isSelected>

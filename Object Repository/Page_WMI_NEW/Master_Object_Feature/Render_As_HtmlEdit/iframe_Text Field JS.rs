@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>span_Information</name>
+   <name>iframe_Text Field JS</name>
    <tag></tag>
-   <elementGuidId>85b94212-2367-461c-ae77-f90068a41bb5</elementGuidId>
+   <elementGuidId>adf77356-7560-4b1c-9433-79f01c8bdffe</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//span[(text() = 'This WMI imparts - Control renderas HTMLEDIT' or . = 'This WMI imparts - Control renderas HTMLEDIT') and @ref_element = 'Object Repository/Page_WMI_NEW/Master_Object_Feature/Render_As_HtmlEdit/iframe_Close Window_ContentPla']</value>
+         <value>//iframe[@id = 'eform_mcb67676_phBO_3_BO_eidmKey_BM_Text_ifr' and @title = 'Rich Text Area. Press ALT-F9 for menu. Press ALT-F10 for toolbar. Press ALT-0 for help' and @ref_element = 'Object Repository/Page_WMI_NEW/Master_Object_Feature/Render_As_HtmlEdit/iframe_Close Window_ContentPla']</value>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//div[contains(@id,'eform_mcb67676_phBO_3_BO_secpnl')]//span[@class='FieldVal']</value>
+         <value>//iframe[@id='eform_mcb67676_phBO_3_BO_eidmKey_BM_String1_ifr']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
@@ -21,28 +21,49 @@
       <matchCondition>equals</matchCondition>
       <name>tag</name>
       <type>Main</type>
-      <value>span</value>
-   </webElementProperties>
-   <webElementProperties>
-      <isSelected>false</isSelected>
-      <matchCondition>equals</matchCondition>
-      <name>class</name>
-      <type>Main</type>
-      <value>FieldVal</value>
+      <value>iframe</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
-      <name>text</name>
+      <name>id</name>
       <type>Main</type>
-      <value>This WMI imparts - Control renderas HTMLEDIT</value>
+      <value>eform_mcb67676_phBO_3_BO_eidmKey_BM_Text_ifr</value>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>frameborder</name>
+      <type>Main</type>
+      <value>0</value>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>allowtransparency</name>
+      <type>Main</type>
+      <value>true</value>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>title</name>
+      <type>Main</type>
+      <value>Rich Text Area. Press ALT-F9 for menu. Press ALT-F10 for toolbar. Press ALT-0 for help</value>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>src</name>
+      <type>Main</type>
+      <value>javascript:&quot;&quot;</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>id(&quot;eform_mcb67676_phBO_3_BO_secpnl_1&quot;)/table[1]/tbody[1]/tr[2]/td[1]/table[1]/tbody[1]/tr[2]/td[1]/span[@class=&quot;FieldVal&quot;]</value>
+      <value>id(&quot;eform_mcb67676_phBO_3_BO_eidmKey_BM_Text_ifr&quot;)</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
@@ -54,37 +75,43 @@
    <webElementXpaths>
       <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
+      <name>xpath:attributes</name>
+      <value>//iframe[@id='eform_mcb67676_phBO_3_BO_eidmKey_BM_Text_ifr']</value>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
       <name>xpath:idRelative</name>
-      <value>//div[@id='eform_mcb67676_phBO_3_BO_secpnl_1']/table/tbody/tr[2]/td/table/tbody/tr[2]/td/span</value>
+      <value>//div[@id='mceu_78']/iframe</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:neighbor</name>
-      <value>(.//*[normalize-space(text()) and normalize-space(.)='Information:'])[1]/following::span[2]</value>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Font Sizes'])[1]/following::iframe[1]</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:neighbor</name>
-      <value>(.//*[normalize-space(text()) and normalize-space(.)='Business Model View - Render As HtmlEdit'])[1]/following::span[4]</value>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Font Family'])[1]/following::iframe[1]</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:neighbor</name>
-      <value>(.//*[normalize-space(text()) and normalize-space(.)='TEXT Field render as HTMLEDIT Control'])[1]/preceding::span[1]</value>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='p'])[1]/preceding::iframe[1]</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:neighbor</name>
-      <value>(.//*[normalize-space(text()) and normalize-space(.)='Formats'])[1]/preceding::span[3]</value>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Words: 0'])[1]/preceding::iframe[1]</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:position</name>
-      <value>//tr[2]/td/span</value>
+      <value>//iframe</value>
    </webElementXpaths>
 </WebElementEntity>

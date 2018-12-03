@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>textarea_Roshan</name>
+   <name>textarea_BM String</name>
    <tag></tag>
-   <elementGuidId>f42b401a-2d7d-4e3f-92bb-7c4df29cf933</elementGuidId>
+   <elementGuidId>b09e8ba8-9dc8-4d67-a8c4-e08f4e1c3de2</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>//textarea[@name = 'eform_mcb67676$eidmKey_BM_String' and @id = 'eform_mcb67676_eidmKey_BM_String' and @ref_element = 'Object Repository/Page_WMI/WMI_Menu_BOV_Default/iframe_Close_ContentPlaceHolde']</value>
+      </entry>
+   </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
    <webElementProperties>
@@ -18,7 +24,7 @@
       <matchCondition>equals</matchCondition>
       <name>name</name>
       <type>Main</type>
-      <value>eform_mcb67676$eidmKey_Customer_Name</value>
+      <value>eform_mcb67676$eidmKey_BM_String</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -39,28 +45,28 @@
       <matchCondition>equals</matchCondition>
       <name>id</name>
       <type>Main</type>
-      <value>eform_mcb67676_eidmKey_Customer_Name</value>
+      <value>eform_mcb67676_eidmKey_BM_String</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>valname</name>
       <type>Main</type>
-      <value>eidmKey_Customer_Name:Customer Name:::2</value>
+      <value>eidmKey_BM_String:BM String:::1</value>
    </webElementProperties>
    <webElementProperties>
-      <isSelected>true</isSelected>
+      <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>text</name>
       <type>Main</type>
-      <value>Roshan</value>
+      <value>Test1</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>id(&quot;eform_mcb67676_eidmKey_Customer_Name&quot;)</value>
+      <value>id(&quot;eform_mcb67676_eidmKey_BM_String&quot;)</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
@@ -73,42 +79,42 @@
       <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:attributes</name>
-      <value>//textarea[@id='eform_mcb67676_eidmKey_Customer_Name']</value>
+      <value>//textarea[@id='eform_mcb67676_eidmKey_BM_String']</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:idRelative</name>
-      <value>//td[@id='eform_mcb67676_FIELDVAL1_100091']/textarea</value>
+      <value>//td[@id='eform_mcb67676_FIELDVAL1_100040']/textarea</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:neighbor</name>
-      <value>(.//*[normalize-space(text()) and normalize-space(.)='*'])[2]/following::textarea[1]</value>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='BM String'])[1]/following::textarea[1]</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:neighbor</name>
-      <value>(.//*[normalize-space(text()) and normalize-space(.)='Customer Name'])[1]/following::textarea[1]</value>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Roshan'])[1]/following::textarea[1]</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:neighbor</name>
-      <value>(.//*[normalize-space(text()) and normalize-space(.)='BM String'])[1]/preceding::textarea[1]</value>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Document Details'])[1]/preceding::textarea[1]</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:neighbor</name>
-      <value>(.//*[normalize-space(text()) and normalize-space(.)='Test1'])[1]/preceding::textarea[1]</value>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='ID:'])[1]/preceding::textarea[1]</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:position</name>
-      <value>//textarea</value>
+      <value>//tr[3]/td[3]/textarea</value>
    </webElementXpaths>
 </WebElementEntity>

@@ -4,7 +4,17 @@
    <name>span_Information</name>
    <tag></tag>
    <elementGuidId>3e635ead-bd27-4ccf-b127-8b9cc5eb0ba3</elementGuidId>
-   <selectorMethod>BASIC</selectorMethod>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>//span[(text() = 'This WMI imparts - Control renderas CHANGEDOCTYPE' or . = 'This WMI imparts - Control renderas CHANGEDOCTYPE') and @ref_element = 'Object Repository/Page_WMI_NEW/Master_Object_Feature/Render_As_ChangeDocType/iframe_Close Window_ContentPla']</value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>//div[contains(@id,'eform_mcb67676_phBO_3_BO_secpnl')]//span[@class='FieldVal']</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
    <webElementProperties>
       <isSelected>true</isSelected>

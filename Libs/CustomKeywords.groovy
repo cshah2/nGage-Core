@@ -214,6 +214,14 @@ def static "actions.MenuBar.clickTreeMenu"(
          , 	menuPath)
 }
 
+def static "actions.MenuBar.doubleClickTreeMenu"(
+    	String moduleName	
+     , 	String[] menuPath	) {
+    (new actions.MenuBar()).doubleClickTreeMenu(
+        	moduleName
+         , 	menuPath)
+}
+
 def static "actions.MenuBar.getRecordCountInActivity"(
     	String moduleName	
      , 	String[] menuPath	) {

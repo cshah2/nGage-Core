@@ -1,10 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>span_Infrormation</name>
+   <name>span_Information</name>
    <tag></tag>
    <elementGuidId>d98f70de-75f3-4be1-83e7-59df7930c104</elementGuidId>
-   <selectorMethod>BASIC</selectorMethod>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>//span[(text() = 'This WMI imparts - Control renderas CheckBoxList' or . = 'This WMI imparts - Control renderas CheckBoxList') and @ref_element = 'Object Repository/Page_WMI_NEW/Master_Object_Feature/Render_As_CheckboxList/iframe_Close Window_ContentPla']</value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>//div[contains(@id,'eform_mcb67676_phBO_3_BO_secpnl')]//span[@class='FieldVal']</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
    <webElementProperties>
       <isSelected>true</isSelected>

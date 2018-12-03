@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>iframe_Font Sizes_eform_mcb676</name>
+   <name>select_CustomerId</name>
    <tag></tag>
-   <elementGuidId>45647f36-6a41-4fff-9266-00e23fa609d5</elementGuidId>
+   <elementGuidId>919dfe2a-702f-4a27-b905-09aed06e8762</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>//select[@name = 'eform_mcb67676$eidmKey_Customer_Id' and @id = 'eform_mcb67676_eidmKey_Customer_Id' and @ref_element = 'Object Repository/Page_WMI/WMI_Menu_BOV_Default/iframe_Close_ContentPlaceHolde']</value>
+      </entry>
+   </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
    <webElementProperties>
@@ -11,97 +17,110 @@
       <matchCondition>equals</matchCondition>
       <name>tag</name>
       <type>Main</type>
-      <value>iframe</value>
+      <value>select</value>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>name</name>
+      <type>Main</type>
+      <value>eform_mcb67676$eidmKey_Customer_Id</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
       <name>id</name>
       <type>Main</type>
-      <value>eform_mcb67676_phBO_3_BO_eidmKey_BM_Text_ifr</value>
+      <value>eform_mcb67676_eidmKey_Customer_Id</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
-      <name>frameborder</name>
+      <name>storeitemvalue</name>
       <type>Main</type>
-      <value>0</value>
+      <value>False</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
-      <name>allowtransparency</name>
+      <name>lookupid</name>
       <type>Main</type>
-      <value>true</value>
-   </webElementProperties>
-   <webElementProperties>
-      <isSelected>true</isSelected>
-      <matchCondition>equals</matchCondition>
-      <name>title</name>
-      <type>Main</type>
-      <value>Rich Text Area. Press ALT-F9 for menu. Press ALT-F10 for toolbar. Press ALT-0 for help</value>
+      <value>100022</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
-      <name>src</name>
+      <name>valname</name>
       <type>Main</type>
-      <value>javascript:&quot;&quot;</value>
+      <value>eidmKey_Customer_Id:Customer Id:::2</value>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>text</name>
+      <type>Main</type>
+      <value>
+			
+			100
+			200
+			300
+
+		</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>id(&quot;eform_mcb67676_phBO_3_BO_eidmKey_BM_Text_ifr&quot;)</value>
+      <value>id(&quot;eform_mcb67676_eidmKey_Customer_Id&quot;)</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
       <name>ref_element</name>
       <type>Main</type>
-      <value>Object Repository/Page_WMI_NEW/Master_Object_Feature/Render_As_HtmlEdit/iframe_Close Window_ContentPla</value>
+      <value>Object Repository/Page_WMI/WMI_Menu_BOV_Default/iframe_Close_ContentPlaceHolde</value>
    </webElementProperties>
    <webElementXpaths>
       <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:attributes</name>
-      <value>//iframe[@id='eform_mcb67676_phBO_3_BO_eidmKey_BM_Text_ifr']</value>
+      <value>//select[@id='eform_mcb67676_eidmKey_Customer_Id']</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:idRelative</name>
-      <value>//div[@id='mceu_78']/iframe</value>
+      <value>//td[@id='eform_mcb67676_FIELDVAL1_100100']/select</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:neighbor</name>
-      <value>(.//*[normalize-space(text()) and normalize-space(.)='Font Sizes'])[1]/following::iframe[1]</value>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='*'])[1]/following::select[1]</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:neighbor</name>
-      <value>(.//*[normalize-space(text()) and normalize-space(.)='Font Family'])[1]/following::iframe[1]</value>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Customer Id'])[1]/following::select[1]</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:neighbor</name>
-      <value>(.//*[normalize-space(text()) and normalize-space(.)='p'])[1]/preceding::iframe[1]</value>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Customer Name'])[1]/preceding::select[1]</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:neighbor</name>
-      <value>(.//*[normalize-space(text()) and normalize-space(.)='Words: 0'])[1]/preceding::iframe[1]</value>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='*'])[2]/preceding::select[1]</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:position</name>
-      <value>//iframe</value>
+      <value>//select</value>
    </webElementXpaths>
 </WebElementEntity>
