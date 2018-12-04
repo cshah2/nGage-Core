@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Regression test Search Repository: Uncheck Secure field , select Field Mask , Save</description>
+   <name>REPO048</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>360a6772-0ed0-4145-839b-664e962293c6</testCaseGuid>
+</TestCaseEntity>

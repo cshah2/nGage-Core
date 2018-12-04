@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Regression test My Work (Date field+DM):&quot;Not In&quot; opeartor - Search should work on Date control for DATE Field</description>
+   <name>REPO078</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>3120e075-94ed-467d-9922-c70a8a75ed8a</testCaseGuid>
+</TestCaseEntity>

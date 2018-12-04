@@ -16,7 +16,17 @@ import internal.GlobalVariable as GlobalVariable
 'Login into application'
 CustomKeywords.'actions.Common.login'()
 
-'Verify the Repository Menu is visible'
+'Click on Repository Menu'
+WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/h3_Repository Menu'))
+WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
+
+'Open the EDMs'
+CustomKeywords.'actions.MenuBar.clickTreeMenu'('REPO', 'Business Model', 'Business Model', 'Render All Field Types', 'Chintan Shah', 'WMI005_Auto_test', '[Empty]', '08/10/2018', '08/10/2018', '08/13/2018', '08/13/2018')
+
+'All the documents should appear in browse results tab in the grid with context menu'
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/BrowseResults Tab/iframe_BROWSETAB_iframe'))
+
+/*'Verify the Repository Menu is visible'
 WebUI.verifyElementVisible(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/h3_Repository Menu'))
 
 'Click on Repository Menu'
@@ -60,6 +70,4 @@ WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
 'Click on 08/13/2018 from 08/13/2018 Sub Menu to verify the '
 WebUI.click(findTestObject('Page_nGage_Dashboard/Repository/Business_Model_Tree/EDM_08-13-2018_08Date_Date_WMI005_BusinessModel'))
-WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
-
-CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/BrowseResults Tab/iframe_BROWSETAB_iframe'))
+WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)*/

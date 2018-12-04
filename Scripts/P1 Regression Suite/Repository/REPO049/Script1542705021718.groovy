@@ -56,7 +56,7 @@ WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
 'Verify EDM Date doesnot contains Time'
 String value = WebUI.getText(findTestObject('Page_nGage_Dashboard/Repository/Business_Model_Tree/EDM_08-10-2018_Empty_WMI005_Chintan_BusinessModel'))
-Boolean result = value.contains('-')
+Boolean result = value.contains(':')
 WebUI.verifyEqual(result, false)
 
 'Get text from EDM to verify with the records in table'
