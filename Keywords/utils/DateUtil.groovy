@@ -241,6 +241,22 @@ public class DateUtil {
 		return dateString
 	}
 
+	public static String getCurrentDateTimeMinusDays(int days, String format) {
+
+		ZonedDateTime date = ZonedDateTime.now().minusDays(days)
+		String dateString = DateTimeFormatter.ofPattern(format).format(date)
+		println "Date is :"+dateString
+		return dateString
+	}
+
+	public static String getCurrentDateTimeMinusDays(int days, DateTimeFormatter format) {
+
+		ZonedDateTime date = ZonedDateTime.now().minusDays(days)
+		String dateString = date.format(format)
+		println "Date is :"+dateString
+		return dateString
+	}
+
 	public static String getCurrentDateTime(DateTimeFormatter _format) {
 		ZonedDateTime date = ZonedDateTime.now()
 		String dateString = date.format(_format)

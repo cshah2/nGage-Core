@@ -21,26 +21,24 @@ WebUI.verifyElementVisible(findTestObject('Object Repository/Page_nGage_Dashboar
 'Click on Repository Menu'
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/h3_Repository Menu'))
 
-'Verify Saved Searches EDM'
-WebUI.waitForElementVisible(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/table_SavedSearch'), GlobalVariable.G_LongTimeout)
-WebUI.verifyElementVisible(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/table_SavedSearch'))
-
-'Verify Saved Searches Documents'
-WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/Icon_Expand_SavedSearch'))
-WebUI.waitForElementVisible(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/SavedSearch_TempSearch'), GlobalVariable.G_LongTimeout)
-WebUI.verifyElementVisible(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/SavedSearch_TempSearch'))
-
-'Verify Recent Documents'
+'Verify Recent Documents menu is displayed'
 WebUI.verifyElementVisible(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/RecentDocuments'))
 
-'Verify Favorite Documents'
+'Verify Favorite Documents menu is displayed'
 WebUI.verifyElementVisible(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/FavoriteDocument'))
 
-'Verify In-Process Documents'
+'Verify In-Process Documents menu is displayed'
 WebUI.verifyElementVisible(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/In-ProcessDocuments'))
 
-'Verify Advance Search Tab'
+'Verify Saved Searches List is displayed'
+WebUI.doubleClick(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/li_SavedSearch'))
+
+WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
+WebUI.verifyElementVisible(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/SavedSearch_TempSearch'))
+
+'Click on Advance Search Tab'
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/a_Advanced Search Tab'))
-WebUI.waitForElementVisible((findTestObject('Object Repository/Page_nGage_Dashboard/Repository/li_SavedSearch')), GlobalVariable.G_LongTimeout)
 
-
+'Verify Saved Searches Table is displayed'
+WebUI.waitForElementVisible(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/table_SavedSearch'), GlobalVariable.G_LongTimeout)
+WebUI.verifyElementVisible(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/table_SavedSearch'))

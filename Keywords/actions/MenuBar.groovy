@@ -175,10 +175,10 @@ public class MenuBar {
 		WebDriver driver = DriverFactory.getWebDriver()
 		driver.findElement(By.xpath(treeXpath.toString())).click()
 	}
-	
+
 	@Keyword
 	def doubleClickTreeMenu(String moduleName, String... menuPath) {
-		
+
 		List<String> menus = new ArrayList<String>(Arrays.asList(menuPath))
 		expandTree(moduleName, menus)
 	}
@@ -277,5 +277,33 @@ public class MenuBar {
 	 */
 	private boolean isAreaExpanded(WebElement li) {
 		return Boolean.parseBoolean(li.getAttribute("aria-expanded"))
+	}
+
+
+	@Keyword
+	def verifySubMenuPresent(String moduleName, String expMenu, String... menuPath) {
+		
+		int size = menuPath.length
+
+		List<String> treePath = new ArrayList<String>(Arrays.asList(menuPath))
+		expandTree(moduleName, treePath)
+
+		WebDriver driver = DriverFactory.getWebDriver()
+		treeXpath.append("/ul/li/a")
+		List<WebElement> eleList = driver.findElements(By.xpath(treeXpath.toString()))
+		List<String> subNodeNames = new ArrayList<String>()
+		
+		for(WebElement e in eleList) {
+			String dateValue = e.getText().trim()
+			int startIndex = 0
+			int endIndex = dateValue.lastIndexOf(' (')+1
+			subNodeNames.add(dateValue.substring(startIndex, endIndex).trim())
+		}
+		
+		if(subNodeNames.contains(expMenu.trim()))
+			KeywordUtil.markPassed('Sub Node '+expMenu+' found in list')
+		else 
+			KeywordUtil.markFailedAndStop('Sub Node '+expMenu+' not found in list')
+
 	}
 }

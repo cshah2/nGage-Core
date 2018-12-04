@@ -42,12 +42,17 @@ public class Table {
 		List<WebElement> rows = table.findElements(By.tagName("tr"))
 
 		for(WebElement row in rows) {
-			if(row.isDisplayed())
+			if(isVisibleDataRow(row))
 				visibleRows.add(row)
 		}
 		println "Total Rows Count = "+rows.size()
 		println "Visible Rows Count = "+visibleRows.size()
 		return visibleRows
+	}
+	
+	private boolean isVisibleDataRow(WebElement row) {
+		String classValue = row.getAttribute('class')
+		return row.isDisplayed() && (classValue.contains('jqgrow') || classValue.contains('GVRow') || classValue.contains('GVAltRow'))
 	}
 
 	/**

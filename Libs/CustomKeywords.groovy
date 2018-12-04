@@ -240,6 +240,16 @@ def static "actions.MenuBar.verifyAllActivityNamesAreValidDate"(
          , 	menuPath)
 }
 
+def static "actions.MenuBar.verifySubMenuPresent"(
+    	String moduleName	
+     , 	String expMenu	
+     , 	String[] menuPath	) {
+    (new actions.MenuBar()).verifySubMenuPresent(
+        	moduleName
+         , 	expMenu
+         , 	menuPath)
+}
+
 def static "actions.Report.clickReport"(
     	String lvl_one	
      , 	String lvl_two	
@@ -362,6 +372,20 @@ def static "apis.UserManagement.updateLastLoginDate"(
     (new apis.UserManagement()).updateLastLoginDate(
         	userId
          , 	date)
+}
+
+def static "actions.Window.clickElementAndWaitForWindowClose"(
+    	TestObject saveButton	
+     , 	int timeout	) {
+    (new actions.Window()).clickElementAndWaitForWindowClose(
+        	saveButton
+         , 	timeout)
+}
+
+def static "actions.Window.switchToUrlContains"(
+    	String text	) {
+    (new actions.Window()).switchToUrlContains(
+        	text)
 }
 
 def static "actions.Common.maximizeWindow"() {
@@ -514,18 +538,48 @@ def static "actions.Common.changePasswordPageFormFill_Login"(
          , 	confirmPassword)
 }
 
-def static "actions.Window.clickElementAndWaitForWindowClose"(
-    	TestObject saveButton	
-     , 	int timeout	) {
-    (new actions.Window()).clickElementAndWaitForWindowClose(
-        	saveButton
-         , 	timeout)
+def static "actions.Common.createDocument_DateTimeDT"(
+    	String BM_Date	
+     , 	String DateRange	
+     , 	String BM_DateTime	
+     , 	String DateTimeRange	) {
+    (new actions.Common()).createDocument_DateTimeDT(
+        	BM_Date
+         , 	DateRange
+         , 	BM_DateTime
+         , 	DateTimeRange)
 }
 
-def static "actions.Window.switchToUrlContains"(
-    	String text	) {
-    (new actions.Window()).switchToUrlContains(
-        	text)
+def static "actions.Common.createDocument_RequiredFieldDT"(
+    	String BM_Date	
+     , 	String BM_String_Required	
+     , 	String BM_int	
+     , 	String DateTime_Required	
+     , 	String Date_Required	) {
+    (new actions.Common()).createDocument_RequiredFieldDT(
+        	BM_Date
+         , 	BM_String_Required
+         , 	BM_int
+         , 	DateTime_Required
+         , 	Date_Required)
+}
+
+def static "actions.Common.createDocument_MyWorkDateTime"(
+    	String docClass	
+     , 	String docType	
+     , 	String startDate	
+     , 	String endDate	
+     , 	String startDateTime	
+     , 	String endDateTime	
+     , 	String BM_Text	) {
+    (new actions.Common()).createDocument_MyWorkDateTime(
+        	docClass
+         , 	docType
+         , 	startDate
+         , 	endDate
+         , 	startDateTime
+         , 	endDateTime
+         , 	BM_Text)
 }
 
 def static "utils.DateUtil.verifyDateFilter"(
