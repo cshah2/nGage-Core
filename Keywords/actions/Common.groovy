@@ -539,15 +539,11 @@ public class Common {
 		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 
 		'Fill the details required'
-		WebUI.setText(findTestObject('Page_WMI_NEW/Date Date Time DT/input_BM Date'), BM_Date)
-		WebUI.sendKeys(findTestObject('Page_WMI_NEW/Date Date Time DT/input_BM Date'), Keys.chord(Keys.TAB))
-		WebUI.setText(findTestObject('Page_WMI_NEW/Date Date Time DT/input_Date range'), DateRange)
-		WebUI.sendKeys(findTestObject('Page_WMI_NEW/Date Date Time DT/input_Date range'), Keys.chord(Keys.TAB))
-		WebUI.setText(findTestObject('Page_WMI_NEW/Date Date Time DT/input_BM DateTime'), BM_DateTime)
-		WebUI.sendKeys(findTestObject('Page_WMI_NEW/Date Date Time DT/input_BM DateTime'), Keys.chord(Keys.TAB))
-		WebUI.setText(findTestObject('Page_WMI_NEW/Date Date Time DT/input_Date time range'), DateTimeRange)
-		WebUI.sendKeys(findTestObject('Page_WMI_NEW/Date Date Time DT/input_Date time range'), Keys.chord(Keys.TAB))
-
+		setText_Date(findTestObject('Page_WMI_NEW/Date Date Time DT/input_BM Date'), BM_Date)
+		setText_Date(findTestObject('Page_WMI_NEW/Date Date Time DT/input_Date range'), DateRange)
+		setText_Date(findTestObject('Page_WMI_NEW/Date Date Time DT/input_BM DateTime'), BM_DateTime)
+		setText_Date(findTestObject('Page_WMI_NEW/Date Date Time DT/input_Date time range'), DateTimeRange)
+		
 		'Save details and close'
 		WebUI.click(findTestObject('Page_WMI_NEW/Date Date Time DT/span_Save'))
 		WebUI.delay(3)
@@ -566,7 +562,7 @@ public class Common {
 
 		'Create a new BovDocTwoRow Document'
 		WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))
-		selectDocClassAndDocTypeForGlobalNew('Date Date Time DC', 'Date DateTime DT')
+		selectDocClassAndDocTypeForGlobalNew('Required Field DC', 'Required field DT')
 		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'))
 
 		'Switch to new Window'
@@ -574,17 +570,12 @@ public class Common {
 		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 
 		'Fill the details required'
-		WebUI.setText(findTestObject('Page_WMI_NEW/Required_Field_DT/input_BM Text'), BM_Date)
-		WebUI.sendKeys(findTestObject('Page_WMI_NEW/Required_Field_DT/input_BM Text'), Keys.chord(Keys.TAB))
+		setText_Date(findTestObject('Page_WMI_NEW/Required_Field_DT/input_BM Text'), BM_Date)
 		WebUI.setText(findTestObject('Page_WMI_NEW/Required_Field_DT/input_BM String required'), BM_String_Required)
-		WebUI.sendKeys(findTestObject('Page_WMI_NEW/Required_Field_DT/input_BM String required'), Keys.chord(Keys.TAB))
 		WebUI.setText(findTestObject('Page_WMI_NEW/Required_Field_DT/input_BM Int'), BM_int)
-		WebUI.sendKeys(findTestObject('Page_WMI_NEW/Required_Field_DT/input_BM Int'), Keys.chord(Keys.TAB))
-		WebUI.setText(findTestObject('Page_WMI_NEW/Required_Field_DT/input_Date Time Required'), DateTime_Required)
-		WebUI.sendKeys(findTestObject('Page_WMI_NEW/Required_Field_DT/input_Date Time Required'), Keys.chord(Keys.TAB))
-		WebUI.setText(findTestObject('Page_WMI_NEW/Required_Field_DT/input_Date Required'), Date_Required)
-		WebUI.sendKeys(findTestObject('Page_WMI_NEW/Required_Field_DT/input_Date Required'), Keys.chord(Keys.TAB))
-
+		setText_Date(findTestObject('Page_WMI_NEW/Required_Field_DT/input_Date Time Required'), DateTime_Required)
+		setText_Date(findTestObject('Page_WMI_NEW/Required_Field_DT/input_Date Required'), Date_Required)
+		
 		'Save details and close'
 		WebUI.mouseOver(findTestObject('Page_WMI_NEW/Required_Field_DT/span_Standard Actions'))
 		WebUI.waitForElementVisible(findTestObject('Page_WMI_NEW/Required_Field_DT/a_Save'), GlobalVariable.G_LongTimeout)
@@ -607,20 +598,16 @@ public class Common {
 		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'))
 
 		'Switch to new Window'
-		WebUI.switchToWindowTitle('(Doc ID: NEW )')
+		WebUI.switchToWindowTitle('Business Model WMI')
 		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 
 		'Fill the details required'
-		WebUI.setText(findTestObject('Page_WMI_NEW/MyWork_DateTime/input_Start test date'), startDate)
-		WebUI.sendKeys(findTestObject('Page_WMI_NEW/MyWork_DateTime/input_Start test date'), Keys.chord(Keys.TAB))
-		WebUI.setText(findTestObject('Page_WMI_NEW/MyWork_DateTime/input_Endtestdate'), endDate)
-		WebUI.sendKeys(findTestObject('Page_WMI_NEW/MyWork_DateTime/input_Endtestdate'), Keys.chord(Keys.TAB))
-		WebUI.setText(findTestObject('Page_WMI_NEW/MyWork_DateTime/input_Start test datetime'), startDateTime)
-		WebUI.sendKeys(findTestObject('Page_WMI_NEW/MyWork_DateTime/input_Start test datetime'), Keys.chord(Keys.TAB))
-		WebUI.setText(findTestObject('Page_WMI_NEW/MyWork_DateTime/input_End test datetime'), endDateTime)
-		WebUI.sendKeys(findTestObject('Page_WMI_NEW/MyWork_DateTime/input_End test datetime'), Keys.chord(Keys.TAB))
+		
+		setText_Date(findTestObject('Page_WMI_NEW/MyWork_DateTime/input_Start test date'), startDate)
+		setText_Date(findTestObject('Page_WMI_NEW/MyWork_DateTime/input_Endtestdate'), endDate)
+		setText_Date(findTestObject('Page_WMI_NEW/MyWork_DateTime/input_Start test datetime'), startDateTime)
+		setText_Date(findTestObject('Page_WMI_NEW/MyWork_DateTime/input_End test datetime'), endDateTime)
 		WebUI.setText(findTestObject('Page_WMI_NEW/MyWork_DateTime/input_BM Text'), BM_Text)
-		WebUI.sendKeys(findTestObject('Page_WMI_NEW/MyWork_DateTime/input_BM Text'), Keys.chord(Keys.TAB))
 
 		'Save details and close'
 		WebUI.click(findTestObject('Page_WMI_NEW/MyWork_DateTime/span_Save'))
@@ -630,5 +617,34 @@ public class Common {
 		'Switch to main window and close'
 		WebUI.switchToWindowTitle('Savana nGage')
 		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/span_ui-button-icon-primary ui'))
+	}
+
+	@Keyword
+	def verifyTotalRecordCountFromPageSummary(TestObject to, int expCount) {
+		String text = WebUI.getText(to).trim()
+		if(expCount < 0)
+			KeywordUtil.markFailedAndStop('Expected recod count is less than 0')
+		
+		int actCount
+		try {
+			actCount = Integer.parseInt(text.split(' of ')[1].trim())
+		}
+		catch(Exception e) {
+			KeywordUtil.markFailedAndStop('Could not get total record counts from page summary '+text)
+		}
+
+		if(actCount == expCount) {
+			KeywordUtil.markPassed('Expected count and actual counts are matching')
+		}
+		else {
+			KeywordUtil.markFailedAndStop('Expected count '+expCount+' does not match with actual count '+actCount)
+		}
+	}
+	
+	@Keyword
+	def setText_Date(TestObject to, String text) {
+		WebUI.setText(to, text)
+		WebUI.sendKeys(to, Keys.chord(Keys.TAB))
+		WebUI.delay(1)
 	}
 }

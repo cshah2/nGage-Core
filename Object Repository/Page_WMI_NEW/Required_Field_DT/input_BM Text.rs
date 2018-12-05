@@ -4,6 +4,12 @@
    <name>input_BM Text</name>
    <tag></tag>
    <elementGuidId>1164f46e-96c2-4318-a8d1-0b40d45adf7d</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>//input[@id = 'eform_mcb67676_phBO_3_BO_eidmKey_BM_Text_required' and @ref_element = 'Object Repository/Page_WMI_NEW/Required_Field_DT/iframe_Close_ContentPlaceHolde']</value>
+      </entry>
+   </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
    <webElementProperties>
@@ -14,14 +20,14 @@
       <value>input</value>
    </webElementProperties>
    <webElementProperties>
-      <isSelected>true</isSelected>
+      <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>name</name>
       <type>Main</type>
       <value>eform_mcb67676$phBO_3_BO$eidmKey_BM_Text_required</value>
    </webElementProperties>
    <webElementProperties>
-      <isSelected>true</isSelected>
+      <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>type</name>
       <type>Main</type>

@@ -4,6 +4,12 @@
    <name>input_Date Required</name>
    <tag></tag>
    <elementGuidId>3890e690-bbc7-45d0-92db-72ce3a65e6f1</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>//input[@id = 'eform_mcb67676_phBO_3_BO_eidmKey_Date_Required' and @ref_element = 'Object Repository/Page_WMI_NEW/Required_Field_DT/iframe_Close_ContentPlaceHolde']</value>
+      </entry>
+   </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
    <webElementProperties>
@@ -14,14 +20,14 @@
       <value>input</value>
    </webElementProperties>
    <webElementProperties>
-      <isSelected>true</isSelected>
+      <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>name</name>
       <type>Main</type>
       <value>eform_mcb67676$phBO_3_BO$eidmKey_Date_Required</value>
    </webElementProperties>
    <webElementProperties>
-      <isSelected>true</isSelected>
+      <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>type</name>
       <type>Main</type>

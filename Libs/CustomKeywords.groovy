@@ -374,20 +374,6 @@ def static "apis.UserManagement.updateLastLoginDate"(
          , 	date)
 }
 
-def static "actions.Window.clickElementAndWaitForWindowClose"(
-    	TestObject saveButton	
-     , 	int timeout	) {
-    (new actions.Window()).clickElementAndWaitForWindowClose(
-        	saveButton
-         , 	timeout)
-}
-
-def static "actions.Window.switchToUrlContains"(
-    	String text	) {
-    (new actions.Window()).switchToUrlContains(
-        	text)
-}
-
 def static "actions.Common.maximizeWindow"() {
     (new actions.Common()).maximizeWindow()
 }
@@ -580,6 +566,36 @@ def static "actions.Common.createDocument_MyWorkDateTime"(
          , 	startDateTime
          , 	endDateTime
          , 	BM_Text)
+}
+
+def static "actions.Common.verifyTotalRecordCountFromPageSummary"(
+    	TestObject to	
+     , 	int expCount	) {
+    (new actions.Common()).verifyTotalRecordCountFromPageSummary(
+        	to
+         , 	expCount)
+}
+
+def static "actions.Common.setText_Date"(
+    	TestObject to	
+     , 	String text	) {
+    (new actions.Common()).setText_Date(
+        	to
+         , 	text)
+}
+
+def static "actions.Window.clickElementAndWaitForWindowClose"(
+    	TestObject saveButton	
+     , 	int timeout	) {
+    (new actions.Window()).clickElementAndWaitForWindowClose(
+        	saveButton
+         , 	timeout)
+}
+
+def static "actions.Window.switchToUrlContains"(
+    	String text	) {
+    (new actions.Window()).switchToUrlContains(
+        	text)
 }
 
 def static "utils.DateUtil.verifyDateFilter"(
