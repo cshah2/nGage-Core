@@ -21,10 +21,10 @@ WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_My Work Left Menu'))
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
 'expand loan interactive link from left menu'
-WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/i_LoanInteractive'))
+WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/icon_Expand_LoanInteractive'))
 
 'wait for (option) Loan application visible'
-WebUI.waitForElementVisible(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/a_LoanApplication(59)'), GlobalVariable.G_LongTimeout)
+WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/My_Work/a_LoanApplication'), GlobalVariable.G_LongTimeout)
 
 'right click on (option)loan approval'
 WebUI.rightClick(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/LoanInteractive_MyWork/a_LoanApproval(21)'))

@@ -52,4 +52,3 @@ println 'Column Position of Search date is ' +StartTestDate_ColumnPosition
 
 'Verify Search Result'
 CustomKeywords.'actions.Table.verifyDateFilter'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), StartTestDate_ColumnPosition , '01/01/2018','<>')
-

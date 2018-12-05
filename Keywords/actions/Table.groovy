@@ -373,4 +373,20 @@ public class Table {
 		cell.click()
 		WebUI.switchToDefaultContent()
 	}
+	
+	@Keyword
+	def verifyRecordsWithinRange(TestObject tableLocator, int colNo, String fromNum, String toNum) {
+		WebElement table = WebUtil.getWebElement(tableLocator)
+		List<String> cellValues = getAllValuesFromColumn(table, colNo)
+		WebUI.switchToDefaultContent()
+
+		int fromValue=Integer.parseInt(fromNum)
+		int toValue=Integer.parseInt(toNum)
+		for(String value in cellValues) {
+			int actualValue=Integer.parseInt(value)
+			if(actualValue<fromValue || actualValue>toValue)
+			KeywordUtil.markFailedAndStop("Value : "+value+" is not within  range : "+fromNum+" - "+toNum)
+		}
+		KeywordUtil.markPassed("all the records values are in given range")
+	}
 }

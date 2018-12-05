@@ -35,7 +35,8 @@ CustomKeywords.'actions.Common.verifyRecordCountInActivityMatchesWithResultGrid'
 'Open Work Item'
 CustomKeywords.'actions.Table.clickCell'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'),1,4)
 
-WebUI.delay(10)
+//WebUI.delay(10)
+'switch to new window'
 WebUI.switchToWindowIndex(1)
 
 'Verify Closure Action is not Present'

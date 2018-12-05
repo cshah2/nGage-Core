@@ -45,5 +45,3 @@ WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
 'close browser'
 WebUI.closeBrowser()
-
-

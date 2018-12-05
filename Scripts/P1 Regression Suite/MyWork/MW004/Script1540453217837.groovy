@@ -13,13 +13,13 @@ WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_iframe_105'))
 
 'expand loan interactive link from left menu'
-WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/i_LoanInteractive'))
+WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/icon_Expand_LoanInteractive'))
 
 'wait for (option) Loan application visible'
-WebUI.waitForElementVisible(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/a_LoanApplication(59)'), GlobalVariable.G_LongTimeout)
+WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/My_Work/a_LoanApplication'), GlobalVariable.G_LongTimeout)
 
 'right click on (Option) Loan_Application(59)'
-WebUI.rightClick(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/a_LoanApplication(59)'))
+WebUI.rightClick(findTestObject('Page_nGage_Dashboard/My_Work/a_LoanApplication'))
 
 'click on (option)foldering configuration'
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/LoanInteractive_MyWork/a_Foldering Configuration'))
@@ -55,7 +55,7 @@ WebUI.verifyMatch(WebUI.getCSSValue(findTestObject('Object Repository/Page_nGage
 
 //Restore Defaults
 'right click on (Option) Loan_Application(59)'
-WebUI.rightClick(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/a_LoanApplication(59)'))
+WebUI.rightClick(findTestObject('Page_nGage_Dashboard/My_Work/a_LoanApplication'))
 
 'click on (option)foldering configuration'
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/LoanInteractive_MyWork/a_Foldering Configuration'))
@@ -83,7 +83,7 @@ WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Folde
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
 'right click on (Option) Loan_Application(59)'
-WebUI.rightClick(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/a_LoanApplication(59)'))
+WebUI.rightClick(findTestObject('Page_nGage_Dashboard/My_Work/a_LoanApplication'))
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
 'click on refresh'

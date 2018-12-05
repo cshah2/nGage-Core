@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>i_LoanInteractive</name>
+   <name>icon_Expand_DateTimeRequired</name>
    <tag></tag>
-   <elementGuidId>4a6b319c-2fd9-49c2-a04b-836afe97e1f3</elementGuidId>
+   <elementGuidId>0fc4a3b0-fd23-4396-af62-96674abad2bb</elementGuidId>
    <selectorCollection>
-      <entry>
-         <key>XPATH</key>
-         <value>//li[@id='PROCESS_100003']/i[@role='presentation']</value>
-      </entry>
       <entry>
          <key>BASIC</key>
          <value></value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>//li[@id='PROCESS_100021']/i</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
