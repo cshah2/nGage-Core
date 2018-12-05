@@ -241,7 +241,7 @@ public class MenuBar {
 			case 'REPO':
 				treeXpath = new StringBuilder("//div[@id='menudiv_104']")
 				break
-			case 'MY WORK':
+			case 'MY_WORK':
 				treeXpath = new StringBuilder("//div[@id='menudiv_105']")
 				break
 			default:
@@ -282,7 +282,7 @@ public class MenuBar {
 
 	@Keyword
 	def verifySubMenuPresent(String moduleName, String expMenu, String... menuPath) {
-		
+
 		int size = menuPath.length
 
 		List<String> treePath = new ArrayList<String>(Arrays.asList(menuPath))
@@ -292,17 +292,17 @@ public class MenuBar {
 		treeXpath.append("/ul/li/a")
 		List<WebElement> eleList = driver.findElements(By.xpath(treeXpath.toString()))
 		List<String> subNodeNames = new ArrayList<String>()
-		
+
 		for(WebElement e in eleList) {
 			String dateValue = e.getText().trim()
 			int startIndex = 0
 			int endIndex = dateValue.lastIndexOf(' (')+1
 			subNodeNames.add(dateValue.substring(startIndex, endIndex).trim())
 		}
-		
+
 		if(subNodeNames.contains(expMenu.trim()))
 			KeywordUtil.markPassed('Sub Node '+expMenu+' found in list')
-		else 
+		else
 			KeywordUtil.markFailedAndStop('Sub Node '+expMenu+' not found in list')
 
 	}

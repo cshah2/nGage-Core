@@ -543,7 +543,7 @@ public class Common {
 		setText_Date(findTestObject('Page_WMI_NEW/Date Date Time DT/input_Date range'), DateRange)
 		setText_Date(findTestObject('Page_WMI_NEW/Date Date Time DT/input_BM DateTime'), BM_DateTime)
 		setText_Date(findTestObject('Page_WMI_NEW/Date Date Time DT/input_Date time range'), DateTimeRange)
-		
+
 		'Save details and close'
 		WebUI.click(findTestObject('Page_WMI_NEW/Date Date Time DT/span_Save'))
 		WebUI.delay(3)
@@ -575,7 +575,7 @@ public class Common {
 		WebUI.setText(findTestObject('Page_WMI_NEW/Required_Field_DT/input_BM Int'), BM_int)
 		setText_Date(findTestObject('Page_WMI_NEW/Required_Field_DT/input_Date Time Required'), DateTime_Required)
 		setText_Date(findTestObject('Page_WMI_NEW/Required_Field_DT/input_Date Required'), Date_Required)
-		
+
 		'Save details and close'
 		WebUI.mouseOver(findTestObject('Page_WMI_NEW/Required_Field_DT/span_Standard Actions'))
 		WebUI.waitForElementVisible(findTestObject('Page_WMI_NEW/Required_Field_DT/a_Save'), GlobalVariable.G_LongTimeout)
@@ -602,7 +602,7 @@ public class Common {
 		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 
 		'Fill the details required'
-		
+
 		setText_Date(findTestObject('Page_WMI_NEW/MyWork_DateTime/input_Start test date'), startDate)
 		setText_Date(findTestObject('Page_WMI_NEW/MyWork_DateTime/input_Endtestdate'), endDate)
 		setText_Date(findTestObject('Page_WMI_NEW/MyWork_DateTime/input_Start test datetime'), startDateTime)
@@ -624,7 +624,7 @@ public class Common {
 		String text = WebUI.getText(to).trim()
 		if(expCount < 0)
 			KeywordUtil.markFailedAndStop('Expected recod count is less than 0')
-		
+
 		int actCount
 		try {
 			actCount = Integer.parseInt(text.split(' of ')[1].trim())
@@ -640,7 +640,7 @@ public class Common {
 			KeywordUtil.markFailedAndStop('Expected count '+expCount+' does not match with actual count '+actCount)
 		}
 	}
-	
+
 	@Keyword
 	def setText_Date(TestObject to, String text) {
 		WebUI.setText(to, text)
