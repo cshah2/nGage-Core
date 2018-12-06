@@ -49,10 +49,10 @@ public class Table {
 		println "Visible Rows Count = "+visibleRows.size()
 		return visibleRows
 	}
-	
+
 	private boolean isVisibleDataRow(WebElement row) {
 		String classValue = row.getAttribute('class')
-		return row.isDisplayed() && (classValue.contains('jqgrow') || classValue.contains('GVRow') || classValue.contains('GVAltRow'))
+		return (row.isDisplayed() && !classValue.contains('GVHeader'))
 	}
 
 	/**
@@ -116,7 +116,8 @@ public class Table {
 		List<WebElement> allHeaders = table.findElements(By.tagName("th"))
 		List<WebElement> visibleHeaders = new ArrayList<WebElement>()
 		for(WebElement header in allHeaders) {
-			if(header.isDisplayed())
+			String cssDisplay = header.getCssValue('display')
+			if(cssDisplay != 'none')
 				visibleHeaders.add(header)
 		}
 		return visibleHeaders
@@ -373,19 +374,19 @@ public class Table {
 		cell.click()
 		WebUI.switchToDefaultContent()
 	}
-	
+
 	@Keyword
-	def verifyRecordsWithinRange(TestObject tableLocator, int colNo, String fromNum, String toNum) {
+	def verifyRecordsWithinRange(TestObject tableLocator, int colNo, double fromValue, double toValue) {
 		WebElement table = WebUtil.getWebElement(tableLocator)
 		List<String> cellValues = getAllValuesFromColumn(table, colNo)
 		WebUI.switchToDefaultContent()
 
-		int fromValue=Integer.parseInt(fromNum)
-		int toValue=Integer.parseInt(toNum)
 		for(String value in cellValues) {
-			int actualValue=Integer.parseInt(value)
+			value=value.replace('$','')
+			
+			int actualValue=Double.parseDouble(value)
 			if(actualValue<fromValue || actualValue>toValue)
-			KeywordUtil.markFailedAndStop("Value : "+value+" is not within  range : "+fromNum+" - "+toNum)
+				KeywordUtil.markFailedAndStop("Value : "+value+" is not within  range : "+fromValue+" - "+toValue)
 		}
 		KeywordUtil.markPassed("all the records values are in given range")
 	}
