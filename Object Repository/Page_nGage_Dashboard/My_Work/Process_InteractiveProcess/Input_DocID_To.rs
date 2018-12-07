@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>span_DateRangeRequired_From_required</name>
+   <name>Input_DocID_To</name>
    <tag></tag>
-   <elementGuidId>3224f61c-3e5c-4ddc-80e9-d60f7e1d1d5d</elementGuidId>
+   <elementGuidId>2637a27c-385b-4212-82ab-4ae876234c70</elementGuidId>
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//table[@id='tblSearch']//tr[2]//span[1]</value>
+         <value>//input[@id='-100_2']</value>
       </entry>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

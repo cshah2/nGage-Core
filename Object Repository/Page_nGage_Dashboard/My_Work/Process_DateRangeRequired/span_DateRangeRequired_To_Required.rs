@@ -6,12 +6,11 @@
    <elementGuidId>8c29834b-7d0c-4720-a297-07429ff45e99</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>BASIC</key>
-         <value></value>
-      </entry>
-      <entry>
          <key>XPATH</key>
          <value>//table[@id='tblSearch']//tr[2]//span[2]</value>
+      </entry>
+      <entry>
+         <key>BASIC</key>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

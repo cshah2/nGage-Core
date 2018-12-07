@@ -82,6 +82,18 @@ def static "actions.Table.verifyDateFilter"(
          , 	operator)
 }
 
+def static "actions.Table.verifyFilter"(
+    	TestObject tableLocator	
+     , 	int colNo	
+     , 	int referenceNum	
+     , 	String operator	) {
+    (new actions.Table()).verifyFilter(
+        	tableLocator
+         , 	colNo
+         , 	referenceNum
+         , 	operator)
+}
+
 def static "actions.Table.verifyRecordsInTableAreLessThanEndDate"(
     	TestObject tableLocator	
      , 	int colNo	

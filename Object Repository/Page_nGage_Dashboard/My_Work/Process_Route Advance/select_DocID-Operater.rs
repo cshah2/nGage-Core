@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>span_DateRangeRequired_From_required</name>
+   <name>select_DocID-Operater</name>
    <tag></tag>
-   <elementGuidId>3224f61c-3e5c-4ddc-80e9-d60f7e1d1d5d</elementGuidId>
+   <elementGuidId>171406de-3fd7-4101-a5d5-4b5cbb3dd793</elementGuidId>
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//table[@id='tblSearch']//tr[2]//span[1]</value>
+         <value>//select[@id='ddlOperators_-100']</value>
       </entry>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

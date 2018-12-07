@@ -25,9 +25,9 @@ WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Proce
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
 'Click on DateRangeRequired to see work items'
-WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Process_DateRangeRequired/a_click_DateRangeRequired'))
+WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/Process_DateRangeRequired/a_DateRangeRequired'))
 
-'Click On Search Button'
+'Click On Search Bar to display Date field to Enter search Dates'
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/h3_Search Bar'))
 
 'Verify Fields from Search Form'

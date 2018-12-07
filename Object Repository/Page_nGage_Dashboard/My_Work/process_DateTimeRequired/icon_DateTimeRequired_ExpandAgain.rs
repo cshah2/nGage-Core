@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>a_Interactive Process</name>
+   <name>icon_DateTimeRequired_ExpandAgain</name>
    <tag></tag>
-   <elementGuidId>eda30c76-f202-4bf1-9529-acddb5006eb0</elementGuidId>
+   <elementGuidId>6b37334e-ba9d-426d-a1cd-f486cdac53cf</elementGuidId>
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//a[@id='PROCESS_100002_anchor']</value>
+         <value>//li[@id='ACTIVITY_100072_100021']/i</value>
       </entry>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

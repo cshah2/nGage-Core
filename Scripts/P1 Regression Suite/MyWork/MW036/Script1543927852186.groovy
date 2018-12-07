@@ -28,27 +28,30 @@ WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Process_Date Required/a_DateRequiredSearch'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/iframe_work_items'))
 
-'Click On Search Button in Menu Bar'
+'verify activity count with grid count'
+CustomKeywords.'actions.Common.verifyRecordCountInActivityMatchesWithResultGrid'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Process_Date Required/a_DateRequiredSearch'),findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/div_PageCount'))
+
+String beforeSearch = WebUI.getText(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/div_PageCount'))
+println beforeSearch
+
+'Expand Search Bar'
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/h3_Search Bar'))
 
-'Verify Fields from Search Form'
-WebUI.verifyElementPresent(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Process_Date Required/input_Start Test Date'), 5)
-WebUI.verifyElementPresent(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/btn_Search'), 5)
-WebUI.verifyElementPresent(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/btn_Reset'), 5)
-
-'Select Date Operator (>)from Dropdown Menu'
-WebUI.selectOptionByLabel(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Process_Date Required/icon_select_DateOperator'), '>', true)
-
-'Enter Date'
-WebUI.setText(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Process_Date Required/input_Start Test Date'),'06-28-2016')
+'click on search button'
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/btn_Search'))
-CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/iframe_work_items'))
 
-'Uncheck Show Assigned Only if Checked'
-WebUI.uncheck(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/chexkbox_ShowAssignedOnly'))
 
-int StartTestDate_ColumnPosition= CustomKeywords.'actions.Table.getColumnNumber'( findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/tableHeader_MyWorkSearchResult'), 'Start test date')
-println 'Column Position of Search date is ' +StartTestDate_ColumnPosition
+WebUI.waitForElementVisible(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/span_DateReqSearch_Start Dt_required'), GlobalVariable.G_LongTimeout)
+println WebUI.getText(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/span_DateReqSearch_Start Dt_required'))
+String actualText =  WebUI.getText(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/span_DateReqSearch_Start Dt_required'))
 
-'Verify Search Result'
-CustomKeywords.'actions.Table.verifyDateFilter'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), StartTestDate_ColumnPosition , '06/28/2016','>')
+'verify required message is Displaying'
+WebUI.verifyMatch(actualText,'Required', false)
+
+String afterSearch = WebUI.getText(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/div_PageCount'))
+println afterSearch
+
+'Verify Grid displaying older search Results'
+WebUI.verifyMatch(beforeSearch, afterSearch, true)
+
+

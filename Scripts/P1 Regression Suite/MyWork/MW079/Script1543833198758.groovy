@@ -73,7 +73,7 @@ int ActivityState_Index_After= CustomKeywords.'actions.Table.getColumnNumber'(fi
 WebUI.verifyMatch(DocID_Index_Before.toString(), ActivityState_Index_After.toString(), false)
 
 'click on another process/interactive process'
-WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/a_Interactive Process'))
+WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_Interactive Process'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/iframe_iframe_105'))
 
 'click on Activity A'

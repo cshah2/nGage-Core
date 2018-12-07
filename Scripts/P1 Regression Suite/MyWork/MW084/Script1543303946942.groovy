@@ -20,18 +20,22 @@ CustomKeywords.'actions.Common.login'()
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_My Work Left Menu'))
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
-'Click On Date Required icon to expand'
-WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/Process_Date Required/icon_expand_DateRequired'))
+'Create new Document in DateTimeRequired activity'
+CustomKeywords.'actions.Common.createDocument_MyWorkDateTime'('Datetimerequired','Datetimerequired','01012018','01012025','01012018 05:08:14 PM','08-30-2002 09:29:45 AM','Test')
+
+'Verify all activity names are valid Date'
+//CustomKeywords.'actions.MenuBar.verifyAllActivityNamesAreValidDate'('My_Work','MM/DD/YYYY','Processes','Datetimerequired','Datetimerequired')
+
+'Expand Processes and select Activity'
+CustomKeywords.'actions.MenuBar.clickTreeMenu'('My_Work','Processes','Datetimerequired','Datetimerequired','01/01/2018')
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
-'Click On DateRequiredSearch to load Frame'
-WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Process_Date Required/a_DateRequiredSearch'))
-CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/iframe_work_items'))
 
-'Click On Search Button'
-WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/h3_Search Bar'))
 
-'Verify Fields from Search Form'
-WebUI.verifyElementPresent(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Process_Date Required/input_Start Test Date'), 5)
-WebUI.verifyElementPresent(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/btn_Search'), 5)
-WebUI.verifyElementPresent(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/btn_Reset'), 5)
+//'Verify DateTimeRequired activity with Expandable Icon is present'
+//WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/process_DateTimeRequired/icon_DateTimeRequired_ExpandAgain'))
+//
+//'Verify Date format present with MM/DD/YYYY format(No time)'
+//CustomKeywords.'actions.Common.verifyDateFormat'(WebUI.getText(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Process_Date Required/a_06-06-2017_DateRequiredSearch')).split('[(]')[0].trim(), 'MM/DD/YYYY')
+//
+

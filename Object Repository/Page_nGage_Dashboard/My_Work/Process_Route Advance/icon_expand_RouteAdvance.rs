@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>a_click_DateRangeRequired</name>
+   <name>icon_expand_RouteAdvance</name>
    <tag></tag>
-   <elementGuidId>d5a117ce-7836-4b05-a77d-e41347e05c80</elementGuidId>
+   <elementGuidId>75249309-5516-475a-ad68-f7f2ea798e48</elementGuidId>
    <selectorCollection>
+      <entry>
+         <key>XPATH</key>
+         <value>//li[@id='PROCESS_100005']/i </value>
+      </entry>
       <entry>
          <key>BASIC</key>
          <value></value>
-      </entry>
-      <entry>
-         <key>XPATH</key>
-         <value>//li[@id='PROCESS_100020']/ul</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

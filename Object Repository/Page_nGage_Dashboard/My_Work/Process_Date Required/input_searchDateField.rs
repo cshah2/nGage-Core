@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>span_DateRangeRequired_From_required</name>
+   <name>input_searchDateField</name>
    <tag></tag>
-   <elementGuidId>3224f61c-3e5c-4ddc-80e9-d60f7e1d1d5d</elementGuidId>
+   <elementGuidId>beea20bb-ca13-4aa0-ac29-d2d69b76b1e1</elementGuidId>
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//table[@id='tblSearch']//tr[2]//span[1]</value>
+         <value>//input[@id='100340']</value>
       </entry>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>a_Interactive Process</name>
+   <name>a_EntryInteractiveUserActivity</name>
    <tag></tag>
-   <elementGuidId>eda30c76-f202-4bf1-9529-acddb5006eb0</elementGuidId>
+   <elementGuidId>f8328158-3380-40b9-98e5-08b83bf16d22</elementGuidId>
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//a[@id='PROCESS_100002_anchor']</value>
+         <value>//a[@id='ACTIVITY_100039_100005_anchor']</value>
       </entry>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

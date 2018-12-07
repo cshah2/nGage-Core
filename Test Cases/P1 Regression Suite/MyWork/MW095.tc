@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>28419 Regression test My Work (Date time field+WF):&quot;Null&quot; opeartor - Search should work on Date control for DATETIME Field</description>
+   <name>MW095</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>3990847e-97b2-4198-befd-9644dc286c7d</testCaseGuid>
+</TestCaseEntity>

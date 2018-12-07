@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>a_Interactive Process</name>
+   <name>icon_DateRequiredSearch_Expand</name>
    <tag></tag>
-   <elementGuidId>eda30c76-f202-4bf1-9529-acddb5006eb0</elementGuidId>
+   <elementGuidId>cfb8d116-2377-44ed-84f9-5a8ade06a47f</elementGuidId>
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//a[@id='PROCESS_100002_anchor']</value>
+         <value>//li[@id='ACTIVITY_100070_100019']/i </value>
       </entry>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

@@ -135,6 +135,56 @@ public class Table {
 		return -1;
 	}
 
+	public static boolean verifyFilter(String operator,int value,int referenceNum)
+	{
+		boolean status=false
+		switch(operator) {
+			case '='://equal to
+				if(value.compareTo(referenceNum)==0)
+					status=true
+				break
+
+			case '<>'://not equal to
+				if(value.compareTo(referenceNum)!=0)
+					status=true
+				break
+
+			case '>':  //greater than
+				if(value.compareTo(referenceNum)>0)
+					status= true
+				break
+
+			case '<'://less than
+				if(value.compareTo(referenceNum)<0)
+					status= true
+				break
+
+			case '>=':  //greater than or equal
+				if(value.compareTo(referenceNum)>=0)
+					status= true
+				break
+
+			case '<='://less than or equal
+				if(value.compareTo(referenceNum)<=0)
+					status= true
+				break
+
+			case 'null'://less than or equal
+				if(value.equals(""))
+					status= true
+				break
+
+			case 'not null':
+				if(!value.equals(""))
+					status= true
+				break
+
+			default:
+				status = false
+				break
+		}
+		return status
+	}
 
 	/* ##################### KEYWORDS ##################### */
 
@@ -231,6 +281,21 @@ public class Table {
 			}
 		}
 	}
+	
+	@Keyword
+	def verifyFilter(TestObject tableLocator, int colNo, int referenceNum,String operator) {
+		WebElement table = WebUtil.getWebElement(tableLocator)
+		List<String> cellValues = getAllValuesFromColumn(table, colNo)
+		WebUI.switchToDefaultContent()
+
+		for(String value in cellValues) {
+			boolean result = verifyFilter(operator, Integer.parseInt(value), referenceNum)
+			if(!result) {
+				KeywordUtil.markFailedAndStop("Value : "+value+" does not satisfy filter criteria")
+			}
+		}
+	}
+
 
 	def verifyDateTimeFilter(TestObject tableLocator, int colNo, String referenceDate,String operator) {
 		WebElement table = WebUtil.getWebElement(tableLocator)
@@ -383,7 +448,7 @@ public class Table {
 
 		for(String value in cellValues) {
 			value=value.replace('$','')
-			
+
 			int actualValue=Double.parseDouble(value)
 			if(actualValue<fromValue || actualValue>toValue)
 				KeywordUtil.markFailedAndStop("Value : "+value+" is not within  range : "+fromValue+" - "+toValue)

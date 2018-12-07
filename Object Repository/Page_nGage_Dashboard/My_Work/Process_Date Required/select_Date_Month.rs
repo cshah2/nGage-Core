@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>span_DateRangeRequired_From_required</name>
+   <name>select_Date_Month</name>
    <tag></tag>
-   <elementGuidId>3224f61c-3e5c-4ddc-80e9-d60f7e1d1d5d</elementGuidId>
+   <elementGuidId>5f341aad-d8f4-4469-b09b-db76fb72bf29</elementGuidId>
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//table[@id='tblSearch']//tr[2]//span[1]</value>
+         <value>//select[@class='ui-datepicker-month']</value>
       </entry>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
