@@ -20,22 +20,31 @@ CustomKeywords.'actions.Common.login'()
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_My Work Left Menu'))
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
-'Create new Document in DateTimeRequired activity'
+'Create a new Document in DateTimeRequired activity'
 CustomKeywords.'actions.Common.createDocument_MyWorkDateTime'('Datetimerequired','Datetimerequired','01012018','01012025','01012018 05:08:14 PM','08-30-2002 09:29:45 AM','Test')
 
-'Verify all activity names are valid Date'
-//CustomKeywords.'actions.MenuBar.verifyAllActivityNamesAreValidDate'('My_Work','MM/DD/YYYY','Processes','Datetimerequired','Datetimerequired')
-
-'Expand Processes and select Activity'
+'Expand Processes and Verify Foldered Document Displayed'
 CustomKeywords.'actions.MenuBar.clickTreeMenu'('My_Work','Processes','Datetimerequired','Datetimerequired','01/01/2018')
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
+'Verify foldered data should be displayed in the activity'
+CustomKeywords.'actions.MenuBar.verifyAllActivityNamesAreValidDate'('My_Work','MM/DD/YYYY','Processes','Datetimerequired','Datetimerequired')
 
+'Verify Date Format'
+CustomKeywords.'actions.Common.verifyDateFormat'('01/01/2018', 'MM/DD/YYYY')
 
-//'Verify DateTimeRequired activity with Expandable Icon is present'
-//WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/process_DateTimeRequired/icon_DateTimeRequired_ExpandAgain'))
-//
-//'Verify Date format present with MM/DD/YYYY format(No time)'
-//CustomKeywords.'actions.Common.verifyDateFormat'(WebUI.getText(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Process_Date Required/a_06-06-2017_DateRequiredSearch')).split('[(]')[0].trim(), 'MM/DD/YYYY')
-//
+int ColumnPosition_StartTestDate= CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/tableHeader_MyWorkSearchResult'),'Start test datetime')
+println ColumnPosition_StartTestDate
+
+'Verify searched data should be displayed in the search results with time as hh:mm:ss'
+CustomKeywords.'actions.Table.verifyAllValuesInColumnMatches'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), ColumnPosition_StartTestDate,'1/1/2018 5:08:14 PM')
+
+'Click On Search Bar'
+WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/h3_Search Bar'))
+
+String actualText = WebUI.getAttribute(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/process_DateTimeRequired/input_StartDateTimeRequired'),'value')
+println actualText
+
+'Verify date should get autopopulated in the search panel'
+WebUI.verifyMatch(actualText, '01-01-2018', false)
 
