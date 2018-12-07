@@ -135,8 +135,7 @@ public class Table {
 		return -1;
 	}
 
-	public static boolean verifyFilter(String operator,int value,int referenceNum)
-	{
+	public static boolean verifyFilter(String operator,int value,int referenceNum) {
 		boolean status=false
 		switch(operator) {
 			case '='://equal to
@@ -281,7 +280,7 @@ public class Table {
 			}
 		}
 	}
-	
+
 	@Keyword
 	def verifyFilter(TestObject tableLocator, int colNo, int referenceNum,String operator) {
 		WebElement table = WebUtil.getWebElement(tableLocator)
@@ -454,5 +453,27 @@ public class Table {
 				KeywordUtil.markFailedAndStop("Value : "+value+" is not within  range : "+fromValue+" - "+toValue)
 		}
 		KeywordUtil.markPassed("all the records values are in given range")
+	}
+
+
+	@Keyword
+	def verifyDateTimeIsSorted(TestObject tableLocator, int colNo,String sortOrder) {
+		WebElement table = WebUtil.getWebElement(tableLocator)
+		List<String> cellValues = getAllValuesFromColumn(table, colNo)
+		WebUI.switchToDefaultContent()
+
+		if(sortOrder.equalsIgnoreCase('asc'))
+			for(int i=0;i<cellValues.size()-1;i++){
+				boolean result = DateUtil.verifyDateFilter('<', cellValues[i].replaceAll('/', '-'), cellValues[i+1].replaceAll('/', '-'),"MM-dd-yyyy HH:mm:ss a")
+				if(!result)
+					KeywordUtil.markFailedAndStop("table records are not sorted")
+			}
+		else
+			for(int i=0;i<cellValues.size()-1;i++){
+				boolean result = DateUtil.verifyDateFilter('>', cellValues[i].replaceAll('/', '-'), cellValues[i+1].replaceAll('/', '-'),"MM-dd-yyyy HH:mm:ss a")
+				if(!result)
+					KeywordUtil.markFailedAndStop("table records are not sorted")
+			}
+		KeywordUtil.markPassed("table records are sorted")
 	}
 }
