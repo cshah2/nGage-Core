@@ -22,9 +22,9 @@ WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
 
 'Create a new Document in DateTimeRequired activity'
-//CustomKeywords.'actions.Common.createDocument_MyWorkDateTime'('Datetimerequired','Datetimerequired','01012018','01012025','01012018 05:08:14 PM','08-30-2002 09:29:45 AM','Test')
+CustomKeywords.'actions.Common.createDocument_MyWorkDateTime'('Datetimerequired','Datetimerequired','01012018','01012025','01012018 05:08:14 PM','08-30-2002 09:29:45 AM','Test')
 
-'Expand Processes and Verify Foldered Document Displayed'
+'Expand Processes and Verify DateTimeRequired activity Displayed'
 CustomKeywords.'actions.MenuBar.clickTreeMenu'('My_Work','Processes','Datetimerequired','Datetimerequired','01/01/2018')
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
@@ -43,10 +43,9 @@ CustomKeywords.'actions.Table.verifyAllValuesInColumnMatches'(findTestObject('Ob
 'Click On Search Bar'
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/h3_Search Bar'))
 
+'Verify date should get autopopulated in the search panel'
 String actualText = WebUI.getAttribute(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/process_DateTimeRequired/input_StartDateTimeRequired'),'value')
 println actualText
-
-'Verify date should get autopopulated in the search panel'
 WebUI.verifyMatch(actualText, '01-01-2018', false)
 
 'Select Date Operator (=)from Dropdown Menu'
