@@ -13,5 +13,3 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-println(CustomKeywords.'utils.DateUtil.verifyDateFilter'('=', '01-01-2013 01:01:20 AM', '01-01-2012 01:01:20 AM', 'MM-dd-yyyy HH:MM:SS a'))
-

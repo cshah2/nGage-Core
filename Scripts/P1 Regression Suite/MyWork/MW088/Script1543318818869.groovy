@@ -38,13 +38,15 @@ CustomKeywords.'actions.Table.verifyAllValuesInColumnMatches'(findTestObject('Ob
 'Click On Search Bar'
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/h3_Search Bar'))
 
+
+
 'Verify date should get autopopulated in the search panel with Date Only (No time)'
 String actualText = WebUI.getAttribute(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/process_DateTimeRequired/input_StartDateTimeRequired'),'value')
 println actualText
 WebUI.verifyMatch(actualText, '01-01-2018', false)
 
 'Select Date Operator (>)from Dropdown Menu'
-WebUI.selectOptionByLabel(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/process_DateTimeRequired/select_StartDateTime_operater'), '>', true)
+WebUI.selectOptionByLabel(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/process_DateTimeRequired/select_StartDateTime_operater'), '>', false)
 
 'Enter Date'
 CustomKeywords.'actions.Common.setText_Date'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/process_DateTimeRequired/input_StartDateTimeRequired'),'01-01-2018')

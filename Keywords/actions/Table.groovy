@@ -455,7 +455,6 @@ public class Table {
 		KeywordUtil.markPassed("all the records values are in given range")
 	}
 
-
 	@Keyword
 	def verifyDateTimeIsSorted(TestObject tableLocator, int colNo,String sortOrder) {
 		WebElement table = WebUtil.getWebElement(tableLocator)

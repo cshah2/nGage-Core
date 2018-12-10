@@ -20,24 +20,16 @@ CustomKeywords.'actions.Common.login'()
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_My Work Left Menu'))
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
-'Click On Date Required icon to expand'
-WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/Process_Date Required/icon_expand_DateRequired'))
+'expand correnspondence generation process'
+WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/icon_Expand_Correspondance Generation Process'))
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
-'Click On DateRequiredSearch to load Frame'
-WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Process_Date Required/a_DateRequiredSearch'))
+'click on correspondence activity'
+WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/a_Correspondance Activity'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/iframe_work_items'))
 
-'Verify activity count with grid count'
-CustomKeywords.'actions.Common.verifyRecordCountInActivityMatchesWithResultGrid'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Process_Date Required/a_DateRequiredSearch'),findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/div_PageCount'))
+'verify grid present'
+WebUI.verifyElementVisible(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'))
 
-'Expand Search Bar'
-WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/h3_Search Bar'))
-CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/iframe_work_items'))
-
-'Click on Calender'
-//WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Process_Date Required/span_button_Calender'))
-
-CustomKeywords.'actions.Calender.selectDate'('05/21/2018',findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Process_Date Required/span_button_Calender'))
-
-WebUI.delay(10)
+'verify activity count and grid count'
+CustomKeywords.'actions.Common.verifyRecordCountMatchesInActivityAndGrid'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/a_Correspondance Activity'), findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/div_PageCount'))

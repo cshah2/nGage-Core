@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>span_DtTimeReq_Start Dt_Required</name>
+   <name>input_Search_Customer Name</name>
    <tag></tag>
-   <elementGuidId>77760de6-d649-41b6-b009-184bfa5a4049</elementGuidId>
+   <elementGuidId>a5a6a9d6-5c2a-4e6a-a5c9-c36f7497cddc</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//table[@id='tblSearch']//tr[4]//span[Text()='required']</value>
+         <value>//input[@id='100091']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

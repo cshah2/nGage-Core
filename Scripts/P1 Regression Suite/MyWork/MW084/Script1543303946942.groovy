@@ -47,4 +47,3 @@ println actualText
 
 'Verify date should get autopopulated in the search panel'
 WebUI.verifyMatch(actualText, '01-01-2018', false)
-

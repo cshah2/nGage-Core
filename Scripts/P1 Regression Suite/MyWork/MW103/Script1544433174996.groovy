@@ -24,20 +24,9 @@ WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/Process_Date Required/icon_expand_DateRequired'))
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
-'Click On DateRequiredSearch to load Frame'
-WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Process_Date Required/a_DateRequiredSearch'))
-CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/iframe_work_items'))
+'Click on DateRequiredSearch icon to expand'
+WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Process_Date Required/icon_DateRequiredSearch_Expand'))
+WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
-'Verify activity count with grid count'
-CustomKeywords.'actions.Common.verifyRecordCountInActivityMatchesWithResultGrid'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Process_Date Required/a_DateRequiredSearch'),findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/div_PageCount'))
-
-'Expand Search Bar'
-WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/h3_Search Bar'))
-CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/iframe_work_items'))
-
-'Click on Calender'
-//WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Process_Date Required/span_button_Calender'))
-
-CustomKeywords.'actions.Calender.selectDate'('05/21/2018',findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Process_Date Required/span_button_Calender'))
-
-WebUI.delay(10)
+'Verify the foldered date group should be displayed with only Date (not with time)'
+CustomKeywords.'actions.MenuBar.verifyAllActivityNamesAreValidDate'('My_Work','MM/DD/YYYY','Processes','Date Required','Daterequiredsearch')

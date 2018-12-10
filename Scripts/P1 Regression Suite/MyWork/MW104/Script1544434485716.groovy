@@ -20,24 +20,18 @@ CustomKeywords.'actions.Common.login'()
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_My Work Left Menu'))
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
-'Click On Date Required icon to expand'
-WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/Process_Date Required/icon_expand_DateRequired'))
-WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
+'Create a new Document in Date Required activity'
+CustomKeywords.'actions.Common.createDocument_MyWorkDateTime'('daterequiredsearch','daterequiredsearch','01012018','01012025','01012018 05:08:14 PM','08-30-2002 09:29:45 AM','Test')
 
-'Click On DateRequiredSearch to load Frame'
-WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Process_Date Required/a_DateRequiredSearch'))
+'Expand Processes and Verify DateTimeRequired activity Displayed'
+CustomKeywords.'actions.MenuBar.clickTreeMenu'('My_Work','Processes','Date Required','Daterequiredsearch','01/01/2018')
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/iframe_work_items'))
 
-'Verify activity count with grid count'
-CustomKeywords.'actions.Common.verifyRecordCountInActivityMatchesWithResultGrid'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Process_Date Required/a_DateRequiredSearch'),findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/div_PageCount'))
-
-'Expand Search Bar'
+'Click On Search Bar'
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/h3_Search Bar'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/iframe_work_items'))
 
-'Click on Calender'
-//WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Process_Date Required/span_button_Calender'))
-
-CustomKeywords.'actions.Calender.selectDate'('05/21/2018',findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Process_Date Required/span_button_Calender'))
-
-WebUI.delay(10)
+'Verify date should get autopopulated in the search panel with Date Only (No time)'
+String actualText = WebUI.getAttribute(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Process_Date Required/input_Start Test Date'),'value')
+println actualText
+WebUI.verifyMatch(actualText, '01-01-2018', false)
