@@ -27,13 +27,15 @@ WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 'Enter data in the pop up window and search'
 WebUI.setText(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/EDM_PopUp_BMRequiredField'), 'test')
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/EDM_PopUpSearchButton'))
+WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
-'Verify EDM shows test EDM below Chintan'
-WebUI.verifyElementVisible(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/EDM_Test_REPO07'))
+'Verify SubMenu is present in tree'
+CustomKeywords.'actions.MenuBar.verifySubMenuPresent'('REPO', 'Test', 'Required Date string field EDM', 'Required field date string search class', 'Chintan Shah')
 
-'Click on test EDM'
-WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/EDM_Test_REPO07'))
+'Click on newly searched tree menu'
+CustomKeywords.'actions.MenuBar.clickTreeMenu'('REPO', 'Required Date string field EDM', 'Required field date string search class', 'Chintan Shah', 'Test')
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/BrowseResults Tab/iframe_BROWSETAB_iframe'))
 
-'Verify the records showing in EDM and table are matching for Test EDM'
-CustomKeywords.'actions.Common.verifyRecordCountMatchesInActivityAndGrid'(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/EDM_Test_REPO07'), findTestObject('Object Repository/Page_nGage_Dashboard/Repository/BrowseResults Tab/Table_PageResults'))
+'Verify record counts are matching'
+int recordCountInActivity = CustomKeywords.'actions.MenuBar.getRecordCountInActivity'('REPO', 'Required Date string field EDM', 'Required field date string search class', 'Chintan Shah', 'Test')
+CustomKeywords.'actions.Common.verifyTotalRecordCountFromPageSummary'(findTestObject('Page_nGage_Dashboard/Repository/BrowseResults Tab/Table_PageResults'), recordCountInActivity)

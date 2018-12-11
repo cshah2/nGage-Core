@@ -16,37 +16,15 @@ import internal.GlobalVariable as GlobalVariable
 'Login into application'
 CustomKeywords.'actions.Common.login'()
 
-'Verify the Repository Menu is visible'
-WebUI.verifyElementVisible(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/h3_Repository Menu'))
-
 'Click on Repository Menu'
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/h3_Repository Menu'))
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
-'Click on Business Model in EDM'
-WebUI.click(findTestObject('Page_nGage_Dashboard/Repository/Business_Model_Tree/EDM_BusinessModel'))
+'Right click on BM Ref ROTABLE Nested without Tab from Business Model Sub Menu'
+CustomKeywords.'actions.MenuBar.rightClickTreeMenu'('REPO', 'Business Model', 'Business Model', 'Render All Field Types', 'Chintan Shah', 'This is Test')
 
-'Click on EDM to expand. select search class which has fields configured as folder'
-WebUI.doubleClick(findTestObject('Page_nGage_Dashboard/Repository/Business_Model_Tree/EDM_BusinessModel'))
-WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
-
-'Click to expand Sub_Menu Business Model'
-WebUI.doubleClick(findTestObject('Page_nGage_Dashboard/Repository/Business_Model_Tree/EDM_BusinessModel_SubMenu'))
-WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
-
-'Click on Render All Fields Sub Menu'
-WebUI.doubleClick(findTestObject('Page_nGage_Dashboard/Repository/Business_Model_Tree/EDM_BusinessModel_RenderAllSubMenu'))
-WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
-
-'Click on Chintan from Render All Fields Sub Menu'
-WebUI.doubleClick(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/Business_Model_Tree/EDM_Chintan'))
-WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
-
-'Right click on This is test sub menu'
-WebUI.rightClick(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/Business_Model_Tree/EDM_This_Is_Test'))
-
-'Click on New Document'
-WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/EDM_NewDocument'))
+'Click New Document button'
+CustomKeywords.'actions.ContextMenu.clickOption'(findTestObject('Page_nGage_Dashboard/contextMenuOptions'), 'New Document')
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
 'Select  Doc Class and Doc Type'

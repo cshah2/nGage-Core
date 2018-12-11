@@ -16,37 +16,28 @@ import internal.GlobalVariable as GlobalVariable
 'Login into application'
 CustomKeywords.'actions.Common.login'()
 
-'Verify the Repository Menu is visible'
-WebUI.verifyElementVisible(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/h3_Repository Menu'))
-
 'Click on Repository Menu'
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/h3_Repository Menu'))
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
-'Click and open Business Model tab '
-WebUI.doubleClick(findTestObject('Page_nGage_Dashboard/Repository/Business_Model_Tree/EDM_BusinessModel'))
-WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
-
-'Click to expand Sub_Menu Business Model'
-WebUI.click(findTestObject('Page_nGage_Dashboard/Repository/Business_Model_Tree/EDM_BusinessModel_SubMenu'))
-WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
+'Click and open Business Model'
+CustomKeywords.'actions.MenuBar.clickTreeMenu'('REPO', 'Business Model', 'Business Model')
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/iframe_iframe_104'))
 
 'Click and open TopOneRowSC'
-WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/Business_Model_Tree/EDM_TopOneRowSC'))
+CustomKeywords.'actions.MenuBar.clickTreeMenu'('REPO', 'Business Model', 'TopOneRowSC')
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/iframe_iframe_104'))
 
 'Click and open Single Row SC'
-WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/Business_Model_Tree/EDM_SingleRowSC'))
+CustomKeywords.'actions.MenuBar.clickTreeMenu'('REPO', 'Business Model', 'SingleRowSC')
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/iframe_iframe_104'))
 
-'Click on Closure EDM'
-WebUI.doubleClick(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/Business_Model_Tree/EDM_Closure'))
-WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
+'Click and open Closure'
+CustomKeywords.'actions.MenuBar.clickTreeMenu'('REPO', 'Closure', 'Closure')
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/iframe_iframe_104'))
 
-'Click and open Closure submenu'
-WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/Business_Model_Tree/EDM_Closure_SubMenu_Closure'))
-
-
-'Click and open Closure not in user'
-WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/Business_Model_Tree/EDM_SubMenu_ClosureNotInUse'))
+'Click and open Closure not in use'
+CustomKeywords.'actions.MenuBar.clickTreeMenu'('REPO', 'Closure', 'Closure not in use')
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/iframe_iframe_104'))
 
 'Verify all tabs are open'

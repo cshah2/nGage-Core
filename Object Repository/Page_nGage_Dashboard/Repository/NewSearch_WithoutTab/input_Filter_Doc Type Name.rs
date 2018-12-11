@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>input_DocID_Filter</name>
+   <name>input_Filter_Doc Type Name</name>
    <tag></tag>
    <elementGuidId>ec291c2d-b647-48b8-bb86-12f6beeeeefc</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value></value>
       </entry>
       <entry>
          <key>XPATH</key>

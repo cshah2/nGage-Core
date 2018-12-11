@@ -179,8 +179,39 @@ public class MenuBar {
 	@Keyword
 	def doubleClickTreeMenu(String moduleName, String... menuPath) {
 
-		List<String> menus = new ArrayList<String>(Arrays.asList(menuPath))
-		expandTree(moduleName, menus)
+		int size = menuPath.length
+
+		List<String> treePath = new ArrayList<String>(Arrays.asList(menuPath))
+		int lastIndex = treePath.size()-1
+		treePath.remove(lastIndex)
+		expandTree(moduleName, treePath)
+
+		String appendBrace = lastIndex>1?" (":""
+		treeXpath.append("/ul/li/a[contains(text(),'"+menuPath[size-1]+appendBrace+"')]")
+		WebDriver driver = DriverFactory.getWebDriver()
+		WebElement e = driver.findElement(By.xpath(treeXpath.toString()))
+
+		Actions aDriver = new Actions(driver)
+		aDriver.doubleClick(e).build().perform()
+	}
+
+	@Keyword
+	def rightClickTreeMenu(String moduleName, String... menuPath) {
+
+		int size = menuPath.length
+
+		List<String> treePath = new ArrayList<String>(Arrays.asList(menuPath))
+		int lastIndex = treePath.size()-1
+		treePath.remove(lastIndex)
+		expandTree(moduleName, treePath)
+
+		String appendBrace = lastIndex>1?" (":""
+		treeXpath.append("/ul/li/a[contains(text(),'"+menuPath[size-1]+appendBrace+"')]")
+		WebDriver driver = DriverFactory.getWebDriver()
+		WebElement e = driver.findElement(By.xpath(treeXpath.toString()))
+
+		Actions aDriver = new Actions(driver)
+		aDriver.contextClick(e).build().perform()
 	}
 
 	@Keyword

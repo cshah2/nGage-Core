@@ -3,20 +3,12 @@
  * This class is generated automatically by Katalon Studio and should not be modified or deleted.
  */
 
-import java.lang.String
-
 import com.kms.katalon.core.testobject.TestObject
+
+import java.lang.String
 
 import java.util.List
 
-
-def static "actions.Calender.selectDate"(
-    	String date	
-     , 	TestObject element	) {
-    (new actions.Calender()).selectDate(
-        	date
-         , 	element)
-}
 
 def static "actions.Table.verifyRecordsCount"(
     	TestObject tableLocator	
@@ -212,6 +204,12 @@ def static "actions.Table.verifyDateTimeIsSorted"(
          , 	sortOrder)
 }
 
+def static "actions.Table.getRowsCount"(
+    	TestObject tableLocator	) {
+    (new actions.Table()).getRowsCount(
+        	tableLocator)
+}
+
 def static "actions.MenuBar.getRecordCountInActivity"(
     	TestObject element	) {
     (new actions.MenuBar()).getRecordCountInActivity(
@@ -260,6 +258,14 @@ def static "actions.MenuBar.doubleClickTreeMenu"(
     	String moduleName	
      , 	String[] menuPath	) {
     (new actions.MenuBar()).doubleClickTreeMenu(
+        	moduleName
+         , 	menuPath)
+}
+
+def static "actions.MenuBar.rightClickTreeMenu"(
+    	String moduleName	
+     , 	String[] menuPath	) {
+    (new actions.MenuBar()).rightClickTreeMenu(
         	moduleName
          , 	menuPath)
 }
@@ -414,20 +420,6 @@ def static "apis.UserManagement.updateLastLoginDate"(
     (new apis.UserManagement()).updateLastLoginDate(
         	userId
          , 	date)
-}
-
-def static "actions.Window.clickElementAndWaitForWindowClose"(
-    	TestObject saveButton	
-     , 	int timeout	) {
-    (new actions.Window()).clickElementAndWaitForWindowClose(
-        	saveButton
-         , 	timeout)
-}
-
-def static "actions.Window.switchToUrlContains"(
-    	String text	) {
-    (new actions.Window()).switchToUrlContains(
-        	text)
 }
 
 def static "actions.Common.maximizeWindow"() {
@@ -640,6 +632,20 @@ def static "actions.Common.setText_Date"(
          , 	text)
 }
 
+def static "actions.Window.clickElementAndWaitForWindowClose"(
+    	TestObject saveButton	
+     , 	int timeout	) {
+    (new actions.Window()).clickElementAndWaitForWindowClose(
+        	saveButton
+         , 	timeout)
+}
+
+def static "actions.Window.switchToUrlContains"(
+    	String text	) {
+    (new actions.Window()).switchToUrlContains(
+        	text)
+}
+
 def static "utils.DateUtil.verifyDateFilter"(
     	String operator	
      , 	String actualValue	
@@ -674,30 +680,6 @@ def static "apis.Users.verifyIsUserAccountUnlocked"(
     	int userId	) {
     (new apis.Users()).verifyIsUserAccountUnlocked(
         	userId)
-}
-
-def static "actions.ContextMenu.verifyAllOptions"(
-    	TestObject contextMenuOptions	
-     , 	String[] options	) {
-    (new actions.ContextMenu()).verifyAllOptions(
-        	contextMenuOptions
-         , 	options)
-}
-
-def static "actions.ContextMenu.verifyOptionPresent"(
-    	TestObject contextMenuOptions	
-     , 	String option	) {
-    (new actions.ContextMenu()).verifyOptionPresent(
-        	contextMenuOptions
-         , 	option)
-}
-
-def static "actions.ContextMenu.clickOption"(
-    	TestObject contextMenuOptions	
-     , 	String option	) {
-    (new actions.ContextMenu()).clickOption(
-        	contextMenuOptions
-         , 	option)
 }
 
 def static "actions.Chart.verifyNumberOfSlices"(
@@ -744,4 +726,28 @@ def static "actions.Chart.clickSlice"(
         	chartLocator
          , 	sliceNo
          , 	sliceLocator)
+}
+
+def static "actions.ContextMenu.verifyAllOptions"(
+    	TestObject contextMenuOptions	
+     , 	String[] options	) {
+    (new actions.ContextMenu()).verifyAllOptions(
+        	contextMenuOptions
+         , 	options)
+}
+
+def static "actions.ContextMenu.verifyOptionPresent"(
+    	TestObject contextMenuOptions	
+     , 	String option	) {
+    (new actions.ContextMenu()).verifyOptionPresent(
+        	contextMenuOptions
+         , 	option)
+}
+
+def static "actions.ContextMenu.clickOption"(
+    	TestObject contextMenuOptions	
+     , 	String option	) {
+    (new actions.ContextMenu()).clickOption(
+        	contextMenuOptions
+         , 	option)
 }

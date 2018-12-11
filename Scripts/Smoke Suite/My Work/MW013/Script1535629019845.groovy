@@ -46,10 +46,11 @@ WebUI.verifyElementVisible(findTestObject('Page_nGage_Dashboard/My_Work/Charts/b
 WebUI.verifyElementText(findTestObject('Page_nGage_Dashboard/My_Work/Charts/button_Show Overdue Workitems'), 'Show Overdue Work Items')
 
 //Verify activity count in table
-CustomKeywords.'actions.Table.verifyRecordsCount'(findTestObject('Page_nGage_Dashboard/My_Work/Charts/table_AllProcess'), 10)
+int totalRecords = CustomKeywords.'actions.Table.getRowsCount'(findTestObject('Page_nGage_Dashboard/My_Work/Charts/table_AllProcess'))
+WebUI.verifyGreaterThan(totalRecords, 0)
 
 //Verify correct number of slices are displayed in pie chart
-CustomKeywords.'actions.Chart.verifyNumberOfSlices'(findTestObject('Page_nGage_Dashboard/My_Work/Charts/Chart_AllProcess_Summary'), 10, GlobalVariable.ChartType['PIE'])
+CustomKeywords.'actions.Chart.verifyNumberOfSlices'(findTestObject('Page_nGage_Dashboard/My_Work/Charts/Chart_AllProcess_Summary'), totalRecords, GlobalVariable.ChartType['PIE'])
 
 //Verify correct number of slices in bar chart
-CustomKeywords.'actions.Chart.verifyNumberOfSlices'(findTestObject('Page_nGage_Dashboard/My_Work/Charts/Chart_AllProcess_SLAStatusView'), 40, GlobalVariable.ChartType['V_BAR'])
+CustomKeywords.'actions.Chart.verifyNumberOfSlices'(findTestObject('Page_nGage_Dashboard/My_Work/Charts/Chart_AllProcess_SLAStatusView'), totalRecords*4, GlobalVariable.ChartType['V_BAR'])

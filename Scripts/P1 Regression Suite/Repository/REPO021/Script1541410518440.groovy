@@ -42,7 +42,7 @@ WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/Repository/tabl
 CustomKeywords.'actions.Table.verifyRecordsCount'(findTestObject('Page_nGage_Dashboard/Repository/table_SearchResults'), 12)
 
 'Ensure the first page in the table is loaded'
-WebUI.verifyElementText(findTestObject('Page_nGage_Dashboard/Repository/Table_SearchResult_PageCount'), "Showing 1 - 12 of 412")
+WebUI.verifyMatch(WebUI.getText(findTestObject('Page_nGage_Dashboard/Repository/Table_SearchResult_PageCount')), '.*Showing 1 - 12.*', true)
 
 'Click on next page (>>) icon.'
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/Teble_NextPageButton'))
@@ -51,7 +51,7 @@ WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/Te
 WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/Repository/table_SearchResults'), GlobalVariable.G_LongTimeout)
 
 'Grid should display next page and page number in text box should change.'
-WebUI.verifyElementText(findTestObject('Page_nGage_Dashboard/Repository/Table_SearchResult_PageCount'), "Showing 13 - 24 of 412")
+WebUI.verifyMatch(WebUI.getText(findTestObject('Page_nGage_Dashboard/Repository/Table_SearchResult_PageCount')), '.*Showing 13 - 24.*', true)
 
 'Click on Previous (<<) button'
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/Table_PreviousPageButton'))
@@ -60,4 +60,4 @@ WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/Ta
 WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/Repository/table_SearchResults'), GlobalVariable.G_LongTimeout)
 
 'Ensure the first page in the table is loaded'
-WebUI.verifyElementText(findTestObject('Page_nGage_Dashboard/Repository/Table_SearchResult_PageCount'), "Showing 1 - 12 of 412")
+WebUI.verifyMatch(WebUI.getText(findTestObject('Page_nGage_Dashboard/Repository/Table_SearchResult_PageCount')), '.*Showing 1 - 12.*', true)

@@ -475,4 +475,14 @@ public class Table {
 			}
 		KeywordUtil.markPassed("table records are sorted")
 	}
+	
+	@Keyword
+	def getRowsCount(TestObject tableLocator) {
+		WebElement table = WebUtil.getWebElement(tableLocator)
+		List<WebElement> rows = getAllRows(table)
+
+		WebUI.switchToDefaultContent()
+		
+		return rows.size()
+	}
 }

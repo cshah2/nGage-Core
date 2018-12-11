@@ -16,36 +16,17 @@ import internal.GlobalVariable as GlobalVariable
 'Login into application'
 CustomKeywords.'actions.Common.login'()
 
-'Verify the Repository Menu is visible'
-WebUI.verifyElementVisible(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/h3_Repository Menu'))
-
 'Click on Repository Menu'
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/h3_Repository Menu'))
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
-'Click on Business Model in EDM'
-WebUI.click(findTestObject('Page_nGage_Dashboard/Repository/Business_Model_Tree/EDM_BusinessModel'))
-
-'Click on EDM to expand. select search class which has fields configured as folder'
-WebUI.doubleClick(findTestObject('Page_nGage_Dashboard/Repository/Business_Model_Tree/EDM_BusinessModel'))
-WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
-
-'Click to expand Sub_Menu Business Model'
-WebUI.doubleClick(findTestObject('Page_nGage_Dashboard/Repository/Business_Model_Tree/EDM_BusinessModel_SubMenu'))
-WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
-
 'Right click on BM Ref ROTABLE Nested without Tab from Business Model Sub Menu'
-WebUI.rightClick(findTestObject('Page_nGage_Dashboard/Repository/Business_Model_Tree/EDM_BM Ref ROTABLE Nested without Tab'))
+CustomKeywords.'actions.MenuBar.rightClickTreeMenu'('REPO', 'Business Model', 'Business Model', 'Render All Field Types', 'Chintan Shah', 'This is Test')
 
 'Click New Search button'
-WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/EDM_NewSearch'))
-WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
-WebUI.delay(2)
-
-'Verify Search Panel page on right'
+CustomKeywords.'actions.ContextMenu.clickOption'(findTestObject('Page_nGage_Dashboard/contextMenuOptions'), 'New Search')
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_iframe_104'))
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/NewSearch_WithoutTab/iFrameNewSearch'))
 
 'Panel should be populated in search panel for the specific field.'
-//CustomKeywords.'actions.Common.verifyElementAttributeValueContains'(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/searchBusinessModel_DocTypeName'), "BM Ref ROTABLE without Tab", "BM Ref ROTABLE without Tab")
-WebUI.verifyElementAttributeValue(findTestObject('Page_nGage_Dashboard/Repository/NewSearch_WithoutTab/input_DocID_Filter'), 'value', 'BM Ref ROTABLE Nested without Tab', GlobalVariable.G_LongTimeout)
-
+WebUI.verifyElementAttributeValue(findTestObject('Page_nGage_Dashboard/Repository/NewSearch_WithoutTab/input_Filter_Doc Type Name'), 'value', 'Render All Field Types', GlobalVariable.G_LongTimeout)

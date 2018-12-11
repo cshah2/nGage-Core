@@ -36,7 +36,7 @@ CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Da
 WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/Repository/table_SearchResults'), GlobalVariable.G_LongTimeout)
 
 'Records in Table'
-WebUI.verifyElementText(findTestObject('Page_nGage_Dashboard/Repository/Table_SearchResult_PageCount'), "Showing 1 - 10 of 338")
+WebUI.verifyMatch(WebUI.getText(findTestObject('Page_nGage_Dashboard/Repository/Table_SearchResult_PageCount')), '.*Showing 1 - 10.*', true)
 
 'Open Closure tab from EDM'
 WebUI.doubleClick(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/Business_Model_Tree/EDM_Closure'))
@@ -52,4 +52,4 @@ WebUI.click(findTestObject('Page_nGage_Dashboard/Repository/Closure_Tab/searchBu
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/iframe_iframe_104'))
 
 'Verify records in table'
-WebUI.verifyElementText(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/Closure_Tab/table_SearchResultCount_ClosureTab'), "Showing 1 - 10 of 339")
+WebUI.verifyMatch(WebUI.getText(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/Closure_Tab/table_SearchResultCount_ClosureTab')), '.*Showing 1 - 10.*', true)

@@ -13,7 +13,7 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-//Login Into Application
+'Login Into Application'
 CustomKeywords.'actions.Common.login'()
 
 'Expand Repository Menu'
@@ -28,7 +28,7 @@ CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Da
 WebUI.selectOptionByLabel(findTestObject('Page_nGage_Dashboard/Repository/select_Search For Drop Down'), 'Business Model', false)
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
 
-//Enter Only End Date in Search field
+'Enter Only End Date in Search field'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Repository/input_BM___Date_From'))
 WebUI.setText(findTestObject('Page_nGage_Dashboard/Repository/input_BM___Date_From'), '12-12-2018')
 

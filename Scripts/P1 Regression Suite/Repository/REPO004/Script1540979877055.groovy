@@ -40,9 +40,3 @@ CustomKeywords.'actions.MenuBar.verifySubMenuPresent'('REPO', tree_BM_Date, 'Dat
 CustomKeywords.'actions.MenuBar.verifySubMenuPresent'('REPO', tree_DateRange, 'Date n Date time EDM','Date n Date time search class', tree_BM_Date)
 CustomKeywords.'actions.MenuBar.verifySubMenuPresent'('REPO', tree_BM_DateTime, 'Date n Date time EDM','Date n Date time search class', tree_BM_Date, tree_DateRange)
 CustomKeywords.'actions.MenuBar.verifySubMenuPresent'('REPO', tree_DateTimeRange, 'Date n Date time EDM','Date n Date time search class', tree_BM_Date, tree_DateRange, tree_BM_DateTime)
-
-'Click on Last Tree node'
-CustomKeywords.'actions.MenuBar.clickTreeMenu'('REPO', 'Date n Date time EDM','Date n Date time search class', tree_BM_Date, tree_DateRange, tree_BM_DateTime)
-
-int recordCountInActivity = CustomKeywords.'actions.MenuBar.getRecordCountInActivity'('REPO', 'Date n Date time EDM','Date n Date time search class', tree_BM_Date, tree_DateRange, tree_BM_DateTime)
-CustomKeywords.'actions.Common.verifyTotalRecordCountFromPageSummary'(findTestObject('Page_nGage_Dashboard/Repository/BrowseResults Tab/Table_PageResults'), recordCountInActivity)

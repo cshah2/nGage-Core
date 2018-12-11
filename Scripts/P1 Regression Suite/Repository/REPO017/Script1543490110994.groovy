@@ -52,7 +52,7 @@ WebUI.verifyElementVisible(findTestObject('Object Repository/Page_nGage_Dashboar
 
 'Enter Search critera name'
 String now = DateUtil.getCurrentDateTime()
-String fileName = 'NewFile_'+now
+String fileName = 'SAVED_SEARCH_'+now
 WebUI.setText(findTestObject('Page_nGage_Dashboard/Repository/input_txtSaveDesc'), fileName)
 
 WebUI.click(findTestObject('Page_nGage_Dashboard/Repository/input_btnSave'))

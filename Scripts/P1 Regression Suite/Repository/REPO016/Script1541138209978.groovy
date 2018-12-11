@@ -20,10 +20,10 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 import utils.DateUtil
 
-//Login Into Application
+'Login Into Application'
 CustomKeywords.'actions.Common.login'()
 
-//Expand Repository Menu
+'Expand Repository Menu'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Repository/h3_Repository Menu'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
 
@@ -53,29 +53,29 @@ WebUI.verifyElementVisible(findTestObject('Object Repository/Page_nGage_Dashboar
 
 'Enter Search critera name'
 String now = DateUtil.getCurrentDateTime()
-String fileName = 'NewFile_'+now
+String fileName = 'SAVED_SEARCH_'+now
 WebUI.setText(findTestObject('Page_nGage_Dashboard/Repository/input_txtSaveDesc'), fileName)
 
 WebUI.click(findTestObject('Page_nGage_Dashboard/Repository/input_btnSave'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
 
-//Select Saved search filter from the table
+'Select Saved search filter from the table'
 CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/Repository/div_Modified Date'))
 CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/Repository/div_Modified Date'))
 
-//Verify Filter created in last test cases is present in first row
+'Verify Filter created in last test cases is present in first row'
 WebUI.verifyElementText(findTestObject('Page_nGage_Dashboard/Repository/column_Saved Search table first row Search Desc'), fileName)
 
-//Select filter from table
+'Select filter from table'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Repository/column_Saved Search table first row Search Desc'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
 
-//Click on Recall button
+'Click on Recall button'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Repository/input_btnRecall'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
 
-//Wait for Element Visible
+'Wait for Element Visible'
 WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/Repository/div_Page_Results'), GlobalVariable.G_LongTimeout)
 
-//Validate Record count in filter
+'Validate Record count in filter'
 WebUI.verifyElementText(findTestObject('Page_nGage_Dashboard/Repository/div_Page_Results'), pageCountAfterFilter)

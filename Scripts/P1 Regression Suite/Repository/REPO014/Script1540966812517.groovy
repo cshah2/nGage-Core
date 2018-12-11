@@ -14,7 +14,7 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 import utils.DateUtil
 
-//Login Into Application
+'Login Into Application'
 CustomKeywords.'actions.Common.login'()
 
 'Expand Repository Menu'
@@ -29,7 +29,7 @@ CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Da
 WebUI.selectOptionByLabel(findTestObject('Page_nGage_Dashboard/Repository/select_Search For Drop Down'), 'Business Model', false)
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
 
-//Enter Only End Date in Search field
+'Enter Only End Date in Search field'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Repository/input_BM___Date_From'))
 WebUI.setText(findTestObject('Page_nGage_Dashboard/Repository/input_BM___Date_From'), '12-12-2018')
 
@@ -46,8 +46,8 @@ WebUI.verifyElementVisible(findTestObject('Object Repository/Page_nGage_Dashboar
 
 'Enter Search critera name'
 String now = DateUtil.getCurrentDateTime()
-GlobalVariable.FilterName = 'AUTOMATION_START_DATE_SEARCH_'+now
-WebUI.setText(findTestObject('Page_nGage_Dashboard/Repository/input_txtSaveDesc'), GlobalVariable.FilterName)
+String filterName = 'SAVED_SEARCH_'+now
+WebUI.setText(findTestObject('Page_nGage_Dashboard/Repository/input_txtSaveDesc'), filterName)
 
 'Click on Save button to save search criteia'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Repository/input_btnSave'))
@@ -58,4 +58,4 @@ CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dash
 CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/Repository/div_Modified Date'))
 
 'Validate Search criteria is displayed in the saved search grid'
-CustomKeywords.'actions.Table.verifyRecordPresentInColumn'(findTestObject('Page_nGage_Dashboard/Repository/table_SavedSearch'), 2, GlobalVariable.FilterName)
+CustomKeywords.'actions.Table.verifyRecordPresentInColumn'(findTestObject('Page_nGage_Dashboard/Repository/table_SavedSearch'), 2, filterName)

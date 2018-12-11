@@ -42,7 +42,7 @@ WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/Repository/tabl
 CustomKeywords.'actions.Table.verifyRecordsCount'(findTestObject('Page_nGage_Dashboard/Repository/table_SearchResults'), 12)
 
 'Ensure the first page in the table is loaded'
-WebUI.verifyElementText(findTestObject('Page_nGage_Dashboard/Repository/Table_SearchResult_PageCount'), "Showing 1 - 12 of 412")
+WebUI.verifyMatch(WebUI.getText(findTestObject('Page_nGage_Dashboard/Repository/Table_SearchResult_PageCount')), '.*Showing 1 - 12.*', true)
 
 'Click on next page (>|) icon.'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Repository/Table_LastPageButton'))
@@ -51,10 +51,8 @@ WebUI.click(findTestObject('Page_nGage_Dashboard/Repository/Table_LastPageButton
 WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/Repository/table_SearchResults'), GlobalVariable.G_LongTimeout)
 
 'Verify Page number'
-//println  WebUI.getText(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/span_DisplayedTotalCount'))
 WebUI.verifyMatch(WebUI.getAttribute(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/Table_PageNumberInput'),'value'),WebUI.getText(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/Table_PageNumberDisplayed')) , false)
 
-'Verify element(span_prev,span_first) is not clickable'
+'Verify element(span_next,span_last) is not clickable'
 CustomKeywords.'actions.Common.verifyElementAttributeValueContains'(findTestObject('Page_nGage_Dashboard/Repository/Table_LastPageButton'), 'class', 'ui-state-disabled')
-
 CustomKeywords.'actions.Common.verifyElementAttributeValueContains'(findTestObject('Page_nGage_Dashboard/Repository/Teble_NextPageButton'), 'class', 'ui-state-disabled')
