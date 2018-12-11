@@ -13,7 +13,7 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-//Login Into Application
+'Login Into Application'
 CustomKeywords.'actions.Common.login'()
 
 'Expand Repository Menu'
@@ -29,11 +29,9 @@ WebUI.selectOptionByLabel(findTestObject('Page_nGage_Dashboard/Repository/select
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
 
 'Enter Only End Date in Search field'
-WebUI.click(findTestObject('Page_nGage_Dashboard/Repository/input_BM___Date_From'))
-WebUI.setText(findTestObject('Page_nGage_Dashboard/Repository/input_BM___Date_From'), '12122018')
+CustomKeywords.'actions.Common.setText_Date'(findTestObject('Page_nGage_Dashboard/Repository/input_BM___Date_From'), '12122018')
 
 'Verify date field appears with -'
-//String dateWithHyphen = WebUI.getAttribute(findTestObject('Page_nGage_Dashboard/Repository/input_BM___Date_From'), )
 WebUI.verifyElementAttributeValue(findTestObject('Page_nGage_Dashboard/Repository/input_BM___Date_From'), 'value', '12-12-2018', GlobalVariable.G_LongTimeout)
 
 'Click on Search button'
@@ -42,3 +40,8 @@ CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Da
 
 'Wait for table to be visible'
 WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/Repository/table_SearchResults'), GlobalVariable.G_LongTimeout)
+
+'Verify correct records are displayed'
+int columnNo = CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Page_nGage_Dashboard/Repository/table_Header_SearchResults'), 'BM Date')
+println "Column NO is "+columnNo
+CustomKeywords.'actions.Table.verifyRecordsInTableAreMoreThanStartDate'(findTestObject('Page_nGage_Dashboard/Repository/table_SearchResults'), columnNo, '12-12-2018')

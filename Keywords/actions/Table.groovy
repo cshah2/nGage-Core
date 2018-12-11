@@ -9,6 +9,7 @@ import org.apache.commons.lang3.StringUtils
 import org.openqa.selenium.By
 import org.openqa.selenium.WebDriver
 import org.openqa.selenium.WebElement
+import org.openqa.selenium.interactions.Actions
 import org.openqa.selenium.By.ByCssSelector
 
 import com.kms.katalon.core.annotation.Keyword
@@ -127,6 +128,11 @@ public class Table {
 
 		for(int i = 0; i < headers.size() ; i++) {
 			String actColumnName = headers[i].getText().replace('\u00A0',' ').trim()
+			
+			WebDriver driver = DriverFactory.getWebDriver()
+			Actions aDriver = new Actions(driver)
+			aDriver.moveToElement(headers[i]).build().perform()
+			
 			if(StringUtils.isNotEmpty(actColumnName) && actColumnName.equalsIgnoreCase(columnName)) {
 				i = i+1;
 				return i
@@ -260,7 +266,7 @@ public class Table {
 		WebUI.switchToDefaultContent()
 
 		for(String value in cellValues) {
-			boolean result = DateUtil.isRecordDateMoreThanFilterDate(value, fromDate)
+			boolean result = DateUtil.isRecordDateMoreThanFilterDate(value.replaceAll('/', '-'), fromDate)
 			if(!result) {
 				KeywordUtil.markFailedAndStop("Value : "+value+" is not more than or equal to start date : "+fromDate)
 			}

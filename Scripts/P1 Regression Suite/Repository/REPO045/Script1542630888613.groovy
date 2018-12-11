@@ -13,7 +13,7 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-//Login Into Application
+'Login Into Application'
 CustomKeywords.'actions.Common.login'()
 
 'Expand Repository Menu'
@@ -21,24 +21,42 @@ WebUI.click(findTestObject('Page_nGage_Dashboard/Repository/h3_Repository Menu')
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
 
 'Select Repository - Advance Search tab'
-WebUI.selectOptionByLabel(findTestObject('Page_nGage_Dashboard/Repository/select_Repository Drop Down'), 'Business Model', false)
+WebUI.selectOptionByLabel(findTestObject('Page_nGage_Dashboard/Repository/select_Repository Drop Down'), 'Required Date time EDM', false)
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
 
 'Selinput_btnSearchect Search For - Advance Search tab'
-WebUI.selectOptionByLabel(findTestObject('Page_nGage_Dashboard/Repository/select_Search For Drop Down'), 'Business Model', false)
+WebUI.selectOptionByLabel(findTestObject('Page_nGage_Dashboard/Repository/select_Search For Drop Down'), 'Required field date time search class', false)
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
-
-'Enter Only End Date in Search field'
-WebUI.click(findTestObject('Page_nGage_Dashboard/Repository/input_BM___Date_From'))
-WebUI.setText(findTestObject('Page_nGage_Dashboard/Repository/input_BM___Date_From'), '12122018')
-
-'Verify date field appears with -'
-//String dateWithHyphen = WebUI.getAttribute(findTestObject('Page_nGage_Dashboard/Repository/input_BM___Date_From'), )
-WebUI.verifyElementAttributeValue(findTestObject('Page_nGage_Dashboard/Repository/input_BM___Date_From'), 'value', '12-12-2018', GlobalVariable.G_LongTimeout)
 
 'Click on Search button'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Repository/input_btnSearch'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
 
-'Wait for table to be visible'
-WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/Repository/table_SearchResults'), GlobalVariable.G_LongTimeout)
+'Verify error message is displayed for required field'
+WebUI.verifyElementVisible(findTestObject('Page_nGage_Dashboard/Repository/label_Required_DateTimeRange_End'))
+WebUI.verifyElementVisible(findTestObject('Page_nGage_Dashboard/Repository/label_Required_DateTimeRange_Start'))
+WebUI.verifyElementNotPresent(findTestObject('Page_nGage_Dashboard/Repository/label_Required_DateRange_End'), GlobalVariable.G_LongTimeout)
+WebUI.verifyElementNotPresent(findTestObject('Page_nGage_Dashboard/Repository/label_Required_DateRange_Start'), GlobalVariable.G_LongTimeout)
+WebUI.verifyElementText(findTestObject('Page_nGage_Dashboard/Repository/label_Required_DateTimeRange_End'), 'Required')
+WebUI.verifyElementText(findTestObject('Page_nGage_Dashboard/Repository/label_Required_DateTimeRange_Start'), 'Required')
+
+
+'Select Repository - Advance Search tab'
+WebUI.selectOptionByLabel(findTestObject('Page_nGage_Dashboard/Repository/select_Repository Drop Down'), 'Required Date string field EDM', false)
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
+
+'Selinput_btnSearchect Search For - Advance Search tab'
+WebUI.selectOptionByLabel(findTestObject('Page_nGage_Dashboard/Repository/select_Search For Drop Down'), 'Required field date string search class', false)
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
+
+'Click on Search button'
+WebUI.click(findTestObject('Page_nGage_Dashboard/Repository/input_btnSearch'))
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
+
+'Verify error message is displayed for required field'
+WebUI.verifyElementVisible(findTestObject('Page_nGage_Dashboard/Repository/label_Required_DateRange_End'))
+WebUI.verifyElementVisible(findTestObject('Page_nGage_Dashboard/Repository/label_Required_DateRange_Start'))
+WebUI.verifyElementNotPresent(findTestObject('Page_nGage_Dashboard/Repository/label_Required_DateTimeRange_End'), GlobalVariable.G_LongTimeout)
+WebUI.verifyElementNotPresent(findTestObject('Page_nGage_Dashboard/Repository/label_Required_DateTimeRange_Start'), GlobalVariable.G_LongTimeout)
+WebUI.verifyElementText(findTestObject('Page_nGage_Dashboard/Repository/label_Required_DateRange_End'), 'Required')
+WebUI.verifyElementText(findTestObject('Page_nGage_Dashboard/Repository/label_Required_DateRange_Start'), 'Required')
