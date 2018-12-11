@@ -53,4 +53,3 @@ WebUI.waitForElementVisible(findTestObject('Object Repository/Page_nGage_Dashboa
 
 int column_RevisionNumber_AfterReset = CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/BrowseResults Tab/table_Header_SearchResults'), 'Current Revision #')
 WebUI.verifyEqual(colum_RevisionNumber_Original, column_RevisionNumber_AfterReset)
-

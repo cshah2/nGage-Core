@@ -647,4 +647,10 @@ public class Common {
 		WebUI.sendKeys(to, Keys.chord(Keys.TAB))
 		WebUI.delay(1)
 	}
+	
+	@Keyword
+	def getPageSource() {
+		WebDriver driver = DriverFactory.getWebDriver()
+		return driver.getPageSource()
+	}
 }
