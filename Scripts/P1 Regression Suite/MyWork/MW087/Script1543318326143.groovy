@@ -20,33 +20,35 @@ CustomKeywords.'actions.Common.login'()
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_My Work Left Menu'))
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
-
 'Create a new Document in DateTimeRequired activity'
 CustomKeywords.'actions.Common.createDocument_MyWorkDateTime'('Datetimerequired','Datetimerequired','01012018','01012025','01012018 05:08:14 PM','08-30-2002 09:29:45 AM','Test')
 
-'Expand Processes and Verify DateTimeRequired activity Displayed'
+'Expand Processes by Click on the Expand Icon and Verify Foldered data displayed'
 CustomKeywords.'actions.MenuBar.clickTreeMenu'('My_Work','Processes','Datetimerequired','Datetimerequired','01/01/2018')
-WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
-
-'Verify foldered data should be displayed in the activity'
-CustomKeywords.'actions.MenuBar.verifyAllActivityNamesAreValidDate'('My_Work','MM/DD/YYYY','Processes','Datetimerequired','Datetimerequired')
-
-'Verify Date Format'
-CustomKeywords.'actions.Common.verifyDateFormat'('01/01/2018', 'MM/DD/YYYY')
-
-int ColumnPosition_StartTestDate= CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/tableHeader_MyWorkSearchResult'),'Start test datetime')
-println ColumnPosition_StartTestDate
-
-'Verify searched data should be displayed in the search results with time as hh:mm:ss'
-CustomKeywords.'actions.Table.verifyAllValuesInColumnMatches'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), ColumnPosition_StartTestDate,'1/1/2018 5:08:14 PM')
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/iframe_work_items'))
 
 'Click On Search Bar'
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/h3_Search Bar'))
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/iframe_work_items'))
 
-'Verify date should get autopopulated in the search panel'
+'Verify the foldered date group should be displayed with only Date (not with time) '
+CustomKeywords.'actions.MenuBar.verifyAllActivityNamesAreValidDate'('My_Work','MM/DD/YYYY','Processes','Datetimerequired','Datetimerequired')
+
+'Verify date autopopulated should show in the search panel'
 String actualText = WebUI.getAttribute(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/process_DateTimeRequired/input_StartDateTimeRequired'),'value')
 println actualText
 WebUI.verifyMatch(actualText, '01-01-2018', false)
+
+'Verify searched data (selected date in activity)should be displayed in the search result'
+WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/tableHeader_DocCreateDate'))
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/iframe_work_items'))
+WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/tableHeader_DocCreateDate'))
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/iframe_work_items'))
+int columnPosition_StartTestDateTime= CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/tableHeader_MyWorkSearchResult'),'Start test datetime')
+println columnPosition_StartTestDateTime
+String actualTextOfFirstRow= CustomKeywords.'actions.Table.getCellText'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), 1, columnPosition_StartTestDateTime)
+println trimActualText= actualTextOfFirstRow.split('[ ]')[0].trim()
+WebUI.verifyMatch(trimActualText, '1/1/2018', false)
 
 'Select Date Operator (=)from Dropdown Menu'
 WebUI.selectOptionByLabel(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/process_DateTimeRequired/select_StartDateTime_operater'), '=', false)
@@ -58,8 +60,5 @@ CustomKeywords.'actions.Common.setText_Date'(findTestObject('Object Repository/P
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/btn_Search'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/iframe_work_items'))
 
-int StartTestDateTime_ColumnPosition= CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/tableHeader_MyWorkSearchResult'), 'Start test datetime')
-println 'Column Position of StartTestDateTime is ' +StartTestDateTime_ColumnPosition
-
 'Verify Search Result'
-CustomKeywords.'actions.Table.verifyAllValuesInColumnMatches'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'),StartTestDateTime_ColumnPosition, '1/1/2018 5:08:14 PM')
+CustomKeywords.'actions.Table.verifyDateFilter'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'),columnPosition_StartTestDateTime, '01/01/2018','=')

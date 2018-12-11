@@ -23,54 +23,45 @@ CustomKeywords.'actions.Common.login'()
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_My Work Left Menu'))
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
-'Click On Date Required icon to expand'
-WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/Process_Date Required/icon_expand_DateRequired'))
-WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
+'Create a new Document in Date Required activity'
+CustomKeywords.'actions.Common.createDocument_MyWorkDateTime'('daterequiredsearch','daterequiredsearch','01012018','01012025','01012018 05:08:14 PM','08-30-2002 09:29:45 AM','Test')
 
-'Click on DateRequiredSearch icon to expand'
-WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Process_Date Required/icon_DateRequiredSearch_Expand'))
-WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
-
-'click 060617'
-WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Process_Date Required/a_06-06-2017_DateRequiredSearch'))
+'Expand Processes and Verify Date Required activity Displayed'
+CustomKeywords.'actions.MenuBar.clickTreeMenu'('My_Work','Processes','Date Required','Daterequiredsearch','01/01/2018')
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/iframe_work_items'))
-
-'Verify Date format present with MM/DD/YYYY format(No time)'
-CustomKeywords.'actions.Common.verifyDateFormat'(WebUI.getText(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Process_Date Required/a_06-06-2017_DateRequiredSearch')).split('[(]')[0].trim(), 'MM/DD/YYYY')
-
-
 
 'Click On Search Bar'
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/h3_Search Bar'))
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/iframe_work_items'))
 
-'Verify Search result shown in the grid matches with the Date selected in the Activity'
-println WebUI.getText(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Process_Date Required/a_06-06-2017_DateRequiredSearch')).split('[(]')[0].trim()
-String activityName=WebUI.getText(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Process_Date Required/a_06-06-2017_DateRequiredSearch')).split('[(]')[0].trim().replaceAll('/','-')
-println WebUI.getAttribute(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Process_Date Required/input_searchDateField'),'value')
-WebUI.verifyMatch(activityName,WebUI.getAttribute(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Process_Date Required/input_searchDateField'),'value'), false)
+'Verify the foldered date group should be displayed with only Date (not with time)'
+CustomKeywords.'actions.MenuBar.verifyAllActivityNamesAreValidDate'('My_Work','MM/DD/YYYY','Processes','Date Required','Daterequiredsearch')
 
+'Verify date autopopulated should show in the search panel'
+String actualText = WebUI.getAttribute(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Process_Date Required/input_Start Test Date'),'value')
+println actualText
+WebUI.verifyMatch(actualText, '01-01-2018', false)
+
+'Verify searched data (selected date in activity)should be displayed in the search result'
+WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/tableHeader_DocCreateDate'))
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/iframe_work_items'))
+WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/tableHeader_DocCreateDate'))
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/iframe_work_items'))
+int columnPosition_StartTestDate= CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/tableHeader_MyWorkSearchResult'),'Start test date')
+println columnPosition_StartTestDate
+String actualTextOfStartTextDateColumn= CustomKeywords.'actions.Table.getCellText'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), 1, columnPosition_StartTestDate)
+println actualTextOfStartTextDateColumn
+WebUI.verifyMatch(actualTextOfStartTextDateColumn, '1/1/2018', false)
 
 'Select Date Operator (=)from Dropdown Menu'
 WebUI.selectOptionByLabel(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Process_Date Required/icon_select_DateOperator'), '=', false)
 
 'Enter Date'
-WebUI.clearText(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Process_Date Required/input_searchDateField'))
-WebUI.sendKeys(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Process_Date Required/input_searchDateField'), Keys.chord(Keys.TAB))
-//WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Process_Date Required/input_Start Test Date'))
+CustomKeywords.'actions.Common.setText_Date'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Process_Date Required/input_Start Test Date'),'01-01-2018')
 
-WebUI.setText(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Process_Date Required/input_Start Test Date'),'01-01-2018')
-CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/iframe_work_items'))
-
-'Click on Search Button to see required results'
+'Click On Search Button'
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/btn_Search'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/iframe_work_items'))
 
-'Uncheck Show Assigned Only if Checked'
-WebUI.uncheck(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/chexkbox_ShowAssignedOnly'))
-
-int StartTestDate_ColumnPosition= CustomKeywords.'actions.Table.getColumnNumber'( findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/tableHeader_MyWorkSearchResult'), 'Start test date')
-println 'Column Position of Search date is ' +StartTestDate_ColumnPosition
-
 'Verify Search Result'
-CustomKeywords.'actions.Table.verifyDateFilter'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), StartTestDate_ColumnPosition , '01/01/2018','=')
-WebUI.delay(5)
+CustomKeywords.'actions.Table.verifyDateFilter'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'),columnPosition_StartTestDate, '01/01/2018','=')

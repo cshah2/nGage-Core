@@ -3,6 +3,6 @@
    <description>28408 Regression test My Work (Date time field+WF): Click on Date folder should show results in Search results</description>
    <name>MW084</name>
    <tag></tag>
-   <comment>Verify all activity names are valid Date</comment>
+   <comment></comment>
    <testCaseGuid>b0cd7106-5d65-4e10-9e48-b65fa1701341</testCaseGuid>
 </TestCaseEntity>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>28422 Regression test My Work (Date time field+WF):&quot;Not Null&quot; opeartor with control value kept blank - Search should work on Date control for DATETIME Field</description>
+   <name>MW098</name>
+   <tag></tag>
+   <comment>Create a new Document in DateTimeRequired activity</comment>
+   <testCaseGuid>317c3e55-3ccc-4cab-9f21-a90273d27aca</testCaseGuid>
+</TestCaseEntity>
