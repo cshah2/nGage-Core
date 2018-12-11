@@ -56,7 +56,8 @@ CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Da
 CustomKeywords.'actions.Common.verifyRecordCountInActivityMatchesWithResultGrid'(findTestObject('Page_nGage_Dashboard/My_Work/a_Activity C'), findTestObject('Page_nGage_Dashboard/My_Work/table_pagination_summary'))
 
 //Perform Context click on Acitivy A
-WebUI.rightClick(findTestObject('Page_nGage_Dashboard/My_Work/a_Activity A'))
+CustomKeywords.'actions.MenuBar.clickTreeMenu'('My_Work','Processes', 'Correspondence Generation', 'Correspondence')
+WebUI.rightClick(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/a_Correspondance Activity'))
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
 //Verify "Foldering Configuration" option is not present

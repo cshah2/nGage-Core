@@ -52,7 +52,7 @@ public class Table {
 
 	private boolean isVisibleDataRow(WebElement row) {
 		String classValue = row.getAttribute('class')
-		return (row.isDisplayed() && !classValue.contains('GVHeader'))
+		return (row.isDisplayed() && !classValue.equalsIgnoreCase('GVHeader'))
 	}
 
 	/**
@@ -475,14 +475,14 @@ public class Table {
 			}
 		KeywordUtil.markPassed("table records are sorted")
 	}
-	
+
 	@Keyword
 	def getRowsCount(TestObject tableLocator) {
 		WebElement table = WebUtil.getWebElement(tableLocator)
 		List<WebElement> rows = getAllRows(table)
 
 		WebUI.switchToDefaultContent()
-		
+
 		return rows.size()
 	}
 }

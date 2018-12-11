@@ -13,9 +13,8 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-
 'Login Into Application'
-CustomKeywords.'actions.Common.login'('Auto_WI_Check', 'Password1234!', 'IPM_EPM50MASTER_502_AUTOMATION')
+CustomKeywords.'actions.Common.login'('Auto_AI_Uncheck', 'Password1234!', 'IPM_EPM50MASTER_502_AUTOMATION')
 
 'Click on My Work link from left menu'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_My Work Left Menu'))
@@ -43,12 +42,6 @@ CustomKeywords.'actions.Window.clickElementAndWaitForWindowClose'(findTestObject
 WebUI.switchToWindowTitle('Savana nGage')
 WebUI.click(findTestObject('Page_nGage_Dashboard/Home/span_ui-button-icon-primary ui'))
 
-/*'Expand closure action'
-WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/icon_Expand_Closure Actions'))
-
-'Click on Activity A'
-WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/a_Activity A'))
-CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_work_items'))*/
 'Click on My Work link from left menu'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_My Work Left Menu'))
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
@@ -61,24 +54,33 @@ CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Da
 'verify grid records present'
 int activityRecordCount = CustomKeywords.'actions.MenuBar.getRecordCountInActivity'('MY_WORK', 'Processes','Closure Action', 'Activity A', 'Atul')
 CustomKeywords.'actions.Common.verifyTotalRecordCountFromPageSummary'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/div_PageCount'), activityRecordCount)
-//CustomKeywords.'actions.Common.verifyRecordCountInActivityMatchesWithResultGrid'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/a_Activity A'),findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/div_PageCount'))
+
+'Verify the closure actions should be visible in Action menu'
+WebUI.mouseOver(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/span_Actions Button'))
+WebUI.waitForElementVisible(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/action_AssignWorkItems'), GlobalVariable.G_LongTimeout)
+
+WebUI.verifyElementPresent(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/action_UpdateField'), GlobalVariable.G_LongTimeout)
+WebUI.verifyElementPresent(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/action_RouteToActivityC'), GlobalVariable.G_LongTimeout)
+WebUI.verifyElementPresent(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/action_RouteToActivityD'), GlobalVariable.G_LongTimeout)
+
+WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/span_Actions Button'))
 
 'Open Work Item'
 CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/tableHeader_DocID'))
 CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/tableHeader_DocID'))
 
-CustomKeywords.'actions.Table.clickCell'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'),1,4)
+CustomKeywords.'actions.Table.clickCell'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'),1,8)
 
-//WebUI.delay(10)
 'switch to new window'
 WebUI.switchToWindowIndex(1)
 
 'Click on Customer Information'
 WebUI.click(findTestObject('Object Repository/Page_WMI/Closure Action/span_Customer Information'))
-WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
+//WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_WMI/Closure Action/iframe_ContentPlaceHolder1_iPa'))
 
-'Verify Closure Action is not Present'
-WebUI.verifyElementNotPresent( findTestObject('Page_WMI/Closure Action/button_CustomerActions'), GlobalVariable.G_LongTimeout)
+'Verify Closure Action is Present'
+WebUI.verifyElementPresent( findTestObject('Page_WMI/Closure Action/button_CustomerActions'), GlobalVariable.G_LongTimeout)
 
 'Verify field Customer Name Present'
 WebUI.verifyElementPresent(findTestObject('Object Repository/Page_WMI_NEW/Closure_Action/input_Customer Name'), GlobalVariable.G_LongTimeout)

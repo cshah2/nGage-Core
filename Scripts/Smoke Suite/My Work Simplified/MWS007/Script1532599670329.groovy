@@ -76,7 +76,7 @@ WebUI.click(findTestObject('Page_WMI/Closure Action/span_Customer Information'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_WMI/Closure Action/iframe_ContentPlaceHolder1_iPa'))
 
 //Verify Customer information in Window 2 for DocID = 101755
-WebUI.verifyElementAttributeValue(findTestObject('Page_WMI/Closure Action/input_eform_Customer_Name'), 'value', 'Amol Patil', GlobalVariable.G_LongTimeout)
+WebUI.verifyElementAttributeValue(findTestObject('Page_WMI/Closure Action/input_eform_Customer_Name'), 'value', 'newuser', GlobalVariable.G_LongTimeout)
 WebUI.verifyElementAttributeValue(findTestObject('Page_WMI/Closure Action/input_eform_Customer_Details'), 'value', 'Automation Tester - 101755', GlobalVariable.G_LongTimeout)
 
 //Close window 2

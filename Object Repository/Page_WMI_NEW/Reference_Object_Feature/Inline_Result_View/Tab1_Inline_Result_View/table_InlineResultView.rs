@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>span_ClosureAction_RouteAdvance</name>
+   <name>table_InlineResultView</name>
    <tag></tag>
-   <elementGuidId>cb57149f-a16a-4496-a767-2ad5624bc4db</elementGuidId>
+   <elementGuidId>e89523dc-4902-4d56-94f2-ae37a659ff1b</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//*[@id=&quot;actionsMenu_Submenu_1&quot;]/a/span[1]</value>
+         <value>//table[@id='eform_mcb67676_TabContainer_4_TabRef_1_phBO_4_BO_grc']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
@@ -20,6 +21,6 @@
       <matchCondition>equals</matchCondition>
       <name>ref_element</name>
       <type>Main</type>
-      <value>Object Repository/Page_WMI/Closure Action/iframe_ContentPlaceHolder1_iPa</value>
+      <value>Object Repository/Page_WMI_NEW/Reference_Object_Feature/Inline_Result_View/iframe_ContentPlaceHolder1_iPage</value>
    </webElementProperties>
 </WebElementEntity>
