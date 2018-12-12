@@ -127,11 +127,12 @@ public class Table {
 	private int getColumnNumberOfHeader(List<WebElement> headers , String columnName) {
 
 		for(int i = 0; i < headers.size() ; i++) {
-			String actColumnName = headers[i].getText().replace('\u00A0',' ').trim()
 			
 			WebDriver driver = DriverFactory.getWebDriver()
 			Actions aDriver = new Actions(driver)
 			aDriver.moveToElement(headers[i]).build().perform()
+
+			String actColumnName = headers[i].getText().replace('\u00A0',' ').trim()
 			
 			if(StringUtils.isNotEmpty(actColumnName) && actColumnName.equalsIgnoreCase(columnName)) {
 				i = i+1;

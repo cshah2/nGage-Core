@@ -275,6 +275,9 @@ public class MenuBar {
 			case 'MY_WORK':
 				treeXpath = new StringBuilder("//div[@id='menudiv_105']")
 				break
+			case 'HOME':
+				treeXpath = new StringBuilder("//div[@id='menudiv_103']")
+				break
 			default:
 				KeywordUtil.markFailedAndStop("no such module exist: "+moduleName)
 				break

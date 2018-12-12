@@ -36,9 +36,10 @@ CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Da
 
 //Enter some search data in fields DocID , BM Date Time, BM Date From and BM  Date To
 WebUI.setText(findTestObject('Page_nGage_Dashboard/Repository/input_Doc___ID'), '100003')
-WebUI.setText(findTestObject('Page_nGage_Dashboard/Repository/input_BM___DateTime'), '12122018')
-WebUI.setText(findTestObject('Page_nGage_Dashboard/Repository/input_BM___Date_From'), '12122018')
-WebUI.setText(findTestObject('Page_nGage_Dashboard/Repository/input_BM___Date_To'), '01012019')
+
+CustomKeywords.'actions.Common.setText_Date'(findTestObject('Page_nGage_Dashboard/Repository/input_BM___DateTime'), '12122018')
+CustomKeywords.'actions.Common.setText_Date'(findTestObject('Page_nGage_Dashboard/Repository/input_BM___Date_From'), '12122018')
+CustomKeywords.'actions.Common.setText_Date'(findTestObject('Page_nGage_Dashboard/Repository/input_BM___Date_To'), '01012019')
 
 //Click on Clear button
 WebUI.click(findTestObject('Page_nGage_Dashboard/Repository/input_btnClear'))

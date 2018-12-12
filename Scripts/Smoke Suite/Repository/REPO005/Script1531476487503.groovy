@@ -35,11 +35,12 @@ WebUI.selectOptionByLabel(findTestObject('Page_nGage_Dashboard/Repository/select
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
 
 //Enter Only End Date in Search field
-WebUI.setText(findTestObject('Page_nGage_Dashboard/Repository/input_BM___Date_To'), '01012019')
+CustomKeywords.'actions.Common.setText_Date'(findTestObject('Page_nGage_Dashboard/Repository/input_BM___Date_To'), '01012019')
 
 //Click on Search button
 WebUI.click(findTestObject('Page_nGage_Dashboard/Repository/input_btnSearch'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
 
 //Validate Records in grid are within the specified date range
-CustomKeywords.'actions.Table.verifyRecordsInTableAreLessThanEndDate'(findTestObject('Page_nGage_Dashboard/Repository/table_SearchResults'), 18, '01-01-2019')
+int columnNo = CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Page_nGage_Dashboard/Repository/table_Header_SearchResults'), 'BM Date')
+CustomKeywords.'actions.Table.verifyRecordsInTableAreLessThanEndDate'(findTestObject('Page_nGage_Dashboard/Repository/table_SearchResults'), columnNo, '01-01-2019')

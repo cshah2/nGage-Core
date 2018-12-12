@@ -12,66 +12,34 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
+import utils.DateUtil
 
 'Login into application'
 CustomKeywords.'actions.Common.login'()
 
-'Verify the Repository Menu is visible'
-WebUI.verifyElementVisible(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/h3_Repository Menu'))
+//Pre-requisite : Add new document of Doc Class : Date n time
+String BM_Date = DateUtil.getCurrentDateTimeMinusDays(0, "MM-dd-yyyy") //Level1
+String DateRange = DateUtil.getCurrentDateTimeMinusDays(1, "MM-dd-yyyy") // Level2
+String BM_DateTime = DateUtil.getCurrentDateTimeMinusDays(2, "MM-dd-yyyy HH:mm:ss a") //Level 3
+String DateTimeRange = DateUtil.getCurrentDateTimeMinusDays(3, "MM-dd-yyyy HH:mm:ss a") //Level 4
+
+'Create new Document'
+CustomKeywords.'actions.Common.createDocument_DateTimeDT'(BM_Date, DateRange, BM_DateTime, DateTimeRange)
 
 'Click on Repository Menu'
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/h3_Repository Menu'))
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
-'Click on Business Model in EDM'
-WebUI.click(findTestObject('Page_nGage_Dashboard/Repository/Business_Model_Tree/EDM_BusinessModel'))
+String tree_BM_Date = BM_Date.substring(0, 10).replaceAll('-', '/').trim()
+String tree_DateRange = DateRange.substring(0, 10).replaceAll('-', '/').trim()
+String tree_BM_DateTime = BM_DateTime.substring(0, 10).replaceAll('-', '/').trim()
+String tree_DateTimeRange = DateTimeRange.substring(0, 10).replaceAll('-', '/').trim()
 
-'Click on EDM to expand. select search class which has fields configured as folder'
-WebUI.doubleClick(findTestObject('Page_nGage_Dashboard/Repository/Business_Model_Tree/EDM_BusinessModel'))
-WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
+CustomKeywords.'actions.MenuBar.verifyAllActivityNamesAreValidDate'('REPO', 'MM/dd/yyyy', 'Date n Date time EDM','Date n Date time search class')
+CustomKeywords.'actions.MenuBar.verifyAllActivityNamesAreValidDate'('REPO', 'MM/dd/yyyy', 'Date n Date time EDM','Date n Date time search class', tree_BM_Date)
+CustomKeywords.'actions.MenuBar.verifyAllActivityNamesAreValidDate'('REPO', 'MM/dd/yyyy', 'Date n Date time EDM','Date n Date time search class', tree_BM_Date, tree_DateRange)
+CustomKeywords.'actions.MenuBar.verifyAllActivityNamesAreValidDate'('REPO', 'MM/dd/yyyy', 'Date n Date time EDM','Date n Date time search class', tree_BM_Date, tree_DateRange, tree_BM_DateTime)
 
-'Click to expand Sub_Menu Business Model'
-WebUI.doubleClick(findTestObject('Page_nGage_Dashboard/Repository/Business_Model_Tree/EDM_BusinessModel_SubMenu'))
-WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
-
-'Click on Render All Fields from Business Model Sub Menu'
-WebUI.doubleClick(findTestObject('Page_nGage_Dashboard/Repository/Business_Model_Tree/EDM_RenderAllFields_BusinessModel_SubMenu'))
-WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
-
-'Click on Chintan from Render All Fields Sub Menu'
-WebUI.doubleClick(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/Business_Model_Tree/EDM_Chintan'))
-WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
-
-'Click on WMI005_Auto_Test from Chintan Sub Menu'
-WebUI.doubleClick(findTestObject('Page_nGage_Dashboard/Repository/Business_Model_Tree/EDM_WMI005_Chintan_RenderAllFields_SubMenu'))
-WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
-
-'Click on Empty121 from WMI005_Auto_Test Sub Menu'
-WebUI.doubleClick(findTestObject('Page_nGage_Dashboard/Repository/Business_Model_Tree/EDM_Empty121_WMI005_SubMenu'))
-WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
-
-'Click on 10/08/2018 from Empty121 Sub Menu'
-WebUI.doubleClick(findTestObject('Page_nGage_Dashboard/Repository/Business_Model_Tree/EDM_08-10-2018_Empty_WMI005_Chintan_BusinessModel'))
-WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
-
-'Verify EDM Date doesnot contains Time'
-String value = WebUI.getText(findTestObject('Page_nGage_Dashboard/Repository/Business_Model_Tree/EDM_08-10-2018_Empty_WMI005_Chintan_BusinessModel'))
-Boolean result = value.contains(':')
-WebUI.verifyEqual(result, false)
-
-'Get text from EDM to verify with the records in table'
-//String value = WebUI.getText(findTestObject('Page_nGage_Dashboard/Repository/Business_Model_Tree/EDM_08-10-2018_Empty_WMI005_Chintan_BusinessModel'))
-String edmValue = value.substring(12, 13)
-
-'Verify the grid count and folder count is same'
-CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/BrowseResults Tab/iframe_BROWSETAB_iframe'))
-
-int test = CustomKeywords.'actions.MenuBar.getRecordCountInActivity'(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/Business_Model_Tree/EDM_BM_ref_ROTABLE_Demo'))
-
-String string = WebUI.getText(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/BrowseResults Tab/Table_PageResults'))
-String[] parts = string.split("of ");
-String part1 = parts[0];
-String part2 = parts[1];
-
-int expectedNumber = Integer.parseInt(part2)
-WebUI.verifyEqual(edmValue, expectedNumber)
+CustomKeywords.'actions.MenuBar.clickTreeMenu'('REPO', 'Date n Date time EDM','Date n Date time search class', tree_BM_Date, tree_DateRange, tree_BM_DateTime)
+int count = CustomKeywords.'actions.MenuBar.getRecordCountInActivity'('REPO', 'Date n Date time EDM','Date n Date time search class', tree_BM_Date, tree_DateRange, tree_BM_DateTime)
+CustomKeywords.'actions.Common.verifyTotalRecordCountFromPageSummary'(findTestObject('Page_nGage_Dashboard/Repository/BrowseResults Tab/Table_PageResults'), count)

@@ -643,11 +643,14 @@ public class Common {
 
 	@Keyword
 	def setText_Date(TestObject to, String text) {
+
+		WebUI.click(to)
+		WebUI.sendKeys(to, Keys.chord(Keys.HOME))
+		WebUI.delay(1)
 		WebUI.setText(to, text)
 		WebUI.sendKeys(to, Keys.chord(Keys.TAB))
-		WebUI.delay(1)
 	}
-	
+
 	@Keyword
 	def getPageSource() {
 		WebDriver driver = DriverFactory.getWebDriver()
