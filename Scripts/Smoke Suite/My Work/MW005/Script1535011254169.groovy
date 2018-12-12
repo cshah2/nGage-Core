@@ -41,13 +41,14 @@ WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/h3_Search Bar'))
 
 //Enter search filter process due date - start and End
 String _startDate = '01-01-2018 12:00:00 AM'
-WebUI.setText(findTestObject('Page_nGage_Dashboard/My_Work/search_ProcessDueDate_Start'), _startDate)
+CustomKeywords.'actions.Common.setText_Date'(findTestObject('Page_nGage_Dashboard/My_Work/search_ProcessDueDate_Start'), _startDate)
 String _endDate = '03-01-2018 12:00:00 AM'
-WebUI.setText(findTestObject('Page_nGage_Dashboard/My_Work/search_ProcessDueDate_End'), _endDate)
+CustomKeywords.'actions.Common.setText_Date'(findTestObject('Page_nGage_Dashboard/My_Work/search_ProcessDueDate_End'), _endDate)
 
 //Click on search button
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/btn_Search'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_work_items'))
 
 //Verify process due date value of all records in result grid is between filter date range
-CustomKeywords.'actions.Table.verifyRecordsWithinDateRange'(findTestObject('Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), 8, _startDate, _endDate)
+int colNo = CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Page_nGage_Dashboard/My_Work/tableHeader_MyWorkSearchResult'), 'Process Due Date')
+CustomKeywords.'actions.Table.verifyRecordsWithinDateRange'(findTestObject('Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), colNo, _startDate, _endDate)

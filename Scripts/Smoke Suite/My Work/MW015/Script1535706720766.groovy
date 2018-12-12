@@ -55,13 +55,11 @@ CustomKeywords.'actions.Chart.clickSlice'(findTestObject('Page_nGage_Dashboard/M
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/TAB_Dashboard_Obj/iframe_BAMActivityWorkIt_Assignee'))
 
 //Verify Page count in Result table
-String pageCountSummary = WebUI.getText(findTestObject('Page_nGage_Dashboard/My_Work/TAB_Dashboard_Obj/table_Assignement_Page_Summary'))
-WebUI.verifyMatch(pageCountSummary, 'Showing 1 - 10 of 30.*', true)
+CustomKeywords.'actions.Common.verifyTotalRecordCountFromPageSummary'(findTestObject('Page_nGage_Dashboard/My_Work/TAB_Dashboard_Obj/table_Assignement_Page_Summary'), 30)
 
 //Click on Bar 2
 CustomKeywords.'actions.Chart.clickSlice'(findTestObject('Page_nGage_Dashboard/My_Work/TAB_Dashboard_Obj/Chart_Asignee_ActivityDue'), 2, GlobalVariable.ChartType['H_BAR'])
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/TAB_Dashboard_Obj/iframe_BAMActivityWorkIt_Assignee'))
 
 //Verify Page count in Result table
-pageCountSummary = WebUI.getText(findTestObject('Page_nGage_Dashboard/My_Work/TAB_Dashboard_Obj/table_Assignement_Page_Summary'))
-WebUI.verifyMatch(pageCountSummary, 'Showing 1 - 2 of 2.*', true)
+CustomKeywords.'actions.Common.verifyTotalRecordCountFromPageSummary'(findTestObject('Page_nGage_Dashboard/My_Work/TAB_Dashboard_Obj/table_Assignement_Page_Summary'), 2)

@@ -63,11 +63,9 @@ CustomKeywords.'actions.Chart.verifyToolTipText'(findTestObject('Page_nGage_Dash
 //Click on a slice in pie chart and verify count is matching in result grid
 CustomKeywords.'actions.Chart.clickSlice'(findTestObject('Page_nGage_Dashboard/My_Work/TAB_Dashboard_Obj/Chart_NewvsInProcess_Summary'), 1, GlobalVariable.ChartType['PIE'])
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/TAB_Dashboard_Obj/iframe_BAMActivityWorkIt_NewVsInProcess'))
-String pageCountSummary = WebUI.getText(findTestObject('Page_nGage_Dashboard/My_Work/TAB_Dashboard_Obj/table_NewVsInprocess_Page_Summary'))
-WebUI.verifyMatch(pageCountSummary, 'Showing 1 - 10 of 15.*', true)
+CustomKeywords.'actions.Common.verifyTotalRecordCountFromPageSummary'(findTestObject('Page_nGage_Dashboard/My_Work/TAB_Dashboard_Obj/table_NewVsInprocess_Page_Summary'), 15)
 
 //Click on a bar in Bar chart and verify count is matching in result grid
 CustomKeywords.'actions.Chart.clickSlice'(findTestObject('Page_nGage_Dashboard/My_Work/TAB_Dashboard_Obj/Chart_NewvsInProcess_SLAStatusView'), 8, GlobalVariable.ChartType['V_BAR'])
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/TAB_Dashboard_Obj/iframe_BAMActivityWorkIt_NewVsInProcess'))
-pageCountSummary = WebUI.getText(findTestObject('Page_nGage_Dashboard/My_Work/TAB_Dashboard_Obj/table_NewVsInprocess_Page_Summary'))
-WebUI.verifyMatch(pageCountSummary, 'Showing 1 - 10 of 17.*', true)
+CustomKeywords.'actions.Common.verifyTotalRecordCountFromPageSummary'(findTestObject('Page_nGage_Dashboard/My_Work/TAB_Dashboard_Obj/table_NewVsInprocess_Page_Summary'), 17)

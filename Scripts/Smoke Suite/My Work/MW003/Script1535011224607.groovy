@@ -41,11 +41,12 @@ WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/h3_Search Bar'))
 
 //Enter search filter process due date - start
 String _startDate = '01-01-2018 12:00:00 AM'
-WebUI.setText(findTestObject('Page_nGage_Dashboard/My_Work/search_ProcessDueDate_Start'), _startDate)
+CustomKeywords.'actions.Common.setText_Date'(findTestObject('Page_nGage_Dashboard/My_Work/search_ProcessDueDate_Start'), _startDate)
 
 //Click on search button
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/btn_Search'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_work_items'))
 
-//Verify process due date value of all records in result grid are more than filter date 
-CustomKeywords.'actions.Table.verifyRecordsInTableAreMoreThanStartDate'(findTestObject('Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), 8, _startDate)
+//Verify process due date value of all records in result grid are more than filter date
+int colNo = CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Page_nGage_Dashboard/My_Work/tableHeader_MyWorkSearchResult'), 'Process Due Date') 
+CustomKeywords.'actions.Table.verifyRecordsInTableAreMoreThanStartDate'(findTestObject('Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), colNo, _startDate)

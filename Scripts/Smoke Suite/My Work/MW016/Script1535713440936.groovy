@@ -71,11 +71,9 @@ CustomKeywords.'actions.Chart.verifyToolTipText'(findTestObject('Page_nGage_Dash
 //Click on a slice in pie chart and verify count is matching in result grid
 CustomKeywords.'actions.Chart.clickSlice'(findTestObject('Page_nGage_Dashboard/My_Work/TAB_Dashboard_Obj/Chart_ActivityEventState_Summary'), 1, GlobalVariable.ChartType['PIE'])
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/TAB_Dashboard_Obj/iframe_BAMActivityWorkIt_ActivityEvent'))
-String pageCountSummary = WebUI.getText(findTestObject('Page_nGage_Dashboard/My_Work/TAB_Dashboard_Obj/table_ActivityEventState_Page_Summary'))
-WebUI.verifyMatch(pageCountSummary, 'Showing 1 - 10 of 16.*', true)
+CustomKeywords.'actions.Common.verifyTotalRecordCountFromPageSummary'(findTestObject('Page_nGage_Dashboard/My_Work/TAB_Dashboard_Obj/table_ActivityEventState_Page_Summary'), 16)
 
 //Click on a bar in Bar chart and verify count is matching in result grid
 CustomKeywords.'actions.Chart.clickSlice'(findTestObject('Page_nGage_Dashboard/My_Work/TAB_Dashboard_Obj/Chart_ActivityEventState_Summary'), 12, GlobalVariable.ChartType['V_BAR'])
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/TAB_Dashboard_Obj/iframe_BAMActivityWorkIt_ActivityEvent'))
-pageCountSummary = WebUI.getText(findTestObject('Page_nGage_Dashboard/My_Work/TAB_Dashboard_Obj/table_ActivityEventState_Page_Summary'))
-WebUI.verifyMatch(pageCountSummary, 'Showing 1 - 3 of 3.*', true)
+CustomKeywords.'actions.Common.verifyTotalRecordCountFromPageSummary'(findTestObject('Page_nGage_Dashboard/My_Work/TAB_Dashboard_Obj/table_ActivityEventState_Page_Summary'), 3)

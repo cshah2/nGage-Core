@@ -44,7 +44,7 @@ WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/h3_Search Bar'))
 
 //Enter search filter process due date - start
 String _startDate = '01-01-2018 12:00:00 AM'
-WebUI.setText(findTestObject('Page_nGage_Dashboard/My_Work/search_ProcessDueDate_Start'), _startDate)
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/search_ProcessDueDate_Start'), _startDate)
 
 //Click on search button
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/btn_Search'))

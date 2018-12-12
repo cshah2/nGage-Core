@@ -51,5 +51,5 @@ CustomKeywords.'actions.Common.verifyRecordCountInActivityMatchesWithResultGrid'
 WebUI.rightClick(findTestObject('Page_nGage_Dashboard/My_Work/a_User act2 Activity'))
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
-//Verify "Foldering Configuration" option is not present
+//Verify "Foldering Configuration" option is present
 WebUI.verifyElementVisible(findTestObject('Page_nGage_Dashboard/My_Work/contextMenu_Folder Configuration'))
