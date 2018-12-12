@@ -17,7 +17,7 @@ import internal.GlobalVariable as GlobalVariable
 CustomKeywords.'actions.Common.login'()
 
 'Create a new Document in DateTimeRequired activity'
-CustomKeywords.'actions.Common.createDocument_MyWorkDateTime'('Datetimerangerequired','Datetimerangerequired','','01012025','01012018','','Test')
+CustomKeywords.'actions.Common.createDocument_MyWorkDateTime'('Datetimerangerequired','Datetimerangerequired','','01012025','01012018','01-01-2018 12:00:00 pm','Test')
 
 'Click on My Work link from left menu'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_My Work Left Menu'))
@@ -55,8 +55,8 @@ WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/contextMenu_Refresh'))
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
-'expand till empty and click on EMPTY'
-CustomKeywords.'actions.MenuBar.clickTreeMenu'('My_Work','Processes','Datetime range required','Date time range required','[empty]')
+'expand till empty and click on created document submenu'
+CustomKeywords.'actions.MenuBar.clickTreeMenu'('My_Work','Processes','Datetime range required','Date time range required','01/01/2018')
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/iframe_work_items'))
 
 'expand search bar'
@@ -65,7 +65,8 @@ CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Reposi
 
 'enter search value'
 WebUI.setText(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/process_DateTimeRequired/input_StartDateTimeRequired'), '01012018')
-WebUI.selectOptionByLabel(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/process_DatetimeRangeRequired/select_EndTestDatetime_search'), 'Null', false)
+WebUI.setText(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/process_DatetimeRangeRequired/input_EndTestDateTime_From'),'01-01-2015 12:00:00 pm')
+WebUI.setText(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/process_DatetimeRangeRequired/input_EndTestDateTime_To'), '01-01-2019 12:00:00 pm')
 
 'click on search button'
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/btn_Search'))
@@ -75,7 +76,7 @@ int ColumnPosition_EndTestDatetime= CustomKeywords.'actions.Table.getColumnNumbe
 println ColumnPosition_EndTestDatetime
 
 'verify search result '
-CustomKeywords.'actions.Table.verifyAllValuesInColumnMatches'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'),ColumnPosition_EndTestDatetime, '')
+CustomKeywords.'actions.Table.verifyRecordsWithinDateRange'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), ColumnPosition_EndTestDatetime, '01-01-2015 12:00:00 pm', '01-01-2019 12:00:00 pm')
 
 'right click on Activity datetimerangerequired'
 WebUI.rightClick(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/process_DatetimeRangeRequired/a_Activity_DateTimeRangeRequired'))

@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>input_StateTestDate_From</name>
+   <name>input_StartTestDate_From</name>
    <tag></tag>
    <elementGuidId>59dc7a9b-60de-456b-8192-d07d0897b486</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value></value>
       </entry>
       <entry>
          <key>XPATH</key>
