@@ -23,7 +23,7 @@ WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 'Create a new Document in Date Required activity'
 CustomKeywords.'actions.Common.createDocument_MyWorkDateTime'('daterequiredsearch','daterequiredsearch','01012018','01012025','01012018 05:08:14 PM','08-30-2002 09:29:45 AM','Test')
 
-'Expand Processes and Verify DateTimeRequired activity Displayed'
+'Expand Processes and Verify Date Required activity Displayed'
 CustomKeywords.'actions.MenuBar.clickTreeMenu'('My_Work','Processes','Date Required','Daterequiredsearch','01/01/2018')
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/iframe_work_items'))
 

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>28447 Regression test My Work (Multivalue field+WF): Verify the Multivalue feild foldering count with the grid data count.</description>
+   <name>MW123</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>7e2d7ffe-1310-4b46-9dd3-584dc7211944</testCaseGuid>
+</TestCaseEntity>
