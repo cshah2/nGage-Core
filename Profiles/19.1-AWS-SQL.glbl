@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GlobalVariableEntities>
    <description></description>
-   <name>Feature-Branch</name>
+   <name>19.1-AWS-SQL</name>
    <tag></tag>
    <defaultProfile>false</defaultProfile>
    <GlobalVariableEntity>
@@ -31,7 +31,7 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'IPM_EPM50MASTER_502_AUTOMATION'</initValue>
+      <initValue>'AWS_SQLSERVER_QAAUTOMATION'</initValue>
       <name>Database</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
