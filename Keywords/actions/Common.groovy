@@ -13,6 +13,7 @@ import org.openqa.selenium.WebDriver
 import org.openqa.selenium.WebElement
 import org.openqa.selenium.interactions.Actions
 
+import com.gargoylesoftware.htmlunit.javascript.background.JavaScriptExecutor
 import com.kms.katalon.core.annotation.Keyword
 import com.kms.katalon.core.configuration.RunConfiguration
 import com.kms.katalon.core.testobject.TestObject
@@ -656,4 +657,20 @@ public class Common {
 		WebDriver driver = DriverFactory.getWebDriver()
 		return driver.getPageSource()
 	}
+
+	@Keyword
+	def verifyJQueryRunningStatus(TestObject iframe, Boolean isExpectedToBeRunning) {
+		if(iframe != null) {
+			WebUI.switchToFrame(iframe, GlobalVariable.G_LongTimeout)
+		}
+
+		Boolean isJqueryRunning = (Boolean) WebUI.executeJavaScript("return !!window.jQuery && window.jQuery.active > 0", null)
+		if(isJqueryRunning == isExpectedToBeRunning) {
+			KeywordUtil.markPassed('Actual JQuery status = '+isJqueryRunning.toString()+' ,Expected JQuery status = '+isExpectedToBeRunning.toString())
+		}
+		else {
+			KeywordUtil.markFailedAndStop('Actual JQuery status = '+isJqueryRunning.toString()+' ,Expected JQuery status = '+isExpectedToBeRunning.toString())
+		}
+	}
+
 }

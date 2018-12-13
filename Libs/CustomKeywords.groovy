@@ -9,6 +9,8 @@ import com.kms.katalon.core.testobject.TestObject
 
 import java.util.List
 
+import java.lang.Boolean
+
 
 def static "actions.Calender.selectDate"(
     	String date	
@@ -642,6 +644,14 @@ def static "actions.Common.setText_Date"(
 
 def static "actions.Common.getPageSource"() {
     (new actions.Common()).getPageSource()
+}
+
+def static "actions.Common.verifyJQueryRunningStatus"(
+    	TestObject iframe	
+     , 	Boolean isExpectedToBeRunning	) {
+    (new actions.Common()).verifyJQueryRunningStatus(
+        	iframe
+         , 	isExpectedToBeRunning)
 }
 
 def static "actions.Window.clickElementAndWaitForWindowClose"(

@@ -26,18 +26,11 @@ WebUI.verifyElementVisible(findTestObject('Object Repository/Page_nGage_Dashboar
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/h3_Repository Menu'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
 
-'Verify Advance Search and Browse Results tab'
-WebUI.verifyElementPresent(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/a_Advanced Search Tab'), GlobalVariable.G_LongTimeout)
-WebUI.verifyElementPresent(findTestObject('Page_nGage_Dashboard/Repository/BrowseResults Tab/a_Browse Results'), GlobalVariable.G_LongTimeout)
+'Right click on Business Model repository'
+CustomKeywords.'actions.MenuBar.rightClickTreeMenu'('REPO', 'Business Model')
 
-'Right click on the EDM'
-WebUI.rightClick(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/EDM_SavedSearch'))
-WebUI.verifyElementPresent(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/contextMenu_Refresh'), GlobalVariable.G_LongTimeout)
+'Select option refresh from Context Menu'
+CustomKeywords.'actions.ContextMenu.clickOption'(findTestObject('Page_nGage_Dashboard/contextMenuOptions'), 'Refresh')
 
-'Click on refresh Context Menu.'
-WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/Icon_Expand_SavedSearch'))
-
-WebUI.verifyElementAttributeValue(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/li_SavedSearch'), 'aria-busy', 'true', GlobalVariable.G_LongTimeout)
-/*String backGroundcss = WebUI.getCSSValue(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/Icon_Expand_SavedSearch'), 'background')
-WebUI.verifyMatch(backGroundcss, '.*throbber.gif.*', true)*/
-WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
+'verify daisy(pre loader) status'
+CustomKeywords.'actions.Common.verifyJQueryRunningStatus'(null, true)

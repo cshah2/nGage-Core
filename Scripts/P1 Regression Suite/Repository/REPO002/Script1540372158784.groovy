@@ -23,25 +23,20 @@ WebUI.verifyElementVisible(findTestObject('Object Repository/Page_nGage_Dashboar
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/h3_Repository Menu'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
 
-'Verify Saved Searches EDM'
-WebUI.waitForElementVisible(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/table_SavedSearch'), GlobalVariable.G_LongTimeout)
-WebUI.verifyElementVisible(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/table_SavedSearch'))
-WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/Icon_Expand_SavedSearch'))
+'Expand Business Model Repository'
+WebUI.doubleClick(findTestObject('Page_nGage_Dashboard/Repository/menu_Business Model'))
 
+'verify daisy(pre loader) status'
+CustomKeywords.'actions.Common.verifyJQueryRunningStatus'(null, true)
 
-'Verify daisy (loding icon) is appearing'
-//TODO: Need to verify data instead of loading div
-
-WebUI.verifyElementAttributeValue(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/li_SavedSearch'), 'aria-busy', 'true', GlobalVariable.G_LongTimeout)
+'wait for jquery to render'
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
-/*String backGroundcss = WebUI.getCSSValue(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/Icon_Expand_SavedSearch'), 'background')
-WebUI.verifyMatch(backGroundcss, '.*throbber.gif.*', true)
-WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
-*/
-'Verify daisy is NOT appearing on second click(Re-clicking on EDM)'
-WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/Icon_Expand_SavedSearch'))
-WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/Icon_Expand_SavedSearch'))
 
-WebUI.verifyElementAttributeValue(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/li_SavedSearch'), 'aria-busy', 'false', GlobalVariable.G_LongTimeout)
-/*backGroundcss = WebUI.getCSSValue(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/Icon_Expand_SavedSearch'), 'background')
-WebUI.verifyMatch(backGroundcss, '.*jstree.*', true)*/
+'Close Business Model Repository'
+WebUI.doubleClick(findTestObject('Page_nGage_Dashboard/Repository/menu_Business Model'))
+
+'Expand again Business Model Repository'
+WebUI.doubleClick(findTestObject('Page_nGage_Dashboard/Repository/menu_Business Model'))
+
+'verify daisy(pre loader) status'
+CustomKeywords.'actions.Common.verifyJQueryRunningStatus'(null, false)

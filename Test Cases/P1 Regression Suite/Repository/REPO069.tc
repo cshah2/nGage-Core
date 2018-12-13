@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Regression test Search Repository (Date field+DM):Field display type as DATERANGE: DATERANGE for From and To Date Time Search control</description>
+   <name>REPO069</name>
+   <tag></tag>
+   <comment>Click on Advance Search tab</comment>
+   <testCaseGuid>24431c9e-8541-4e10-9ac9-07be0ea48183</testCaseGuid>
+</TestCaseEntity>

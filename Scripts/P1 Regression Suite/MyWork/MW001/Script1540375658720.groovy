@@ -26,7 +26,7 @@ CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Da
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/icon_Expand_Closure Actions'))
 
 'verify daisy(pre loader) status'
-WebUI.verifyElementAttributeValue(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/li_closureAction'), 'aria-busy', 'true', GlobalVariable.G_LongTimeout)
+CustomKeywords.'actions.Common.verifyJQueryRunningStatus'(null, true)
 
 'wait for jquery to render'
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
@@ -38,10 +38,4 @@ WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/icon_Expand_Closure Act
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/icon_Expand_Closure Actions'))
 
 'verify daisy(pre loader) status'
-WebUI.verifyElementAttributeValue(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/li_closureAction'), 'aria-busy', 'false', GlobalVariable.G_LongTimeout)
-
-'wait for jquery to render'
-WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
-
-'close browser'
-WebUI.closeBrowser()
+CustomKeywords.'actions.Common.verifyJQueryRunningStatus'(null, false)
