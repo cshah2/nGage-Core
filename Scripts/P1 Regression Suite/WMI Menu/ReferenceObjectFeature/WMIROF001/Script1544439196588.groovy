@@ -53,4 +53,4 @@ int afterColumnCount = CustomKeywords.'actions.Table.getRowsCount'(findTestObjec
 //String afterClickPageSource = CustomKeywords.'actions.Common.getPageSource'() 
 
 'Verify the page source should not change after clicking on table'
-WebUI.verifyMatch(beforeColumnCount, afterColumnCount, false)
+WebUI.verifyEqual(beforeColumnCount, afterColumnCount)
