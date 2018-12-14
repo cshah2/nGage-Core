@@ -59,10 +59,8 @@ CustomKeywords.'actions.Common.verifyTotalRecordCountFromPageSummary'(findTestOb
 'Open Work Item'
 CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/tableHeader_DocID'))
 CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/tableHeader_DocID'))
-
 CustomKeywords.'actions.Table.clickCell'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'),1,4)
 
-//WebUI.delay(10)
 'switch to new window'
 WebUI.switchToWindowIndex(1)
 

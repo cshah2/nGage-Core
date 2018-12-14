@@ -3,6 +3,6 @@
    <description>28441 Regression test My Work (Date field+WF):&quot;Null&quot; opeartor with control value kept blank - Search should work on Date control for DATE Field</description>
    <name>MW117</name>
    <tag></tag>
-   <comment></comment>
+   <comment>Create a new Document in Date Required activity</comment>
    <testCaseGuid>5ce4d33a-2378-4891-909b-b87c393888c1</testCaseGuid>
 </TestCaseEntity>

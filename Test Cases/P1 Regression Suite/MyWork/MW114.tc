@@ -3,6 +3,6 @@
    <description>28438 Regression test My Work (Date field+WF):&quot;Not In&quot; opeartor - Search should work on Date control for DATE Field</description>
    <name>MW114</name>
    <tag></tag>
-   <comment></comment>
+   <comment>Create a new Document in Date Required activity</comment>
    <testCaseGuid>fdf25f40-3fcf-4c86-901d-874cc038573d</testCaseGuid>
 </TestCaseEntity>

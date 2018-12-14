@@ -30,9 +30,6 @@ WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/a_New
 'wait for jQuery Loading'
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
-//println 'DocID_Position Before Drag  : '+CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/tableHeader_MyWorkSearchResult'), 'Doc ID')
-//println 'ToActivityState_PositionAfter :'+CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/tableHeader_MyWorkSearchResult'), 'To Activity State')
-
 int DocID_BeforeDrag=CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/tableHeader_MyWorkSearchResult'), 'Doc ID')
 
 println 'DocID_PositionBefore : '+DocID_BeforeDrag

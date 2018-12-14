@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>28643 Regression test My Work: Foldering - BPMEnableFoldering - True, Set foldering on WF(Workflow) field</description>
+   <name>MW132</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>efef59bb-2231-4376-8386-ff0a8d956919</testCaseGuid>
+</TestCaseEntity>

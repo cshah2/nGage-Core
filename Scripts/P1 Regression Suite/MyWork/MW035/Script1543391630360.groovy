@@ -17,7 +17,7 @@ import internal.GlobalVariable as GlobalVariable
 CustomKeywords.'actions.Common.login'()
 
 'Create a new Document in DateTimeRequired activity'
-//CustomKeywords.'actions.Common.createDocument_MyWorkDateTime'('daterangerequired','daterangerequired','','01012025','01012018','01-01-2018 12:00:00 pm','Test')
+CustomKeywords.'actions.Common.createDocument_MyWorkDateTime'('daterangerequired','daterangerequired','','01012025','01012018','01-01-2018 12:00:00 pm','Test')
 
 'Click on My Work link from left menu'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_My Work Left Menu'))
