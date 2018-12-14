@@ -4,7 +4,17 @@
    <name>cell_BMStringTab2_Table</name>
    <tag></tag>
    <elementGuidId>4e9246c8-3648-4987-abd4-522c79153cd3</elementGuidId>
-   <selectorMethod>BASIC</selectorMethod>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>id(&quot;eform_mcb67676_TabContainer_4_TabRef_2_phBO_5_BO_grc_ctl03&quot;)/td[12][count(. | //td[@ref_element = 'Object Repository/Page_WMI_NEW/Reference_Object_Feature/Inline_Content_View/tab_Inlineresultview(false)/iframe_Close Window_ContentPla']) = count(//td[@ref_element = 'Object Repository/Page_WMI_NEW/Reference_Object_Feature/Inline_Content_View/tab_Inlineresultview(false)/iframe_Close Window_ContentPla'])]</value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>//table[@id='eform_mcb67676_TabContainer_4_TabRef_2_phBO_5_BO_grc']/tbody/tr[3]/td[12]</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
    <webElementProperties>
       <isSelected>true</isSelected>
@@ -21,14 +31,14 @@
       <value>OpenWMIDOCContent('eform_mcb67676_TabContainer_4_TabRef_2_phBO_5_BO_ifrmenative','/Sav.Main.UI/WMI/wmi.aspx?id=&amp;opwm=&amp;opm=IE&amp;loc=REFRENCEDOC&amp;did=4745713754655732714655613044315964316C6279773D3D&amp;pdwid=New&amp;aid=0&amp;dtid=100034&amp;dcid=100004&amp;rdocid=4745713754655732714655613044315964316C6279773D3D&amp;|REFRENCEDOC|101119||100034|100004100034||| Reference Object InlineContentView  -  05/12/2017 ||||IE|','duv=Y','300');SetElementDisplay('eform_mcb67676_TabContainer_4_TabRef_2_phBO_5_BO_ifrmenativerow' , 'block');SetInlineviewDisplay('eform_mcb67676_TabContainer_4_TabRef_2_phBO_5_BO_fileTableRow','eform_mcb67676_TabContainer_4_TabRef_2_phBO_5_BO_fieldsTableRow' , false);</value>
    </webElementProperties>
    <webElementProperties>
-      <isSelected>true</isSelected>
+      <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>text</name>
       <type>Main</type>
       <value>test</value>
    </webElementProperties>
    <webElementProperties>
-      <isSelected>false</isSelected>
+      <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>

@@ -4,6 +4,12 @@
    <name>newWindow_BusinessModelView</name>
    <tag></tag>
    <elementGuidId>d417c6e5-fbfa-43cf-b382-b2714530439d</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>//span[@id = 'eform_mcb67676_phBO_3_BO_headerTitle' and (text() = 'Business Model View - Reference Object InlineContentView' or . = 'Business Model View - Reference Object InlineContentView') and @ref_element = 'Object Repository/Page_WMI_NEW/Reference_Object_Feature/Inline_Content_View/tab_Inlineresultview(false)/iframe_Close Window_ContentPla (1)']</value>
+      </entry>
+   </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
    <webElementProperties>

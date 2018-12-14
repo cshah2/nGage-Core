@@ -80,4 +80,11 @@ public class Window {
 			KeywordUtil.markFailedAndStop("Could not find window containing URL text "+text)
 		}
 	}
+	
+	@Keyword
+	def verifyOpenWindowCount(int expCount) {
+		WebDriver driver = DriverFactory.getWebDriver()
+		int actCount = driver.getWindowHandles().size()
+		WebUI.verifyEqual(actCount, expCount)
+	}
 }

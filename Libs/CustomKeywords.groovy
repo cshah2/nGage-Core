@@ -3,22 +3,12 @@
  * This class is generated automatically by Katalon Studio and should not be modified or deleted.
  */
 
-import java.lang.String
-
 import com.kms.katalon.core.testobject.TestObject
+
+import java.lang.String
 
 import java.util.List
 
-import java.lang.Boolean
-
-
-def static "actions.Calender.selectDate"(
-    	String date	
-     , 	TestObject element	) {
-    (new actions.Calender()).selectDate(
-        	date
-         , 	element)
-}
 
 def static "actions.Table.verifyRecordsCount"(
     	TestObject tableLocator	
@@ -646,14 +636,6 @@ def static "actions.Common.getPageSource"() {
     (new actions.Common()).getPageSource()
 }
 
-def static "actions.Common.verifyJQueryRunningStatus"(
-    	TestObject iframe	
-     , 	Boolean isExpectedToBeRunning	) {
-    (new actions.Common()).verifyJQueryRunningStatus(
-        	iframe
-         , 	isExpectedToBeRunning)
-}
-
 def static "actions.Window.clickElementAndWaitForWindowClose"(
     	TestObject saveButton	
      , 	int timeout	) {
@@ -666,6 +648,12 @@ def static "actions.Window.switchToUrlContains"(
     	String text	) {
     (new actions.Window()).switchToUrlContains(
         	text)
+}
+
+def static "actions.Window.verifyOpenWindowCount"(
+    	int expCount	) {
+    (new actions.Window()).verifyOpenWindowCount(
+        	expCount)
 }
 
 def static "utils.DateUtil.verifyDateFilter"(
