@@ -9,8 +9,6 @@ import com.kms.katalon.core.testobject.TestObject
 
 import java.util.List
 
-import java.lang.Boolean
-
 
 def static "actions.Calender.selectDate"(
     	String date	
@@ -452,6 +450,26 @@ def static "apis.UserManagement.updateLastLoginDate"(
          , 	date)
 }
 
+def static "actions.Window.clickElementAndWaitForWindowClose"(
+    	TestObject saveButton	
+     , 	int timeout	) {
+    (new actions.Window()).clickElementAndWaitForWindowClose(
+        	saveButton
+         , 	timeout)
+}
+
+def static "actions.Window.switchToUrlContains"(
+    	String text	) {
+    (new actions.Window()).switchToUrlContains(
+        	text)
+}
+
+def static "actions.Window.verifyOpenWindowCount"(
+    	int expCount	) {
+    (new actions.Window()).verifyOpenWindowCount(
+        	expCount)
+}
+
 def static "actions.Common.maximizeWindow"() {
     (new actions.Common()).maximizeWindow()
 }
@@ -525,7 +543,7 @@ def static "actions.Common.clearClipBoard"() {
 }
 
 def static "actions.Common.clickMultipleElements"(
-    	java.util.List<TestObject> elements	) {
+    	List<TestObject> elements	) {
     (new actions.Common()).clickMultipleElements(
         	elements)
 }
@@ -662,6 +680,14 @@ def static "actions.Common.setText_Date"(
          , 	text)
 }
 
+def static "actions.Common.setTextJQuery"(
+    	TestObject to	
+     , 	String text	) {
+    (new actions.Common()).setTextJQuery(
+        	to
+         , 	text)
+}
+
 def static "actions.Common.getPageSource"() {
     (new actions.Common()).getPageSource()
 }
@@ -700,24 +726,12 @@ def static "actions.Common.createDocument_ClosureAction"(
          , 	customerDetails)
 }
 
-def static "actions.Window.clickElementAndWaitForWindowClose"(
-    	TestObject saveButton	
+def static "actions.Common.waitForElementVisible"(
+    	TestObject to	
      , 	int timeout	) {
-    (new actions.Window()).clickElementAndWaitForWindowClose(
-        	saveButton
+    (new actions.Common()).waitForElementVisible(
+        	to
          , 	timeout)
-}
-
-def static "actions.Window.switchToUrlContains"(
-    	String text	) {
-    (new actions.Window()).switchToUrlContains(
-        	text)
-}
-
-def static "actions.Window.verifyOpenWindowCount"(
-    	int expCount	) {
-    (new actions.Window()).verifyOpenWindowCount(
-        	expCount)
 }
 
 def static "utils.DateUtil.verifyDateFilter"(

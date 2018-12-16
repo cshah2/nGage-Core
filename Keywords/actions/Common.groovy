@@ -9,13 +9,17 @@ import java.util.concurrent.TimeUnit
 import org.openqa.selenium.Dimension
 import org.openqa.selenium.Keys
 import org.openqa.selenium.Point
+import org.openqa.selenium.StaleElementReferenceException
 import org.openqa.selenium.WebDriver
 import org.openqa.selenium.WebElement
 import org.openqa.selenium.interactions.Actions
+import org.openqa.selenium.support.ui.ExpectedConditions
+import org.openqa.selenium.support.ui.FluentWait
 
 import com.gargoylesoftware.htmlunit.javascript.background.JavaScriptExecutor
 import com.kms.katalon.core.annotation.Keyword
 import com.kms.katalon.core.configuration.RunConfiguration
+import com.kms.katalon.core.exception.StepFailedException
 import com.kms.katalon.core.testobject.TestObject
 import com.kms.katalon.core.util.KeywordUtil
 import com.kms.katalon.core.webui.common.WebUiCommonHelper
@@ -660,6 +664,17 @@ public class Common {
 		WebUI.switchToDefaultContent()
 		WebUI.delay(1)
 	}
+	
+	@Keyword
+	def setTextJQuery(TestObject to, String text) {
+
+		WebElement e = WebUtil.getWebElement(to)
+		List<WebElement> list = new ArrayList<WebElement>()
+		list.add(e)
+		WebUI.executeJavaScript('arguments[0].value = "'+text+'"', list)
+		WebUI.switchToDefaultContent()
+	}
+
 
 	@Keyword
 	def getPageSource() {
@@ -767,6 +782,39 @@ public class Common {
 		'Switch to main window and close'
 		WebUI.switchToWindowTitle('Savana nGage')
 		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/span_ui-button-icon-primary ui'))
+	}
+
+	@Keyword
+	def waitForElementVisible(TestObject to, int timeout) {
+
+		def startTime = System.currentTimeMillis()
+		def endTime = startTime + TimeUnit.SECONDS.toMillis(timeout)
+		def currentTime = System.currentTimeMillis()
+
+		boolean isVisible = false
+		Exception lastException 		
+		while(currentTime < endTime) {
+			try {
+				WebUI.waitForElementVisible(to, 10)
+				isVisible = true
+				break
+				println "Element Found and Visible"
+			}
+			catch(StepFailedException e) {
+				println "StaleElement Reference Exception occurred "+e.toString()
+				lastException = e
+				WebUI.delay(3)
+				currentTime = System.currentTimeMillis()
+			}
+		}
+		
+		if(isVisible) {
+			KeywordUtil.markPassed('Element visible')
+		}
+		else {
+			KeywordUtil.markFailedAndStop('Element not visible \n'+lastException.toString)
+		}
+		
 	}
 
 
