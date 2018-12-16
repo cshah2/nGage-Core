@@ -19,33 +19,33 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUiBuiltInKe
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-//Login Into Application
+'Login Into Application'
 CustomKeywords.'actions.Common.login'()
 
-//Expand Repository Menu
+'Expand Repository Menu'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Repository/h3_Repository Menu'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
 
-//Select Repository - Advance Search tab
+'Select Repository - Advance Search tab'
 WebUI.selectOptionByLabel(findTestObject('Page_nGage_Dashboard/Repository/select_Repository Drop Down'), 'Business Model', false)
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
 
-//Select Search For - Advance Search tab
+'Select Search For - Advance Search tab'
 WebUI.selectOptionByLabel(findTestObject('Page_nGage_Dashboard/Repository/select_Search For Drop Down'), 'Business Model', false)
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
 
-//Click on Search button
+'Click on Search button'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Repository/input_btnSearch'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
 
-//Validate Number of records per page is 12
+'Validate Number of records per page is 12'
 WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/Repository/div_Page_Results'), GlobalVariable.G_LongTimeout, FailureHandling.STOP_ON_FAILURE)
 String pageCount = WebUI.getText(findTestObject('Page_nGage_Dashboard/Repository/div_Page_Results'))
 WebUI.verifyMatch(pageCount, 'Showing 1 - 12.*', true)
 
-//Verify Record count in table is 12
+'Verify Record count in table is 12'
 CustomKeywords.'actions.Table.verifyRecordsCount'(findTestObject('Page_nGage_Dashboard/Repository/table_SearchResults'), 12)
 
-//Validate total number of returned records is less than or equal to 500
+'Validate total number of returned records is less than or equal to 500'
 int maxRecords = Integer.parseInt(pageCount.substring(17).trim())
 assert maxRecords <= 500

@@ -18,37 +18,46 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUiBuiltInKeywords
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
+import utils.Consts
 
-//Login Into Application
+'Login Into Application'
 CustomKeywords.'actions.Common.login'()
 
-//Go to Recent Documents tab
-WebUI.click(findTestObject('Page_nGage_Dashboard/Home/a_Recent Documents'))
+'Go to Recent Documents tab'
+CustomKeywords.'actions.MenuBar.clickTreeMenu'('HOME', 'Recent Documents')
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/iframe_iframe_103'))
 
-//Validate atleast 1 record is present in the grid.
-WebUI.verifyElementPresent(findTestObject('Page_nGage_Dashboard/Home/tableRow_recentDocuments_firstRow'), GlobalVariable.G_LongTimeout);
+'Validate atleast 1 record is present in the grid.'
+int rowCount = CustomKeywords.'actions.Table.getRowsCount'(findTestObject('Page_nGage_Dashboard/Home/table_MyDocumentResults'))
+WebUI.verifyGreaterThanOrEqual(rowCount, 1)
 
-//Verify Column values for 1st Record in Grid.
+'Sort Record in grid by DocID Descending'
+CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/Home/div_Doc ID'))
+CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/Home/div_Doc ID'))
+
+'Verify Column values for 1st Record in Grid.'
 WebUI.verifyElementText(findTestObject('Page_nGage_Dashboard/Home/column_RecentDocuments DocumentTitle'), 'WMI Menu BOV Vertical')
 WebUI.verifyElementText(findTestObject('Page_nGage_Dashboard/Home/column_RecentDocuments DocumentType'), 'WMI Menu BOV Vertical')
 WebUI.verifyElementText(findTestObject('Page_nGage_Dashboard/Home/column_RecentDocuments LastAction'), 'Created')
 
-WebUI.click(findTestObject('Page_nGage_Dashboard/Home/column_RecentDocuments LastAction'))
+int colNo_DocID = CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Page_nGage_Dashboard/Home/tableHeader_RecentDocuments'), 'Doc ID')
+
+'Open Document'
+CustomKeywords.'actions.Table.clickCell'(findTestObject('Page_nGage_Dashboard/Home/table_MyDocumentResults'), 1, colNo_DocID)
+
+'Switch to window'
 WebUI.switchToWindowTitle('WMI Menu BOV Vertical')
 WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_WMI/WMI_Menu_BOV_Vertical/iframe_westContainerFrame'))
 
-//Verify values of the fields
+'Verify values of the fields'
 WebUI.waitForElementPresent(findTestObject('Page_WMI/WMI_Menu_BOV_Vertical/input_eform_String_Input_Field'), GlobalVariable.G_LongTimeout)
 WebUI.waitForElementVisible(findTestObject('Page_WMI/WMI_Menu_BOV_Vertical/input_eform_String_Input_Field'), GlobalVariable.G_LongTimeout)
-WebUI.verifyElementAttributeValue(findTestObject('Page_WMI/WMI_Menu_BOV_Vertical/input_eform_String_Input_Field'), 'value', 'New Document with Attachement', GlobalVariable.G_LongTimeout)
+WebUI.verifyElementAttributeValue(findTestObject('Page_WMI/WMI_Menu_BOV_Vertical/input_eform_String_Input_Field'), 'value', Consts.SMOKE_HOME007_BMSTRING, GlobalVariable.G_LongTimeout)
 
-//Verify Content is displayed
-WebUI.waitForElementPresent(findTestObject('Page_WMI/WMI_Menu_BOV_Vertical/iframe_westContainerFrame'), GlobalVariable.G_LongTimeout)
-WebUI.waitForElementVisible(findTestObject('Page_WMI/WMI_Menu_BOV_Vertical/iframe_westContainerFrame'), GlobalVariable.G_LongTimeout)
+'Verify Content is displayed'
 WebUI.verifyElementVisible(findTestObject('Page_WMI/WMI_Menu_BOV_Vertical/iframe_westContainerFrame'))
 
-//Verify Page size of PDF File
+'Verify Page size of PDF File'
 WebUI.waitForElementVisible(findTestObject('Page_WMI/WMI_Menu_BOV_Vertical/span_Page Number'), GlobalVariable.G_LongTimeout)
-WebUI.verifyElementText(findTestObject('Page_WMI/WMI_Menu_BOV_Vertical/span_Page Number'), 'Page 1/51')
+WebUI.verifyElementText(findTestObject('Page_WMI/WMI_Menu_BOV_Vertical/span_Page Number'), 'Page 1/50')

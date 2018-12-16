@@ -18,90 +18,67 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUiBuiltInKeywords
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
+import utils.Consts
 
-//Login Into Application
+'Login Into Application'
 CustomKeywords.'actions.Common.login'()
 
 //Pre-requisuite : A document should be present in Closure Action - Activity A
-//Click on Global New button
-WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))
-
-//Select Document class and Document Type
-CustomKeywords.'actions.Common.selectDocClassAndDocTypeForGlobalNew'('Closure Action','Closure Action')
-
-//Click on OK Button
-WebUI.click(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'))
-WebUI.switchToWindowTitle('(Doc ID: NEW )')
-WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
-WebUI.scrollToElement(findTestObject('Page_WMI_NEW/Closure_Action/input_Customer Name'), GlobalVariable.G_LongTimeout)
-
-//Fill mandatory form data
-WebUI.setText(findTestObject('Page_WMI_NEW/Closure_Action/input_Customer Name'), 'Chintan Shah')
-WebUI.setText(findTestObject('Page_WMI_NEW/Closure_Action/input_Customer Details'), 'Automation Test')
-
-//Click on Save button
-WebUI.mouseOver(findTestObject('Page_WMI_NEW/Closure_Action/span_Actions'))
-WebUI.waitForElementVisible(findTestObject('Page_WMI_NEW/Closure_Action/a_Save'), GlobalVariable.G_LongTimeout)
-CustomKeywords.'actions.Window.clickElementAndWaitForWindowClose'(findTestObject('Page_WMI_NEW/Closure_Action/a_Save'), GlobalVariable.G_LongTimeout)
-
-//Close "create new" popup dialog
-WebUI.switchToWindowTitle('Savana nGage')
-WebUI.click(findTestObject('Page_nGage_Dashboard/Home/span_ui-button-icon-primary ui'))
+'Create Docuement'
+CustomKeywords.'actions.Common.createDocument_ClosureAction'(Consts.SMOKE_MYWORK003_CUSTOMERNAME, Consts.SMOKE_MYWORK003_CUSTOMERDETAIL)
 
 //Test Steps
-//Click on My Work link from left menu
+'Click on My Work link from left menu'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_My Work Left Menu'))
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_iframe_105'))
 
-//Expand Closure Action process
-WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/icon_Expand_Closure Actions'))
-WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
-
-//Select Activity A
-WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/My_Work/a_Activity A'), GlobalVariable.G_LongTimeout)
-WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_Activity A'))
+'Click Closure Action - Activity A'
+CustomKeywords.'actions.MenuBar.clickTreeMenu'('MY_WORK', 'Processes', 'Closure Action', 'Activity A')
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_work_items'))
 
-//Validate atleast 1 record is present in the grid.
-WebUI.verifyElementPresent(findTestObject('Page_nGage_Dashboard/My_Work/table_RecordOne'), GlobalVariable.G_LongTimeout);
+'Validate atleast 1 record is present in the grid.'
+int rowCount = CustomKeywords.'actions.Table.getRowsCount'(findTestObject('Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'))
+WebUI.verifyGreaterThanOrEqual(rowCount, 1)
 
-//Sort record by Doc_Created_Date desc 
-CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/My_Work/tableHeader_DocCreateDate'))
-CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/My_Work/tableHeader_DocCreateDate'))
+'Order records by DocID Column'
+CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/My_Work/tableHeader_DocID'))
+CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/My_Work/tableHeader_DocID'))
 
-//Save DocID Value for future verification purpose
-String DocID = CustomKeywords.'actions.Table.getCellText'(findTestObject('Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), 1, 6)
-println "DociD  = :"+DocID
+int docIDColumnNo = CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Page_nGage_Dashboard/My_Work/tableHeader_MyWorkSearchResult'), 'Doc ID')
 
-//Select first document from the table (Save DocID value for later use)
+'Get DOCID of newly created document'
+String _docID = CustomKeywords.'actions.Table.getCellText'(findTestObject('Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), 1, docIDColumnNo)
+
+int activityC_count = CustomKeywords.'actions.MenuBar.getRecordCountInActivity'('MY_WORK', 'Processes', 'Closure Action', 'Activity C')
+
+'Select first document from the table (Save DocID value for later use)'
 CustomKeywords.'actions.Table.checkRecordInTable'(findTestObject('Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), 1)
 
-//Perform Mouse over on Action button
+'Perform Mouse over on Action button'
 WebUI.mouseOver(findTestObject('Page_nGage_Dashboard/My_Work/span_Actions Button'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_work_items'))
 
-//Perform Route to activity C action
+'Perform Route to activity C action'
 WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/My_Work/action_RouteToActivityC'), GlobalVariable.G_LongTimeout)
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/action_RouteToActivityC'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_work_items'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_ProcessingGrid'))
 
-//Wait till Processing Grid displays success message
+'Wait till Processing Grid displays success message'
 WebUI.waitForElementPresent(findTestObject('Page_nGage_Dashboard/My_Work/td_RecordProcessingMessage_Success'), GlobalVariable.G_LongTimeout)
 WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/My_Work/td_RecordProcessingMessage_Success'), GlobalVariable.G_LongTimeout)
 
-//Refresh Closure Action process until record count in tree is updated
-CustomKeywords.'actions.MenuBar.refreshActivityUntilRecordCountIncreases'(findTestObject('Page_nGage_Dashboard/My_Work/a_Activity C'), GlobalVariable.G_LongTimeout)
+'Refresh Closure Action process until record count in tree is updated'
+CustomKeywords.'actions.MenuBar.refreshActivityUntilRecordCountIncreases'('MY_WORK', activityC_count, GlobalVariable.G_LongTimeout, 'Processes', 'Closure Action', 'Activity C')
 
-//Select Activity C from left menu
-WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/My_Work/a_Activity C'), GlobalVariable.G_LongTimeout)
-WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_Activity C'))
+'Click Closure Action - Activity C'
+CustomKeywords.'actions.MenuBar.clickTreeMenu'('MY_WORK', 'Processes', 'Closure Action', 'Activity C')
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_work_items'))
 
-//Sort record by Doc_Created_Date desc
+'Sort record by Doc_Created_Date desc'
 CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/My_Work/tableHeader_DocCreateDate'))
 CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/My_Work/tableHeader_DocCreateDate'))
 
-//Verify Document is present in Activity C result table
-CustomKeywords.'actions.Table.verifyRecordPresentInColumn'(findTestObject('Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), 6, DocID)
+'Verify Document is present in Activity C result table'
+CustomKeywords.'actions.Table.verifyRecordPresentInColumn'(findTestObject('Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), docIDColumnNo, _docID)

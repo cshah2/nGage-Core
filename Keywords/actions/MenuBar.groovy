@@ -81,11 +81,66 @@ public class MenuBar {
 	}
 
 	@Keyword
+	def refreshActivityUntilRecordCountIncreases(String moduleName, int originalCount, int timeout, String... modulePath) {
+
+		//		int originalCount = getRecordCountInActivity(moduleName, modulePath)
+		int currentCount = originalCount
+		boolean hasRecordCountIncreased = false
+
+		def startTime = System.currentTimeMillis()
+		def endTime = startTime + TimeUnit.SECONDS.toMillis(timeout)
+		def currentTime = System.currentTimeMillis()
+
+		while(currentTime < endTime) {
+			println "Original Count = "+originalCount+"currentCount = "+currentCount
+			if(originalCount < 0 || currentCount < 0 || currentCount <= originalCount) {
+				//				WebUI.rightClick(element)
+				//				WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/My_Work/contextMenu_Refresh'), GlobalVariable.G_SmallTimeout)
+				//				WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/contextMenu_Refresh'))
+				//				WebUI.waitForJQueryLoad(GlobalVariable.G_SmallTimeout)
+				rightClickTreeMenu(moduleName, modulePath)
+				new ContextMenu().clickOption(findTestObject('Page_nGage_Dashboard/contextMenuOptions'), 'Refresh')
+				WebUI.waitForJQueryLoad(GlobalVariable.G_SmallTimeout)
+				WebUI.delay(5)
+				currentCount = getRecordCountInActivity(moduleName, modulePath)
+				currentTime = System.currentTimeMillis()
+			}
+			else {
+				hasRecordCountIncreased = true
+				break
+			}
+		}
+
+		if(hasRecordCountIncreased) {
+			KeywordUtil.markPassed("Activity count refreshed")
+		}
+		else {
+			KeywordUtil.markFailedAndStop("Activity count not refreshed in given time "+timeout+" Seconds")
+		}
+	}
+
+	@Keyword
 	def getAllSubMenu(TestObject menu) {
 		WebElement menuWebElement=WebUtil.getWebElement(menu)
 		WebElement parent = menuWebElement.findElement(By.xpath(".."))
 		List<WebElement> elements = parent.findElements(By.xpath('./ul/li/a'))
 
+		List<String> subMenu=new ArrayList()
+		for(WebElement element in elements) {
+			subMenu.add(element.getText().trim())
+		}
+		return subMenu
+	}
+
+	@Keyword
+	def getAllSubMenus(String moduleName, String... menuPath) {
+
+		List<String> treePath = new ArrayList<String>(Arrays.asList(menuPath))
+		expandTree(moduleName, treePath)
+
+		treeXpath.append("/ul/li/a")
+		WebDriver driver = DriverFactory.getWebDriver()
+		List<WebElement> elements = driver.findElements(By.xpath(treeXpath.toString()))
 		List<String> subMenu=new ArrayList()
 		for(WebElement element in elements) {
 			subMenu.add(element.getText().trim())
@@ -170,7 +225,10 @@ public class MenuBar {
 		treePath.remove(lastIndex)
 		expandTree(moduleName, treePath)
 
-		String appendBrace = lastIndex>1?" (":""
+		String appendBrace = ""
+		if(!moduleName.equalsIgnoreCase('REPORT'))
+			appendBrace = lastIndex>1?" (":""
+
 		treeXpath.append("/ul/li/a[contains(text(),'"+menuPath[size-1]+appendBrace+"')]")
 		WebDriver driver = DriverFactory.getWebDriver()
 		driver.findElement(By.xpath(treeXpath.toString())).click()
@@ -186,7 +244,10 @@ public class MenuBar {
 		treePath.remove(lastIndex)
 		expandTree(moduleName, treePath)
 
-		String appendBrace = lastIndex>1?" (":""
+		String appendBrace = ""
+		if(!moduleName.equalsIgnoreCase('REPORT'))
+			appendBrace = lastIndex>1?" (":""
+
 		treeXpath.append("/ul/li/a[contains(text(),'"+menuPath[size-1]+appendBrace+"')]")
 		WebDriver driver = DriverFactory.getWebDriver()
 		WebElement e = driver.findElement(By.xpath(treeXpath.toString()))
@@ -205,7 +266,10 @@ public class MenuBar {
 		treePath.remove(lastIndex)
 		expandTree(moduleName, treePath)
 
-		String appendBrace = lastIndex>1?" (":""
+		String appendBrace = ""
+		if(!moduleName.equalsIgnoreCase('REPORT'))
+			appendBrace = lastIndex>1?" (":""
+
 		treeXpath.append("/ul/li/a[contains(text(),'"+menuPath[size-1]+appendBrace+"')]")
 		WebDriver driver = DriverFactory.getWebDriver()
 		WebElement e = driver.findElement(By.xpath(treeXpath.toString()))
@@ -224,7 +288,10 @@ public class MenuBar {
 		treePath.remove(lastIndex)
 		expandTree(moduleName, treePath)
 
-		String appendBrace = lastIndex>1?" (":""
+		String appendBrace = ""
+		if(!moduleName.equalsIgnoreCase('REPORT'))
+			appendBrace = lastIndex>1?" (":""
+
 		treeXpath.append("/ul/li/a[contains(text(),'"+menuPath[size-1]+appendBrace+"')]")
 		WebDriver driver = DriverFactory.getWebDriver()
 		String nodeText = driver.findElement(By.xpath(treeXpath.toString())).getText()
@@ -278,6 +345,9 @@ public class MenuBar {
 			case 'HOME':
 				treeXpath = new StringBuilder("//div[@id='menudiv_103']")
 				break
+			case 'REPORT':
+				treeXpath = new StringBuilder("//div[@id='menudiv_108']")
+				break
 			default:
 				KeywordUtil.markFailedAndStop("no such module exist: "+moduleName)
 				break
@@ -290,7 +360,9 @@ public class MenuBar {
 		int i = 0
 		for(String path in treePath) {
 
-			String appendBrace = i>1?" (":""
+			String appendBrace = ""
+			if(!moduleName.equalsIgnoreCase('REPORT'))
+				appendBrace = i>1?" (":""
 			treeXpath.append("/ul/li/a[contains(text(),'"+path+appendBrace+"')]")
 			a = driver.findElement(By.xpath(treeXpath.toString()))
 			treeXpath.append("/..")

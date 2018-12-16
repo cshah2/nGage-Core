@@ -3,12 +3,22 @@
  * This class is generated automatically by Katalon Studio and should not be modified or deleted.
  */
 
-import com.kms.katalon.core.testobject.TestObject
-
 import java.lang.String
+
+import com.kms.katalon.core.testobject.TestObject
 
 import java.util.List
 
+import java.lang.Boolean
+
+
+def static "actions.Calender.selectDate"(
+    	String date	
+     , 	TestObject element	) {
+    (new actions.Calender()).selectDate(
+        	date
+         , 	element)
+}
 
 def static "actions.Table.verifyRecordsCount"(
     	TestObject tableLocator	
@@ -224,10 +234,30 @@ def static "actions.MenuBar.refreshActivityUntilRecordCountIncreases"(
          , 	timeout)
 }
 
+def static "actions.MenuBar.refreshActivityUntilRecordCountIncreases"(
+    	String moduleName	
+     , 	int originalCount	
+     , 	int timeout	
+     , 	String[] modulePath	) {
+    (new actions.MenuBar()).refreshActivityUntilRecordCountIncreases(
+        	moduleName
+         , 	originalCount
+         , 	timeout
+         , 	modulePath)
+}
+
 def static "actions.MenuBar.getAllSubMenu"(
     	TestObject menu	) {
     (new actions.MenuBar()).getAllSubMenu(
         	menu)
+}
+
+def static "actions.MenuBar.getAllSubMenus"(
+    	String moduleName	
+     , 	String[] menuPath	) {
+    (new actions.MenuBar()).getAllSubMenus(
+        	moduleName
+         , 	menuPath)
 }
 
 def static "actions.MenuBar.verifyAllSubmenuAreSortedByActivityCount"(
@@ -634,6 +664,40 @@ def static "actions.Common.setText_Date"(
 
 def static "actions.Common.getPageSource"() {
     (new actions.Common()).getPageSource()
+}
+
+def static "actions.Common.verifyJQueryRunningStatus"(
+    	TestObject iframe	
+     , 	Boolean isExpectedToBeRunning	) {
+    (new actions.Common()).verifyJQueryRunningStatus(
+        	iframe
+         , 	isExpectedToBeRunning)
+}
+
+def static "actions.Common.createDocument_MultiPageViewerWithDragAndDrop"(
+    	String stringField	
+     , 	String fileName	
+     , 	String filePath	) {
+    (new actions.Common()).createDocument_MultiPageViewerWithDragAndDrop(
+        	stringField
+         , 	fileName
+         , 	filePath)
+}
+
+def static "actions.Common.createDocument_WMIMenuBovVertical"(
+    	String BM_String	
+     , 	String filePath	) {
+    (new actions.Common()).createDocument_WMIMenuBovVertical(
+        	BM_String
+         , 	filePath)
+}
+
+def static "actions.Common.createDocument_ClosureAction"(
+    	String customerName	
+     , 	String customerDetails	) {
+    (new actions.Common()).createDocument_ClosureAction(
+        	customerName
+         , 	customerDetails)
 }
 
 def static "actions.Window.clickElementAndWaitForWindowClose"(

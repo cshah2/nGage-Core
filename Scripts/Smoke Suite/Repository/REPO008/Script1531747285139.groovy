@@ -18,36 +18,38 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUiBuiltInKeywords
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
+import utils.Consts
 
-//Login Into Application
+'Login Into Application'
 CustomKeywords.'actions.Common.login'()
 
-//Expand Repository Menu
+'Expand Repository Menu'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Repository/h3_Repository Menu'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
 
-//Select Saved search filter from the table
+'Select Saved search filter from the table'
 CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/Repository/div_Modified Date'))
 CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/Repository/div_Modified Date'))
 
-//Verify Filter created in last test cases is present in first row
-WebUI.verifyElementText(findTestObject('Page_nGage_Dashboard/Repository/column_Saved Search table first row Search Desc'), GlobalVariable.FilterName)
+'Validate Search criteria is displayed in the saved search grid'
+int colNo_filterName = CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Page_nGage_Dashboard/Repository/table_Header_SavedSearch'), 'Search Description')
+CustomKeywords.'actions.Table.verifyRecordPresentInColumn'(findTestObject('Page_nGage_Dashboard/Repository/table_SavedSearch'), colNo_filterName, Consts.SMOKE_REPO006_SAVEDFILTERNAME)
 
-//Select filter from table
-WebUI.click(findTestObject('Page_nGage_Dashboard/Repository/column_Saved Search table first row Search Desc'))
+'Select filter from table'
+CustomKeywords.'actions.Table.clickCell'(findTestObject('Page_nGage_Dashboard/Repository/table_SavedSearch'), 1, colNo_filterName)
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
 
-//Click on Delete button
+'Click on Delete button'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Repository/input_btnDelete'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
 
-//Click on OK button on confirmation dialog
+'Click on OK button on confirmation dialog'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Repository/span_Delete Dialog Ok Button'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
 
-//Sort Saved search table with Modified Date value - Descending
+'Sort Saved search table with Modified Date value - Descending'
 CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/Repository/div_Modified Date'))
 CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/Repository/div_Modified Date'))
 
-//Verify filter is no longer displayed in saved search grid
-CustomKeywords.'actions.Table.verifyRecordNotPresentInColumn'(findTestObject('Page_nGage_Dashboard/Repository/table_SavedSearch'), 2, GlobalVariable.FilterName)
+'Verify filter is no longer displayed in saved search grid'
+CustomKeywords.'actions.Table.verifyRecordNotPresentInColumn'(findTestObject('Page_nGage_Dashboard/Repository/table_SavedSearch'), colNo_filterName, Consts.SMOKE_REPO006_SAVEDFILTERNAME)

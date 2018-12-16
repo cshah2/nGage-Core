@@ -18,38 +18,77 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUiBuiltInKeywords
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
+import utils.Consts
 
-//Login Into Application
+'Login Into Application'
 CustomKeywords.'actions.Common.login'()
 
-//Click on My Work link from left menu
+'Create Docuement'
+CustomKeywords.'actions.Common.createDocument_ClosureAction'(Consts.SMOKE_MYWORK009_CUSTOMERNAME1, Consts.SMOKE_MYWORK009_CUSTOMERDETAIL1)
+
+'Create Docuement'
+CustomKeywords.'actions.Common.createDocument_ClosureAction'(Consts.SMOKE_MYWORK009_CUSTOMERNAME2, Consts.SMOKE_MYWORK009_CUSTOMERDETAIL2)
+
+'Click on My Work link from left menu'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_My Work Left Menu'))
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_iframe_105'))
 
-//Expand Interactive Process
-WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/icon_Expand_Interactive Process'))
-WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
-
-//Select Activity User act1
-WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/My_Work/a_User act1 Activity'), GlobalVariable.G_LongTimeout)
-WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_User act1 Activity'))
+'Click Closure Action - Activity A'
+CustomKeywords.'actions.MenuBar.clickTreeMenu'('MY_WORK', 'Processes', 'Closure Action', 'Activity A')
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_work_items'))
 
-//Verify Count displayed in folder structure and pagination summary in result table matches
-CustomKeywords.'actions.Common.verifyRecordCountInActivityMatchesWithResultGrid'(findTestObject('Page_nGage_Dashboard/My_Work/a_User act1 Activity'), findTestObject('Page_nGage_Dashboard/My_Work/table_pagination_summary'))
+'Perform right click operation on Activity A'
+CustomKeywords.'actions.MenuBar.rightClickTreeMenu'('MY_WORK', 'Processes', 'Closure Action', 'Activity A')
 
-//Select Activity User act2
-WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/My_Work/a_User act2 Activity'), GlobalVariable.G_LongTimeout)
-WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_User act2 Activity'))
-CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_work_items'))
+'Verify Foldering configuration option is present in context menu'
+CustomKeywords.'actions.ContextMenu.verifyAllOptions'(findTestObject('Page_nGage_Dashboard/contextMenuOptions'), 'Refresh', 'Foldering Configuration')
 
-//Verify Count displayed in folder structure and pagination summary in result table matches
-CustomKeywords.'actions.Common.verifyRecordCountInActivityMatchesWithResultGrid'(findTestObject('Page_nGage_Dashboard/My_Work/a_User act2 Activity'), findTestObject('Page_nGage_Dashboard/My_Work/table_pagination_summary'))
+'Click on Foldering configuration option'
+CustomKeywords.'actions.ContextMenu.clickOption'(findTestObject('Page_nGage_Dashboard/contextMenuOptions'), 'Foldering Configuration')
 
-//Perform Context click on Acitivy User act2
-WebUI.rightClick(findTestObject('Page_nGage_Dashboard/My_Work/a_User act2 Activity'))
+'Click on Restore defaults button'
+WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/Folder_Configuration/button_Restore Default'))
+
+'Verify default options selected in configuration dialog'
+WebUI.verifyOptionSelectedByLabel(findTestObject('Page_nGage_Dashboard/My_Work/Folder_Configuration/Level1_FieldAssigned'), 'Customer Name', false, GlobalVariable.G_LongTimeout)
+WebUI.verifyOptionSelectedByLabel(findTestObject('Page_nGage_Dashboard/My_Work/Folder_Configuration/Level1_Sorting'), 'None', false, GlobalVariable.G_LongTimeout)
+
+WebUI.verifyOptionSelectedByLabel(findTestObject('Page_nGage_Dashboard/My_Work/Folder_Configuration/Level2_FieldAssigned'), 'Select a Field', false, GlobalVariable.G_LongTimeout)
+WebUI.verifyOptionSelectedByLabel(findTestObject('Page_nGage_Dashboard/My_Work/Folder_Configuration/Level2_Sorting'), 'None', false, GlobalVariable.G_LongTimeout)
+
+WebUI.verifyOptionSelectedByLabel(findTestObject('Page_nGage_Dashboard/My_Work/Folder_Configuration/Level3_FieldAssigned'), 'Select a Field', false, GlobalVariable.G_LongTimeout)
+WebUI.verifyOptionSelectedByLabel(findTestObject('Page_nGage_Dashboard/My_Work/Folder_Configuration/Level3_Sorting'), 'None', false, GlobalVariable.G_LongTimeout)
+
+'Perform lvl1 foldering by Customer Name - Desending by field'
+WebUI.selectOptionByLabel(findTestObject('Page_nGage_Dashboard/My_Work/Folder_Configuration/Level1_FieldAssigned'), 'Customer Name', false)
+WebUI.selectOptionByLabel(findTestObject('Page_nGage_Dashboard/My_Work/Folder_Configuration/Level1_Sorting'), 'Desc by Field', false)
+
+'Click on Save button on dialog'
+WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/Folder_Configuration/button_Save'))
+
+'Click on Close button on dialog'
+WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/Folder_Configuration/button_Close'))
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
-//Verify "Foldering Configuration" option is present
-WebUI.verifyElementVisible(findTestObject('Page_nGage_Dashboard/My_Work/contextMenu_Folder Configuration'))
+List<String> subMenus = CustomKeywords.'actions.MenuBar.getAllSubMenus'('MY_WORK', 'Processes', 'Closure Action', 'Activity A')
+CustomKeywords.'actions.MenuBar.verifyAllSubmenuAreSortedByActivityName'(subMenus, 'Desc')
+
+'Perform right click operation on Activity A'
+CustomKeywords.'actions.MenuBar.rightClickTreeMenu'('MY_WORK', 'Processes', 'Closure Action', 'Activity A')
+
+'Click on Foldering configuration option'
+CustomKeywords.'actions.ContextMenu.clickOption'(findTestObject('Page_nGage_Dashboard/contextMenuOptions'), 'Foldering Configuration')
+
+'Click on Restore defaults button'
+WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/Folder_Configuration/button_Restore Default'))
+
+'Verify default options selected in configuration dialog'
+WebUI.verifyOptionSelectedByLabel(findTestObject('Page_nGage_Dashboard/My_Work/Folder_Configuration/Level1_FieldAssigned'), 'Customer Name', false, GlobalVariable.G_LongTimeout)
+WebUI.verifyOptionSelectedByLabel(findTestObject('Page_nGage_Dashboard/My_Work/Folder_Configuration/Level1_Sorting'), 'None', false, GlobalVariable.G_LongTimeout)
+
+WebUI.verifyOptionSelectedByLabel(findTestObject('Page_nGage_Dashboard/My_Work/Folder_Configuration/Level2_FieldAssigned'), 'Select a Field', false, GlobalVariable.G_LongTimeout)
+WebUI.verifyOptionSelectedByLabel(findTestObject('Page_nGage_Dashboard/My_Work/Folder_Configuration/Level2_Sorting'), 'None', false, GlobalVariable.G_LongTimeout)
+
+WebUI.verifyOptionSelectedByLabel(findTestObject('Page_nGage_Dashboard/My_Work/Folder_Configuration/Level3_FieldAssigned'), 'Select a Field', false, GlobalVariable.G_LongTimeout)
+WebUI.verifyOptionSelectedByLabel(findTestObject('Page_nGage_Dashboard/My_Work/Folder_Configuration/Level3_Sorting'), 'None', false, GlobalVariable.G_LongTimeout)

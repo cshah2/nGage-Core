@@ -19,32 +19,38 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.driver.DriverFactory as DriverFactory
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUiBuiltInKeywords
 import internal.GlobalVariable
+import utils.Consts
+
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import org.openqa.selenium.Keys as Keys
 import org.openqa.selenium.WebDriver as WebDriver
 
-//Login Into Application
+'Login Into Application'
 CustomKeywords.'actions.Common.login'()
 
-//Create new document
-WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))
+String filePath = RunConfiguration.getProjectDir().replace('/', '\\')+'\\Data Files\\FileUploads\\50 Pages PDF file.pdf'
 
-//Select Document class and Document type
-CustomKeywords.'actions.Common.selectDocClassAndDocTypeForGlobalNew'('WMI Menu', 'WMI Menu BOV Vertical')
+'Create new document'
+CustomKeywords.'actions.Common.createDocument_WMIMenuBovVertical'(Consts.SMOKE_HOME007_BMSTRING, filePath)
 
-//Click on OK button on popup dialog
-WebUI.click(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'))
+'Go to Recent Documents tab'
+CustomKeywords.'actions.MenuBar.clickTreeMenu'('HOME', 'Recent Documents')
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/iframe_iframe_103'))
 
-//Wait for document to load
-WebUI.switchToWindowTitle('(Doc ID: NEW )')
-WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+'Validate atleast 1 record is present in the grid.'
+int rowCount = CustomKeywords.'actions.Table.getRowsCount'(findTestObject('Page_nGage_Dashboard/Home/table_MyDocumentResults'))
+WebUI.verifyGreaterThanOrEqual(rowCount, 1)
 
-//Set Data
-String filePath = RunConfiguration.getProjectDir().replace('/', '\\')+'\\Data Files\\FileUploads\\CitationNeededBook-Sample.pdf'
-WebUI.setText(findTestObject('Page_WMI_NEW/WMI_Menu_BOV_Vertical/input_String field'), 'New Document with Attachement')
-WebUI.uploadFile(findTestObject('Page_WMI_NEW/WMI_Menu_BOV_Vertical/input__file_upload'), filePath)
+'Sort Record in grid by DocID Descending'
+CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/Home/div_Doc ID'))
+CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/Home/div_Doc ID'))
 
-//Save Document
-WebUI.mouseOver(findTestObject('Page_WMI_NEW/WMI_Menu_BOV_Vertical/menu_Standard Actions'))
-WebUI.waitForElementVisible(findTestObject('Page_WMI_NEW/WMI_Menu_BOV_Vertical/button_Save'), GlobalVariable.G_LongTimeout)
-CustomKeywords.'actions.Window.clickElementAndWaitForWindowClose'(findTestObject('Page_WMI_NEW/WMI_Menu_BOV_Vertical/button_Save'), GlobalVariable.G_LongTimeout)
+'Verify Column values for 1st Record in Grid.'
+WebUI.verifyElementText(findTestObject('Page_nGage_Dashboard/Home/column_RecentDocuments DocumentTitle'), 'WMI Menu BOV Vertical')
+WebUI.verifyElementText(findTestObject('Page_nGage_Dashboard/Home/column_RecentDocuments DocumentType'), 'WMI Menu BOV Vertical')
+WebUI.verifyElementText(findTestObject('Page_nGage_Dashboard/Home/column_RecentDocuments LastAction'), 'Created')
+
+int colNo_DocID = CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Page_nGage_Dashboard/Home/tableHeader_RecentDocuments'), 'Doc ID')
+
+'Copy Document ID value of 1st Record and Save it for other test cases.'
+Consts.SMOKE_HOME007_DOCID = CustomKeywords.'actions.Table.getCellText'(findTestObject('Page_nGage_Dashboard/Home/table_MyDocumentResults'), 1, colNo_DocID)

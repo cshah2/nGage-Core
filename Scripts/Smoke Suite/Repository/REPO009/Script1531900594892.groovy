@@ -22,35 +22,35 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUiBuiltInKe
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-//Login Into Application
+'Login Into Application'
 CustomKeywords.'actions.Common.login'()
 
-//Expand Repository Menu
+'Expand Repository Menu'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Repository/h3_Repository Menu'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
 
-//Select Repository - Advance Search tab
-WebUI.selectOptionByLabel(findTestObject('Page_nGage_Dashboard/Repository/select_Repository Drop Down'), 'Business Model', false)
+'Select Repository - Advance Search tab'
+WebUI.selectOptionByLabel(findTestObject('Page_nGage_Dashboard/Repository/select_Repository Drop Down'), 'Closure', false)
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
 
-//Select Search For - Advance Search tab
-WebUI.selectOptionByLabel(findTestObject('Page_nGage_Dashboard/Repository/select_Search For Drop Down'), 'Business Model', false)
+'Select Search For - Advance Search tab'
+WebUI.selectOptionByLabel(findTestObject('Page_nGage_Dashboard/Repository/select_Search For Drop Down'), 'Closure', false)
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
 
-//Click on Search button
+'Click on Search button'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Repository/input_btnSearch'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
 
-//Verify Result Grid table is displayed
+'Verify Result Grid table is displayed'
 WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/Repository/table_SearchResults'), GlobalVariable.G_LongTimeout)
 
-//Enter page number 3 in the field
+'Enter page number 3 in the field'
 WebUI.setText(findTestObject('Page_nGage_Dashboard/Repository/input_Page_Number'), '3')
 
-//Press Enter key to search the records on page
+'Press Enter key to search the records on page'
 WebUI.sendKeys(findTestObject('Page_nGage_Dashboard/Repository/input_Page_Number'), Keys.chord(Keys.ENTER))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
 
-//Verify Page count
+'Verify Page count'
 String pageCount = WebUI.getText(findTestObject('Page_nGage_Dashboard/Repository/div_Page_Results'))
-WebUI.verifyMatch(pageCount.substring(0, 15), 'Showing 25 - 36.*', true)
+WebUI.verifyMatch(pageCount.substring(0, 15), 'Showing 21 - 30.*', true)

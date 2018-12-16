@@ -18,39 +18,40 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUiBuiltInKeywords
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
+import utils.Consts
 
-//Login Into Application
+'Login Into Application'
 CustomKeywords.'actions.Common.login'()
 
-//Click on Favorite Documents tab
-WebUI.click(findTestObject('Page_nGage_Dashboard/Home/a_Favorite Documents'))
+'Click on Favorite Documents tab'
+CustomKeywords.'actions.MenuBar.clickTreeMenu'('HOME', 'Favorite Documents')
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/iframe_iframe_103'))
 
-//Validate atleast 1 record is present in the grid.
-WebUI.verifyElementPresent(findTestObject('Page_nGage_Dashboard/Home/tableRow_favoriteDocuments_firstRow'), GlobalVariable.G_LongTimeout);
+'Validate atleast 1 record is present in the grid.'
+int rowCount = CustomKeywords.'actions.Table.getRowsCount'(findTestObject('Page_nGage_Dashboard/Home/table_MyDocumentResults'))
+WebUI.verifyGreaterThanOrEqual(rowCount, 1)
 
-// Sort records in tables based on DOC ID - Descending
+'Sort records in tables based on DOC ID - Descending'
 CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/Home/div_Doc ID'))
 CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/Home/div_Doc ID'))
 
-//Validate First Row is present in the table and it is the same document which was added to favorite list in test case HOME_004
-WebUI.verifyElementPresent(findTestObject('Page_nGage_Dashboard/Home/tableRow_favoriteDocuments_firstRow'), GlobalVariable.G_LongTimeout);
+'Validate First Row is present in the table and it is the same document which was added to favorite list in test case HOME_004'
 WebUI.verifyElementText(findTestObject('Page_nGage_Dashboard/Home/column_favoriteDocuments DocumentTitle'), 'MultipageViewer with drag and drop')
 WebUI.verifyElementText(findTestObject('Page_nGage_Dashboard/Home/column_favoriteDocuments DocumentType'), 'MultipageViewer with drag and drop')
-WebUI.verifyElementText(findTestObject('Page_nGage_Dashboard/Home/column_favoriteDocuments DocID'), GlobalVariable.DocumentID)
+WebUI.verifyElementText(findTestObject('Page_nGage_Dashboard/Home/column_favoriteDocuments DocID'), Consts.SMOKE_HOME003_DOCID)
 
-//Click on DOCID Column on first row to open the Document
+'Click on DOCID Column on first row to open the Document'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Home/column_favoriteDocuments DocID'))
 WebUI.switchToWindowTitle('MultipageViewer with drag and drop')
 WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 
-// Click on Remove from Favorite list button.
+'Click on Remove from Favorite list button.'
 WebUI.mouseOver(findTestObject('Page_WMI/MultiPage_Viewer_DD/span_Favorites'));
 WebUI.waitForElementClickable(findTestObject('Page_WMI/MultiPage_Viewer_DD/a_Remove from Favorites'), GlobalVariable.G_SmallTimeout)
 WebUI.click(findTestObject('Page_WMI/MultiPage_Viewer_DD/a_Remove from Favorites'))
 WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
-//Verify Message on Removal from favorite list
+'Verify Message on Removal from favorite list'
 WebUI.waitForElementVisible(findTestObject('Page_WMI/MultiPage_Viewer_DD/span_Document successfully add'), GlobalVariable.G_LongTimeout)
 WebUI.verifyElementText(findTestObject('Page_WMI/MultiPage_Viewer_DD/span_Document successfully add'), 'Document successfully removed from Favorite Documents.')

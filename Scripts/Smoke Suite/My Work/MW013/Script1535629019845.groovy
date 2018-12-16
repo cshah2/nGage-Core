@@ -19,19 +19,19 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUiBuiltInKe
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-//Login Into Application
+'Login Into Application'
 CustomKeywords.'actions.Common.login'()
 
-//Click on My Work link from left menu
+'Click on My Work link from left menu'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_My Work Left Menu'))
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_iframe_105'))
 
-//Click on "Processes"
-WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_Processes'))
+'Click Processes'
+CustomKeywords.'actions.MenuBar.clickTreeMenu'('MY_WORK', 'Processes')
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_iframe_105'))
 
-//Verify Chart sections and its contents
+'Verify Chart sections and its contents'
 WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/My_Work/Charts/Bar Chart - Header'), GlobalVariable.G_LongTimeout)
 WebUI.verifyElementText(findTestObject('Page_nGage_Dashboard/My_Work/Charts/Bar Chart - Header'), 'All Processes - SLA Status View')
 WebUI.verifyElementText(findTestObject('Page_nGage_Dashboard/My_Work/Charts/Pie Chart - Header'), 'All Processes - Summary')
@@ -45,12 +45,12 @@ WebUI.verifyElementText(findTestObject('Page_nGage_Dashboard/My_Work/Charts/butt
 WebUI.verifyElementVisible(findTestObject('Page_nGage_Dashboard/My_Work/Charts/button_Show Overdue Workitems'))
 WebUI.verifyElementText(findTestObject('Page_nGage_Dashboard/My_Work/Charts/button_Show Overdue Workitems'), 'Show Overdue Work Items')
 
-//Verify activity count in table
+'Verify activity count in table'
 int totalRecords = CustomKeywords.'actions.Table.getRowsCount'(findTestObject('Page_nGage_Dashboard/My_Work/Charts/table_AllProcess'))
 WebUI.verifyGreaterThan(totalRecords, 0)
 
-//Verify correct number of slices are displayed in pie chart
+'Verify correct number of slices are displayed in pie chart'
 CustomKeywords.'actions.Chart.verifyNumberOfSlices'(findTestObject('Page_nGage_Dashboard/My_Work/Charts/Chart_AllProcess_Summary'), totalRecords, GlobalVariable.ChartType['PIE'])
 
-//Verify correct number of slices in bar chart
+'Verify correct number of slices in bar chart'
 CustomKeywords.'actions.Chart.verifyNumberOfSlices'(findTestObject('Page_nGage_Dashboard/My_Work/Charts/Chart_AllProcess_SLAStatusView'), totalRecords*4, GlobalVariable.ChartType['V_BAR'])

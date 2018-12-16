@@ -19,22 +19,21 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUiBuiltInKe
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-//Login Into Application
+'Login Into Application'
 CustomKeywords.'actions.Common.login'()
 
-//Click on Favorite Documents tab
-WebUI.click(findTestObject('Page_nGage_Dashboard/Home/a_Favorite Documents'))
+'Click on Favorite Documents tab'
+CustomKeywords.'actions.MenuBar.clickTreeMenu'('HOME', 'Favorite Documents')
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/iframe_iframe_103'))
 
-//Validate atleast 1 record is present in the grid.
+'Validate atleast 1 record is present in the grid.'
 WebUI.verifyElementPresent(findTestObject('Page_nGage_Dashboard/Home/tableRow_favoriteDocuments_firstRow'), GlobalVariable.G_LongTimeout);
 
-// Sort records in tables based on DOC ID - Descending
+'Sort records in tables based on DOC ID - Descending'
 CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/Home/div_Doc ID'))
 CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/Home/div_Doc ID'))
 
-//Validate First Row is present in the table
-WebUI.verifyElementPresent(findTestObject('Page_nGage_Dashboard/Home/tableRow_favoriteDocuments_firstRow'), GlobalVariable.G_LongTimeout);
+int colNo_DocID = CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Page_nGage_Dashboard/Home/tableHeader_RecentDocuments'), 'Doc ID')
 
-//Validate Document is not present in favorites grid.
-CustomKeywords.'actions.Table.verifyRecordNotPresentInColumn'(findTestObject('Page_nGage_Dashboard/Home/table_MyDocumentResults'), 6, GlobalVariable.DocumentID)
+'Validate Document is not present in favorites grid.'
+CustomKeywords.'actions.Table.verifyRecordNotPresentInColumn'(findTestObject('Page_nGage_Dashboard/Home/table_MyDocumentResults'), colNo_DocID, GlobalVariable.DocumentID)

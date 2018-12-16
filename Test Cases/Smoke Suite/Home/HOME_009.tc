@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
-   <description>Validate Records in Recent Documents grid are sorted based on DOCID</description>
+   <description>Recent Document - Validate Records in Recent Documents grid are correctly sorted based on DOCID Column</description>
    <name>HOME_009</name>
    <tag></tag>
    <comment></comment>

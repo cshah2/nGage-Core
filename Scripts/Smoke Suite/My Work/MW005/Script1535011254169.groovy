@@ -18,37 +18,33 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUiBuiltInKeywords
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
+import utils.DateUtil
 
-//Login Into Application
+'Login Into Application'
 CustomKeywords.'actions.Common.login'()
 
-//Click on My Work link from left menu
+'Click on My Work link from left menu'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_My Work Left Menu'))
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_iframe_105'))
 
-//Expand Closure Action process
-WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/icon_Expand_Closure Actions'))
-WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
-
-//Select Activity A
-WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/My_Work/a_Activity A'), GlobalVariable.G_LongTimeout)
-WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_Activity A'))
+'Click Closure Action - Activity A'
+CustomKeywords.'actions.MenuBar.clickTreeMenu'('MY_WORK', 'Processes', 'Closure Action', 'Activity A')
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_work_items'))
 
-//Open Search bar
+'Open Search bar'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/h3_Search Bar'))
 
-//Enter search filter process due date - start and End
-String _startDate = '01-01-2018 12:00:00 AM'
+'Enter search filter process due date - start and end'
+String _startDate = DateUtil.getCurrentDateTimeMinusDays(0, 'MM-dd-yyyy HH:mm:ss a')
+String _endDate = DateUtil.getCurrentDateTimeMinusDays(-10, 'MM-dd-yyyy HH:mm:ss a')
 CustomKeywords.'actions.Common.setText_Date'(findTestObject('Page_nGage_Dashboard/My_Work/search_ProcessDueDate_Start'), _startDate)
-String _endDate = '03-01-2018 12:00:00 AM'
 CustomKeywords.'actions.Common.setText_Date'(findTestObject('Page_nGage_Dashboard/My_Work/search_ProcessDueDate_End'), _endDate)
 
-//Click on search button
+'Click on search button'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/btn_Search'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_work_items'))
 
-//Verify process due date value of all records in result grid is between filter date range
+'Verify process due date value of all records in result grid are more than filter date'
 int colNo = CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Page_nGage_Dashboard/My_Work/tableHeader_MyWorkSearchResult'), 'Process Due Date')
 CustomKeywords.'actions.Table.verifyRecordsWithinDateRange'(findTestObject('Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), colNo, _startDate, _endDate)

@@ -18,35 +18,40 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUiBuiltInKeywords
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
+import utils.Consts
+import utils.DateUtil
 
-//Login into application
+'Login into application'
 CustomKeywords.'actions.Common.login'()
 
-//Click on "My Work Simplified" link
+'Create Docuement'
+CustomKeywords.'actions.Common.createDocument_ClosureAction'(Consts.SMOKE_MWS004_CUSTOMERNAME, Consts.SMOKE_MWS004_CUSTOMERDETAIL)
+
+'Click on "My Work Simplified" link'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/a_My Work Simplified'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/iframe_iframe_110'))
 
-//Select Activity 'Closure Action - Activity A' from Drop down
+'Select Activity Closure Action - Activity A from Drop down'
 WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/select_Auto Import Controlled'), GlobalVariable.G_LongTimeout)
 WebUI.selectOptionByLabel(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/select_Auto Import Controlled'), 'Closure Action - Activity A', false)
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/iframe_iframe_110'))
 
-//Open Search div
+'Open Search div'
 WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/h3_Search'), GlobalVariable.G_LongTimeout)
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/h3_Search'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/iframe_iframe_110'))
 
-//Enter Process Due Date Start
-String process_Due_Date_Start = '01-01-2018 12:00:00 AM'
+'Enter Process Due Date Start'
+String process_Due_Date_Start = DateUtil.getCurrentDateTimeMinusDays(0, 'MM-dd-yyyy HH:mm:ss a')
 CustomKeywords.'actions.Common.setText_Date'(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/input_Search_ProcessDueDate_Start'), process_Due_Date_Start)
 
-//Click on Search button
+'Click on Search button'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/input_Search_btnSearch'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/iframe_iframe_110'))
 
-//Verify Records in table are more than start date
+'Verify Records in table are more than start date'
 int columnNo = CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/table_SearchResultHeader'), 'Process Due Date')
-CustomKeywords.'actions.Table.verifyRecordsInTableAreMoreThanStartDate'(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/table_SearchResult'), columnNo, process_Due_Date_Start)
+CustomKeywords.'actions.Table.verifyDateFilter'(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/table_SearchResult'), columnNo, process_Due_Date_Start, '>=')
 
-//Verify search section is hidden
+'Verify search section is hidden'
 WebUI.verifyElementNotVisible(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/table_search_section'))

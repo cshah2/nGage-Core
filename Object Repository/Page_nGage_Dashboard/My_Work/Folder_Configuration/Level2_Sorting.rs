@@ -4,6 +4,12 @@
    <name>Level2_Sorting</name>
    <tag></tag>
    <elementGuidId>bbc36933-0594-451a-97d2-e5faac23427d</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>//select[@id = 'dropSortingLevel2' and @ref_element = 'Object Repository/Page_nGage_Dashboard/My_Work/Folder_Configuration/iframe_Close_iframe_folderingC']</value>
+      </entry>
+   </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
    <webElementProperties>
@@ -14,7 +20,7 @@
       <value>select</value>
    </webElementProperties>
    <webElementProperties>
-      <isSelected>true</isSelected>
+      <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>name</name>
       <type>Main</type>
@@ -28,7 +34,7 @@
       <value>dropSortingLevel2</value>
    </webElementProperties>
    <webElementProperties>
-      <isSelected>true</isSelected>
+      <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>text</name>
       <type>Main</type>

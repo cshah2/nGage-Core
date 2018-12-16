@@ -225,11 +225,12 @@ public class Table {
 		List<String> cellValues = getAllValuesFromColumn(table, colNo)
 		WebUI.switchToDefaultContent()
 
-		if(!cellValues.contains(expValue)) {
-			KeywordUtil.markPassed("Value "+expValue+" not found in column No : "+colNo)
+		if(cellValues.size() > 0 && cellValues.contains(expValue)) {
+			KeywordUtil.markFailedAndStop("Value "+expValue+" found in column No : "+colNo)
 		}
 		else {
-			KeywordUtil.markFailedAndStop("Value "+expValue+" found in column No : "+colNo)
+			KeywordUtil.markPassed("Value "+expValue+" not found in column No : "+colNo)
+			
 		}
 	}
 
@@ -323,7 +324,7 @@ public class Table {
 		WebUI.switchToDefaultContent()
 
 		for(String value in cellValues) {
-			boolean result = DateUtil.isRecordDateLessThanFilterDate(value, toDate)
+			boolean result = DateUtil.isRecordDateLessThanFilterDate(value.replaceAll('/', '-'), toDate)
 			if(!result) {
 				KeywordUtil.markFailedAndStop("Value : "+value+" is not less than or equal to end date : "+toDate)
 			}

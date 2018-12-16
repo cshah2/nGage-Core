@@ -4,6 +4,12 @@
    <name>Level3_FieldAssigned</name>
    <tag></tag>
    <elementGuidId>0ab3f2e9-2f30-43fd-bcad-42de16d3063a</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>//select[@id = 'drpFieldLevel3' and @ref_element = 'Object Repository/Page_nGage_Dashboard/My_Work/Folder_Configuration/iframe_Close_iframe_folderingC']</value>
+      </entry>
+   </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
    <webElementProperties>
@@ -14,7 +20,7 @@
       <value>select</value>
    </webElementProperties>
    <webElementProperties>
-      <isSelected>true</isSelected>
+      <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>name</name>
       <type>Main</type>
@@ -28,7 +34,7 @@
       <value>drpFieldLevel3</value>
    </webElementProperties>
    <webElementProperties>
-      <isSelected>true</isSelected>
+      <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>text</name>
       <type>Main</type>

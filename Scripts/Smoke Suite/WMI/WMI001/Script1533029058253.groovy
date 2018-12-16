@@ -19,21 +19,21 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUiBuiltInKe
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-//Login into application
+'Login into application'
 CustomKeywords.'actions.Common.login'()
 
-//Click on Global New button
+'Click on Global New button'
 WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))
 
-//Select Document class and Document Type
+'Select Document class and Document Type'
 CustomKeywords.'actions.Common.selectDocClassAndDocTypeForGlobalNew'('Master Object Feature', 'Render All Field Types')
 
-//Click on OK Button
+'Click on OK Button'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'))
 WebUI.switchToWindowTitle('(Doc ID: NEW )')
 WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 
-//Validate all the fields are visible
+'Validate all the fields are visible'
 WebUI.verifyElementVisible(findTestObject('Page_WMI_NEW/Master_Object/span_WMI Harness'))	//WMI Harness button
 WebUI.verifyElementVisible(findTestObject('Page_WMI_NEW/Master_Object/span_Close Window'))	//Close Window button
 WebUI.verifyElementVisible(findTestObject('Page_WMI_NEW/Master_Object/span_Save'))	//Save button

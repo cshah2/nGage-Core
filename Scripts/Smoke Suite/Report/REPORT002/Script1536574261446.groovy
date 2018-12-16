@@ -13,31 +13,26 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-//Login Into Application
+'Login Into Application'
 CustomKeywords.'actions.Common.login'()
 
-//Click on Report link from left menu
+'Click on Report link from left menu'
 WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/Report/Reports Menu'), GlobalVariable.G_LongTimeout)
 WebUI.click(findTestObject('Page_nGage_Dashboard/Report/Reports Menu'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Report/IFrame_108'))
 
-//Expand SubMenu Security Management
-WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/Report/SubMenu_System Health'), GlobalVariable.G_LongTimeout)
-WebUI.click(findTestObject('Page_nGage_Dashboard/Report/Expand_System Health'))
+'Click on Report System Health - All work item in error'
+CustomKeywords.'actions.MenuBar.clickTreeMenu'('REPORT', 'System Management', 'System Health', 'All Work Items in Error')
 
-//Click on Report "User Listing"
-WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
-WebUI.click(findTestObject('Page_nGage_Dashboard/Report/Report_All Work Items in Error'))
-
-//Wait For Report to load
+'Wait For Report to load'
 CustomKeywords.'actions.Common.waitForReportToLoad'(300)
 WebUI.verifyElementVisible(findTestObject('Page_nGage_Dashboard/Report/All Work Items In Error/ToolBar_1'))
 WebUI.verifyElementVisible(findTestObject('Page_nGage_Dashboard/Report/All Work Items In Error/ToolBar_2'))
 
-//Click on Report "Categories"
-WebUI.click(findTestObject('Page_nGage_Dashboard/Report/Report_Work items Waiting'))
+'Click on Report System Health - work item waiting'
+CustomKeywords.'actions.MenuBar.clickTreeMenu'('REPORT', 'System Management', 'System Health', 'Work items Waiting')
 
-//Wait For Report to load
+'Wait For Report to load'
 CustomKeywords.'actions.Common.waitForReportToLoad'(300)
 WebUI.verifyElementVisible(findTestObject('Page_nGage_Dashboard/Report/Work Items In Waiting/ToolBar_1'))
 WebUI.verifyElementVisible(findTestObject('Page_nGage_Dashboard/Report/Work Items In Waiting/ToolBar_2'))

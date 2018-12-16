@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
-   <description>Validate PDF Content is displayed in document with attachement</description>
+   <description>Recent Document - Validate PDF Content is displayed in document with attachement</description>
    <name>HOME_008</name>
    <tag></tag>
    <comment></comment>

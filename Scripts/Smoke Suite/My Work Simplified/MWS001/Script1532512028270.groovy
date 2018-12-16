@@ -19,27 +19,27 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUiBuiltInKe
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-//Login into application
+'Login into application'
 CustomKeywords.'actions.Common.login'()
 
-//Click on "My Work Simplified" link
+'Click on "My Work Simplified" link'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/a_My Work Simplified'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/iframe_iframe_110'))
 
-//Select Activity 'Closure Action - Activity A' from Drop down
+'Select Activity Closure Action - Activity A from Drop down'
 WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/select_Auto Import Controlled'), GlobalVariable.G_LongTimeout)
 WebUI.selectOptionByLabel(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/select_Auto Import Controlled'), 'Closure Action - Activity A', false)
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/iframe_iframe_110'))
 
 int wfItemActivityName = CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work_Simplified/table_SearchResultHeader'), 'WFItemActivityName')
 
-//Verify Result grid contains all document whose WFItemActivityName column contains name as "Activity A"
+'Verify Result grid contains all document whose WFItemActivityName column contains name as "Activity A"'
 CustomKeywords.'actions.Table.verifyAllValuesInColumnMatches'(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/table_SearchResult'), wfItemActivityName, 'Activity A')
 
-//Select Activity 'Closure Action - Activity B' from Drop down
+'Select Activity Closure Action - Activity B from Drop down'
 WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/select_Auto Import Controlled'), GlobalVariable.G_LongTimeout)
 WebUI.selectOptionByLabel(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/select_Auto Import Controlled'), 'Closure Action - Activity B', false)
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/iframe_iframe_110'))
 
-//Verify Result grid contains all document whose WFItemActivityName column contains name as "Activity B"
+'Verify Result grid contains all document whose WFItemActivityName column contains name as Activity B'
 CustomKeywords.'actions.Table.verifyAllValuesInColumnMatches'(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/table_SearchResult'), wfItemActivityName, 'Activity B')

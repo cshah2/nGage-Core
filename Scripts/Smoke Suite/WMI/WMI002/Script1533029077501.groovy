@@ -19,21 +19,21 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUiBuiltInKe
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-//Login into application
+'Login into application'
 CustomKeywords.'actions.Common.login'()
 
-//Click on Global New button
+'Click on Global New button'
 WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))
 
-//Select Document class and Document Type
+'Select Document class and Document Type'
 CustomKeywords.'actions.Common.selectDocClassAndDocTypeForGlobalNew'('Reference Object Feature', 'Reference Object InlineNew')
 
-//Click on OK Button
+'Click on OK Button'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'))
 WebUI.switchToWindowTitle('(Doc ID: NEW )')
 WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 
-//Verify Fields are displayed for Referenced Objects InlineNew
+'Verify Fields are displayed for Referenced Objects InlineNew'
 WebUI.waitForElementPresent(findTestObject('Page_WMI_NEW/Reference_Object_Inline/tab1_InlineNew'), GlobalVariable.G_LongTimeout)
 WebUI.verifyElementVisible(findTestObject('Page_WMI_NEW/Reference_Object_Inline/span_WMI Harness'))	//WMI Harness button
 WebUI.verifyElementVisible(findTestObject('Page_WMI_NEW/Reference_Object_Inline/span_Close Window'))	//Close Window button
@@ -49,12 +49,12 @@ WebUI.verifyElementVisible(findTestObject('Page_WMI_NEW/Reference_Object_Inline/
 WebUI.verifyElementVisible(findTestObject('Page_WMI_NEW/Reference_Object_Inline/tab6_InlineNew with required'))	//InlineNew with required content and hidecontentupload=true tab
 WebUI.verifyElementVisible(findTestObject('Page_WMI_NEW/Reference_Object_Inline/tab7_InlineNew with multiple'))	//InlineNew with multiple doctype list tab
 
-//Click on New button
+'Click on New button'
 WebUI.click(findTestObject('Page_WMI_NEW/Reference_Object_Inline/button_tabInlineNew_New'))
 WebUI.delay(10) //TODO: Need to identify correct wait condition
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_WMI_NEW/Reference_Object_Inline/iframe_ContentPlaceHolder1_iPa'))
 
-//Verify NewDocument fields are loaded inline
+'Verify NewDocument fields are loaded inline'
 WebUI.verifyElementVisible(findTestObject('Page_WMI_NEW/Reference_Object_Inline/button_InlineNew_Save'))	//Save button
 WebUI.verifyElementVisible(findTestObject('Page_WMI_NEW/Reference_Object_Inline/button_InlineNew_Close'))	//Close button
 WebUI.verifyElementVisible(findTestObject('Page_WMI_NEW/Reference_Object_Inline/span_InlineNew_Description'))	//Description

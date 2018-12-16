@@ -18,50 +18,34 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUiBuiltInKeywords
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
+import utils.Consts
+
 import org.openqa.selenium.Keys as Keys
 
-//Login Into Application
+'Login Into Application'
 CustomKeywords.'actions.Common.login'()
 
-//Click on Global New button
-WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))
+'Create new Document'
+CustomKeywords.'actions.Common.createDocument_MultiPageViewerWithDragAndDrop'(Consts.SMOKE_HOME001_STRINGFIELD, Consts.SMOKE_HOME001_FILENAME, '')
 
-//Select Document class and Document Type
-CustomKeywords.'actions.Common.selectDocClassAndDocTypeForGlobalNew'('Business Model View', 'MultipageViewer with drag and drop')
-
-//Click on OK Button
-WebUI.click(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'))
-WebUI.switchToWindowTitle('(Doc ID: NEW )')
-WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
-
-//Set data in fields
-WebUI.setText(findTestObject('Page_WMI_NEW/MultiPage_Viewer_DD/input_eform_mcb67676phBO_3_BOe'), 'Automation Test Execution - New document')
-WebUI.setText(findTestObject('Page_WMI_NEW/MultiPage_Viewer_DD/input_eform_mcb67676phBO_3_BOe_1'), 'No File to Upload')
-
-//Click on Save button
-WebUI.mouseOver(findTestObject('Page_WMI_NEW/MultiPage_Viewer_DD/span_standard_actions'))
-WebUI.waitForElementVisible(findTestObject('Page_WMI_NEW/MultiPage_Viewer_DD/a_Save'), GlobalVariable.G_LongTimeout)
-CustomKeywords.'actions.Window.clickElementAndWaitForWindowClose'(findTestObject('Page_WMI_NEW/MultiPage_Viewer_DD/a_Save'), GlobalVariable.G_LongTimeout)
-
-//Close "create new" popup dialog
-WebUI.switchToWindowTitle('Savana nGage')
-WebUI.click(findTestObject('Page_nGage_Dashboard/Home/span_ui-button-icon-primary ui'))
-
-//Go to Recent Documents tab
-WebUI.click(findTestObject('Page_nGage_Dashboard/Home/a_Recent Documents'))
+'Go to Recent Documents tab'
+CustomKeywords.'actions.MenuBar.clickTreeMenu'('HOME', 'Recent Documents')
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/iframe_iframe_103'))
 
-//Validate atleast 1 record is present in the grid.
-WebUI.verifyElementPresent(findTestObject('Page_nGage_Dashboard/Home/tableRow_recentDocuments_firstRow'), GlobalVariable.G_LongTimeout);
+'Validate atleast 1 record is present in the grid.'
+int rowCount = CustomKeywords.'actions.Table.getRowsCount'(findTestObject('Page_nGage_Dashboard/Home/table_MyDocumentResults'))
+WebUI.verifyGreaterThanOrEqual(rowCount, 1)
 
-//Sort Record in grid by DocID Descending
+'Sort Record in grid by DocID Descending'
 CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/Home/div_Doc ID'))
 CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/Home/div_Doc ID'))
 
-//Verify Column values for 1st Record in Grid.
+'Verify Column values for 1st Record in Grid.'
 WebUI.verifyElementText(findTestObject('Page_nGage_Dashboard/Home/column_RecentDocuments DocumentTitle'), 'MultipageViewer with drag and drop')
 WebUI.verifyElementText(findTestObject('Page_nGage_Dashboard/Home/column_RecentDocuments DocumentType'), 'MultipageViewer with drag and drop')
 WebUI.verifyElementText(findTestObject('Page_nGage_Dashboard/Home/column_RecentDocuments LastAction'), 'Created')
 
-//Copy Document ID value of 1st Record and Save it for other test cases.
-GlobalVariable.DocumentID = WebUI.getText(findTestObject('Page_nGage_Dashboard/Home/column_RecentDocuments DocID'))
+int colNo_DocID = CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Page_nGage_Dashboard/Home/tableHeader_RecentDocuments'), 'Doc ID')
+
+'Copy Document ID value of 1st Record and Save it for other test cases.'
+Consts.SMOKE_HOME001_DOCID = CustomKeywords.'actions.Table.getCellText'(findTestObject('Page_nGage_Dashboard/Home/table_MyDocumentResults'), 1, colNo_DocID)

@@ -645,11 +645,20 @@ public class Common {
 	@Keyword
 	def setText_Date(TestObject to, String text) {
 
-		WebUI.click(to)
-		WebUI.sendKeys(to, Keys.chord(Keys.HOME))
+		//		WebUI.click(to)
+		//		WebUI.delay(1)
+		//		WebUI.sendKeys(to, Keys.chord(Keys.HOME))
+		//		WebUI.delay(1)
+		//		WebUI.sendKeys(to, text)
+		//		WebUI.delay(1)
+		//		WebUI.sendKeys(to, Keys.chord(Keys.TAB))
+
+		WebElement e = WebUtil.getWebElement(to)
+		List<WebElement> list = new ArrayList<WebElement>()
+		list.add(e)
+		WebUI.executeJavaScript('arguments[0].value = "'+text+'"', list)
+		WebUI.switchToDefaultContent()
 		WebUI.delay(1)
-		WebUI.setText(to, text)
-		WebUI.sendKeys(to, Keys.chord(Keys.TAB))
 	}
 
 	@Keyword
@@ -672,5 +681,93 @@ public class Common {
 			KeywordUtil.markFailedAndStop('Actual JQuery status = '+isJqueryRunning.toString()+' ,Expected JQuery status = '+isExpectedToBeRunning.toString())
 		}
 	}
+
+	@Keyword
+	def createDocument_MultiPageViewerWithDragAndDrop(String stringField, String fileName, String filePath) {
+
+		'Switch to main window'
+		WebUI.switchToWindowTitle('Savana nGage')
+
+		'Create a new BovDocTwoRow Document'
+		WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))
+		selectDocClassAndDocTypeForGlobalNew('Business Model View', 'MultipageViewer with drag and drop')
+		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'))
+
+		'Switch to new Window'
+		WebUI.switchToWindowTitle('(Doc ID: NEW )')
+		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+
+		//Set data in fields
+		WebUI.setText(findTestObject('Page_WMI_NEW/MultiPage_Viewer_DD/input_eform_mcb67676phBO_3_BOe'), stringField)
+		WebUI.setText(findTestObject('Page_WMI_NEW/MultiPage_Viewer_DD/input_eform_mcb67676phBO_3_BOe_1'), fileName)
+
+		//Click on Save button
+		WebUI.mouseOver(findTestObject('Page_WMI_NEW/MultiPage_Viewer_DD/span_standard_actions'))
+		WebUI.waitForElementVisible(findTestObject('Page_WMI_NEW/MultiPage_Viewer_DD/a_Save'), GlobalVariable.G_LongTimeout)
+		new Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI_NEW/MultiPage_Viewer_DD/a_Save'), GlobalVariable.G_LongTimeout)
+
+		'Switch to main window and close'
+		WebUI.switchToWindowTitle('Savana nGage')
+		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/span_ui-button-icon-primary ui'))
+	}
+
+	@Keyword
+	def createDocument_WMIMenuBovVertical(String BM_String, String filePath) {
+
+		'Switch to main window'
+		WebUI.switchToWindowTitle('Savana nGage')
+
+		'Create a new BovDocTwoRow Document'
+		WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))
+		selectDocClassAndDocTypeForGlobalNew('WMI Menu', 'WMI Menu BOV Vertical')
+		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'))
+
+		'Switch to new Window'
+		WebUI.switchToWindowTitle('(Doc ID: NEW )')
+		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+
+		'Fill the details required'
+		WebUI.setText(findTestObject('Page_WMI_NEW/WMI_Menu_BOV_Vertical/input_String field'), BM_String)
+		WebUI.uploadFile(findTestObject('Page_WMI_NEW/WMI_Menu_BOV_Vertical/input__file_upload'), filePath)
+
+		'Save details and close'
+		WebUI.mouseOver(findTestObject('Object Repository/Page_WMI_NEW/WMI_Menu_BOV/buttonStandardActions'))
+		WebUI.waitForElementVisible(findTestObject('Object Repository/Page_WMI_NEW/WMI_Menu_BOV/buttonSave'), GlobalVariable.G_LongTimeout)
+		new Window().clickElementAndWaitForWindowClose(findTestObject('Object Repository/Page_WMI_NEW/WMI_Menu_BOV/buttonSave'),GlobalVariable.G_LongTimeout)
+
+		'Switch to main window and close'
+		WebUI.switchToWindowTitle('Savana nGage')
+		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/span_ui-button-icon-primary ui'))
+	}
+
+	@Keyword
+	def createDocument_ClosureAction(String customerName, String customerDetails) {
+
+		'Switch to main window'
+		WebUI.switchToWindowTitle('Savana nGage')
+
+		'Create a new BovDocTwoRow Document'
+		WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))
+		selectDocClassAndDocTypeForGlobalNew('Closure Action', 'Closure Action')
+		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'))
+
+		'Switch to new Window'
+		WebUI.switchToWindowTitle('(Doc ID: NEW )')
+		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+
+		'Fill the details required'
+		WebUI.setText(findTestObject('Page_WMI_NEW/Closure_Action/input_Customer Name'), customerName)
+		WebUI.setText(findTestObject('Page_WMI_NEW/Closure_Action/input_Customer Details'), customerDetails)
+
+		'Save details and close'
+		WebUI.mouseOver(findTestObject('Page_WMI_NEW/Closure_Action/span_Actions'))
+		WebUI.waitForElementVisible(findTestObject('Page_WMI_NEW/Closure_Action/a_Save'), GlobalVariable.G_LongTimeout)
+		new Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI_NEW/Closure_Action/a_Save'),GlobalVariable.G_LongTimeout)
+
+		'Switch to main window and close'
+		WebUI.switchToWindowTitle('Savana nGage')
+		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/span_ui-button-icon-primary ui'))
+	}
+
 
 }

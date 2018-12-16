@@ -18,34 +18,36 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUiBuiltInKeywords
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
+import utils.Consts
 
-//Login Into Application
+'Login Into Application'
 CustomKeywords.'actions.Common.login'()
 
-//Click on Favorite Documents tab
-WebUI.click(findTestObject('Page_nGage_Dashboard/Home/a_Favorite Documents'))
+'Click on Favorite Documents tab'
+CustomKeywords.'actions.MenuBar.clickTreeMenu'('HOME', 'Favorite Documents')
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/iframe_iframe_103'))
 
-//Validate atleast 1 record is present in the grid.
-WebUI.verifyElementPresent(findTestObject('Page_nGage_Dashboard/Home/tableRow_favoriteDocuments_firstRow'), GlobalVariable.G_LongTimeout);
+'Validate atleast 1 record is present in the grid.'
+int rowCount = CustomKeywords.'actions.Table.getRowsCount'(findTestObject('Page_nGage_Dashboard/Home/table_MyDocumentResults'))
+WebUI.verifyGreaterThanOrEqual(rowCount, 1)
 
-// Sort records in tables based on DOC ID - Descending
+'Sort records in tables based on DOC ID - Descending'
 CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/Home/div_Doc ID'))
 CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/Home/div_Doc ID'))
 
-//Validate First Row is present in the table
-WebUI.verifyElementPresent(findTestObject('Page_nGage_Dashboard/Home/tableRow_favoriteDocuments_firstRow'), GlobalVariable.G_LongTimeout);
-
-//Validate Column data in first row
+'Validate Column data in first row'
 WebUI.verifyElementText(findTestObject('Page_nGage_Dashboard/Home/column_favoriteDocuments DocumentTitle'), 'MultipageViewer with drag and drop')
 WebUI.verifyElementText(findTestObject('Page_nGage_Dashboard/Home/column_favoriteDocuments DocumentType'), 'MultipageViewer with drag and drop')
-WebUI.verifyElementText(findTestObject('Page_nGage_Dashboard/Home/column_favoriteDocuments DocID'), GlobalVariable.DocumentID)
+WebUI.verifyElementText(findTestObject('Page_nGage_Dashboard/Home/column_favoriteDocuments DocID'), Consts.SMOKE_HOME003_DOCID)
 
-//Click on DOCID Column on first row to open the Document 
-WebUI.click(findTestObject('Page_nGage_Dashboard/Home/column_favoriteDocuments DocID'))
+int colNo_DocID = CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Page_nGage_Dashboard/Home/tableHeader_RecentDocuments'), 'Doc ID')
+
+'Open Document'
+CustomKeywords.'actions.Table.clickCell'(findTestObject('Page_nGage_Dashboard/Home/table_MyDocumentResults'), 1, colNo_DocID)
+
 WebUI.switchToWindowTitle('MultipageViewer with drag and drop')
 WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 
-//Verify field values of document
-WebUI.verifyElementAttributeValue(findTestObject('Page_WMI/MultiPage_Viewer_DD/input_eform_mcb67676_phBO_3_BO_eidmKey_BM_String'), 'value', 'Automation Test Execution - New document', GlobalVariable.G_LongTimeout)
-WebUI.verifyElementAttributeValue(findTestObject('Page_WMI/MultiPage_Viewer_DD/input_eform_mcb67676_phBO_3_BO_eidmKey_FileName'), 'value', 'No File to Upload', GlobalVariable.G_LongTimeout)
+'Verify field values of document'
+WebUI.verifyElementAttributeValue(findTestObject('Page_WMI/MultiPage_Viewer_DD/input_eform_mcb67676_phBO_3_BO_eidmKey_BM_String'), 'value', Consts.SMOKE_HOME003_STRINGFIELD, GlobalVariable.G_LongTimeout)
+WebUI.verifyElementAttributeValue(findTestObject('Page_WMI/MultiPage_Viewer_DD/input_eform_mcb67676_phBO_3_BO_eidmKey_FileName'), 'value', Consts.SMOKE_HOME003_FILENAME, GlobalVariable.G_LongTimeout)

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
-   <description>Validate newly created document is available in Recent documents tab and its field values are correctly saved.</description>
+   <description>Recent Document - Validate newly created document is available in Recent documents tab and its field values are correctly saved.</description>
    <name>HOME_002</name>
    <tag></tag>
    <comment></comment>

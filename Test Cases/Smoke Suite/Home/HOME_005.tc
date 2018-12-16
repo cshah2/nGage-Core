@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
-   <description>Validate user is able to remove document from the Favorite list</description>
+   <description>Favorite Document - Validate user is able to remove document from the Favorite list</description>
    <name>HOME_005</name>
    <tag></tag>
    <comment></comment>

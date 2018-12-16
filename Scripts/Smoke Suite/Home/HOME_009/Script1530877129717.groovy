@@ -22,24 +22,25 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUiBuiltInKe
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-//Login Into Application
+'Login Into Application'
 CustomKeywords.'actions.Common.login'()
 
-//Go to Recent Documents tab
-WebUI.click(findTestObject('Page_nGage_Dashboard/Home/a_Recent Documents'))
+'Go to Recent Documents tab'
+CustomKeywords.'actions.MenuBar.clickTreeMenu'('HOME', 'Recent Documents')
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/iframe_iframe_103'))
 
-//Validate atleast 1 record is present in the grid.
-WebUI.verifyElementPresent(findTestObject('Page_nGage_Dashboard/Home/tableRow_recentDocuments_firstRow'), GlobalVariable.G_LongTimeout);
+'Validate atleast 1 record is present in the grid.'
+int rowCount = CustomKeywords.'actions.Table.getRowsCount'(findTestObject('Page_nGage_Dashboard/Home/table_MyDocumentResults'))
+WebUI.verifyGreaterThanOrEqual(rowCount, 1)
 
-//Click on DocID Header to sort records in Ascending order
+'Click on DocID Header to sort records in Ascending order'
 CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/Home/div_RecentDocuments_DocID_Header'))
 
-//Verify records in grid are sorted in ascending order
+'Verify records in grid are sorted in ascending order'
 CustomKeywords.'actions.Table.verifyColumnIsSortedInteger'(findTestObject('Page_nGage_Dashboard/Home/table_MyDocumentResults'), 7, 'ASC')
 
-//Click again on DocID Header to sort records in Descending order
+'Click again on DocID Header to sort records in Descending order'
 CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/Home/div_RecentDocuments_DocID_Header'))
 
-//Verify records in grid are sorted in descending order
+'Verify records in grid are sorted in descending order'
 CustomKeywords.'actions.Table.verifyColumnIsSortedInteger'(findTestObject('Page_nGage_Dashboard/Home/table_MyDocumentResults'), 7, 'DESC')

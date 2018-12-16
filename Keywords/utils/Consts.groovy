@@ -1,0 +1,107 @@
+package utils
+
+import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
+import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
+import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
+import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
+
+import com.kms.katalon.core.annotation.Keyword
+import com.kms.katalon.core.checkpoint.Checkpoint
+import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
+import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
+import com.kms.katalon.core.model.FailureHandling
+import com.kms.katalon.core.testcase.TestCase
+import com.kms.katalon.core.testdata.TestData
+import com.kms.katalon.core.testobject.TestObject
+import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
+import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+
+import internal.GlobalVariable
+
+public class Consts {
+
+	public static final String SMOKE_HOME001_STRINGFIELD = 'Chintan Shah'
+	public static final String SMOKE_HOME001_FILENAME = 'Automation test document'
+	public static String SMOKE_HOME001_DOCID
+
+	public static final String SMOKE_HOME003_STRINGFIELD = 'Chintan Shah'
+	public static final String SMOKE_HOME003_FILENAME = 'Automation test document'
+	public static String SMOKE_HOME003_DOCID
+
+	public static final String SMOKE_HOME007_BMSTRING = 'Automation test document'
+	public static String SMOKE_HOME007_DOCID
+
+	public static final String SMOKE_MYWORK003_CUSTOMERNAME = 'Chintan Shah'
+	public static final String SMOKE_MYWORK003_CUSTOMERDETAIL = 'Automation test document'
+	public static String SMOKE_MYWORK003_DOCID
+
+	public static final String SMOKE_MYWORK009_CUSTOMERNAME1 = 'Chintan Shah'
+	public static final String SMOKE_MYWORK009_CUSTOMERDETAIL1 = 'Automation test document'
+
+	public static final String SMOKE_MYWORK009_CUSTOMERNAME2 = 'Atul Mirvankar'
+	public static final String SMOKE_MYWORK009_CUSTOMERDETAIL2 = 'Automation test document'
+
+	public static final String SMOKE_MYWORK018_CUSTOMERNAME = 'Chintan Shah'
+	public static final String SMOKE_MYWORK018_CUSTOMERDETAIL = 'Automation test document- MYWORK018'
+	public static String SMOKE_MYWORK018_DOCID
+
+	public static final String SMOKE_MYWORK021_CUSTOMERNAME = 'Chintan Shah'
+	public static final String SMOKE_MYWORK021_CUSTOMERDETAIL = 'Automation test document - MYWORK021'
+
+	public static final String SMOKE_REPO001_STRINGFIELD = 'Chintan Shah'
+	public static final String SMOKE_REPO001_FILENAME = 'Automation test document'
+
+	public static String SMOKE_REPO006_SAVEDFILTER_RECORDCOUNT
+	public static String SMOKE_REPO006_SAVEDFILTERNAME
+
+	public static final String SMOKE_MWS002_CUSTOMERNAME = 'Chintan Shah'
+	public static final String SMOKE_MWS002_CUSTOMERDETAIL = 'Automation test document - MWS002'
+	public static String SMOKE_MWS002_DOCID
+
+	public static final String SMOKE_MWS004_CUSTOMERNAME = 'Chintan Shah'
+	public static final String SMOKE_MWS004_CUSTOMERDETAIL = 'Automation test document - MWS004'
+
+	public static final String SMOKE_MWS007_CUSTOMERNAME = 'Chintan Shah'
+	public static final String SMOKE_MWS007_CUSTOMERDETAIL = 'Automation test document - MWS007'
+	public static String SMOKE_MWS007_DOCID
+	
+	public static final String SMOKE_WMI005_FIELD1 = '50'
+	public static final String SMOKE_WMI005_FIELD2 = 'WMI005-Automation'
+	public static final String SMOKE_WMI005_FIELD3 = 'Value 2'
+	public static final String SMOKE_WMI005_FIELD4 = '20'
+	public static final String SMOKE_WMI005_FIELD4V = '$20.00'
+	public static final String SMOKE_WMI005_FIELD5 = '08-10-2018'
+	public static final String SMOKE_WMI005_FIELD6 = '60.129'
+	public static final String SMOKE_WMI005_FIELD7 = '25'
+	public static final String SMOKE_WMI005_FIELD8 = 'Text Field'
+	public static String SMOKE_WMI005_FIELD9
+	public static final String SMOKE_WMI005_FIELD10 = 'String Field'
+	public static final String SMOKE_WMI005_FIELD11 = 'Last Name'
+	
+	public static final String SMOKE_WMI006_FIELD1 = '40'
+	public static final String SMOKE_WMI006_FIELD2 = 'WMI006-Automation'
+	public static final String SMOKE_WMI006_FIELD3 = 'Value 3'
+	public static final String SMOKE_WMI006_FIELD4 = '10'
+	public static final String SMOKE_WMI006_FIELD4V = '$10.00'
+	public static final String SMOKE_WMI006_FIELD5 = '08-10-2018'
+	public static final String SMOKE_WMI006_FIELD6 = '70.854'
+	public static final String SMOKE_WMI006_FIELD7 = '60'
+	public static final String SMOKE_WMI006_FIELD8 = 'Text Field'
+	public static String SMOKE_WMI006_FIELD9
+	public static final String SMOKE_WMI006_FIELD10 = 'String Field'
+	public static final String SMOKE_WMI006_FIELD11 = 'Middle Name'
+
+	public static final String SMOKE_WMI007_FIELD1 = '90'
+	public static final String SMOKE_WMI007_FIELD2 = 'WMI007-Automation'
+	public static final String SMOKE_WMI007_FIELD3 = 'Value 1'
+	public static final String SMOKE_WMI007_FIELD4 = '30'
+	public static final String SMOKE_WMI007_FIELD4V = '$30.00'
+	public static final String SMOKE_WMI007_FIELD5 = '08-10-2018'
+	public static final String SMOKE_WMI007_FIELD6 = '90.113'
+	public static final String SMOKE_WMI007_FIELD7 = '80'
+	public static final String SMOKE_WMI007_FIELD8 = 'Text Field'
+	public static String SMOKE_WMI007_FIELD9
+	public static final String SMOKE_WMI007_FIELD10 = 'String Field'
+	public static final String SMOKE_WMI007_FIELD11 = 'First Name'
+
+}

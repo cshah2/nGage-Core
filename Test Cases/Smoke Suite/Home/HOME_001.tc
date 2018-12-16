@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
-   <description>Create new document with no attachement</description>
+   <description>Recent Document - Add new document without attachement</description>
    <name>HOME_001</name>
    <tag></tag>
    <comment></comment>

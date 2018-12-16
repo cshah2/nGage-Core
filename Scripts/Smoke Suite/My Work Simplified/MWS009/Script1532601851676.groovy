@@ -19,26 +19,27 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUiBuiltInKe
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-//Login Into Application
+'Login into application'
 CustomKeywords.'actions.Common.login'()
 
-//Click on "My Work Simplified" link
+'Click on "My Work Simplified" link'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/a_My Work Simplified'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/iframe_iframe_110'))
 
-//Select Activity 'Closure Action - Activity A' from Drop down
+'Select Activity Closure Action - Activity A from Drop down'
 WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/select_Auto Import Controlled'), GlobalVariable.G_LongTimeout)
 WebUI.selectOptionByLabel(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/select_Auto Import Controlled'), 'Closure Action - Activity A', false)
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/iframe_iframe_110'))
 
-//Click on DocID Column header to sort records in ascending order
+'Click on DocID Column header to sort records in ascending order'
 CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/div_DocID Column Header'))
 
-//Verify records are sorted in ascending order
-CustomKeywords.'actions.Table.verifyColumnIsSortedInteger'(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/table_SearchResult'), 6, 'ASC')
+'Verify records are sorted in ascending order'
+int colNo_DocID = CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/table_SearchResultHeader'), 'Doc ID')
+CustomKeywords.'actions.Table.verifyColumnIsSortedInteger'(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/table_SearchResult'), colNo_DocID, 'ASC')
 
-//Click again on DocID column to sort records in descending order
+'Click again on DocID column to sort records in descending order'
 CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/div_DocID Column Header'))
 
-//Verify records are sorted in descending order
-CustomKeywords.'actions.Table.verifyColumnIsSortedInteger'(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/table_SearchResult'), 6, 'DESC')
+'Verify records are sorted in descending order'
+CustomKeywords.'actions.Table.verifyColumnIsSortedInteger'(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/table_SearchResult'), colNo_DocID, 'DESC')

@@ -18,93 +18,73 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUiBuiltInKeywords
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
+import utils.Consts
 
-//Login Into Application
+'Login Into Application'
 CustomKeywords.'actions.Common.login'()
 
-//Pre-requisuite : A document should be present in LinQ Process
-//Click on Global New button
-WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))
+'Create Docuement'
+CustomKeywords.'actions.Common.createDocument_ClosureAction'(Consts.SMOKE_MYWORK018_CUSTOMERNAME, Consts.SMOKE_MYWORK018_CUSTOMERDETAIL)
 
-//Select Document class and Document Type
-CustomKeywords.'actions.Common.selectDocClassAndDocTypeForGlobalNew'('LinQ DC','LinQ')
-
-//Click on OK Button
-WebUI.click(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'))
-WebUI.switchToWindowTitle('(Doc ID: NEW )')
-WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
-
-//Fill mandatory form data
-WebUI.waitForElementPresent(findTestObject('Page_WMI_NEW/LinQ/input_Customer Name'), GlobalVariable.G_LongTimeout)
-WebUI.waitForElementVisible(findTestObject('Page_WMI_NEW/LinQ/input_Customer Name'), GlobalVariable.G_LongTimeout)
-WebUI.setText(findTestObject('Page_WMI_NEW/LinQ/input_Customer Name'), 'Chintan Shah')
-WebUI.setText(findTestObject('Page_WMI_NEW/LinQ/input_Customer Details'), 'Automation Test')
-
-//Click on Save button
-WebUI.mouseOver(findTestObject('Page_WMI_NEW/LinQ/span_Actions'))
-WebUI.waitForElementVisible(findTestObject('Page_WMI_NEW/LinQ/a_Save'), GlobalVariable.G_LongTimeout)
-CustomKeywords.'actions.Window.clickElementAndWaitForWindowClose'(findTestObject('Page_WMI_NEW/LinQ/a_Save'), GlobalVariable.G_LongTimeout)
-
-//Close "create new" popup dialog
-WebUI.switchToWindowTitle('Savana nGage')
-WebUI.click(findTestObject('Page_nGage_Dashboard/Home/span_ui-button-icon-primary ui'))
-
-//Test
-//Click on My Work link from left menu
+'Click on My Work link from left menu'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_My Work Left Menu'))
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_iframe_105'))
 
-//Expand LinQ process
-WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/icon_Expand_LinQ Process'))
-WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
-
-//Select LinQ Activity C
-WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/My_Work/a_LinQ Activity C'), GlobalVariable.G_LongTimeout)
-WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_LinQ Activity C'))
+'Click Closure Action - Activity A'
+CustomKeywords.'actions.MenuBar.clickTreeMenu'('MY_WORK', 'Processes', 'Closure Action', 'Activity A')
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_work_items'))
 
-//Uncheck Show Assigned only checkbox is alredy checked
+'Uncheck Show Assigned only checkbox if already checked'
 WebUI.uncheck(findTestObject('Page_nGage_Dashboard/My_Work/chexkbox_ShowAssignedOnly'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_work_items'))
 
-//Validate atleast 1 record is present in the grid.
-WebUI.verifyElementPresent(findTestObject('Page_nGage_Dashboard/My_Work/table_RecordOne'), GlobalVariable.G_LongTimeout);
+'Validate atleast 1 record is present in the grid.'
+int rowCount = CustomKeywords.'actions.Table.getRowsCount'(findTestObject('Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults')) 
+WebUI.verifyGreaterThanOrEqual(rowCount, 1)
 
-//Sort records in grid descending by DocID
+'Sort records in grid descending by DocID'
 CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/My_Work/tableHeader_DocID'))
 CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/My_Work/tableHeader_DocID'))
 
-//Store DocID value in GlobalVariable
-GlobalVariable.MW018_DocID = WebUI.getText(findTestObject('Page_nGage_Dashboard/My_Work/table_Record_One_DocIDColumn'))
+int docIDColumnNo = CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Page_nGage_Dashboard/My_Work/tableHeader_MyWorkSearchResult'), 'Doc ID')
 
-//Select Checkbox against document in table
-WebUI.check(findTestObject('Page_nGage_Dashboard/My_Work/table_RecoedOne_Checkbox'))
+'Get DOCID of newly created document'
+Consts.SMOKE_MYWORK018_DOCID = CustomKeywords.'actions.Table.getCellText'(findTestObject('Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), 1, docIDColumnNo)
 
-//Perform Mouser over on Action button
+'Select Checkbox against document in table'
+CustomKeywords.'actions.Table.checkRecordInTable'(findTestObject('Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), 1)
+
+'Perform Mouser over on Action button'
 WebUI.mouseOver(findTestObject('Page_nGage_Dashboard/My_Work/span_Actions Button'))
 
-//Select action "Assign work items"
+'Select action "Assign work items"'
 WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/My_Work/action_AssignWorkItems'), GlobalVariable.G_LongTimeout)
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/action_AssignWorkItems'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_work_items'))
 
-//Select User and assign it to self on popup dialog
+'Select User and assign it to self on popup dialog'
 WebUI.selectOptionByLabel(findTestObject('Page_nGage_Dashboard/My_Work/actionDialog_selectUsersOrGroups'), 'Users', false)
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_ProcessingGrid'))
 WebUI.selectOptionByLabel(findTestObject('Page_nGage_Dashboard/My_Work/actionDialog_selectUserList'), 'Chintan Shah', false)
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/btn_ProcessingGrid_AssignWorkItem'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_work_items'))
+
+'Verify Success message'
 WebUI.verifyElementPresent(findTestObject('Page_nGage_Dashboard/My_Work/processingGrid_SuccessMessage'), GlobalVariable.G_LongTimeout)
 WebUI.verifyElementText(findTestObject('Page_nGage_Dashboard/My_Work/processingGrid_SuccessMessage'), 'Successfully Re-assigned the WorkItems to - Chintan Shah')
 
-//Close popup dialog
+'Close popup dialog'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/btn_processingGrid_Close'))
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
-//Select Show Assigned only checkbox
+'Select Show Assigned only checkbox'
 WebUI.check(findTestObject('Page_nGage_Dashboard/My_Work/chexkbox_ShowAssignedOnly'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_work_items'))
 
-//Verify Record is displayed in the grid
-WebUI.verifyElementText(findTestObject('Page_nGage_Dashboard/My_Work/table_Record_One_DocIDColumn'), GlobalVariable.MW018_DocID)
+'Verify Record is displayed in the grid'
+WebUI.verifyElementText(findTestObject('Page_nGage_Dashboard/My_Work/table_Record_One_DocIDColumn'), Consts.SMOKE_MYWORK018_DOCID)
+
+'Uncheck Show Assigned only checkbox if already checked'
+WebUI.uncheck(findTestObject('Page_nGage_Dashboard/My_Work/chexkbox_ShowAssignedOnly'))
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_work_items'))

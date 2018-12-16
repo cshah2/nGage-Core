@@ -20,48 +20,54 @@ import com.sun.org.apache.xpath.internal.axes.FilterExprIterator.filterExprOwner
 
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
+import utils.Consts
 import utils.DateUtil
 
-//Login Into Application
+'Login Into Application'
 CustomKeywords.'actions.Common.login'()
 
-//Expand Repository Menu
+'Create document'
+CustomKeywords.'actions.Common.createDocument_DateTimeDT'('12-01-2018', '12-05-2018', '12-10-2018 12:00:00 PM', '12-10-2018 12:00:00 PM')
+
+'Expand Repository Menu'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Repository/h3_Repository Menu'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
 
-//Select Repository - Advance Search tab
-WebUI.selectOptionByLabel(findTestObject('Page_nGage_Dashboard/Repository/select_Repository Drop Down'), 'Business Model', false)
+'Select Repository - Advance Search tab'
+WebUI.selectOptionByLabel(findTestObject('Page_nGage_Dashboard/Repository/select_Repository Drop Down'), 'Date n Date time EDM', false)
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
 
-//Selinput_btnSearchect Search For - Advance Search tab
-WebUI.selectOptionByLabel(findTestObject('Page_nGage_Dashboard/Repository/select_Search For Drop Down'), 'Business Model', false)
+'Select input_btnSearchect Search For - Advance Search tab'
+WebUI.selectOptionByLabel(findTestObject('Page_nGage_Dashboard/Repository/select_Search For Drop Down'), 'Date n Date time search class', false)
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
 
-//Enter Only End Date in Search field
-CustomKeywords.'actions.Common.setText_Date'(findTestObject('Page_nGage_Dashboard/Repository/input_BM___Date_From'), '12122018')
+'Enter Start Date and End Date values'
+String filterEndDate = '12-07-2018'
+CustomKeywords.'actions.Common.setText_Date'(findTestObject('Page_nGage_Dashboard/Repository/input_DateRange_To'), filterEndDate)
 
-//Click on Search button
+'Click on Search button'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Repository/input_btnSearch'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
 
-//Copy Number of records displayed in filterExprOwner
-GlobalVariable.RecordsInFilter = WebUI.getText(findTestObject('Page_nGage_Dashboard/Repository/div_Page_Results'))
+'Copy Number of records displayed in filterExprOwner'
+Consts.SMOKE_REPO006_SAVEDFILTER_RECORDCOUNT = WebUI.getText(findTestObject('Page_nGage_Dashboard/Repository/div_Page_Results'))
 
-//Click on Save search button
+'Click on Save search button'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Repository/input_btnSaveSearchAdv'))
 
-//Enter Search critera name
+'Enter Saved search name'
 String now = DateUtil.getCurrentDateTime()
-GlobalVariable.FilterName = 'AUTOMATION_START_DATE_SEARCH_'+now
-WebUI.setText(findTestObject('Page_nGage_Dashboard/Repository/input_txtSaveDesc'), GlobalVariable.FilterName)
+Consts.SMOKE_REPO006_SAVEDFILTERNAME = 'AUTOMATION_START_DATE_SEARCH_'+now
+WebUI.setText(findTestObject('Page_nGage_Dashboard/Repository/input_txtSaveDesc'), Consts.SMOKE_REPO006_SAVEDFILTERNAME)
 
-//Click on Save button to save search criteia
+'Click on Save button to save search criteia'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Repository/input_btnSave'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
 
-//Sort Saved search table with Modified Date value - Descending
+'Sort Saved search table with Modified Date value - Descending'
 CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/Repository/div_Modified Date'))
 CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/Repository/div_Modified Date'))
 
-//Validate Search criteria is displayed in the saved search grid
-CustomKeywords.'actions.Table.verifyRecordPresentInColumn'(findTestObject('Page_nGage_Dashboard/Repository/table_SavedSearch'), 2, GlobalVariable.FilterName)
+'Validate Search criteria is displayed in the saved search grid'
+int colNo_filterName = CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Page_nGage_Dashboard/Repository/table_Header_SavedSearch'), 'Search Description')
+CustomKeywords.'actions.Table.verifyRecordPresentInColumn'(findTestObject('Page_nGage_Dashboard/Repository/table_SavedSearch'), colNo_filterName, Consts.SMOKE_REPO006_SAVEDFILTERNAME)

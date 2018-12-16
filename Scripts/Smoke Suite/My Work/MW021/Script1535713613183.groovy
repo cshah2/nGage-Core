@@ -18,51 +18,53 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUiBuiltInKeywords
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
+import utils.Consts
 
-//Login Into Application
+'Login Into Application'
 CustomKeywords.'actions.Common.login'()
 
-//Click on My Work link from left menu
+'Create Docuement'
+CustomKeywords.'actions.Common.createDocument_ClosureAction'(Consts.SMOKE_MYWORK021_CUSTOMERNAME, Consts.SMOKE_MYWORK021_CUSTOMERDETAIL)
+
+'Click on My Work link from left menu'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_My Work Left Menu'))
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_iframe_105'))
 
-//Expand LinQ process
-WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/icon_Expand_LinQ Process'))
-WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
-
-//Select LinQ Activity C
-WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/My_Work/a_LinQ Activity C'), GlobalVariable.G_LongTimeout)
-WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_LinQ Activity C'))
+'Click Closure Action - Activity A'
+CustomKeywords.'actions.MenuBar.clickTreeMenu'('MY_WORK', 'Processes', 'Closure Action', 'Activity A')
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_work_items'))
 
-//Uncheck Show Assigned only checkbox is alredy checked
+'Uncheck Show Assigned only checkbox if already checked'
 WebUI.uncheck(findTestObject('Page_nGage_Dashboard/My_Work/chexkbox_ShowAssignedOnly'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_work_items'))
 
-//Validate atleast 1 record is present in the grid.
-WebUI.verifyElementPresent(findTestObject('Page_nGage_Dashboard/My_Work/table_RecordOne'), GlobalVariable.G_LongTimeout);
+'Validate atleast 1 record is present in the grid.'
+int rowCount = CustomKeywords.'actions.Table.getRowsCount'(findTestObject('Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'))
+WebUI.verifyGreaterThanOrEqual(rowCount, 1)
 
-//Sort records in grid descending by DocID
+'Sort records in grid descending by DocID'
 CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/My_Work/tableHeader_DocID'))
 CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/My_Work/tableHeader_DocID'))
 
-//Verify Record is displayed in the grid
-WebUI.verifyElementText(findTestObject('Page_nGage_Dashboard/My_Work/table_Record_One_DocIDColumn'), GlobalVariable.MW018_DocID)
+'Select Checkbox against document in table'
+CustomKeywords.'actions.Table.checkRecordInTable'(findTestObject('Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), 1)
 
-//Select Checkbox against document in table
-WebUI.check(findTestObject('Page_nGage_Dashboard/My_Work/table_RecoedOne_Checkbox'))
-
-//Perform Mouser over on Action button
+'Perform Mouser over on Action button'
 WebUI.mouseOver(findTestObject('Page_nGage_Dashboard/My_Work/span_Actions Button'))
 
-//Select action "Open All Selected Items"
+'Select action "Open All Selected Items"'
 WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/My_Work/action_OpenAllSelectedItems'), GlobalVariable.G_LongTimeout)
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/action_OpenAllSelectedItems'))
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
-//Verify Field on document
-WebUI.switchToWindowTitle('LinQ - Chintan Shah')
+WebUI.switchToWindowIndex(1)
 WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 
-WebUI.verifyElementAttributeValue(findTestObject('Page_WMI_NEW/LinQ/input_Customer Name'), 'value', 'Chintan Shah', GlobalVariable.G_LongTimeout)
+'Click on Customer Information tab'
+WebUI.click(findTestObject('Page_WMI/Closure Action/tab_CustomerInformation'))
+WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_WMI/Closure Action/iframe_ContentPlaceHolder1_iPa'))
+
+WebUI.verifyElementAttributeValue(findTestObject('Page_WMI/Closure Action/input_eform_Customer_Name'), 'value', Consts.SMOKE_MYWORK021_CUSTOMERNAME, GlobalVariable.G_LongTimeout)
+WebUI.verifyElementAttributeValue(findTestObject('Page_WMI/Closure Action/input_eform_Customer_Details'), 'value', Consts.SMOKE_MYWORK021_CUSTOMERDETAIL, GlobalVariable.G_LongTimeout)

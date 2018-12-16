@@ -21,29 +21,35 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUiBuiltInKeywords
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
+import utils.Consts
 
-//Login Into Application
+'Login Into Application'
 CustomKeywords.'actions.Common.login'()
 
-//Expand Repository Menu
+'Create new Document'
+CustomKeywords.'actions.Common.createDocument_MultiPageViewerWithDragAndDrop'(Consts.SMOKE_REPO001_STRINGFIELD, Consts.SMOKE_REPO001_FILENAME, '')
+
+'Expand Repository Menu'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Repository/h3_Repository Menu'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
 
-//Select Repository - Advance Search tab
+'Select Repository - Advance Search tab'
 WebUI.selectOptionByLabel(findTestObject('Page_nGage_Dashboard/Repository/select_Repository Drop Down'), 'Business Model', false)
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
 
-//Select Search For - Advance Search tab
+'Select Search For - Advance Search tab'
 WebUI.waitForElementPresent(findTestObject('Page_nGage_Dashboard/Repository/select_Search For Drop Down'), GlobalVariable.G_LongTimeout)
 WebUI.selectOptionByLabel(findTestObject('Page_nGage_Dashboard/Repository/select_Search For Drop Down'), 'Business Model', false)
+
 WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/Repository/input_Doc___ID'), GlobalVariable.G_LongTimeout)
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
 
-//Click on Search button
+'Click on Search button'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Repository/input_btnSearch'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
 
 WebUI.waitForElementAttributeValue(findTestObject('Page_nGage_Dashboard/Repository/h3_Search Bar'), 'aria-expanded', 'false', GlobalVariable.G_LongTimeout)
 
-//Verify Record count in Result grid table
-CustomKeywords.'actions.Table.verifyRecordsCount'(findTestObject('Page_nGage_Dashboard/Repository/table_SearchResults'), 12)
+'Verify atleast 1 record is present in grid'
+int rowCount = CustomKeywords.'actions.Table.getRowsCount'(findTestObject('Page_nGage_Dashboard/Repository/table_SearchResults'))
+WebUI.verifyGreaterThanOrEqual(rowCount, 1)
