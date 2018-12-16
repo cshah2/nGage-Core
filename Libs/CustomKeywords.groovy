@@ -9,6 +9,8 @@ import com.kms.katalon.core.testobject.TestObject
 
 import java.util.List
 
+import java.lang.Boolean
+
 
 def static "actions.Calender.selectDate"(
     	String date	
@@ -450,26 +452,6 @@ def static "apis.UserManagement.updateLastLoginDate"(
          , 	date)
 }
 
-def static "actions.Window.clickElementAndWaitForWindowClose"(
-    	TestObject saveButton	
-     , 	int timeout	) {
-    (new actions.Window()).clickElementAndWaitForWindowClose(
-        	saveButton
-         , 	timeout)
-}
-
-def static "actions.Window.switchToUrlContains"(
-    	String text	) {
-    (new actions.Window()).switchToUrlContains(
-        	text)
-}
-
-def static "actions.Window.verifyOpenWindowCount"(
-    	int expCount	) {
-    (new actions.Window()).verifyOpenWindowCount(
-        	expCount)
-}
-
 def static "actions.Common.maximizeWindow"() {
     (new actions.Common()).maximizeWindow()
 }
@@ -543,7 +525,7 @@ def static "actions.Common.clearClipBoard"() {
 }
 
 def static "actions.Common.clickMultipleElements"(
-    	List<TestObject> elements	) {
+    	java.util.List<TestObject> elements	) {
     (new actions.Common()).clickMultipleElements(
         	elements)
 }
@@ -732,6 +714,26 @@ def static "actions.Common.waitForElementVisible"(
     (new actions.Common()).waitForElementVisible(
         	to
          , 	timeout)
+}
+
+def static "actions.Window.clickElementAndWaitForWindowClose"(
+    	TestObject saveButton	
+     , 	int timeout	) {
+    (new actions.Window()).clickElementAndWaitForWindowClose(
+        	saveButton
+         , 	timeout)
+}
+
+def static "actions.Window.switchToUrlContains"(
+    	String text	) {
+    (new actions.Window()).switchToUrlContains(
+        	text)
+}
+
+def static "actions.Window.verifyOpenWindowCount"(
+    	int expCount	) {
+    (new actions.Window()).verifyOpenWindowCount(
+        	expCount)
 }
 
 def static "utils.DateUtil.verifyDateFilter"(

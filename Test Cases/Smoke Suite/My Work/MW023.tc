@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Regression test My Work: show assigned only (docs not assigned)</description>
+   <name>MW023</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>e25a8c08-263e-4885-92c4-8ce06e5342e3</testCaseGuid>
+</TestCaseEntity>

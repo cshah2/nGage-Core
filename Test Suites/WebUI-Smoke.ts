@@ -12,373 +12,385 @@
    <rerunFailedTestCasesOnly>false</rerunFailedTestCasesOnly>
    <testSuiteGuid>ed47b655-1940-49b9-82f9-1dbcb97fb9b4</testSuiteGuid>
    <testCaseLink>
-      <guid>18313f3c-802f-4ad8-a0e6-bfcf1b89f92e</guid>
+      <guid>1eaa2e1e-35c3-4831-81b9-05f4a415ddf9</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Suite/Home/HOME_001</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>eaa55106-c01b-4335-b0e2-ffa5cfd41191</guid>
+      <guid>bbdafd6c-d93b-428c-904b-cb10d4a2318b</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Suite/Home/HOME_002</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>e5c8c6bd-e443-490e-9d98-3a164e0a4737</guid>
+      <guid>422a7102-5b12-44be-be35-8f9b4b286067</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Suite/Home/HOME_003</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>81b193d6-24ca-43e8-9fce-56e1304f5e82</guid>
+      <guid>bb2e6896-fdf1-4145-8dea-f5a0a317c47c</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Suite/Home/HOME_004</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>e94a66a6-7231-4405-b9f4-61bb83f6eec8</guid>
+      <guid>124d6aeb-9666-4c7e-9b68-326ee378dfb3</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Suite/Home/HOME_005</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>f332f402-6324-4921-823c-d86e9b429b05</guid>
+      <guid>ef0997a4-dc48-47f1-9218-0e89fa56fe52</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Suite/Home/HOME_006</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>d1dabeaf-b2f6-4e85-99f5-06fb3d1b9c54</guid>
+      <guid>55f9de66-0e37-4a16-95e2-db79a945c7fe</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Suite/Home/HOME_007</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>de9fc820-3420-409c-aaad-fb62800a1813</guid>
+      <guid>ee37be0b-c3e0-4e16-8c66-7ac9f9bab90c</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Suite/Home/HOME_008</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>9dc5cc53-edf5-425a-a27a-d2d73f14f2f3</guid>
+      <guid>4c731c5e-2915-4d61-bd75-83ff2e5524e8</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Suite/Home/HOME_009</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>1fb9cd74-e09c-41fd-81cf-d112f1ed48f5</guid>
+      <guid>8944ee33-4308-4910-bee6-d2088d74b5d0</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Suite/My Work/MW001</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>86a8138a-9043-4c47-991e-e08afb9d1732</guid>
+      <guid>07b94eb5-c8a8-4a12-a2fa-f3045a568b73</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Suite/My Work/MW002</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>7916a155-5c5b-4995-95ba-4a4281e38db0</guid>
+      <guid>83ae999a-ea91-4837-9812-e5079911dd8b</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Suite/My Work/MW003</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>ddd26cd2-f623-489f-88a4-b5256b78f953</guid>
+      <guid>e100e507-112f-466e-bf05-3c9306561a60</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Suite/My Work/MW004</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>c335eb33-0365-45f8-b821-4d48fbbec5ea</guid>
+      <guid>106735ae-7c2b-4e52-a371-169540c3dddf</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Suite/My Work/MW005</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>018942dd-c1b7-435c-8041-7fe4e0bc0c1e</guid>
+      <guid>999bd7b2-4799-4153-b064-676d5b7422bf</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Suite/My Work/MW006</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>0a4972b7-3bf3-42dc-bc2b-ad35d7c2df5a</guid>
+      <guid>ad333b65-65a0-4d83-9a83-4c2e6c5c069e</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Suite/My Work/MW007</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>27bbb7b7-77ab-48b5-9a41-8d6df1fe1ba7</guid>
+      <guid>f7f26de8-08de-4634-8fe0-c76564a9aeae</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Suite/My Work/MW008</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>e242926c-234d-45a9-9750-26b24ad056c7</guid>
+      <guid>6b7241e2-759c-4e8a-a93d-df95261abb6c</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Suite/My Work/MW009</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>ee39024b-eda4-4770-800e-796f2fb222ac</guid>
+      <guid>9b4e7627-ee84-4ef1-afe0-9c1479b348ea</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Suite/My Work/MW010</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>4be1e365-7cdb-47dd-a016-39908fa42b96</guid>
+      <guid>b148bbe3-4b29-4e2d-bff4-2589459ac0b2</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Suite/My Work/MW011</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>da5b2b63-b97a-4d35-873a-8e0880babc39</guid>
+      <guid>17ad764a-4822-478f-99ac-9d7f32ecf3c1</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Suite/My Work/MW012</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>8d0dc672-b538-4b86-abfc-235df5b74e48</guid>
+      <guid>1cf0c510-beb4-4dd5-85e6-33757dceea05</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Suite/My Work/MW013</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>f5897bec-fc29-467c-9a01-6362761504ad</guid>
+      <guid>1f9bf293-23b1-4dcb-8221-bae11f76da47</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Suite/My Work/MW014</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>1af718b5-fce0-40ff-9efa-c4d57a38b940</guid>
+      <guid>7f061481-34f8-44a4-9a69-736b9f7878af</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Suite/My Work/MW015</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>84097945-a73a-47e8-89ea-d68420d1c7c3</guid>
+      <guid>80ad14df-8277-4948-8dd0-ae9e8ca28285</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Suite/My Work/MW016</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>744c0e98-fa7a-4169-b13d-ddfae0516401</guid>
+      <guid>9d9a4c3b-f7ea-48b6-8e53-76961ce4d9e2</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Suite/My Work/MW017</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>e8c9aff7-f1c6-4c33-87ee-c93a7d95c116</guid>
+      <guid>d60a3ae4-b4b1-4031-82bc-c7958a1c9731</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Suite/My Work/MW018</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>86d8b771-8bb4-4516-a4ad-e12506f24697</guid>
+      <guid>baef1923-9071-4356-937e-c264c04fdfdb</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Suite/My Work/MW019</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>9dabe0d9-6188-4c2a-a3a7-902aa9aa5bb2</guid>
+      <guid>e70224ee-5afc-44e0-8c0d-e08f5f05dd90</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Suite/My Work/MW020</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>fed2be5b-cdef-4902-8d79-36ff420708b5</guid>
+      <guid>4dd396ad-a525-4cda-a5e9-6d77b13efd3f</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Suite/My Work/MW021</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>7a18dfd2-2a83-4eb0-b16f-81227c9a15db</guid>
+      <guid>39026b6b-bae0-41d8-af54-6a0e9e6a4a59</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Suite/My Work/MW022</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>ba476e29-9fbd-43a1-97d5-e66734c72318</guid>
+      <guid>85c2a9a0-6e1d-455f-8fb9-35d4acb41c87</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/Smoke Suite/My Work/MW023</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>8fd8dd97-0576-414a-b26b-c22e422188a7</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/Smoke Suite/My Work/MW024</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>a8c80d4c-be09-4b97-b7e2-24aae4ca6b3e</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Suite/My Work Simplified/MWS001</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>7e260702-4e21-4f54-99ac-945942fac988</guid>
+      <guid>7cd85c77-4f47-40fb-a25b-08282869bef7</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Suite/My Work Simplified/MWS002</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>b354dcbe-7279-47b6-9e8f-5042d8288c69</guid>
+      <guid>52340562-d512-4526-9feb-dead2a6b0c95</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Suite/My Work Simplified/MWS003</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>29611fb8-9f5b-4358-8e78-2e5a9e855b46</guid>
+      <guid>45afe5c0-030a-4e57-ac6b-88cf2101a3a3</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Suite/My Work Simplified/MWS004</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>62030eed-66a8-4066-b450-54bb1f4c8026</guid>
+      <guid>509901ef-e80a-4971-9ff8-7b9afde7e6e7</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Suite/My Work Simplified/MWS005</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>0b9a52e5-df42-4223-b442-a047032f74ce</guid>
+      <guid>e0439d93-a9d5-4d7a-80b6-86721b364ebb</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Suite/My Work Simplified/MWS006</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>9bf2369d-5ee2-4afe-9b8b-aadacdd3cf04</guid>
+      <guid>819680cc-4a76-4bef-b0a3-6846ac4f5199</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Suite/My Work Simplified/MWS007</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>0d9a8f40-0f1c-47e3-8e83-142d7ae8e1b4</guid>
+      <guid>420a7333-4600-492b-b692-df251dea7cc1</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Suite/My Work Simplified/MWS008</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>2285d5d9-8933-44d0-88ae-56da8c2cdcd9</guid>
+      <guid>583e06fd-19d6-476d-8115-84a8e9b76e7d</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Suite/My Work Simplified/MWS009</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>f263f8a9-9352-404e-afa1-b64a900c6827</guid>
+      <guid>5e650642-4a47-477a-9e15-a6123a2ea172</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Suite/My Work Simplified/MWS010</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>2ab9fc20-a90b-46e4-b7ec-16d1768eca01</guid>
+      <guid>bc46805c-b94c-47d1-b53b-217c91eec385</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Suite/Report/REPORT001</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>1f46302e-e4dc-4ab7-a8fa-db01ee525a00</guid>
+      <guid>3b69e18f-f2d0-42f5-ae96-ba524a1581dc</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Suite/Report/REPORT002</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>399a1754-031b-4e4c-a94f-5a9cbd4d1454</guid>
+      <guid>2972dc7f-6e43-4172-81c2-519d2143e53b</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Suite/Repository/REPO001</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>42eed447-2d45-49af-813a-3a464bedeba5</guid>
+      <guid>258c3ccb-4293-4c34-aab1-1c6b2ba8811d</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Suite/Repository/REPO002</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>ac4a21f2-3106-44d4-8d22-5106fd8e56bc</guid>
+      <guid>b3eb8f9e-f475-485a-b64b-b2d88eb0573f</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Suite/Repository/REPO003</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>3e3f60de-3edd-4094-9b86-fa0186571dbb</guid>
+      <guid>66e086f3-7065-4e70-b7b4-3493d974a4be</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Suite/Repository/REPO004</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>29f4239c-2cb4-4074-add0-da27f6a485d9</guid>
+      <guid>e1649ab7-5402-4e97-b1f6-fdd3f33e9562</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Suite/Repository/REPO005</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>e417a527-f9b4-4b07-9da5-5e04491c649e</guid>
+      <guid>219f3898-fbe6-4108-b67d-8325e2fbd3fe</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Suite/Repository/REPO006</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>1a87bfa5-52de-42b7-8346-6db340e4034e</guid>
+      <guid>c2bc1bb2-2558-46a7-875d-922845221895</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Suite/Repository/REPO007</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>f666d8c2-613a-4a3f-a8e4-7712d5603055</guid>
+      <guid>ad48670c-9c2f-4432-92ad-c2331d6d7468</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Suite/Repository/REPO008</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>fb0a80ee-a838-4e4f-8041-d2496d1e36d9</guid>
+      <guid>99b4839a-d0a2-40a3-bda4-61586e3ef205</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Suite/Repository/REPO009</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>5a0a373d-4f00-4ee1-8d51-1ccbc83e80d4</guid>
+      <guid>a3e89aaa-b413-4b26-bc66-a7ba6f19dc12</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Suite/Repository/REPO010</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>715e3614-7424-4edf-b3d4-95c2d83f7a48</guid>
+      <guid>ef0a18fe-df90-4510-aa86-f377b6c3d5ea</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Suite/Repository/REPO011</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>a6cb9cc2-baa8-4fb8-b88f-742974eb1b43</guid>
+      <guid>ce0e7fcd-bdbe-4ca0-8161-bbb2a47a1536</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Suite/Repository/REPO012</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>d81771d2-0c7a-4c4f-8e5a-9afecb7d03d1</guid>
+      <guid>b7de18e0-e1c3-4049-81b1-8af222537ed6</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Suite/WMI/WMI001</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>0ae7149e-e20b-4bd7-ba96-f4779e662238</guid>
+      <guid>86fd39fe-a0de-411c-81b9-ddab562effc0</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Suite/WMI/WMI002</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>8eab3897-e91c-4a31-a94e-b5e12da3cfee</guid>
+      <guid>0efad037-10f6-4438-9d71-963278ab0f3d</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Suite/WMI/WMI003</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>fb1c6965-fff1-413e-95bb-72a0249fc126</guid>
+      <guid>e0e4a4d2-20df-4b27-b6c9-9c08378e756a</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Suite/WMI/WMI004</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>9936db88-9db7-49e1-acc5-fb34d685de2d</guid>
+      <guid>51ad0c1e-a889-4b9a-9e16-2abd85d43029</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Suite/WMI/WMI005</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>500cfd3d-311d-4332-99e1-8a6a56a0b8f0</guid>
+      <guid>01b65f6d-23e8-46ec-8d73-49924ea247fc</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Suite/WMI/WMI006</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>d24e6133-b247-4bfa-9ec2-b9acaf0de9f5</guid>
+      <guid>2bddde3d-f5a2-45e6-ad9f-5a695b9c0813</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Suite/WMI/WMI007</testCaseId>

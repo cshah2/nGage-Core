@@ -42,11 +42,19 @@ public class Consts {
 	public static final String SMOKE_MYWORK009_CUSTOMERDETAIL2 = 'Automation test document'
 
 	public static final String SMOKE_MYWORK018_CUSTOMERNAME = 'Chintan Shah'
-	public static final String SMOKE_MYWORK018_CUSTOMERDETAIL = 'Automation test document- MYWORK018'
+	public static final String SMOKE_MYWORK018_CUSTOMERDETAIL = 'Automation test document - MYWORK018'
 	public static String SMOKE_MYWORK018_DOCID
 
 	public static final String SMOKE_MYWORK021_CUSTOMERNAME = 'Chintan Shah'
 	public static final String SMOKE_MYWORK021_CUSTOMERDETAIL = 'Automation test document - MYWORK021'
+
+	public static final String SMOKE_MYWORK022_CUSTOMERNAME = 'Chintan Shah'
+	public static final String SMOKE_MYWORK022_CUSTOMERDETAIL = 'Automation test document - MYWORK022'
+	public static String SMOKE_MYWORK022_DOCID
+
+	public static final String SMOKE_MYWORK023_CUSTOMERNAME = 'Chintan Shah'
+	public static final String SMOKE_MYWORK023_CUSTOMERDETAIL = 'Automation test document - MYWORK023'
+	public static String SMOKE_MYWORK023_DOCID
 
 	public static final String SMOKE_REPO001_STRINGFIELD = 'Chintan Shah'
 	public static final String SMOKE_REPO001_FILENAME = 'Automation test document'
