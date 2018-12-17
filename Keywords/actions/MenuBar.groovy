@@ -372,6 +372,7 @@ public class MenuBar {
 				Actions asDriver = new Actions(driver)
 				asDriver.doubleClick(a).build().perform()
 				WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
+				WebUI.delay(1)
 			}
 			i++
 		}

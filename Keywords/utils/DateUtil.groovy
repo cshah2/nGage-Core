@@ -10,6 +10,7 @@ import java.time.ZonedDateTime
 import java.time.format.DateTimeFormatter
 
 import org.apache.commons.lang.time.DateUtils
+import org.apache.commons.lang3.StringUtils
 
 import com.kms.katalon.core.annotation.Keyword
 import com.kms.katalon.core.checkpoint.Checkpoint
@@ -168,7 +169,7 @@ public class DateUtil {
 			referenceDate = new Date().parse(dateTimeFormat,referenceDateValue)
 
 		boolean status=false
-		switch(operator) {
+		switch(operator.toUpperCase()) {
 			case '='://equal to
 				if(actualDate.compareTo(referenceDate)==0)
 					status=true
@@ -199,12 +200,12 @@ public class DateUtil {
 					status= true
 				break
 
-			case 'null'://less than or equal
+			case 'NULL'://less than or equal
 				if(actualDate.equals(""))
 					status= true
 				break
 
-			case 'not null':
+			case 'NOT NULL':
 				if(!actualDate.equals(""))
 					status= true
 				break
@@ -261,5 +262,21 @@ public class DateUtil {
 		ZonedDateTime date = ZonedDateTime.now()
 		String dateString = date.format(_format)
 		return dateString
+	}
+	
+	public static String formatDate_Slash(String date) {
+		if(StringUtils.isNotBlank(date) && date.length() >= 10) {
+			return date.trim().substring(0, 10).replaceAll('-', '/')
+		} else {
+			return date
+		}
+	}
+	
+	public static String formatDate_Hyphen(String date) {
+		if(StringUtils.isNotBlank(date) && date.length() >= 10) {
+			return date.trim().substring(0, 10).replaceAll('/', '-')
+		} else {
+			return date
+		}
 	}
 }

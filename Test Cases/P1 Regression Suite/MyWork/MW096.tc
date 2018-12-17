@@ -3,6 +3,6 @@
    <description>28420  Regression test My Work (Date time field+WF):&quot;Not Null&quot; opeartor - Search should work on Date control for DATETIME Field</description>
    <name>MW096</name>
    <tag></tag>
-   <comment>Create a new Document in DateTimeRequired activity</comment>
+   <comment></comment>
    <testCaseGuid>c4d5ae43-1d4c-4a53-80a9-a5f037f84391</testCaseGuid>
 </TestCaseEntity>

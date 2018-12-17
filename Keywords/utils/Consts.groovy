@@ -72,7 +72,7 @@ public class Consts {
 	public static final String SMOKE_MWS007_CUSTOMERNAME = 'Chintan Shah'
 	public static final String SMOKE_MWS007_CUSTOMERDETAIL = 'Automation test document - MWS007'
 	public static String SMOKE_MWS007_DOCID
-	
+
 	public static final String SMOKE_WMI005_FIELD1 = '50'
 	public static final String SMOKE_WMI005_FIELD2 = 'WMI005-Automation'
 	public static final String SMOKE_WMI005_FIELD3 = 'Value 2'
@@ -85,7 +85,7 @@ public class Consts {
 	public static String SMOKE_WMI005_FIELD9
 	public static final String SMOKE_WMI005_FIELD10 = 'String Field'
 	public static final String SMOKE_WMI005_FIELD11 = 'Last Name'
-	
+
 	public static final String SMOKE_WMI006_FIELD1 = '40'
 	public static final String SMOKE_WMI006_FIELD2 = 'WMI006-Automation'
 	public static final String SMOKE_WMI006_FIELD3 = 'Value 3'
@@ -111,5 +111,46 @@ public class Consts {
 	public static String SMOKE_WMI007_FIELD9
 	public static final String SMOKE_WMI007_FIELD10 = 'String Field'
 	public static final String SMOKE_WMI007_FIELD11 = 'First Name'
+	
 
+	
+	
+	
+	public static final String P1_MW084_STARTDATE = '01-01-2018'
+	public static final String P1_MW084_ENDDATE = '12-31-2025'
+	public static final String P1_MW084_STARTDATETIME = '06-01-2018 01:00:00 AM'
+	public static final String P1_MW084_ENDDATETIME = '05-31-2025 11:00:00 PM'
+	public static String P1_MW084_BMTEXT
+
+	
+	public static final String P1_MW087_STARTDATE = '01-15-2019'
+	public static final String P1_MW087_ENDDATE = '12-15-2024'
+	public static final String P1_MW087_STARTDATETIME = '06-15-2019 08:00:00 AM'
+	public static final String P1_MW087_ENDDATETIME = '05-15-2024 05:00:00 PM'
+	public static String P1_MW087_BMTEXT
+	
+	public static final String P1_MW095_STARTDATE = ''
+	public static final String P1_MW095_ENDDATE = ''
+	public static final String P1_MW095_STARTDATETIME = ''
+	public static final String P1_MW095_ENDDATETIME = ''
+	public static String P1_MW095_BMTEXT
+
+		
+	/*
+	 * Doc Class and Doc Type Variables
+	 */
+	
+	public static final String DC_DATEREQUIRED = 'daterequiredsearch'
+	public static final String DT_DATEREQUIRED = 'daterequiredsearch'
+	
+	public static final String DC_DATERANGEREQUIRED = 'daterangerequired'
+	public static final String DT_DATERANGEREQUIRED = 'daterangerequired'
+
+	public static final String DC_DATETIMEREQUIRED = 'Datetimerequired'
+	public static final String DT_DATETIMEREQUIRED = 'Datetimerequired'
+
+	public static final String DC_DATETIMERANGEREQUIRED = 'Datetimerangerequired'
+	public static final String DT_DATETIMERANGEREQUIRED = 'Datetimerangerequired'
+
+	
 }
