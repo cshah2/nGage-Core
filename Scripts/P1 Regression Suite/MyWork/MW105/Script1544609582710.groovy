@@ -21,7 +21,7 @@ WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_My Work Left Menu'))
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
 'Create a new Document in Date Range Required activity'
-CustomKeywords.'actions.Common.createDocument_MyWorkDateTime'('daterangerequired','daterangerequired','01012018','01012025','01012018 05:08:14 PM','08-30-2002 09:29:45 AM','Test')
+CustomKeywords.'actions.Common.createDocument_MyWorkDateTime'('daterangerequired','daterangerequired','01-01-2018','01-01-2025','01-01-2018 05:08:14 PM','08-30-2002 09:29:45 AM','Test')
 
 'Expand Processes and Verify Date Required activity Displayed and Click on Created date Document'
 CustomKeywords.'actions.MenuBar.clickTreeMenu'('My_Work','Processes','DateRange required','Date range required','01/01/2018')
@@ -42,6 +42,10 @@ WebUI.verifyMatch(actualTextOfStartTestDateFrom, '01-01-2018', false)
 String actualTextOfStartTestDateTo = WebUI.getAttribute(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Process_DateRangeRequired/input_StartTestDate_To'),'value')
 println actualTextOfStartTestDateTo
 WebUI.verifyMatch(actualTextOfStartTestDateTo, '01-01-2018', false)
+
+'click on search button'
+WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/btn_Search'))
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/iframe_work_items'))
 
 'Verify searched data (selected date in activity)should be displayed in the search result'
 int columnPosition_StartTestDate= CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/tableHeader_MyWorkSearchResult'),'Start test date')
