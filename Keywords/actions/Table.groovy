@@ -40,7 +40,8 @@ public class Table {
 	private List<WebElement> getAllRows(WebElement table) {
 
 		List<WebElement> visibleRows = new ArrayList<WebElement>()
-		List<WebElement> rows = table.findElements(By.tagName("tr"))
+		//List<WebElement> rows = table.findElements(By.tagName("tr"))
+		List<WebElement> rows = table.findElements(By.xpath("./tbody/tr"))
 
 		for(WebElement row in rows) {
 			if(isVisibleDataRow(row))
@@ -52,8 +53,8 @@ public class Table {
 	}
 
 	private boolean isVisibleDataRow(WebElement row) {
-		String classValue = row.getAttribute('class')
-		return (row.isDisplayed() && !classValue.equalsIgnoreCase('GVHeader'))
+		String classValue = row.getAttribute('class').toUpperCase()
+		return (row.isDisplayed() && !classValue.contains('GVHEADER'))
 	}
 
 	/**
@@ -127,13 +128,13 @@ public class Table {
 	private int getColumnNumberOfHeader(List<WebElement> headers , String columnName) {
 
 		for(int i = 0; i < headers.size() ; i++) {
-			
+
 			WebDriver driver = DriverFactory.getWebDriver()
 			Actions aDriver = new Actions(driver)
 			aDriver.moveToElement(headers[i]).build().perform()
 
 			String actColumnName = headers[i].getText().replace('\u00A0',' ').trim()
-			
+
 			if(StringUtils.isNotEmpty(actColumnName) && actColumnName.equalsIgnoreCase(columnName)) {
 				i = i+1;
 				return i
@@ -230,7 +231,6 @@ public class Table {
 		}
 		else {
 			KeywordUtil.markPassed("Value "+expValue+" not found in column No : "+colNo)
-			
 		}
 	}
 

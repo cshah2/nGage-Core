@@ -664,7 +664,7 @@ public class Common {
 		WebUI.switchToDefaultContent()
 		WebUI.delay(1)
 	}
-	
+
 	@Keyword
 	def setTextJQuery(TestObject to, String text) {
 
@@ -792,7 +792,7 @@ public class Common {
 		def currentTime = System.currentTimeMillis()
 
 		boolean isVisible = false
-		Exception lastException 		
+		Exception lastException
 		while(currentTime < endTime) {
 			try {
 				WebUI.waitForElementVisible(to, 10)
@@ -807,14 +807,14 @@ public class Common {
 				currentTime = System.currentTimeMillis()
 			}
 		}
-		
+
 		if(isVisible) {
 			KeywordUtil.markPassed('Element visible')
 		}
 		else {
 			KeywordUtil.markFailedAndStop('Element not visible \n'+lastException.toString)
 		}
-		
+
 	}
 
 
