@@ -493,4 +493,59 @@ public class Table {
 
 		return rows.size()
 	}
+	
+	/*
+	 * Keywords for WMI Table
+	 */
+	
+	@Keyword
+	def verifyButtonPresentInWMITable(TestObject tableLocator, String expTitleAttr) {
+		
+		WebElement table = WebUtil.getWebElement(tableLocator)
+		WebDriver driver = DriverFactory.getWebDriver()
+		List<WebElement> icons = table.findElements(By.xpath("./tbody/tr[1]//input"))
+		
+		boolean isIconFound = false
+		
+		for(WebElement icon in icons) {
+			String actTitle = icon.getAttribute('title').toUpperCase()
+			if(actTitle.contains(expTitleAttr.toUpperCase())) {
+				isIconFound = true
+				break
+			}
+		}
+		
+		if(isIconFound) {
+			KeywordUtil.markPassed('Icon found in table')
+		} 
+		else {
+			KeywordUtil.markFailedAndStop('Icon not found in table')
+		}
+	}
+	
+	@Keyword
+	def verifyButtonNotPresentInWMITable(TestObject tableLocator, String expTitleAttr) {
+		
+		WebElement table = WebUtil.getWebElement(tableLocator)
+		WebDriver driver = DriverFactory.getWebDriver()
+		List<WebElement> icons = table.findElements(By.xpath("./tbody/tr[1]//input"))
+		
+		boolean isIconFound = false
+		
+		for(WebElement icon in icons) {
+			String actTitle = icon.getAttribute('title').toUpperCase()
+			if(actTitle.contains(expTitleAttr.toUpperCase())) {
+				isIconFound = true
+				break
+			}
+		}
+		
+		if(!isIconFound) {
+			KeywordUtil.markPassed('Icon not found in table')
+		}
+		else {
+			KeywordUtil.markFailedAndStop('Icon found in table')
+		}
+	}
+
 }

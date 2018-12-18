@@ -9,8 +9,6 @@ import com.kms.katalon.core.testobject.TestObject
 
 import java.util.List
 
-import java.lang.Boolean
-
 
 def static "actions.Calender.selectDate"(
     	String date	
@@ -218,6 +216,22 @@ def static "actions.Table.getRowsCount"(
     	TestObject tableLocator	) {
     (new actions.Table()).getRowsCount(
         	tableLocator)
+}
+
+def static "actions.Table.verifyButtonPresentInWMITable"(
+    	TestObject tableLocator	
+     , 	String expTitleAttr	) {
+    (new actions.Table()).verifyButtonPresentInWMITable(
+        	tableLocator
+         , 	expTitleAttr)
+}
+
+def static "actions.Table.verifyButtonNotPresentInWMITable"(
+    	TestObject tableLocator	
+     , 	String expTitleAttr	) {
+    (new actions.Table()).verifyButtonNotPresentInWMITable(
+        	tableLocator
+         , 	expTitleAttr)
 }
 
 def static "actions.MenuBar.getRecordCountInActivity"(
@@ -545,7 +559,7 @@ def static "actions.Common.clearClipBoard"() {
 }
 
 def static "actions.Common.clickMultipleElements"(
-    	java.util.List<TestObject> elements	) {
+    	List<TestObject> elements	) {
     (new actions.Common()).clickMultipleElements(
         	elements)
 }
@@ -788,30 +802,6 @@ def static "apis.Users.verifyIsUserAccountUnlocked"(
         	userId)
 }
 
-def static "actions.ContextMenu.verifyAllOptions"(
-    	TestObject contextMenuOptions	
-     , 	String[] options	) {
-    (new actions.ContextMenu()).verifyAllOptions(
-        	contextMenuOptions
-         , 	options)
-}
-
-def static "actions.ContextMenu.verifyOptionPresent"(
-    	TestObject contextMenuOptions	
-     , 	String option	) {
-    (new actions.ContextMenu()).verifyOptionPresent(
-        	contextMenuOptions
-         , 	option)
-}
-
-def static "actions.ContextMenu.clickOption"(
-    	TestObject contextMenuOptions	
-     , 	String option	) {
-    (new actions.ContextMenu()).clickOption(
-        	contextMenuOptions
-         , 	option)
-}
-
 def static "actions.Chart.verifyNumberOfSlices"(
     	TestObject chartLocator	
      , 	int expCount	
@@ -856,4 +846,28 @@ def static "actions.Chart.clickSlice"(
         	chartLocator
          , 	sliceNo
          , 	sliceLocator)
+}
+
+def static "actions.ContextMenu.verifyAllOptions"(
+    	TestObject contextMenuOptions	
+     , 	String[] options	) {
+    (new actions.ContextMenu()).verifyAllOptions(
+        	contextMenuOptions
+         , 	options)
+}
+
+def static "actions.ContextMenu.verifyOptionPresent"(
+    	TestObject contextMenuOptions	
+     , 	String option	) {
+    (new actions.ContextMenu()).verifyOptionPresent(
+        	contextMenuOptions
+         , 	option)
+}
+
+def static "actions.ContextMenu.clickOption"(
+    	TestObject contextMenuOptions	
+     , 	String option	) {
+    (new actions.ContextMenu()).clickOption(
+        	contextMenuOptions
+         , 	option)
 }
