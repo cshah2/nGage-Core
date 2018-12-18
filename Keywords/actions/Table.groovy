@@ -505,6 +505,7 @@ public class Table {
 		WebDriver driver = DriverFactory.getWebDriver()
 		List<WebElement> icons = table.findElements(By.xpath("./tbody/tr[1]//input"))
 		
+		WebUI.switchToDefaultContent()
 		boolean isIconFound = false
 		
 		for(WebElement icon in icons) {
@@ -529,7 +530,7 @@ public class Table {
 		WebElement table = WebUtil.getWebElement(tableLocator)
 		WebDriver driver = DriverFactory.getWebDriver()
 		List<WebElement> icons = table.findElements(By.xpath("./tbody/tr[1]//input"))
-		
+		WebUI.switchToDefaultContent()
 		boolean isIconFound = false
 		
 		for(WebElement icon in icons) {
