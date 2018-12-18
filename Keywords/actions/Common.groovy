@@ -820,37 +820,50 @@ public class Common {
 
 	@Keyword
 	def waitForTabLoading(TestObject iframe, int timeout) {
-		
+
 		WebUI.delay(1)
-		
+
 		if(iframe != null) {
 			WebUI.switchToFrame(iframe, timeout)
 		} else {
 			WebUI.switchToFrame(findTestObject('Page_WMI_NEW/iframe_Close Window_ContentPla'), timeout)
 		}
-		
+
 		WebDriver driver = DriverFactory.getWebDriver()
 		FluentWait<WebDriver> wait = new FluentWait<WebDriver>(driver)
-		.withTimeout(timeout, TimeUnit.SECONDS)
-		.pollingEvery(3, TimeUnit.SECONDS)
-		.ignoring(StaleElementReferenceException.class)
-		
+				.withTimeout(timeout, TimeUnit.SECONDS)
+				.pollingEvery(3, TimeUnit.SECONDS)
+				.ignoring(StaleElementReferenceException.class)
+
 		List<WebElement> loaders = driver.findElements(By.xpath("//div[contains(@id,'updProgress') or contains(@id,'UpdateWebAsyncRefreshPanel')]"))
 		wait.until(ExpectedConditions.invisibilityOfAllElements(loaders))
-		
+
 		WebUI.switchToDefaultContent()
 	}
-	
+
 	@Keyword
 	def setTextAndSave(TestObject to, String text) {
-		
+
 		WebUI.clearText(to)
 		WebUI.sendKeys(to, Keys.chord(Keys.TAB))
 		waitForTabLoading(null, GlobalVariable.G_LongTimeout)
-		
+
 		WebUI.sendKeys(to, text)
 		WebUI.sendKeys(to, Keys.chord(Keys.TAB))
 		waitForTabLoading(null, GlobalVariable.G_LongTimeout)
+	}
+	
+	@Keyword
+	def getCssValue(TestObject to, String css) {
+		WebElement e = WebUtil.getWebElement(to)
+		String cssValue = e.getCssValue(css).trim() 
+		WebUI.switchToDefaultContent()
+		return cssValue
+	}
+	
+	@Keyword
+	def verifyCssValue(TestObject to, String css, String expCssValue) {
+		WebUI.verifyMatch(getCssValue(to, css), expCssValue.trim(), false)
 	}
 
 }

@@ -748,6 +748,24 @@ def static "actions.Common.setTextAndSave"(
          , 	text)
 }
 
+def static "actions.Common.getCssValue"(
+    	TestObject to	
+     , 	String css	) {
+    (new actions.Common()).getCssValue(
+        	to
+         , 	css)
+}
+
+def static "actions.Common.verifyCssValue"(
+    	TestObject to	
+     , 	String css	
+     , 	String expCssValue	) {
+    (new actions.Common()).verifyCssValue(
+        	to
+         , 	css
+         , 	expCssValue)
+}
+
 def static "actions.Window.clickElementAndWaitForWindowClose"(
     	TestObject saveButton	
      , 	int timeout	) {

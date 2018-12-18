@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>span_Save</name>
+   <name>button_NewNote</name>
    <tag></tag>
-   <elementGuidId>2e7867c1-2fae-4537-a115-02a5f7c746cb</elementGuidId>
+   <elementGuidId>781ff632-3c18-44cb-91bc-33007e2779f8</elementGuidId>
    <selectorMethod>BASIC</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
    <webElementProperties>
@@ -25,38 +25,56 @@
       <matchCondition>equals</matchCondition>
       <name>text</name>
       <type>Main</type>
-      <value> Save</value>
+      <value>New Note</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>id(&quot;actionsMenu_Submenu_1&quot;)/a[@class=&quot;ui-button ui-widget ui-button-text-only ui-state-default ui-state-hover&quot;]/span[@class=&quot;ui-button-text&quot;]</value>
+      <value>id(&quot;NewNotes_3665aab7_3af4_4766_b229_d6e3c392d5f5_Submenu_1&quot;)/a[@class=&quot;ui-button ui-widget ui-button-text-only ui-state-default ui-state-hover&quot;]/span[@class=&quot;ui-button-text&quot;]</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
       <name>ref_element</name>
       <type>Main</type>
-      <value>Object Repository/BusinessModelView/StandardGrid/iframe_Close Window_ContentPla (1)</value>
+      <value>Object Repository/BusinessModelView/iframe_Close Window_ContentPla</value>
    </webElementProperties>
    <webElementXpaths>
       <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:idRelative</name>
-      <value>//li[@id='actionsMenu_Submenu_1']/a/span</value>
+      <value>//li[@id='NewNotes_3665aab7_3af4_4766_b229_d6e3c392d5f5_Submenu_1']/a/span</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:neighbor</name>
-      <value>(.//*[normalize-space(text()) and normalize-space(.)='Delete'])[1]/preceding::span[1]</value>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Notes'])[2]/following::span[1]</value>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Related Documents(Child)'])[1]/following::span[2]</value>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='did'])[1]/preceding::span[1]</value>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='ID'])[1]/preceding::span[1]</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:position</name>
-      <value>//span</value>
+      <value>//td/div/ul/li/a/span</value>
    </webElementXpaths>
 </WebElementEntity>

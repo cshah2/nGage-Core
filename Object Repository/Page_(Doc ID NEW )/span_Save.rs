@@ -3,7 +3,7 @@
    <description></description>
    <name>span_Save</name>
    <tag></tag>
-   <elementGuidId>2e7867c1-2fae-4537-a115-02a5f7c746cb</elementGuidId>
+   <elementGuidId>5735e870-477b-4eb5-b9b4-ec9200777dd9</elementGuidId>
    <selectorMethod>BASIC</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
    <webElementProperties>
@@ -39,7 +39,7 @@
       <matchCondition>equals</matchCondition>
       <name>ref_element</name>
       <type>Main</type>
-      <value>Object Repository/BusinessModelView/StandardGrid/iframe_Close Window_ContentPla (1)</value>
+      <value>Object Repository/Page_(Doc ID NEW )/iframe_Close Window_ContentPla</value>
    </webElementProperties>
    <webElementXpaths>
       <isSelected>true</isSelected>
