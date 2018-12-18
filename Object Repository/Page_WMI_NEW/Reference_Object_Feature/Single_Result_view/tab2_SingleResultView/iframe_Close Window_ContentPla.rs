@@ -4,6 +4,12 @@
    <name>iframe_Close Window_ContentPla</name>
    <tag></tag>
    <elementGuidId>3352afe2-e04c-45f2-94e4-1ecba1b9429c</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>//iframe[@id = 'ContentPlaceHolder1_iPage']</value>
+      </entry>
+   </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
    <webElementProperties>
@@ -54,6 +60,13 @@
       <name>xpath</name>
       <type>Main</type>
       <value>id(&quot;ContentPlaceHolder1_iPage&quot;)</value>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>ref_element</name>
+      <type>Main</type>
+      <value>Object Repository/Page_WMI_NEW/Reference_Object_Feature/Single_Result_view/iframe_Close Window_ContentPla</value>
    </webElementProperties>
    <webElementXpaths>
       <isSelected>true</isSelected>

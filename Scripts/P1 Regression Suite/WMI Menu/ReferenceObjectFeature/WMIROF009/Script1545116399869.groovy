@@ -12,28 +12,18 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
+import utils.DateUtil
 
 'Login Into Application'
 CustomKeywords.'actions.Common.login'()
 
+'Verify Pop displayedwith Title Create New Item'
+WebUI.getWindowTitle()
+
 'Create a new Refrence Object Feature Document'
 WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))
-CustomKeywords.'actions.Common.selectDocClassAndDocTypeForGlobalNew'('Reference Object Feature', 'Reference Object SingleResultView')
+CustomKeywords.'actions.Common.selectDocClassAndDocTypeForGlobalNew'('Reference Object Feature', 'Reference Object ImportMode Interactive')
 WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'), GlobalVariable.G_LongTimeout)
 WebUI.click(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'))
 
-WebUI.switchToWindowTitle('(Doc ID: NEW )')
-WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
-
-'Click on Save from master object'
-WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Single_Result_view/span_Save'))
-WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
-
-'Click on tab 2) SingleResultView'
-WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Single_Result_view/tab2_SingleResultView/span_2) SingleResultView'))
-WebUI.delay(5)
-
-'Verify Single document should be display in refrence grid '
-println "Row Count = "+CustomKeywords.'actions.Table.getRowsCount'(findTestObject('Page_WMI_NEW/Reference_Object_Feature/Single_Result_view/tab2_SingleResultView/table_ResultGrid'))
-
-println 'dropdownCount='+WebUI.getText(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Single_Result_view/tab2_SingleResultView/select_dropdown'))
+String BMText = 'Text - '+DateUtil.getCurrentDateTime('MM-dd-yyyy HH:mm:ss a')

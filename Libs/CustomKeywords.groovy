@@ -744,6 +744,14 @@ def static "actions.Common.waitForTabLoading"(
          , 	timeout)
 }
 
+def static "actions.Common.setTextAndSave"(
+    	TestObject to	
+     , 	String text	) {
+    (new actions.Common()).setTextAndSave(
+        	to
+         , 	text)
+}
+
 def static "utils.DateUtil.verifyDateFilter"(
     	String operator	
      , 	String actualValue	
@@ -778,6 +786,30 @@ def static "apis.Users.verifyIsUserAccountUnlocked"(
     	int userId	) {
     (new apis.Users()).verifyIsUserAccountUnlocked(
         	userId)
+}
+
+def static "actions.ContextMenu.verifyAllOptions"(
+    	TestObject contextMenuOptions	
+     , 	String[] options	) {
+    (new actions.ContextMenu()).verifyAllOptions(
+        	contextMenuOptions
+         , 	options)
+}
+
+def static "actions.ContextMenu.verifyOptionPresent"(
+    	TestObject contextMenuOptions	
+     , 	String option	) {
+    (new actions.ContextMenu()).verifyOptionPresent(
+        	contextMenuOptions
+         , 	option)
+}
+
+def static "actions.ContextMenu.clickOption"(
+    	TestObject contextMenuOptions	
+     , 	String option	) {
+    (new actions.ContextMenu()).clickOption(
+        	contextMenuOptions
+         , 	option)
 }
 
 def static "actions.Chart.verifyNumberOfSlices"(
@@ -824,28 +856,4 @@ def static "actions.Chart.clickSlice"(
         	chartLocator
          , 	sliceNo
          , 	sliceLocator)
-}
-
-def static "actions.ContextMenu.verifyAllOptions"(
-    	TestObject contextMenuOptions	
-     , 	String[] options	) {
-    (new actions.ContextMenu()).verifyAllOptions(
-        	contextMenuOptions
-         , 	options)
-}
-
-def static "actions.ContextMenu.verifyOptionPresent"(
-    	TestObject contextMenuOptions	
-     , 	String option	) {
-    (new actions.ContextMenu()).verifyOptionPresent(
-        	contextMenuOptions
-         , 	option)
-}
-
-def static "actions.ContextMenu.clickOption"(
-    	TestObject contextMenuOptions	
-     , 	String option	) {
-    (new actions.ContextMenu()).clickOption(
-        	contextMenuOptions
-         , 	option)
 }

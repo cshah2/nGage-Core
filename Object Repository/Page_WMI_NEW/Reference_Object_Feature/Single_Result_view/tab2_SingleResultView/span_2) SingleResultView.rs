@@ -4,7 +4,17 @@
    <name>span_2) SingleResultView</name>
    <tag></tag>
    <elementGuidId>d0f555c0-04e0-466d-b2ce-ac0d3eb5efd6</elementGuidId>
-   <selectorMethod>BASIC</selectorMethod>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>//span[(text() = '2) SingleResultView' or . = '2) SingleResultView') and @ref_element = 'Object Repository/Page_WMI_NEW/Reference_Object_Feature/Single_Result_view/tab2_SingleResultView/iframe_Close Window_ContentPla']</value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>//a[@id='__tab_eform_mcb67676_TabContainer_4_TabRef_2']/span</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
    <webElementProperties>
       <isSelected>true</isSelected>

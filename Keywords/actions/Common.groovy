@@ -835,11 +835,22 @@ public class Common {
 		.pollingEvery(3, TimeUnit.SECONDS)
 		.ignoring(StaleElementReferenceException.class)
 		
-		List<WebElement> loaders = driver.findElements(By.xpath("//div[contains(@id,'updProgress')]"))
+		List<WebElement> loaders = driver.findElements(By.xpath("//div[contains(@id,'updProgress') or contains(@id,'UpdateWebAsyncRefreshPanel')]"))
 		wait.until(ExpectedConditions.invisibilityOfAllElements(loaders))
 		
 		WebUI.switchToDefaultContent()
 	}
 	
+	@Keyword
+	def setTextAndSave(TestObject to, String text) {
+		
+		WebUI.clearText(to)
+		WebUI.sendKeys(to, Keys.chord(Keys.TAB))
+		waitForTabLoading(null, GlobalVariable.G_LongTimeout)
+		
+		WebUI.sendKeys(to, text)
+		WebUI.sendKeys(to, Keys.chord(Keys.TAB))
+		waitForTabLoading(null, GlobalVariable.G_LongTimeout)
+	}
 
 }
