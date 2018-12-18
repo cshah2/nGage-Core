@@ -6,6 +6,7 @@ import java.awt.Toolkit
 import java.text.SimpleDateFormat;
 import java.util.concurrent.TimeUnit
 
+import org.openqa.selenium.By
 import org.openqa.selenium.Dimension
 import org.openqa.selenium.Keys
 import org.openqa.selenium.Point
@@ -817,5 +818,28 @@ public class Common {
 
 	}
 
+	@Keyword
+	def waitForTabLoading(TestObject iframe, int timeout) {
+		
+		WebUI.delay(1)
+		
+		if(iframe != null) {
+			WebUI.switchToFrame(iframe, timeout)
+		} else {
+			WebUI.switchToFrame(findTestObject('Page_WMI_NEW/iframe_Close Window_ContentPla'), timeout)
+		}
+		
+		WebDriver driver = DriverFactory.getWebDriver()
+		FluentWait<WebDriver> wait = new FluentWait<WebDriver>(driver)
+		.withTimeout(timeout, TimeUnit.SECONDS)
+		.pollingEvery(3, TimeUnit.SECONDS)
+		.ignoring(StaleElementReferenceException.class)
+		
+		List<WebElement> loaders = driver.findElements(By.xpath("//div[contains(@id,'updProgress')]"))
+		wait.until(ExpectedConditions.invisibilityOfAllElements(loaders))
+		
+		WebUI.switchToDefaultContent()
+	}
+	
 
 }

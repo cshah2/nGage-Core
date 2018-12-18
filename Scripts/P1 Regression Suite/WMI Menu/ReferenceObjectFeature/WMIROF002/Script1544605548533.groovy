@@ -78,21 +78,15 @@ WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feat
 WebUI.click(findTestObject('Page_WMI_NEW/Reference_Object_Feature/Inline_Result_View/Tab2_Inline_Result_View/table_CellBMString'))
 //CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Inline_Result_View/iframe_ContentPlaceHolder1_iPage'))
 ////WebUI.delay(10)
-CustomKeywords.'actions.Common.waitForElementVisible'(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Inline_Result_View/Tab2_Inline_Result_View/input_ReferenceObjectEvent'), GlobalVariable.G_LongTimeout)
+//CustomKeywords.'actions.Common.waitForElementVisible'(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Inline_Result_View/Tab2_Inline_Result_View/input_ReferenceObjectEvent'), GlobalVariable.G_LongTimeout)
+CustomKeywords.'actions.Common.waitForTabLoading'(null, GlobalVariable.G_LongTimeout)
 
-'Verify the document is opened in InlineView'
-//WebUI.waitForElementVisible(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Inline_Result_View/Tab2_Inline_Result_View/input_ReferenceObjectEvent'), GlobalVariable.G_LongTimeout)
 
 'Get value from Reference Object Event text box'
 String referenceTextBox = WebUI.getAttribute(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Inline_Result_View/Tab2_Inline_Result_View/input_ReferenceObjectEvent'), 'value').trim()
 
 'Modify value in Reference Object text box'
 String addText = DateUtil.getCurrentDateTimeMinusDays(0, "MM-dd-yyyy HH:mm:ss a")
-//WebUI.clearText(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Inline_Result_View/Tab2_Inline_Result_View/input_ReferenceObjectEvent'))
-//WebUI.sendKeys(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Inline_Result_View/Tab2_Inline_Result_View/input_ReferenceObjectEvent'), '')
-//CustomKeywords.'actions.Common.waitForElementVisible'(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Inline_Result_View/Tab2_Inline_Result_View/input_ReferenceObjectEvent'), GlobalVariable.G_LongTimeout)
-//WebUI.sendKeys(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Inline_Result_View/Tab2_Inline_Result_View/input_ReferenceObjectEvent'), addText)
-//WebUI.delay(5)
 CustomKeywords.'actions.Common.setTextJQuery'(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Inline_Result_View/Tab2_Inline_Result_View/input_ReferenceObjectEvent'), addText)
 
 'Click on Save button'
