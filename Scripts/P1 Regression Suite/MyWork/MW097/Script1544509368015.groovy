@@ -59,4 +59,4 @@ int colNo_StartTestDateTime= CustomKeywords.'actions.Table.getColumnNumber'(find
 CustomKeywords.'actions.Table.verifyDateFilter'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), colNo_StartTestDateTime, DateUtil.formatDate_Hyphen(Consts.P1_MW084_STARTDATETIME), '=')
 
 int colNo_EndTestDateTime= CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/tableHeader_MyWorkSearchResult'),'End test datetime')
-CustomKeywords.'actions.Table.verifyDateFilter'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), colNo_EndTestDateTime, DateUtil.formatDate_Hyphen(Consts.P1_MW084_STARTDATETIME), 'Null')
+CustomKeywords.'actions.Table.verifyDateFilter'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), colNo_EndTestDateTime, DateUtil.formatDate_Hyphen(Consts.P1_MW097_STARTDATETIME), 'Null')

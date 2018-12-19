@@ -36,8 +36,8 @@ WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/h3_Se
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/iframe_work_items'))
 
 'Enter date value'
-WebUI.setText(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Process_Date Required/input_Start Test Date'), '01012018')
+WebUI.setText(findTestObject('Page_nGage_Dashboard/My_Work/Process_Date Required/input_StartDate'), '01012018')
 
 'verify date format'
-WebUI.verifyElementAttributeValue(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Process_Date Required/input_Start Test Date'),'dateformat', 'mm-dd-yy', GlobalVariable.G_LongTimeout)
-WebUI.verifyElementAttributeValue(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Process_Date Required/input_Start Test Date'), 'value', '01-01-2018', GlobalVariable.G_LongTimeout)
+WebUI.verifyElementAttributeValue(findTestObject('Page_nGage_Dashboard/My_Work/Process_Date Required/input_StartDate'),'dateformat', 'mm-dd-yy', GlobalVariable.G_LongTimeout)
+WebUI.verifyElementAttributeValue(findTestObject('Page_nGage_Dashboard/My_Work/Process_Date Required/input_StartDate'), 'value', '01-01-2018', GlobalVariable.G_LongTimeout)

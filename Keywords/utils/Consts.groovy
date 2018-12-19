@@ -139,7 +139,12 @@ public class Consts {
 	public static final String P1_MW097_STARTDATETIME = '06-01-2018 01:00:00 AM'
 	public static final String P1_MW097_ENDDATETIME = ''
 	public static String P1_MW097_BMTEXT
-			
+
+	public static final String P1_MW117_STARTDATE = '01-01-2018'
+	public static final String P1_MW117_ENDDATE = ''
+	public static final String P1_MW117_STARTDATETIME = ''
+	public static final String P1_MW117_ENDDATETIME = ''
+	public static String P1_MW117_BMTEXT
 	
 	/*
 	 * Doc Class and Doc Type Variables

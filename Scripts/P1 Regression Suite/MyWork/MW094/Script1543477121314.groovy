@@ -46,7 +46,7 @@ WebUI.verifyElementAttributeValue(findTestObject('Object Repository/Page_nGage_D
 'Select Date Operator (Not In)from Dropdown Menu'
 WebUI.selectOptionByLabel(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/process_DateTimeRequired/select_StartDateTime_operater'), 'Not In', false)
 
-'Enter Date for Document 1'
+'Enter Date for Document 2'
 CustomKeywords.'actions.Common.setText_Date'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/process_DateTimeRequired/input_StartDateTimeRequired'), DateUtil.formatDate_Hyphen(Consts.P1_MW087_STARTDATETIME))
 
 'Click On Search Button'

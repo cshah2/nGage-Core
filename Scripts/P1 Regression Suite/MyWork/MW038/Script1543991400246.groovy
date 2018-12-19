@@ -35,7 +35,7 @@ CustomKeywords.'actions.Common.verifyRecordCountInActivityMatchesWithResultGrid'
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/h3_Search Bar'))
 
 'Enter Date'
-WebUI.setText(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Process_Date Required/input_Start Test Date'),'01-01-2019')
+WebUI.setText(findTestObject('Page_nGage_Dashboard/My_Work/Process_Date Required/input_StartDate'),'01-01-2019')
 
 'Click Search Button'
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/btn_Search'))

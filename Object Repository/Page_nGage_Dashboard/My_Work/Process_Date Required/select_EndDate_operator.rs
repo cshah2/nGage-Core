@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>select_StartTestDate_Operator</name>
+   <name>select_EndDate_operator</name>
    <tag></tag>
-   <elementGuidId>a88b83e7-1537-435c-80e8-820be11a66c3</elementGuidId>
+   <elementGuidId>14f0ff77-e5e2-45f5-b341-22fb4863d826</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>BASIC</key>
-         <value></value>
+         <key>XPATH</key>
+         <value>//table[@id='tblSearch']//td[contains(text(),'Endtestdate')]/..//select</value>
       </entry>
       <entry>
-         <key>XPATH</key>
-         <value>//select[@id='ddlOperators_100338']</value>
+         <key>BASIC</key>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

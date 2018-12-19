@@ -12,44 +12,42 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
+import utils.Consts
+import utils.DateUtil
 
 'Login Into Application'
 CustomKeywords.'actions.Common.login'()
+
+'Create a new Document in DateTimeRequired activity'
+Consts.P1_MW084_BMTEXT = 'Automation-'+DateUtil.getCurrentDateTimeMinusDays(0, "MM/dd/yyyy HH:mm:ss a")
+CustomKeywords.'actions.Common.createDocument_MyWorkDateTime'(Consts.DC_DATERANGEREQUIRED, Consts.DT_DATERANGEREQUIRED, Consts.P1_MW084_STARTDATE, Consts.P1_MW084_ENDDATE, Consts.P1_MW084_STARTDATETIME, Consts.P1_MW084_ENDDATETIME, Consts.P1_MW084_BMTEXT)
 
 'Click on My Work link from left menu'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_My Work Left Menu'))
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
-'Create a new Document in Date Range Required activity'
-CustomKeywords.'actions.Common.createDocument_MyWorkDateTime'('daterangerequired','daterangerequired','01-01-2018','01-01-2025','01-01-2018 05:08:14 PM','08-30-2002 09:29:45 AM','Test')
+'Verify foldered data should be displayed in the activity'
+CustomKeywords.'actions.MenuBar.verifyAllActivityNamesAreValidDate'('My_Work','MM/dd/yyyy','Processes','DateRange required','Date range required')
 
-'Expand Processes and Verify Date Required activity Displayed and Click on Created date Document'
-CustomKeywords.'actions.MenuBar.clickTreeMenu'('My_Work','Processes','DateRange required','Date range required','01/01/2018')
+'Expand Processes and Verify Foldered Document Displayed'
+CustomKeywords.'actions.MenuBar.clickTreeMenu'('My_Work','Processes','DateRange required','Date range required', DateUtil.formatDate_Slash(Consts.P1_MW084_STARTDATE))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/iframe_work_items'))
 
-'Verify the foldered date group should be displayed with only Date (not with time)'
-CustomKeywords.'actions.MenuBar.verifyAllActivityNamesAreValidDate'('My_Work','MM/DD/YYYY','Processes','DateRange required','Date range required')
-
-'Click On Search Bar'
+'Click on Search bar to open'
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/h3_Search Bar'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/iframe_work_items'))
 
-'Verify date autopopulated should show in the search panel'
-String actualTextOfStartTestDateFrom = WebUI.getAttribute(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Process_DateRangeRequired/input_StateTestDate_From'),'value')
-println actualTextOfStartTestDateFrom
-WebUI.verifyMatch(actualTextOfStartTestDateFrom, '01-01-2018', false)
+'Verify auto populated values'
+WebUI.verifyElementAttributeValue(findTestObject('Page_nGage_Dashboard/My_Work/Process_DateRangeRequired/input_StartDate_From'), 'value', DateUtil.formatDate_Hyphen(Consts.P1_MW084_STARTDATE), GlobalVariable.G_LongTimeout)
+WebUI.verifyElementAttributeValue(findTestObject('Page_nGage_Dashboard/My_Work/Process_DateRangeRequired/input_StartDate_To'), 'value', DateUtil.formatDate_Hyphen(Consts.P1_MW084_STARTDATE), GlobalVariable.G_LongTimeout)
 
-String actualTextOfStartTestDateTo = WebUI.getAttribute(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Process_DateRangeRequired/input_StartTestDate_To'),'value')
-println actualTextOfStartTestDateTo
-WebUI.verifyMatch(actualTextOfStartTestDateTo, '01-01-2018', false)
+'Sort records in result grid by DocCreate Date'
+CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/tableHeader_DocCreateDate'))
+CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/tableHeader_DocCreateDate'))
 
-'click on search button'
-WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/btn_Search'))
-CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/iframe_work_items'))
+'Verify searched data (selected date in activity)should be displayed in the search result without Time as hh:mm:ss'
+int colNo_StartTestDate= CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/tableHeader_MyWorkSearchResult'),'Start test date')
+CustomKeywords.'actions.Table.verifyCellContainsValue'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), 1, colNo_StartTestDate, Consts.P1_MW084_STARTDATE)
 
-'Verify searched data (selected date in activity)should be displayed in the search result'
-int columnPosition_StartTestDate= CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/tableHeader_MyWorkSearchResult'),'Start test date')
-println columnPosition_StartTestDate
-String actualTextOfStartTextDateColumn= CustomKeywords.'actions.Table.getCellText'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), 1, columnPosition_StartTestDate)
-println actualTextOfStartTextDateColumn
-WebUI.verifyMatch(actualTextOfStartTextDateColumn, '1/1/2018', false)
+int colNo_BMText= CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/tableHeader_MyWorkSearchResult'),'BM Text')
+CustomKeywords.'actions.Table.verifyCellContainsValue'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), 1, colNo_BMText, Consts.P1_MW084_BMTEXT)

@@ -3,6 +3,6 @@
    <description>28425 Regression test My Work (Date time field+WF):Expand on Date Folder should populate child folders</description>
    <name>MW101</name>
    <tag></tag>
-   <comment>Create a new Document in DateTimeRequired activity</comment>
+   <comment></comment>
    <testCaseGuid>7117160b-b9ce-48ba-958e-b9b704c73406</testCaseGuid>
 </TestCaseEntity>

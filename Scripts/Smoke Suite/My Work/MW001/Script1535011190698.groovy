@@ -52,8 +52,8 @@ WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/h3_Search Bar'))
 WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/My_Work/search_DocID'), GlobalVariable.G_LongTimeout)
 WebUI.setText(findTestObject('Page_nGage_Dashboard/My_Work/search_DocID'), _docID)
 
-WebUI.selectOptionByLabel(findTestObject('Page_nGage_Dashboard/My_Work/Process_Date Required/icon_select_DateOperator'), 'Null', false)
-CustomKeywords.'actions.Common.setText_Date'(findTestObject('Page_nGage_Dashboard/My_Work/Process_Date Required/input_Start Test Date'), '12-12-2018')
+WebUI.selectOptionByLabel(findTestObject('Page_nGage_Dashboard/My_Work/Process_Date Required/select_StartDate_operator'), 'Null', false)
+CustomKeywords.'actions.Common.setText_Date'(findTestObject('Page_nGage_Dashboard/My_Work/Process_Date Required/input_StartDate'), '12-12-2018')
 
 'Click on Search button'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/btn_Search'))

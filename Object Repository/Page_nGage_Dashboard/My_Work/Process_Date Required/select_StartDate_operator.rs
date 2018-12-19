@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>icon_select_DateOperator</name>
+   <name>select_StartDate_operator</name>
    <tag></tag>
    <elementGuidId>10785ea1-1796-4cfd-a729-864b5c71bd05</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>BASIC</key>
-         <value></value>
+         <key>XPATH</key>
+         <value>//table[@id='tblSearch']//td[contains(text(),'Start test date')]/..//select</value>
       </entry>
       <entry>
-         <key>XPATH</key>
-         <value>//select[@id='ddlOperators_100338']</value>
+         <key>BASIC</key>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

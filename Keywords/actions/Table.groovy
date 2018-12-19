@@ -281,11 +281,17 @@ public class Table {
 		List<String> cellValues = getAllValuesFromColumn(table, colNo)
 		WebUI.switchToDefaultContent()
 
+		boolean result = false
+		
 		for(String value in cellValues) {
-			boolean result = DateUtil.verifyDateFilter(operator, value.split(" ")[0].replaceAll('/', '-'), referenceDate.split(" ")[0].replaceAll('/', '-'),"MM-dd-yyyy")
+			result = DateUtil.verifyDateFilter(operator, value.split(" ")[0].replaceAll('/', '-'), referenceDate.split(" ")[0].replaceAll('/', '-'),"MM-dd-yyyy")
 			if(!result) {
 				KeywordUtil.markFailedAndStop("Value : "+value+" does not satisfy filter criteria")
 			}
+		}
+		
+		if(!result) {
+			KeywordUtil.markFailedAndStop('No records available in table for comparison')
 		}
 	}
 
@@ -406,7 +412,9 @@ public class Table {
 
 	@Keyword
 	def clickColumnHeader(TestObject column) {
+		
 		TestObject parentObject = column.getParentObject()
+		WebUI.focus(column)
 		WebUI.click(column)
 		new Common().waitForFrameToLoad(parentObject)
 	}
