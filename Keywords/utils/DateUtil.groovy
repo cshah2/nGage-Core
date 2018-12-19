@@ -43,9 +43,20 @@ public class DateUtil {
 	public static boolean isRecordBetweenDateRange(String actualValue, String fromDateValue, String toDateValue) {
 		fromDateValue.replaceAll('/', '-')
 		toDateValue.replaceAll('/', '-')
-		def actualDate = new Date().parse("MM-dd-yyyy",actualValue)
-		def fromDate = new Date().parse("MM-dd-yyyy",fromDateValue)
-		def toDate = new Date().parse("MM-dd-yyyy",toDateValue)
+		
+		def actualDate
+		def fromDate
+		def toDate
+		
+		try {
+			actualDate = new Date().parse("MM-dd-yyyy",actualValue)
+			fromDate = new Date().parse("MM-dd-yyyy",fromDateValue)
+			toDate = new Date().parse("MM-dd-yyyy",toDateValue)
+		}
+		catch(Exception e) {
+			println "Unable to parse date " +e.toString()+"\n actual date = "+actualValue+"\n from date = "+fromDateValue+"\n to date ="+toDateValue
+			return false
+		}
 
 		if((actualDate.after(fromDate) || DateUtils.isSameDay(actualDate, fromDate)) && (actualDate.before(toDate) || DateUtils.isSameDay(actualDate, toDate))) {
 			println  "Date "+actualValue+" is between date range"+fromDateValue+" - "+toDateValue
@@ -263,7 +274,7 @@ public class DateUtil {
 		String dateString = date.format(_format)
 		return dateString
 	}
-	
+
 	public static String formatDate_Slash(String date) {
 		if(StringUtils.isNotBlank(date) && date.length() >= 10) {
 			return date.trim().substring(0, 10).replaceAll('-', '/')
@@ -271,7 +282,7 @@ public class DateUtil {
 			return date
 		}
 	}
-	
+
 	public static String formatDate_Hyphen(String date) {
 		if(StringUtils.isNotBlank(date) && date.length() >= 10) {
 			return date.trim().substring(0, 10).replaceAll('/', '-')

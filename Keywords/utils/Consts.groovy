@@ -121,7 +121,6 @@ public class Consts {
 	public static final String P1_MW084_STARTDATETIME = '06-01-2018 01:00:00 AM'
 	public static final String P1_MW084_ENDDATETIME = '05-31-2025 11:00:00 PM'
 	public static String P1_MW084_BMTEXT
-
 	
 	public static final String P1_MW087_STARTDATE = '01-15-2019'
 	public static final String P1_MW087_ENDDATE = '12-15-2024'
@@ -135,7 +134,13 @@ public class Consts {
 	public static final String P1_MW095_ENDDATETIME = ''
 	public static String P1_MW095_BMTEXT
 
-		
+	public static final String P1_MW097_STARTDATE = ''
+	public static final String P1_MW097_ENDDATE = ''
+	public static final String P1_MW097_STARTDATETIME = '06-01-2018 01:00:00 AM'
+	public static final String P1_MW097_ENDDATETIME = ''
+	public static String P1_MW097_BMTEXT
+			
+	
 	/*
 	 * Doc Class and Doc Type Variables
 	 */

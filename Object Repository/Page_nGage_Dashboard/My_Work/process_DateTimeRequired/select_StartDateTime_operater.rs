@@ -7,11 +7,10 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value></value>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//select[@id='ddlOperators_100340']</value>
+         <value>//table[@id='tblSearch']//td[contains(text(),'Start test datetime')]/..//select</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
