@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
-   <description></description>
+   <description>Regression test My Work: Foldering - BPMEnableFoldering - True, do not edit and close</description>
    <name>MW007</name>
    <tag></tag>
    <comment></comment>

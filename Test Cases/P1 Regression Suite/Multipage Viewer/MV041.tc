@@ -3,7 +3,6 @@
    <description>Regression test Multipage viewer: clipboard, select page</description>
    <name>MV041</name>
    <tag></tag>
-   <comment>Select Thumbnail 2
-Verify page count</comment>
+   <comment></comment>
    <testCaseGuid>a6e850f9-df6d-4c91-b626-e7721c583c3d</testCaseGuid>
 </TestCaseEntity>

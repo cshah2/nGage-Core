@@ -18,18 +18,17 @@ import internal.GlobalVariable as GlobalVariable
 
 'Login Into Application'
 CustomKeywords.'actions.Common.login'()
- 
+
 'Click on My Work link from left menu'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_My Work Left Menu'))
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_iframe_105'))
 
-'verify all-processes total work items summary graphs, bar graphs, process list and process summary visible to user'
-WebUI.verifyElementVisible(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Charts/Chart_AllProcess_Summary'))
-WebUI.verifyElementVisible(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Charts/Chart_AllProcess_SLAStatusView'))
-WebUI.verifyElementVisible(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Charts/table_AllProcess'))
+'Click Processes'
+CustomKeywords.'actions.MenuBar.clickTreeMenu'('MY_WORK', 'Processes')
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_iframe_105'))
 
-'verify all process names for which user has admin rights are visible/present in graph '
+'Verify Chart sections and its contents'
 WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/My_Work/Charts/Bar Chart - Header'), GlobalVariable.G_LongTimeout)
 WebUI.verifyElementText(findTestObject('Page_nGage_Dashboard/My_Work/Charts/Bar Chart - Header'), 'All Processes - SLA Status View')
 WebUI.verifyElementText(findTestObject('Page_nGage_Dashboard/My_Work/Charts/Pie Chart - Header'), 'All Processes - Summary')
@@ -43,27 +42,30 @@ WebUI.verifyElementText(findTestObject('Page_nGage_Dashboard/My_Work/Charts/butt
 WebUI.verifyElementVisible(findTestObject('Page_nGage_Dashboard/My_Work/Charts/button_Show Overdue Workitems'))
 WebUI.verifyElementText(findTestObject('Page_nGage_Dashboard/My_Work/Charts/button_Show Overdue Workitems'), 'Show Overdue Work Items')
 
-'click on bar graph'
-CustomKeywords.'actions.Chart.clickSlice'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Charts/Chart_AllProcess_SLAStatusView'), 3, GlobalVariable.ChartType['V_BAR'])
+'Verify activity count in table'
+int totalRecords = CustomKeywords.'actions.Table.getRowsCount'(findTestObject('Page_nGage_Dashboard/My_Work/Charts/table_AllProcess'))
+WebUI.verifyGreaterThan(totalRecords, 0)
 
-'verify jquery grid visibility'
+'Verify correct number of slices are displayed in pie chart'
+CustomKeywords.'actions.Chart.verifyNumberOfSlices'(findTestObject('Page_nGage_Dashboard/My_Work/Charts/Chart_AllProcess_Summary'), totalRecords, GlobalVariable.ChartType['PIE'])
+
+'Verify correct number of slices in bar chart'
+CustomKeywords.'actions.Chart.verifyNumberOfSlices'(findTestObject('Page_nGage_Dashboard/My_Work/Charts/Chart_AllProcess_SLAStatusView'), totalRecords*4, GlobalVariable.ChartType['V_BAR'])
+
+'Get Row Number for closure activity process'
+int rowNo = CustomKeywords.'actions.Table.getRowNumber'(findTestObject('Page_nGage_Dashboard/My_Work/Charts/table_AllProcess'), 2, 'Closure Action')
+println 'Expected Row No is :'+rowNo
+
+'Get Total record count from table for Closure Action activity'
+int totalDocs = Integer.parseInt(CustomKeywords.'actions.Table.getCellText'(findTestObject('Page_nGage_Dashboard/My_Work/Charts/table_AllProcess'), rowNo, 6))
+
+'Click on Slice in Bar graph'
+CustomKeywords.'actions.Chart.clickSlice'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Charts/Chart_AllProcess_SLAStatusView'), rowNo*4, GlobalVariable.ChartType['V_BAR'])
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Charts/iframe_iframe_105'))
-WebUI.verifyElementPresent(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Charts/Table_JQGrid WorkItems'), 10)
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/Charts/iframe_MyIframe'))
 
-'record P_ID of first process in grid before refresh'
-int processID_before=Integer.parseInt((CustomKeywords.'actions.Table.getCellText'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Charts/Table_JQGrid WorkItems'),1,1)).toString())
-println CustomKeywords.'actions.Table.getCellText'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Charts/Table_JQGrid WorkItems'), 1, 1).toString()
+'Get total no of records displayed in table'
+int rowCount = CustomKeywords.'actions.Table.getRowsCount'(findTestObject('Page_nGage_Dashboard/My_Work/Charts/Table_JQGrid WorkItems'))
 
-'sort grid recore in descending order'
-WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Charts/div_JQueryWorkItem_Process ID'))
-CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Charts/iframe_MyIframe'))
-
-'verify sorted grid records'
-WebUI.verifyNotMatch(processID_before.toString(), CustomKeywords.'actions.Table.getCellText'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Charts/Table_JQGrid WorkItems'),1,1), false)
-
-'click on refresh grid option'
-WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Charts/td_JQGridWorkItems_btnRefresh'))
-CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Charts/iframe_MyIframe'))
-
-''
-WebUI.verifyMatch(processID_before.toString(), CustomKeywords.'actions.Table.getCellText'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Charts/Table_JQGrid WorkItems'),1,1), false)
+'Verify total record counts with number of records displayed in table'
+WebUI.verifyEqual(rowCount, totalDocs)

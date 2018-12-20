@@ -15,9 +15,8 @@ CustomKeywords.'actions.Common.createDocument_WMIMenuBovVertical'()
 'Pre-Requisite : Open newly created document from recent grid'
 CustomKeywords.'actions.Common.openDocumentFromRecentGrid'('WMI Menu BOV Vertical')
 
-'Open Thumbnail grid'
-WebUI.click(findTestObject('Page_WMI/WMI_Menu_BOV_Vertical/ContentFrame/button_Thumbnail_Toggle'))
-WebUI.delay(2)
+'Click on Thumbnail'
+CustomKeywords.'actions.Common.openThumbnail'(findTestObject('Page_WMI/WMI_Menu_BOV_Vertical/ContentFrame/button_Thumbnail_Toggle'))
 
 List<TestObject> elements = new ArrayList<TestObject>()
 elements.add(findTestObject('Page_WMI/WMI_Menu_BOV_Vertical/ContentFrame/thumbnail_2'))

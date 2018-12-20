@@ -21,15 +21,12 @@ WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_My Work Left Menu'))
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_iframe_105'))
 
-'Expand correspondence generation'
-WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/icon_Expand_Correspondance Generation Process'))
-WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
+'Click ReloadOnPostback - Activity1'
+CustomKeywords.'actions.MenuBar.clickTreeMenu'('MY_WORK', 'Processes', 'ReloadOnPostback', 'Activity1')
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_work_items'))
 
-'right click on correspondence'
-WebUI.waitForElementVisible(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/a_Correspondance Activity'), GlobalVariable.G_LongTimeout)
-WebUI.rightClick(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/a_Correspondance Activity'))
-WebUI.waitForElementVisible(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/contextMenu_Refresh'), GlobalVariable.G_LongTimeout)
+'Perform right click operation on Correspondence'
+CustomKeywords.'actions.MenuBar.rightClickTreeMenu'('MY_WORK', 'Processes', 'ReloadOnPostback', 'Activity1')
 
-'verify refresh option '
-WebUI.verifyElementPresent(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/contextMenu_Refresh'), GlobalVariable.G_LongTimeout)
-WebUI.verifyElementNotPresent(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/contextMenu_Folder Configuration'), GlobalVariable.G_LongTimeout)
+'Verify Foldering configuration option is not present in context menu'
+CustomKeywords.'actions.ContextMenu.verifyAllOptions'(findTestObject('Page_nGage_Dashboard/contextMenuOptions'), 'Refresh')

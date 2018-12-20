@@ -282,14 +282,14 @@ public class Table {
 		WebUI.switchToDefaultContent()
 
 		boolean result = false
-		
+
 		for(String value in cellValues) {
 			result = DateUtil.verifyDateFilter(operator, value.split(" ")[0].replaceAll('/', '-'), referenceDate.split(" ")[0].replaceAll('/', '-'),"MM-dd-yyyy")
 			if(!result) {
 				KeywordUtil.markFailedAndStop("Value : "+value+" does not satisfy filter criteria")
 			}
 		}
-		
+
 		if(!result) {
 			KeywordUtil.markFailedAndStop('No records available in table for comparison')
 		}
@@ -412,7 +412,7 @@ public class Table {
 
 	@Keyword
 	def clickColumnHeader(TestObject column) {
-		
+
 		TestObject parentObject = column.getParentObject()
 		WebUI.focus(column)
 		WebUI.click(column)
@@ -501,21 +501,21 @@ public class Table {
 
 		return rows.size()
 	}
-	
+
 	/*
 	 * Keywords for WMI Table
 	 */
-	
+
 	@Keyword
 	def verifyButtonPresentInWMITable(TestObject tableLocator, String expTitleAttr) {
-		
+
 		WebElement table = WebUtil.getWebElement(tableLocator)
 		WebDriver driver = DriverFactory.getWebDriver()
 		List<WebElement> icons = table.findElements(By.xpath("./tbody/tr[1]//input"))
-		
+
 		WebUI.switchToDefaultContent()
 		boolean isIconFound = false
-		
+
 		for(WebElement icon in icons) {
 			String actTitle = icon.getAttribute('title').toUpperCase()
 			if(actTitle.contains(expTitleAttr.toUpperCase())) {
@@ -523,24 +523,24 @@ public class Table {
 				break
 			}
 		}
-		
+
 		if(isIconFound) {
 			KeywordUtil.markPassed('Icon found in table')
-		} 
+		}
 		else {
 			KeywordUtil.markFailedAndStop('Icon not found in table')
 		}
 	}
-	
+
 	@Keyword
 	def verifyButtonNotPresentInWMITable(TestObject tableLocator, String expTitleAttr) {
-		
+
 		WebElement table = WebUtil.getWebElement(tableLocator)
 		WebDriver driver = DriverFactory.getWebDriver()
 		List<WebElement> icons = table.findElements(By.xpath("./tbody/tr[1]//input"))
 		WebUI.switchToDefaultContent()
 		boolean isIconFound = false
-		
+
 		for(WebElement icon in icons) {
 			String actTitle = icon.getAttribute('title').toUpperCase()
 			if(actTitle.contains(expTitleAttr.toUpperCase())) {
@@ -548,12 +548,37 @@ public class Table {
 				break
 			}
 		}
-		
+
 		if(!isIconFound) {
 			KeywordUtil.markPassed('Icon not found in table')
 		}
 		else {
 			KeywordUtil.markFailedAndStop('Icon found in table')
+		}
+	}
+	
+	@Keyword
+	def getRowNumber(TestObject tableLocator, int colNo, String expText) {
+		
+		WebElement table = WebUtil.getWebElement(tableLocator)
+		List<WebElement> rows = getAllRows(table)
+		int i = 1
+		boolean isRowFound = false
+		for(WebElement row in rows) {
+			List<WebElement> cells = getAllCells(rows.get(i-1))
+			WebElement cell = cells.get(colNo-1)
+			if(cell.getText().trim().equalsIgnoreCase(expText.trim())) {
+				isRowFound = true
+				break
+			}
+			i++
+		}
+		WebUI.switchToDefaultContent()
+		if(isRowFound) {
+			return i
+		}
+		else {
+			KeywordUtil.markFailedAndStop('Expected Row not found')
 		}
 	}
 

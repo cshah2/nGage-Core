@@ -3,94 +3,77 @@ import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 
 import internal.GlobalVariable as GlobalVariable
+import utils.Consts
 
 'Login Into Application'
 CustomKeywords.'actions.Common.login'()
+
+'Create Docuement'
+CustomKeywords.'actions.Common.createDocument_ClosureAction'(Consts.SMOKE_MYWORK009_CUSTOMERNAME1, Consts.SMOKE_MYWORK009_CUSTOMERDETAIL1)
+
+'Create Docuement'
+CustomKeywords.'actions.Common.createDocument_ClosureAction'(Consts.SMOKE_MYWORK009_CUSTOMERNAME2, Consts.SMOKE_MYWORK009_CUSTOMERDETAIL2)
 
 'Click on My Work link from left menu'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_My Work Left Menu'))
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_iframe_105'))
 
-'expand loan interactive link from left menu'
-WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/icon_Expand_LoanInteractive'))
+'Click Closure Action - Activity A'
+CustomKeywords.'actions.MenuBar.clickTreeMenu'('MY_WORK', 'Processes', 'Closure Action', 'Activity A')
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_work_items'))
 
-'wait for (option) Loan application visible'
-WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/My_Work/a_LoanApplication'), GlobalVariable.G_LongTimeout)
+'Perform right click operation on Activity A'
+CustomKeywords.'actions.MenuBar.rightClickTreeMenu'('MY_WORK', 'Processes', 'Closure Action', 'Activity A')
 
-'right click on (Option) Loan_Application(59)'
-WebUI.rightClick(findTestObject('Page_nGage_Dashboard/My_Work/a_LoanApplication'))
+'Verify Foldering configuration option is present in context menu'
+CustomKeywords.'actions.ContextMenu.verifyAllOptions'(findTestObject('Page_nGage_Dashboard/contextMenuOptions'), 'Refresh', 'Foldering Configuration')
 
-'click on (option)foldering configuration'
-WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/LoanInteractive_MyWork/a_Foldering Configuration'))
-WebUI.waitForJQueryLoad(10)
+'Click on Foldering configuration option'
+CustomKeywords.'actions.ContextMenu.clickOption'(findTestObject('Page_nGage_Dashboard/contextMenuOptions'), 'Foldering Configuration')
 
-'verify labels'
-WebUI.verifyMatch(WebUI.getText(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Folder_Configuration/Label_ActivityName')), 'Loan Application', false)
-WebUI.verifyMatch(WebUI.getText(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Folder_Configuration/Label_ProcessName')), 'Loan Interactive', false)
-WebUI.verifyMatch(WebUI.getText(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Folder_Configuration/Label_SearchClassID')), '100009', false)
+'Click on Restore defaults button'
+WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/Folder_Configuration/button_Restore Default'))
 
-'select drpdown options'
-WebUI.selectOptionByLabel(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Folder_Configuration/Level1_FieldAssigned'),'Assigned User Group/No User Group*',false)
-WebUI.selectOptionByLabel(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Folder_Configuration/Level1_Sorting'), 'Desc by Field',false)
-//WebUI.selectOptionByIndex(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Folder_Configuration/Level2_FieldAssigned'), 2)
-//WebUI.selectOptionByIndex(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Folder_Configuration/Level2_Sorting'), 2)
-//WebUI.selectOptionByIndex(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Folder_Configuration/Level3_FieldAssigned'), 2)
-//WebUI.selectOptionByIndex(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Folder_Configuration/Level3_Sorting'), 2)
+'Verify default options selected in configuration dialog'
+WebUI.verifyOptionSelectedByLabel(findTestObject('Page_nGage_Dashboard/My_Work/Folder_Configuration/Level1_FieldAssigned'), 'Customer Name', false, GlobalVariable.G_LongTimeout)
+WebUI.verifyOptionSelectedByLabel(findTestObject('Page_nGage_Dashboard/My_Work/Folder_Configuration/Level1_Sorting'), 'None', false, GlobalVariable.G_LongTimeout)
 
-'click submit button'
-WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Folder_Configuration/button_Save'))
+WebUI.verifyOptionSelectedByLabel(findTestObject('Page_nGage_Dashboard/My_Work/Folder_Configuration/Level2_FieldAssigned'), 'Select a Field', false, GlobalVariable.G_LongTimeout)
+WebUI.verifyOptionSelectedByLabel(findTestObject('Page_nGage_Dashboard/My_Work/Folder_Configuration/Level2_Sorting'), 'None', false, GlobalVariable.G_LongTimeout)
 
-'click close button'
-WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Folder_Configuration/button_Close'))
-WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
-WebUI.delay(2)
+WebUI.verifyOptionSelectedByLabel(findTestObject('Page_nGage_Dashboard/My_Work/Folder_Configuration/Level3_FieldAssigned'), 'Select a Field', false, GlobalVariable.G_LongTimeout)
+WebUI.verifyOptionSelectedByLabel(findTestObject('Page_nGage_Dashboard/My_Work/Folder_Configuration/Level3_Sorting'), 'None', false, GlobalVariable.G_LongTimeout)
 
-'verify icon presence'
-println "1st"+WebUI.getCSSValue(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/i_LoanApplication'), 'background-image')
-WebUI.verifyMatch(WebUI.getCSSValue(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/i_LoanApplication'), 'background-image'), '.*jstree_32px.png.*', true)
+'Perform lvl1 foldering by Customer Name - Desending by field'
+WebUI.selectOptionByLabel(findTestObject('Page_nGage_Dashboard/My_Work/Folder_Configuration/Level1_FieldAssigned'), 'Customer Name', false)
+WebUI.selectOptionByLabel(findTestObject('Page_nGage_Dashboard/My_Work/Folder_Configuration/Level1_Sorting'), 'Desc by Field', false)
 
-//WebUI.verifyElementPresent(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/i_LoanApplication'),GlobalVariable.G_LongTimeout)
-//WebUI.verifyElementVisible(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/i_LoanApplication'))
+'Click on Save button on dialog'
+WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/Folder_Configuration/button_Save'))
 
-//Restore Defaults
-'right click on (Option) Loan_Application(59)'
-WebUI.rightClick(findTestObject('Page_nGage_Dashboard/My_Work/a_LoanApplication'))
-
-'click on (option)foldering configuration'
-WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/LoanInteractive_MyWork/a_Foldering Configuration'))
+'Click on Close button on dialog'
+WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/Folder_Configuration/button_Close'))
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
-'verify labels'
-WebUI.waitForElementVisible(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Folder_Configuration/Label_ActivityName'), GlobalVariable.G_LongTimeout)
-WebUI.verifyMatch(WebUI.getText(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Folder_Configuration/Label_ActivityName')), 'Loan Application', false)
-WebUI.verifyMatch(WebUI.getText(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Folder_Configuration/Label_ProcessName')), 'Loan Interactive', false)
-WebUI.verifyMatch(WebUI.getText(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Folder_Configuration/Label_SearchClassID')), '100009', false)
+List<String> subMenus = CustomKeywords.'actions.MenuBar.getAllSubMenus'('MY_WORK', 'Processes', 'Closure Action', 'Activity A')
+CustomKeywords.'actions.MenuBar.verifyAllSubmenuAreSortedByActivityName'(subMenus, 'Desc')
 
-'click restore default button'
-WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Folder_Configuration/button_Restore Default'))
-WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
+'Perform right click operation on Activity A'
+CustomKeywords.'actions.MenuBar.rightClickTreeMenu'('MY_WORK', 'Processes', 'Closure Action', 'Activity A')
 
-'verify assigned fields'
-WebUI.verifyOptionSelectedByLabel(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Folder_Configuration/Level1_FieldAssigned'), '.*Select a Field.*', true, GlobalVariable.G_LongTimeout)
+'Click on Foldering configuration option'
+CustomKeywords.'actions.ContextMenu.clickOption'(findTestObject('Page_nGage_Dashboard/contextMenuOptions'), 'Foldering Configuration')
 
-'click submit button'
-WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Folder_Configuration/button_Save'))
-WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
+'Click on Restore defaults button'
+WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/Folder_Configuration/button_Restore Default'))
 
-'click close button'
-WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Folder_Configuration/button_Close'))
-WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
+'Verify default options selected in configuration dialog'
+WebUI.verifyOptionSelectedByLabel(findTestObject('Page_nGage_Dashboard/My_Work/Folder_Configuration/Level1_FieldAssigned'), 'Customer Name', false, GlobalVariable.G_LongTimeout)
+WebUI.verifyOptionSelectedByLabel(findTestObject('Page_nGage_Dashboard/My_Work/Folder_Configuration/Level1_Sorting'), 'None', false, GlobalVariable.G_LongTimeout)
 
-'right click on (Option) Loan_Application(59)'
-WebUI.rightClick(findTestObject('Page_nGage_Dashboard/My_Work/a_LoanApplication'))
-WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
+WebUI.verifyOptionSelectedByLabel(findTestObject('Page_nGage_Dashboard/My_Work/Folder_Configuration/Level2_FieldAssigned'), 'Select a Field', false, GlobalVariable.G_LongTimeout)
+WebUI.verifyOptionSelectedByLabel(findTestObject('Page_nGage_Dashboard/My_Work/Folder_Configuration/Level2_Sorting'), 'None', false, GlobalVariable.G_LongTimeout)
 
-'click on refresh'
-WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/contextMenu_Refresh'))
-WebUI.delay(2)
-
-'verify icon not present'
-//WebUI.verifyElementNotVisible(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/i_LoanApplication'))
-println "2nd"+WebUI.getCSSValue(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/i_LoanApplication'), 'background-image')
-WebUI.verifyMatch(WebUI.getCSSValue(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/i_LoanApplication'), 'background-image'), '.*none.*', true)
+WebUI.verifyOptionSelectedByLabel(findTestObject('Page_nGage_Dashboard/My_Work/Folder_Configuration/Level3_FieldAssigned'), 'Select a Field', false, GlobalVariable.G_LongTimeout)
+WebUI.verifyOptionSelectedByLabel(findTestObject('Page_nGage_Dashboard/My_Work/Folder_Configuration/Level3_Sorting'), 'None', false, GlobalVariable.G_LongTimeout)

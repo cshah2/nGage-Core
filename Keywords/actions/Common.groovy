@@ -237,7 +237,7 @@ public class Common {
 		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/column_RecentDocuments LastAction'))
 		WebUI.switchToWindowTitle(documentTitle)
 		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
-		waitForFrameToLoad(findTestObject('Page_WMI/WMI_Menu_BOV_Vertical/iframe_westContainerFrame'))
+		//waitForFrameToLoad(findTestObject('Page_WMI/WMI_Menu_BOV_Vertical/iframe_westContainerFrame'))
 
 		WebUI.switchToDefaultContent()
 	}
@@ -552,7 +552,7 @@ public class Common {
 
 		'Save details and close'
 		WebUI.click(findTestObject('Page_WMI_NEW/Date Date Time DT/span_Save'))
-		
+
 		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 		WebUI.delay(5)
 		new Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI/Date Date Time DT/span_Close Window'), GlobalVariable.G_LongTimeout)
@@ -869,5 +869,67 @@ public class Common {
 	def verifyCssValue(TestObject to, String css, String expCssValue) {
 		WebUI.verifyMatch(getCssValue(to, css), expCssValue.trim(), false)
 	}
+
+	@Keyword
+	def openThumbnail(TestObject toggler) {
+		TestObject parent = toggler.getParentObject()
+		String titleAttr = WebUI.getAttribute(toggler, 'title').trim()
+		if(!titleAttr.equalsIgnoreCase('Close')) {
+			WebUI.click(toggler)
+			if(parent != null) {
+				waitForFrameToLoad(parent)
+			}
+			else {
+				WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
+			}
+		}
+	}
+
+	@Keyword
+	def closeThumbnail(TestObject toggler) {
+		TestObject parent = toggler.getParentObject()
+		String titleAttr = WebUI.getAttribute(toggler, 'title').trim()
+		if(titleAttr.equalsIgnoreCase('Close')) {
+			WebUI.click(toggler)
+			if(parent != null) {
+				waitForFrameToLoad(parent)
+			}
+			else {
+				WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
+			}
+		}
+	}
+	
+	@Keyword
+	def createDocument_VerticalMenuWizard() {
+		
+		'Switch to main window'
+		WebUI.switchToWindowTitle('Savana nGage')
+
+		'Create a new BovDocTwoRow Document'
+		WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))
+		selectDocClassAndDocTypeForGlobalNew('Vertical Menu Wizard', 'ShowVerticalMenu-True')
+		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'))
+
+		'Switch to new Window'
+		WebUI.switchToWindowIndex(1)
+		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+
+		'Fill the details required'
+		WebUI.setText(findTestObject('Page_WMI_NEW/VerticalMenuWizard/ShowVerticalMenu_True/input_First Name'), 'Chintan')
+		WebUI.setText(findTestObject('Page_WMI_NEW/VerticalMenuWizard/ShowVerticalMenu_True/input_Last Name'), 'Shah')
+
+		'Save details and close'
+		WebUI.click(findTestObject('Page_WMI_NEW/VerticalMenuWizard/ShowVerticalMenu_True/span_Save'))
+		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+		WebUI.delay(5)
+		new Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI_NEW/VerticalMenuWizard/ShowVerticalMenu_True/a_Close Window'), GlobalVariable.G_LongTimeout)
+
+		'Switch to main window and close'
+		WebUI.switchToWindowTitle('Savana nGage')
+		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/span_ui-button-icon-primary ui'))
+
+	}
+
 
 }
