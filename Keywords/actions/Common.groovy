@@ -552,8 +552,11 @@ public class Common {
 
 		'Save details and close'
 		WebUI.click(findTestObject('Page_WMI_NEW/Date Date Time DT/span_Save'))
-		WebUI.delay(3)
-		WebUI.closeWindowIndex(1)
+		
+		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+		WebUI.delay(5)
+		new Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI/Date Date Time DT/span_Close Window'), GlobalVariable.G_LongTimeout)
+
 
 		'Switch to main window and close'
 		WebUI.switchToWindowTitle('Savana nGage')
@@ -617,8 +620,9 @@ public class Common {
 
 		'Save details and close'
 		WebUI.click(findTestObject('Page_WMI_NEW/MyWork_DateTime/span_Save'))
-		WebUI.delay(3)
-		WebUI.closeWindowIndex(1)
+		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+		WebUI.delay(5)
+		new Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI/MyWork_DateTime/span_Close Window'), GlobalVariable.G_LongTimeout)
 
 		'Switch to main window and close'
 		WebUI.switchToWindowTitle('Savana nGage')
@@ -852,15 +856,15 @@ public class Common {
 		WebUI.sendKeys(to, Keys.chord(Keys.TAB))
 		waitForTabLoading(null, GlobalVariable.G_LongTimeout)
 	}
-	
+
 	@Keyword
 	def getCssValue(TestObject to, String css) {
 		WebElement e = WebUtil.getWebElement(to)
-		String cssValue = e.getCssValue(css).trim() 
+		String cssValue = e.getCssValue(css).trim()
 		WebUI.switchToDefaultContent()
 		return cssValue
 	}
-	
+
 	@Keyword
 	def verifyCssValue(TestObject to, String css, String expCssValue) {
 		WebUI.verifyMatch(getCssValue(to, css), expCssValue.trim(), false)

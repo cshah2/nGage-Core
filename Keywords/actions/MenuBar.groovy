@@ -2,6 +2,7 @@ package actions
 
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 
+import java.text.Collator
 import java.util.concurrent.TimeUnit
 
 import org.apache.commons.lang3.StringUtils
@@ -182,13 +183,15 @@ public class MenuBar {
 	@Keyword
 	def verifyAllSubmenuAreSortedByActivityName(List<String> subMenus,String sortOrder) {
 		//converting sub menu items to lower case
-		List<String> subMenusLowerCase=new ArrayList<String>()
+		List<String> subMenusWithoutCount=new ArrayList<String>()
 		for(String subMenu in subMenus)
 		{
-			subMenusLowerCase.add(subMenu.toLowerCase())
+			//subMenusLowerCase.add(subMenu.toLowerCase())
+			String text = subMenu.substring(0, subMenu.lastIndexOf(" ("))
+			subMenusWithoutCount.add(text)
 		}
 		subMenus.clear()
-		subMenus.addAll(subMenusLowerCase)
+		subMenus.addAll(subMenusWithoutCount)
 
 		if(sortOrder.equalsIgnoreCase('asc'))
 			subMenus.remove(0)
@@ -198,7 +201,11 @@ public class MenuBar {
 		boolean isSorted;
 		List<String> sortedActivityNameList=new ArrayList<String>()
 		sortedActivityNameList.addAll(subMenus)
-		Collections.sort(sortedActivityNameList)
+
+		Collator coll = Collator.getInstance(Locale.US);
+		coll.setStrength(Collator.IDENTICAL);
+
+		Collections.sort(sortedActivityNameList, coll)
 
 		if(sortOrder.equalsIgnoreCase('desc'))
 			Collections.reverse(sortedActivityNameList)

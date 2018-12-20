@@ -69,4 +69,5 @@ CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Da
 CustomKeywords.'actions.Table.verifyRecordsCount'(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/table_SearchResult'), 1)
 
 'Verify DocID of result matches the DocID value provided in filter'
-CustomKeywords.'actions.Table.verifyRecordPresentInColumn'(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/table_SearchResult'), colNo_DocID, Consts.SMOKE_MWS002_DOCID)
+int colNo_DocID_MWS = CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/table_SearchResultHeader'), 'Doc ID')
+CustomKeywords.'actions.Table.verifyRecordPresentInColumn'(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/table_SearchResult'), colNo_DocID_MWS, Consts.SMOKE_MWS002_DOCID)

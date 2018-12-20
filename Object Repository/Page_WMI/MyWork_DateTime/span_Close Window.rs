@@ -3,7 +3,7 @@
    <description></description>
    <name>span_Close Window</name>
    <tag></tag>
-   <elementGuidId>382bb9c6-59a3-4ffc-b737-cb313886b1d4</elementGuidId>
+   <elementGuidId>8aae6b73-c8fb-45f3-a7ab-ef39a10c1b75</elementGuidId>
    <selectorCollection>
       <entry>
          <key>XPATH</key>
@@ -43,6 +43,13 @@
       <name>xpath</name>
       <type>Main</type>
       <value>id(&quot;masterPageMenu&quot;)/li[@class=&quot;ui-menubar-item&quot;]/a[@class=&quot;ui-button ui-widget ui-button-text-only ui-state-default ui-state-hover&quot;]/span[@class=&quot;ui-button-text&quot;]</value>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>ref_element</name>
+      <type>Main</type>
+      <value>Object Repository/Page_WMI/MyWork_DateTime/iframe_mainContainer</value>
    </webElementProperties>
    <webElementXpaths>
       <isSelected>true</isSelected>

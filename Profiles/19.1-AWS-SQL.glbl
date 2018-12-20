@@ -31,7 +31,7 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'IPM_EPM50MASTER_502_AUTOMATION'</initValue>
+      <initValue>'AWS_SQLSERVER_QA'</initValue>
       <name>Database</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
