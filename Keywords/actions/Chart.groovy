@@ -86,6 +86,11 @@ public class Chart {
 		WebElement chart = WebUtil.getWebElement(chartLocator)
 		List<WebElement> slices = chart.findElements(By.xpath(sliceLocator))
 		WebElement slice = slices.get(sliceNo - 1)
+		
+		//List<WebElement> argList = new ArrayList<WebElement>()
+		///argList.add(slice) 
+		//WebUI.executeJavaScript("arguments[0].click();", argList)
+		
 		slice.click()
 
 		WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)

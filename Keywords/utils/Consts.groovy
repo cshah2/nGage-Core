@@ -111,23 +111,23 @@ public class Consts {
 	public static String SMOKE_WMI007_FIELD9
 	public static final String SMOKE_WMI007_FIELD10 = 'String Field'
 	public static final String SMOKE_WMI007_FIELD11 = 'First Name'
-	
 
-	
-	
-	
+
+
+
+
 	public static final String P1_MW084_STARTDATE = '01-01-2018'
 	public static final String P1_MW084_ENDDATE = '12-31-2025'
 	public static final String P1_MW084_STARTDATETIME = '06-01-2018 01:00:00 AM'
 	public static final String P1_MW084_ENDDATETIME = '05-31-2025 11:00:00 PM'
 	public static String P1_MW084_BMTEXT
-	
+
 	public static final String P1_MW087_STARTDATE = '01-15-2019'
 	public static final String P1_MW087_ENDDATE = '12-15-2024'
 	public static final String P1_MW087_STARTDATETIME = '06-15-2019 08:00:00 AM'
 	public static final String P1_MW087_ENDDATETIME = '05-15-2024 05:00:00 PM'
 	public static String P1_MW087_BMTEXT
-	
+
 	public static final String P1_MW095_STARTDATE = ''
 	public static final String P1_MW095_ENDDATE = ''
 	public static final String P1_MW095_STARTDATETIME = ''
@@ -145,14 +145,31 @@ public class Consts {
 	public static final String P1_MW117_STARTDATETIME = ''
 	public static final String P1_MW117_ENDDATETIME = ''
 	public static String P1_MW117_BMTEXT
+
+	
+	public static final String P1_REPO_BMDATE_DOC1 = '01-01-2018'
+	public static final String P1_REPO_DATERANGE_DOC1 = '03-01-2018'
+	public static final String P1_REPO_BMDATETIME_DOC1 = '06-01-2018 01:00:00 AM'
+	public static final String P1_REPO_DATETIMERANGE_DOC1 = '09-01-2018'
+	
+	public static final String P1_REPO_BMDATE_DOC2 = '01-15-2018'
+	public static final String P1_REPO_DATERANGE_DOC2 = '03-15-2018'
+	public static final String P1_REPO_BMDATETIME_DOC2 = '06-15-2018 01:00:00 AM'
+	public static final String P1_REPO_DATETIMERANGE_DOC2 = '09-15-2018'
+
+	public static final String P1_REPO_BMDATE_DOC3 = ''
+	public static final String P1_REPO_DATERANGE_DOC3 = ''
+	public static final String P1_REPO_BMDATETIME_DOC3 = ''
+	public static final String P1_REPO_DATETIMERANGE_DOC3 = ''
+
 	
 	/*
 	 * Doc Class and Doc Type Variables
 	 */
-	
+
 	public static final String DC_DATEREQUIRED = 'daterequiredsearch'
 	public static final String DT_DATEREQUIRED = 'daterequiredsearch'
-	
+
 	public static final String DC_DATERANGEREQUIRED = 'daterangerequired'
 	public static final String DT_DATERANGEREQUIRED = 'daterangerequired'
 
@@ -161,6 +178,7 @@ public class Consts {
 
 	public static final String DC_DATETIMERANGEREQUIRED = 'Datetimerangerequired'
 	public static final String DT_DATETIMERANGEREQUIRED = 'Datetimerangerequired'
-
 	
+	
+
 }

@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>span_DateReqSearch_Start Dt_required</name>
+   <name>search_LoanAmount_From</name>
    <tag></tag>
-   <elementGuidId>215c3563-1748-4b8e-88aa-4ec5403645c2</elementGuidId>
+   <elementGuidId>9384f5ef-3a04-4e96-9495-8fb283b8792e</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//*[@ref_element = 'Object Repository/Page_nGage_Dashboard/My_Work/iframe_iframe_105']</value>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//table[@id='tblSearch']//tr[1]//span[text()='Required']</value>
+         <value>//table[@id='tblSearch']//td[contains(text(),'Loan Amount')]/..//input[1]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

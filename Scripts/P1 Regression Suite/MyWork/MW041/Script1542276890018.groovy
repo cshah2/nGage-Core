@@ -21,18 +21,13 @@ WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_My Work Left Menu'))
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_iframe_105'))
 
-'Expand Closure Action process'
-WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/icon_Expand_Closure Actions'))
-WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
-
-'Select Activity A'
-WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/My_Work/a_Activity A'), GlobalVariable.G_LongTimeout)
-WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_Activity A'))
+'Click Closure Action - Activity A'
+CustomKeywords.'actions.MenuBar.clickTreeMenu'('MY_WORK', 'Processes', 'Closure Action', 'Activity A')
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_work_items'))
 
-'verify record count and activity count are same'
-CustomKeywords.'actions.Common.verifyRecordCountMatchesInActivityAndGrid'(findTestObject('Page_nGage_Dashboard/My_Work/a_Activity A'),findTestObject('Page_nGage_Dashboard/My_Work/table_pagination_summary'))
-
 'Verify page navigation of the grid'
-int activityCount=CustomKeywords.'actions.MenuBar.getRecordCountInActivity'(findTestObject('Page_nGage_Dashboard/My_Work/a_Activity A'))
-WebUI.verifyMatch('Showing 1 - 10 of '+activityCount.toString().trim(), WebUI.getText(findTestObject('Page_nGage_Dashboard/My_Work/table_pagination_summary')), false)
+int totalCount = CustomKeywords.'actions.MenuBar.getRecordCountInActivity'('MY_WORK', 'Processes', 'Closure Action', 'Activity A')
+
+if(totalCount > 500)
+	totalCount = 500
+WebUI.verifyMatch('Showing 1 - 10 of '+totalCount.toString().trim(), WebUI.getText(findTestObject('Page_nGage_Dashboard/My_Work/table_pagination_summary')), false)

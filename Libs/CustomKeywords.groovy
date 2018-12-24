@@ -354,6 +354,14 @@ def static "actions.MenuBar.verifySubMenuPresent"(
          , 	menuPath)
 }
 
+def static "actions.MenuBar.verifyTreeIsSelected"(
+    	String moduleName	
+     , 	String[] menuPath	) {
+    (new actions.MenuBar()).verifyTreeIsSelected(
+        	moduleName
+         , 	menuPath)
+}
+
 def static "actions.Report.clickReport"(
     	String lvl_one	
      , 	String lvl_two	
@@ -790,6 +798,12 @@ def static "actions.Common.closeThumbnail"(
 
 def static "actions.Common.createDocument_VerticalMenuWizard"() {
     (new actions.Common()).createDocument_VerticalMenuWizard()
+}
+
+def static "actions.Common.createDocument_RouteAdvance"(
+    	String description	) {
+    (new actions.Common()).createDocument_RouteAdvance(
+        	description)
 }
 
 def static "actions.Window.clickElementAndWaitForWindowClose"(

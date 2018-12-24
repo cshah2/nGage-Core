@@ -12,46 +12,37 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
+import utils.Consts
+import utils.DateUtil
 
 'Login Into Application'
 CustomKeywords.'actions.Common.login'()
+
+'Create a new Document in DateTimeRequired activity'
+Consts.P1_MW084_BMTEXT = 'Automation-'+DateUtil.getCurrentDateTimeMinusDays(0, "MM/dd/yyyy HH:mm:ss a")
+CustomKeywords.'actions.Common.createDocument_MyWorkDateTime'(Consts.DC_DATEREQUIRED, Consts.DT_DATEREQUIRED, Consts.P1_MW084_STARTDATE, Consts.P1_MW084_ENDDATE, Consts.P1_MW084_STARTDATETIME, Consts.P1_MW084_ENDDATETIME, Consts.P1_MW084_BMTEXT)
 
 'Click on My Work link from left menu'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_My Work Left Menu'))
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
-'Click On Date Required icon to expand'
-WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/Process_Date Required/icon_expand_DateRequired'))
-WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
-
-'Click On DateRequiredSearch to load Frame'
-WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Process_Date Required/a_DateRequiredSearch'))
-CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/iframe_work_items'))
-
-'verify activity count with grid count'
-CustomKeywords.'actions.Common.verifyRecordCountInActivityMatchesWithResultGrid'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Process_Date Required/a_DateRequiredSearch'),findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/div_PageCount'))
+'Select Activity Date Require - '
+CustomKeywords.'actions.MenuBar.clickTreeMenu'('MY_WORK', 'Processes', 'Date Required', 'Daterequiredsearch')
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_work_items'))
 
 String beforeSearch = WebUI.getText(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/div_PageCount'))
-println beforeSearch
 
 'Expand Search Bar'
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/h3_Search Bar'))
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_work_items'))
 
 'click on search button'
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/btn_Search'))
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_work_items'))
 
-
-WebUI.waitForElementVisible(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/span_DateReqSearch_Start Dt_required'), GlobalVariable.G_LongTimeout)
-println WebUI.getText(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/span_DateReqSearch_Start Dt_required'))
-String actualText =  WebUI.getText(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/span_DateReqSearch_Start Dt_required'))
-
-'verify required message is Displaying'
-WebUI.verifyMatch(actualText,'Required', false)
+WebUI.verifyElementVisible(findTestObject('Page_nGage_Dashboard/My_Work/span_DateRequired_StartDate_RequiredText'))
 
 String afterSearch = WebUI.getText(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/div_PageCount'))
-println afterSearch
 
 'Verify Grid displaying older search Results'
 WebUI.verifyMatch(beforeSearch, afterSearch, true)
-
-

@@ -421,4 +421,31 @@ public class MenuBar {
 			KeywordUtil.markFailedAndStop('Sub Node '+expMenu+' not found in list')
 
 	}
+
+	@Keyword
+	def verifyTreeIsSelected(String moduleName, String... menuPath) {
+
+		int size = menuPath.length
+
+		List<String> treePath = new ArrayList<String>(Arrays.asList(menuPath))
+		int lastIndex = treePath.size()-1
+		treePath.remove(lastIndex)
+		expandTree(moduleName, treePath)
+
+		String appendBrace = ""
+		if(!moduleName.equalsIgnoreCase('REPORT'))
+			appendBrace = lastIndex>1?" (":""
+
+		treeXpath.append("/ul/li/a[contains(text(),'"+menuPath[size-1]+appendBrace+"')]")
+		WebDriver driver = DriverFactory.getWebDriver()
+		WebElement e = driver.findElement(By.xpath(treeXpath.toString()))
+
+		String classAttr = e.getAttribute('class')
+		if(classAttr.contains('jstree-clicked')) {
+			KeywordUtil.markPassed('Tree path is selected')
+		}
+		else {
+			KeywordUtil.markFailedAndStop('Tree path is not selected')
+		}
+	}
 }

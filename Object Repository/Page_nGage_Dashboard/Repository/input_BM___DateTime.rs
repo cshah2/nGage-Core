@@ -4,6 +4,16 @@
    <name>input_BM___DateTime</name>
    <tag></tag>
    <elementGuidId>03c00b6f-b642-4462-9e21-716c0c598bdc</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>//input[@id = 'BM___DateTime' and @ref_element = 'Object Repository/Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe']</value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value></value>
+      </entry>
+   </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
    <webElementProperties>
