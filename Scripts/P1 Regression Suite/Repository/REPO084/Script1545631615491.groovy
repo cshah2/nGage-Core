@@ -24,7 +24,7 @@ String BM_DateTime = DateUtil.getCurrentDateTimeMinusDays(2, "MM-dd-yyyy HH:mm:s
 String DateTimeRange = DateUtil.getCurrentDateTimeMinusDays(3, "MM-dd-yyyy HH:mm:ss a") //Level 4
 
 'Create new Document'
-CustomKeywords.'actions.Common.createDocument_DateTimeDT'(BM_Date, DateRange, BM_DateTime, '')
+CustomKeywords.'actions.Common.createDocument_DateTimeDT'(BM_Date, '', BM_DateTime, DateTimeRange)
 
 'Click on Repository Menu'
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/h3_Repository Menu'))
@@ -36,10 +36,9 @@ String tree_BM_DateTime = BM_DateTime.substring(0, 10).replaceAll('-', '/').trim
 String tree_DateTimeRange = DateTimeRange.substring(0, 10).replaceAll('-', '/').trim()
 
 CustomKeywords.'actions.MenuBar.verifyAllActivityNamesAreValidDate'('REPO', 'MM/dd/yyyy', 'Date n Date time EDM','Date n Date time search class')
-CustomKeywords.'actions.MenuBar.verifyAllActivityNamesAreValidDate'('REPO', 'MM/dd/yyyy', 'Date n Date time EDM','Date n Date time search class', tree_BM_Date)
-CustomKeywords.'actions.MenuBar.verifyAllActivityNamesAreValidDate'('REPO', 'MM/dd/yyyy', 'Date n Date time EDM','Date n Date time search class', tree_BM_Date, tree_DateRange)
-CustomKeywords.'actions.MenuBar.verifySubMenuPresent'('REPO', '[Empty]', 'Date n Date time EDM','Date n Date time search class', tree_BM_Date, tree_DateRange, tree_BM_DateTime)
+CustomKeywords.'actions.MenuBar.verifySubMenuPresent'('REPO', '[Empty]', 'Date n Date time EDM','Date n Date time search class', tree_BM_Date)
+CustomKeywords.'actions.MenuBar.verifyAllActivityNamesAreValidDate'('REPO', 'MM/dd/yyyy', 'Date n Date time EDM','Date n Date time search class', tree_BM_Date, '[Empty]')
 
-CustomKeywords.'actions.MenuBar.clickTreeMenu'('REPO', 'Date n Date time EDM','Date n Date time search class', tree_BM_Date, tree_DateRange, tree_BM_DateTime, '[Empty]')
-int count = CustomKeywords.'actions.MenuBar.getRecordCountInActivity'('REPO', 'Date n Date time EDM','Date n Date time search class', tree_BM_Date, tree_DateRange, tree_BM_DateTime, '[Empty]')
+CustomKeywords.'actions.MenuBar.clickTreeMenu'('REPO', 'Date n Date time EDM','Date n Date time search class', tree_BM_Date, '[Empty]')
+int count = CustomKeywords.'actions.MenuBar.getRecordCountInActivity'('REPO', 'Date n Date time EDM','Date n Date time search class', tree_BM_Date, '[Empty]')
 CustomKeywords.'actions.Common.verifyTotalRecordCountFromPageSummary'(findTestObject('Page_nGage_Dashboard/Repository/BrowseResults Tab/Table_PageResults'), count)

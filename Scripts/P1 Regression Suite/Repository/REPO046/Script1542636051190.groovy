@@ -12,36 +12,46 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
+import utils.Consts
 
-'Login Into Application'
+'Login into application'
 CustomKeywords.'actions.Common.login'()
 
-'Expand Repository Menu'
-WebUI.click(findTestObject('Page_nGage_Dashboard/Repository/h3_Repository Menu'))
-CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
+'Create new Document'
+CustomKeywords.'actions.Common.createDocument_DateTimeDT'(Consts.P1_REPO_BMDATE_DOC1, Consts.P1_REPO_DATERANGE_DOC1, Consts.P1_REPO_BMDATETIME_DOC1, Consts.P1_REPO_DATETIMERANGE_DOC1)
+CustomKeywords.'actions.Common.createDocument_DateTimeDT'(Consts.P1_REPO_BMDATE_DOC2, Consts.P1_REPO_DATERANGE_DOC2, Consts.P1_REPO_BMDATETIME_DOC2, Consts.P1_REPO_DATETIMERANGE_DOC2)
+
+'Click on Repository Menu'
+WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/h3_Repository Menu'))
+WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
+
+String filter_DateTimeRangeStart = Consts.P1_REPO_DATETIMERANGE_DOC1.substring(0, 10).replaceAll('/', '-').trim()+' 12:00:00 AM'
+String filter_DateTimeRangeEnd = Consts.P1_REPO_DATETIMERANGE_DOC2.substring(0, 10).replaceAll('/', '-').trim()+'  12:00:00 AM'
 
 'Select Repository - Advance Search tab'
-WebUI.selectOptionByLabel(findTestObject('Page_nGage_Dashboard/Repository/select_Repository Drop Down'), 'Business Model', false)
+WebUI.selectOptionByLabel(findTestObject('Page_nGage_Dashboard/Repository/select_Repository Drop Down'), 'Date n Date time EDM', false)
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
 
 'Selinput_btnSearchect Search For - Advance Search tab'
-WebUI.selectOptionByLabel(findTestObject('Page_nGage_Dashboard/Repository/select_Search For Drop Down'), 'Business Model', false)
+WebUI.selectOptionByLabel(findTestObject('Page_nGage_Dashboard/Repository/select_Search For Drop Down'), 'Date n Date time search class', false)
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
 
-'Enter Only End Date in Search field'
-CustomKeywords.'actions.Common.setText_Date'(findTestObject('Page_nGage_Dashboard/Repository/input_BM___Date_From'), '12122018')
+'Select operator (=)'
+WebUI.selectOptionByLabel(findTestObject('Page_nGage_Dashboard/Repository/select_DateTimeRange'), '=', false)
 
-'Verify date field appears with -'
-WebUI.verifyElementAttributeValue(findTestObject('Page_nGage_Dashboard/Repository/input_BM___Date_From'), 'value', '12-12-2018', GlobalVariable.G_LongTimeout)
+'Enter date in DateTime field'
+CustomKeywords.'actions.Common.setText_Date'(findTestObject('Page_nGage_Dashboard/Repository/input_DateTimeRange_From'), filter_DateTimeRangeStart)
+CustomKeywords.'actions.Common.setText_Date'(findTestObject('Page_nGage_Dashboard/Repository/input_DateTimeRange_To'), filter_DateTimeRangeEnd)
+//TODO:Need to implement date picker control
 
 'Click on Search button'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Repository/input_btnSearch'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
 
-'Wait for table to be visible'
-WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/Repository/table_SearchResults'), GlobalVariable.G_LongTimeout)
+'Sort record by DocID desc'
+CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/Repository/columnHeader_DocID'))
+CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/Repository/columnHeader_DocID'))
 
-'Verify correct records are displayed'
-int columnNo = CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Page_nGage_Dashboard/Repository/table_Header_SearchResults'), 'BM Date')
-println "Column NO is "+columnNo
-CustomKeywords.'actions.Table.verifyRecordsInTableAreMoreThanStartDate'(findTestObject('Page_nGage_Dashboard/Repository/table_SearchResults'), columnNo, '12-12-2018')
+'Get the cell value to verify date format'
+int colNo_DateTimeRange = CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Page_nGage_Dashboard/Repository/table_Header_SearchResults'), 'Date time range')
+CustomKeywords.'actions.Table.verifyRecordsWithinDateRange'(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/table_SearchResults'), colNo_DateTimeRange, filter_DateTimeRangeStart, filter_DateTimeRangeEnd)

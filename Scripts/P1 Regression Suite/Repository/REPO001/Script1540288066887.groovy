@@ -20,6 +20,7 @@ WebUI.verifyElementVisible(findTestObject('Object Repository/Page_nGage_Dashboar
 
 'Click on Repository Menu'
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/h3_Repository Menu'))
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
 
 'Verify Recent Documents menu is displayed'
 WebUI.verifyElementVisible(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/RecentDocuments'))
@@ -30,15 +31,12 @@ WebUI.verifyElementVisible(findTestObject('Object Repository/Page_nGage_Dashboar
 'Verify In-Process Documents menu is displayed'
 WebUI.verifyElementVisible(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/In-ProcessDocuments'))
 
-'Verify Saved Searches List is displayed'
-WebUI.doubleClick(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/li_SavedSearch'))
-
-WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
-WebUI.verifyElementVisible(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/SavedSearch_TempSearch'))
+'Verify Saved searches menu is displayed'
+WebUI.verifyElementVisible(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/li_SavedSearch'))
 
 'Click on Advance Search Tab'
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/a_Advanced Search Tab'))
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
 
 'Verify Saved Searches Table is displayed'
-WebUI.waitForElementVisible(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/table_SavedSearch'), GlobalVariable.G_LongTimeout)
 WebUI.verifyElementVisible(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/table_SavedSearch'))

@@ -564,7 +564,7 @@ public class Common {
 	}
 
 	@Keyword
-	def createDocument_RequiredFieldDT(String BM_Date, String BM_String_Required, String BM_int, String DateTime_Required, String Date_Required) {
+	def createDocument_RequiredFieldDT(String BM_Text, String BM_String_Required, String BM_int, String DateTime_Required, String Date_Required) {
 
 		'Switch to main window'
 		WebUI.switchToWindowTitle('Savana nGage')
@@ -579,7 +579,7 @@ public class Common {
 		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 
 		'Fill the details required'
-		setText_Date(findTestObject('Page_WMI_NEW/Required_Field_DT/input_BM Text'), BM_Date)
+		setText_Date(findTestObject('Page_WMI_NEW/Required_Field_DT/input_BM Text'), BM_Text)
 		WebUI.setText(findTestObject('Page_WMI_NEW/Required_Field_DT/input_BM String required'), BM_String_Required)
 		WebUI.setText(findTestObject('Page_WMI_NEW/Required_Field_DT/input_BM Int'), BM_int)
 		setText_Date(findTestObject('Page_WMI_NEW/Required_Field_DT/input_Date Time Required'), DateTime_Required)

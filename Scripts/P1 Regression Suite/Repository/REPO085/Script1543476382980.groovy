@@ -36,3 +36,5 @@ String dateFieldText = WebUI.getAttribute(findTestObject('Object Repository/Page
 println dateFieldText
 //WebUI.verifyElementText(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/input_BM_Date'), dateFieldText)
 CustomKeywords.'actions.Common.verifyDateFormat'(dateFieldText, 'MM-dd-yyyy')
+
+//TODO: Need to implement date control picker

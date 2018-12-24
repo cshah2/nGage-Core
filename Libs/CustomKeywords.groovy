@@ -649,13 +649,13 @@ def static "actions.Common.createDocument_DateTimeDT"(
 }
 
 def static "actions.Common.createDocument_RequiredFieldDT"(
-    	String BM_Date	
+    	String BM_Text	
      , 	String BM_String_Required	
      , 	String BM_int	
      , 	String DateTime_Required	
      , 	String Date_Required	) {
     (new actions.Common()).createDocument_RequiredFieldDT(
-        	BM_Date
+        	BM_Text
          , 	BM_String_Required
          , 	BM_int
          , 	DateTime_Required

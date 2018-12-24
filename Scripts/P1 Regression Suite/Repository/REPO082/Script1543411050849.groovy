@@ -12,13 +12,21 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
+import utils.Consts
 
 'Login into application'
 CustomKeywords.'actions.Common.login'()
 
-'Expand Repository Menu'
-WebUI.click(findTestObject('Page_nGage_Dashboard/Repository/h3_Repository Menu'))
-CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
+'Create new Document'
+CustomKeywords.'actions.Common.createDocument_DateTimeDT'(Consts.P1_REPO_BMDATE_DOC1, Consts.P1_REPO_DATERANGE_DOC1, Consts.P1_REPO_BMDATETIME_DOC1, Consts.P1_REPO_DATETIMERANGE_DOC1)
+CustomKeywords.'actions.Common.createDocument_DateTimeDT'(Consts.P1_REPO_BMDATE_DOC3, Consts.P1_REPO_DATERANGE_DOC3, Consts.P1_REPO_BMDATETIME_DOC3, Consts.P1_REPO_DATETIMERANGE_DOC3)
+
+'Click on Repository Menu'
+WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/h3_Repository Menu'))
+WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
+
+String filter_DateRangeStart = Consts.P1_REPO_DATERANGE_DOC1.substring(0, 10).replaceAll('/', '-').trim()
+String filter_DateRangeEnd = Consts.P1_REPO_DATERANGE_DOC1.substring(0, 10).replaceAll('/', '-').trim()
 
 'Select Repository - Advance Search tab'
 WebUI.selectOptionByLabel(findTestObject('Page_nGage_Dashboard/Repository/select_Repository Drop Down'), 'Date n Date time EDM', false)
@@ -28,19 +36,21 @@ CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Da
 WebUI.selectOptionByLabel(findTestObject('Page_nGage_Dashboard/Repository/select_Search For Drop Down'), 'Date n Date time search class', false)
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
 
-'Select operator for search'
-WebUI.selectOptionByValue(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/select_DateRange'), '=', false)
+'Select operator (=)'
+WebUI.selectOptionByLabel(findTestObject('Page_nGage_Dashboard/Repository/select_DateRange'), '=', false)
 
-'Select date range'
-WebUI.setText(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/input_DateRange_From'), '11-11-2018')
-WebUI.setText(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/input_DateRange_To'), '11-11-2024')
+'Enter date in Date range field'
+CustomKeywords.'actions.Common.setText_Date'(findTestObject('Page_nGage_Dashboard/Repository/input_DateRange_From'), filter_DateRangeStart)
+CustomKeywords.'actions.Common.setText_Date'(findTestObject('Page_nGage_Dashboard/Repository/input_DateRange_To'), filter_DateRangeEnd)
 
 'Click on Search button'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Repository/input_btnSearch'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
 
-'Wait for Result Table'
-WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/Repository/table_SearchResults'), GlobalVariable.G_LongTimeout)
+'Sort record by DocID desc'
+CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/Repository/columnHeader_DocID'))
+CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/Repository/columnHeader_DocID'))
 
-'Verify date result for date range'
-CustomKeywords.'actions.Table.verifyRecordsWithinDateRange'(findTestObject('Page_nGage_Dashboard/Repository/table_SearchResults'), 11, '11-11-2018', '11-11-2024')
+'Get the cell value to verify date format'
+int colNo_DateRange = CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Page_nGage_Dashboard/Repository/table_Header_SearchResults'), 'Date range')
+CustomKeywords.'actions.Table.verifyRecordsWithinDateRange'(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/table_SearchResults'), colNo_DateRange, filter_DateRangeStart, filter_DateRangeEnd)

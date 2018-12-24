@@ -146,23 +146,29 @@ public class Consts {
 	public static final String P1_MW117_ENDDATETIME = ''
 	public static String P1_MW117_BMTEXT
 
-	
+
 	public static final String P1_REPO_BMDATE_DOC1 = '01-01-2018'
 	public static final String P1_REPO_DATERANGE_DOC1 = '03-01-2018'
 	public static final String P1_REPO_BMDATETIME_DOC1 = '06-01-2018 01:00:00 AM'
-	public static final String P1_REPO_DATETIMERANGE_DOC1 = '09-01-2018'
-	
+	public static final String P1_REPO_DATETIMERANGE_DOC1 = '09-01-2018 03:00:00 AM'
+
 	public static final String P1_REPO_BMDATE_DOC2 = '01-15-2018'
 	public static final String P1_REPO_DATERANGE_DOC2 = '03-15-2018'
 	public static final String P1_REPO_BMDATETIME_DOC2 = '06-15-2018 01:00:00 AM'
-	public static final String P1_REPO_DATETIMERANGE_DOC2 = '09-15-2018'
+	public static final String P1_REPO_DATETIMERANGE_DOC2 = '09-15-2018 03:00:00 AM'
 
 	public static final String P1_REPO_BMDATE_DOC3 = ''
 	public static final String P1_REPO_DATERANGE_DOC3 = ''
 	public static final String P1_REPO_BMDATETIME_DOC3 = ''
 	public static final String P1_REPO_DATETIMERANGE_DOC3 = ''
 
-	
+	public static final String P1_REPO_BMTEXT_DOC1 = 'TEXT'
+	public static final String P1_REPO_BMSTRING_DOC1 = 'STRING REQ'
+	public static final String P1_REPO_INT_DOC1 = '30'
+	public static final String P1_REPO_DATETIMEREQ_DOC1 = '07-01-2018 03:00:00 AM'
+	public static final String P1_REPO_DATEREQ_DOC1 = '10-01-2018'
+
+
 	/*
 	 * Doc Class and Doc Type Variables
 	 */
@@ -178,7 +184,4 @@ public class Consts {
 
 	public static final String DC_DATETIMERANGEREQUIRED = 'Datetimerangerequired'
 	public static final String DT_DATETIMERANGEREQUIRED = 'Datetimerangerequired'
-	
-	
-
 }

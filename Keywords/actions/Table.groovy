@@ -556,10 +556,10 @@ public class Table {
 			KeywordUtil.markFailedAndStop('Icon found in table')
 		}
 	}
-	
+
 	@Keyword
 	def getRowNumber(TestObject tableLocator, int colNo, String expText) {
-		
+
 		WebElement table = WebUtil.getWebElement(tableLocator)
 		List<WebElement> rows = getAllRows(table)
 		int i = 1
