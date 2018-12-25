@@ -581,5 +581,99 @@ public class Table {
 			KeywordUtil.markFailedAndStop('Expected Row not found')
 		}
 	}
+	
+	def isCellDisplaysLockIcon(TestObject tableLocator, WebElement row, int colNo) {
 
+		List<WebElement> cells = getAllCells(row)
+		WebElement cell = cells.get(colNo-1)
+		
+		Boolean isIconDisplayed = false
+		try {
+			cell.findElement(By.xpath("./img[contains(@title,'Checked Out')]")).isDisplayed()
+			isIconDisplayed = true
+		}
+		catch(Exception e) {
+			isIconDisplayed = false
+		}
+		return isIconDisplayed
+	}
+	
+	
+	@Keyword
+	def verifyCellDisplaysLockIcon(TestObject tableLocator, int rowNo, int colNo) {
+		
+		WebElement table = WebUtil.getWebElement(tableLocator)
+		List<WebElement> rows = getAllRows(table)
+		
+		if(isCellDisplaysLockIcon(tableLocator, rows.get(rowNo-1), colNo)) {
+			KeywordUtil.markPassed('Lock icon is displayed')
+		}
+		else {
+			KeywordUtil.markFailedAndStop('Lock icon is not displayed')
+		}
+		WebUI.switchToDefaultContent()
+	}
+	
+	@Keyword
+	def verifyCellDoesNotDisplaysLockIcon(TestObject tableLocator, int rowNo, int colNo) {
+
+		WebElement table = WebUtil.getWebElement(tableLocator)
+		List<WebElement> rows = getAllRows(table)
+
+		if(!isCellDisplaysLockIcon(tableLocator, rows.get(rowNo-1), colNo)) {
+			KeywordUtil.markPassed('Lock icon is not displayed')
+		}
+		else {
+			KeywordUtil.markFailedAndStop('Lock icon displayed')
+		}
+		WebUI.switchToDefaultContent()
+	}
+	
+	@Keyword
+	def verifyAllRecordsDisplayLockIcon(TestObject tableLocator, int colNo) {
+
+		WebElement table = WebUtil.getWebElement(tableLocator)
+		List<WebElement> rows = getAllRows(table)
+		
+		int rowNo = 1
+		for(WebElement row in rows) {
+			if(!isCellDisplaysLockIcon(tableLocator, row, colNo)) {
+				KeywordUtil.markFailedAndStop('Lock icon not present in rowNo '+rowNo)
+			}
+			rowNo++
+		}
+		WebUI.switchToDefaultContent()
+		
+		if(rowNo == 1) {
+			KeywordUtil.markFailedAndStop('No record available in result table for verification')
+		}
+		else {
+			KeywordUtil.markPassed('All records contains lock icon')
+		}
+	}
+
+	@Keyword
+	def verifyAllRecordsDoesNotDisplayLockIcon(TestObject tableLocator, int colNo) {
+
+		WebElement table = WebUtil.getWebElement(tableLocator)
+		List<WebElement> rows = getAllRows(table)
+		
+		int rowNo = 1
+		for(WebElement row in rows) {
+			if(isCellDisplaysLockIcon(tableLocator, row, colNo)) {
+				KeywordUtil.markFailedAndStop('Lock icon present in rowNo '+rowNo)
+			}
+			rowNo++
+		}
+		WebUI.switchToDefaultContent()
+		
+		if(rowNo == 1) {
+			KeywordUtil.markFailedAndStop('No record available in result table for verification')
+		}
+		else {
+			KeywordUtil.markPassed('All records does not contains lock icon')
+		}
+	}
+
+	
 }

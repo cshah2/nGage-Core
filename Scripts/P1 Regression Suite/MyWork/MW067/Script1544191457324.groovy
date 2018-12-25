@@ -14,7 +14,7 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
 'Login Into Application'
-CustomKeywords.'actions.Common.login'('Auto_BO_Uncheck', 'Password1234!', 'IPM_EPM50MASTER_502_AUTOMATION')
+CustomKeywords.'actions.Common.login'(GlobalVariable.Users['MW067_UN'], GlobalVariable.Password, GlobalVariable.Database)
 
 //Pre-requisuite : A document should be present in Closure Action - Activity A
 //Click on Global New button

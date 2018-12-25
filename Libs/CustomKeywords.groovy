@@ -246,6 +246,42 @@ def static "actions.Table.getRowNumber"(
          , 	expText)
 }
 
+def static "actions.Table.verifyCellDisplaysLockIcon"(
+    	TestObject tableLocator	
+     , 	int rowNo	
+     , 	int colNo	) {
+    (new actions.Table()).verifyCellDisplaysLockIcon(
+        	tableLocator
+         , 	rowNo
+         , 	colNo)
+}
+
+def static "actions.Table.verifyCellDoesNotDisplaysLockIcon"(
+    	TestObject tableLocator	
+     , 	int rowNo	
+     , 	int colNo	) {
+    (new actions.Table()).verifyCellDoesNotDisplaysLockIcon(
+        	tableLocator
+         , 	rowNo
+         , 	colNo)
+}
+
+def static "actions.Table.verifyAllRecordsDisplayLockIcon"(
+    	TestObject tableLocator	
+     , 	int colNo	) {
+    (new actions.Table()).verifyAllRecordsDisplayLockIcon(
+        	tableLocator
+         , 	colNo)
+}
+
+def static "actions.Table.verifyAllRecordsDoesNotDisplayLockIcon"(
+    	TestObject tableLocator	
+     , 	int colNo	) {
+    (new actions.Table()).verifyAllRecordsDoesNotDisplayLockIcon(
+        	tableLocator
+         , 	colNo)
+}
+
 def static "actions.MenuBar.getRecordCountInActivity"(
     	TestObject element	) {
     (new actions.MenuBar()).getRecordCountInActivity(
@@ -804,6 +840,14 @@ def static "actions.Common.createDocument_RouteAdvance"(
     	String description	) {
     (new actions.Common()).createDocument_RouteAdvance(
         	description)
+}
+
+def static "actions.Common.createDocument_ProcessForTaskDT"(
+    	String customerName	
+     , 	String customerDetails	) {
+    (new actions.Common()).createDocument_ProcessForTaskDT(
+        	customerName
+         , 	customerDetails)
 }
 
 def static "actions.Window.clickElementAndWaitForWindowClose"(

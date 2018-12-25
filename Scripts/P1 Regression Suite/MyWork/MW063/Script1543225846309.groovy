@@ -13,9 +13,8 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-
 'Login Into Application'
-CustomKeywords.'actions.Common.login'('Auto_WI_uncheck', 'Password1234!', 'IPM_EPM50MASTER_502_AUTOMATION')
+CustomKeywords.'actions.Common.login'(GlobalVariable.Users['MW063_UN'], GlobalVariable.Password, GlobalVariable.Database)
 
 'Click on My Work link from left menu'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_My Work Left Menu'))
@@ -24,7 +23,7 @@ WebUI.waitForElementVisible(findTestObject('Object Repository/Page_nGage_Dashboa
 'Switch to main window'
 WebUI.switchToWindowTitle('Savana nGage')
 
-'Create a new BovDefault Document'
+'Create a new Closure Action Document'
 WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))
 CustomKeywords.'actions.Common.selectDocClassAndDocTypeForGlobalNew'('Closure Action', 'Closure Action')
 WebUI.click(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'))

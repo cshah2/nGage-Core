@@ -15,7 +15,7 @@ import internal.GlobalVariable as GlobalVariable
 
 
 'Login Into Application'
-CustomKeywords.'actions.Common.login'('Auto_WI_Check', 'Password1234!', 'IPM_EPM50MASTER_502_AUTOMATION')
+CustomKeywords.'actions.Common.login'(GlobalVariable.Users['MW062_UN'], GlobalVariable.Password, GlobalVariable.Database)
 
 'Click on My Work link from left menu'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_My Work Left Menu'))

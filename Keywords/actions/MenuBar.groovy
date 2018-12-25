@@ -236,7 +236,7 @@ public class MenuBar {
 		if(!moduleName.equalsIgnoreCase('REPORT'))
 			appendBrace = lastIndex>1?" (":""
 
-		treeXpath.append("/ul/li/a[contains(text(),'"+menuPath[size-1]+appendBrace+"')]")
+		treeXpath.append("/ul/li/a[starts-with(text(),'"+menuPath[size-1]+appendBrace+"')]")
 		WebDriver driver = DriverFactory.getWebDriver()
 		driver.findElement(By.xpath(treeXpath.toString())).click()
 	}
@@ -255,7 +255,7 @@ public class MenuBar {
 		if(!moduleName.equalsIgnoreCase('REPORT'))
 			appendBrace = lastIndex>1?" (":""
 
-		treeXpath.append("/ul/li/a[contains(text(),'"+menuPath[size-1]+appendBrace+"')]")
+		treeXpath.append("/ul/li/a[starts-with(text(),'"+menuPath[size-1]+appendBrace+"')]")
 		WebDriver driver = DriverFactory.getWebDriver()
 		WebElement e = driver.findElement(By.xpath(treeXpath.toString()))
 
@@ -277,7 +277,7 @@ public class MenuBar {
 		if(!moduleName.equalsIgnoreCase('REPORT'))
 			appendBrace = lastIndex>1?" (":""
 
-		treeXpath.append("/ul/li/a[contains(text(),'"+menuPath[size-1]+appendBrace+"')]")
+		treeXpath.append("/ul/li/a[starts-with(text(),'"+menuPath[size-1]+appendBrace+"')]")
 		WebDriver driver = DriverFactory.getWebDriver()
 		WebElement e = driver.findElement(By.xpath(treeXpath.toString()))
 
@@ -299,7 +299,7 @@ public class MenuBar {
 		if(!moduleName.equalsIgnoreCase('REPORT'))
 			appendBrace = lastIndex>1?" (":""
 
-		treeXpath.append("/ul/li/a[contains(text(),'"+menuPath[size-1]+appendBrace+"')]")
+		treeXpath.append("/ul/li/a[starts-with(text(),'"+menuPath[size-1]+appendBrace+"')]")
 		WebDriver driver = DriverFactory.getWebDriver()
 		String nodeText = driver.findElement(By.xpath(treeXpath.toString())).getText()
 
@@ -370,7 +370,7 @@ public class MenuBar {
 			String appendBrace = ""
 			if(!moduleName.equalsIgnoreCase('REPORT'))
 				appendBrace = i>1?" (":""
-			treeXpath.append("/ul/li/a[contains(text(),'"+path+appendBrace+"')]")
+			treeXpath.append("/ul/li/a[starts-with(text(),'"+path+appendBrace+"')]")
 			a = driver.findElement(By.xpath(treeXpath.toString()))
 			treeXpath.append("/..")
 			li = a.findElement(By.xpath(".."))
@@ -436,7 +436,7 @@ public class MenuBar {
 		if(!moduleName.equalsIgnoreCase('REPORT'))
 			appendBrace = lastIndex>1?" (":""
 
-		treeXpath.append("/ul/li/a[contains(text(),'"+menuPath[size-1]+appendBrace+"')]")
+		treeXpath.append("/ul/li/a[starts-with(text(),'"+menuPath[size-1]+appendBrace+"')]")
 		WebDriver driver = DriverFactory.getWebDriver()
 		WebElement e = driver.findElement(By.xpath(treeXpath.toString()))
 
