@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//table[@id='tblSearch']//tr[2]//span[1]</value>
+         <value>//table[@id='tblSearch']//td[contains(text(),'Start test date')]/..//span[contains(text(),'Required')][1]</value>
       </entry>
       <entry>
          <key>BASIC</key>

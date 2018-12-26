@@ -6,12 +6,11 @@
    <elementGuidId>a5a6a9d6-5c2a-4e6a-a5c9-c36f7497cddc</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>BASIC</key>
-         <value></value>
+         <key>XPATH</key>
+         <value>//table[@id='tblSearch']//td[text()='Customer Name']/..//input</value>
       </entry>
       <entry>
-         <key>XPATH</key>
-         <value>//input[@id='100091']</value>
+         <key>BASIC</key>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

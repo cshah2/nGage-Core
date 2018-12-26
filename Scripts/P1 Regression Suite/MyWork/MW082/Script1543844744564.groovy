@@ -16,64 +16,42 @@ import internal.GlobalVariable as GlobalVariable
 'Login Into Application'
 CustomKeywords.'actions.Common.login'()
 
+
 'Click on My Work link from left menu'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_My Work Left Menu'))
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
-'Click On Date Required icon to expand'
-WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/Process_Date Required/icon_expand_DateRequired'))
-WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
-
-'Click On DateRequiredSearch to load Frame'
-WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Process_Date Required/a_DateRequiredSearch'))
+//Date Range
+'Expand Processes and Verify Foldered Document Displayed'
+CustomKeywords.'actions.MenuBar.clickTreeMenu'('My_Work','Processes','DateRange required','Date range required')
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/iframe_work_items'))
 
-'verify activity count with grid count'
-CustomKeywords.'actions.Common.verifyRecordCountInActivityMatchesWithResultGrid'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Process_Date Required/a_DateRequiredSearch'),findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/div_PageCount'))
-
-'Expand Search Bar'
+'Click on Search bar to open'
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/h3_Search Bar'))
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/iframe_work_items'))
 
-'click on search button'
+'Click On Search Button'
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/btn_Search'))
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/iframe_work_items'))
 
-'verify required message'
-WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/My_Work/span_DateRequired_StartDate_RequiredText'), GlobalVariable.G_LongTimeout)
+'Verify Required message is visible against both From and To Date field'
+WebUI.verifyElementVisible(findTestObject('Page_nGage_Dashboard/My_Work/Process_DateRangeRequired/span_DateRangeRequired_From_required'))
+WebUI.verifyElementVisible(findTestObject('Page_nGage_Dashboard/My_Work/Process_DateRangeRequired/span_DateRangeRequired_To_Required'))
 
-'verify grid records'
-CustomKeywords.'actions.Common.verifyRecordCountInActivityMatchesWithResultGrid'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Process_Date Required/a_DateRequiredSearch'),findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/div_PageCount'))
-///////////////////////////////////////////
-'Expand process Daterange required'
-WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Process_DateRangeRequired/icon_expand_DateRangeRequired'))
-WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
-'click on activity Daterange required'
-WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Process_DateRangeRequired/a_click_DateRangeRequired'))
-CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/iframe_iframe_105'))
+//Date time Range
+'Expand Processes and Verify Foldered Document Displayed'
+CustomKeywords.'actions.MenuBar.clickTreeMenu'('My_Work','Processes','Datetime range required','Date time range required')
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/iframe_work_items'))
 
-'Expand Search Bar'
+'Click on Search bar to open'
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/h3_Search Bar'))
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/iframe_work_items'))
 
-'click on search button'
+'Click On Search Button'
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/btn_Search'))
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/iframe_work_items'))
 
-'verify required message'
-WebUI.verifyElementVisible(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Process_DateRangeRequired/span_DateRangeRequired_From_required'))
-WebUI.verifyElementVisible(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Process_DateRangeRequired/span_DateRangeRequired_To_Required'))
-////////////////////////////////////////////
-'expand process datetimerequired'
-WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/process_DateTimeRequired/icon_Expand_DateTimeRequired'))
-WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
-
-'click on activity DateTimeRequired'
-WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/process_DateTimeRequired/a_Activity_DateTimeRequired'))
-CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/iframe_iframe_105'))
-
-'Expand Search Bar'
-WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/h3_Search Bar'))
-
-'click on search button'
-WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/btn_Search'))
-
-'verify required message'
-WebUI.verifyElementVisible(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/process_DateTimeRequired/span_DtTimeReq_Start Dt_Required'))
+'Verify Required message is visible against both From and To Date field'
+WebUI.verifyElementVisible(findTestObject('Page_nGage_Dashboard/My_Work/process_DatetimeRangeRequired/span_StartDateTime_From_Required'))
+WebUI.verifyElementVisible(findTestObject('Page_nGage_Dashboard/My_Work/process_DatetimeRangeRequired/span_StartDateTime_To_Required'))

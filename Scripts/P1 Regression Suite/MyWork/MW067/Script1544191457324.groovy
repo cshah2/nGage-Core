@@ -12,35 +12,13 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
+import utils.Consts
 
 'Login Into Application'
 CustomKeywords.'actions.Common.login'(GlobalVariable.Users['MW067_UN'], GlobalVariable.Password, GlobalVariable.Database)
 
-//Pre-requisuite : A document should be present in Closure Action - Activity A
-//Click on Global New button
-WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))
-
-//Select Document class and Document Type
-CustomKeywords.'actions.Common.selectDocClassAndDocTypeForGlobalNew'('Closure Action','Closure Action')
-
-//Click on OK Button
-WebUI.click(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'))
-WebUI.switchToWindowTitle('(Doc ID: NEW )')
-WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
-WebUI.scrollToElement(findTestObject('Page_WMI_NEW/Closure_Action/input_Customer Name'), GlobalVariable.G_LongTimeout)
-
-//Fill mandatory form data
-WebUI.setText(findTestObject('Page_WMI_NEW/Closure_Action/input_Customer Name'), 'Chintan Shah')
-WebUI.setText(findTestObject('Page_WMI_NEW/Closure_Action/input_Customer Details'), 'Automation Test')
-
-//Click on Save button
-WebUI.mouseOver(findTestObject('Page_WMI_NEW/Closure_Action/span_Actions'))
-WebUI.waitForElementVisible(findTestObject('Page_WMI_NEW/Closure_Action/a_Save'), GlobalVariable.G_LongTimeout)
-CustomKeywords.'actions.Window.clickElementAndWaitForWindowClose'(findTestObject('Page_WMI_NEW/Closure_Action/a_Save'), GlobalVariable.G_LongTimeout)
-
-//Close "create new" popup dialog
-WebUI.switchToWindowTitle('Savana nGage')
-WebUI.click(findTestObject('Page_nGage_Dashboard/Home/span_ui-button-icon-primary ui'))
+'Create Closure Action Document'
+CustomKeywords.'actions.Common.createDocument_ClosureAction'(Consts.P1_MWORK_CLOSURE_CUSTOMERNAME_DOC1, Consts.P1_MWORK_CLOSURE_CUSTOMERDESC_DOC1)
 
 //Test Steps
 //Click on My Work link from left menu
@@ -98,30 +76,8 @@ CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dash
 CustomKeywords.'actions.Table.verifyRecordPresentInColumn'(findTestObject('Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), docIdcolumnNumber, DocID)
 
 //Pre-requisuite : A document should be present in Closure Action - Activity A
-//Click on Global New button
-WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))
-
-//Select Document class and Document Type
-CustomKeywords.'actions.Common.selectDocClassAndDocTypeForGlobalNew'('Closure Action','Closure Action')
-
-//Click on OK Button
-WebUI.click(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'))
-WebUI.switchToWindowTitle('(Doc ID: NEW )')
-WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
-WebUI.scrollToElement(findTestObject('Page_WMI_NEW/Closure_Action/input_Customer Name'), GlobalVariable.G_LongTimeout)
-
-//Fill mandatory form data
-WebUI.setText(findTestObject('Page_WMI_NEW/Closure_Action/input_Customer Name'), 'Chintan Shah')
-WebUI.setText(findTestObject('Page_WMI_NEW/Closure_Action/input_Customer Details'), 'Automation Test')
-
-//Click on Save button
-WebUI.mouseOver(findTestObject('Page_WMI_NEW/Closure_Action/span_Actions'))
-WebUI.waitForElementVisible(findTestObject('Page_WMI_NEW/Closure_Action/a_Save'), GlobalVariable.G_LongTimeout)
-CustomKeywords.'actions.Window.clickElementAndWaitForWindowClose'(findTestObject('Page_WMI_NEW/Closure_Action/a_Save'), GlobalVariable.G_LongTimeout)
-
-//Close "create new" popup dialog
-WebUI.switchToWindowTitle('Savana nGage')
-WebUI.click(findTestObject('Page_nGage_Dashboard/Home/span_ui-button-icon-primary ui'))
+'Create Closure Action Document'
+CustomKeywords.'actions.Common.createDocument_ClosureAction'(Consts.P1_MWORK_CLOSURE_CUSTOMERNAME_DOC1, Consts.P1_MWORK_CLOSURE_CUSTOMERDESC_DOC1)
 
 //Test Steps
 //Click on My Work link from left menu

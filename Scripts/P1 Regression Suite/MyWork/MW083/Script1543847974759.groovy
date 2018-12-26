@@ -13,6 +13,9 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
+
+//TODO: Need to implement calender picker
+
 'Login Into Application'
 CustomKeywords.'actions.Common.login'()
 
@@ -20,24 +23,20 @@ CustomKeywords.'actions.Common.login'()
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_My Work Left Menu'))
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
-'Click On Date Required icon to expand'
-WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/Process_Date Required/icon_expand_DateRequired'))
-WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
-
-'Click On DateRequiredSearch to load Frame'
-WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Process_Date Required/a_DateRequiredSearch'))
+'Click Tree Menu'
+CustomKeywords.'actions.MenuBar.clickTreeMenu'('MY_WORK', 'Processes', 'Date Required', 'Daterequiredsearch')
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/iframe_work_items'))
 
 'verify activity count with grid count'
-CustomKeywords.'actions.Common.verifyRecordCountInActivityMatchesWithResultGrid'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Process_Date Required/a_DateRequiredSearch'),findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/div_PageCount'))
+int recordCount = CustomKeywords.'actions.MenuBar.getRecordCountInActivity'('MY_WORK', 'Processes', 'Date Required', 'Daterequiredsearch')
+CustomKeywords.'actions.Common.verifyTotalRecordCountFromPageSummary'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/div_PageCount'), recordCount)
 
 'Expand Search Bar'
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/h3_Search Bar'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/iframe_work_items'))
 
 'Enter date value'
-WebUI.setText(findTestObject('Page_nGage_Dashboard/My_Work/Process_Date Required/input_StartDate'), '01012018')
+CustomKeywords.'actions.Common.setText_Date'(findTestObject('Page_nGage_Dashboard/My_Work/Process_Date Required/input_StartDate'), '01-01-2018')
 
-'verify date format'
-WebUI.verifyElementAttributeValue(findTestObject('Page_nGage_Dashboard/My_Work/Process_Date Required/input_StartDate'),'dateformat', 'mm-dd-yy', GlobalVariable.G_LongTimeout)
+'Verify date format'
 WebUI.verifyElementAttributeValue(findTestObject('Page_nGage_Dashboard/My_Work/Process_Date Required/input_StartDate'), 'value', '01-01-2018', GlobalVariable.G_LongTimeout)

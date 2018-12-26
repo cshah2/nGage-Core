@@ -571,7 +571,7 @@ public class Common {
 
 		'Create a new BovDocTwoRow Document'
 		WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))
-		selectDocClassAndDocTypeForGlobalNew('Required Field DC', 'Required field DT')
+		selectDocClassAndDocTypeForGlobalNew('Required field DC', 'Required field DT')
 		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'))
 
 		'Switch to new Window'

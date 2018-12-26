@@ -33,13 +33,10 @@ WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 
 'enter customer details'
 WebUI.switchToWindowIndex(1)
-WebUI.setText(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/input_CustomerDetails'), 'First DOC(UnLocked)')
-WebUI.setText(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/input_CustomerName'), 'First DOC(UnLocked)')
+WebUI.setText(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/input_CustomerDetails'), 'Multivalue field test')
+WebUI.setText(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/input_CustomerName'), 'Chintan Shah')
 
 WebUI.setText(findTestObject('Object Repository/Page_WMI_NEW/Closure_Action/input_Customer Phone Number'), '1000')
-WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Closure_Action/button_AddCustomerPhoneNumber'))
-CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_WMI/Closure Action/iframe_ContentPlaceHolder1_iPa'))
-WebUI.setText(findTestObject('Object Repository/Page_WMI_NEW/Closure_Action/input_Customer Phone Number'), '2000')
 WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Closure_Action/button_AddCustomerPhoneNumber'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_WMI/Closure Action/iframe_ContentPlaceHolder1_iPa'))
 
@@ -52,7 +49,6 @@ CustomKeywords.'actions.Window.clickElementAndWaitForWindowClose'(findTestObject
 WebUI.switchToWindowIndex(0)
 
 'Close "create new" popup dialog'
-WebUI.switchToWindowIndex(0)
 WebUI.click(findTestObject('Page_nGage_Dashboard/Home/span_ui-button-icon-primary ui'))
 
 'Click on My Work link from left menu'
@@ -82,13 +78,13 @@ WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Folde
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Folder_Configuration/button_Close'))
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
-'right click on Activity A'
-WebUI.rightClick(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/a_Activity A'))
-WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
-
-'click on refresh'
-WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/contextMenu_Refresh'))
-WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
+//'right click on Activity A'
+//WebUI.rightClick(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/a_Activity A'))
+//WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
+//
+//'click on refresh'
+//WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/contextMenu_Refresh'))
+//WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
 'click on submenu'
 CustomKeywords.'actions.MenuBar.clickTreeMenu'('My_Work','Processes','Closure Action','Activity A','1000')

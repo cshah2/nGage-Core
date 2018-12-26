@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>span_DateRangeRequired_To_Required</name>
+   <name>span_StartDateTime_From_Required</name>
    <tag></tag>
-   <elementGuidId>8c29834b-7d0c-4720-a297-07429ff45e99</elementGuidId>
+   <elementGuidId>a426c0fc-9f92-455c-8d9a-2674e90ba921</elementGuidId>
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//table[@id='tblSearch']//td[contains(text(),'Start test date')]/..//span[contains(text(),'Required')][2]</value>
+         <value>//table[@id='tblSearch']//td[contains(text(),'Start test datetime')]/..//span[contains(text(),'Required')][1]</value>
       </entry>
       <entry>
          <key>BASIC</key>

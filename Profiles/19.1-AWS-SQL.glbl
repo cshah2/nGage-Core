@@ -71,7 +71,7 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>[('MW067_UN') : 'Auto_BO_Uncheck', ('MW066_UN') : 'Auto_WO_Check', ('MW065_UN') : 'Auto_AI_Uncheck', ('MW064_UN') : 'Auto_AI_Check', ('MW063_UN') : 'Auto_WI_uncheck', ('MW062_UN') : 'Auto_WI_Check']</initValue>
+      <initValue>[('MW067_UN') : 'Auto_BO_uncheck', ('MW066_UN') : 'Auto_BO_Check', ('MW065_UN') : 'Auto_AI_uncheck', ('MW064_UN') : 'Auto_AI_check', ('MW063_UN') : 'Auto_WI_uncheck', ('MW062_UN') : 'Auto_WI_Check']</initValue>
       <name>Users</name>
    </GlobalVariableEntity>
 </GlobalVariableEntities>
