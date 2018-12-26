@@ -68,4 +68,4 @@ WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 'Verify Activity A is selected in Tree path'
 CustomKeywords.'actions.MenuBar.verifyTreeIsSelected'('MY_WORK', 'Processes', 'Closure Action', 'Activity A')
 
-//TODO: ClickSlice does not work properly
+//TODO: Click Slice does not work properly

@@ -119,6 +119,7 @@ CustomKeywords.'actions.Window.clickElementAndWaitForWindowClose'(findTestObject
 
 //Refresh Activity B to verify count has increased or not
 WebUI.switchToWindowTitle('Savana nGage')
+WebUI.switchToDefaultContent()
 CustomKeywords.'actions.MenuBar.refreshActivityUntilRecordCountIncreases'(findTestObject('Page_nGage_Dashboard/My_Work/a_Activity B'), GlobalVariable.G_LongTimeout)
 
 //Select Activity B

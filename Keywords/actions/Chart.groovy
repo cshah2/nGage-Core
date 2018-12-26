@@ -87,11 +87,11 @@ public class Chart {
 		List<WebElement> slices = chart.findElements(By.xpath(sliceLocator))
 		WebElement slice = slices.get(sliceNo - 1)
 		
-		//List<WebElement> argList = new ArrayList<WebElement>()
-		///argList.add(slice) 
-		//WebUI.executeJavaScript("arguments[0].click();", argList)
+		List<WebElement> argList = new ArrayList<WebElement>()
+		argList.add(slice) 
+		WebUI.executeJavaScript("var evt = document.createEvent('MouseEvents');" + "evt.initMouseEvent('click',true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0,null);" + "arguments[0].dispatchEvent(evt);", argList)
 		
-		slice.click()
+//		slice.click()
 
 		WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 		WebUI.switchToDefaultContent()
