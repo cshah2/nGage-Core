@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>span_New</name>
+   <name>span_2)AUTOCREATE</name>
    <tag></tag>
-   <elementGuidId>615cb400-4393-4ceb-8243-e445c5ef7607</elementGuidId>
+   <elementGuidId>acdcada4-f52e-45da-90d0-50202575efb6</elementGuidId>
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//table[@class='GVGrid']//div[@id='eform_mcb67676_TabContainer_4_TabRef_1_phBO_4_BO_grc_ctl01_inLineMenuHolder']</value>
+         <value>//span[@id='eform_mcb67676_TabContainer_4_TabRef_2_tab']</value>
       </entry>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

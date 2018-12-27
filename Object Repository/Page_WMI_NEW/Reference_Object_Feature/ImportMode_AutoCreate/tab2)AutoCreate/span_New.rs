@@ -3,14 +3,15 @@
    <description></description>
    <name>span_New</name>
    <tag></tag>
-   <elementGuidId>615cb400-4393-4ceb-8243-e445c5ef7607</elementGuidId>
+   <elementGuidId>83abf031-88eb-44b4-a899-5ee994bc5fc9</elementGuidId>
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//table[@class='GVGrid']//div[@id='eform_mcb67676_TabContainer_4_TabRef_1_phBO_4_BO_grc_ctl01_inLineMenuHolder']</value>
+         <value>//table[@class='GVGrid']//div[@id='eform_mcb67676_TabContainer_4_TabRef_2_phBO_5_BO_grc_ctl01_inLineMenuHolder']</value>
       </entry>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

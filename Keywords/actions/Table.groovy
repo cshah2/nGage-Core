@@ -510,10 +510,9 @@ public class Table {
 	def verifyButtonPresentInWMITable(TestObject tableLocator, String expTitleAttr) {
 
 		WebElement table = WebUtil.getWebElement(tableLocator)
-		WebDriver driver = DriverFactory.getWebDriver()
 		List<WebElement> icons = table.findElements(By.xpath("./tbody/tr[1]//input"))
 
-		WebUI.switchToDefaultContent()
+		
 		boolean isIconFound = false
 
 		for(WebElement icon in icons) {
@@ -524,6 +523,7 @@ public class Table {
 			}
 		}
 
+		WebUI.switchToDefaultContent()
 		if(isIconFound) {
 			KeywordUtil.markPassed('Icon found in table')
 		}
@@ -538,9 +538,9 @@ public class Table {
 		WebElement table = WebUtil.getWebElement(tableLocator)
 		WebDriver driver = DriverFactory.getWebDriver()
 		List<WebElement> icons = table.findElements(By.xpath("./tbody/tr[1]//input"))
-		WebUI.switchToDefaultContent()
+		
 		boolean isIconFound = false
-
+		
 		for(WebElement icon in icons) {
 			String actTitle = icon.getAttribute('title').toUpperCase()
 			if(actTitle.contains(expTitleAttr.toUpperCase())) {
@@ -548,7 +548,7 @@ public class Table {
 				break
 			}
 		}
-
+		WebUI.switchToDefaultContent()
 		if(!isIconFound) {
 			KeywordUtil.markPassed('Icon not found in table')
 		}

@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>span_New</name>
+   <name>a_Render All Field Types</name>
    <tag></tag>
-   <elementGuidId>615cb400-4393-4ceb-8243-e445c5ef7607</elementGuidId>
+   <elementGuidId>17f8a56e-6054-4727-9519-f315e7ddce4e</elementGuidId>
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//table[@class='GVGrid']//div[@id='eform_mcb67676_TabContainer_4_TabRef_1_phBO_4_BO_grc_ctl01_inLineMenuHolder']</value>
+         <value>//a[(text() = 'Render All Field Types' or . = 'Render All Field Types')]</value>
       </entry>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

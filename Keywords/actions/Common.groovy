@@ -989,4 +989,13 @@ public class Common {
 		WebUI.switchToWindowTitle('Savana nGage')
 		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/span_ui-button-icon-primary ui'))
 	}
+	
+	@Keyword
+	def verifyElementsCount(TestObject to, int expCount) {
+		
+		List<WebElement> elements = WebUtil.getWebElements(to)
+		WebUI.switchToDefaultContent() 
+		WebUI.verifyEqual(elements.size(), expCount)
+		
+	}
 }
