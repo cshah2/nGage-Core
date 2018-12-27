@@ -26,6 +26,8 @@ WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_My Work Left Menu'))
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_iframe_105'))
 
+int originalCountC = CustomKeywords.'actions.MenuBar.getRecordCountInActivity'('MY_WORK', 'Processes', 'Closure Action', 'Activity C')
+
 //Expand Closure Action process
 CustomKeywords.'actions.MenuBar.clickTreeMenu'('MY_WORK', 'Processes', 'Closure Action', 'Activity A')
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_work_items'))
@@ -60,11 +62,11 @@ WebUI.waitForElementPresent(findTestObject('Page_nGage_Dashboard/My_Work/td_Reco
 WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/My_Work/td_RecordProcessingMessage_Success'), GlobalVariable.G_LongTimeout)
 
 //Refresh Closure Action process until record count in tree is updated
-CustomKeywords.'actions.MenuBar.refreshActivityUntilRecordCountIncreases'(findTestObject('Page_nGage_Dashboard/My_Work/a_Activity C'), GlobalVariable.G_LongTimeout)
+//CustomKeywords.'actions.MenuBar.refreshActivityUntilRecordCountIncreases'(findTestObject('Page_nGage_Dashboard/My_Work/a_Activity C'), GlobalVariable.G_LongTimeout)
+CustomKeywords.'actions.MenuBar.refreshActivityUntilRecordCountIncreases'(originalCountC, GlobalVariable.G_LongTimeout, 'MY_WORK', 'Processes', 'Closure Action', 'Activity C')
 
 //Select Activity C from left menu
-WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/My_Work/a_Activity C'), GlobalVariable.G_LongTimeout)
-WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_Activity C'))
+CustomKeywords.'actions.MenuBar.clickTreeMenu'('MY_WORK', 'Processes', 'Closure Action', 'Activity C')
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_work_items'))
 
 //Sort record by Doc_Created_Date desc
@@ -72,7 +74,6 @@ CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dash
 CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/My_Work/tableHeader_DocCreateDate'))
 
 //Verify Document is present in Activity C result table
-
 CustomKeywords.'actions.Table.verifyRecordPresentInColumn'(findTestObject('Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), docIdcolumnNumber, DocID)
 
 //Pre-requisuite : A document should be present in Closure Action - Activity A
@@ -84,6 +85,8 @@ CustomKeywords.'actions.Common.createDocument_ClosureAction'(Consts.P1_MWORK_CLO
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_My Work Left Menu'))
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_iframe_105'))
+
+int originalCountB = CustomKeywords.'actions.MenuBar.getRecordCountInActivity'('MY_WORK', 'Processes', 'Closure Action', 'Activity B')
 
 //Expand Closure Action process
 CustomKeywords.'actions.MenuBar.clickTreeMenu'('MY_WORK', 'Processes', 'Closure Action', 'Activity A')
@@ -120,10 +123,14 @@ CustomKeywords.'actions.Window.clickElementAndWaitForWindowClose'(findTestObject
 //Refresh Activity B to verify count has increased or not
 WebUI.switchToWindowTitle('Savana nGage')
 WebUI.switchToDefaultContent()
-CustomKeywords.'actions.MenuBar.refreshActivityUntilRecordCountIncreases'(findTestObject('Page_nGage_Dashboard/My_Work/a_Activity B'), GlobalVariable.G_LongTimeout)
+WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
+
+'Refresh activity B until record count increases'
+//CustomKeywords.'actions.MenuBar.refreshActivityUntilRecordCountIncreases'(findTestObject('Page_nGage_Dashboard/My_Work/a_Activity B'), GlobalVariable.G_LongTimeout)
+CustomKeywords.'actions.MenuBar.refreshActivityUntilRecordCountIncreases'(originalCountB, GlobalVariable.G_LongTimeout, 'MY_WORK', 'Processes', 'Closure Action', 'Activity B')
 
 //Select Activity B
-WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_Activity B'))
+CustomKeywords.'actions.MenuBar.clickTreeMenu'('MY_WORK', 'Processes', 'Closure Action', 'Activity B')
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_work_items'))
 
 //Sort records by Creation Date Desc

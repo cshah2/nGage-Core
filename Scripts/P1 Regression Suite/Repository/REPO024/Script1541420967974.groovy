@@ -35,6 +35,7 @@ CustomKeywords.'actions.Common.verifyTotalRecordCountFromPageSummary'(findTestOb
 'Right click on BM Ref ROTABLE Nested without Tab from Business Model Sub Menu'
 CustomKeywords.'actions.MenuBar.rightClickTreeMenu'('REPO', 'Business Model', 'Business Model', 'BM Ref ROTABLE Nested without Tab')
 CustomKeywords.'actions.ContextMenu.clickOption'(findTestObject('Page_nGage_Dashboard/contextMenuOptions'), 'Refresh')
+WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
 'Get Activity Record counts'
 int activityRecordCountAfter = CustomKeywords.'actions.MenuBar.getRecordCountInActivity'('REPO', 'Business Model', 'Business Model', 'BM Ref ROTABLE Nested without Tab')

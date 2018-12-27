@@ -33,15 +33,10 @@ CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Da
 WebUI.dragAndDropToObject(findTestObject("Object Repository/Page_nGage_Dashboard/My_Work_Simplified/div_DocID Column Header"), findTestObject("Object Repository/Page_nGage_Dashboard/My_Work_Simplified/columnHeader_processID"))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/iframe_iframe_110'))
 
-//TODO: 
+//TODO: Need to add column verification logic 
 
 //click on Set Layout
 
-WebUI.verifyElementPresent(findTestObject("Page_nGage_Dashboard/My_Work_Simplified/Set Layout"), 3)
+WebUI.verifyElementPresent(findTestObject("Page_nGage_Dashboard/My_Work_Simplified/Set Layout"), GlobalVariable.G_LongTimeout)
 
 WebUI.click(findTestObject("Page_nGage_Dashboard/My_Work_Simplified/Set Layout"))
-
-
-
-
-

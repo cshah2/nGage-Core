@@ -35,4 +35,7 @@ int activityCount = CustomKeywords.'actions.MenuBar.getRecordCountInActivity'('M
 if(activityCount > 500)
 	activityCount = 500
 	
-CustomKeywords.'actions.Common.verifyTotalRecordCountFromPageSummary'(findTestObject('Page_nGage_Dashboard/My_Work/table_pagination_summary'), activityCount)
+String expText = 'Showing 1 - 10 of '+activityCount
+WebUI.verifyMatch(WebUI.getText(findTestObject('Page_nGage_Dashboard/My_Work/table_pagination_summary')), '.*'+expText+'.*', true)
+
+WebUI.verifyElementAttributeValue(findTestObject('Page_nGage_Dashboard/My_Work/table_page_number_input'), 'value', '1', GlobalVariable.G_LongTimeout)

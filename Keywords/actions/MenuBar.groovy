@@ -82,9 +82,8 @@ public class MenuBar {
 	}
 
 	@Keyword
-	def refreshActivityUntilRecordCountIncreases(String moduleName, int originalCount, int timeout, String... modulePath) {
-
-		//		int originalCount = getRecordCountInActivity(moduleName, modulePath)
+	def refreshActivityUntilRecordCountIncreases(int originalCount, int timeout, String moduleName, String... modulePath) {
+		//int originalCount = getRecordCountInActivity(element)
 		int currentCount = originalCount
 		boolean hasRecordCountIncreased = false
 
@@ -95,14 +94,12 @@ public class MenuBar {
 		while(currentTime < endTime) {
 			println "Original Count = "+originalCount+"currentCount = "+currentCount
 			if(originalCount < 0 || currentCount < 0 || currentCount <= originalCount) {
-				//				WebUI.rightClick(element)
-				//				WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/My_Work/contextMenu_Refresh'), GlobalVariable.G_SmallTimeout)
-				//				WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/contextMenu_Refresh'))
-				//				WebUI.waitForJQueryLoad(GlobalVariable.G_SmallTimeout)
+
 				rightClickTreeMenu(moduleName, modulePath)
+				WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/contextMenu'), GlobalVariable.G_SmallTimeout)
 				new ContextMenu().clickOption(findTestObject('Page_nGage_Dashboard/contextMenuOptions'), 'Refresh')
 				WebUI.waitForJQueryLoad(GlobalVariable.G_SmallTimeout)
-				WebUI.delay(5)
+				WebUI.delay(3)
 				currentCount = getRecordCountInActivity(moduleName, modulePath)
 				currentTime = System.currentTimeMillis()
 			}
@@ -238,7 +235,7 @@ public class MenuBar {
 
 		treeXpath.append("/ul/li/a[starts-with(normalize-space(text()),'"+menuPath[size-1]+appendBrace+"')]")
 		//treeXpath.append("/ul/li/a[starts-with(normalize-space(text()),'"+path+appendBrace+"')]")
-			
+
 		WebDriver driver = DriverFactory.getWebDriver()
 		driver.findElement(By.xpath(treeXpath.toString())).click()
 	}

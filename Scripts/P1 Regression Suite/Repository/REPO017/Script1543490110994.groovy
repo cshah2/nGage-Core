@@ -12,10 +12,14 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
+import utils.Consts
 import utils.DateUtil
 
 'Login into application'
 CustomKeywords.'actions.Common.login'()
+
+'Create Document'
+CustomKeywords.'actions.Common.createDocument_RequiredFieldDT'(Consts.P1_REPO_BMTEXT_DOC1, Consts.P1_REPO_BMSTRING_DOC1, Consts.P1_REPO_INT_DOC1, Consts.P1_REPO_DATETIMEREQ_DOC1, Consts.P1_REPO_DATEREQ_DOC1)
 
 'Expand Repository Menu'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Repository/h3_Repository Menu'))
@@ -30,11 +34,14 @@ WebUI.selectOptionByLabel(findTestObject('Page_nGage_Dashboard/Repository/select
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
 
 'Enter data in required field'
-WebUI.setText(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/inpur_BM_String_Required'), 'test')
+WebUI.setText(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/inpur_BM_String_Required'), Consts.P1_REPO_BMSTRING_DOC1)
 
 'Enter date in required field'
-WebUI.setText(findTestObject('Page_nGage_Dashboard/Repository/input_BM_DateFrom_Required'), '10-01-2017')
-WebUI.setText(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/input_BM_DateTo_Required'), '11-30-2018')
+CustomKeywords.'actions.Common.setText_Date'(findTestObject('Page_nGage_Dashboard/Repository/input_BM_DateFrom_Required'), Consts.P1_REPO_DATEREQ_DOC1)
+CustomKeywords.'actions.Common.setText_Date'(findTestObject('Page_nGage_Dashboard/Repository/input_BM_DateTo_Required'), Consts.P1_REPO_DATEREQ_DOC1)
+
+//WebUI.setText(findTestObject('Page_nGage_Dashboard/Repository/input_BM_DateFrom_Required'), '10-01-2017')
+//WebUI.setText(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/input_BM_DateTo_Required'), '11-30-2018')
 
 'Click on Search button'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Repository/input_btnSearch'))
