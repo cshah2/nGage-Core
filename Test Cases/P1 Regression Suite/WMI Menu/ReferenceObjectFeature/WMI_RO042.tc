@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>28538 Regression test WMI - Reference Grid feature-Reference Grid (hidedownload-false)</description>
+   <name>WMI_RO042</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>626a1098-f5ce-4e02-b9cc-37a34aaac2f7</testCaseGuid>
+</TestCaseEntity>

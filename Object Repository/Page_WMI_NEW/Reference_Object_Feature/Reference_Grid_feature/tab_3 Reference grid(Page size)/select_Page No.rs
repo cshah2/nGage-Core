@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>select_Page No</name>
+   <tag></tag>
+   <elementGuidId>7404a926-e1b5-4687-add0-49ed059835d3</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>XPATH</key>
+         <value>//select[@id='eform_mcb67676_TabContainer_4_TabRef_3_phBO_6_BO_grc_ctl01_PageDropDownList']</value>
+      </entry>
+      <entry>
+         <key>BASIC</key>
+         <value>//select[@id = 'eform_mcb67676_TabContainer_4_TabRef_3_phBO_6_BO_grc_ctl01_PageDropDownList' and @ref_element = 'Object Repository/Page_WMI_NEW/Reference_Object_Feature/Reference_Grid_feature/tab_3 Reference grid(Page size)/iframe_Close Window_ContentPlaceHolder']</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>BASIC</selectorMethod>
+   <useRalativeImagePath>false</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>tag</name>
+      <type>Main</type>
+      <value>select</value>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>name</name>
+      <type>Main</type>
+      <value>eform_mcb67676$TabContainer_4$TabRef_3$phBO_6_BO$grc$ctl01$PageDropDownList</value>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>onchange</name>
+      <type>Main</type>
+      <value>javascript:setTimeout('__doPostBack(\'eform_mcb67676$TabContainer_4$TabRef_3$phBO_6_BO$grc$ctl01$PageDropDownList\',\'\')', 0)</value>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>id</name>
+      <type>Main</type>
+      <value>eform_mcb67676_TabContainer_4_TabRef_3_phBO_6_BO_grc_ctl01_PageDropDownList</value>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>text</name>
+      <type>Main</type>
+      <value>
+														1
+														2
+														3
+														4
+														5
+														6
+														7
+														8
+														9
+														10
+														11
+														12
+														13
+														14
+														15
+														16
+														17
+														18
+														19
+
+													</value>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>id(&quot;eform_mcb67676_TabContainer_4_TabRef_3_phBO_6_BO_grc_ctl01_PageDropDownList&quot;)</value>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>ref_element</name>
+      <type>Main</type>
+      <value>Object Repository/Page_WMI_NEW/Reference_Object_Feature/Reference_Grid_feature/tab_3 Reference grid(Page size)/iframe_Close Window_ContentPlaceHolder</value>
+   </webElementProperties>
+   <webElementXpaths>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:attributes</name>
+      <value>//select[@id='eform_mcb67676_TabContainer_4_TabRef_3_phBO_6_BO_grc_ctl01_PageDropDownList']</value>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:idRelative</name>
+      <value>//div[@id='eform_mcb67676_TabContainer_4_TabRef_3_phBO_6_BO_grc_ctl01_pagerDiv']/select</value>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='* Duplicate values will be ignored.'])[3]/following::select[1]</value>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='of 19'])[2]/preceding::select[1]</value>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='>'])[3]/preceding::select[1]</value>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:position</name>
+      <value>//div[3]/table/tbody/tr/td/div[2]/div/fieldset/table/tbody/tr[3]/td/div[2]/div/table/tbody/tr/td/table/tbody/tr/td/div[2]/select</value>
+   </webElementXpaths>
+</WebElementEntity>
