@@ -3,6 +3,8 @@
    <description>28598 Regression Test WMI- Reference Object ImportMode AutoCreate ( importmode=&quot;Autocreate&quot; with no filter)</description>
    <name>WMIROF013</name>
    <tag></tag>
-   <comment></comment>
+   <comment>navigate to recent docs
+refresh recent docs
+sort desc</comment>
    <testCaseGuid>51c1964f-b7a8-4629-8cf3-54ce1124c757</testCaseGuid>
 </TestCaseEntity>
