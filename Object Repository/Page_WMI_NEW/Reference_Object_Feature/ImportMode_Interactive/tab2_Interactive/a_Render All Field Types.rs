@@ -1,77 +1,89 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>table_ResultGrid</name>
+   <name>a_Render All Field Types</name>
    <tag></tag>
-   <elementGuidId>a489d280-fb9c-4ce5-a100-2f29f75d3c10</elementGuidId>
+   <elementGuidId>a1dadc2c-1b09-408a-8717-92d91a95dfac</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//span[(text() = '2) SingleResultView' or . = '2) SingleResultView') and @ref_element = 'Object Repository/Page_WMI_NEW/Reference_Object_Feature/Single_Result_view/iframe_Close Window_ContentPla']</value>
+         <value>//a[(text() = 'Render All Field Types' or . = 'Render All Field Types') and @ref_element = 'Object Repository/Page_WMI_NEW/Reference_Object_Feature/ImportMode_Interactive/tab2_Interactive/iframe_Close Window_ContentPla']</value>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//table[@id='eform_mcb67676_TabContainer_4_TabRef_2_phBO_5_BO_grc']</value>
+         <value>//li[@id='inlineMenu_85c28382_9335_4c32_9271_9205165038ba_Submenu_2']/a</value>
       </entry>
    </selectorCollection>
-   <selectorMethod>XPATH</selectorMethod>
+   <selectorMethod>BASIC</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
    <webElementProperties>
       <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
       <name>tag</name>
       <type>Main</type>
-      <value>span</value>
+      <value>a</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
       <name>text</name>
       <type>Main</type>
-      <value>2) SingleResultView</value>
+      <value>Render All Field Types</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>id(&quot;__tab_eform_mcb67676_TabContainer_4_TabRef_2&quot;)/span[1]</value>
+      <value>id(&quot;inlineMenu_85c28382_9335_4c32_9271_9205165038ba_Submenu_2&quot;)/a[1]</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
       <name>ref_element</name>
       <type>Main</type>
-      <value>Object Repository/Page_WMI_NEW/Reference_Object_Feature/Single_Result_view/iframe_Close Window_ContentPla</value>
+      <value>Object Repository/Page_WMI_NEW/Reference_Object_Feature/ImportMode_Interactive/tab2_Interactive/iframe_Close Window_ContentPla</value>
    </webElementProperties>
    <webElementXpaths>
       <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:idRelative</name>
-      <value>//a[@id='__tab_eform_mcb67676_TabContainer_4_TabRef_2']/span</value>
+      <value>//li[@id='inlineMenu_85c28382_9335_4c32_9271_9205165038ba_Submenu_2']/a</value>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:link</name>
+      <value>(//a[contains(text(),'Render All Field Types')])[2]</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:neighbor</name>
-      <value>(.//*[normalize-space(text()) and normalize-space(.)='* Duplicate values will be ignored.'])[1]/following::span[9]</value>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='New'])[2]/following::a[1]</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:neighbor</name>
-      <value>(.//*[normalize-space(text()) and normalize-space(.)='Sample Section'])[1]/preceding::span[11]</value>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='* Duplicate values will be ignored.'])[2]/following::a[2]</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:neighbor</name>
-      <value>(.//*[normalize-space(text()) and normalize-space(.)='Action'])[1]/preceding::span[11]</value>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Render As CheckBox'])[2]/preceding::a[1]</value>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Render As Label'])[7]/preceding::a[2]</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:position</name>
-      <value>//span[2]/span/span/a/span</value>
+      <value>//div[2]/table/tbody/tr/td/div[2]/div/fieldset/table/tbody/tr[3]/td/div[2]/div/table/tbody/tr/td/table/tbody/tr/td/div/div/ul/li/ul/li/a</value>
    </webElementXpaths>
 </WebElementEntity>

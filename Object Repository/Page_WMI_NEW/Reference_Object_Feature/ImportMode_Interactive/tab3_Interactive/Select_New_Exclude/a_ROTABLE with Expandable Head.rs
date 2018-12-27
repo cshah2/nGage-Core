@@ -1,77 +1,79 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>table_ResultGrid</name>
+   <name>a_ROTABLE with Expandable Head</name>
    <tag></tag>
-   <elementGuidId>a489d280-fb9c-4ce5-a100-2f29f75d3c10</elementGuidId>
-   <selectorCollection>
-      <entry>
-         <key>BASIC</key>
-         <value>//span[(text() = '2) SingleResultView' or . = '2) SingleResultView') and @ref_element = 'Object Repository/Page_WMI_NEW/Reference_Object_Feature/Single_Result_view/iframe_Close Window_ContentPla']</value>
-      </entry>
-      <entry>
-         <key>XPATH</key>
-         <value>//table[@id='eform_mcb67676_TabContainer_4_TabRef_2_phBO_5_BO_grc']</value>
-      </entry>
-   </selectorCollection>
-   <selectorMethod>XPATH</selectorMethod>
+   <elementGuidId>9f83b71a-2018-47cf-bae7-1f20b2e03bdc</elementGuidId>
+   <selectorMethod>BASIC</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
    <webElementProperties>
       <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
       <name>tag</name>
       <type>Main</type>
-      <value>span</value>
+      <value>a</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
       <name>text</name>
       <type>Main</type>
-      <value>2) SingleResultView</value>
+      <value>ROTABLE with Expandable Header Ref Objects WithTab</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>id(&quot;__tab_eform_mcb67676_TabContainer_4_TabRef_2&quot;)/span[1]</value>
+      <value>id(&quot;inlineMenu_bea445bf_4e8e_4f71_a21c_2eb9970c5b55_Submenu_55&quot;)/a[1]</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
       <name>ref_element</name>
       <type>Main</type>
-      <value>Object Repository/Page_WMI_NEW/Reference_Object_Feature/Single_Result_view/iframe_Close Window_ContentPla</value>
+      <value>Object Repository/Page_WMI_NEW/Reference_Object_Feature/ImportMode_Interactive/tab3_Interactive/Select_New_Exclude/iframe_Close Window_ContentPla</value>
    </webElementProperties>
    <webElementXpaths>
       <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:idRelative</name>
-      <value>//a[@id='__tab_eform_mcb67676_TabContainer_4_TabRef_2']/span</value>
+      <value>//li[@id='inlineMenu_bea445bf_4e8e_4f71_a21c_2eb9970c5b55_Submenu_55']/a</value>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:link</name>
+      <value>//a[contains(text(),'ROTABLE with Expandable Header Ref Objects WithTab')]</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:neighbor</name>
-      <value>(.//*[normalize-space(text()) and normalize-space(.)='* Duplicate values will be ignored.'])[1]/following::span[9]</value>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='ROTABLE with Expandable Header Ref Objects WithoutTab'])[1]/following::a[1]</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:neighbor</name>
-      <value>(.//*[normalize-space(text()) and normalize-space(.)='Sample Section'])[1]/preceding::span[11]</value>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='ROTABLE with Expandable Header Ref Object WithoutTab'])[1]/following::a[2]</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:neighbor</name>
-      <value>(.//*[normalize-space(text()) and normalize-space(.)='Action'])[1]/preceding::span[11]</value>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='ROTABLE with Expandable Header RefObj WithTab'])[1]/preceding::a[1]</value>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='ROTABLE with Shownewmenuinheader in tab'])[1]/preceding::a[2]</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:position</name>
-      <value>//span[2]/span/span/a/span</value>
+      <value>//li[54]/a</value>
    </webElementXpaths>
 </WebElementEntity>

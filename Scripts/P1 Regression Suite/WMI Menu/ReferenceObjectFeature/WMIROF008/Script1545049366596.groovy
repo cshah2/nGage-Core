@@ -31,9 +31,11 @@ WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 
 'Click on tab 2) SingleResultView'
 WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Single_Result_view/tab2_SingleResultView/span_2) SingleResultView'))
-WebUI.delay(5)
+CustomKeywords.'actions.Common.waitForTabLoading'(null, GlobalVariable.G_LongTimeout)
+
+
+String rowCount =CustomKeywords.'actions.Table.getRowsCount'(findTestObject('Page_WMI_NEW/Reference_Object_Feature/Single_Result_view/tab2_SingleResultView/table_ResultGrid'))
+println rowCount
 
 'Verify Single document should be display in refrence grid '
-println "Row Count = "+CustomKeywords.'actions.Table.getRowsCount'(findTestObject('Page_WMI_NEW/Reference_Object_Feature/Single_Result_view/tab2_SingleResultView/table_ResultGrid'))
-
-println 'dropdownCount='+WebUI.getText(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Single_Result_view/tab2_SingleResultView/select_dropdown'))
+WebUI.verifyOptionSelectedByLabel(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Single_Result_view/tab2_SingleResultView/select_dropdown'), rowCount, false, GlobalVariable.G_LongTimeout)

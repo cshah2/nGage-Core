@@ -12,14 +12,13 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
-import utils.DateUtil
 
 'Login Into Application'
 CustomKeywords.'actions.Common.login'()
 
 'Create a new Refrence Object Feature Document'
 WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))
-CustomKeywords.'actions.Common.selectDocClassAndDocTypeForGlobalNew'('Reference Object Feature', 'Reference Object ImportMode Interactive')
+CustomKeywords.'actions.Common.selectDocClassAndDocTypeForGlobalNew'('Reference Object Feature', 'Reference Object CustomButton')
 WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'), GlobalVariable.G_LongTimeout)
 WebUI.click(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'))
 
@@ -31,12 +30,11 @@ WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feat
 WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 WebUI.switchToWindowIndex(1)
 
-
 String windowTitle= WebUI.getWindowTitle()
 String[] str_array = windowTitle.split("-")
 String windowTitleAfterSave = str_array[0].trim()
 
-'Close Window() And if Error Present in Document, it will not get Closed'
+'Close Window() and If Error Present Document will not get Close'
 CustomKeywords.'actions.Window.clickElementAndWaitForWindowClose'(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/ImportMode_Interactive/span_Close Window'), GlobalVariable.G_LongTimeout)
 
 'Switch to parent window'
@@ -50,61 +48,49 @@ CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Da
 'Sort records DocID Descending'
 CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Object Repository/Page_nGage_Dashboard/Home/column_RecentDocuments DocID'))
 CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Object Repository/Page_nGage_Dashboard/Home/column_RecentDocuments DocID'))
-CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/iframe_iframe_103'))
 
 String columnNameofSavedDoc = CustomKeywords.'actions.Table.getCellText'(findTestObject('Object Repository/Page_nGage_Dashboard/Home/table_MyDocumentResults'), 1,4)
-println windowTitleAfterSave
 
-'Verify Document Saved in Recent Document'
-WebUI.verifyMatch(columnNameofSavedDoc, windowTitleAfterSave,true)
-
-'Open recent document'
-CustomKeywords.'actions.Table.clickCell'(findTestObject('Object Repository/Page_nGage_Dashboard/Home/table_MyDocumentResults'), 1, 7)
-WebUI.switchToWindowIndex(1)
-WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
-
-'Click on tab 1) Interactive'
-WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/ImportMode_Interactive/tab1_Interactive/span_1) INTERACTIVE'))
-CustomKeywords.'actions.Common.waitForTabLoading'(null, GlobalVariable.G_LongTimeout)
-
-'Select from Dropdown'
-WebUI.mouseOver(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/ImportMode_Interactive/tab1_Interactive/select_New'))
-WebUI.waitForElementVisible(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/ImportMode_Interactive/tab1_Interactive/option_RenderAllFieldsTypes'), GlobalVariable.G_LongTimeout)
-WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/ImportMode_Interactive/tab1_Interactive/option_RenderAllFieldsTypes'))
-CustomKeywords.'actions.Common.waitForTabLoading'(null, GlobalVariable.G_LongTimeout)
-
-String BMTextBeforeSave = 'Text - '+DateUtil.getCurrentDateTime('MM-dd-yyyy HH:mm:ss a')
-
-'Set text in BM String'
-CustomKeywords.'actions.Common.setTextJQuery'(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/ImportMode_Interactive/tab1_Interactive/tab1_dropdown_InlineForm/input_BM String'), BMTextBeforeSave)
-
-'Set Date'
-CustomKeywords.'actions.Common.setText_Date'(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/ImportMode_Interactive/tab1_Interactive/tab1_dropdown_InlineForm/input__DateTimeField_refGrid'),DateUtil.getCurrentDateTime('MM-dd-yyyy HH:mm:ss a'))
-
-'Click on Save from reference Object'
-WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/ImportMode_Interactive/tab1_Interactive/tab1_dropdown_InlineForm/input_Save'))
-
-'Switch to parent window'
-CustomKeywords.'actions.Window.clickElementAndWaitForWindowClose'(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/ImportMode_Interactive/span_Close Window'), GlobalVariable.G_LongTimeout)
-WebUI.switchToWindowIndex(0)
-
-'Navigate to Recent Document'
-CustomKeywords.'actions.MenuBar.clickTreeMenu'('HOME', 'Recent Documents')
-CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/iframe_iframe_103'))
-
-'Refresh Recent Documents'
-WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/Home/span_Refresh Grid'))
+'Verify Document Saved'
+WebUI.verifyMatch(columnNameofSavedDoc, windowTitleAfterSave,false)
 
 'Open recent document'
 CustomKeywords.'actions.Table.clickCell'(findTestObject('Object Repository/Page_nGage_Dashboard/Home/table_MyDocumentResults'), 1, 7)
 WebUI.switchToWindowIndex(1)
 WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
-println BMTextBeforeSave
-String BMStringAfterSave=WebUI.getAttribute(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/ImportMode_Interactive/tab1_Interactive/tab1_dropdown_InlineForm/input_StringField'),'value')
 
-println BMStringAfterSave
+'Verify Saved Document Opened'
+WebUI.verifyElementPresent(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/CustomButton/tab1_CustomButtons/span_Business Model View - Ref'),GlobalVariable.G_LongTimeout)
+WebUI.verifyElementPresent(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/CustomButton/tab1_CustomButtons/span_This WMI imparts Referenc'),GlobalVariable.G_LongTimeout)
 
-'Verify Document got Saved in Recent Document'
-WebUI.verifyMatch(BMTextBeforeSave, BMStringAfterSave, false)
+'Click On Tab 1'
+WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/CustomButton/tab1_CustomButtons/span_1) Custom Buttons'))
+CustomKeywords.'actions.Common.waitForTabLoading'(null, GlobalVariable.G_LongTimeout)
 
+'Verify Document should be displayed in reference grid'
+WebUI.verifyElementPresent(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/CustomButton/tab1_CustomButtons/input_ Duplicate values will b'),GlobalVariable.G_LongTimeout )
+
+'Select mutiple check boxes from grid'
+WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/CustomButton/tab1_CustomButtons/input_BM Text_eform_mcb67676Ta'))
+WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/CustomButton/tab1_CustomButtons/input_Label Control_eform_mcb6'))
+WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/CustomButton/tab1_CustomButtons/input_You selected Option 1_ef'))
+
+'Verify selected check boxes should be check'
+WebUI.verifyElementChecked(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/CustomButton/tab1_CustomButtons/input_BM Text_eform_mcb67676Ta'),GlobalVariable.G_LongTimeout)
+WebUI.verifyElementChecked(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/CustomButton/tab1_CustomButtons/input_Label Control_eform_mcb6'),GlobalVariable.G_LongTimeout)
+WebUI.verifyElementChecked(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/CustomButton/tab1_CustomButtons/input_You selected Option 1_ef'),GlobalVariable.G_LongTimeout)
+
+'Click on Custom Button Google'
+WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/CustomButton/tab1_CustomButtons/input_ Duplicate values will b'))
+WebUI.switchToWindowIndex(2)
+WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+
+'Verify Google page should be open in new window'
+println WebUI.getUrl()
+String windowUrl= WebUI.getUrl()
+String[] str_url = windowUrl.split("=")
+String googleUrlAfterClick = str_url[0].trim()
+
+println googleUrlAfterClick
+WebUI.verifyMatch(googleUrlAfterClick, 'https://www.google.com/?id', false)
 

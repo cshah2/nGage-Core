@@ -31,12 +31,11 @@ WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feat
 WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 WebUI.switchToWindowIndex(1)
 
-
 String windowTitle= WebUI.getWindowTitle()
 String[] str_array = windowTitle.split("-")
 String windowTitleAfterSave = str_array[0].trim()
 
-'Close Window() And if Error Present in Document, it will not get Closed'
+'Close Window() and If Error Present Document will not get Close'
 CustomKeywords.'actions.Window.clickElementAndWaitForWindowClose'(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/ImportMode_Interactive/span_Close Window'), GlobalVariable.G_LongTimeout)
 
 'Switch to parent window'
@@ -50,61 +49,70 @@ CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Da
 'Sort records DocID Descending'
 CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Object Repository/Page_nGage_Dashboard/Home/column_RecentDocuments DocID'))
 CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Object Repository/Page_nGage_Dashboard/Home/column_RecentDocuments DocID'))
-CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/iframe_iframe_103'))
 
 String columnNameofSavedDoc = CustomKeywords.'actions.Table.getCellText'(findTestObject('Object Repository/Page_nGage_Dashboard/Home/table_MyDocumentResults'), 1,4)
-println windowTitleAfterSave
 
-'Verify Document Saved in Recent Document'
-WebUI.verifyMatch(columnNameofSavedDoc, windowTitleAfterSave,true)
+'Verify Document Saved'
+WebUI.verifyMatch(columnNameofSavedDoc, windowTitleAfterSave,false)
 
 'Open recent document'
 CustomKeywords.'actions.Table.clickCell'(findTestObject('Object Repository/Page_nGage_Dashboard/Home/table_MyDocumentResults'), 1, 7)
 WebUI.switchToWindowIndex(1)
 WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 
-'Click on tab 1) Interactive'
-WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/ImportMode_Interactive/tab1_Interactive/span_1) INTERACTIVE'))
+'Click on tab 2) Interactive'
+WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/ImportMode_Interactive/tab2_Interactive/td_2) INTERACTIVE'))
 CustomKeywords.'actions.Common.waitForTabLoading'(null, GlobalVariable.G_LongTimeout)
 
-'Select from Dropdown'
-WebUI.mouseOver(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/ImportMode_Interactive/tab1_Interactive/select_New'))
-WebUI.waitForElementVisible(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/ImportMode_Interactive/tab1_Interactive/option_RenderAllFieldsTypes'), GlobalVariable.G_LongTimeout)
-WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/ImportMode_Interactive/tab1_Interactive/option_RenderAllFieldsTypes'))
-CustomKeywords.'actions.Common.waitForTabLoading'(null, GlobalVariable.G_LongTimeout)
+'Verify only three documents will be appear In Dropdown as filter is applied -include'
+WebUI.mouseOver(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/ImportMode_Interactive/tab2_Interactive/span_New'))
+WebUI.waitForElementVisible(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/ImportMode_Interactive/tab2_Interactive/span_New (Render All Field Typ'),GlobalVariable.G_LongTimeout)
+WebUI.mouseOver(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/ImportMode_Interactive/tab2_Interactive/span_New'))
+WebUI.waitForElementVisible(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/ImportMode_Interactive/tab2_Interactive/Select_RenderAsCheckBox'), 0)
+WebUI.mouseOver(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/ImportMode_Interactive/tab2_Interactive/span_New'))
+WebUI.waitForElementVisible(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/ImportMode_Interactive/tab2_Interactive/Select_RenderAsLabel'), 0)
 
-String BMTextBeforeSave = 'Text - '+DateUtil.getCurrentDateTime('MM-dd-yyyy HH:mm:ss a')
+'Select From dropdown'
+WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/ImportMode_Interactive/tab2_Interactive/span_New (Render All Field Typ'))
 
-'Set text in BM String'
-CustomKeywords.'actions.Common.setTextJQuery'(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/ImportMode_Interactive/tab1_Interactive/tab1_dropdown_InlineForm/input_BM String'), BMTextBeforeSave)
+'Verify Document opening in Inline Mode'
+String verifyTextofDescription =WebUI.getText(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/ImportMode_Interactive/tab2_Interactive/div_Description'))
+WebUI.verifyElementPresent(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/ImportMode_Interactive/tab2_Interactive/div_Description'),GlobalVariable.G_LongTimeout)
+WebUI.verifyElementPresent(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/ImportMode_Interactive/tab2_Interactive/input_String Field (with onfoc'),GlobalVariable.G_LongTimeout)
 
-'Set Date'
-CustomKeywords.'actions.Common.setText_Date'(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/ImportMode_Interactive/tab1_Interactive/tab1_dropdown_InlineForm/input__DateTimeField_refGrid'),DateUtil.getCurrentDateTime('MM-dd-yyyy HH:mm:ss a'))
+String BMText = 'Text - '+DateUtil.getCurrentDateTime('MM-dd-yyyy HH:mm:ss a')
+println BMText
 
-'Click on Save from reference Object'
-WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/ImportMode_Interactive/tab1_Interactive/tab1_dropdown_InlineForm/input_Save'))
+'Set Value in String Field'
+CustomKeywords.'actions.Common.setTextJQuery'(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/ImportMode_Interactive/tab2_Interactive/input_String Field (with onfoc'), BMText)
+
+'Click on Save from Reference Object'
+WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/ImportMode_Interactive/tab2_Interactive/input_New (Render All Field Ty'))
+
+'Close Window'
+CustomKeywords.'actions.Window.clickElementAndWaitForWindowClose'(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/ImportMode_Interactive/span_Close Window'), GlobalVariable.G_LongTimeout)
 
 'Switch to parent window'
-CustomKeywords.'actions.Window.clickElementAndWaitForWindowClose'(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/ImportMode_Interactive/span_Close Window'), GlobalVariable.G_LongTimeout)
 WebUI.switchToWindowIndex(0)
 
 'Navigate to Recent Document'
 CustomKeywords.'actions.MenuBar.clickTreeMenu'('HOME', 'Recent Documents')
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/iframe_iframe_103'))
 
-'Refresh Recent Documents'
+'Refresh Recent Document'
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/Home/span_Refresh Grid'))
 
-'Open recent document'
+'Get Document Title of recent Saved Document'
+String documentTitleInRecentDocuments =CustomKeywords.'actions.Table.getCellText'(findTestObject('Object Repository/Page_nGage_Dashboard/Home/table_MyDocumentResults'), 1, 3)
+
+'Click on Recent Document'
 CustomKeywords.'actions.Table.clickCell'(findTestObject('Object Repository/Page_nGage_Dashboard/Home/table_MyDocumentResults'), 1, 7)
 WebUI.switchToWindowIndex(1)
 WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
-println BMTextBeforeSave
-String BMStringAfterSave=WebUI.getAttribute(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/ImportMode_Interactive/tab1_Interactive/tab1_dropdown_InlineForm/input_StringField'),'value')
 
-println BMStringAfterSave
+'Get title of Window after Save'
+String windowTitleAfterDocumentSave = WebUI.getWindowTitle()
+println 'Window title='+windowTitleAfterDocumentSave
 
-'Verify Document got Saved in Recent Document'
-WebUI.verifyMatch(BMTextBeforeSave, BMStringAfterSave, false)
-
-
+'Verify Saved Document should view in Recent Document'
+WebUI.verifyMatch(windowTitleAfterDocumentSave,documentTitleInRecentDocuments.replaceAll('  ', ' '), false)
