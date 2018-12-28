@@ -6,12 +6,12 @@
    <elementGuidId>4b21a2c1-4793-44b7-9acb-89e5d0516189</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>BASIC</key>
-         <value>//input[@id = 'BM___DateTime' and @ref_element = 'Object Repository/Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe']</value>
+         <key>XPATH</key>
+         <value>//table[@id='TableControls']//td/span[normalize-space(text())='Date time range']/../../td/input[1]</value>
       </entry>
       <entry>
-         <key>XPATH</key>
-         <value>//table[@id='TableControls']//input[@id='Date___time___range_1']</value>
+         <key>BASIC</key>
+         <value>//input[@id = 'BM___DateTime' and @ref_element = 'Object Repository/Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

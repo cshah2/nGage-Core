@@ -201,7 +201,7 @@ public class Consts {
 	public static final String P1_MW_PROCESSFORTASK_CUSTOMERNAME_DOC8 = 'Chintan Shah'
 	public static final String P1_MW_PROCESSFORTASK_CUSTOMERDESC_DOC8 = 'Assigned'
 	public static String P1_MW_PROCESSFORTASK_DOCID_DOC8
-
+	
 	/*
 	 * Doc Class and Doc Type Variables
 	 */
@@ -218,3 +218,4 @@ public class Consts {
 	public static final String DC_DATETIMERANGEREQUIRED = 'Datetimerangerequired'
 	public static final String DT_DATETIMERANGEREQUIRED = 'Datetimerangerequired'
 }
+

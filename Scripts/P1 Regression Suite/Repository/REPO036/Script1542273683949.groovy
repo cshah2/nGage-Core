@@ -16,6 +16,9 @@ import internal.GlobalVariable as GlobalVariable
 'Login Into Application'
 CustomKeywords.'actions.Common.login'()
 
+'Create Document render all fields'
+CustomKeywords.'actions.Common.createDocument_RenderAllField'('10', 'CShah', '', '', '01-01-2020', '', '', '', '', '', '')
+
 'Expand Repository Menu'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Repository/h3_Repository Menu'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
@@ -30,7 +33,7 @@ CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Da
 
 'Enter Only End Date in Search field'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Repository/input_BM___Date_From'))
-WebUI.setText(findTestObject('Page_nGage_Dashboard/Repository/input_BM___Date_From'), '12-12-2018')
+WebUI.setText(findTestObject('Page_nGage_Dashboard/Repository/input_BM___Date_From'), '01-01-2020')
 
 'Click on Search button'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Repository/input_btnSearch'))
@@ -45,4 +48,4 @@ WebUI.waitForElementVisible(findTestObject('Object Repository/Page_nGage_Dashboa
 
 String toolTipValue = WebUI.getText(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/BrowseResults Tab/Browser_ToolTip')).trim()
 WebUI.verifyMatch(toolTipValue, '.*Business Model - Business Model.*', true)
-WebUI.verifyMatch(toolTipValue, '.*BM Date >= 12/12/2018.*', true)
+WebUI.verifyMatch(toolTipValue, '.*BM Date >= 01-01-2020.*', true)
