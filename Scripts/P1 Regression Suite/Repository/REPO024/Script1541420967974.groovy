@@ -13,35 +13,46 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
+//Note: Checked with Manoj, Record count in folder gets updated when user peforms refresh on parent folder.
+
 'Login Into Application'
 CustomKeywords.'actions.Common.login'()
+
+'Create Document render all fields'
+CustomKeywords.'actions.Common.createDocument_RenderAllField'('10', 'CShah', '', '', '', '', '', '', '', '', '')
 
 'Expand Repository Menu'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Repository/h3_Repository Menu'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
 
 'Click Repository'
-CustomKeywords.'actions.MenuBar.clickTreeMenu'('REPO', 'Business Model', 'Business Model', 'BM Ref ROTABLE Nested without Tab')
-CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
+CustomKeywords.'actions.MenuBar.clickTreeMenu'('REPO', 'Business Model', 'Business Model', 'Render All Field Types', 'Chintan Shah')
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/BrowseResults Tab/iframe_BROWSETAB_iframe'))
 
 'Get Activity Record counts'
-int activityRecordCountBefore = CustomKeywords.'actions.MenuBar.getRecordCountInActivity'('REPO', 'Business Model', 'Business Model', 'BM Ref ROTABLE Nested without Tab')
+int activityRecordCountBefore = CustomKeywords.'actions.MenuBar.getRecordCountInActivity'('REPO', 'Business Model', 'Business Model', 'Render All Field Types', 'Chintan Shah')
 
 'Verify Record count in actvity matches with record count in grid'
 CustomKeywords.'actions.Common.verifyTotalRecordCountFromPageSummary'(findTestObject('Page_nGage_Dashboard/Repository/BrowseResults Tab/Table_PageResults'), activityRecordCountBefore)
 
-//TODO: Add new record and check count increases by 1 after refresh
+'Create another Ddocument render all fields'
+CustomKeywords.'actions.Common.createDocument_RenderAllField'('20', 'AMirvankar', '', '', '', '', '', '', '', '', '')
 
-'Right click on BM Ref ROTABLE Nested without Tab from Business Model Sub Menu'
-CustomKeywords.'actions.MenuBar.rightClickTreeMenu'('REPO', 'Business Model', 'Business Model', 'BM Ref ROTABLE Nested without Tab')
+'Right click on Render All Field Types Sub Menu'
+CustomKeywords.'actions.MenuBar.rightClickTreeMenu'('REPO', 'Business Model', 'Business Model', 'Render All Field Types')
+WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 CustomKeywords.'actions.ContextMenu.clickOption'(findTestObject('Page_nGage_Dashboard/contextMenuOptions'), 'Refresh')
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
+'Click Repository'
+CustomKeywords.'actions.MenuBar.clickTreeMenu'('REPO', 'Business Model', 'Business Model', 'Render All Field Types', 'Chintan Shah')
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/BrowseResults Tab/iframe_BROWSETAB_iframe'))
+
 'Get Activity Record counts'
-int activityRecordCountAfter = CustomKeywords.'actions.MenuBar.getRecordCountInActivity'('REPO', 'Business Model', 'Business Model', 'BM Ref ROTABLE Nested without Tab')
+int activityRecordCountAfter = CustomKeywords.'actions.MenuBar.getRecordCountInActivity'('REPO', 'Business Model', 'Business Model', 'Render All Field Types', 'Chintan Shah')
 
 'Verify Record count in actvity matches with record count in grid'
-CustomKeywords.'actions.Common.verifyTotalRecordCountFromPageSummary'(findTestObject('Page_nGage_Dashboard/Repository/BrowseResults Tab/Table_PageResults'), activityRecordCountBefore)
+CustomKeywords.'actions.Common.verifyTotalRecordCountFromPageSummary'(findTestObject('Page_nGage_Dashboard/Repository/BrowseResults Tab/Table_PageResults'), activityRecordCountAfter)
 
 'Verify Before and After count'
-WebUI.verifyEqual(activityRecordCountBefore, activityRecordCountAfter)
+WebUI.verifyEqual(activityRecordCountAfter, activityRecordCountBefore+1)

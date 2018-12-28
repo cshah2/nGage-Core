@@ -998,4 +998,46 @@ public class Common {
 		WebUI.verifyEqual(elements.size(), expCount)
 		
 	}
+	
+	@Keyword
+	def createDocument_RenderAllField(String integerField, String stringFieldOnFocusAttr, String stringFieldLookup,
+		String currencyField, String dateField, String floatField, String smallIntField, String textField,
+		String dateTimeField, String stringField, String extNameField) {
+		
+		'Switch to main window'
+		WebUI.switchToWindowTitle('Savana nGage')
+
+		'Create a new BovDocTwoRow Document'
+		WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))
+		selectDocClassAndDocTypeForGlobalNew('Master Object Feature', 'Render All Field Types')
+		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'))
+
+		'Switch to new Window'
+		WebUI.switchToWindowTitle('(Doc ID: NEW )')
+		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+
+		'Fill the details required'
+		WebUI.setText(findTestObject('Page_WMI_NEW/Master_Object/input_Integer Field'), integerField)	//Integer field
+		WebUI.setText(findTestObject('Page_WMI_NEW/Master_Object/input_String Field (with onfocussetcursorattheend attribute)'), stringFieldOnFocusAttr)	//String Field (with onfocussetcursorattheend attribute)
+		WebUI.selectOptionByLabel(findTestObject('Page_WMI_NEW/Master_Object/select_String Field With Lookup'), stringFieldLookup, false)	//String Field With Lookup
+		WebUI.setText(findTestObject('Page_WMI_NEW/Master_Object/input_Currency Field'), currencyField)	//Currency Field
+		WebUI.sendKeys(findTestObject('Page_WMI_NEW/Master_Object/input_Currency Field'), Keys.chord(Keys.TAB))
+		WebUI.delay(2)
+		setText_Date(findTestObject('Page_WMI_NEW/Master_Object/input_Date Field'), dateField)
+		WebUI.setText(findTestObject('Page_WMI_NEW/Master_Object/input_Float Field (Precision3minval-10maxval-100)'), floatField)	//Float Field (Precision:3,minval-10,maxval-100)
+		WebUI.setText(findTestObject('Page_WMI_NEW/Master_Object/input_Small Integer Field(minval-10maxval-100)'), smallIntField)	//Small Integer Field(minval-10,maxval-100)
+		WebUI.setText(findTestObject('Page_WMI_NEW/Master_Object/input_Text Field(with onfocusselectall attribute)'), textField)	//Text Field(with onfocusselectall attribute)
+		setText_Date(findTestObject('Page_WMI_NEW/Master_Object/input_DateTime Field'), dateTimeField)	//DateTime Field
+		WebUI.setText(findTestObject('Page_WMI_NEW/Master_Object/input_String Filed'), stringField)	//String Filed
+		WebUI.setText(findTestObject('Page_WMI_NEW/Master_Object/input_Ext Name Field'), extNameField)	//Ext Name Field
+		
+		'Save details and close'
+		WebUI.click(findTestObject('Page_WMI_NEW/Master_Object/span_Save'))
+		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+		new Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI_NEW/Master_Object/span_Close Window'),GlobalVariable.G_LongTimeout)
+		
+		'Switch to main window and close'
+		WebUI.switchToWindowTitle('Savana nGage')
+		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/span_ui-button-icon-primary ui'))
+	}
 }

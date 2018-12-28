@@ -878,6 +878,32 @@ def static "actions.Common.verifyElementsCount"(
          , 	expCount)
 }
 
+def static "actions.Common.createDocument_RenderAllField"(
+    	String integerField	
+     , 	String stringFieldOnFocusAttr	
+     , 	String stringFieldLookup	
+     , 	String currencyField	
+     , 	String dateField	
+     , 	String floatField	
+     , 	String smallIntField	
+     , 	String textField	
+     , 	String dateTimeField	
+     , 	String stringField	
+     , 	String extNameField	) {
+    (new actions.Common()).createDocument_RenderAllField(
+        	integerField
+         , 	stringFieldOnFocusAttr
+         , 	stringFieldLookup
+         , 	currencyField
+         , 	dateField
+         , 	floatField
+         , 	smallIntField
+         , 	textField
+         , 	dateTimeField
+         , 	stringField
+         , 	extNameField)
+}
+
 def static "utils.DateUtil.verifyDateFilter"(
     	String operator	
      , 	String actualValue	
@@ -912,30 +938,6 @@ def static "apis.Users.verifyIsUserAccountUnlocked"(
     	int userId	) {
     (new apis.Users()).verifyIsUserAccountUnlocked(
         	userId)
-}
-
-def static "actions.ContextMenu.verifyAllOptions"(
-    	TestObject contextMenuOptions	
-     , 	String[] options	) {
-    (new actions.ContextMenu()).verifyAllOptions(
-        	contextMenuOptions
-         , 	options)
-}
-
-def static "actions.ContextMenu.verifyOptionPresent"(
-    	TestObject contextMenuOptions	
-     , 	String option	) {
-    (new actions.ContextMenu()).verifyOptionPresent(
-        	contextMenuOptions
-         , 	option)
-}
-
-def static "actions.ContextMenu.clickOption"(
-    	TestObject contextMenuOptions	
-     , 	String option	) {
-    (new actions.ContextMenu()).clickOption(
-        	contextMenuOptions
-         , 	option)
 }
 
 def static "actions.Chart.verifyNumberOfSlices"(
@@ -982,4 +984,28 @@ def static "actions.Chart.clickSlice"(
         	chartLocator
          , 	sliceNo
          , 	sliceLocator)
+}
+
+def static "actions.ContextMenu.verifyAllOptions"(
+    	TestObject contextMenuOptions	
+     , 	String[] options	) {
+    (new actions.ContextMenu()).verifyAllOptions(
+        	contextMenuOptions
+         , 	options)
+}
+
+def static "actions.ContextMenu.verifyOptionPresent"(
+    	TestObject contextMenuOptions	
+     , 	String option	) {
+    (new actions.ContextMenu()).verifyOptionPresent(
+        	contextMenuOptions
+         , 	option)
+}
+
+def static "actions.ContextMenu.clickOption"(
+    	TestObject contextMenuOptions	
+     , 	String option	) {
+    (new actions.ContextMenu()).clickOption(
+        	contextMenuOptions
+         , 	option)
 }
