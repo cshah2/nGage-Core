@@ -14,22 +14,22 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
 //TODO: Dependent on test data
-//Login into application
+'Login into application'
 CustomKeywords.'actions.Common.login'()
 
-//Click on "My Work Simplified" link
+'Click on "My Work Simplified" link'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/a_My Work Simplified'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/iframe_iframe_110'))
 
-//Select Activity 'Correspondence Generation - Correspondence' from Drop down
+'Select Activity "Correspondence Generation - Correspondence" from Drop down'
 WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/select_Auto Import Controlled'), GlobalVariable.G_LongTimeout)
 WebUI.selectOptionByLabel(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/select_Auto Import Controlled'), 'Correspondence Generation - Correspondence', false)
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/iframe_iframe_110'))
 
-//check row count of table should be 25rows
+'Verify pagination summary'
+String pageSummary = WebUI.getText(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/table_PaginationSummary'))
+WebUI.verifyMatch(pageSummary, '.*Showing 1 - 25 of.*', true)
+
+'Check row count of table should be 25rows'
 CustomKeywords.'actions.Table.checkRecordInTable'(findTestObject("Page_nGage_Dashboard/My_Work_Simplified/table_SearchResult"), 25)
-//close the browser
-
-WebUI.closeBrowser()
-
 

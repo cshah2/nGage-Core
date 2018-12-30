@@ -17,26 +17,55 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
 
-//Login into application
+'Login into application'
 CustomKeywords.'actions.Common.login'()
 
-//Click on "My Work Simplified" link
+'Create document Closure Action - Activity A'
+CustomKeywords.'actions.Common.createDocument_ClosureAction'('Chintan Shah', 'My Work Simplified - MWS006')
+
+'Click on "My Work Simplified" link'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/a_My Work Simplified'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/iframe_iframe_110'))
 
-//Select Activity 'Correspondence Generation - Correspondence' from Drop down
+'Select Activity "Closure Action - Activity A" from Drop down'
 WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/select_Auto Import Controlled'), GlobalVariable.G_LongTimeout)
-WebUI.selectOptionByLabel(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/select_Auto Import Controlled'), 'Correspondence Generation - Correspondence', false)
+WebUI.selectOptionByLabel(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/select_Auto Import Controlled'), 'Closure Action - Activity A', false)
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/iframe_iframe_110'))
 
-//Rechange the Columns
-WebUI.dragAndDropToObject(findTestObject("Object Repository/Page_nGage_Dashboard/My_Work_Simplified/div_DocID Column Header"), findTestObject("Object Repository/Page_nGage_Dashboard/My_Work_Simplified/columnHeader_processID"))
+'Click on Reset layout'
+WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/Reset Layout'))
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/iframe_iframe_110'))
+WebUI.delay(5)
+
+'Get colNo before drag and drop'
+int colNo_DocCreateDate_Before = CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/table_SearchResultHeader'), 'Doc Create Date')
+int colNo_ActivityState_Before =  CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/table_SearchResultHeader'), 'Activity State')
+
+'Drag and drop columns'
+WebUI.dragAndDropToObject(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/tableHeader_DocCreateDate'), findTestObject('Page_nGage_Dashboard/My_Work_Simplified/tableHeader_ActivityState'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/iframe_iframe_110'))
 
-//TODO: Need to add column verification logic 
+'Get colNo after drag and drop'
+int colNo_DocCreateDate_After = CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/table_SearchResultHeader'), 'Doc Create Date')
+int colNo_ActivityState_After =  CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/table_SearchResultHeader'), 'Activity State')
 
-//click on Set Layout
-
-WebUI.verifyElementPresent(findTestObject("Page_nGage_Dashboard/My_Work_Simplified/Set Layout"), GlobalVariable.G_LongTimeout)
-
+'Click on Set layout'
 WebUI.click(findTestObject("Page_nGage_Dashboard/My_Work_Simplified/Set Layout"))
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/iframe_iframe_110'))
+WebUI.delay(5)
+
+'Verify columns are switched'
+WebUI.verifyEqual(colNo_DocCreateDate_After, colNo_ActivityState_Before)
+
+'Click on Reset layout'
+WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/Reset Layout'))
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/iframe_iframe_110'))
+WebUI.delay(5)
+
+'Get colNo after reset'
+int colNo_DocCreateDate_AfterReset = CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/table_SearchResultHeader'), 'Doc Create Date')
+int colNo_ActivityState_AfterReset =  CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/table_SearchResultHeader'), 'Activity State')
+
+'Verify column positon are reset'
+WebUI.verifyEqual(colNo_DocCreateDate_AfterReset, colNo_DocCreateDate_Before)
+WebUI.verifyEqual(colNo_ActivityState_AfterReset, colNo_ActivityState_Before)
