@@ -51,7 +51,7 @@ WebUI.verifyElementVisible(findTestObject('Page_WMI_NEW/Reference_Object_Inline/
 
 'Click on New button'
 WebUI.click(findTestObject('Page_WMI_NEW/Reference_Object_Inline/button_tabInlineNew_New'))
-WebUI.delay(10) //TODO: Need to identify correct wait condition
+WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_WMI_NEW/Reference_Object_Inline/iframe_ContentPlaceHolder1_iPa'))
 
 'Verify NewDocument fields are loaded inline'

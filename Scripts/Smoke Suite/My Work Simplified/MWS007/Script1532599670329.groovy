@@ -75,7 +75,8 @@ CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Da
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/div_Open_All_Selected_Items'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/iframe_iframe_110'))
 
-//TODO: Verify total window count = 2
+'Verify open window counts'
+CustomKeywords.'actions.Window.verifyOpenWindowCount'(2)
 
 'Switch to window 1'
 WebUI.switchToWindowIndex(1)

@@ -15,7 +15,7 @@ import internal.GlobalVariable as GlobalVariable
 import utils.Consts
 import utils.DateUtil
 
-//TODO: Test case seems duplicate of MW103 - Checked with Amol
+//NOTE: Test case seems duplicate of MW103 - Checked with Amol
 
 'Login Into Application'
 CustomKeywords.'actions.Common.login'()

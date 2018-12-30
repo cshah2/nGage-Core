@@ -47,10 +47,10 @@ println "BM String value for first row in grid is : "+BMStringValue
 
 'Click on first row'
 WebUI.click(findTestObject('Page_WMI_NEW/Reference_Object_Inline/Grid2_firstRow_BMStringColumn'))
-//TODO: Need to identify better waiting condition
-WebUI.waitForElementNotVisible(findTestObject('Page_WMI_NEW/Reference_Object_Inline/div_tab2 progess icon'), GlobalVariable.G_LongTimeout)
-WebUI.waitForElementVisible(findTestObject('Page_WMI_NEW/Reference_Object_Inline/input_tab2_BMString'), GlobalVariable.G_LongTimeout)
+CustomKeywords.'actions.Common.waitForTabLoading'(findTestObject('Page_WMI_NEW/Reference_Object_Inline/iframe_ContentPlaceHolder1_iPa'), GlobalVariable.G_LongTimeout)
 
 'Validate Values in BM String and File Upload'
+WebUI.waitForElementVisible(findTestObject('Page_WMI_NEW/Reference_Object_Inline/input_tab2_BMString'), GlobalVariable.G_LongTimeout)
+
 String inputFieldValue = WebUI.getAttribute(findTestObject('Page_WMI_NEW/Reference_Object_Inline/input_tab2_BMString'), 'value')
 WebUI.verifyMatch(inputFieldValue, BMStringValue, false)

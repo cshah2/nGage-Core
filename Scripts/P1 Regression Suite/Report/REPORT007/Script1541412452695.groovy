@@ -322,7 +322,7 @@ WebUI.click(findTestObject('Page_nGage_Dashboard/Report/Data_CommonFields/ToolBa
 CustomKeywords.'actions.Common.waitForReportToLoad'(300)
 CustomKeywords.'actions.Report.verifyDesignPageIsLoaded'('V_ADM_EDM_UGROUP_SEC')
 
-//Report 34 //TODO:ReportTitle is displayed twice
+//Report 34 //NOTE:ReportTitle is displayed twice
 'Click on BPM Activity Assigned Users and UserGroups Report'
 CustomKeywords.'actions.Report.clickReport'('Administration', 'Search Management', 'BPM Activity Assigned Users and UserGroups')
 CustomKeywords.'actions.Report.verifyReportIsLoaded'('BPM Activity Assigned Users and UserGroups', 'BPM Activity Assigned Users and UserGroups', 'BPM Activity Assigned To Users and UserGroups')
