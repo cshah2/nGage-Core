@@ -16,9 +16,9 @@ import internal.GlobalVariable as GlobalVariable
 'Login into application'
 CustomKeywords.'actions.Common.login'()
 
-'Expand Repository Menu'
-WebUI.click(findTestObject('Page_nGage_Dashboard/Repository/h3_Repository Menu'))
-CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
+'Click on Repository Menu'
+WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/h3_Repository Menu'))
+WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
 'Select Repository - Advance Search tab'
 WebUI.selectOptionByLabel(findTestObject('Page_nGage_Dashboard/Repository/select_Repository Drop Down'), 'Date n Date time EDM', false)
@@ -28,13 +28,6 @@ CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Da
 WebUI.selectOptionByLabel(findTestObject('Page_nGage_Dashboard/Repository/select_Search For Drop Down'), 'Date n Date time search class', false)
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
 
-'Enter date in Date field for = date result'
-WebUI.setText(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/input_BM_Date'), '05092024')
-
-'Get the value from date field'
-String dateFieldText = WebUI.getAttribute(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/input_BM_Date'), 'value')
-println dateFieldText
-//WebUI.verifyElementText(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/input_BM_Date'), dateFieldText)
-CustomKeywords.'actions.Common.verifyDateFormat'(dateFieldText, 'MM-dd-yyyy')
-
-//TODO: Need to implement date control picker
+'Enter date using calender picker'
+CustomKeywords.'actions.Calender.selectDate'('1', 'Mar', '2020', findTestObject('Page_nGage_Dashboard/Repository/calender_DateRange_From'))
+WebUI.verifyElementAttributeValue(findTestObject('Page_nGage_Dashboard/Repository/input_DateRange_From'), 'value', '03-01-2020', GlobalVariable.G_LongTimeout)

@@ -18,15 +18,11 @@ import utils.Consts
 CustomKeywords.'actions.Common.login'()
 
 'Create new Document'
-CustomKeywords.'actions.Common.createDocument_DateTimeDT'(Consts.P1_REPO_BMDATE_DOC1, Consts.P1_REPO_DATERANGE_DOC1, Consts.P1_REPO_BMDATETIME_DOC1, Consts.P1_REPO_DATETIMERANGE_DOC1)
-CustomKeywords.'actions.Common.createDocument_DateTimeDT'(Consts.P1_REPO_BMDATE_DOC2, Consts.P1_REPO_DATERANGE_DOC2, Consts.P1_REPO_BMDATETIME_DOC2, Consts.P1_REPO_DATETIMERANGE_DOC2)
+CustomKeywords.'actions.Common.createDocument_DateTimeDT'(Consts.P1_REPO_BMDATE_DOC4, Consts.P1_REPO_DATERANGE_DOC4, Consts.P1_REPO_BMDATETIME_DOC4, Consts.P1_REPO_DATETIMERANGE_DOC4)
 
 'Click on Repository Menu'
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/h3_Repository Menu'))
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
-
-String filter_DateTimeRangeStart = Consts.P1_REPO_DATETIMERANGE_DOC1.substring(0, 10).replaceAll('/', '-').trim()+' 12:00:00 AM'
-String filter_DateTimeRangeEnd = Consts.P1_REPO_DATETIMERANGE_DOC2.substring(0, 10).replaceAll('/', '-').trim()+'  12:00:00 AM'
 
 'Select Repository - Advance Search tab'
 WebUI.selectOptionByLabel(findTestObject('Page_nGage_Dashboard/Repository/select_Repository Drop Down'), 'Date n Date time EDM', false)
@@ -40,9 +36,13 @@ CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Da
 WebUI.selectOptionByLabel(findTestObject('Page_nGage_Dashboard/Repository/select_DateTimeRange'), '=', false)
 
 'Enter date in DateTime field'
-CustomKeywords.'actions.Common.setText_Date'(findTestObject('Page_nGage_Dashboard/Repository/input_DateTimeRange_From'), filter_DateTimeRangeStart)
-CustomKeywords.'actions.Common.setText_Date'(findTestObject('Page_nGage_Dashboard/Repository/input_DateTimeRange_To'), filter_DateTimeRangeEnd)
-//TODO:Need to implement date picker control
+CustomKeywords.'actions.Calender.selectDateTime'(Consts.P1_REPO_DATETIMERANGEFROM_DATE_DOC4, Consts.P1_REPO_DATETIMERANGEFROM_MONTH_DOC4, Consts.P1_REPO_DATETIMERANGEFROM_YEAR_DOC4, findTestObject('Page_nGage_Dashboard/Repository/calender_DateTimeRange_From'))
+String datetimeFrom = WebUI.getAttribute(findTestObject('Page_nGage_Dashboard/Repository/input_DateTimeRange_From'), 'value').toUpperCase()
+WebUI.verifyMatch(datetimeFrom, Consts.P1_REPO_DATETIMERANGEFROM_DOC4, false)
+
+CustomKeywords.'actions.Calender.selectDateTime'(Consts.P1_REPO_DATETIMERANGETO_DATE_DOC4, Consts.P1_REPO_DATETIMERANGETO_MONTH_DOC4, Consts.P1_REPO_DATETIMERANGETO_YEAR_DOC4, findTestObject('Page_nGage_Dashboard/Repository/calender_DateTimeRange_To'))
+String datetimeTo = WebUI.getAttribute(findTestObject('Page_nGage_Dashboard/Repository/input_DateTimeRange_To'), 'value').toUpperCase()
+WebUI.verifyMatch(datetimeTo, Consts.P1_REPO_DATETIMERANGETO_DOC4, false)
 
 'Click on Search button'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Repository/input_btnSearch'))
@@ -54,4 +54,4 @@ CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dash
 
 'Get the cell value to verify date format'
 int colNo_DateTimeRange = CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Page_nGage_Dashboard/Repository/table_Header_SearchResults'), 'Date time range')
-CustomKeywords.'actions.Table.verifyRecordsWithinDateRange'(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/table_SearchResults'), colNo_DateTimeRange, filter_DateTimeRangeStart, filter_DateTimeRangeEnd)
+CustomKeywords.'actions.Table.verifyRecordsWithinDateRange'(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/table_SearchResults'), colNo_DateTimeRange, Consts.P1_REPO_DATETIMERANGEFROM_DOC4, Consts.P1_REPO_DATETIMERANGETO_DOC4)

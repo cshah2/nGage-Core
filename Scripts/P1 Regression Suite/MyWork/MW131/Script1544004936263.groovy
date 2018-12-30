@@ -12,27 +12,29 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
-
-//TODO: Need to implement calender picker
+import utils.Consts
 
 'Login Into Application'
 CustomKeywords.'actions.Common.login'()
 
-'Click on My Work link from left menu'
-WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_My Work Left Menu'))
-WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
+'Create a new BovDocTwoRow Document'
+WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))
+CustomKeywords.'actions.Common.selectDocClassAndDocTypeForGlobalNew'('Datetimerangerequired', 'Datetimerangerequired')
+WebUI.click(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'))
 
-'Click Tree Menu'
-CustomKeywords.'actions.MenuBar.clickTreeMenu'('MY_WORK', 'Processes', 'Date Required', 'Daterequiredsearch')
-CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/iframe_work_items'))
+'Switch to new Window'
+WebUI.switchToWindowTitle('Business Model WMI')
+WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 
-'Expand Search Bar'
-WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/h3_Search Bar'))
-CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/iframe_work_items'))
+'Enter date value using calender picker'
+CustomKeywords.'actions.Calender.selectDate'(Consts.P1_MW083_STARTDATE_DATE, Consts.P1_MW083_STARTDATE_MONTH, Consts.P1_MW083_STARTDATE_YEAR, findTestObject('Page_WMI_NEW/MyWork_DateTime/calender_Start test date'))
 
-'Enter date value in start date field'
-CustomKeywords.'actions.Common.setText_Date'(findTestObject('Page_nGage_Dashboard/My_Work/Process_Date Required/input_StartDate'), '01-01-2018')
+'Verify date value'
+WebUI.verifyElementAttributeValue(findTestObject('Page_WMI_NEW/MyWork_DateTime/input_Start test date'), 'value', Consts.P1_MW083_STARTDATE, GlobalVariable.G_LongTimeout)
 
-'Verify Date value in input field'
+'Enter date time value in calender picker'
+CustomKeywords.'actions.Calender.selectDateTime'(Consts.P1_MW083_STARTDATETIME_DATE, Consts.P1_MW083_STARTDATETIME_MONTH, Consts.P1_MW083_STARTDATETIME_YEAR, findTestObject('Page_WMI_NEW/MyWork_DateTime/calender_Start test datetime'))
 
-WebUI.verifyElementAttributeValue(findTestObject('Page_nGage_Dashboard/My_Work/Process_Date Required/input_StartDate'), 'value', '01-01-2018', GlobalVariable.G_LongTimeout)
+'Verify date time value'
+String datetime = WebUI.getAttribute(findTestObject('Page_WMI_NEW/MyWork_DateTime/input_Start test datetime'), 'value').toUpperCase()
+WebUI.verifyMatch(datetime, Consts.P1_MW083_STARTDATETIME, false)

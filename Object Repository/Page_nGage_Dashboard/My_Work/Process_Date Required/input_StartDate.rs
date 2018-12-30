@@ -6,11 +6,11 @@
    <elementGuidId>23cff5d0-286c-456f-8b29-6896bf92299f</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>XPATH</key>
-         <value>//table[@id='tblSearch']//td[contains(text(),'Start test date')]/..//input</value>
+         <key>BASIC</key>
       </entry>
       <entry>
-         <key>BASIC</key>
+         <key>XPATH</key>
+         <value>//table[@id='tblSearch']//td[normalize-space(text())='Start test date']/..//input</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

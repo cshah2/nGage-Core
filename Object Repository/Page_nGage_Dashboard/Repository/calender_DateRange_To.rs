@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>input_StartTestDateTime_From</name>
+   <name>calender_DateRange_To</name>
    <tag></tag>
-   <elementGuidId>20fd80d5-cf4c-4e96-8ff3-913683859528</elementGuidId>
+   <elementGuidId>1bdd2b83-7020-4aa8-b6bf-3089d3b9f408</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//table[@id='tblSearch']//td[normalize-space(text())='Start test datetime']/..//input[1]</value>
+         <value>//table[@id='TableControls']//td/span[normalize-space(text())='Date range']/../../td/button[2]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
@@ -20,6 +20,6 @@
       <matchCondition>equals</matchCondition>
       <name>ref_element</name>
       <type>Main</type>
-      <value>Object Repository/Page_nGage_Dashboard/My_Work/iframe_work_items</value>
+      <value>Object Repository/Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe</value>
    </webElementProperties>
 </WebElementEntity>

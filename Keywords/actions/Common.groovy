@@ -989,21 +989,21 @@ public class Common {
 		WebUI.switchToWindowTitle('Savana nGage')
 		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/span_ui-button-icon-primary ui'))
 	}
-	
+
 	@Keyword
 	def verifyElementsCount(TestObject to, int expCount) {
-		
+
 		List<WebElement> elements = WebUtil.getWebElements(to)
-		WebUI.switchToDefaultContent() 
+		WebUI.switchToDefaultContent()
 		WebUI.verifyEqual(elements.size(), expCount)
-		
+
 	}
-	
+
 	@Keyword
 	def createDocument_RenderAllField(String integerField, String stringFieldOnFocusAttr, String stringFieldLookup,
-		String currencyField, String dateField, String floatField, String smallIntField, String textField,
-		String dateTimeField, String stringField, String extNameField) {
-		
+			String currencyField, String dateField, String floatField, String smallIntField, String textField,
+			String dateTimeField, String stringField, String extNameField) {
+
 		'Switch to main window'
 		WebUI.switchToWindowTitle('Savana nGage')
 
@@ -1030,12 +1030,12 @@ public class Common {
 		setText_Date(findTestObject('Page_WMI_NEW/Master_Object/input_DateTime Field'), dateTimeField)	//DateTime Field
 		WebUI.setText(findTestObject('Page_WMI_NEW/Master_Object/input_String Filed'), stringField)	//String Filed
 		WebUI.setText(findTestObject('Page_WMI_NEW/Master_Object/input_Ext Name Field'), extNameField)	//Ext Name Field
-		
+
 		'Save details and close'
 		WebUI.click(findTestObject('Page_WMI_NEW/Master_Object/span_Save'))
 		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 		new Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI_NEW/Master_Object/span_Close Window'),GlobalVariable.G_LongTimeout)
-		
+
 		'Switch to main window and close'
 		WebUI.switchToWindowTitle('Savana nGage')
 		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/span_ui-button-icon-primary ui'))

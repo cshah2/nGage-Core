@@ -10,7 +10,7 @@
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//table[@id='tblSearch']//td[contains(text(),'Start test datetime')]/../td[3]/input[2]</value>
+         <value>//table[@id='tblSearch']//td[normalize-space(text())='Start test datetime']/..//input[2]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

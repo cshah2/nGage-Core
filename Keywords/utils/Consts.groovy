@@ -162,6 +162,20 @@ public class Consts {
 	public static final String P1_REPO_BMDATETIME_DOC3 = ''
 	public static final String P1_REPO_DATETIMERANGE_DOC3 = ''
 
+	
+	public static final String P1_REPO_BMDATE_DOC4 = ''
+	public static final String P1_REPO_DATERANGE_DOC4 = ''
+	public static final String P1_REPO_BMDATETIME_DOC4 = ''
+	public static final String P1_REPO_DATETIMERANGE_DOC4 = '09-01-2018 12:00:00 AM'
+	public static final String P1_REPO_DATETIMERANGEFROM_DATE_DOC4 = '31'
+	public static final String P1_REPO_DATETIMERANGEFROM_MONTH_DOC4 = 'Aug'
+	public static final String P1_REPO_DATETIMERANGEFROM_YEAR_DOC4 = '2018'
+	public static final String P1_REPO_DATETIMERANGEFROM_DOC4 = '08-31-2018 12:00:00 AM'
+	public static final String P1_REPO_DATETIMERANGETO_DATE_DOC4 = '2'
+	public static final String P1_REPO_DATETIMERANGETO_MONTH_DOC4 = 'Sep'
+	public static final String P1_REPO_DATETIMERANGETO_YEAR_DOC4 = '2018'
+	public static final String P1_REPO_DATETIMERANGETO_DOC4 = '09-02-2018 12:00:00 AM'
+
 	public static final String P1_REPO_BMTEXT_DOC1 = 'TEXT'
 	public static final String P1_REPO_BMSTRING_DOC1 = 'STRING REQ'
 	public static final String P1_REPO_INT_DOC1 = '30'
@@ -201,6 +215,17 @@ public class Consts {
 	public static final String P1_MW_PROCESSFORTASK_CUSTOMERNAME_DOC8 = 'Chintan Shah'
 	public static final String P1_MW_PROCESSFORTASK_CUSTOMERDESC_DOC8 = 'Assigned'
 	public static String P1_MW_PROCESSFORTASK_DOCID_DOC8
+
+	public static final String P1_MW083_STARTDATE = '01-01-2020'
+	public static final String P1_MW083_STARTDATETIME = '03-30-2017 12:00:00 AM'
+	public static final String P1_MW083_STARTDATE_DATE = '1'
+	public static final String P1_MW083_STARTDATE_MONTH = 'Jan'
+	public static final String P1_MW083_STARTDATE_YEAR = '2020'
+	public static final String P1_MW083_STARTDATETIME_DATE = '30'
+	public static final String P1_MW083_STARTDATETIME_MONTH = 'Mar'
+	public static final String P1_MW083_STARTDATETIME_YEAR = '2017'
+
+	
 	
 	/*
 	 * Doc Class and Doc Type Variables

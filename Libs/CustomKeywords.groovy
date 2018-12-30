@@ -14,9 +14,25 @@ import java.lang.Boolean
 
 def static "actions.Calender.selectDate"(
     	String date	
+     , 	String month	
+     , 	String year	
      , 	TestObject element	) {
     (new actions.Calender()).selectDate(
         	date
+         , 	month
+         , 	year
+         , 	element)
+}
+
+def static "actions.Calender.selectDateTime"(
+    	String date	
+     , 	String month	
+     , 	String year	
+     , 	TestObject element	) {
+    (new actions.Calender()).selectDateTime(
+        	date
+         , 	month
+         , 	year
          , 	element)
 }
 
@@ -522,26 +538,6 @@ def static "apis.UserManagement.updateLastLoginDate"(
          , 	date)
 }
 
-def static "actions.Window.clickElementAndWaitForWindowClose"(
-    	TestObject saveButton	
-     , 	int timeout	) {
-    (new actions.Window()).clickElementAndWaitForWindowClose(
-        	saveButton
-         , 	timeout)
-}
-
-def static "actions.Window.switchToUrlContains"(
-    	String text	) {
-    (new actions.Window()).switchToUrlContains(
-        	text)
-}
-
-def static "actions.Window.verifyOpenWindowCount"(
-    	int expCount	) {
-    (new actions.Window()).verifyOpenWindowCount(
-        	expCount)
-}
-
 def static "actions.Common.maximizeWindow"() {
     (new actions.Common()).maximizeWindow()
 }
@@ -902,6 +898,26 @@ def static "actions.Common.createDocument_RenderAllField"(
          , 	dateTimeField
          , 	stringField
          , 	extNameField)
+}
+
+def static "actions.Window.clickElementAndWaitForWindowClose"(
+    	TestObject saveButton	
+     , 	int timeout	) {
+    (new actions.Window()).clickElementAndWaitForWindowClose(
+        	saveButton
+         , 	timeout)
+}
+
+def static "actions.Window.switchToUrlContains"(
+    	String text	) {
+    (new actions.Window()).switchToUrlContains(
+        	text)
+}
+
+def static "actions.Window.verifyOpenWindowCount"(
+    	int expCount	) {
+    (new actions.Window()).verifyOpenWindowCount(
+        	expCount)
 }
 
 def static "utils.DateUtil.verifyDateFilter"(
