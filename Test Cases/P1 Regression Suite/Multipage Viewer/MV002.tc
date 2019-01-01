@@ -3,6 +3,6 @@
    <description>Regression test Multipage viewer: thumbnail, select page</description>
    <name>MV002</name>
    <tag></tag>
-   <comment>Verify correct image is loaded</comment>
+   <comment></comment>
    <testCaseGuid>7434e0e4-f778-407e-996c-82e139bd5280</testCaseGuid>
 </TestCaseEntity>

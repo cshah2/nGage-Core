@@ -883,6 +883,7 @@ public class Common {
 				WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 			}
 		}
+		waitForImageToRender(findTestObject('Page_WMI/WMI_Menu_BOV_Vertical/ContentFrame/iFrame_Image_EPMMultipageViewer'))
 	}
 
 	@Keyword
@@ -898,6 +899,7 @@ public class Common {
 				WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 			}
 		}
+		waitForImageToRender(findTestObject('Page_WMI/WMI_Menu_BOV_Vertical/ContentFrame/iFrame_Image_EPMMultipageViewer'))
 	}
 
 	@Keyword
@@ -1040,4 +1042,12 @@ public class Common {
 		WebUI.switchToWindowTitle('Savana nGage')
 		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/span_ui-button-icon-primary ui'))
 	}
+			
+	@Keyword
+	def waitForImageToRender(TestObject to) {
+		waitForFrameToLoad(to)
+		WebUI.delay(5)
+	}			
+			
+			
 }
