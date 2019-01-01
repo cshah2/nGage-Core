@@ -414,6 +414,12 @@ def static "actions.MenuBar.verifyTreeIsSelected"(
          , 	menuPath)
 }
 
+def static "actions.OCR.readTextFromImage"(
+    	String imgPath	) {
+    (new actions.OCR()).readTextFromImage(
+        	imgPath)
+}
+
 def static "actions.Report.clickReport"(
     	String lvl_one	
      , 	String lvl_two	
