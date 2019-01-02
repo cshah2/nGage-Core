@@ -298,6 +298,28 @@ def static "actions.Table.verifyAllRecordsDoesNotDisplayLockIcon"(
          , 	colNo)
 }
 
+def static "actions.Table.verifyAttributeValueOfAllRows"(
+    	TestObject tableLocator	
+     , 	String attrName	
+     , 	String attrValue	) {
+    (new actions.Table()).verifyAttributeValueOfAllRows(
+        	tableLocator
+         , 	attrName
+         , 	attrValue)
+}
+
+def static "actions.Table.verifyAttributeValueOfRow"(
+    	TestObject tableLocator	
+     , 	int rowNo	
+     , 	String attrName	
+     , 	String attrValue	) {
+    (new actions.Table()).verifyAttributeValueOfRow(
+        	tableLocator
+         , 	rowNo
+         , 	attrName
+         , 	attrValue)
+}
+
 def static "actions.MenuBar.getRecordCountInActivity"(
     	TestObject element	) {
     (new actions.MenuBar()).getRecordCountInActivity(

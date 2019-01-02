@@ -512,7 +512,7 @@ public class Table {
 		WebElement table = WebUtil.getWebElement(tableLocator)
 		List<WebElement> icons = table.findElements(By.xpath("./tbody/tr[1]//input"))
 
-		
+
 		boolean isIconFound = false
 
 		for(WebElement icon in icons) {
@@ -538,9 +538,9 @@ public class Table {
 		WebElement table = WebUtil.getWebElement(tableLocator)
 		WebDriver driver = DriverFactory.getWebDriver()
 		List<WebElement> icons = table.findElements(By.xpath("./tbody/tr[1]//input"))
-		
+
 		boolean isIconFound = false
-		
+
 		for(WebElement icon in icons) {
 			String actTitle = icon.getAttribute('title').toUpperCase()
 			if(actTitle.contains(expTitleAttr.toUpperCase())) {
@@ -581,12 +581,12 @@ public class Table {
 			KeywordUtil.markFailedAndStop('Expected Row not found')
 		}
 	}
-	
+
 	def isCellDisplaysLockIcon(TestObject tableLocator, WebElement row, int colNo) {
 
 		List<WebElement> cells = getAllCells(row)
 		WebElement cell = cells.get(colNo-1)
-		
+
 		Boolean isIconDisplayed = false
 		try {
 			cell.findElement(By.xpath("./img[contains(@title,'Checked Out')]")).isDisplayed()
@@ -597,14 +597,14 @@ public class Table {
 		}
 		return isIconDisplayed
 	}
-	
-	
+
+
 	@Keyword
 	def verifyCellDisplaysLockIcon(TestObject tableLocator, int rowNo, int colNo) {
-		
+
 		WebElement table = WebUtil.getWebElement(tableLocator)
 		List<WebElement> rows = getAllRows(table)
-		
+
 		if(isCellDisplaysLockIcon(tableLocator, rows.get(rowNo-1), colNo)) {
 			KeywordUtil.markPassed('Lock icon is displayed')
 		}
@@ -613,7 +613,7 @@ public class Table {
 		}
 		WebUI.switchToDefaultContent()
 	}
-	
+
 	@Keyword
 	def verifyCellDoesNotDisplaysLockIcon(TestObject tableLocator, int rowNo, int colNo) {
 
@@ -628,13 +628,13 @@ public class Table {
 		}
 		WebUI.switchToDefaultContent()
 	}
-	
+
 	@Keyword
 	def verifyAllRecordsDisplayLockIcon(TestObject tableLocator, int colNo) {
 
 		WebElement table = WebUtil.getWebElement(tableLocator)
 		List<WebElement> rows = getAllRows(table)
-		
+
 		int rowNo = 1
 		for(WebElement row in rows) {
 			if(!isCellDisplaysLockIcon(tableLocator, row, colNo)) {
@@ -643,7 +643,7 @@ public class Table {
 			rowNo++
 		}
 		WebUI.switchToDefaultContent()
-		
+
 		if(rowNo == 1) {
 			KeywordUtil.markFailedAndStop('No record available in result table for verification')
 		}
@@ -657,7 +657,7 @@ public class Table {
 
 		WebElement table = WebUtil.getWebElement(tableLocator)
 		List<WebElement> rows = getAllRows(table)
-		
+
 		int rowNo = 1
 		for(WebElement row in rows) {
 			if(isCellDisplaysLockIcon(tableLocator, row, colNo)) {
@@ -666,7 +666,7 @@ public class Table {
 			rowNo++
 		}
 		WebUI.switchToDefaultContent()
-		
+
 		if(rowNo == 1) {
 			KeywordUtil.markFailedAndStop('No record available in result table for verification')
 		}
@@ -674,6 +674,53 @@ public class Table {
 			KeywordUtil.markPassed('All records does not contains lock icon')
 		}
 	}
-
 	
+	@Keyword
+	def verifyAttributeValueOfAllRows(TestObject tableLocator, String attrName, String attrValue) {
+		
+		WebElement table = WebUtil.getWebElement(tableLocator)
+		List<WebElement> rows = getAllRows(table)
+		
+		boolean isMatches = false
+		String actAttrValue
+		
+		for(WebElement row in rows) {
+			actAttrValue = row.getAttribute(attrName)
+			 
+			if(actAttrValue.equalsIgnoreCase(attrValue)) {
+				isMatches = true
+			}
+			else {
+				isMatches = false
+				break
+			}
+		}
+		
+		WebUI.switchToDefaultContent()
+		
+		if(isMatches) {
+			KeywordUtil.markPassed('Attribute value for all row matches')
+		}
+		else {
+			KeywordUtil.markFailedAndStop('Actual value = '+actAttrValue+' does not matches with expected value = '+attrValue)
+		}
+	}
+	
+	@Keyword
+	def verifyAttributeValueOfRow(TestObject tableLocator, int rowNo, String attrName, String attrValue) {
+		
+		WebElement table = WebUtil.getWebElement(tableLocator)
+		List<WebElement> rows = getAllRows(table)
+		
+		WebElement row = rows.get(rowNo-1)
+		String actAttrValue = row.getAttribute(attrName)
+		WebUI.switchToDefaultContent()
+		 
+		if(actAttrValue.equalsIgnoreCase(attrValue)) {
+			KeywordUtil.markPassed('Attribute value matches')
+		}
+		else {
+			KeywordUtil.markFailedAndStop('Actual value = '+actAttrValue+' does not matches with expected value = '+attrValue)
+		}
+	}
 }

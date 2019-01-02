@@ -265,9 +265,14 @@ public class Common {
 	@Keyword
 	def clickMultipleElements(List<TestObject> elements) {
 
-		boolean isException = false
 		TestObject firstElement = elements.get(0)
 		TestObject parentElement = firstElement.getParentObject()
+		
+		WebUI.click(firstElement)
+		waitForImageToRender(findTestObject('Page_WMI/WMI_Menu_BOV_Vertical/ContentFrame/iFrame_Image_EPMMultipageViewer'))
+		
+		elements.remove(0)
+
 		if(parentElement != null)
 			WebUtil.switchFrameAndWaitForLoad(parentElement, GlobalVariable.G_LongTimeout)
 
@@ -283,7 +288,7 @@ public class Common {
 		}
 		actions.keyUp(Keys.CONTROL)
 		actions.build().perform()
-
+		
 		WebUI.switchToDefaultContent()
 	}
 
@@ -1042,12 +1047,12 @@ public class Common {
 		WebUI.switchToWindowTitle('Savana nGage')
 		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/span_ui-button-icon-primary ui'))
 	}
-			
+
 	@Keyword
 	def waitForImageToRender(TestObject to) {
 		waitForFrameToLoad(to)
 		WebUI.delay(5)
-	}			
-			
-			
+	}
+
+
 }
