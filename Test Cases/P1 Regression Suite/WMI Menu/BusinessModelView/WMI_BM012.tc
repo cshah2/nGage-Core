@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Regression Test WMI - BM Standard grid - Revision History (page size=&quot;2&quot;)</description>
+   <name>WMI_BM012</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>a02d7912-c57e-454d-86b9-ed1f97e91b4d</testCaseGuid>
+</TestCaseEntity>

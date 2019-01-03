@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Regression Test WMI - Standard grid - Notes (hidefooter=&quot;false&quot;)</description>
+   <name>WMI_BM003</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>e47ab819-b034-4c9f-96f5-db4d9b679b2c</testCaseGuid>
+</TestCaseEntity>

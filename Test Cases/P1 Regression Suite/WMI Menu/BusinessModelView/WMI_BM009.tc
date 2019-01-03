@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Regression Test WMI - Standard grid - Audit History (page size=&quot;2&quot;)</description>
+   <name>WMI_BM009</name>
+   <tag></tag>
+   <comment>Add 3 records to Audit History tab (One record is already present due to 1st save operation) Hence creating 2 records</comment>
+   <testCaseGuid>d505e9b5-d44c-4206-a0a0-6ff33383aaa3</testCaseGuid>
+</TestCaseEntity>
