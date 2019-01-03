@@ -267,10 +267,11 @@ public class Common {
 
 		TestObject firstElement = elements.get(0)
 		TestObject parentElement = firstElement.getParentObject()
-		
+
 		WebUI.click(firstElement)
-		waitForImageToRender(findTestObject('Page_WMI/WMI_Menu_BOV_Vertical/ContentFrame/iFrame_Image_EPMMultipageViewer'))
-		
+		WebUI.delay(3)
+		//waitForImageToRender(findTestObject('Page_WMI/WMI_Menu_BOV_Vertical/ContentFrame/iFrame_Image_EPMMultipageViewer'))
+
 		elements.remove(0)
 
 		if(parentElement != null)
@@ -288,7 +289,7 @@ public class Common {
 		}
 		actions.keyUp(Keys.CONTROL)
 		actions.build().perform()
-		
+
 		WebUI.switchToDefaultContent()
 	}
 
@@ -888,7 +889,8 @@ public class Common {
 				WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 			}
 		}
-		waitForImageToRender(findTestObject('Page_WMI/WMI_Menu_BOV_Vertical/ContentFrame/iFrame_Image_EPMMultipageViewer'))
+		WebUI.delay(3)
+		//waitForImageToRender(findTestObject('Page_WMI/WMI_Menu_BOV_Vertical/ContentFrame/iFrame_Image_EPMMultipageViewer'))
 	}
 
 	@Keyword
@@ -904,7 +906,8 @@ public class Common {
 				WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 			}
 		}
-		waitForImageToRender(findTestObject('Page_WMI/WMI_Menu_BOV_Vertical/ContentFrame/iFrame_Image_EPMMultipageViewer'))
+		WebUI.delay(3)
+		//waitForImageToRender(findTestObject('Page_WMI/WMI_Menu_BOV_Vertical/ContentFrame/iFrame_Image_EPMMultipageViewer'))
 	}
 
 	@Keyword
