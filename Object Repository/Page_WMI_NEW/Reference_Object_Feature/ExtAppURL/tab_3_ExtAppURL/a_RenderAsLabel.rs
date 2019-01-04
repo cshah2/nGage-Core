@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>input_StringField</name>
+   <name>a_RenderAsLabel</name>
    <tag></tag>
-   <elementGuidId>e803a12f-cb11-48dc-8724-08312ff3cdf8</elementGuidId>
+   <elementGuidId>05d29693-3017-4ae0-98e1-0135675ba98b</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//input[@id=&quot;eform_mcb67676_phBO_3_BO_eidmKey_BM_String&quot;]</value>
+         <value>//table[@id='eform_mcb67676_TabContainer_4_TabRef_3_phBO_6_BO_grc']//ul[1]//a[text()='Render As Label']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
@@ -20,6 +21,6 @@
       <matchCondition>equals</matchCondition>
       <name>ref_element</name>
       <type>Main</type>
-      <value>Object Repository/Page_WMI_NEW/Reference_Object_Feature/ImportMode_Interactive/tab1_Interactive/iframe_Close Window_ContentPla</value>
+      <value>Object Repository/Page_WMI_NEW/Reference_Object_Feature/ExtAppURL/tab_1_ExtAppURL/iframe_Close Window_ContentPla</value>
    </webElementProperties>
 </WebElementEntity>

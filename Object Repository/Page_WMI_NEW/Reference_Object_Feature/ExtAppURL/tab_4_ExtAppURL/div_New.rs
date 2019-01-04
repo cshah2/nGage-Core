@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>input_StringField</name>
+   <name>div_New</name>
    <tag></tag>
-   <elementGuidId>e803a12f-cb11-48dc-8724-08312ff3cdf8</elementGuidId>
+   <elementGuidId>eace5298-d1a1-4c29-a502-720c4affe07b</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//input[@id=&quot;eform_mcb67676_phBO_3_BO_eidmKey_BM_String&quot;]</value>
+         <value>//div[@id='eform_mcb67676_TabContainer_4_TabRef_4_phBO_7_BO_grc_ctl01_inLineMenuHolder']//ul//span[text()='New']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
@@ -20,6 +21,6 @@
       <matchCondition>equals</matchCondition>
       <name>ref_element</name>
       <type>Main</type>
-      <value>Object Repository/Page_WMI_NEW/Reference_Object_Feature/ImportMode_Interactive/tab1_Interactive/iframe_Close Window_ContentPla</value>
+      <value>Object Repository/Page_WMI_NEW/Reference_Object_Feature/ExtAppURL/tab_1_ExtAppURL/iframe_Close Window_ContentPla</value>
    </webElementProperties>
 </WebElementEntity>

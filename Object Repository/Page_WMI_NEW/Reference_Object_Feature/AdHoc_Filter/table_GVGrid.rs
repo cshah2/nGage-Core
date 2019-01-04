@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>input_StringField</name>
+   <name>table_GVGrid</name>
    <tag></tag>
-   <elementGuidId>e803a12f-cb11-48dc-8724-08312ff3cdf8</elementGuidId>
+   <elementGuidId>2e2a4c8a-bc23-4b24-b312-c8b13eae522d</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//input[@id=&quot;eform_mcb67676_phBO_3_BO_eidmKey_BM_String&quot;]</value>
+         <value>//table[@id='eform_mcb67676_TabContainer_4_TabRef_1_phBO_4_BO_grc']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
@@ -20,6 +21,6 @@
       <matchCondition>equals</matchCondition>
       <name>ref_element</name>
       <type>Main</type>
-      <value>Object Repository/Page_WMI_NEW/Reference_Object_Feature/ImportMode_Interactive/tab1_Interactive/iframe_Close Window_ContentPla</value>
+      <value>Object Repository/Page_WMI_NEW/Reference_Object_Feature/AdHoc_Filter/iframe_Close Window_ContentPla</value>
    </webElementProperties>
 </WebElementEntity>

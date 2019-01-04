@@ -3,7 +3,7 @@
    <description></description>
    <name>input_New (Render All Field Ty</name>
    <tag></tag>
-   <elementGuidId>837a1165-ce3a-4062-a09e-a0c78a1a28ba</elementGuidId>
+   <elementGuidId>b3737416-7255-4bb4-a6f5-2f1c95bee4d3</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
@@ -11,7 +11,7 @@
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//input[@id='eform_mcb67676_TabContainer_4_TabRef_2_phBO_5_BO_btnSaveInlineDoc']</value>
+         <value>//input[@id='eform_mcb67676_TabContainer_4_TabRef_3_phBO_6_BO_btnSaveInlineDoc']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

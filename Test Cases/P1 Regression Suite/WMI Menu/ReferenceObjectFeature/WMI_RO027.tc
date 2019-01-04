@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>28577 Regression Test WMI- Reference Object InlineNew( inlinenew= True, shownewbutton=True</description>
+   <name>WMI_RO027</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>b152c882-9f2f-4a96-906a-545b3e459d15</testCaseGuid>
+</TestCaseEntity>

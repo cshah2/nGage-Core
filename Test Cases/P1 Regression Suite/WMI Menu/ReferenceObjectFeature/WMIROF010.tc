@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TestCaseEntity>
-   <description>28594 Regression Test WMI- Reference Object ImportMode Interactive ( importmode=&quot;INTERACTIVE&quot; with filter=&quot;Include&quot;)</description>
-   <name>WMIROF010</name>
-   <tag></tag>
-   <comment></comment>
-   <testCaseGuid>90626cc6-c80a-4304-b106-3f379ac8800b</testCaseGuid>
-</TestCaseEntity>

@@ -1,20 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>input_New (Render All Field Ty</name>
+   <name>input_MSN</name>
    <tag></tag>
-   <elementGuidId>837a1165-ce3a-4062-a09e-a0c78a1a28ba</elementGuidId>
-   <selectorCollection>
-      <entry>
-         <key>BASIC</key>
-         <value>//input[@type = 'submit' and @name = 'eform_mcb67676$TabContainer_4$TabRef_2$phBO_5_BO$btnSaveInlineDoc' and @id = 'eform_mcb67676_TabContainer_4_TabRef_2_phBO_5_BO_btnSaveInlineDoc' and @ref_element = 'Object Repository/Page_WMI_NEW/Reference_Object_Feature/ImportMode_Interactive/tab2_Interactive/iframe_Close Window_ContentPla']</value>
-      </entry>
-      <entry>
-         <key>XPATH</key>
-         <value>//input[@id='eform_mcb67676_TabContainer_4_TabRef_2_phBO_5_BO_btnSaveInlineDoc']</value>
-      </entry>
-   </selectorCollection>
-   <selectorMethod>XPATH</selectorMethod>
+   <elementGuidId>331ce69a-5946-4ec0-ad38-137d254f7bce</elementGuidId>
+   <selectorMethod>BASIC</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
    <webElementProperties>
       <isSelected>true</isSelected>
@@ -35,21 +25,42 @@
       <matchCondition>equals</matchCondition>
       <name>name</name>
       <type>Main</type>
-      <value>eform_mcb67676$TabContainer_4$TabRef_2$phBO_5_BO$btnSaveInlineDoc</value>
+      <value>eform_mcb67676$TabContainer_4$TabRef_2$phBO_5_BO$grc$ctl09$custBtn_1</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>value</name>
       <type>Main</type>
-      <value>Save</value>
+      <value>MSN</value>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>onclick</name>
+      <type>Main</type>
+      <value>return allowClickIfMultipleItemsSelected('eform_mcb67676_TabContainer_4_TabRef_2_phBO_5_BO_grc','false');</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
       <name>id</name>
       <type>Main</type>
-      <value>eform_mcb67676_TabContainer_4_TabRef_2_phBO_5_BO_btnSaveInlineDoc</value>
+      <value>eform_mcb67676_TabContainer_4_TabRef_2_phBO_5_BO_grc_ctl09_custBtn_1</value>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>button</name>
+      <type>Main</type>
+      <value>true</value>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>align</name>
+      <type>Main</type>
+      <value>Bottom</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -57,13 +68,6 @@
       <name>class</name>
       <type>Main</type>
       <value>suite-button ui-button ui-widget ui-state-default ui-corner-all ui-state-hover</value>
-   </webElementProperties>
-   <webElementProperties>
-      <isSelected>false</isSelected>
-      <matchCondition>equals</matchCondition>
-      <name>formnovalidate</name>
-      <type>Main</type>
-      <value>formnovalidate</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -77,55 +81,49 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>id(&quot;eform_mcb67676_TabContainer_4_TabRef_2_phBO_5_BO_btnSaveInlineDoc&quot;)</value>
+      <value>id(&quot;eform_mcb67676_TabContainer_4_TabRef_2_phBO_5_BO_grc_ctl09_custBtn_1&quot;)</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
       <name>ref_element</name>
       <type>Main</type>
-      <value>Object Repository/Page_WMI_NEW/Reference_Object_Feature/ImportMode_Interactive/tab2_Interactive/iframe_Close Window_ContentPla</value>
+      <value>Object Repository/Page_WMI_NEW/Reference_Object_Feature/CustomButton/tab2_CustomButtons/iframe_Close Window_ContentPla</value>
    </webElementProperties>
    <webElementXpaths>
       <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:attributes</name>
-      <value>//input[@id='eform_mcb67676_TabContainer_4_TabRef_2_phBO_5_BO_btnSaveInlineDoc']</value>
+      <value>//input[@id='eform_mcb67676_TabContainer_4_TabRef_2_phBO_5_BO_grc_ctl09_custBtn_1']</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:idRelative</name>
-      <value>(//span[@id='leftspan']/input)[5]</value>
+      <value>//table[@id='eform_mcb67676_TabContainer_4_TabRef_2_phBO_5_BO_grc']/tbody/tr/td/table/tbody/tr/td/input</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:neighbor</name>
-      <value>(.//*[normalize-space(text()) and normalize-space(.)='New (Render All Field Types)'])[1]/following::input[1]</value>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='* Duplicate values will be ignored.'])[2]/following::input[8]</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:neighbor</name>
-      <value>(.//*[normalize-space(text()) and normalize-space(.)='Label Control'])[9]/following::input[2]</value>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='of 38'])[2]/preceding::input[5]</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:neighbor</name>
-      <value>(.//*[normalize-space(text()) and normalize-space(.)='Information:'])[3]/preceding::input[4]</value>
-   </webElementXpaths>
-   <webElementXpaths>
-      <isSelected>false</isSelected>
-      <matchCondition>equals</matchCondition>
-      <name>xpath:neighbor</name>
-      <value>(.//*[normalize-space(text()) and normalize-space(.)='Description-'])[1]/preceding::input[4]</value>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='>'])[2]/preceding::input[5]</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:position</name>
-      <value>//div[2]/table/tbody/tr/td/div[2]/div/fieldset/table/tbody/tr[4]/td/table/tbody/tr[2]/td/div/span/input</value>
+      <value>//div[2]/table/tbody/tr/td/div[2]/div/fieldset/table/tbody/tr[3]/td/div[2]/div/table/tbody/tr/td/table/tbody/tr/td/input</value>
    </webElementXpaths>
 </WebElementEntity>

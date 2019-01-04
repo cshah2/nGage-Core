@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Regression Test WMI- Reference Object InlineResultView( inlineresultview= True, disabldgridclick=False)</description>
+   <name>WMI_RO002</name>
+   <tag></tag>
+   <comment>Verify the document is opened in InlineView
+Open the saved docuemnt</comment>
+   <testCaseGuid>5c1c7ecc-330a-4172-90f0-7f0c9362554a</testCaseGuid>
+</TestCaseEntity>

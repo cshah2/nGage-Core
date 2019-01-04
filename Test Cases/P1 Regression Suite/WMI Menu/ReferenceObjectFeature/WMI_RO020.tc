@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>28609 Regression test WMI -extappurl=&quot;www.google.com&quot; , override extappurl=&quot;www.msn.com&quot; with filter=&quot;include&quot;</description>
+   <name>WMI_RO020</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>d8062ad8-db56-4e70-ba3a-0d27051080b7</testCaseGuid>
+</TestCaseEntity>

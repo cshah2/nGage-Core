@@ -1,89 +1,93 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>a_Render All Field Types</name>
+   <name>span_Alert</name>
    <tag></tag>
-   <elementGuidId>40dccfe1-4fa1-420f-9418-35f4dd16bddb</elementGuidId>
+   <elementGuidId>d109d2a9-d596-46ff-b9af-88365c0497c0</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//a[(text() = 'Render All Field Types' or . = 'Render All Field Types') and @ref_element = 'Object Repository/Page_WMI_NEW/Reference_Object_Feature/ImportMode_Interactive/tab3_Interactive/iframe_Close Window_ContentPla']</value>
-      </entry>
-      <entry>
-         <key>XPATH</key>
-         <value>//div[@id='eform_mcb67676_TabContainer_4_TabRef_3_phBO_6_BO_grc_ctl01_inLineMenuHolder']//ul/li/a[text()='Render All Field Types']</value>
+         <value>//span[@id = 'ui-id-3' and @ref_element = 'Object Repository/Page_WMI_NEW/Reference_Object_Feature/CustomButton/tab2_CustomButtons/AlertBox/iframe_Close Window_ContentPla']</value>
       </entry>
    </selectorCollection>
-   <selectorMethod>XPATH</selectorMethod>
+   <selectorMethod>BASIC</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
    <webElementProperties>
       <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
       <name>tag</name>
       <type>Main</type>
-      <value>a</value>
+      <value>span</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
+      <name>id</name>
+      <type>Main</type>
+      <value>ui-id-3</value>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>class</name>
+      <type>Main</type>
+      <value>ui-dialog-title</value>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
       <name>text</name>
       <type>Main</type>
-      <value>Render All Field Types</value>
+      <value>Alert!</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>id(&quot;inlineMenu_b5915ab0_a0e6_458d_8f8f_6f5333aca8ab_Submenu_69&quot;)/a[1]</value>
+      <value>id(&quot;ui-id-3&quot;)</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
       <name>ref_element</name>
       <type>Main</type>
-      <value>Object Repository/Page_WMI_NEW/Reference_Object_Feature/ImportMode_Interactive/iframe_Close Window_ContentPla</value>
+      <value>Object Repository/Page_WMI_NEW/Reference_Object_Feature/CustomButton/tab2_CustomButtons/AlertBox/iframe_Close Window_ContentPla</value>
    </webElementProperties>
    <webElementXpaths>
       <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
-      <name>xpath:idRelative</name>
-      <value>//li[@id='inlineMenu_b5915ab0_a0e6_458d_8f8f_6f5333aca8ab_Submenu_69']/a</value>
-   </webElementXpaths>
-   <webElementXpaths>
-      <isSelected>false</isSelected>
-      <matchCondition>equals</matchCondition>
-      <name>xpath:link</name>
-      <value>(//a[contains(text(),'Render All Field Types')])[3]</value>
+      <name>xpath:attributes</name>
+      <value>//span[@id='ui-id-3']</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:neighbor</name>
-      <value>(.//*[normalize-space(text()) and normalize-space(.)='Nested Look up with blank dropdown'])[2]/following::a[1]</value>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)=concat('id(', '&quot;', 'ui-id-3', '&quot;', ')')])[1]/following::span[1]</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:neighbor</name>
-      <value>(.//*[normalize-space(text()) and normalize-space(.)='Field Render As Grid with mapping'])[2]/following::a[2]</value>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='You are about to delete this document! Are you sure?'])[1]/following::span[9]</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:neighbor</name>
-      <value>(.//*[normalize-space(text()) and normalize-space(.)='Render All Multivalue Field Types'])[2]/preceding::a[1]</value>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Close'])[1]/preceding::span[2]</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:neighbor</name>
-      <value>(.//*[normalize-space(text()) and normalize-space(.)='Render As AjaxDate'])[2]/preceding::a[2]</value>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Please select at least one item.'])[1]/preceding::span[4]</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:position</name>
-      <value>//div[3]/table/tbody/tr/td/div[2]/div/fieldset/table/tbody/tr[3]/td/div[2]/div/table/tbody/tr/td/table/tbody/tr/td/div/div/ul/li/ul/li[68]/a</value>
+      <value>//div[2]/div/span</value>
    </webElementXpaths>
 </WebElementEntity>
