@@ -65,7 +65,9 @@ WebUI.selectOptionByLabel(findTestObject('Object Repository/Page_WMI_NEW/Busines
 CustomKeywords.'actions.Common.waitForElementVisible'(findTestObject('Object Repository/Page_WMI_NEW/BusinessModelView/StandardGrid/Related_Document(Child)/textbox_BMString'), GlobalVariable.G_LongTimeout)
 WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/BusinessModelView/StandardGrid/Related_Document(Child)/button_AttachDocument'))
 
+'Verify success message on pop up dialog'
 CustomKeywords.'actions.Common.waitForElementVisible'(findTestObject('Object Repository/Page_WMI_NEW/BusinessModelView/StandardGrid/Related_Document(Child)/popUp_Message'), GlobalVariable.G_LongTimeout)
+WebUI.verifyMatch(WebUI.getText(findTestObject('Page_WMI_NEW/BusinessModelView/StandardGrid/Related_Document(Child)/popUp_Dialog_Message')), '.*Document was attached successfully.*', true)
 WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/BusinessModelView/StandardGrid/Related_Document(Child)/popUp_Ok'))
 
 //Record - 2
@@ -83,7 +85,9 @@ WebUI.selectOptionByLabel(findTestObject('Object Repository/Page_WMI_NEW/Busines
 CustomKeywords.'actions.Common.waitForElementVisible'(findTestObject('Object Repository/Page_WMI_NEW/BusinessModelView/StandardGrid/Related_Document(Child)/textbox_BMString'), GlobalVariable.G_LongTimeout)
 WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/BusinessModelView/StandardGrid/Related_Document(Child)/button_AttachDocument'))
 
+'Verify success message on pop up dialog'
 CustomKeywords.'actions.Common.waitForElementVisible'(findTestObject('Object Repository/Page_WMI_NEW/BusinessModelView/StandardGrid/Related_Document(Child)/popUp_Message'), GlobalVariable.G_LongTimeout)
+WebUI.verifyMatch(WebUI.getText(findTestObject('Page_WMI_NEW/BusinessModelView/StandardGrid/Related_Document(Child)/popUp_Dialog_Message')), '.*Document was attached successfully.*', true)
 WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/BusinessModelView/StandardGrid/Related_Document(Child)/popUp_Ok'))
 
 //Record - 3
@@ -101,7 +105,9 @@ WebUI.selectOptionByLabel(findTestObject('Object Repository/Page_WMI_NEW/Busines
 CustomKeywords.'actions.Common.waitForElementVisible'(findTestObject('Object Repository/Page_WMI_NEW/BusinessModelView/StandardGrid/Related_Document(Child)/textbox_BMString'), GlobalVariable.G_LongTimeout)
 WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/BusinessModelView/StandardGrid/Related_Document(Child)/button_AttachDocument'))
 
+'Verify success message on pop up dialog'
 CustomKeywords.'actions.Common.waitForElementVisible'(findTestObject('Object Repository/Page_WMI_NEW/BusinessModelView/StandardGrid/Related_Document(Child)/popUp_Message'), GlobalVariable.G_LongTimeout)
+WebUI.verifyMatch(WebUI.getText(findTestObject('Page_WMI_NEW/BusinessModelView/StandardGrid/Related_Document(Child)/popUp_Dialog_Message')), '.*Document was attached successfully.*', true)
 WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/BusinessModelView/StandardGrid/Related_Document(Child)/popUp_Ok'))
 
 'Verify that maximum 2 Related documents entries are displayed in the grid.'

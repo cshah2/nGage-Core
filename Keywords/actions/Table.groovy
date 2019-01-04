@@ -462,7 +462,7 @@ public class Table {
 		WebUI.switchToDefaultContent()
 
 		for(String value in cellValues) {
-			value=value.replace('$','')
+			value=value.replaceAll('\\$','').replaceAll(',', '')
 
 			int actualValue=Double.parseDouble(value)
 			if(actualValue<fromValue || actualValue>toValue)
@@ -674,19 +674,19 @@ public class Table {
 			KeywordUtil.markPassed('All records does not contains lock icon')
 		}
 	}
-	
+
 	@Keyword
 	def verifyAttributeValueOfAllRows(TestObject tableLocator, String attrName, String attrValue) {
-		
+
 		WebElement table = WebUtil.getWebElement(tableLocator)
 		List<WebElement> rows = getAllRows(table)
-		
+
 		boolean isMatches = false
 		String actAttrValue
-		
+
 		for(WebElement row in rows) {
 			actAttrValue = row.getAttribute(attrName)
-			 
+
 			if(actAttrValue.equalsIgnoreCase(attrValue)) {
 				isMatches = true
 			}
@@ -695,9 +695,9 @@ public class Table {
 				break
 			}
 		}
-		
+
 		WebUI.switchToDefaultContent()
-		
+
 		if(isMatches) {
 			KeywordUtil.markPassed('Attribute value for all row matches')
 		}
@@ -705,17 +705,17 @@ public class Table {
 			KeywordUtil.markFailedAndStop('Actual value = '+actAttrValue+' does not matches with expected value = '+attrValue)
 		}
 	}
-	
+
 	@Keyword
 	def verifyAttributeValueOfRow(TestObject tableLocator, int rowNo, String attrName, String attrValue) {
-		
+
 		WebElement table = WebUtil.getWebElement(tableLocator)
 		List<WebElement> rows = getAllRows(table)
-		
+
 		WebElement row = rows.get(rowNo-1)
 		String actAttrValue = row.getAttribute(attrName)
 		WebUI.switchToDefaultContent()
-		 
+
 		if(actAttrValue.equalsIgnoreCase(attrValue)) {
 			KeywordUtil.markPassed('Attribute value matches')
 		}
