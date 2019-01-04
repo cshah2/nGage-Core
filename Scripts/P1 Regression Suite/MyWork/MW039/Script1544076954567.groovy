@@ -61,4 +61,4 @@ WebUI.verifyGreaterThanOrEqual(rowsCount, 1)
 
 int colNoLoanAmount=CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/tableHeader_MyWorkSearchResult'), 'Loan Amount')
 
-CustomKeywords.'actions.Table.verifyRecordsWithinRange'(findTestObject('Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), colNoLoanAmount, fromAmount, toAmount)
+CustomKeywords.'actions.Table.verifyRecordsWithinRange'(findTestObject('Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), colNoLoanAmount, Double.parseDouble(fromAmount), Double.parseDouble(toAmount))

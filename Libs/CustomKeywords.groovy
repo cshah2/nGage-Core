@@ -298,6 +298,28 @@ def static "actions.Table.verifyAllRecordsDoesNotDisplayLockIcon"(
          , 	colNo)
 }
 
+def static "actions.Table.verifyAttributeValueOfAllRows"(
+    	TestObject tableLocator	
+     , 	String attrName	
+     , 	String attrValue	) {
+    (new actions.Table()).verifyAttributeValueOfAllRows(
+        	tableLocator
+         , 	attrName
+         , 	attrValue)
+}
+
+def static "actions.Table.verifyAttributeValueOfRow"(
+    	TestObject tableLocator	
+     , 	int rowNo	
+     , 	String attrName	
+     , 	String attrValue	) {
+    (new actions.Table()).verifyAttributeValueOfRow(
+        	tableLocator
+         , 	rowNo
+         , 	attrName
+         , 	attrValue)
+}
+
 def static "actions.MenuBar.getRecordCountInActivity"(
     	TestObject element	) {
     (new actions.MenuBar()).getRecordCountInActivity(
@@ -542,26 +564,6 @@ def static "apis.UserManagement.updateLastLoginDate"(
     (new apis.UserManagement()).updateLastLoginDate(
         	userId
          , 	date)
-}
-
-def static "actions.Window.clickElementAndWaitForWindowClose"(
-    	TestObject saveButton	
-     , 	int timeout	) {
-    (new actions.Window()).clickElementAndWaitForWindowClose(
-        	saveButton
-         , 	timeout)
-}
-
-def static "actions.Window.switchToUrlContains"(
-    	String text	) {
-    (new actions.Window()).switchToUrlContains(
-        	text)
-}
-
-def static "actions.Window.verifyOpenWindowCount"(
-    	int expCount	) {
-    (new actions.Window()).verifyOpenWindowCount(
-        	expCount)
 }
 
 def static "actions.Common.maximizeWindow"() {
@@ -930,6 +932,26 @@ def static "actions.Common.waitForImageToRender"(
     	TestObject to	) {
     (new actions.Common()).waitForImageToRender(
         	to)
+}
+
+def static "actions.Window.clickElementAndWaitForWindowClose"(
+    	TestObject saveButton	
+     , 	int timeout	) {
+    (new actions.Window()).clickElementAndWaitForWindowClose(
+        	saveButton
+         , 	timeout)
+}
+
+def static "actions.Window.switchToUrlContains"(
+    	String text	) {
+    (new actions.Window()).switchToUrlContains(
+        	text)
+}
+
+def static "actions.Window.verifyOpenWindowCount"(
+    	int expCount	) {
+    (new actions.Window()).verifyOpenWindowCount(
+        	expCount)
 }
 
 def static "utils.DateUtil.verifyDateFilter"(

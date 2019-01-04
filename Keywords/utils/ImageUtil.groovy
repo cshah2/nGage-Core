@@ -25,9 +25,9 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable
 
 public class ImageUtil {
-	
+
 	public static String captureImage() {
-		
+
 		//Get Start position of Iframe
 		TestObject element = findTestObject('Page_WMI/WMI_Menu_BOV_Vertical/ContentFrame/image')
 		WebElement pIframe = WebUtil.getWebElement(element.getParentObject())
@@ -57,7 +57,39 @@ public class ImageUtil {
 		ImageIO.write(eleImage, "png", image)
 
 		return filePath
+	}
+	
+	public static String captureImage(TestObject element) {
+		
+		//Get Start position of Iframe
+		//TestObject element = findTestObject('Page_WMI/WMI_Menu_BOV_Vertical/ContentFrame/image')
+		WebElement pIframe = WebUtil.getWebElement(element.getParentObject())
+		int xPos = pIframe.getLocation().getX()
+		int yPos = pIframe.getLocation().getY()
+		println "X-Position = "+xPos+" Y-Position = "+yPos
+		WebUI.switchToDefaultContent()
+
+		//Get Height and width of element
+		WebElement ele = WebUtil.getWebElement(element)
+		int eleHeight = ele.getSize().getHeight()
+		int eleWidth = ele.getSize().getWidth()
+
+		println "Element Height = "+eleHeight+" Width = "+eleWidth
+		WebUI.switchToDefaultContent()
+
+		//Take screenshot
+		String filePath = WebUI.takeScreenshot()
+		File image = new File(filePath)
+		BufferedImage fullImage = ImageIO.read(image)
+		println "Screenshot Height is = "+fullImage.getHeight()
+		println "Screenshot width is = "+fullImage.getWidth()
+
+		//Crop image
+		eleHeight = fullImage.getHeight() - yPos
+		BufferedImage eleImage = fullImage.getSubimage(xPos, yPos, eleWidth, eleHeight)
+		ImageIO.write(eleImage, "png", image)
+
+		return filePath
 
 	}
-
 }
