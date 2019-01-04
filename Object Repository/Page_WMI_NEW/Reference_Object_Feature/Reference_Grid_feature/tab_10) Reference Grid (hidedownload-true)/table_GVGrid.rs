@@ -4,6 +4,12 @@
    <name>table_GVGrid</name>
    <tag></tag>
    <elementGuidId>791b6e59-dcd1-4c04-b2b2-d7da6eeb71e7</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>//table[@id = 'eform_mcb67676_TabContainer_4_TabRef_10_phBO_13_BO_grc' and @ref_element = 'Object Repository/Page_WMI_NEW/Reference_Object_Feature/Reference_Grid_feature/tab_10) Reference Grid (hidedownload-true)/iframe_Close Window_ContentPla']</value>
+      </entry>
+   </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
    <webElementProperties>
@@ -49,7 +55,7 @@
       <value>eform_mcb67676_TabContainer_4_TabRef_10_phBO_13_BO_grc</value>
    </webElementProperties>
    <webElementProperties>
-      <isSelected>true</isSelected>
+      <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>text</name>
       <type>Main</type>

@@ -26,6 +26,9 @@ WebUI.click(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'))
 WebUI.switchToWindowTitle('(Doc ID: NEW )')
 WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 
+'Click on tab 4) Autocreate'
+WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/ImportMode_AutoCreate/span_4) AUTOCREATE'))
+
 'Click on Save from master object'
 WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/ImportMode_Interactive/span_Save'))
 WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
@@ -50,7 +53,8 @@ CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Da
 CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Object Repository/Page_nGage_Dashboard/Home/column_RecentDocuments DocID'))
 CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Object Repository/Page_nGage_Dashboard/Home/column_RecentDocuments DocID'))
 
-String columnNameofSavedDoc = CustomKeywords.'actions.Table.getCellText'(findTestObject('Object Repository/Page_nGage_Dashboard/Home/table_MyDocumentResults'), 1,4)
+int docTypeColumnPosition =CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Page_nGage_Dashboard/Home/tableHeader_RecentDocuments'),'Doc Type')
+String columnNameofSavedDoc = CustomKeywords.'actions.Table.getCellText'(findTestObject('Object Repository/Page_nGage_Dashboard/Home/table_MyDocumentResults'), 1,docTypeColumnPosition)
 println 'string 2'+columnNameofSavedDoc
 
 'verify document is saved'
@@ -61,14 +65,17 @@ CustomKeywords.'actions.Table.clickCell'(findTestObject('Object Repository/Page_
 WebUI.switchToWindowIndex(1)
 WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 
-'Click on tab 1) Autocreate'
-WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/ImportMode_AutoCreate/span_1) AUTOCREATE'))
+'Click on tab 4) Autocreate'
+WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/ImportMode_AutoCreate/span_4) AUTOCREATE'))
 
 'Mouse hover On Dropdown New'
-WebUI.mouseOver(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/ImportMode_AutoCreate/span_New'))
-WebUI.waitForElementVisible(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/ImportMode_AutoCreate/a_Render All Field Types'),GlobalVariable.G_LongTimeout)
-WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/ImportMode_AutoCreate/a_Render All Field Types'))
+WebUI.mouseOver(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/ImportMode_AutoCreate/tab4)AutoCreate/span_New'))
+WebUI.waitForElementVisible(findTestObject('Page_WMI_NEW/Reference_Object_Feature/ImportMode_AutoCreate/tab4)AutoCreate/a_Render As CheckBox'), GlobalVariable.G_LongTimeout)
+WebUI.click(findTestObject('Page_WMI_NEW/Reference_Object_Feature/ImportMode_AutoCreate/tab4)AutoCreate/a_Render As CheckBox'))
 WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+
+'verify document type appereance'
+CustomKeywords.'actions.Common.verifyElementsCount'(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/ImportMode_AutoCreate/tab4)AutoCreate/list_NewButton'), 2)
 
 'click on close window'
 CustomKeywords.'actions.Window.clickElementAndWaitForWindowClose'(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/ImportMode_AutoCreate/span_Close Window'), GlobalVariable.G_LongTimeout)
@@ -84,6 +91,7 @@ CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Da
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/Home/span_Refresh Grid'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/iframe_iframe_103'))
 
-'verify created document '
-String docType= CustomKeywords.'actions.Table.getCellText'(findTestObject('Object Repository/Page_nGage_Dashboard/Home/table_MyDocumentResults'), 1, 4)
+'verify created document'
+docTypeColumnPosition =CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Page_nGage_Dashboard/Home/tableHeader_RecentDocuments'),'Doc Type')
+String docType= CustomKeywords.'actions.Table.getCellText'(findTestObject('Object Repository/Page_nGage_Dashboard/Home/table_MyDocumentResults'), 1, docTypeColumnPosition)
 WebUI.verifyMatch(docType, 'Render All Field Types', false)

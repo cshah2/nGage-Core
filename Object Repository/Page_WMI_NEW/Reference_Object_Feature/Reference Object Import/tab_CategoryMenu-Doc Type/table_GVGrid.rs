@@ -3,13 +3,7 @@
    <description></description>
    <name>table_GVGrid</name>
    <tag></tag>
-   <elementGuidId>d633deca-795c-4ce9-9df2-b49a6408ff6d</elementGuidId>
-   <selectorCollection>
-      <entry>
-         <key>BASIC</key>
-         <value>//table[@id = 'eform_mcb67676_TabContainer_4_TabRef_6_phBO_9_BO_grc' and @ref_element = 'Object Repository/Page_WMI_NEW/Reference_Object_Feature/Reference_Grid_feature/tab_6) reference Grid (hidegridprint-True)/iframe_Close Window_ContentPla']</value>
-      </entry>
-   </selectorCollection>
+   <elementGuidId>c6d26c93-327e-48f6-b476-a93fb58df426</elementGuidId>
    <selectorMethod>BASIC</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
    <webElementProperties>
@@ -52,7 +46,7 @@
       <matchCondition>equals</matchCondition>
       <name>id</name>
       <type>Main</type>
-      <value>eform_mcb67676_TabContainer_4_TabRef_6_phBO_9_BO_grc</value>
+      <value>eform_mcb67676_TabContainer_4_TabRef_7_phBO_10_BO_grc</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -65,7 +59,11 @@
                                     
                                         
                                             
-                                                                                                    
+                                                
+
+New
+
+                                                    
                                                                                                                                                 
                                                 
                                                 
@@ -98,9 +96,90 @@
 														17
 														18
 														19
+														20
+														21
+														22
+														23
+														24
+														25
+														26
+														27
+														28
+														29
+														30
+														31
+														32
+														33
+														34
+														35
+														36
+														37
+														38
+														39
+														40
+														41
+														42
+														43
+														44
+														45
+														46
+														47
+														48
+														49
+														50
+														51
+														52
+														53
+														54
+														55
+														56
+														57
+														58
+														59
+														60
+														61
+														62
+														63
+														64
+														65
+														66
+														67
+														68
+														69
+														70
+														71
+														72
+														73
+														74
+														75
+														76
+														77
+														78
+														79
+														80
+														81
+														82
+														83
+														84
+														85
+														86
+														87
+														88
+														89
+														90
+														91
+														92
+														93
+														94
+														95
+														96
+														97
+														98
+														99
+														100
 
 													
-                                                 of 19
+                                                 of 100
                                                 >
                                                 >>
 
@@ -112,25 +191,15 @@
 												
 													params   Doc IDCurrent Revision #Doc Type NameDoc User DateDoc Create DateBM StringBM String1BM IntBM Int MVBM Small Int MVDoc Created ByBM DateTimeBM DateBM string2BM String MVCustomer NameBM Small IntBM Text
 												
-													 1000091000011000090Render As Label07-25-2016 05:55:00 AM07-25-2016 05:55:00 AMshow 11902  Reema07-25-2016 05:55:00 AM     You selected Option 1
+													 1012291000421012290Render All Field Types08-26-2016 10:05:00 AM08-26-2016 10:05:00 AMa    Reema       
 												
-													 1000221000011000220Render As Label07-29-2016 08:05:00 AM07-29-2016 08:05:00 AMBM Test WMI for 100022 30  Reema07-29-2016 08:05:00 AM     Label Control
+													 1012301000421012300Render All Field Types08-26-2016 10:06:00 AM08-26-2016 10:06:00 AMb    Reema       
 												
-													 1010401000011010400Render As Label08-08-2016 05:33:00 AM08-08-2016 05:33:00 AM1    Praveen Ravanang08-08-2016 05:33:00 AM     Label Control
+													 1012311000421012310Render All Field Types08-26-2016 10:06:00 AM08-26-2016 10:06:00 AMc    Reema       
 												
-													 1010411000011010410Render As Label08-08-2016 05:36:00 AM08-08-2016 05:36:00 AM1    Praveen Ravanang08-08-2016 05:36:00 AM     Label Control
+													 1012321000421012320Render All Field Types08-26-2016 10:07:00 AM08-26-2016 10:07:00 AMd    Reema       
 												
-													 1010421000011010420Render As Label08-08-2016 05:48:00 AM08-08-2016 05:48:00 AM1    Praveen Ravanang08-08-2016 05:48:00 AM     Label Control
-												
-													 1010431000011010430Render As Label08-08-2016 05:50:00 AM08-08-2016 05:50:00 AM1    Praveen Ravanang08-08-2016 05:49:00 AM     Label Control
-												
-													 1010841000011010840Render As Label08-11-2016 08:05:00 AM08-11-2016 08:05:00 AM     Reema       
-												
-													 1010861000011010860Render As Label08-11-2016 08:08:00 AM08-11-2016 08:09:00 AM     Reema       
-												
-													 1010971000011010970Render As Label08-12-2016 06:27:00 AM08-12-2016 06:27:00 AM     Reema       
-												
-													 1010991000011010990Render As Label08-12-2016 06:28:00 AM08-12-2016 06:28:00 AM     Reema       
+													 1012371000421012370Render All Field Types08-29-2016 04:10:00 AM08-29-2016 04:10:00 AM  10  Reema       
 												
 											</value>
    </webElementProperties>
@@ -139,37 +208,43 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>id(&quot;eform_mcb67676_TabContainer_4_TabRef_6_phBO_9_BO_grc&quot;)</value>
+      <value>id(&quot;eform_mcb67676_TabContainer_4_TabRef_7_phBO_10_BO_grc&quot;)</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
       <name>ref_element</name>
       <type>Main</type>
-      <value>Object Repository/Page_WMI_NEW/Reference_Object_Feature/Reference_Grid_feature/tab_6) reference Grid (hidegridprint-True)/iframe_Close Window_ContentPla</value>
+      <value>Object Repository/Page_WMI_NEW/Reference_Object_Feature/Reference Object Import/tab_CategoryMenu-Doc Type/iframe_Close Window_ContentPla</value>
    </webElementProperties>
    <webElementXpaths>
       <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:attributes</name>
-      <value>//table[@id='eform_mcb67676_TabContainer_4_TabRef_6_phBO_9_BO_grc']</value>
+      <value>//table[@id='eform_mcb67676_TabContainer_4_TabRef_7_phBO_10_BO_grc']</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:idRelative</name>
-      <value>//div[@id='eform_mcb67676_TabContainer_4_TabRef_6_phBO_9_BO_updResult']/div/table</value>
+      <value>//div[@id='eform_mcb67676_TabContainer_4_TabRef_7_phBO_10_BO_updResult']/div/table</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:neighbor</name>
-      <value>(.//*[normalize-space(text()) and normalize-space(.)='* Duplicate values will be ignored.'])[6]/following::table[4]</value>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='CategoryMenu/ DocType'])[2]/following::table[1]</value>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='* Duplicate values will be ignored.'])[7]/following::table[4]</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:position</name>
-      <value>//div[6]/table/tbody/tr/td/div[2]/div/fieldset/table/tbody/tr[3]/td/div[2]/div/table</value>
+      <value>//div[7]/table/tbody/tr/td/div[2]/div/fieldset/table/tbody/tr[3]/td/div[2]/div/table</value>
    </webElementXpaths>
 </WebElementEntity>

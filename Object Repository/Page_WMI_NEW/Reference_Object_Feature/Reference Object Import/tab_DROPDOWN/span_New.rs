@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>list_NewButton</name>
+   <name>span_New</name>
    <tag></tag>
-   <elementGuidId>8dc90b34-e60b-43ca-90b3-da982f5c79bd</elementGuidId>
+   <elementGuidId>fb7b2e54-1e4d-4be3-94d3-c84c727ce2b2</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>XPATH</key>
-         <value>//div[@id='eform_mcb67676_TabContainer_4_TabRef_2_phBO_5_BO_grc_ctl01_inLineMenuHolder']//span[text()='New']/../../ul/li</value>
+         <key>BASIC</key>
+         <value>//span[(text() = 'New' or . = 'New') and @ref_element = 'Object Repository/Page_WMI_NEW/Reference_Object_Feature/Reference Object Import/tab_DROPDOWN/iframe_Close Window_ContentPla']</value>
       </entry>
       <entry>
-         <key>BASIC</key>
-         <value>//span[(text() = 'New' or . = 'New') and @ref_element = 'Object Repository/Page_WMI_NEW/Reference_Object_Feature/ImportMode_Interactive/tab2_Interactive/iframe_Close Window_ContentPla']</value>
+         <key>XPATH</key>
+         <value>//div[@id='eform_mcb67676_TabContainer_4_TabRef_4_phBO_7_BO_grc_ctl01_inLineMenuHolder']//ul[1]/li//span[text()='New']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
@@ -42,43 +42,49 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>id(&quot;inlineMenu_85c28382_9335_4c32_9271_9205165038ba_Submenu_1&quot;)/a[@class=&quot;ui-button ui-widget ui-state-default ui-button-text-icon-secondary&quot;]/span[@class=&quot;ui-button-text&quot;]</value>
+      <value>id(&quot;inlineMenu_43e3f446_3319_43b9_bce1_619ce8003cea_Submenu_1&quot;)/a[@class=&quot;ui-button ui-widget ui-state-default ui-button-text-icon-secondary&quot;]/span[@class=&quot;ui-button-text&quot;]</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
       <name>ref_element</name>
       <type>Main</type>
-      <value>Object Repository/Page_WMI_NEW/Reference_Object_Feature/ImportMode_Interactive/tab2_Interactive/iframe_Close Window_ContentPla</value>
+      <value>Object Repository/Page_WMI_NEW/Reference_Object_Feature/Reference Object Import/tab_DROPDOWN/iframe_Close Window_ContentPla</value>
    </webElementProperties>
    <webElementXpaths>
       <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:idRelative</name>
-      <value>//li[@id='inlineMenu_85c28382_9335_4c32_9271_9205165038ba_Submenu_1']/a/span</value>
+      <value>//li[@id='inlineMenu_43e3f446_3319_43b9_bce1_619ce8003cea_Submenu_1']/a/span</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:neighbor</name>
-      <value>(.//*[normalize-space(text()) and normalize-space(.)='* Duplicate values will be ignored.'])[2]/following::span[3]</value>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='DropDown'])[2]/following::span[1]</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:neighbor</name>
-      <value>(.//*[normalize-space(text()) and normalize-space(.)='Render All Field Types'])[2]/preceding::span[2]</value>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='* Duplicate values will be ignored.'])[4]/following::span[3]</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:neighbor</name>
-      <value>(.//*[normalize-space(text()) and normalize-space(.)='Render As CheckBox'])[2]/preceding::span[2]</value>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Field Render As Grid'])[2]/preceding::span[2]</value>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Render All Field Types'])[7]/preceding::span[2]</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:position</name>
-      <value>//div[2]/table/tbody/tr/td/div[2]/div/fieldset/table/tbody/tr[3]/td/div[2]/div/table/tbody/tr/td/table/tbody/tr/td/div/div/ul/li/a/span</value>
+      <value>//div[4]/table/tbody/tr/td/div[2]/div/fieldset/table/tbody/tr[3]/td/div[2]/div/table/tbody/tr/td/table/tbody/tr/td/div/div/ul/li/a/span</value>
    </webElementXpaths>
 </WebElementEntity>
