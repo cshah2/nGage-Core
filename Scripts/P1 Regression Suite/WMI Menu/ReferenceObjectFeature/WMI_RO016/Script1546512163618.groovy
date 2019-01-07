@@ -94,4 +94,4 @@ CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Da
 'verify created document'
 docTypeColumnPosition =CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Page_nGage_Dashboard/Home/tableHeader_RecentDocuments'),'Doc Type')
 String docType= CustomKeywords.'actions.Table.getCellText'(findTestObject('Object Repository/Page_nGage_Dashboard/Home/table_MyDocumentResults'), 1, docTypeColumnPosition)
-WebUI.verifyMatch(docType, 'Render All Field Types', false)
+WebUI.verifyMatch(docType, 'Reference Object ImportMode Autocreate', false)
