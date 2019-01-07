@@ -41,6 +41,15 @@ public class Chart {
 		int actCount = slices.size()
 		WebUI.verifyEqual(actCount, expCount)
 	}
+	
+	@Keyword
+	def getNumberOfSlices(TestObject chartLocator, String sliceLocator) {
+		
+		WebElement chart = WebUtil.getWebElement(chartLocator)
+		List<WebElement> slices = chart.findElements(By.xpath(sliceLocator))
+		WebUI.switchToDefaultContent()
+		return slices.size()
+	}
 
 	@Keyword
 	def verifyToolTipText(TestObject chartLocator, int sliceNo, String expToolTipText, String sliceLocator) {
@@ -79,6 +88,23 @@ public class Chart {
 		}	else {
 			KeywordUtil.markFailedAndStop("Tool tip value not matched")
 		}
+	}
+	
+	@Keyword
+	def mousOverOnSlice(TestObject chartLocator, int sliceNo, String sliceLocator) {
+		WebElement chart = WebUtil.getWebElement(chartLocator)
+		List<WebElement> slices = chart.findElements(By.xpath(sliceLocator))
+		WebElement slice = slices.get(sliceNo - 1)
+
+		
+		List<WebElement> argList = new ArrayList<WebElement>()
+		argList.add(slice)
+		WebUI.executeJavaScript("var evt = document.createEvent('MouseEvents');" + "evt.initMouseEvent('mouseover',true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0,null);" + "arguments[0].dispatchEvent(evt);", argList)
+
+//		Actions aDriver = new Actions(DriverFactory.getWebDriver())
+//		aDriver.moveToElement(slice).build().perform()
+		WebUI.delay(3)
+		WebUI.switchToDefaultContent()
 	}
 
 	@Keyword

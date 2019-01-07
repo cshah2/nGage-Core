@@ -70,7 +70,7 @@ WebUI.waitForElementPresent(findTestObject('Page_nGage_Dashboard/My_Work/td_Reco
 WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/My_Work/td_RecordProcessingMessage_Success'), GlobalVariable.G_LongTimeout)
 
 'Refresh Closure Action process until record count in tree is updated'
-CustomKeywords.'actions.MenuBar.refreshActivityUntilRecordCountIncreases'('MY_WORK', activityC_count, GlobalVariable.G_LongTimeout, 'Processes', 'Closure Action', 'Activity C')
+CustomKeywords.'actions.MenuBar.refreshActivityUntilRecordCountIncreases'(activityC_count, GlobalVariable.G_LongTimeout, 'MY_WORK', 'Processes', 'Closure Action', 'Activity C')
 
 'Click Closure Action - Activity C'
 CustomKeywords.'actions.MenuBar.clickTreeMenu'('MY_WORK', 'Processes', 'Closure Action', 'Activity C')

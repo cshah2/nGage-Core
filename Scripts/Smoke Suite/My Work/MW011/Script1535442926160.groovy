@@ -77,7 +77,7 @@ WebUI.switchToWindowTitle('Savana nGage')
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
 'Refresh Closure Action process until record count in tree is updated'
-CustomKeywords.'actions.MenuBar.refreshActivityUntilRecordCountIncreases'('MY_WORK', activityB_count, GlobalVariable.G_LongTimeout, 'Processes', 'Closure Action', 'Activity B')
+CustomKeywords.'actions.MenuBar.refreshActivityUntilRecordCountIncreases'(activityB_count, GlobalVariable.G_LongTimeout, 'MY_WORK', 'Processes', 'Closure Action', 'Activity B')
 
 'Click Closure Action - Activity B'
 CustomKeywords.'actions.MenuBar.clickTreeMenu'('MY_WORK', 'Processes', 'Closure Action', 'Activity B')

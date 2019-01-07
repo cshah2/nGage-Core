@@ -3,6 +3,6 @@
    <description>My Work/ Processses/ click on any Process name/ click on activity/ Dashboard/ Assignment/ click on graph and verify it</description>
    <name>MW015</name>
    <tag></tag>
-   <comment></comment>
+   <comment>Verify Page count in Result table</comment>
    <testCaseGuid>ee7178d4-87d5-497e-8b02-0a6aa3224e63</testCaseGuid>
 </TestCaseEntity>

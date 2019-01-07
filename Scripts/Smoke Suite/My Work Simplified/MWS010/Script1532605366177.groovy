@@ -18,9 +18,14 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUiBuiltInKeywords
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
+import utils.Consts
 
 'Login into application'
 CustomKeywords.'actions.Common.login'()
+
+'Create document Correspondance Generation'
+CustomKeywords.'actions.Common.createDocument_ClosureAction'(Consts.SMOKE_MWS002_CUSTOMERNAME, Consts.SMOKE_MWS002_CUSTOMERDETAIL)
+CustomKeywords.'actions.Common.createDocument_Correspondence'(Consts.SMOKE_CORRESPONDENCE_FIRSTNAME, Consts.SMOKE_CORRESPONDENCE_LASTNAME, Consts.SMOKE_CORRESPONDENCE_TOEMAIL, Consts.SMOKE_CORRESPONDENCE_TEMPLATE)
 
 'Click on "My Work Simplified" link'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/a_My Work Simplified'))
@@ -29,14 +34,6 @@ CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Da
 'Select Activity Closure Action - Activity A from Drop down'
 WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/select_Auto Import Controlled'), GlobalVariable.G_LongTimeout)
 WebUI.selectOptionByLabel(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/select_Auto Import Controlled'), 'Closure Action - Activity A', false)
-CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/iframe_iframe_110'))
-
-'Verify Get Next Button is displayed as it is configured against closure activity'
-WebUI.verifyElementVisible(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/input_btnGetNext'))
-
-'Select Activity Closure Action - Activity B from Drop down'
-WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/select_Auto Import Controlled'), GlobalVariable.G_LongTimeout)
-WebUI.selectOptionByLabel(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/select_Auto Import Controlled'), 'Closure Action - Activity B', false)
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/iframe_iframe_110'))
 
 'Verify Get Next Button is displayed as it is configured against closure activity'

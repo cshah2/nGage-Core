@@ -23,9 +23,6 @@ import utils.Consts
 'Login Into Application'
 CustomKeywords.'actions.Common.login'()
 
-'Click on Global New button'
-WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))
-
 'Create new Document'
 CustomKeywords.'actions.Common.createDocument_MultiPageViewerWithDragAndDrop'(Consts.SMOKE_HOME003_STRINGFIELD, Consts.SMOKE_HOME003_FILENAME, '')
 

@@ -24,17 +24,34 @@ public class Consts {
 	public static final String SMOKE_HOME001_FILENAME = 'Automation test document'
 	public static String SMOKE_HOME001_DOCID
 
+	public static final String SMOKE_HOME002_STRINGFIELD = 'Chintan Shah'
+	public static final String SMOKE_HOME002_FILENAME = 'Automation test document'
+	public static String SMOKE_HOME002_DOCID
+
 	public static final String SMOKE_HOME003_STRINGFIELD = 'Chintan Shah'
 	public static final String SMOKE_HOME003_FILENAME = 'Automation test document'
 	public static String SMOKE_HOME003_DOCID
 
+	public static final String SMOKE_HOME005_STRINGFIELD = 'Chintan Shah'
+	public static final String SMOKE_HOME005_FILENAME = 'Automation test document'
+	public static String SMOKE_HOME005_DOCID
+
 	public static final String SMOKE_HOME007_BMSTRING = 'Automation test document'
 	public static String SMOKE_HOME007_DOCID
+
+	public static final String SMOKE_HOME008_BMSTRING = 'Automation test document - Document HOME008'
+	public static String SMOKE_HOME008_DOCID
 
 	public static final String SMOKE_MYWORK003_CUSTOMERNAME = 'Chintan Shah'
 	public static final String SMOKE_MYWORK003_CUSTOMERDETAIL = 'Automation test document'
 	public static String SMOKE_MYWORK003_DOCID
 
+	public static final String SMOKE_CORRESPONDENCE_FIRSTNAME = 'Chintan'
+	public static final String SMOKE_CORRESPONDENCE_LASTNAME = 'Shah'
+	public static final String SMOKE_CORRESPONDENCE_TOEMAIL = 'c.s@abc.com'
+	public static final String SMOKE_CORRESPONDENCE_TEMPLATE = 'Template1'
+	
+	
 	public static final String SMOKE_MYWORK009_CUSTOMERNAME1 = 'Chintan Shah'
 	public static final String SMOKE_MYWORK009_CUSTOMERDETAIL1 = 'Automation test document'
 
@@ -162,7 +179,7 @@ public class Consts {
 	public static final String P1_REPO_BMDATETIME_DOC3 = ''
 	public static final String P1_REPO_DATETIMERANGE_DOC3 = ''
 
-	
+
 	public static final String P1_REPO_BMDATE_DOC4 = ''
 	public static final String P1_REPO_DATERANGE_DOC4 = ''
 	public static final String P1_REPO_BMDATETIME_DOC4 = ''
@@ -225,8 +242,8 @@ public class Consts {
 	public static final String P1_MW083_STARTDATETIME_MONTH = 'Mar'
 	public static final String P1_MW083_STARTDATETIME_YEAR = '2017'
 
-	
-	
+
+
 	/*
 	 * Doc Class and Doc Type Variables
 	 */

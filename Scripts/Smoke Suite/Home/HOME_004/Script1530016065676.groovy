@@ -27,6 +27,9 @@ CustomKeywords.'actions.Common.login'()
 CustomKeywords.'actions.MenuBar.clickTreeMenu'('HOME', 'Favorite Documents')
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/iframe_iframe_103'))
 
+'Verify popup dialog is not displayed'
+WebUI.verifyElementNotPresent(findTestObject('Page_nGage_Dashboard/Home/dialog_NoFavoriteDocuments'), GlobalVariable.G_LongTimeout)
+
 'Validate atleast 1 record is present in the grid.'
 int rowCount = CustomKeywords.'actions.Table.getRowsCount'(findTestObject('Page_nGage_Dashboard/Home/table_MyDocumentResults'))
 WebUI.verifyGreaterThanOrEqual(rowCount, 1)

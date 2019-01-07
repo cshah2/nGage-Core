@@ -3,6 +3,6 @@
    <description>Regression test My Work: Foldering - already on, No Edit checked</description>
    <name>MW007</name>
    <tag></tag>
-   <comment></comment>
+   <comment>Create document - Reload on postback</comment>
    <testCaseGuid>7f9b3607-e40d-4d57-8e4d-00774f80d80f</testCaseGuid>
 </TestCaseEntity>

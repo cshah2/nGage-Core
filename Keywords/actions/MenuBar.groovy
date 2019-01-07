@@ -422,6 +422,29 @@ public class MenuBar {
 	}
 
 	@Keyword
+	def isSubMenuPresent(String moduleName, String expMenu, String... menuPath) {
+
+		int size = menuPath.length
+
+		List<String> treePath = new ArrayList<String>(Arrays.asList(menuPath))
+		expandTree(moduleName, treePath)
+
+		WebDriver driver = DriverFactory.getWebDriver()
+		treeXpath.append("/ul/li/a")
+		List<WebElement> eleList = driver.findElements(By.xpath(treeXpath.toString()))
+		List<String> subNodeNames = new ArrayList<String>()
+
+		for(WebElement e in eleList) {
+			String dateValue = e.getText().trim()
+			int startIndex = 0
+			int endIndex = dateValue.lastIndexOf(' (')+1
+			subNodeNames.add(dateValue.substring(startIndex, endIndex).trim())
+		}
+
+		return subNodeNames.contains(expMenu.trim())
+	}
+
+	@Keyword
 	def verifyTreeIsSelected(String moduleName, String... menuPath) {
 
 		int size = menuPath.length

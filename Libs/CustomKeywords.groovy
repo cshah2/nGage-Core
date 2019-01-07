@@ -428,6 +428,16 @@ def static "actions.MenuBar.verifySubMenuPresent"(
          , 	menuPath)
 }
 
+def static "actions.MenuBar.isSubMenuPresent"(
+    	String moduleName	
+     , 	String expMenu	
+     , 	String[] menuPath	) {
+    (new actions.MenuBar()).isSubMenuPresent(
+        	moduleName
+         , 	expMenu
+         , 	menuPath)
+}
+
 def static "actions.MenuBar.verifyTreeIsSelected"(
     	String moduleName	
      , 	String[] menuPath	) {
@@ -934,6 +944,36 @@ def static "actions.Common.waitForImageToRender"(
         	to)
 }
 
+def static "actions.Common.createDocument_Correspondence"(
+    	String firstName	
+     , 	String lastName	
+     , 	String toEmail	
+     , 	String template	) {
+    (new actions.Common()).createDocument_Correspondence(
+        	firstName
+         , 	lastName
+         , 	toEmail
+         , 	template)
+}
+
+def static "actions.Common.createBulkDocuments_ClosureAction"(
+    	int requiredDocsCount	) {
+    (new actions.Common()).createBulkDocuments_ClosureAction(
+        	requiredDocsCount)
+}
+
+def static "actions.Common.createBulkDocuments_RenderAllFields"(
+    	int requiredDocsCount	) {
+    (new actions.Common()).createBulkDocuments_RenderAllFields(
+        	requiredDocsCount)
+}
+
+def static "actions.Common.createBulkDocuments_WMIMenuBovVertical"(
+    	int requiredDocsCount	) {
+    (new actions.Common()).createBulkDocuments_WMIMenuBovVertical(
+        	requiredDocsCount)
+}
+
 def static "actions.Window.clickElementAndWaitForWindowClose"(
     	TestObject saveButton	
      , 	int timeout	) {
@@ -1000,6 +1040,14 @@ def static "actions.Chart.verifyNumberOfSlices"(
          , 	sliceLocator)
 }
 
+def static "actions.Chart.getNumberOfSlices"(
+    	TestObject chartLocator	
+     , 	String sliceLocator	) {
+    (new actions.Chart()).getNumberOfSlices(
+        	chartLocator
+         , 	sliceLocator)
+}
+
 def static "actions.Chart.verifyToolTipText"(
     	TestObject chartLocator	
      , 	int sliceNo	
@@ -1023,6 +1071,16 @@ def static "actions.Chart.verifyToolTipText"(
          , 	sliceNo
          , 	expKey
          , 	expValue
+         , 	sliceLocator)
+}
+
+def static "actions.Chart.mousOverOnSlice"(
+    	TestObject chartLocator	
+     , 	int sliceNo	
+     , 	String sliceLocator	) {
+    (new actions.Chart()).mousOverOnSlice(
+        	chartLocator
+         , 	sliceNo
          , 	sliceLocator)
 }
 

@@ -25,6 +25,9 @@ import org.openqa.selenium.Keys as Keys
 'Login Into Application'
 CustomKeywords.'actions.Common.login'()
 
+'Create new Document'
+CustomKeywords.'actions.Common.createDocument_MultiPageViewerWithDragAndDrop'(Consts.SMOKE_HOME002_STRINGFIELD, Consts.SMOKE_HOME002_FILENAME, '')
+
 'Go to Recent Documents tab'
 CustomKeywords.'actions.MenuBar.clickTreeMenu'('HOME', 'Recent Documents')
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/iframe_iframe_103'))
@@ -44,6 +47,9 @@ WebUI.verifyElementText(findTestObject('Page_nGage_Dashboard/Home/column_RecentD
 
 int colNo_DocID = CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Page_nGage_Dashboard/Home/tableHeader_RecentDocuments'), 'Doc ID')
 
+'Copy Document ID value of 1st Record and Save it for other test cases.'
+Consts.SMOKE_HOME002_DOCID = CustomKeywords.'actions.Table.getCellText'(findTestObject('Page_nGage_Dashboard/Home/table_MyDocumentResults'), 1, colNo_DocID)
+
 'Open Document'
 CustomKeywords.'actions.Table.clickCell'(findTestObject('Page_nGage_Dashboard/Home/table_MyDocumentResults'), 1, colNo_DocID)
 
@@ -52,5 +58,5 @@ WebUI.switchToWindowTitle('MultipageViewer with drag and drop')
 WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 
 'Verify values of the fields'
-WebUI.verifyElementAttributeValue(findTestObject('Page_WMI/MultiPage_Viewer_DD/input_eform_mcb67676_phBO_3_BO_eidmKey_BM_String'), 'value', Consts.SMOKE_HOME001_STRINGFIELD, GlobalVariable.G_LongTimeout)
-WebUI.verifyElementAttributeValue(findTestObject('Page_WMI/MultiPage_Viewer_DD/input_eform_mcb67676_phBO_3_BO_eidmKey_FileName'), 'value', Consts.SMOKE_HOME001_FILENAME, GlobalVariable.G_LongTimeout)
+WebUI.verifyElementAttributeValue(findTestObject('Page_WMI/MultiPage_Viewer_DD/input_eform_mcb67676_phBO_3_BO_eidmKey_BM_String'), 'value', Consts.SMOKE_HOME002_STRINGFIELD, GlobalVariable.G_LongTimeout)
+WebUI.verifyElementAttributeValue(findTestObject('Page_WMI/MultiPage_Viewer_DD/input_eform_mcb67676_phBO_3_BO_eidmKey_FileName'), 'value', Consts.SMOKE_HOME002_FILENAME, GlobalVariable.G_LongTimeout)

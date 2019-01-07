@@ -211,6 +211,14 @@ public class Table {
 		WebElement table = WebUtil.getWebElement(tableLocator)
 		List<String> cellValues = getAllValuesFromColumn(table, colNo)
 		WebUI.switchToDefaultContent()
+		
+		if(cellValues.size() == 0) {
+			KeywordUtil.markFailedAndStop('No records available for comparison.')
+		}
+
+		if(StringUtils.isBlank(expValue)) {
+			KeywordUtil.markFailedAndStop('Expected value to be checked is blank '+expValue)
+		}
 
 		if(cellValues.contains(expValue)) {
 			KeywordUtil.markPassed("Value "+expValue+" found in column No : "+colNo)
@@ -226,6 +234,10 @@ public class Table {
 		List<String> cellValues = getAllValuesFromColumn(table, colNo)
 		WebUI.switchToDefaultContent()
 
+		if(StringUtils.isBlank(expValue)) {
+			KeywordUtil.markFailedAndStop('Expected value to be checked is blank '+expValue)
+		} 
+		
 		if(cellValues.size() > 0 && cellValues.contains(expValue)) {
 			KeywordUtil.markFailedAndStop("Value "+expValue+" found in column No : "+colNo)
 		}
@@ -238,6 +250,11 @@ public class Table {
 	def verifyColumnIsSortedInteger(TestObject tableLocator, int colNo, String sortOrder) {
 		WebElement table = WebUtil.getWebElement(tableLocator)
 		List<Integer> actList = getAllValueFromColumnInteger(table, colNo)
+		
+		if(actList.size() == 0) {
+			KeywordUtil.markFailedAndStop('No records available.')
+		}
+
 		List<Integer> expList = actList.collect{it}
 		WebUI.switchToDefaultContent()
 
@@ -252,6 +269,10 @@ public class Table {
 		WebElement table = WebUtil.getWebElement(tableLocator)
 		List<String> cellValues = getAllValuesFromColumn(table, colNo)
 		WebUI.switchToDefaultContent()
+		
+		if(cellValues.size() == 0) {
+			KeywordUtil.markFailedAndStop('No records available for comparison.')
+		}
 
 		for(String value in cellValues) {
 			boolean result = DateUtil.isRecordBetweenDateRange(value.replaceAll('/', '-'), fromDate.replaceAll('/', '-'), toDate.replaceAll('/', '-'))
@@ -267,6 +288,10 @@ public class Table {
 		List<String> cellValues = getAllValuesFromColumn(table, colNo)
 		WebUI.switchToDefaultContent()
 
+		if(cellValues.size() == 0) {
+			KeywordUtil.markFailedAndStop('No records available for comparison.')
+		}
+
 		for(String value in cellValues) {
 			boolean result = DateUtil.isRecordDateMoreThanFilterDate(value.replaceAll('/', '-'), fromDate)
 			if(!result) {
@@ -281,17 +306,17 @@ public class Table {
 		List<String> cellValues = getAllValuesFromColumn(table, colNo)
 		WebUI.switchToDefaultContent()
 
-		boolean result = false
+		if(cellValues.size() == 0) {
+			KeywordUtil.markFailedAndStop('No records available for comparison.')
+		}
+
+		boolean result
 
 		for(String value in cellValues) {
 			result = DateUtil.verifyDateFilter(operator, value.split(" ")[0].replaceAll('/', '-'), referenceDate.split(" ")[0].replaceAll('/', '-'),"MM-dd-yyyy")
 			if(!result) {
 				KeywordUtil.markFailedAndStop("Value : "+value+" does not satisfy filter criteria")
 			}
-		}
-
-		if(!result) {
-			KeywordUtil.markFailedAndStop('No records available in table for comparison')
 		}
 	}
 
@@ -300,6 +325,10 @@ public class Table {
 		WebElement table = WebUtil.getWebElement(tableLocator)
 		List<String> cellValues = getAllValuesFromColumn(table, colNo)
 		WebUI.switchToDefaultContent()
+
+		if(cellValues.size() == 0) {
+			KeywordUtil.markFailedAndStop('No records available for comparison.')
+		}
 
 		for(String value in cellValues) {
 			boolean result = verifyFilter(operator, Integer.parseInt(value), referenceNum)
@@ -315,6 +344,10 @@ public class Table {
 		List<String> cellValues = getAllValuesFromColumn(table, colNo)
 		WebUI.switchToDefaultContent()
 
+		if(cellValues.size() == 0) {
+			KeywordUtil.markFailedAndStop('No records available for comparison.')
+		}
+
 		for(String value in cellValues) {
 			boolean result = DateUtil.verifyDateFilter(operator, value.replaceAll('/', '-'), referenceDate.replaceAll('/', '-'),"MM-dd-yyyy HH:mm:ss a")
 			if(!result) {
@@ -329,6 +362,10 @@ public class Table {
 		List<String> cellValues = getAllValuesFromColumn(table, colNo)
 		WebUI.switchToDefaultContent()
 
+		if(cellValues.size() == 0) {
+			KeywordUtil.markFailedAndStop('No records available for comparison.')
+		}
+
 		for(String value in cellValues) {
 			boolean result = DateUtil.isRecordDateLessThanFilterDate(value.replaceAll('/', '-'), toDate)
 			if(!result) {
@@ -342,6 +379,10 @@ public class Table {
 		WebElement table = WebUtil.getWebElement(tableLocator)
 		List<String> cellValues = getAllValuesFromColumn(table, colNo)
 		WebUI.switchToDefaultContent()
+
+		if(cellValues.size() == 0) {
+			KeywordUtil.markFailedAndStop('No records available for comparison.')
+		}
 
 		for(String value in cellValues) {
 			if(!expValue.trim().equalsIgnoreCase(value.trim())) {
@@ -461,6 +502,10 @@ public class Table {
 		List<String> cellValues = getAllValuesFromColumn(table, colNo)
 		WebUI.switchToDefaultContent()
 
+		if(cellValues.size() == 0) {
+			KeywordUtil.markFailedAndStop('No records available for comparison.')
+		}
+
 		for(String value in cellValues) {
 			value=value.replaceAll('\\$','').replaceAll(',', '')
 
@@ -476,6 +521,10 @@ public class Table {
 		WebElement table = WebUtil.getWebElement(tableLocator)
 		List<String> cellValues = getAllValuesFromColumn(table, colNo)
 		WebUI.switchToDefaultContent()
+		
+		if(cellValues.size() == 0) {
+			KeywordUtil.markFailedAndStop('No records available for comparison.')
+		}
 
 		if(sortOrder.equalsIgnoreCase('asc'))
 			for(int i=0;i<cellValues.size()-1;i++){
