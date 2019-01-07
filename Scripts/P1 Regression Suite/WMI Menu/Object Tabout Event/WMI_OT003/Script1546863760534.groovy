@@ -27,16 +27,17 @@ WebUI.click(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'))
 WebUI.switchToWindowTitle('(Doc ID: NEW )')
 WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 
-'verify Business Model View - Textbox With Section Event is opened' 
+'verify Business Model View - Textbox With Section Event is opened'
 WebUI.waitForElementVisible(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Textbox with Section Event/span_(Title)Textbox With Section Event'), GlobalVariable.G_LongTimeout)
 
-' enter value (Show) in text box Master Object Event'
-WebUI.setText(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Textbox with Section Event/input_Master Object Event_efor'), 'Show')
+' enter value (Background) in text box Master Object Event'
+WebUI.setText(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Textbox with Section Event/input_Master Object Event_efor'), 'Background')
 WebUI.sendKeys(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Textbox with Section Event/input_Master Object Event_efor'), Keys.chord(Keys.TAB))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Textbox with Section Event/iframe_Close Window_ContentPla'))
 
-'verify Sample section should be visble'
+'verify background color'
 WebUI.verifyElementPresent(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Textbox with Section Event/span_Sample Section - Visible'), GlobalVariable.G_LongTimeout)
+CustomKeywords.'actions.Common.verifyCssValue'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Textbox with Section Event/div_Sample Section'), 'background-color', 'rgba(255, 165, 0, 1)')
 
 'save and close window'
 WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Textbox with Section Event/span_Save'))
@@ -66,4 +67,4 @@ WebUI.switchToWindowIndex(1)
 WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 
 'verify opened document'
-WebUI.verifyElementAttributeValue(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Textbox with Section Event/input_Master Object Event_efor'), 'value', 'Show', GlobalVariable.G_LongTimeout)
+WebUI.verifyElementAttributeValue(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Textbox with Section Event/input_Master Object Event_efor'), 'value', 'Background', GlobalVariable.G_LongTimeout)
