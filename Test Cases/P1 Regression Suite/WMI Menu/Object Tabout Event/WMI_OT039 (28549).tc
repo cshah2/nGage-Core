@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>28549 Regression Test WMI-Refrence Object -Drop Down event (Combination2)</description>
+   <name>WMI_OT039 (28549)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>79899a21-16cc-4f3a-9fe5-10af97aab89e</testCaseGuid>
+</TestCaseEntity>

@@ -56,9 +56,8 @@ String actualColor= CustomKeywords.'actions.Common.getCssValue'(findTestObject('
 'Verify String filed should be with back ground color Red '
 CustomKeywords.'actions.Common.verifyCssValue'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/input_String Field (Style)_efo'), 'background-color',actualColor)
 
-String dateRequired = DateUtil.getCurrentDateTime('MM-dd-yyyy HH:mm:ss a')
-
 'Set Date in Date field Required '
+String dateRequired = DateUtil.getCurrentDateTime('MM-dd-yyyy HH:mm:ss a')
 CustomKeywords.'actions.Common.setText_Date'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/input_Date Field (Required)_ef'), dateRequired)
 CustomKeywords.'actions.Common.setText_Date'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/input_String Field (Style)_efo'), dateRequired)
 
@@ -91,7 +90,7 @@ CustomKeywords.'actions.Table.clickCell'(findTestObject('Object Repository/Page_
 WebUI.switchToWindowIndex(1)
 WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 
+'Verify Changes saved in the document'
+
 'Close Window() and If Error Present Document will not get Close'
 CustomKeywords.'actions.Window.clickElementAndWaitForWindowClose'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/span_Close Window'),GlobalVariable.G_LongTimeout)
-
-
