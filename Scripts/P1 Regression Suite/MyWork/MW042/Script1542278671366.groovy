@@ -16,22 +16,23 @@ import internal.GlobalVariable as GlobalVariable
 'Login Into Application'
 CustomKeywords.'actions.Common.login'()
 
+'Create Bulk documents - Correspondence Generation'
+CustomKeywords.'actions.Common.createBulkDocuments_Correpondence'(30)
+
 'Click on My Work link from left menu'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_My Work Left Menu'))
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_iframe_105'))
 
-'Expand Correspondence Generation process'
-WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/icon_Expand_Correspondance Generation Process'))
-WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
-
-'click on correspondence activity'
-WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/a_Correspondance Activity'))
+'Click on Tree Menu Corresepondence Generation - Correspondence'
+CustomKeywords.'actions.MenuBar.clickTreeMenu'('MY_WORK', 'Processes', 'Correspondence Generation', 'Correspondence')
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_work_items'))
 
-'verify record count and activity count are same'
-CustomKeywords.'actions.Common.verifyRecordCountMatchesInActivityAndGrid'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/a_Correspondance Activity'),findTestObject('Page_nGage_Dashboard/My_Work/table_pagination_summary'))
+'Verify record count in activity and tree matches'
+int recordCount = CustomKeywords.'actions.MenuBar.getRecordCountInActivity'('MY_WORK', 'Processes', 'Correspondence Generation', 'Correspondence')
+println "Records Count = "+recordCount
+CustomKeywords.'actions.Common.verifyTotalRecordCountFromPageSummary'(findTestObject('Page_nGage_Dashboard/My_Work/table_pagination_summary'), recordCount)
 
-'verify page navigation of the grid.'
-int activityCount=CustomKeywords.'actions.MenuBar.getRecordCountInActivity'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/a_Correspondance Activity'))
-WebUI.verifyMatch('Showing 1 - 25 of '+activityCount.toString().trim(), WebUI.getText(findTestObject('Page_nGage_Dashboard/My_Work/table_pagination_summary')), false)
+'Verify number of records per page is 25'
+int rowCount = CustomKeywords.'actions.Table.getRowsCount'(findTestObject('Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'))
+WebUI.verifyEqual(rowCount, 25)

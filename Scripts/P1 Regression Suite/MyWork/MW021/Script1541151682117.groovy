@@ -16,60 +16,34 @@ import internal.GlobalVariable as GlobalVariable
 'Login Into Application'
 CustomKeywords.'actions.Common.login'()
 
+'Create Document'
+CustomKeywords.'actions.Common.createDocument_ClosureAction'('Chintan Shah', 'MW021 - Doc1')
+
 'Click on My Work link from left menu'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_My Work Left Menu'))
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_iframe_105'))
 
-'Expand Closure Action process'
-WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/icon_Expand_Closure Actions'))
-
-'verify daisy(pre loader) status'
-WebUI.verifyElementAttributeValue(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/li_closureAction'), 'aria-busy', 'true', GlobalVariable.G_LongTimeout)
-WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
-
-'wait for activity A to visible '
-WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/My_Work/a_Activity A'), GlobalVariable.G_LongTimeout)
+'Click Tree Menu'
+CustomKeywords.'actions.MenuBar.clickTreeMenu'('MY_WORK', 'Processes', 'Closure Action', 'Activity A', 'Chintan Shah')
 
 'keep track of activity count before refresh'
-int activityCount_Before=CustomKeywords.'actions.MenuBar.getRecordCountInActivity'(findTestObject('Page_nGage_Dashboard/My_Work/a_Activity A'))
-println activityCount_Before
+int activityCount_Before=CustomKeywords.'actions.MenuBar.getRecordCountInActivity'('MY_WORK', 'Processes', 'Closure Action', 'Activity A', 'Chintan Shah')
 
-'Click on Global New button'
-WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))
-
-'Select Document class and Document Type'
-CustomKeywords.'actions.Common.selectDocClassAndDocTypeForGlobalNew'('Closure Action', 'Closure Action')
-
-'Click on OK Button'
-WebUI.click(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'))
-WebUI.switchToWindowTitle('(Doc ID: NEW )')
-WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
-
-'switch to new window'
-WebUI.switchToWindowIndex(1)
-WebUI.setText(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/input_CustomerDetails'), 'customer test data')
-
-'Click on Save button'
-WebUI.mouseOver(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/li_ActionMenu_SubMenu'))
-WebUI.waitForElementVisible(findTestObject('Page_WMI_NEW/MultiPage_Viewer_DD/a_Save'), GlobalVariable.G_LongTimeout)
-CustomKeywords.'actions.Window.clickElementAndWaitForWindowClose'(findTestObject('Page_WMI_NEW/MultiPage_Viewer_DD/a_Save'), GlobalVariable.G_LongTimeout)
-
-'switch to main window'
-WebUI.switchToWindowIndex(0)
-
-'Close "create new" popup dialog'
-WebUI.switchToWindowIndex(0)
-WebUI.click(findTestObject('Page_nGage_Dashboard/Home/span_ui-button-icon-primary ui'))
+'Create Document'
+CustomKeywords.'actions.Common.createDocument_ClosureAction'('Chintan Shah', 'MW021 - Doc2')
 
 'refresh activity A'
-WebUI.rightClick(findTestObject('Page_nGage_Dashboard/My_Work/a_Activity A'))
-WebUI.waitForElementVisible(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/contextMenu_Refresh'), GlobalVariable.G_LongTimeout)
-WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/contextMenu_Refresh'))
+CustomKeywords.'actions.MenuBar.rightClickTreeMenu'('MY_WORK', 'Processes', 'Closure Action', 'Activity A')
+WebUI.delay(2)
+
+'Click on Refresh option'
+CustomKeywords.'actions.ContextMenu.clickOption'(findTestObject('Page_nGage_Dashboard/contextMenuOptions'), 'Refresh')
+WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
+WebUI.delay(2)
 
 'store value of  activity count after refresh'
-int activityCount_After=CustomKeywords.'actions.MenuBar.getRecordCountInActivity'(findTestObject('Page_nGage_Dashboard/My_Work/a_Activity A'))
-println activityCount_After
+int activityCount_After=CustomKeywords.'actions.MenuBar.getRecordCountInActivity'('MY_WORK', 'Processes', 'Closure Action', 'Activity A', 'Chintan Shah')
 
 'verify count after refresh '
-WebUI.verifyMatch(activityCount_Before.toString().trim(), (activityCount_After-1).toString().trim(), false)
+WebUI.verifyEqual(activityCount_Before+1, activityCount_After)

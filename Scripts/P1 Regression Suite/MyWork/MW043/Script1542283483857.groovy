@@ -16,22 +16,23 @@ import internal.GlobalVariable as GlobalVariable
 'Login Into Application'
 CustomKeywords.'actions.Common.login'()
 
+'Create Bulk document for Reload on Postback'
+CustomKeywords.'actions.Common.createBulkDocuments_ReloadOnPostBack'(30)
+
 'Click on My Work link from left menu'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_My Work Left Menu'))
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_iframe_105'))
 
-'Expand Auto inport controlled batch process'
-WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/icon_Expand_AutoImportControlledBatchProcess'))
-WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
-
-'click on Activity Batch Exception Partial'
-WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/a_BatchExceptionPartial'))
+'Click Tree Menu ReloadOnPostBack - Activity1'
+CustomKeywords.'actions.MenuBar.clickTreeMenu'('MY_WORK', 'Processes', 'ReloadOnPostback', 'Activity1')
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_work_items'))
 
-'verify record count and activity count are same'
-CustomKeywords.'actions.Common.verifyRecordCountMatchesInActivityAndGrid'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/a_BatchExceptionPartial'),findTestObject('Page_nGage_Dashboard/My_Work/table_pagination_summary'))
+'Verify record count in activity and tree matches'
+int recordCount = CustomKeywords.'actions.MenuBar.getRecordCountInActivity'('MY_WORK', 'Processes', 'ReloadOnPostback', 'Activity1')
+println "Records Count = "+recordCount
+CustomKeywords.'actions.Common.verifyTotalRecordCountFromPageSummary'(findTestObject('Page_nGage_Dashboard/My_Work/table_pagination_summary'), recordCount)
 
-'verify page navigation of the grid.'
-int activityCount=CustomKeywords.'actions.MenuBar.getRecordCountInActivity'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/a_BatchExceptionPartial'))
-WebUI.verifyMatch('Showing 1 - 25 of '+activityCount.toString().trim(), WebUI.getText(findTestObject('Page_nGage_Dashboard/My_Work/table_pagination_summary')), false)
+'Verify number of records per page is 25'
+int rowCount = CustomKeywords.'actions.Table.getRowsCount'(findTestObject('Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'))
+WebUI.verifyEqual(rowCount, 25)

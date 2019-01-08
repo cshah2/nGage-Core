@@ -320,20 +320,6 @@ def static "actions.Table.verifyAttributeValueOfRow"(
          , 	attrValue)
 }
 
-def static "actions.MenuBar.getRecordCountInActivity"(
-    	TestObject element	) {
-    (new actions.MenuBar()).getRecordCountInActivity(
-        	element)
-}
-
-def static "actions.MenuBar.refreshActivityUntilRecordCountIncreases"(
-    	TestObject element	
-     , 	int timeout	) {
-    (new actions.MenuBar()).refreshActivityUntilRecordCountIncreases(
-        	element
-         , 	timeout)
-}
-
 def static "actions.MenuBar.refreshActivityUntilRecordCountIncreases"(
     	int originalCount	
      , 	int timeout	
@@ -971,6 +957,24 @@ def static "actions.Common.createBulkDocuments_RenderAllFields"(
 def static "actions.Common.createBulkDocuments_WMIMenuBovVertical"(
     	int requiredDocsCount	) {
     (new actions.Common()).createBulkDocuments_WMIMenuBovVertical(
+        	requiredDocsCount)
+}
+
+def static "actions.Common.createBulkDocuments_Correpondence"(
+    	int requiredDocsCount	) {
+    (new actions.Common()).createBulkDocuments_Correpondence(
+        	requiredDocsCount)
+}
+
+def static "actions.Common.createDocument_ReloadOnPostBack"(
+    	String BM_String	) {
+    (new actions.Common()).createDocument_ReloadOnPostBack(
+        	BM_String)
+}
+
+def static "actions.Common.createBulkDocuments_ReloadOnPostBack"(
+    	int requiredDocsCount	) {
+    (new actions.Common()).createBulkDocuments_ReloadOnPostBack(
         	requiredDocsCount)
 }
 

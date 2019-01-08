@@ -640,7 +640,7 @@ public class Common {
 	def verifyTotalRecordCountFromPageSummary(TestObject to, int expCount) {
 		String text = WebUI.getText(to).trim()
 		if(expCount < 0)
-			KeywordUtil.markFailedAndStop('Expected recod count is less than 0')
+			KeywordUtil.markFailedAndStop('Expected record count is less than 0')
 
 		int actCount
 		try {
@@ -1120,20 +1120,20 @@ public class Common {
 		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 		WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 	}
-	
+
 	@Keyword
 	def createBulkDocuments_RenderAllFields(int requiredDocsCount) {
-		
+
 		'Expand Repository Menu'
 		WebUI.click(findTestObject('Page_nGage_Dashboard/Repository/h3_Repository Menu'))
 		waitForFrameToLoad(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
-		
+
 		int recordCount = 0
 
 		if(new MenuBar().isSubMenuPresent('REPO', 'Render All Field Types', 'Business Model', 'Business Model')) {
 			recordCount = new MenuBar().getRecordCountInActivity('REPO', 'Business Model', 'Business Model', 'Render All Field Types')
 		}
-		
+
 		if(recordCount < requiredDocsCount) {
 			int extraDocsRequired = requiredDocsCount-recordCount
 			for(int i = 1; i <= extraDocsRequired; i++) {
@@ -1144,20 +1144,20 @@ public class Common {
 		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 		WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 	}
-	
+
 	@Keyword
 	def createBulkDocuments_WMIMenuBovVertical(int requiredDocsCount) {
-		
+
 		'Expand Repository Menu'
 		WebUI.click(findTestObject('Page_nGage_Dashboard/Repository/h3_Repository Menu'))
 		waitForFrameToLoad(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
-		
+
 		int recordCount = 0
 
 		if(new MenuBar().isSubMenuPresent('REPO', 'WMI Menu BOV Vertical', 'WMI Menu', 'WMI Menu')) {
 			recordCount = new MenuBar().getRecordCountInActivity('REPO', 'WMI Menu', 'WMI Menu', 'WMI Menu BOV Vertical')
 		}
-		
+
 		if(recordCount < requiredDocsCount) {
 			int extraDocsRequired = requiredDocsCount-recordCount
 			for(int i = 1; i <= extraDocsRequired; i++) {
@@ -1168,4 +1168,90 @@ public class Common {
 		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 		WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 	}
+	
+	@Keyword
+	def createBulkDocuments_Correpondence(int requiredDocsCount) {
+		
+		'Click on My Work link from left menu'
+		WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_My Work Left Menu'))
+		WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
+		waitForFrameToLoad(findTestObject('Page_nGage_Dashboard/My_Work/iframe_iframe_105'))
+
+		int recordCount = 0
+
+		if(new MenuBar().isSubMenuPresent('MY_WORK', 'Correspondence', 'Processes', 'Correspondence Generation')) {
+			recordCount = new MenuBar().getRecordCountInActivity('MY_WORK', 'Processes', 'Correspondence Generation', 'Correspondence')
+		}
+
+		if(recordCount < requiredDocsCount) {
+			int extraDocsRequired = requiredDocsCount-recordCount
+			for(int i = 1; i <= extraDocsRequired; i++) {
+				createDocument_Correspondence("Chintan", "Shah", "c.s@abc.com", "Template1")
+			}
+		}
+		WebUI.refresh()
+		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+		WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
+
+	}
+	
+	@Keyword
+	def createDocument_ReloadOnPostBack(String BM_String) {
+
+		'Switch to main window'
+		WebUI.switchToWindowTitle('Savana nGage')
+
+		'Create a new BovDocTwoRow Document'
+		WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))
+		selectDocClassAndDocTypeForGlobalNew('DoNotReloadOnPostback', 'ReloadOnPostbackNoSplit T')
+		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'))
+
+		'Switch to new Window'
+		//WebUI.switchToWindowTitle('(Doc ID: NEW )')
+		WebUI.switchToWindowIndex(1)
+		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+
+		'Fill the details required'
+		WebUI.setText(findTestObject('Page_WMI_NEW/DoNotReloadOnPostBack/NoSplit_T/input_BM String'), BM_String)
+
+		'Save details and close'
+		WebUI.click(findTestObject('Page_WMI_NEW/DoNotReloadOnPostBack/NoSplit_T/span_Save'))
+		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+
+		'Click close window'
+		WebUI.waitForElementVisible(findTestObject('Page_WMI_NEW/DoNotReloadOnPostBack/NoSplit_T/span_Close'), GlobalVariable.G_LongTimeout)
+		new Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI_NEW/DoNotReloadOnPostBack/NoSplit_T/span_Close'),GlobalVariable.G_LongTimeout)
+
+		'Switch to main window and close'
+		WebUI.switchToWindowTitle('Savana nGage')
+		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/span_ui-button-icon-primary ui'))
+	}
+	
+	@Keyword
+	def createBulkDocuments_ReloadOnPostBack(int requiredDocsCount) {
+		
+		'Click on My Work link from left menu'
+		WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_My Work Left Menu'))
+		WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
+		waitForFrameToLoad(findTestObject('Page_nGage_Dashboard/My_Work/iframe_iframe_105'))
+
+		int recordCount = 0
+
+		if(new MenuBar().isSubMenuPresent('MY_WORK', 'Activity1', 'Processes', 'ReloadOnPostback')) {
+			recordCount = new MenuBar().getRecordCountInActivity('MY_WORK', 'Processes', 'ReloadOnPostback', 'Activity1')
+		}
+
+		if(recordCount < requiredDocsCount) {
+			int extraDocsRequired = requiredDocsCount-recordCount
+			for(int i = 1; i <= extraDocsRequired; i++) {
+				createDocument_ReloadOnPostBack('Chintan Shah '+i)
+			}
+		}
+		WebUI.refresh()
+		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+		WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
+
+	}
+
+	
 }

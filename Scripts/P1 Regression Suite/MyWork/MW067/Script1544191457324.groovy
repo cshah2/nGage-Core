@@ -62,7 +62,6 @@ WebUI.waitForElementPresent(findTestObject('Page_nGage_Dashboard/My_Work/td_Reco
 WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/My_Work/td_RecordProcessingMessage_Success'), GlobalVariable.G_LongTimeout)
 
 //Refresh Closure Action process until record count in tree is updated
-//CustomKeywords.'actions.MenuBar.refreshActivityUntilRecordCountIncreases'(findTestObject('Page_nGage_Dashboard/My_Work/a_Activity C'), GlobalVariable.G_LongTimeout)
 CustomKeywords.'actions.MenuBar.refreshActivityUntilRecordCountIncreases'(originalCountC, GlobalVariable.G_LongTimeout, 'MY_WORK', 'Processes', 'Closure Action', 'Activity C')
 
 //Select Activity C from left menu
@@ -126,7 +125,6 @@ WebUI.switchToDefaultContent()
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
 'Refresh activity B until record count increases'
-//CustomKeywords.'actions.MenuBar.refreshActivityUntilRecordCountIncreases'(findTestObject('Page_nGage_Dashboard/My_Work/a_Activity B'), GlobalVariable.G_LongTimeout)
 CustomKeywords.'actions.MenuBar.refreshActivityUntilRecordCountIncreases'(originalCountB, GlobalVariable.G_LongTimeout, 'MY_WORK', 'Processes', 'Closure Action', 'Activity B')
 
 //Select Activity B
