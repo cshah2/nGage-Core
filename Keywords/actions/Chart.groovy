@@ -94,8 +94,14 @@ public class Chart {
 	def mousOverOnSlice(TestObject chartLocator, int sliceNo, String sliceLocator) {
 		WebElement chart = WebUtil.getWebElement(chartLocator)
 		List<WebElement> slices = chart.findElements(By.xpath(sliceLocator))
-		WebElement slice = slices.get(sliceNo - 1)
-
+		
+		WebElement slice
+		try {
+			slice = slices.get(sliceNo - 1)
+		}
+		catch(Exception e) {
+			KeywordUtil.markFailedAndStop('Required slice not found. Total slices = '+slices.size())
+		}
 		
 		List<WebElement> argList = new ArrayList<WebElement>()
 		argList.add(slice)
@@ -111,7 +117,14 @@ public class Chart {
 	def clickSlice(TestObject chartLocator, int sliceNo, String sliceLocator) {
 		WebElement chart = WebUtil.getWebElement(chartLocator)
 		List<WebElement> slices = chart.findElements(By.xpath(sliceLocator))
-		WebElement slice = slices.get(sliceNo - 1)
+		
+		WebElement slice
+		try {
+			slice = slices.get(sliceNo - 1)
+		}
+		catch(Exception e) {
+			KeywordUtil.markFailedAndStop('Required slice not found. Total slices = '+slices.size())
+		}
 		
 		List<WebElement> argList = new ArrayList<WebElement>()
 		argList.add(slice) 

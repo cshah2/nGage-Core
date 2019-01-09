@@ -97,7 +97,7 @@ public class MenuBar {
 
 		while(currentTime < endTime) {
 			println "Original Count = "+originalCount+"currentCount = "+currentCount
-			if(originalCount < 0 || currentCount < 0 || currentCount <= originalCount) {
+			if(currentCount < 0 || currentCount <= originalCount) {
 
 				rightClickTreeMenu(moduleName, parentPath)
 				WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/contextMenu'), GlobalVariable.G_SmallTimeout)
