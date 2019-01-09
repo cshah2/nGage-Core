@@ -16,6 +16,9 @@ import internal.GlobalVariable as GlobalVariable
 'Login Into Application'
 CustomKeywords.'actions.Common.login'()
 
+'Create Document Reload On Postback'
+CustomKeywords.'actions.Common.createDocument_ReloadOnPostBack'('Chintan Shah')
+
 'Click on My Work link from left menu'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_My Work Left Menu'))
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
@@ -25,7 +28,7 @@ CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Da
 CustomKeywords.'actions.MenuBar.clickTreeMenu'('MY_WORK', 'Processes', 'ReloadOnPostback', 'Activity1')
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_work_items'))
 
-'Perform right click operation on Correspondence'
+'Perform right click operation on ReloadOnPostBack - Activity 1'
 CustomKeywords.'actions.MenuBar.rightClickTreeMenu'('MY_WORK', 'Processes', 'ReloadOnPostback', 'Activity1')
 
 'Verify Foldering configuration option is not present in context menu'

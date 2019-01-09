@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TestCaseEntity>
-   <description>My Work/ Processses/ click on any Process name/ click on activity/ Dashboard/ New vs In process/ click on graph and verify it</description>
-   <name>MW017</name>
-   <tag></tag>
-   <comment></comment>
-   <testCaseGuid>81b59c4c-3dd3-4212-8df0-2f76d440eb7d</testCaseGuid>
-</TestCaseEntity>

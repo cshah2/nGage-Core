@@ -16,31 +16,30 @@ import internal.GlobalVariable as GlobalVariable
 'Login Into Application'
 CustomKeywords.'actions.Common.login'()
 
+'Create Bulk document'
+CustomKeywords.'actions.Common.createBulkDocuments_ClosureAction'(35)
+
 'Click on My Work link from left menu'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_My Work Left Menu'))
-WebUI.waitForElementVisible(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/i_PostmanProcesses1'), GlobalVariable.G_LongTimeout)
-
-'expand postman process1'
-WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/i_PostmanProcesses1'))
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_iframe_105'))
 
-'click on new process hold activity(link)'
-WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/a_NewProcessHoldActivity'))
+'Click on Tree Menu'
+CustomKeywords.'actions.MenuBar.clickTreeMenu'('MY_WORK', 'Processes', 'Closure Action', 'Activity A')
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_work_items'))
 
-'verify count (total count and activity count)'
-CustomKeywords.'actions.Common.verifyRecordCountInActivityMatchesWithResultGrid'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/a_NewProcessHoldActivity'),findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/div_PageCount'))
-
-//println WebUI.getAttribute(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/table_page_number_input'), 'value')
+'Get Current page number'
 int beforeCount=Integer.parseInt(WebUI.getAttribute(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/table_page_number_input'), 'value'))
+
+'Verify current page number is 1'
+WebUI.verifyEqual(beforeCount, 1)
 
 'click on toppager next T button'
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/span_nextTTopPager'))
-//WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_work_items'))
 
-//println WebUI.getAttribute(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/table_page_number_input'), 'value')
+'Get Current page number'
 int afterCount=Integer.parseInt(WebUI.getAttribute(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/table_page_number_input'), 'value'))
 
-'verify changed page number'
-WebUI.verifyMatch(beforeCount.toString(), (afterCount-1).toString(), false)
+'Verify current page number is 2'
+WebUI.verifyEqual(afterCount, 2)

@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TestCaseEntity>
-   <description>Validate Records are filtered based on Date Range values</description>
-   <name>REPO003</name>
-   <tag></tag>
-   <comment></comment>
-   <testCaseGuid>ace372b5-6554-4364-a4b7-9a2422dff8d8</testCaseGuid>
-</TestCaseEntity>

@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TestCaseEntity>
-   <description>Validate filter when only End date is provided in Date Range field.</description>
-   <name>REPO005</name>
-   <tag></tag>
-   <comment></comment>
-   <testCaseGuid>2526edc0-26e8-45e6-a6dd-1145da55637a</testCaseGuid>
-</TestCaseEntity>

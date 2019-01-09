@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TestCaseEntity>
-   <description>My Work Simplified: Test a date range (enddate)</description>
-   <name>MWS005</name>
-   <tag></tag>
-   <comment></comment>
-   <testCaseGuid>7fa09d96-7218-4b77-a035-75b757e0896c</testCaseGuid>
-</TestCaseEntity>

@@ -24,7 +24,8 @@ WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/h3
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
 
 'Expand Business Model Repository'
-WebUI.doubleClick(findTestObject('Page_nGage_Dashboard/Repository/menu_Business Model'))
+//WebUI.doubleClick(findTestObject('Page_nGage_Dashboard/Repository/menu_Business Model'))
+WebUI.click(findTestObject('Page_nGage_Dashboard/Repository/iconExpand_BusinessModel'))
 
 'verify daisy(pre loader) status'
 CustomKeywords.'actions.Common.verifyJQueryRunningStatus'(null, true)
@@ -33,10 +34,12 @@ CustomKeywords.'actions.Common.verifyJQueryRunningStatus'(null, true)
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
 'Close Business Model Repository'
-WebUI.doubleClick(findTestObject('Page_nGage_Dashboard/Repository/menu_Business Model'))
+//WebUI.doubleClick(findTestObject('Page_nGage_Dashboard/Repository/menu_Business Model'))
+WebUI.click(findTestObject('Page_nGage_Dashboard/Repository/iconExpand_BusinessModel'))
 
 'Expand again Business Model Repository'
-WebUI.doubleClick(findTestObject('Page_nGage_Dashboard/Repository/menu_Business Model'))
+//WebUI.doubleClick(findTestObject('Page_nGage_Dashboard/Repository/menu_Business Model'))
+WebUI.click(findTestObject('Page_nGage_Dashboard/Repository/iconExpand_BusinessModel'))
 
 'verify daisy(pre loader) status'
 CustomKeywords.'actions.Common.verifyJQueryRunningStatus'(null, false)

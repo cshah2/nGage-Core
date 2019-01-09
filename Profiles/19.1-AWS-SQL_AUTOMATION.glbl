@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalVariableEntities>
+   <description></description>
+   <name>19.1-AWS-SQL_AUTOMATION</name>
+   <tag></tag>
+   <defaultProfile>false</defaultProfile>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>120</initValue>
+      <name>G_LongTimeout</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>30</initValue>
+      <name>G_SmallTimeout</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'http://savphlpedev64/Sav.191Features.Runtime'</initValue>
+      <name>BaseURL</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'cshah_admin'</initValue>
+      <name>Username</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'Password1234!'</initValue>
+      <name>Password</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'AWS_SQLSERVER_QAAUTOMATION'</initValue>
+      <name>Database</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>Document ID Generated in Script</description>
+      <initValue>''</initValue>
+      <name>DocumentID</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>Name of the search filter to be saved</description>
+      <initValue>''</initValue>
+      <name>FilterName</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>''</initValue>
+      <name>MW018_DocID</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>[('PIE') : '//*[name() = \'g\' and contains(@class,\'nv-slice\')]', ('V_BAR') : '//*[name()=\'rect\' and not(@height = \'0\') and contains(@class, \'nv-bar\')]', ('H_BAR') : '//*[name()=\'rect\' and not(@width = \'0\')]']</initValue>
+      <name>ChartType</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>60</initValue>
+      <name>Standard_Timeout</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>''</initValue>
+      <name>Copy_Report_Name</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'http://savphlpedev64/Sav.Maint.AdminApi'</initValue>
+      <name>BaseAdminApiURL</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>[('MW067_UN') : 'Auto_BO_uncheck', ('MW066_UN') : 'Auto_BO_Check', ('MW065_UN') : 'Auto_AI_uncheck', ('MW064_UN') : 'Auto_AI_check', ('MW063_UN') : 'Auto_WI_uncheck', ('MW062_UN') : 'Auto_WI_Check']</initValue>
+      <name>Users</name>
+   </GlobalVariableEntity>
+</GlobalVariableEntities>

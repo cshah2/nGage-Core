@@ -93,6 +93,8 @@ public class Common {
 				retryAttempt++
 			}
 		}
+
+		WebUI.verifyElementVisible(findTestObject('Page_nGage_Dashboard/input_btnLogout'))
 	}
 
 	@Keyword
@@ -1168,10 +1170,10 @@ public class Common {
 		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 		WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 	}
-	
+
 	@Keyword
 	def createBulkDocuments_Correpondence(int requiredDocsCount) {
-		
+
 		'Click on My Work link from left menu'
 		WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_My Work Left Menu'))
 		WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
@@ -1194,7 +1196,7 @@ public class Common {
 		WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
 	}
-	
+
 	@Keyword
 	def createDocument_ReloadOnPostBack(String BM_String) {
 
@@ -1226,10 +1228,10 @@ public class Common {
 		WebUI.switchToWindowTitle('Savana nGage')
 		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/span_ui-button-icon-primary ui'))
 	}
-	
+
 	@Keyword
 	def createBulkDocuments_ReloadOnPostBack(int requiredDocsCount) {
-		
+
 		'Click on My Work link from left menu'
 		WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_My Work Left Menu'))
 		WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
@@ -1253,5 +1255,5 @@ public class Common {
 
 	}
 
-	
+
 }

@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TestCaseEntity>
-   <description>Regression test My Work: Admin actions (only visible to admin user groups) - Open All Selected Item(s)</description>
-   <name>MW021</name>
-   <tag></tag>
-   <comment></comment>
-   <testCaseGuid>69c553d0-58b3-423d-9009-3e440995b5f2</testCaseGuid>
-</TestCaseEntity>

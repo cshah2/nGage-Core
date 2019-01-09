@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Favorite Document - Validate user is able to remove document from the Favorite list</description>
+   <name>HOME_005 (32380)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>76d999fe-8849-4f00-8b4c-c4c350591d46</testCaseGuid>
+</TestCaseEntity>

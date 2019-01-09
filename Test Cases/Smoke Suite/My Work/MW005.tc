@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TestCaseEntity>
-   <description>Regression test My Work: date range, enter start date and end date</description>
-   <name>MW005</name>
-   <tag></tag>
-   <comment></comment>
-   <testCaseGuid>75824b50-bd32-403b-8942-f8eca704a5e8</testCaseGuid>
-</TestCaseEntity>

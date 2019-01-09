@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>My Work/ click on Processes/ click on graph and verify all four sections</description>
+   <name>MW013 (30676)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>a3e85fbb-7dce-4f0f-98ed-dde79d1cf0c9</testCaseGuid>
+</TestCaseEntity>

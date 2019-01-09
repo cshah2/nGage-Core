@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TestCaseEntity>
-   <description>Validate &quot;Records count per Page &quot; and &quot;Max Returned records&quot; for Business model search class</description>
-   <name>REPO011</name>
-   <tag></tag>
-   <comment></comment>
-   <testCaseGuid>de588360-81ed-48d5-82e2-f24ed704b3b8</testCaseGuid>
-</TestCaseEntity>

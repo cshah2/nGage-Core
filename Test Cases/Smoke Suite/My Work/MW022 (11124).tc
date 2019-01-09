@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Regression test My Work: show assigned only</description>
+   <name>MW022 (11124)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>78da1a6d-1c7c-4bca-8d5a-81fa86fb0e97</testCaseGuid>
+</TestCaseEntity>

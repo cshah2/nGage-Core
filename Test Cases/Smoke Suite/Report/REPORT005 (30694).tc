@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Regression test Reports: Validate report opening/ with graph</description>
+   <name>REPORT005 (30694)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>d1c75523-aa14-4184-a6a9-0d2d63872852</testCaseGuid>
+</TestCaseEntity>

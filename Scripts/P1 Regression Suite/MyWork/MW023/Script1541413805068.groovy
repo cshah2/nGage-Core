@@ -35,6 +35,7 @@ WebUI.uncheck(findTestObject('Page_nGage_Dashboard/My_Work/chexkbox_ShowAssigned
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_work_items'))
 
 'verify count (total count and activity count)'
+int docCount = CustomKeywords.'actions.MenuBar.getRecordCountInActivity'('MY_WORK', 'Processes', '')
 CustomKeywords.'actions.Common.verifyRecordCountInActivityMatchesWithResultGrid'(findTestObject('Page_nGage_Dashboard/My_Work/a_LinQ Activity D'),findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/div_PageCount'))
 
 'Validate atleast 1 record is present in the grid.'

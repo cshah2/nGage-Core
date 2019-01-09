@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TestCaseEntity>
-   <description>create new doc/ master object view is loaded</description>
-   <name>WMI001</name>
-   <tag></tag>
-   <comment></comment>
-   <testCaseGuid>ea1ce29e-4140-4c91-9e8f-8abe52820568</testCaseGuid>
-</TestCaseEntity>

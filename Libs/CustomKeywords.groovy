@@ -320,6 +320,12 @@ def static "actions.Table.verifyAttributeValueOfRow"(
          , 	attrValue)
 }
 
+def static "actions.MenuBar.getRecordCountInActivity"(
+    	TestObject element	) {
+    (new actions.MenuBar()).getRecordCountInActivity(
+        	element)
+}
+
 def static "actions.MenuBar.refreshActivityUntilRecordCountIncreases"(
     	int originalCount	
      , 	int timeout	

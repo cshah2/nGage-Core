@@ -53,26 +53,3 @@ WebUI.verifyOptionSelectedByLabel(findTestObject('Page_nGage_Dashboard/My_Work/F
 
 WebUI.verifyOptionSelectedByLabel(findTestObject('Page_nGage_Dashboard/My_Work/Folder_Configuration/Level3_FieldAssigned'), 'Select a Field', false, GlobalVariable.G_LongTimeout)
 WebUI.verifyOptionSelectedByLabel(findTestObject('Page_nGage_Dashboard/My_Work/Folder_Configuration/Level3_Sorting'), 'None', false, GlobalVariable.G_LongTimeout)
-
-//'Login Into Application'
-//CustomKeywords.'actions.Common.login'()
-//
-//'Click on My Work link from left menu'
-//WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_My Work Left Menu'))
-//WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
-//CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_iframe_105'))
-//
-//'Expand Interactive Process'
-//WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/icon_Expand_Interactive Process'))
-//WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
-//
-//'Perform Context click on Acitivy User act2'
-//WebUI.rightClick(findTestObject('Page_nGage_Dashboard/My_Work/a_User act2 Activity'))
-//WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
-//
-//'Verify "Foldering Configuration" option is present'
-//WebUI.verifyElementVisible(findTestObject('Page_nGage_Dashboard/My_Work/contextMenu_Folder Configuration'))
-//
-//'Verify refresh option is present'
-//WebUI.verifyElementPresent(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/contextMenu_Refresh'), GlobalVariable.G_LongTimeout)
-//

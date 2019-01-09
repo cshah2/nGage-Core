@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TestCaseEntity>
-   <description>Validate filter when only Start date is provided in Date Range field.</description>
-   <name>REPO004</name>
-   <tag></tag>
-   <comment></comment>
-   <testCaseGuid>74ef2b55-0f07-4f3b-a611-9ad6a5c52945</testCaseGuid>
-</TestCaseEntity>

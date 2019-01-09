@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TestCaseEntity>
-   <description>Validate clear search functionality</description>
-   <name>REPO002</name>
-   <tag></tag>
-   <comment></comment>
-   <testCaseGuid>c5d1d2fd-d4b5-4ab7-8cbf-50d742f3a441</testCaseGuid>
-</TestCaseEntity>

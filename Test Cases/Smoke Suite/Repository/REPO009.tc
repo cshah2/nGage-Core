@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TestCaseEntity>
-   <description>Validate pagination works on the result table</description>
-   <name>REPO009</name>
-   <tag></tag>
-   <comment></comment>
-   <testCaseGuid>e1ffd865-9d01-480a-84e4-dcfaac1326ae</testCaseGuid>
-</TestCaseEntity>

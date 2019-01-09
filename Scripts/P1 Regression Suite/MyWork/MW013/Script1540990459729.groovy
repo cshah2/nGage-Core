@@ -12,38 +12,38 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
+import utils.Consts
 
 'Login Into Application'
 CustomKeywords.'actions.Common.login'()
 
+'Create 2 Docuement'
+CustomKeywords.'actions.Common.createDocument_ClosureAction'(Consts.SMOKE_MYWORK009_CUSTOMERNAME1, Consts.SMOKE_MYWORK009_CUSTOMERDETAIL1)
+CustomKeywords.'actions.Common.createDocument_ClosureAction'(Consts.SMOKE_MYWORK009_CUSTOMERNAME1, Consts.SMOKE_MYWORK009_CUSTOMERDETAIL1)
+
 'Click on My Work link from left menu'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_My Work Left Menu'))
-WebUI.waitForElementVisible(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/i_PostmanProcesses1'), GlobalVariable.G_LongTimeout)
-
-'expand postman process1'
-WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/i_PostmanProcesses1'))
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_iframe_105'))
 
-'click on new process hold activity(link)'
-WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/a_NewProcessHoldActivity'))
+'Click on Tree Menu'
+CustomKeywords.'actions.MenuBar.clickTreeMenu'('MY_WORK', 'Processes', 'Closure Action', 'Activity A')
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_work_items'))
+
+'Verify atleast 2 records are displayed in table'
+int rowCount = CustomKeywords.'actions.Table.getRowsCount'(findTestObject('Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'))
+WebUI.verifyGreaterThanOrEqual(rowCount, 2)
 
 int DocID_Position=CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/tableHeader_MyWorkSearchResult'), 'Doc ID')
 
-println DocID_Position
-
 'click on doc id column (for sorting Ascending)'
-WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/div_DocID'))
-CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/iframe_work_items'))
+CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/div_DocID'))
 
 'verify sorted column elements(Ascending)'
 CustomKeywords.'actions.Table.verifyColumnIsSortedInteger'(findTestObject('Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), DocID_Position, 'ASC')
 
 'click on doc id column (for sorting Descending)'
-WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/div_DocID'))
-
-'wait for frame to load'
-CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_work_items'))
+CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/div_DocID'))
 
 'verify sorted column elements(Descending)'
 CustomKeywords.'actions.Table.verifyColumnIsSortedInteger'(findTestObject('Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), DocID_Position, 'DESC')

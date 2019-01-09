@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>My Work Simplified: Perform a search on DocID that will return some results</description>
+   <name>MWS002 (32788)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>f4ab14bc-0d3d-4fb1-8bc1-466f7c9db182</testCaseGuid>
+</TestCaseEntity>

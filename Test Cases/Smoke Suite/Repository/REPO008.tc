@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TestCaseEntity>
-   <description>Validate user is able to delete existing saved filter</description>
-   <name>REPO008</name>
-   <tag></tag>
-   <comment></comment>
-   <testCaseGuid>f8980081-d2c6-4697-8d82-75db3f2ddcd7</testCaseGuid>
-</TestCaseEntity>
