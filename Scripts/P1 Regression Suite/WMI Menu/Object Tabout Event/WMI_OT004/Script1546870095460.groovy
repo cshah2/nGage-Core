@@ -31,16 +31,45 @@ WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 WebUI.waitForElementVisible(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Textbox with Section Event/tab_SingleResultView/span_(Title)SingleResultView'), GlobalVariable.G_LongTimeout)
 
 ' enter value (Show) in text box Master Object Event'
-CustomKeywords.'actions.Common.setTextJQuery'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Textbox with Section Event/tab_SingleResultView/input_Reference Object Event_e'), 'Show')
 //WebUI.clearText(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Textbox with Section Event/tab_SingleResultView/input_Reference Object Event_e'))
 //CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Textbox with Section Event/iframe_Close Window_ContentPla'))
-
 //WebUI.sendKeys(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Textbox with Section Event/tab_SingleResultView/input_Reference Object Event_e'), 'Show')
-WebUI.sendKeys(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Textbox with Section Event/tab_SingleResultView/input_Reference Object Event_e'), Keys.chord(Keys.TAB))
-CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Textbox with Section Event/iframe_Close Window_ContentPla'))
-//
-//
-//
-//
 
-WebUI.delay(10)
+CustomKeywords.'actions.Common.setTextJQuery'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Textbox with Section Event/tab_SingleResultView/input_Reference Object Event_e'), 'Show')
+//WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Textbox with Section Event/tab_SingleResultView/input_Reference Object Event_e'))
+WebUI.sendKeys(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Textbox with Section Event/tab_SingleResultView/input_Reference Object Event_e'), Keys.chord(Keys.ENTER))
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Textbox with Section Event/iframe_Close Window_ContentPla'))
+
+'verify Sample section is visble'
+WebUI.verifyElementVisible(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Textbox with Section Event/tab_SingleResultView/span_Sample Section - Visible'))
+
+'save and close window'
+WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Textbox with Section Event/span_Save'))
+WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+CustomKeywords.'actions.Window.clickElementAndWaitForWindowClose'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Textbox with Section Event/span_Close Window'),GlobalVariable.G_LongTimeout)
+WebUI.switchToWindowIndex(0)
+
+'Close "create new" popup dialog'
+WebUI.switchToWindowTitle('Savana nGage')
+WebUI.click(findTestObject('Page_nGage_Dashboard/Home/span_ui-button-icon-primary ui'))
+
+'Go to Recent Documents tab'
+WebUI.click(findTestObject('Page_nGage_Dashboard/Home/a_Recent Documents'))
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/iframe_iframe_103'))
+
+'Validate atleast 1 record is present in the grid.'
+int rowCount = CustomKeywords.'actions.Table.getRowsCount'(findTestObject('Page_nGage_Dashboard/Home/table_MyDocumentResults'))
+WebUI.verifyGreaterThanOrEqual(rowCount, 1)
+
+'Sort Record in grid by DocID Descending'
+CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/Home/div_Doc ID'))
+CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/Home/div_Doc ID'))
+
+'Open Document'
+WebUI.click(findTestObject('Page_nGage_Dashboard/Home/column_RecentDocuments LastAction'))
+WebUI.switchToWindowIndex(1)
+WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+
+//TODO: There is a bug in application , will work on script once bug is resolved
+'verify opened document'
+WebUI.verifyElementAttributeValue(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Textbox with Section Event/tab_SingleResultView/input_Reference Object Event_e'), 'value', 'Show', GlobalVariable.G_LongTimeout)

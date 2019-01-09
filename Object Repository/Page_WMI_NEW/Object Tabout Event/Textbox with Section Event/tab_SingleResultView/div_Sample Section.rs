@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>table_Sample SectionActionSamp</name>
+   <name>div_Sample Section</name>
    <tag></tag>
    <elementGuidId>91c964c9-a3c2-45a8-9762-25f7e6567160</elementGuidId>
    <selectorCollection>
@@ -9,8 +9,12 @@
          <key>BASIC</key>
          <value>//table[@ref_element = 'Object Repository/Page_WMI_NEW/Object Tabout Event/Textbox with Section Event/tab_SingleResultView/iframe_Close Window_ContentPla']</value>
       </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>//div[@id='eform_mcb67676_TabContainer_4_TabRef_1_phBO_4_BO_secpnl_1']</value>
+      </entry>
    </selectorCollection>
-   <selectorMethod>BASIC</selectorMethod>
+   <selectorMethod>XPATH</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
    <webElementProperties>
       <isSelected>true</isSelected>

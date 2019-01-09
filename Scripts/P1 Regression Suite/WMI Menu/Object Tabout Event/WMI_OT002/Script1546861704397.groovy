@@ -43,7 +43,7 @@ WebUI.verifyElementNotVisible(findTestObject('Object Repository/Page_WMI_NEW/Obj
 'save and close window'
 WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Textbox with Section Event/span_Save'))
 WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
-WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Textbox with Section Event/span_Close Window'))
+CustomKeywords.'actions.Window.clickElementAndWaitForWindowClose'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Textbox with Section Event/span_Close Window'),GlobalVariable.G_LongTimeout)
 WebUI.switchToWindowIndex(0)
 
 'Close "create new" popup dialog'

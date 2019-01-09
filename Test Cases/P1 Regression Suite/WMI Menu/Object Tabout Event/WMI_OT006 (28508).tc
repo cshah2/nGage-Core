@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>28508 Regression test WMI-  Textbox With Section Event on refrence object-(background)</description>
+   <name>WMI_OT006 (28508)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>8c4876e7-729b-466c-bf3a-f0894d753c83</testCaseGuid>
+</TestCaseEntity>
