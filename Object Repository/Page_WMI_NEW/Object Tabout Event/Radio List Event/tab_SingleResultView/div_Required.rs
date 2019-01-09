@@ -7,11 +7,10 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value></value>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//*[@id=&quot;eform_mcb67676_TabContainer_4_TabRef_1_phBO_4_BO_reqFldb21374e837a4469689474e509ef68858_105246ce-427a-4c5d-bb4d-9eb8f99457c6_popupTable&quot;]/tbody/tr/td[3]</value>
+         <value>//div[@id='eform_mcb67676_TabContainer_4_TabRef_1_phBO_4_BO_secpnl_2']//td[text()='Required']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

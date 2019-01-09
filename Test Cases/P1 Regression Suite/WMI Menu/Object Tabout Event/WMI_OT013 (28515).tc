@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description>28515 Regression test WMI-  Radio List Event -Refrence object -Singleresultview tab(Combination-1)</description>
-   <name>WMI_OT013</name>
+   <name>WMI_OT013 (28515)</name>
    <tag></tag>
    <comment></comment>
    <testCaseGuid>e367e37d-ea41-4f70-9f45-e09cb4a32156</testCaseGuid>
