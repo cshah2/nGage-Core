@@ -27,7 +27,7 @@ WebUI.click(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'))
 WebUI.switchToWindowTitle('(Doc ID: NEW )')
 WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 
-'Verify Business Model View - Radio List Event doc should be open'
+'Verify Business Model View - DropDown Event doc should be open'
 WebUI.verifyElementVisible(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/DropDown Event/span_Business Model View - Dro'))
 String actualtext= WebUI.getText(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/DropDown Event/span_Business Model View - Dro'))
 WebUI.verifyMatch(actualtext, 'Business Model View - DropDown Event', false)
