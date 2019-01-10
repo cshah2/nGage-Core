@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>28527 Regression Test WMI-Check box Event (Uncheck)</description>
+   <name>WMI_OT029 (28527)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>8520dbd6-c10e-4e5a-a26f-f0f311f01a84</testCaseGuid>
+</TestCaseEntity>
