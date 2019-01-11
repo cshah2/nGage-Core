@@ -17,7 +17,6 @@ import utils.DateUtil
 'Login Into Application'
 CustomKeywords.'actions.Common.login'()
 
-//1
 'Create a new Object Tabout Events Document'
 WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))
 
@@ -42,8 +41,7 @@ CustomKeywords.'actions.Window.clickElementAndWaitForWindowClose'(findTestObject
 'Switch to parent window '
 WebUI.switchToWindowIndex(0)
 
-//2
-'Verify Doc class and Doc type dropdowns should be displayed'
+//2 (create Second Document)
 WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'), GlobalVariable.G_LongTimeout)
 WebUI.click(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'))
 
@@ -84,31 +82,29 @@ WebUI.verifyMatch(actualtext, 'Business Model View - DropDown Event', false)
 
 'Click on Inline Tab'
 WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/DropDown Event/tab_InlineView/span_InlineView'))
+CustomKeywords.'actions.Common.waitForTabLoading'(null, GlobalVariable.G_LongTimeout)
 
 'Sort DocID'
 CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/DropDown Event/tab_InlineView/a_Doc ID'))
 CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/DropDown Event/tab_InlineView/a_Doc ID'))
 
-'Click On Second Row From Reference Grid'
-CustomKeywords.'actions.Table.clickCell'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Textbox with Section Event/tab_InlineView/table_GVGrid'), 2, 5)
+'Click Second Row from reference Grid'
+WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/DropDown Event/tab_InlineView/tr_ThirdRow_TableGVGrid'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/DropDown Event/tab_InlineView/iframe_Close Window_ContentPla'))
 
 'Verify Elements Present'
 WebUI.verifyElementPresent(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/DropDown Event/tab_InlineView/span_This WMI imparts - Field'), GlobalVariable.G_LongTimeout)
 
-'Select Value 1) from DropDown'
-WebUI.selectOptionByValue(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/DropDown Event/tab_InlineView/select_Value 1Value 2Value 3Va'), '1', false)
-CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/DropDown Event/tab_InlineView/iframe_Close Window_ContentPla'))
+'Select Value 2) from DropDown'
+WebUI.selectOptionByValue(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/DropDown Event/tab_InlineView/select_Value 1Value 2Value 3Va'), '2', false)
+CustomKeywords.'actions.Common.waitForTabLoading'(null, GlobalVariable.G_LongTimeout)
 
-'Verify In String Filed value should be "Selected Value (Value 1)"'
+'Verify In String Filed value should be "Selected Value (Value 2)"'
 String getText = WebUI.getAttribute(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/DropDown Event/tab_InlineView/input_String Field (Value Change)'),'value')
-WebUI.verifyMatch(getText,'Selected Value (Value 1)', false)
+WebUI.verifyMatch(getText,'Selected Value (Value 2)', false)
 
 'Verify Date Field is Visible'
-WebUI.verifyElementPresent(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/DropDown Event/tab_InlineView/input_DateField'),GlobalVariable.G_LongTimeout)
-
-'Set Date in Date Field'
-CustomKeywords.'actions.Common.setText_Date'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/DropDown Event/input_Date Field (Visibility C'), DateUtil.getCurrentDateTime('MM-dd-yyyy HH:mm:ss a'))
+WebUI.verifyElementNotVisible(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/DropDown Event/tab_InlineView/input_DateField'))
 
 'Click on Save from Reference Grid'
 WebUI.click(findTestObject('Page_WMI_NEW/Object Tabout Event/DropDown Event/tab_InlineView/input_Save'))
@@ -118,14 +114,12 @@ CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Reposi
 CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/DropDown Event/tab_InlineView/a_Doc ID'))
 CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/DropDown Event/tab_InlineView/a_Doc ID'))
 
-'Click ON second Row from Reference Grid'
-CustomKeywords.'actions.Table.clickCell'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Textbox with Section Event/tab_InlineView/table_GVGrid'), 2, 5)
+'Click on Second row from reference Grid'
+WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/DropDown Event/tab_InlineView/tr_ThirdRow_TableGVGrid'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/DropDown Event/tab_InlineView/iframe_Close Window_ContentPla'))
 
-//TODO :Will execute Correct, once bug (another document getting open) will be fix
+//TODO : Will execute Correct, once bug (another document getting open) will be fix
 'Verify Document should get opened with latest changes and No Error Present'
-String valBMtext=CustomKeywords.'actions.Table.getCellText'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/DropDown Event/tab_InlineView/table_GVGrid'), 2,9)
+String valBMtext=CustomKeywords.'actions.Table.getCellText'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/DropDown Event/tab_InlineView/table_GVGrid'), 2, 9)
 println valBMtext
-WebUI.verifyMatch(valBMtext, 'Selected Value (Value 1)', false)
-
-
+WebUI.verifyMatch(valBMtext, 'Selected Value (Value 2)', false)
