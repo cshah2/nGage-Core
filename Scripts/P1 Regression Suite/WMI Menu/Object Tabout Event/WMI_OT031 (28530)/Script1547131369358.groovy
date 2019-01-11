@@ -27,6 +27,34 @@ WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 'verify Business Model View -Checkbox Event doc should be open'
 WebUI.verifyElementVisible(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/CheckBox Event/span_(Title)Business Model View - Che'))
 
+'click on save and close'
+WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/CheckBox Event/span_Save'))
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/CheckBox Event/iframe_Close Window_ContentPla'))
+WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/CheckBox Event/span_Close Window'))
+
+'switch to main window'
+WebUI.switchToWindowIndex('0')
+
+'Close "create new" popup dialog'
+WebUI.switchToWindowTitle('Savana nGage')
+WebUI.click(findTestObject('Page_nGage_Dashboard/Home/span_ui-button-icon-primary ui'))
+//////////
+'Go to Recent Documents tab'
+WebUI.click(findTestObject('Page_nGage_Dashboard/Home/a_Recent Documents'))
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/iframe_iframe_103'))
+
+'Sort Record in grid by DocID Descending'
+CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/Home/div_Doc ID'))
+CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/Home/div_Doc ID'))
+
+'Open Document'
+WebUI.click(findTestObject('Page_nGage_Dashboard/Home/column_RecentDocuments LastAction'))
+WebUI.switchToWindowIndex(1)
+WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+
+'verify Business Model View -Checkbox Event doc should be open'
+WebUI.verifyElementVisible(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/CheckBox Event/span_(Title)Business Model View - Che'))
+
 'Uncheck Master Object CheckBox Control check box'
 WebUI.uncheck(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/CheckBox Event/input_Master Object CheckBox C'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/CheckBox Event/iframe_Close Window_ContentPla'))
@@ -46,10 +74,6 @@ WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/C
 
 'switch to main window'
 WebUI.switchToWindowIndex('0')
-
-'Close "create new" popup dialog'
-WebUI.switchToWindowTitle('Savana nGage')
-WebUI.click(findTestObject('Page_nGage_Dashboard/Home/span_ui-button-icon-primary ui'))
 
 'Go to Recent Documents tab'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Home/a_Recent Documents'))

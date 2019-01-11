@@ -113,5 +113,3 @@ CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Reposi
 'verify opened document'
 println WebUI.getAttribute(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Textbox with Section Event/tab_InlineView/input_Reference Object Event ('), 'value')
 WebUI.verifyElementAttributeValue(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Textbox with Section Event/tab_InlineView/input_Reference Object Event ('), 'value', 'Show', GlobalVariable.G_LongTimeout)
-
-WebUI.delay(20)

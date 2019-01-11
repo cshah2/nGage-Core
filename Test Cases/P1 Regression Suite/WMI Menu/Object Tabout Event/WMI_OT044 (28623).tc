@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>28623 Regression Test WMI- Nested Lookup Event-Master Object</description>
+   <name>WMI_OT044 (28623)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>e9f03752-7ac5-4e5b-8608-62534ae42829</testCaseGuid>
+</TestCaseEntity>

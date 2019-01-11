@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>28529 Regression Test WMI-Check box Event(Check)- Refrence Object</description>
+   <name>WMI_OT030 (28529)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>f4a1a4e9-0886-4ef2-a3e2-86eabcc5d200</testCaseGuid>
+</TestCaseEntity>
