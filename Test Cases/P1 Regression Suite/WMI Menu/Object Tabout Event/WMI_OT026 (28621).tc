@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Regression Test WMI-Check box list Event-refrence object- inlineview (Combination2)</description>
+   <name>WMI_OT026 (28621)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>9e64ad2f-ebe5-4cac-be92-67a0bb5185d2</testCaseGuid>
+</TestCaseEntity>

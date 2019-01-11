@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Regression Test WMI-Check box list Event (Combination2)</description>
+   <name>WMI_OT020 (28519)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>58fbcfd3-ca6f-4e31-b812-324b78802175</testCaseGuid>
+</TestCaseEntity>

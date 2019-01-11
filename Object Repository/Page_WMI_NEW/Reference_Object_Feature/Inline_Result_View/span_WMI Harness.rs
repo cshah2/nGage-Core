@@ -4,6 +4,12 @@
    <name>span_WMI Harness</name>
    <tag></tag>
    <elementGuidId>5f89f548-e0f4-4a75-a66a-710749baddcf</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>//span[(text() = ' WMI Harness' or . = ' WMI Harness')]</value>
+      </entry>
+   </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
    <webElementProperties>

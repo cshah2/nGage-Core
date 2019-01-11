@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Regression Test WMI-Check box list Event-refrence object (Combination3)</description>
+   <name>WMI_OT024 (28524)</name>
+   <tag></tag>
+   <comment>Click on Value 3 or 4 or 5 check box from master object</comment>
+   <testCaseGuid>76cff3a0-4fad-4d71-9c89-06d9f5583f00</testCaseGuid>
+</TestCaseEntity>
