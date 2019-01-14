@@ -82,5 +82,3 @@ WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 WebUI.verifyOptionSelectedByLabel(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Nested Lookup Event/tab_Single Result View/select_Master Object Nest Level1'), 'Value 1', false, GlobalVariable.G_LongTimeout)
 WebUI.verifyOptionSelectedByLabel(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Nested Lookup Event/tab_Single Result View/select_Master Object Nest Level2'), 'Value 1', false, GlobalVariable.G_LongTimeout)
 WebUI.verifyOptionSelectedByLabel(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Nested Lookup Event/tab_Single Result View/select_Master Object Nest Level3'), 'True', false, GlobalVariable.G_LongTimeout)
-
-WebUI.delay(10)
