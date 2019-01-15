@@ -83,18 +83,23 @@ CustomKeywords.'actions.Table.clickCell'(findTestObject('Object Repository/Page_
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Textbox with Section Event/iframe_Close Window_ContentPla'))
 
 'From Inline View of refrence object value 1 from Nested Level 1 dropdown'
-WebUI.selectOptionByLabel(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Nested Lookup Event/tab_Inline View/select_Master Object Nest Level 2'), 'Value 1', false)
+WebUI.selectOptionByValue(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Nested Lookup Event/tab_Inline View/select_Master Object Nest Level 1'), '1', false)
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Textbox with Section Event/iframe_Close Window_ContentPla'))
 
 'verify In Nested level 2 drop down value1, value2,value3, value4,value5 should be fillup'
 WebUI.verifyElementPresent(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Nested Lookup Event/tab_Inline View/option_Master Obj Level2_Value1'), GlobalVariable.G_LongTimeout)
+WebUI.verifyElementPresent(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Nested Lookup Event/tab_Inline View/option_Master Obj Level2_Value2'), GlobalVariable.G_LongTimeout)
+WebUI.verifyElementPresent(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Nested Lookup Event/tab_Inline View/option_Master Obj Level2_Value3'), GlobalVariable.G_LongTimeout)
+WebUI.verifyElementPresent(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Nested Lookup Event/tab_Inline View/option_Master Obj Level2_Value4'), GlobalVariable.G_LongTimeout)
+WebUI.verifyElementPresent(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Nested Lookup Event/tab_Inline View/option_Master Obj Level2_Value5'), GlobalVariable.G_LongTimeout)
 
 'From master object select value 1 from Nested Level 2 dropdown'
 WebUI.selectOptionByLabel(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Nested Lookup Event/tab_Inline View/select_Master Object Nest Level 2'), 'Value 1', false)
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Textbox with Section Event/iframe_Close Window_ContentPla'))
 
 'In Nested level 3 drop down values -true ,false should be fill up'
-
+WebUI.verifyElementPresent(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Nested Lookup Event/tab_Inline View/option_Master Obj Level3_Value False'), GlobalVariable.G_LongTimeout)
+WebUI.verifyElementPresent(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Nested Lookup Event/tab_Inline View/option_Master Obj Level3_Value True'), GlobalVariable.G_LongTimeout)
 
 'From master object select True from Nested Level 3 dropdown'
 WebUI.selectOptionByLabel(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Nested Lookup Event/tab_Inline View/select_Master Object Nest Level 3'), 'True', false)
@@ -104,8 +109,13 @@ CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Reposi
 WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Nested Lookup Event/tab_Inline View/input_Nested Lookup Event  Save'))
 WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 
+'Click on same documnt from refrence object grid '
+CustomKeywords.'actions.Table.clickCell'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Nested Lookup Event/tab_Inline View/table_GVGrid'), 2, 5)
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Textbox with Section Event/iframe_Close Window_ContentPla'))
 
-
-
+'verify document opened' 
+WebUI.verifyOptionSelectedByValue(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Nested Lookup Event/tab_Inline View/select_Master Object Nest Level 1'), '1', false,GlobalVariable.G_LongTimeout )
+WebUI.verifyOptionSelectedByLabel(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Nested Lookup Event/tab_Inline View/select_Master Object Nest Level 2'), 'Value 1', false,GlobalVariable.G_LongTimeout )
+WebUI.verifyOptionSelectedByLabel(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Nested Lookup Event/tab_Inline View/select_Master Object Nest Level 3'), 'True', false,GlobalVariable.G_LongTimeout )
 
 WebUI.delay(10)

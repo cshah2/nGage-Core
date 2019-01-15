@@ -4,7 +4,17 @@
    <name>select_Master Object Nest Level 3</name>
    <tag></tag>
    <elementGuidId>35ad2cdf-91c2-4f61-8e62-46774cab3598</elementGuidId>
-   <selectorMethod>BASIC</selectorMethod>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>//select[@name = 'eform_mcb67676$TabContainer_4$TabRef_2$phBO_5_BO$eidmKey_BM_String_Lookup_Field' and @id = 'eform_mcb67676_TabContainer_4_TabRef_2_phBO_5_BO_eidmKey_BM_String_Lookup_Field' and @ref_element = 'Object Repository/Page_WMI_NEW/Object Tabout Event/Nested Lookup Event/tab_Inline View/iframe_Close Window_ContentPla']</value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>//select[@id='eform_mcb67676_TabContainer_4_TabRef_2_phBO_5_BO_eidmKey_BM_String_Lookup_Field']</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
    <webElementProperties>
       <isSelected>true</isSelected>
@@ -49,7 +59,7 @@
       <value>3</value>
    </webElementProperties>
    <webElementProperties>
-      <isSelected>true</isSelected>
+      <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>text</name>
       <type>Main</type>

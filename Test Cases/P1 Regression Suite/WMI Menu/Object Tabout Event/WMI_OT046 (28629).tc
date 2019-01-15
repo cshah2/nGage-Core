@@ -3,6 +3,6 @@
    <description>28629 Regression Test WMI- Nested Lookup Event- Refrence Object-InlineView</description>
    <name>WMI_OT046 (28629)</name>
    <tag></tag>
-   <comment></comment>
+   <comment>In Nested level 3 drop down values -true ,false should be fill up</comment>
    <testCaseGuid>92b336b6-95f0-4d6f-9391-2fc6b7936f5b</testCaseGuid>
 </TestCaseEntity>
