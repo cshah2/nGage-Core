@@ -115,7 +115,5 @@ CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Reposi
 
 'verify document opened' 
 WebUI.verifyOptionSelectedByValue(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Nested Lookup Event/tab_Inline View/select_Master Object Nest Level 1'), '1', false,GlobalVariable.G_LongTimeout )
-WebUI.verifyOptionSelectedByLabel(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Nested Lookup Event/tab_Inline View/select_Master Object Nest Level 2'), 'Value 1', false,GlobalVariable.G_LongTimeout )
-WebUI.verifyOptionSelectedByLabel(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Nested Lookup Event/tab_Inline View/select_Master Object Nest Level 3'), 'True', false,GlobalVariable.G_LongTimeout )
-
-WebUI.delay(10)
+WebUI.verifyOptionSelectedByValue(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Nested Lookup Event/tab_Inline View/select_Master Object Nest Level 2'), '1', false,GlobalVariable.G_LongTimeout )
+WebUI.verifyOptionSelectedByValue(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Nested Lookup Event/tab_Inline View/select_Master Object Nest Level 3'), '1', false,GlobalVariable.G_LongTimeout )
