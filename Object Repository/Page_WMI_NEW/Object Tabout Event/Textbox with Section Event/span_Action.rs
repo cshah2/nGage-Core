@@ -4,7 +4,17 @@
    <name>span_Action</name>
    <tag></tag>
    <elementGuidId>b1b73b9f-10a1-4ec2-838e-3d35a3a8e431</elementGuidId>
-   <selectorMethod>BASIC</selectorMethod>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>//span[@id = 'eform_mcb67676_phBO_3_BO_efldlbl_BOstatic_1_BOstatic_0' and (text() = 'Action' or . = 'Action') and @ref_element = 'Object Repository/Page_WMI_NEW/Object Tabout Event/Textbox with Section Event/iframe_Close Window_ContentPla']</value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>//span[@id='eform_mcb67676_phBO_3_BO_efldlbl_BOstatic_1_BOstatic_0']</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
    <webElementProperties>
       <isSelected>true</isSelected>

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>span_Save</name>
+   <name>span_Save Grid Doc</name>
    <tag></tag>
-   <elementGuidId>6625a99e-3e6b-411a-b69e-043bcc4b8637</elementGuidId>
+   <elementGuidId>dab1542c-61f5-48b3-9fbe-4d2a7e773fa9</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
@@ -11,7 +11,7 @@
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//li[@id='actionsMenu_Submenu_1']/a/span</value>
+         <value>//input[@name='eform_mcb67676$TabContainer_4$TabRef_2$phBO_5_BO$btnSaveInlineDoc']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

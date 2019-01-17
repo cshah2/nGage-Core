@@ -50,18 +50,18 @@ WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 CustomKeywords.'actions.Window.clickElementAndWaitForWindowClose'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Textbox with Section Event/span_Close Window'),GlobalVariable.G_LongTimeout)
 WebUI.switchToWindowIndex(0)
 
-//'Go to Recent Documents tab'
-//WebUI.click(findTestObject('Page_nGage_Dashboard/Home/a_Recent Documents'))
-//CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/iframe_iframe_103'))
-//
-//'open second record from recent grid'
-//CustomKeywords.'actions.Table.clickCell'(findTestObject('Page_nGage_Dashboard/Home/table_MyDocumentResults'), 2, 5)
+'Go to Recent Documents tab'
+WebUI.click(findTestObject('Page_nGage_Dashboard/Home/a_Recent Documents'))
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/iframe_iframe_103'))
+
+'open second record from recent grid'
+CustomKeywords.'actions.Table.clickCell'(findTestObject('Page_nGage_Dashboard/Home/table_MyDocumentResults'), 2, 5)
 
 ///////////////
-'Create a new Refrence Object Feature Document'
-WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))
-CustomKeywords.'actions.Common.selectDocClassAndDocTypeForGlobalNew'('Object Tabout Events', 'Textbox With Section Event')
-WebUI.click(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'))
+//'Create a new Refrence Object Feature Document'
+//WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))
+//CustomKeywords.'actions.Common.selectDocClassAndDocTypeForGlobalNew'('Object Tabout Events', 'Textbox With Section Event')
+//WebUI.click(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'))
 
 WebUI.switchToWindowIndex(1)
 WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
@@ -93,7 +93,7 @@ CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Reposi
 WebUI.verifyElementVisible(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Textbox with Section Event/tab_InlineView/span_Sample Section - Visible'))
 
 'save document'
-WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Textbox with Section Event/span_Save'))
+WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Textbox with Section Event/span_Save Grid Doc'))
 WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 
 'click on tab inline view'
@@ -110,7 +110,6 @@ CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Reposi
 CustomKeywords.'actions.Table.clickCell'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Textbox with Section Event/tab_InlineView/table_GVGrid'), 1, 5)
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Textbox with Section Event/iframe_Close Window_ContentPla'))
 
-//TODO: There is a bug in application , will work on script once bug is resolved
 'verify opened document'
 println WebUI.getAttribute(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Textbox with Section Event/tab_InlineView/input_Reference Object Event ('), 'value')
 WebUI.verifyElementAttributeValue(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Textbox with Section Event/tab_InlineView/input_Reference Object Event ('), 'value', 'Show', GlobalVariable.G_LongTimeout)
