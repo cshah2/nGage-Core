@@ -43,6 +43,5 @@ WebUI.verifyElementChecked(findTestObject('Object Repository/Page_WMI_NEW/Object
 'verify String feild (text box with view check box is checked) should be dipslyed '
 WebUI.verifyElementAttributeValue(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/DoNotSetValueOnLoad SetFocus Event/input_String Field (donotsetva'), 'value', 'Checkbox is checked', GlobalVariable.G_LongTimeout)
 
-'verify no cursor control displayed in currency feild text box '
-CustomKeywords.'actions.Common.verifyCssValue'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/DoNotSetValueOnLoad SetFocus Event/input_Currency Field (setfocus'),'border-color','rgb(204, 204, 204)')
-
+'verify cursor control displayed in currency feild text box '
+CustomKeywords.'actions.Common.verifyElementHasFocus'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/DoNotSetValueOnLoad SetFocus Event/input_Currency Field (setfocus'))

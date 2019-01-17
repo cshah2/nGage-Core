@@ -38,4 +38,4 @@ WebUI.verifyElementAttributeValue(findTestObject('Object Repository/Page_WMI_NEW
 
 'verify that master object checkbox control (checkbox) is unchecked and String feild (text box with view check box is un-checked) and no cursor control in currency feild text box. '
 WebUI.verifyElementNotChecked(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/DoNotSetValueOnLoad SetFocus Event/input_Master Object CheckBox C'), GlobalVariable.G_LongTimeout)
-CustomKeywords.'actions.Common.verifyCssValue'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/DoNotSetValueOnLoad SetFocus Event/input_Currency Field (setfocus'),'border-color','rgb(204, 204, 204)')
+CustomKeywords.'actions.Common.verifyElementNotHasFocus'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/DoNotSetValueOnLoad SetFocus Event/input_Currency Field (setfocus'))
