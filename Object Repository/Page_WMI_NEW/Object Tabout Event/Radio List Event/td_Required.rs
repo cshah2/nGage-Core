@@ -10,7 +10,7 @@
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//div[@id='eform_mcb67676_TabContainer_4_TabRef_1_phBO_4_BO_secpnl_2']//td[text()='Required']</value>
+         <value>//div[@id='eform_mcb67676_phBO_3_BO_div_WrapperContainer']//td[text()='Required'] </value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

@@ -33,14 +33,19 @@ WebUI.verifyElementVisible(findTestObject('Object Repository/Page_WMI_NEW/Object
 String actualtext= WebUI.getText(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/span_Business Model View - Rad'))
 WebUI.verifyMatch(actualtext, 'Business Model View - Radio List Event', false)
 
+'Click on Value 1 radio button from master object'
+WebUI.waitForElementVisible(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/input_Value1_MasterObject'),GlobalVariable.G_LongTimeout)
+WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/input_Value1_MasterObject'))
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/iframe_Close Window_ContentPla'))
 
-'Verify date field should be disaply as required filed'
+'Click on Save To check if Required messege is coming '
 WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/span_Save'))
 WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+
+'Verify date field should be disaply as required filed'
 String errorMessage = WebUI.getText(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/div_errorMessage'))
 WebUI.verifyElementText(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/div_errorMessage'), errorMessage)
 
-//TODO : Bug in the functinality Required field missing
 String alertText = WebUI.getText(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/td_Required'))
 println alertText
 WebUI.verifyMatch(alertText,'Required', false)
@@ -92,10 +97,6 @@ CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Object Reposito
 CustomKeywords.'actions.Table.clickCell'(findTestObject('Object Repository/Page_nGage_Dashboard/Home/table_MyDocumentResults'), 1, 7)
 WebUI.switchToWindowIndex(1)
 WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
-
-
-//TODO document is not getting save in Recent Document once bug resolve will able to get xpath
-'Verify Changes saved in the document'
 
 
 'Close Window() and If Error Present Document will not get Close'
