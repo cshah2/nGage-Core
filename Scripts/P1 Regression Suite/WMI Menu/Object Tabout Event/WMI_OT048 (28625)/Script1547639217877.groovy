@@ -45,3 +45,4 @@ WebUI.verifyElementAttributeValue(findTestObject('Object Repository/Page_WMI_NEW
 
 'verify no cursor control displayed in currency feild text box '
 CustomKeywords.'actions.Common.verifyCssValue'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/DoNotSetValueOnLoad SetFocus Event/input_Currency Field (setfocus'),'border-color','rgb(204, 204, 204)')
+

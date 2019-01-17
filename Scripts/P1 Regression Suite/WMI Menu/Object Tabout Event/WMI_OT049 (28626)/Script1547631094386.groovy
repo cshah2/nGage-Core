@@ -53,4 +53,5 @@ String textOfStringField = WebUI.getAttribute(findTestObject('Object Repository/
 WebUI.verifyMatch(textOfStringField, 'Checkbox is unchecked', false)
 
 'Verify no cursor control in currency feild text box'
-WebUI.verifyElementAttributeValue(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/DoNotSetValueOnLoad SetFocus Event/SingleResultView_tab/input_Currency Field'), 'style','width: 95%;' ,GlobalVariable.G_LongTimeout)
+//WebUI.verifyElementAttributeValue(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/DoNotSetValueOnLoad SetFocus Event/SingleResultView_tab/input_Currency Field'), 'style','width: 95%;' ,GlobalVariable.G_LongTimeout)
+CustomKeywords.'actions.Common.verifyElementNotHasFocus'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/DoNotSetValueOnLoad SetFocus Event/SingleResultView_tab/input_Currency Field'))

@@ -1151,7 +1151,7 @@ public class Common {
 	def createBulkDocuments_WMIMenuBovVertical(int requiredDocsCount) {
 
 		String filePath = RunConfiguration.getProjectDir().replace('/', '\\')+'\\Data Files\\FileUploads\\50 Pages PDF file.pdf'
-		
+
 		'Expand Repository Menu'
 		WebUI.click(findTestObject('Page_nGage_Dashboard/Repository/h3_Repository Menu'))
 		waitForFrameToLoad(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
@@ -1258,4 +1258,24 @@ public class Common {
 	}
 
 
+	@Keyword
+	def verifyElementHasFocus(TestObject toLocator) {
+		WebElement element = WebUtil.getWebElement(toLocator)
+		WebDriver driver = DriverFactory.getWebDriver()
+		if(!element.equals(driver.switchTo().activeElement())) {
+			KeywordUtil.markFailedAndStop('Provided element does not have focus')
+		}
+		WebUI.switchToDefaultContent()
+	}
+	
+	@Keyword
+	def verifyElementNotHasFocus(TestObject toLocator) {
+		WebElement element = WebUtil.getWebElement(toLocator)
+		WebDriver driver = DriverFactory.getWebDriver()
+		if(element.equals(driver.switchTo().activeElement())) {
+			KeywordUtil.markFailedAndStop('Provided element  has focus')
+		}
+		WebUI.switchToDefaultContent()
+	}
+	
 }
