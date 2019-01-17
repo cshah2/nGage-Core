@@ -33,9 +33,15 @@ WebUI.verifyElementVisible(findTestObject('Object Repository/Page_WMI_NEW/Object
 WebUI.verifyElementVisible(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/DoNotSetValueOnLoad SetFocus Event/input_Currency Field (setfocus'))
 WebUI.verifyElementVisible(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/DoNotSetValueOnLoad SetFocus Event/input_String Field (donotsetva'))
 
-'verify String feild (text box with view check box is un-checked) is displayed '
-WebUI.verifyElementAttributeValue(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/DoNotSetValueOnLoad SetFocus Event/input_String Field (donotsetva'), 'value', 'Checkbox is un-checked', GlobalVariable.G_LongTimeout)
+'check the master object checkbox control (checkbox)'
+WebUI.check(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/DoNotSetValueOnLoad SetFocus Event/input_Master Object CheckBox C'))
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/DoNotSetValueOnLoad SetFocus Event/iframe_Close Window_ContentPla'))
 
-'verify that master object checkbox control (checkbox) is unchecked and String feild (text box with view check box is un-checked) and no cursor control in currency feild text box. '
-WebUI.verifyElementNotChecked(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/DoNotSetValueOnLoad SetFocus Event/input_Master Object CheckBox C'), GlobalVariable.G_LongTimeout)
+'verify master object checkbox should get checked'
+WebUI.verifyElementChecked(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/DoNotSetValueOnLoad SetFocus Event/input_Master Object CheckBox C'), GlobalVariable.G_LongTimeout)
+
+'verify String feild (text box with view check box is checked) should be dipslyed '
+WebUI.verifyElementAttributeValue(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/DoNotSetValueOnLoad SetFocus Event/input_String Field (donotsetva'), 'value', 'Checkbox is checked', GlobalVariable.G_LongTimeout)
+
+'verify no cursor control displayed in currency feild text box '
 CustomKeywords.'actions.Common.verifyCssValue'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/DoNotSetValueOnLoad SetFocus Event/input_Currency Field (setfocus'),'border-color','rgb(204, 204, 204)')

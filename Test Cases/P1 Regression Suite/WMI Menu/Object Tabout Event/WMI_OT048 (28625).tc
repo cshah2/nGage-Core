@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>28625 Regression test WMI -Field Events using donotsetvalueonload and setfocus( Master Object -checkbox checked)</description>
+   <name>WMI_OT048 (28625)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>089afc4d-82d7-4831-a6b2-f3818a324a17</testCaseGuid>
+</TestCaseEntity>
