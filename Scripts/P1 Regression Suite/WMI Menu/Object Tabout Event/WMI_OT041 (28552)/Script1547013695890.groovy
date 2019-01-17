@@ -127,5 +127,3 @@ CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Reposi
 String valBMtext=CustomKeywords.'actions.Table.getCellText'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/DropDown Event/tab_InlineView/table_GVGrid'), 2,9)
 println valBMtext
 WebUI.verifyMatch(valBMtext, 'Selected Value (Value 1)', false)
-
-

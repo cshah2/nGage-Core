@@ -52,6 +52,7 @@ CustomKeywords.'actions.Table.clickCell'(findTestObject('Object Repository/Page_
 WebUI.switchToWindowIndex(1)
 WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 
+//TODO : It will work once Radio List Bug gets resolve
 'Verify Business Model View - Radio List Event doc should be open'
 WebUI.verifyElementVisible(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/span_Business Model View - Rad'))
 String actualtext= WebUI.getText(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/span_Business Model View - Rad'))
@@ -74,13 +75,13 @@ WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 String errorMessage = WebUI.getText(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/div_errorMessage'))
 WebUI.verifyElementText(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/div_errorMessage'), errorMessage)
 
-/*
-//TODO: There is a bug in application , will work on script once bug is resolved
+
+//TODO: There is a bug (Required Field invisible which was showing before) in application , will work on script once bug is resolved
 WebUI.waitForElementVisible(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/tab_SingleResultView/div_Required'),GlobalVariable.G_LongTimeout )
 String alertText = WebUI.getText(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/tab_SingleResultView/div_Required'))
-println alertText*/
+println alertText
 
-//WebUI.verifyMatch(alertText,'Required', false)
+WebUI.verifyMatch(alertText,'Required', false)
 
 'Verify Integer field should be visible'
 WebUI.verifyElementVisible(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/tab_SingleResultView/input_Integer Field (Visible)_'))

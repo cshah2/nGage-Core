@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description>28510 Regression test WMI-   Radio List Event (Combination-1)</description>
-   <name>WMI_OT010</name>
+   <name>WMI_OT010 (28510)</name>
    <tag></tag>
    <comment>Verify Changes saved in the document</comment>
    <testCaseGuid>fe3b5c8f-8f08-4906-9c05-e905ee5939e2</testCaseGuid>

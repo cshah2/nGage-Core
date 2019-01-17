@@ -1,20 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>span_Business Model View - Rad</name>
+   <name>span_(header)SingleResultView</name>
    <tag></tag>
-   <elementGuidId>ab8d158c-131d-4792-80fd-b8b795f86c2f</elementGuidId>
-   <selectorCollection>
-      <entry>
-         <key>BASIC</key>
-         <value>//span[@id = 'eform_mcb67676_phBO_3_BO_headerTitle' and (text() = 'Business Model View - Radio List Event' or . = 'Business Model View - Radio List Event') and @ref_element = 'Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/iframe_Close Window_ContentPla']</value>
-      </entry>
-      <entry>
-         <key>XPATH</key>
-         <value>//span[@id='eform_mcb67676_phBO_3_BO_headerTitle']</value>
-      </entry>
-   </selectorCollection>
-   <selectorMethod>XPATH</selectorMethod>
+   <elementGuidId>37106d7a-b4b6-42f7-a04b-0cf1f4b7b78c</elementGuidId>
+   <selectorMethod>BASIC</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
    <webElementProperties>
       <isSelected>true</isSelected>
@@ -28,63 +18,69 @@
       <matchCondition>equals</matchCondition>
       <name>id</name>
       <type>Main</type>
-      <value>eform_mcb67676_phBO_3_BO_headerTitle</value>
+      <value>eform_mcb67676_TabContainer_4_TabRef_1_phBO_4_BO_headerTitle</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
       <name>text</name>
       <type>Main</type>
-      <value>Business Model View - Radio List Event</value>
+      <value>SingleResultView</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>id(&quot;eform_mcb67676_phBO_3_BO_headerTitle&quot;)</value>
+      <value>id(&quot;eform_mcb67676_TabContainer_4_TabRef_1_phBO_4_BO_headerTitle&quot;)</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
       <name>ref_element</name>
       <type>Main</type>
-      <value>Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/iframe_Close Window_ContentPla</value>
+      <value>Object Repository/Page_WMI_NEW/Object Tabout Event/DoNotSetValueOnLoad SetFocus Event/SingleResultView_tab/iframe_Close Window_ContentPla</value>
    </webElementProperties>
    <webElementXpaths>
       <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:attributes</name>
-      <value>//span[@id='eform_mcb67676_phBO_3_BO_headerTitle']</value>
+      <value>//span[@id='eform_mcb67676_TabContainer_4_TabRef_1_phBO_4_BO_headerTitle']</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:idRelative</name>
-      <value>//td[@id='eform_mcb67676_phBO_3_BO_headerCell1']/table/tbody/tr/td/span</value>
+      <value>//td[@id='eform_mcb67676_TabContainer_4_TabRef_1_phBO_4_BO_headerCell1']/table/tbody/tr/td/span</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:neighbor</name>
-      <value>(.//*[normalize-space(text()) and normalize-space(.)='Pick a Macro'])[1]/following::span[6]</value>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='InlineView'])[1]/following::span[1]</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:neighbor</name>
-      <value>(.//*[normalize-space(text()) and normalize-space(.)='Information:Radio List Event'])[1]/preceding::span[3]</value>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='SingleResultView'])[1]/following::span[5]</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:neighbor</name>
-      <value>(.//*[normalize-space(text()) and normalize-space(.)='This WMI imparts - Field Events in RadioList'])[1]/preceding::span[4]</value>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Information:SingleResultView'])[1]/preceding::span[3]</value>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='This WMI imparts - Field Events using donotsetvalueonload and setfocus'])[2]/preceding::span[4]</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:position</name>
-      <value>//td/table/tbody/tr/td/span</value>
+      <value>//div[2]/div/table/tbody/tr/td/div[2]/div/fieldset/table/tbody/tr/td/table/tbody/tr/td/span</value>
    </webElementXpaths>
 </WebElementEntity>

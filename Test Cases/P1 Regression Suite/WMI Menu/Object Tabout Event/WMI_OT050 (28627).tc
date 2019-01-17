@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>28627 Regression test WMI -Field Events using donotsetvalueonload and setfocus( Reference Object Single result view-checkbox checked)</description>
+   <name>WMI_OT050 (28627)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>836df83e-f839-4840-adca-ed080987e70a</testCaseGuid>
+</TestCaseEntity>
