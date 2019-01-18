@@ -45,6 +45,7 @@ CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Da
 'Select Activity Event state tab'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/TAB_Dashboard_Obj/tab_Activity Event State'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/TAB_Dashboard_Obj/iframe_ACTEVENTSTATE_iframe'))
+WebUI.delay(5)
 
 'Verify Pie chart is displayed'
 WebUI.verifyElementVisible(findTestObject('Page_nGage_Dashboard/My_Work/TAB_Dashboard_Obj/Chart_ActivityEventState_Summary'))

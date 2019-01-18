@@ -39,6 +39,7 @@ CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Da
 'Select Dashboard tab'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/tab_Dashboard'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/TAB_Dashboard_Obj/iframe_ASIGNEE'))
+WebUI.delay(5)
 
 'Verify Number of bars in Bar charts'
 WebUI.verifyElementVisible(findTestObject('Page_nGage_Dashboard/My_Work/TAB_Dashboard_Obj/Chart_Asignee_ActivityDue'))

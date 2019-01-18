@@ -13,9 +13,11 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-//TODO: Dependent on test data
 'Login into application'
 CustomKeywords.'actions.Common.login'()
+
+'Create Document Correspondence Generation -> Correspondence'
+CustomKeywords.'actions.Common.createBulkDocuments_Correpondence'(30)
 
 'Click on "My Work Simplified" link'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/a_My Work Simplified'))

@@ -17,24 +17,27 @@ import org.openqa.selenium.Keys
 'Login Into Application'
 CustomKeywords.'actions.Common.login'()
 
+'Create Bulk document'
+CustomKeywords.'actions.Common.createBulkDocuments_ClosureAction'(35)
+
 'Click on My Work link from left menu'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_My Work Left Menu'))
-WebUI.waitForElementVisible(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/i_PostmanProcesses1'), GlobalVariable.G_LongTimeout)
-
-'expand postman process1'
-WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/i_PostmanProcesses1'))
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
-
-'click on new process hold activity(link)'
-WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/a_NewProcessHoldActivity'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_iframe_105'))
-//CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_work_items'))
+
+'Click on Tree Menu'
+CustomKeywords.'actions.MenuBar.clickTreeMenu'('MY_WORK', 'Processes', 'Closure Action', 'Activity A')
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_work_items'))
+
+'Get Current page number'
+int beforeCount=Integer.parseInt(WebUI.getAttribute(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/table_page_number_input'), 'value'))
+
+'Verify current page number is 1'
+WebUI.verifyEqual(beforeCount, 1)
 
 'enter page valid number in (Page number)text box and hit ENTER key'
-WebUI.setText(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/table_page_number_input'), '50')
+WebUI.setText(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/table_page_number_input'), '999')
 WebUI.sendKeys(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/table_page_number_input'), Keys.chord(Keys.ENTER))
-
-'wait for table grid(iframe to refresh)'
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_work_items'))
 
 'verify current page number'

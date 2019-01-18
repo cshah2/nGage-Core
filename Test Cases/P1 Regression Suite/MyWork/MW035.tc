@@ -3,6 +3,6 @@
    <description>28294 Regression test My Work: Work Items, Search filter, Required field, Daterange</description>
    <name>MW035</name>
    <tag></tag>
-   <comment>Create a new Document in DateTimeRequired activity</comment>
+   <comment></comment>
    <testCaseGuid>af1fc9af-067d-45fe-a526-94585abfaed5</testCaseGuid>
 </TestCaseEntity>

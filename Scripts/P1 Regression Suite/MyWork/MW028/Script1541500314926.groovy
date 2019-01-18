@@ -19,6 +19,9 @@ import internal.GlobalVariable as GlobalVariable
 'Login Into Application'
 CustomKeywords.'actions.Common.login'()
 
+'Create Docuement'
+CustomKeywords.'actions.Common.createDocument_ClosureAction'('Chintan Shah', 'Chart Data - MYWORK028')
+
 'Click on My Work link from left menu'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_My Work Left Menu'))
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
@@ -27,6 +30,7 @@ CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Da
 'Click Processes'
 CustomKeywords.'actions.MenuBar.clickTreeMenu'('MY_WORK', 'Processes')
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_iframe_105'))
+WebUI.delay(5)
 
 'Verify Chart sections and its contents'
 WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/My_Work/Charts/Bar Chart - Header'), GlobalVariable.G_LongTimeout)
@@ -47,10 +51,14 @@ int totalRecords = CustomKeywords.'actions.Table.getRowsCount'(findTestObject('P
 WebUI.verifyGreaterThan(totalRecords, 0)
 
 'Verify correct number of slices are displayed in pie chart'
-CustomKeywords.'actions.Chart.verifyNumberOfSlices'(findTestObject('Page_nGage_Dashboard/My_Work/Charts/Chart_AllProcess_Summary'), totalRecords, GlobalVariable.ChartType['PIE'])
+WebUI.verifyElementVisible(findTestObject('Page_nGage_Dashboard/My_Work/Charts/Chart_AllProcess_Summary'))
+int allProcess_PieSlices = CustomKeywords.'actions.Chart.getNumberOfSlices'(findTestObject('Page_nGage_Dashboard/My_Work/Charts/Chart_AllProcess_Summary'), GlobalVariable.ChartType['PIE'])
+WebUI.verifyGreaterThan(allProcess_PieSlices, 0)
 
 'Verify correct number of slices in bar chart'
-CustomKeywords.'actions.Chart.verifyNumberOfSlices'(findTestObject('Page_nGage_Dashboard/My_Work/Charts/Chart_AllProcess_SLAStatusView'), totalRecords*4, GlobalVariable.ChartType['V_BAR'])
+WebUI.verifyElementVisible(findTestObject('Page_nGage_Dashboard/My_Work/Charts/Chart_AllProcess_SLAStatusView'))
+int allProcess_BarSlices = CustomKeywords.'actions.Chart.getNumberOfSlices'(findTestObject('Page_nGage_Dashboard/My_Work/Charts/Chart_AllProcess_SLAStatusView'), GlobalVariable.ChartType['V_BAR'])
+WebUI.verifyGreaterThan(allProcess_BarSlices, 0)
 
 'Get Row Number for closure activity process'
 int rowNo = CustomKeywords.'actions.Table.getRowNumber'(findTestObject('Page_nGage_Dashboard/My_Work/Charts/table_AllProcess'), 2, 'Closure Action')
@@ -59,6 +67,7 @@ println 'Expected Row No is :'+rowNo
 'Click on respective slice in Bar chart'
 CustomKeywords.'actions.Chart.clickSlice'(findTestObject('Page_nGage_Dashboard/My_Work/Charts/Chart_AllProcess_Summary'), rowNo, GlobalVariable.ChartType['PIE'])
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_iframe_105'))
+WebUI.delay(5)
 
 'Verify Chart sections and its contents'
 WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/My_Work/Charts/Bar Chart - Header'), GlobalVariable.G_LongTimeout)
@@ -79,11 +88,14 @@ WebUI.verifyElementVisible(findTestObject('Page_nGage_Dashboard/My_Work/Charts/b
 WebUI.verifyMatch(WebUI.getText(findTestObject('Page_nGage_Dashboard/My_Work/Charts/button_Show Overdue Workitems')).trim(), 'Show Overdue Work Items', false)
 
 'Verify activity count in table'
-int recordCount = CustomKeywords.'actions.Table.getRowsCount'(findTestObject('Page_nGage_Dashboard/My_Work/Charts/table_SingleProcess'))
+int activityRecordCount = CustomKeywords.'actions.Table.getRowsCount'(findTestObject('Page_nGage_Dashboard/My_Work/Charts/table_SingleProcess'))
 
 'Verify correct number of slices are displayed in pie chart'
-CustomKeywords.'actions.Chart.verifyNumberOfSlices'(findTestObject('Page_nGage_Dashboard/My_Work/Charts/Chart_SingleProcess_Summary'), recordCount, GlobalVariable.ChartType['PIE'])
+WebUI.verifyElementVisible(findTestObject('Page_nGage_Dashboard/My_Work/Charts/Chart_SingleProcess_Summary'))
+int singleProcess_PieSlices = CustomKeywords.'actions.Chart.getNumberOfSlices'(findTestObject('Page_nGage_Dashboard/My_Work/Charts/Chart_SingleProcess_Summary'), GlobalVariable.ChartType['PIE'])
+WebUI.verifyGreaterThan(singleProcess_PieSlices, 0)
 
 'Verify correct number of slices in bar chart'
-CustomKeywords.'actions.Chart.verifyNumberOfSlices'(findTestObject('Page_nGage_Dashboard/My_Work/Charts/Chart_SingleProcess_SLAStatusView'), recordCount*4, GlobalVariable.ChartType['V_BAR'])
-
+WebUI.verifyElementVisible(findTestObject('Page_nGage_Dashboard/My_Work/Charts/Chart_SingleProcess_SLAStatusView'))
+int singleProcess_BarSlices = CustomKeywords.'actions.Chart.getNumberOfSlices'(findTestObject('Page_nGage_Dashboard/My_Work/Charts/Chart_SingleProcess_SLAStatusView'), GlobalVariable.ChartType['V_BAR'])
+WebUI.verifyGreaterThan(singleProcess_BarSlices, 0)

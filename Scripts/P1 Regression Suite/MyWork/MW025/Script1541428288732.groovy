@@ -16,36 +16,57 @@ import internal.GlobalVariable as GlobalVariable
 'Login Into Application'
 CustomKeywords.'actions.Common.login'()
 
+'Create Docuement'
+CustomKeywords.'actions.Common.createDocument_ClosureAction'('Chintan Shah', 'P1 - MYWORK025')
+
 'Click on My Work link from left menu'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_My Work Left Menu'))
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_iframe_105'))
 
-'Expand LinQ process'
-WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/icon_Expand_LinQ Process'))
-WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
-
-'Select LinQ Activity C'
-WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/My_Work/a_LinQ Activity C'), GlobalVariable.G_LongTimeout)
-WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_LinQ Activity C'))
+'Click Closure Action - Activity A'
+CustomKeywords.'actions.MenuBar.clickTreeMenu'('MY_WORK', 'Processes', 'Closure Action', 'Activity A')
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_work_items'))
 
-'verify count (total count and activity count)'
-CustomKeywords.'actions.Common.verifyRecordCountInActivityMatchesWithResultGrid'(findTestObject('Page_nGage_Dashboard/My_Work/a_LinQ Activity C'),findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/div_PageCount'))
-
-'Uncheck Show Assigned only checkbox is alredy checked'
+'Uncheck Show Assigned only checkbox if already checked'
 WebUI.uncheck(findTestObject('Page_nGage_Dashboard/My_Work/chexkbox_ShowAssignedOnly'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_work_items'))
 
 'Validate atleast 1 record is present in the grid.'
-WebUI.verifyElementPresent(findTestObject('Page_nGage_Dashboard/My_Work/table_RecordOne'), GlobalVariable.G_LongTimeout);
+int rowCount = CustomKeywords.'actions.Table.getRowsCount'(findTestObject('Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'))
+WebUI.verifyGreaterThanOrEqual(rowCount, 1)
 
 'Sort records in grid descending by DocID'
 CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/My_Work/tableHeader_DocID'))
 CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/My_Work/tableHeader_DocID'))
 
+int docIDColumnNo = CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Page_nGage_Dashboard/My_Work/tableHeader_MyWorkSearchResult'), 'Doc ID')
+
+'Get DOCID of newly created document'
+String _docId = CustomKeywords.'actions.Table.getCellText'(findTestObject('Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), 1, docIDColumnNo)
+
+'Open Document'
+CustomKeywords.'actions.Table.clickCell'(findTestObject('Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), 1, docIDColumnNo)
+
+WebUI.switchToWindowIndex(1)
+WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+
+'Click on Customer Information tab'
+WebUI.click(findTestObject('Page_WMI/Closure Action/tab_CustomerInformation'))
+WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_WMI/Closure Action/iframe_ContentPlaceHolder1_iPa'))
+
+'Close popup window'
+WebUI.closeWindowIndex(1)
+
+WebUI.switchToWindowTitle('Savana nGage')
+
+'Verify Lock Icon is displayed against document'
+WebUI.verifyElementPresent(findTestObject('Page_nGage_Dashboard/My_Work//table_Record_One_LockIcon_Column'), GlobalVariable.G_LongTimeout)
+WebUI.verifyElementVisible(findTestObject('Page_nGage_Dashboard/My_Work//table_Record_One_LockIcon_Column'))
+
 'Select Checkbox against document in table'
-WebUI.check(findTestObject('Page_nGage_Dashboard/My_Work/table_RecoedOne_Checkbox'))
+CustomKeywords.'actions.Table.checkRecordInTable'(findTestObject('Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), 1)
 
 'Perform Mouser over on Action button'
 WebUI.mouseOver(findTestObject('Page_nGage_Dashboard/My_Work/span_Actions Button'))
@@ -55,7 +76,7 @@ WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/My_Work/action_
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/action_UnlockWorkItems'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_work_items'))
 
-'verify success message'
+'Verify Success message'
 WebUI.verifyElementPresent(findTestObject('Page_nGage_Dashboard/My_Work/processingGrid_SuccessMessage'), GlobalVariable.G_LongTimeout)
 WebUI.verifyElementText(findTestObject('Page_nGage_Dashboard/My_Work/processingGrid_SuccessMessage'), 'Work item(s) unlocked successfully')
 
@@ -68,4 +89,3 @@ WebUI.verifyElementNotPresent(findTestObject('Page_nGage_Dashboard/My_Work//tabl
 
 'verify checkbox not checked after grid refresh'
 WebUI.verifyElementNotChecked(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/table_Record_One_Checkbox'), GlobalVariable.G_LongTimeout)
-
