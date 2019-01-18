@@ -52,7 +52,6 @@ CustomKeywords.'actions.Table.clickCell'(findTestObject('Object Repository/Page_
 WebUI.switchToWindowIndex(1)
 WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 
-//TODO : It will work once Radio List Bug gets resolve
 'Verify Business Model View - Radio List Event doc should be open'
 WebUI.verifyElementVisible(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/span_Business Model View - Rad'))
 String actualtext= WebUI.getText(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/span_Business Model View - Rad'))

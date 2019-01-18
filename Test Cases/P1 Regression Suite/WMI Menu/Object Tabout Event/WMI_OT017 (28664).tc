@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>28664 Regression test WMI-Radio List Event-Refrence Object -InlineView tab(Combination-2)</description>
+   <name>WMI_OT017 (28664)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>37f4eaa1-3497-4e79-b6d5-86f9391af5d3</testCaseGuid>
+</TestCaseEntity>
