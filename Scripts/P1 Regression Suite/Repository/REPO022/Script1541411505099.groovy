@@ -2,6 +2,9 @@ import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
 import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
+
+import org.openqa.selenium.Keys
+
 import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
 import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
@@ -15,6 +18,9 @@ import internal.GlobalVariable as GlobalVariable
 
 'Login Into Application'
 CustomKeywords.'actions.Common.login'()
+
+'Create Bulk Document'
+CustomKeywords.'actions.Common.createBulkDocuments_RenderAllFields'(40)
 
 'Expand Repository Menu'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Repository/h3_Repository Menu'))
@@ -39,12 +45,13 @@ WebUI.verifyGreaterThanOrEqual(rowCount, 1)
 'Ensure the first page in the table is loaded'
 WebUI.verifyMatch(WebUI.getText(findTestObject('Page_nGage_Dashboard/Repository/Table_SearchResult_PageCount')), '.*Showing 1 - 12.*', true)
 
-'Click on next page (>>) icon.'
-WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/Teble_NextPageButton'))
+'Enter page number 3'
+WebUI.setText(findTestObject('Page_nGage_Dashboard/Repository/Table_PageNumberInput'), '3')
+WebUI.sendKeys(findTestObject('Page_nGage_Dashboard/Repository/Table_PageNumberInput'), Keys.chord(Keys.ENTER))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
 
-'Grid should display next page and page number in text box should change.'
-WebUI.verifyMatch(WebUI.getText(findTestObject('Page_nGage_Dashboard/Repository/Table_SearchResult_PageCount')), '.*Showing 13 - 24.*', true)
+'Ensure the first page in the table is loaded'
+WebUI.verifyMatch(WebUI.getText(findTestObject('Page_nGage_Dashboard/Repository/Table_SearchResult_PageCount')), '.*Showing 25 - 36.*', true)
 
 'Click on First page (|<) button'
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/Table_FirstPageButton'))

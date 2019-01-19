@@ -16,12 +16,15 @@ import internal.GlobalVariable as GlobalVariable
 'Login into application'
 CustomKeywords.'actions.Common.login'()
 
+'Create Document render all fields'
+CustomKeywords.'actions.Common.createDocument_RenderAllField'('10', 'CShah', '', '', '', '', '', '', '', '', '')
+
 'Click on Repository Menu'
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/h3_Repository Menu'))
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
 'Right click on BM Ref ROTABLE Nested without Tab from Business Model Sub Menu'
-CustomKeywords.'actions.MenuBar.rightClickTreeMenu'('REPO', 'Business Model', 'Business Model', 'Render All Field Types', 'Chintan Shah', 'This is Test')
+CustomKeywords.'actions.MenuBar.rightClickTreeMenu'('REPO', 'Business Model', 'Business Model', 'Render All Field Types', 'Chintan Shah', 'CShah')
 
 'Click New Search button'
 CustomKeywords.'actions.ContextMenu.clickOption'(findTestObject('Page_nGage_Dashboard/contextMenuOptions'), 'New Search')
@@ -29,4 +32,4 @@ CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Da
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/NewSearch_WithoutTab/iFrameNewSearch'))
 
 'Panel should be populated in search panel for the specific field.'
-WebUI.verifyElementAttributeValue(findTestObject('Page_nGage_Dashboard/Repository/NewSearch_WithoutTab/input_Filter_BM String'), 'value', 'This is Test', GlobalVariable.G_LongTimeout)
+WebUI.verifyElementAttributeValue(findTestObject('Page_nGage_Dashboard/Repository/NewSearch_WithoutTab/input_Filter_BM String'), 'value', 'CShah', GlobalVariable.G_LongTimeout)

@@ -29,14 +29,17 @@ CustomKeywords.'actions.Common.login'()
 WebUI.click(findTestObject('Page_nGage_Dashboard/Repository/h3_Repository Menu'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
 
+'Get Column No for ID column'
+int colNo = CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Page_nGage_Dashboard/Repository/table_Header_SavedSearch'), 'ID')
+
 'Sort records by ID column column in saved search table'
 CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/Repository/table_SavedSearch_Column_ID'))
 
 'Verify records in column are sorted in descending order'
-CustomKeywords.'actions.Table.verifyColumnIsSortedInteger'(findTestObject('Page_nGage_Dashboard/Repository/table_SavedSearch'), 1, 'DESC')
+CustomKeywords.'actions.Table.verifyColumnIsSortedInteger'(findTestObject('Page_nGage_Dashboard/Repository/table_SavedSearch'), colNo, 'DESC')
 
 'Sort records by ID column column in saved search table'
 CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/Repository/table_SavedSearch_Column_ID'))
 
 'Verify records in column are sorted in ascending order'
-CustomKeywords.'actions.Table.verifyColumnIsSortedInteger'(findTestObject('Page_nGage_Dashboard/Repository/table_SavedSearch'), 1, 'ASC')
+CustomKeywords.'actions.Table.verifyColumnIsSortedInteger'(findTestObject('Page_nGage_Dashboard/Repository/table_SavedSearch'), colNo, 'ASC')

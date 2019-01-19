@@ -16,6 +16,9 @@ import internal.GlobalVariable as GlobalVariable
 'Login Into Application'
 CustomKeywords.'actions.Common.login'()
 
+'Create Document'
+CustomKeywords.'actions.Common.createDocument_ClosureAction'('Chintan Shah', 'P1 - REPO008')
+
 'Expand Repository Menu'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Repository/h3_Repository Menu'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
@@ -32,11 +35,16 @@ CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Da
 WebUI.click(findTestObject('Page_nGage_Dashboard/Repository/input_btnSearch'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
 
+//WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/Repository/table_AdvanceSearch_FirstRow'), GlobalVariable.G_LongTimeout)
+'Verify table contains atleast 1 record'
+int rowCount = CustomKeywords.'actions.Table.getRowsCount'(findTestObject('Page_nGage_Dashboard/Repository/table_SearchResults'))
+WebUI.verifyGreaterThan(rowCount, 0)
+
 //Reset Grid layout
 'Click Reset grid layout button'
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/resultGrid_ResetLayout'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
-WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/Repository/table_AdvanceSearch_FirstRow'), GlobalVariable.G_LongTimeout)
+WebUI.delay(3)
 
 int accountNoUserColumnNo_Before = CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/table_Header_SearchResults'), 'Account No User')
 
@@ -50,6 +58,7 @@ WebUI.verifyEqual(accountNoUserColumnNo_Before, docCreateDateColumnNo_After)
 'Click Set Layout option'
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/resultGrid_SetLayout'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
+WebUI.delay(3)
 
 'Click on Search header to expand the search options'
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/h3_Search Bar'))
@@ -84,7 +93,10 @@ CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Da
 WebUI.click(findTestObject('Page_nGage_Dashboard/Repository/input_btnSearch'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
 
-//WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/Repository/table_AdvanceSearch_FirstRow'), GlobalVariable.G_LongTimeout)
-
 int docCreateDateColumnNo_After_1 = CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/table_Header_SearchResults'), 'Doc Create Date')
 WebUI.verifyEqual(accountNoUserColumnNo_Before, docCreateDateColumnNo_After_1)
+
+'Click Reset Layout option'
+WebUI.click(findTestObject('Page_nGage_Dashboard/Repository/resultGrid_ResetLayout'))
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
+WebUI.delay(3)

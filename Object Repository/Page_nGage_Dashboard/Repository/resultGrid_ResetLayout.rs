@@ -6,12 +6,11 @@
    <elementGuidId>5f237d07-c02a-46be-ac00-7db54727787d</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>XPATH</key>
-         <value>//td[@id='divSearchResultsTable_btnResetLayout']</value>
+         <key>BASIC</key>
       </entry>
       <entry>
-         <key>BASIC</key>
-         <value></value>
+         <key>XPATH</key>
+         <value>//div[@id='divSearchResultsTable_toppager']//td[@title='Reset Layout']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

@@ -16,12 +16,15 @@ import internal.GlobalVariable as GlobalVariable
 'Login into application'
 CustomKeywords.'actions.Common.login'()
 
+'Create Document render all fields'
+CustomKeywords.'actions.Common.createDocument_RenderAllField'('10', 'CShah', '', '', '', '', '', '', '', '', '')
+
 'Click on Repository Menu'
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/h3_Repository Menu'))
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
 'Click BM Ref ROTABLE DEMO tree menu'
-CustomKeywords.'actions.MenuBar.clickTreeMenu'('REPO', 'Business Model', 'Business Model', 'BM Ref ROTABLE Demo')
+CustomKeywords.'actions.MenuBar.clickTreeMenu'('REPO', 'Business Model', 'Business Model', 'Render All Field Types')
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/BrowseResults Tab/iframe_BROWSETAB_iframe'))
 
 'Open Browser tab'
@@ -45,14 +48,26 @@ WebUI.verifyEqual(docTypeNameColumnNo_Before, currentRevisionColumnNo_After)
 'Click Set Layout option'
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/BrowseResults Tab/browserResult_SetLayout'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/BrowseResults Tab/iframe_BROWSETAB_iframe'))
+WebUI.delay(3)
 
-'Click on another EDM (Render All Field Types)'
+WebUI.refresh()
+
+'Click on Repository Menu'
+WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/h3_Repository Menu'))
+WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
+
+'Click BM Ref ROTABLE DEMO tree menu'
 CustomKeywords.'actions.MenuBar.clickTreeMenu'('REPO', 'Business Model', 'Business Model', 'Render All Field Types')
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/BrowseResults Tab/iframe_BROWSETAB_iframe'))
 
-'Click BM Ref ROTABLE DEMO tree menu'
-CustomKeywords.'actions.MenuBar.clickTreeMenu'('REPO', 'Business Model', 'Business Model', 'BM Ref ROTABLE Demo')
+'Open Browser tab'
+WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/BrowseResults Tab/a_Browse Results'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/BrowseResults Tab/iframe_BROWSETAB_iframe'))
 
 int docCreateDateColumnNo_After_1 = CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/BrowseResults Tab/table_Header_SearchResults'), 'Current Revision #')
 WebUI.verifyEqual(docTypeNameColumnNo_Before, docCreateDateColumnNo_After_1)
+
+'Click Reset grid layout button'
+WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/BrowseResults Tab/browseResult_ResetLayout'))
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/BrowseResults Tab/iframe_BROWSETAB_iframe'))
+WebUI.waitForElementVisible(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/BrowseResults Tab/table_BrowseResultSearch_FirstRow'), GlobalVariable.G_LongTimeout)

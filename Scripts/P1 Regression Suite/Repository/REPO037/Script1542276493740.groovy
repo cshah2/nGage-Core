@@ -16,12 +16,15 @@ import internal.GlobalVariable as GlobalVariable
 'Login into application'
 CustomKeywords.'actions.Common.login'()
 
+'Create Document render all fields'
+CustomKeywords.'actions.Common.createDocument_RenderAllField'('10', 'CShah', '', '', '', '', '', '', '', '', '')
+
 'Click on Repository Menu'
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/h3_Repository Menu'))
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
 'Click BM Ref ROTABLE DEMO tree menu'
-CustomKeywords.'actions.MenuBar.clickTreeMenu'('REPO', 'Business Model', 'Business Model', 'BM Ref ROTABLE Demo')
+CustomKeywords.'actions.MenuBar.clickTreeMenu'('REPO', 'Business Model', 'Business Model', 'Render All Field Types')
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/BrowseResults Tab/iframe_BROWSETAB_iframe'))
 
 'Open Browser tab'
@@ -29,5 +32,5 @@ WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/Br
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/BrowseResults Tab/iframe_BROWSETAB_iframe'))
 
 'Verify Record count in activity and table matches'
-int activityRecordCount = CustomKeywords.'actions.MenuBar.getRecordCountInActivity'('REPO', 'Business Model', 'Business Model', 'BM Ref ROTABLE Demo')
+int activityRecordCount = CustomKeywords.'actions.MenuBar.getRecordCountInActivity'('REPO', 'Business Model', 'Business Model', 'Render All Field Types')
 CustomKeywords.'actions.Common.verifyTotalRecordCountFromPageSummary'(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/BrowseResults Tab/Table_PageResults'), activityRecordCount)

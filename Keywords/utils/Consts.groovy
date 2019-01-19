@@ -199,7 +199,14 @@ public class Consts {
 	public static final String P1_REPO_DATETIMEREQ_DOC1 = '07-01-2018 03:00:00 AM'
 	public static final String P1_REPO_DATEREQ_DOC1 = '10-01-2018'
 
+	public static final String P1_REPO_CLOSURE_CUSTOMERNAME_DOC1 = 'Chintan Shah'
+	public static final String P1_REPO_CLOSURE_CUSTOMERDESC_DOC1 = 'P1 - REPO - OPEN ALL DOCUMENTS'
 
+	public static String P1_REPO014_SAVEDFILTER_RECORDCOUNT
+	public static String P1_REPO014_SAVEDFILTERNAME
+
+	
+	
 	public static final String P1_MWORK_CLOSURE_CUSTOMERNAME_DOC1 = 'Chintan Shah'
 	public static final String P1_MWORK_CLOSURE_CUSTOMERDESC_DOC1 = 'Automation test document'
 

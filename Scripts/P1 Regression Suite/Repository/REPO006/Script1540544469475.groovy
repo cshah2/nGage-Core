@@ -19,16 +19,19 @@ import internal.GlobalVariable as GlobalVariable
 'Login into application'
 CustomKeywords.'actions.Common.login'()
 
+'Create Document'
+CustomKeywords.'actions.Common.createDocument_RenderAllField'('10', '', '', '', '', '', '', '', '', '', '')
+
 'Click on Repository Menu'
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/h3_Repository Menu'))
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
 'Click Repository'
-CustomKeywords.'actions.MenuBar.clickTreeMenu'('REPO', 'Business Model', 'Business Model', 'BM Ref ROTABLE Demo')
+CustomKeywords.'actions.MenuBar.clickTreeMenu'('REPO', 'Business Model', 'Business Model', 'Render All Field Types')
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/BrowseResults Tab/iframe_BROWSETAB_iframe'))
 
 'Verify record counts are matching'
-int recordCountInActivity = CustomKeywords.'actions.MenuBar.getRecordCountInActivity'('REPO', 'Business Model', 'Business Model', 'BM Ref ROTABLE Demo')
+int recordCountInActivity = CustomKeywords.'actions.MenuBar.getRecordCountInActivity'('REPO', 'Business Model', 'Business Model', 'Render All Field Types')
 CustomKeywords.'actions.Common.verifyTotalRecordCountFromPageSummary'(findTestObject('Page_nGage_Dashboard/Repository/BrowseResults Tab/Table_PageResults'), recordCountInActivity)
 
 'Verify Browser tab tool tip'
@@ -37,4 +40,4 @@ WebUI.waitForElementVisible(findTestObject('Object Repository/Page_nGage_Dashboa
 
 String toolTipValue = WebUI.getText(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/BrowseResults Tab/Browser_ToolTip')).trim()
 WebUI.verifyMatch(toolTipValue, '.*Business Model - Business Model.*', true)
-WebUI.verifyMatch(toolTipValue, '.*Doc Type Name = BM Ref ROTABLE Demo.*', true)
+WebUI.verifyMatch(toolTipValue, '.*Doc Type Name = Render All Field Types.*', true)

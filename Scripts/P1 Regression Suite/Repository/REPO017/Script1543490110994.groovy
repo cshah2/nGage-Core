@@ -40,16 +40,16 @@ WebUI.setText(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/
 CustomKeywords.'actions.Common.setText_Date'(findTestObject('Page_nGage_Dashboard/Repository/input_BM_DateFrom_Required'), Consts.P1_REPO_DATEREQ_DOC1)
 CustomKeywords.'actions.Common.setText_Date'(findTestObject('Page_nGage_Dashboard/Repository/input_BM_DateTo_Required'), Consts.P1_REPO_DATEREQ_DOC1)
 
-//WebUI.setText(findTestObject('Page_nGage_Dashboard/Repository/input_BM_DateFrom_Required'), '10-01-2017')
-//WebUI.setText(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/input_BM_DateTo_Required'), '11-30-2018')
-
 'Click on Search button'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Repository/input_btnSearch'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
-//WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/Repository/table_AdvanceSearch_FirstRow'), GlobalVariable.G_LongTimeout)
 
 'Wait for Result Table'
 WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/Repository/table_SearchResults'), GlobalVariable.G_LongTimeout)
+
+'Verify atleast 1 record is present in result'
+int rowCount = CustomKeywords.'actions.Table.getRowsCount'(findTestObject('Page_nGage_Dashboard/Repository/table_SearchResults'))
+WebUI.verifyGreaterThan(rowCount, 0)
 
 String pageCountAfterFilter = WebUI.getText(findTestObject('Page_nGage_Dashboard/Repository/div_Page_Results'))
 
