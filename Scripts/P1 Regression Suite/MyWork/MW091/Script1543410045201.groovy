@@ -25,6 +25,9 @@ CustomKeywords.'actions.Common.createDocument_MyWorkDateTime'(Consts.DC_DATETIME
 Consts.P1_MW087_BMTEXT = 'Automation-'+DateUtil.getCurrentDateTimeMinusDays(0, "MM/dd/yyyy HH:mm:ss a")
 CustomKeywords.'actions.Common.createDocument_MyWorkDateTime'(Consts.DC_DATETIMEREQUIRED, Consts.DT_DATETIMEREQUIRED, Consts.P1_MW087_STARTDATE, Consts.P1_MW087_ENDDATE, Consts.P1_MW087_STARTDATETIME, Consts.P1_MW087_ENDDATETIME, Consts.P1_MW087_BMTEXT)
 
+Consts.P1_MW_BMTEXT_DOC3 = 'Automation-'+DateUtil.getCurrentDateTimeMinusDays(0, "MM/dd/yyyy HH:mm:ss a")
+CustomKeywords.'actions.Common.createDocument_MyWorkDateTime'(Consts.DC_DATETIMEREQUIRED, Consts.DT_DATETIMEREQUIRED, Consts.P1_MW_STARTDATE_DOC3, Consts.P1_MW_ENDDATE_DOC3, Consts.P1_MW_STARTDATETIME_DOC3, Consts.P1_MW_ENDDATETIME_DOC3, Consts.P1_MW_BMTEXT_DOC3)
+
 'Click on My Work link from left menu'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_My Work Left Menu'))
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)

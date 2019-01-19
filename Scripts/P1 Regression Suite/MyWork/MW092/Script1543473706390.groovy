@@ -25,12 +25,15 @@ CustomKeywords.'actions.Common.createDocument_MyWorkDateTime'(Consts.DC_DATETIME
 Consts.P1_MW087_BMTEXT = 'Automation-'+DateUtil.getCurrentDateTimeMinusDays(0, "MM/dd/yyyy HH:mm:ss a")
 CustomKeywords.'actions.Common.createDocument_MyWorkDateTime'(Consts.DC_DATETIMEREQUIRED, Consts.DT_DATETIMEREQUIRED, Consts.P1_MW087_STARTDATE, Consts.P1_MW087_ENDDATE, Consts.P1_MW087_STARTDATETIME, Consts.P1_MW087_ENDDATETIME, Consts.P1_MW087_BMTEXT)
 
+Consts.P1_MW_BMTEXT_DOC3 = 'Automation-'+DateUtil.getCurrentDateTimeMinusDays(0, "MM/dd/yyyy HH:mm:ss a")
+CustomKeywords.'actions.Common.createDocument_MyWorkDateTime'(Consts.DC_DATETIMEREQUIRED, Consts.DT_DATETIMEREQUIRED, Consts.P1_MW_STARTDATE_DOC3, Consts.P1_MW_ENDDATE_DOC3, Consts.P1_MW_STARTDATETIME_DOC3, Consts.P1_MW_ENDDATETIME_DOC3, Consts.P1_MW_BMTEXT_DOC3)
+
 'Click on My Work link from left menu'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_My Work Left Menu'))
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
 'Expand Processes by Click on the Expand Icon and Verify Foldered data displayed (For Document 1)'
-CustomKeywords.'actions.MenuBar.clickTreeMenu'('My_Work','Processes','Datetimerequired','Datetimerequired', DateUtil.formatDate_Slash(Consts.P1_MW084_STARTDATETIME))
+CustomKeywords.'actions.MenuBar.clickTreeMenu'('My_Work','Processes','Datetimerequired','Datetimerequired', DateUtil.formatDate_Slash(Consts.P1_MW087_STARTDATETIME))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/iframe_work_items'))
 
 'Verify the foldered date group should be displayed with only Date (not with time) '
@@ -41,13 +44,13 @@ WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/h3_Se
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/iframe_work_items'))
 
 'Verify date autopopulated should show in the search panel'
-WebUI.verifyElementAttributeValue(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/process_DateTimeRequired/input_StartDateTimeRequired'), 'value', DateUtil.formatDate_Hyphen(Consts.P1_MW084_STARTDATETIME), GlobalVariable.G_LongTimeout)
+WebUI.verifyElementAttributeValue(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/process_DateTimeRequired/input_StartDateTimeRequired'), 'value', DateUtil.formatDate_Hyphen(Consts.P1_MW087_STARTDATETIME), GlobalVariable.G_LongTimeout)
 
 'Select Date Operator (>=)from Dropdown Menu'
 WebUI.selectOptionByLabel(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/process_DateTimeRequired/select_StartDateTime_operater'), '>=', false)
 
 'Enter Date for Document 1'
-CustomKeywords.'actions.Common.setText_Date'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/process_DateTimeRequired/input_StartDateTimeRequired'), DateUtil.formatDate_Hyphen(Consts.P1_MW084_STARTDATETIME))
+CustomKeywords.'actions.Common.setText_Date'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/process_DateTimeRequired/input_StartDateTimeRequired'), DateUtil.formatDate_Hyphen(Consts.P1_MW087_STARTDATETIME))
 
 'Click On Search Button'
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/btn_Search'))
@@ -59,4 +62,4 @@ CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Object Reposito
 
 'Verify Search Result displays data as per filter'
 int colNo_StartTestDateTime= CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/tableHeader_MyWorkSearchResult'),'Start test datetime')
-CustomKeywords.'actions.Table.verifyDateFilter'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), colNo_StartTestDateTime, DateUtil.formatDate_Hyphen(Consts.P1_MW084_STARTDATETIME), '>=')
+CustomKeywords.'actions.Table.verifyDateFilter'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), colNo_StartTestDateTime, DateUtil.formatDate_Hyphen(Consts.P1_MW087_STARTDATETIME), '>=')

@@ -22,6 +22,9 @@ CustomKeywords.'actions.Common.login'()
 Consts.P1_MW084_BMTEXT = 'Automation-'+DateUtil.getCurrentDateTimeMinusDays(0, "MM/dd/yyyy HH:mm:ss a")
 CustomKeywords.'actions.Common.createDocument_MyWorkDateTime'(Consts.DC_DATETIMERANGEREQUIRED, Consts.DT_DATETIMERANGEREQUIRED, Consts.P1_MW084_STARTDATE, Consts.P1_MW084_ENDDATE, Consts.P1_MW084_STARTDATETIME, Consts.P1_MW084_ENDDATETIME, Consts.P1_MW084_BMTEXT)
 
+Consts.P1_MW087_BMTEXT = 'Automation-'+DateUtil.getCurrentDateTimeMinusDays(0, "MM/dd/yyyy HH:mm:ss a")
+CustomKeywords.'actions.Common.createDocument_MyWorkDateTime'(Consts.DC_DATETIMERANGEREQUIRED, Consts.DT_DATETIMERANGEREQUIRED, Consts.P1_MW087_STARTDATE, Consts.P1_MW087_ENDDATE, Consts.P1_MW087_STARTDATETIME, Consts.P1_MW087_ENDDATETIME, Consts.P1_MW087_BMTEXT)
+
 'Click on My Work link from left menu'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_My Work Left Menu'))
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
@@ -38,8 +41,8 @@ WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/h3_Se
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/iframe_work_items'))
 
 'Verify auto populated values'
-String startFilterDate = DateUtil.formatDate_Hyphen(Consts.P1_MW097_STARTDATETIME)+' 12:00:00 AM' 
-String endFilterDate = DateUtil.formatDate_Hyphen(Consts.P1_MW097_STARTDATETIME)+' 11:59:59 PM'
+String startFilterDate = DateUtil.formatDate_Hyphen(Consts.P1_MW084_STARTDATETIME)+' 12:00:00 AM' 
+String endFilterDate = DateUtil.formatDate_Hyphen(Consts.P1_MW084_STARTDATETIME)+' 11:59:59 PM'
 WebUI.verifyElementAttributeValue(findTestObject('Page_nGage_Dashboard/My_Work/process_DatetimeRangeRequired/input_StartTestDateTime_From'), 'value', startFilterDate, GlobalVariable.G_LongTimeout)
 WebUI.verifyElementAttributeValue(findTestObject('Page_nGage_Dashboard/My_Work/process_DatetimeRangeRequired/input_StartTestDateTime_To'), 'value', endFilterDate, GlobalVariable.G_LongTimeout)
 

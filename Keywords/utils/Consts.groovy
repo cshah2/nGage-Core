@@ -145,6 +145,12 @@ public class Consts {
 	public static final String P1_MW087_ENDDATETIME = '05-15-2024 05:00:00 PM'
 	public static String P1_MW087_BMTEXT
 
+	public static final String P1_MW_STARTDATE_DOC3 = '01-20-2019'
+	public static final String P1_MW_ENDDATE_DOC3 = '12-20-2024'
+	public static final String P1_MW_STARTDATETIME_DOC3 = '06-20-2019 08:00:00 AM'
+	public static final String P1_MW_ENDDATETIME_DOC3 = '05-20-2024 05:00:00 PM'
+	public static String P1_MW_BMTEXT_DOC3
+
 	public static final String P1_MW095_STARTDATE = ''
 	public static final String P1_MW095_ENDDATE = ''
 	public static final String P1_MW095_STARTDATETIME = ''
@@ -173,6 +179,11 @@ public class Consts {
 	public static final String P1_REPO_DATERANGE_DOC2 = '03-15-2018'
 	public static final String P1_REPO_BMDATETIME_DOC2 = '06-15-2018 01:00:00 AM'
 	public static final String P1_REPO_DATETIMERANGE_DOC2 = '09-15-2018 03:00:00 AM'
+
+	public static final String P1_REPO_BMDATE_DOC5 = '01-20-2018'
+	public static final String P1_REPO_DATERANGE_DOC5 = '03-20-2018'
+	public static final String P1_REPO_BMDATETIME_DOC5 = '06-20-2018 01:00:00 AM'
+	public static final String P1_REPO_DATETIMERANGE_DOC5 = '09-20-2018 03:00:00 AM'
 
 	public static final String P1_REPO_BMDATE_DOC3 = ''
 	public static final String P1_REPO_DATERANGE_DOC3 = ''

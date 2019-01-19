@@ -25,6 +25,9 @@ CustomKeywords.'actions.Common.createDocument_MyWorkDateTime'(Consts.DC_DATEREQU
 Consts.P1_MW087_BMTEXT = 'Automation-'+DateUtil.getCurrentDateTimeMinusDays(0, "MM/dd/yyyy HH:mm:ss a")
 CustomKeywords.'actions.Common.createDocument_MyWorkDateTime'(Consts.DC_DATEREQUIRED, Consts.DT_DATEREQUIRED, Consts.P1_MW087_STARTDATE, Consts.P1_MW087_ENDDATE, Consts.P1_MW087_STARTDATETIME, Consts.P1_MW087_ENDDATETIME, Consts.P1_MW087_BMTEXT)
 
+Consts.P1_MW_BMTEXT_DOC3 = 'Automation-'+DateUtil.getCurrentDateTimeMinusDays(0, "MM/dd/yyyy HH:mm:ss a")
+CustomKeywords.'actions.Common.createDocument_MyWorkDateTime'(Consts.DC_DATEREQUIRED, Consts.DT_DATEREQUIRED, Consts.P1_MW_STARTDATE_DOC3, Consts.P1_MW_ENDDATE_DOC3, Consts.P1_MW_STARTDATETIME_DOC3, Consts.P1_MW_ENDDATETIME_DOC3, Consts.P1_MW_BMTEXT_DOC3)
+
 'Click on My Work link from left menu'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_My Work Left Menu'))
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
@@ -45,7 +48,7 @@ WebUI.verifyMatch(actualText, DateUtil.formatDate_Hyphen(Consts.P1_MW084_STARTDA
 WebUI.selectOptionByLabel(findTestObject('Page_nGage_Dashboard/My_Work/Process_Date Required/select_StartDate_operator'), '>=', false)
 
 'Enter Date for Document 1'
-CustomKeywords.'actions.Common.setText_Date'(findTestObject('Page_nGage_Dashboard/My_Work/Process_Date Required/input_StartDate'), DateUtil.formatDate_Hyphen(Consts.P1_MW084_STARTDATE))
+CustomKeywords.'actions.Common.setText_Date'(findTestObject('Page_nGage_Dashboard/My_Work/Process_Date Required/input_StartDate'), DateUtil.formatDate_Hyphen(Consts.P1_MW087_STARTDATE))
 
 'Click On Search Button'
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/btn_Search'))
@@ -57,4 +60,4 @@ CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dash
 
 'Verify Search Result displays data as per filter'
 int colNo_StartTestDate= CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/tableHeader_MyWorkSearchResult'),'Start test date')
-CustomKeywords.'actions.Table.verifyDateFilter'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), colNo_StartTestDate, DateUtil.formatDate_Hyphen(Consts.P1_MW084_STARTDATE), '>=')
+CustomKeywords.'actions.Table.verifyDateFilter'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), colNo_StartTestDate, DateUtil.formatDate_Hyphen(Consts.P1_MW087_STARTDATE), '>=')

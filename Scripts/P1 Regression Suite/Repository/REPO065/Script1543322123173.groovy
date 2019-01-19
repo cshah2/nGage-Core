@@ -19,6 +19,7 @@ CustomKeywords.'actions.Common.login'()
 
 'Create new Document'
 CustomKeywords.'actions.Common.createDocument_DateTimeDT'(Consts.P1_REPO_BMDATE_DOC1, Consts.P1_REPO_DATERANGE_DOC1, Consts.P1_REPO_BMDATETIME_DOC1, Consts.P1_REPO_DATETIMERANGE_DOC1)
+CustomKeywords.'actions.Common.createDocument_DateTimeDT'(Consts.P1_REPO_BMDATE_DOC2, Consts.P1_REPO_DATERANGE_DOC2, Consts.P1_REPO_BMDATETIME_DOC2, Consts.P1_REPO_DATETIMERANGE_DOC2)
 
 'Click on Repository Menu'
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/h3_Repository Menu'))
@@ -45,6 +46,10 @@ CustomKeywords.'actions.Common.setText_Date'(findTestObject('Page_nGage_Dashboar
 'Click on Search button'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Repository/input_btnSearch'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
+
+'Verify table contains atleast 1 record'
+int rowCount = CustomKeywords.'actions.Table.getRowsCount'(findTestObject('Page_nGage_Dashboard/Repository/table_SearchResults'))
+WebUI.verifyGreaterThan(rowCount, 0)
 
 'Sort record by DocID desc'
 CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/Repository/columnHeader_DocID'))
