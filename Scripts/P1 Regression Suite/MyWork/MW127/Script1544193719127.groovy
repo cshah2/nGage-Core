@@ -13,8 +13,13 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
+//TODO: Need correct configuration.
+
 'Login Into Application'
 CustomKeywords.'actions.Common.login'()
+
+'Create Document'
+CustomKeywords.'actions.Common.createDocument_Correspondence'('Chintan', 'Shah', 'c.s@abc.com', 'Template1')
 
 'Click on My Work link from left menu'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_My Work Left Menu'))

@@ -948,6 +948,74 @@ public class Common {
 	}
 
 	@Keyword
+	def createDocument_VerticalMenuWizard(String firstName, String lastName, String amount) {
+
+		'Switch to main window'
+		WebUI.switchToWindowTitle('Savana nGage')
+
+		'Create a new BovDocTwoRow Document'
+		WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))
+		selectDocClassAndDocTypeForGlobalNew('Vertical Menu Wizard', 'ShowVerticalMenu-True')
+		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'))
+
+		'Switch to new Window'
+		WebUI.switchToWindowIndex(1)
+		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+
+		'Fill the details required'
+		WebUI.setText(findTestObject('Page_WMI_NEW/VerticalMenuWizard/ShowVerticalMenu_True/input_First Name'), firstName)
+		WebUI.setText(findTestObject('Page_WMI_NEW/VerticalMenuWizard/ShowVerticalMenu_True/input_Last Name'), lastName)
+		WebUI.setText(findTestObject('Page_WMI_NEW/VerticalMenuWizard/ShowVerticalMenu_True/input_Amount'), amount)
+
+		'Save details and close'
+		WebUI.click(findTestObject('Page_WMI_NEW/VerticalMenuWizard/ShowVerticalMenu_True/span_Save'))
+		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+		WebUI.delay(5)
+		new Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI_NEW/VerticalMenuWizard/ShowVerticalMenu_True/a_Close Window'), GlobalVariable.G_LongTimeout)
+
+		'Switch to main window and close'
+		WebUI.switchToWindowTitle('Savana nGage')
+		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/span_ui-button-icon-primary ui'))
+
+	}
+
+	@Keyword
+	def createDocument_VerticalMenuWizard(String firstName, String lastName, String amount, String filePath) {
+
+		'Switch to main window'
+		WebUI.switchToWindowTitle('Savana nGage')
+
+		'Create a new BovDocTwoRow Document'
+		WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))
+		selectDocClassAndDocTypeForGlobalNew('Vertical Menu Wizard', 'ShowVerticalMenu-True')
+		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'))
+
+		'Switch to new Window'
+		WebUI.switchToWindowIndex(1)
+		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+
+		'Fill the details required'
+		WebUI.setText(findTestObject('Page_WMI_NEW/VerticalMenuWizard/ShowVerticalMenu_True/input_First Name'), firstName)
+		WebUI.setText(findTestObject('Page_WMI_NEW/VerticalMenuWizard/ShowVerticalMenu_True/input_Last Name'), lastName)
+		WebUI.setText(findTestObject('Page_WMI_NEW/VerticalMenuWizard/ShowVerticalMenu_True/input_Amount'), amount)
+		if(StringUtils.isNotBlank(filePath)) {
+			WebUI.setText(findTestObject('Page_WMI_NEW/VerticalMenuWizard/ShowVerticalMenu_True/input_File Upload'), filePath)
+		}
+
+		'Save details and close'
+		WebUI.click(findTestObject('Page_WMI_NEW/VerticalMenuWizard/ShowVerticalMenu_True/span_Save'))
+		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+		WebUI.delay(5)
+		new Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI_NEW/VerticalMenuWizard/ShowVerticalMenu_True/a_Close Window'), GlobalVariable.G_LongTimeout)
+
+		'Switch to main window and close'
+		WebUI.switchToWindowTitle('Savana nGage')
+		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/span_ui-button-icon-primary ui'))
+
+	}
+
+	
+	@Keyword
 	def createDocument_RouteAdvance(String description) {
 
 		'Switch to main window'
@@ -1267,7 +1335,7 @@ public class Common {
 		}
 		WebUI.switchToDefaultContent()
 	}
-	
+
 	@Keyword
 	def verifyElementNotHasFocus(TestObject toLocator) {
 		WebElement element = WebUtil.getWebElement(toLocator)
@@ -1277,5 +1345,5 @@ public class Common {
 		}
 		WebUI.switchToDefaultContent()
 	}
-	
+
 }

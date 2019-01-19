@@ -211,7 +211,7 @@ public class Table {
 		WebElement table = WebUtil.getWebElement(tableLocator)
 		List<String> cellValues = getAllValuesFromColumn(table, colNo)
 		WebUI.switchToDefaultContent()
-		
+
 		if(cellValues.size() == 0) {
 			KeywordUtil.markFailedAndStop('No records available for comparison.')
 		}
@@ -236,8 +236,8 @@ public class Table {
 
 		if(StringUtils.isBlank(expValue)) {
 			KeywordUtil.markFailedAndStop('Expected value to be checked is blank '+expValue)
-		} 
-		
+		}
+
 		if(cellValues.size() > 0 && cellValues.contains(expValue)) {
 			KeywordUtil.markFailedAndStop("Value "+expValue+" found in column No : "+colNo)
 		}
@@ -250,7 +250,7 @@ public class Table {
 	def verifyColumnIsSortedInteger(TestObject tableLocator, int colNo, String sortOrder) {
 		WebElement table = WebUtil.getWebElement(tableLocator)
 		List<Integer> actList = getAllValueFromColumnInteger(table, colNo)
-		
+
 		if(actList.size() == 0) {
 			KeywordUtil.markFailedAndStop('No records available.')
 		}
@@ -269,7 +269,7 @@ public class Table {
 		WebElement table = WebUtil.getWebElement(tableLocator)
 		List<String> cellValues = getAllValuesFromColumn(table, colNo)
 		WebUI.switchToDefaultContent()
-		
+
 		if(cellValues.size() == 0) {
 			KeywordUtil.markFailedAndStop('No records available for comparison.')
 		}
@@ -461,6 +461,43 @@ public class Table {
 	}
 
 	@Keyword
+	def clickColumnHeader(TestObject tableHeaderLocator, String columnName) {
+		
+		TestObject parentObject = tableHeaderLocator.getParentObject()
+		
+		WebElement table = WebUtil.getWebElement(tableHeaderLocator)
+		List<WebElement> headers = getAllHeaders(table)
+		
+		boolean isColumnClicked = false
+		for(int i = 0; i < headers.size() ; i++) {
+
+			WebDriver driver = DriverFactory.getWebDriver()
+			Actions aDriver = new Actions(driver)
+			aDriver.moveToElement(headers[i]).build().perform()
+
+			String actColumnName = headers[i].getText().replace('\u00A0',' ').trim()
+
+			if(StringUtils.isNotEmpty(actColumnName) && actColumnName.equalsIgnoreCase(columnName)) {
+				headers[i].click()
+				isColumnClicked = true
+				break
+			}
+		}
+		
+		WebUI.switchToDefaultContent()
+		
+		if(isColumnClicked) {
+			if(parentObject != null) {
+				new Common().waitForFrameToLoad(parentObject)
+			}
+			KeywordUtil.markPassed('Column clicked')
+		}
+		else {
+			KeywordUtil.markFailedAndStop('Column '+columnName+' not found')
+		}
+	}
+
+	@Keyword
 	def getColumnNumber(TestObject headerTable, String columnName) {
 		WebElement table = WebUtil.getWebElement(headerTable)
 		List<WebElement> headers = getAllHeaders(table)
@@ -521,7 +558,7 @@ public class Table {
 		WebElement table = WebUtil.getWebElement(tableLocator)
 		List<String> cellValues = getAllValuesFromColumn(table, colNo)
 		WebUI.switchToDefaultContent()
-		
+
 		if(cellValues.size() == 0) {
 			KeywordUtil.markFailedAndStop('No records available for comparison.')
 		}

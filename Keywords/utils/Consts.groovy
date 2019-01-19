@@ -50,8 +50,8 @@ public class Consts {
 	public static final String SMOKE_CORRESPONDENCE_LASTNAME = 'Shah'
 	public static final String SMOKE_CORRESPONDENCE_TOEMAIL = 'c.s@abc.com'
 	public static final String SMOKE_CORRESPONDENCE_TEMPLATE = 'Template1'
-	
-	
+
+
 	public static final String SMOKE_MYWORK009_CUSTOMERNAME1 = 'Chintan Shah'
 	public static final String SMOKE_MYWORK009_CUSTOMERDETAIL1 = 'Automation test document'
 
@@ -241,8 +241,18 @@ public class Consts {
 	public static final String P1_MW083_STARTDATETIME_DATE = '30'
 	public static final String P1_MW083_STARTDATETIME_MONTH = 'Mar'
 	public static final String P1_MW083_STARTDATETIME_YEAR = '2017'
+	
+	public static final String P1_LOANAPPL_FIRSTNAME_DOC1 = 'Chintan'
+	public static final String P1_LOANAPPL_LASTNAME_DOC1 = 'Shah'
+	public static final String P1_LOANAPPL_AMOUNT_DOC1 = '30000'
 
+	public static final String P1_LOANAPPL_FIRSTNAME_DOC2 = 'Atul'
+	public static final String P1_LOANAPPL_LASTNAME_DOC2 = 'Mirvankar'
+	public static final String P1_LOANAPPL_AMOUNT_DOC2 = '10000'
 
+	public static final String P1_LOANAPPL_FIRSTNAME_DOC3 = 'Prasad'
+	public static final String P1_LOANAPPL_LASTNAME_DOC3 = 'Patil'
+	public static final String P1_LOANAPPL_AMOUNT_DOC3 = '5000'
 
 	/*
 	 * Doc Class and Doc Type Variables
@@ -259,5 +269,8 @@ public class Consts {
 
 	public static final String DC_DATETIMERANGEREQUIRED = 'Datetimerangerequired'
 	public static final String DT_DATETIMERANGEREQUIRED = 'Datetimerangerequired'
+	
+	
+	
 }
 

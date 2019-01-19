@@ -22,30 +22,30 @@ import utils.WebUtil
 
 public class MenuBar {
 
-		/**
-		 * Method will return record count displayed for Activity in left menu
-		 * For Ex: if Left menu activity name is "Activity A(100)", then it will return value 100 as a String"
-		 * @param element
-		 * @return
-		 */
-	
-		@Keyword
-		def getRecordCountInActivity(TestObject element) {
-			try {
-				WebUI.waitForElementPresent(element, GlobalVariable.G_LongTimeout)
-				WebUI.waitForElementVisible(element, GlobalVariable.G_LongTimeout)
-				String nodeText = WebUI.getText(element)
-	
-				int startIndex = nodeText.lastIndexOf('(')+1
-				int lastIndex = nodeText.length()-1
-				String recordCountInString = nodeText.substring(startIndex, lastIndex).trim()
-				return Integer.parseInt(recordCountInString)
-			}
-			catch(Exception e) {
-				println "Coult not get record count "+e.toString()
-				return -1
-			}
+	/**
+	 * Method will return record count displayed for Activity in left menu
+	 * For Ex: if Left menu activity name is "Activity A(100)", then it will return value 100 as a String"
+	 * @param element
+	 * @return
+	 */
+
+	@Keyword
+	def getRecordCountInActivity(TestObject element) {
+		try {
+			WebUI.waitForElementPresent(element, GlobalVariable.G_LongTimeout)
+			WebUI.waitForElementVisible(element, GlobalVariable.G_LongTimeout)
+			String nodeText = WebUI.getText(element)
+
+			int startIndex = nodeText.lastIndexOf('(')+1
+			int lastIndex = nodeText.length()-1
+			String recordCountInString = nodeText.substring(startIndex, lastIndex).trim()
+			return Integer.parseInt(recordCountInString)
 		}
+		catch(Exception e) {
+			println "Coult not get record count "+e.toString()
+			return -1
+		}
+	}
 
 	//	@Keyword
 	//	def refreshActivityUntilRecordCountIncreases(TestObject element, int timeout) {
@@ -474,5 +474,33 @@ public class MenuBar {
 		else {
 			KeywordUtil.markFailedAndStop('Tree path is not selected')
 		}
+	}
+
+	@Keyword
+	def verifyTreeDoesNotHaveExpandIcon(String moduleName, String... menuPath) {
+		int size = menuPath.length
+
+		List<String> treePath = new ArrayList<String>(Arrays.asList(menuPath))
+		int lastIndex = treePath.size()-1
+		treePath.remove(lastIndex)
+		expandTree(moduleName, treePath)
+
+		String appendBrace = ""
+		if(!moduleName.equalsIgnoreCase('REPORT'))
+			appendBrace = lastIndex>1?" (":""
+
+		treeXpath.append("/ul/li/a[starts-with(text(),'"+menuPath[size-1]+appendBrace+"')]/../i")
+		WebDriver driver = DriverFactory.getWebDriver()
+		WebElement e = driver.findElement(By.xpath(treeXpath.toString()))
+
+		String bkgImage = e.getCssValue('background-image')
+		
+		if(bkgImage.equals('none')) {
+			KeywordUtil.markPassed('Expand Icon not visible against the last tree node')
+		}
+		else {
+			KeywordUtil.markFailedAndStop('Expand Icon is visible against the last tree node')
+		}
+
 	}
 }

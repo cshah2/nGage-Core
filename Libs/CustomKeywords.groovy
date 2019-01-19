@@ -178,6 +178,14 @@ def static "actions.Table.clickColumnHeader"(
         	column)
 }
 
+def static "actions.Table.clickColumnHeader"(
+    	TestObject tableHeaderLocator	
+     , 	String columnName	) {
+    (new actions.Table()).clickColumnHeader(
+        	tableHeaderLocator
+         , 	columnName)
+}
+
 def static "actions.Table.getColumnNumber"(
     	TestObject headerTable	
      , 	String columnName	) {
@@ -434,6 +442,14 @@ def static "actions.MenuBar.verifyTreeIsSelected"(
     	String moduleName	
      , 	String[] menuPath	) {
     (new actions.MenuBar()).verifyTreeIsSelected(
+        	moduleName
+         , 	menuPath)
+}
+
+def static "actions.MenuBar.verifyTreeDoesNotHaveExpandIcon"(
+    	String moduleName	
+     , 	String[] menuPath	) {
+    (new actions.MenuBar()).verifyTreeDoesNotHaveExpandIcon(
         	moduleName
          , 	menuPath)
 }
@@ -880,6 +896,28 @@ def static "actions.Common.closeThumbnail"(
 
 def static "actions.Common.createDocument_VerticalMenuWizard"() {
     (new actions.Common()).createDocument_VerticalMenuWizard()
+}
+
+def static "actions.Common.createDocument_VerticalMenuWizard"(
+    	String firstName	
+     , 	String lastName	
+     , 	String amount	) {
+    (new actions.Common()).createDocument_VerticalMenuWizard(
+        	firstName
+         , 	lastName
+         , 	amount)
+}
+
+def static "actions.Common.createDocument_VerticalMenuWizard"(
+    	String firstName	
+     , 	String lastName	
+     , 	String amount	
+     , 	String filePath	) {
+    (new actions.Common()).createDocument_VerticalMenuWizard(
+        	firstName
+         , 	lastName
+         , 	amount
+         , 	filePath)
 }
 
 def static "actions.Common.createDocument_RouteAdvance"(
