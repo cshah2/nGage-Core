@@ -26,8 +26,12 @@ WebUI.verifyElementVisible(findTestObject('Object Repository/Page_nGage_Dashboar
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/h3_Repository Menu'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
 
+'Click Tree menu'
+CustomKeywords.'actions.MenuBar.clickTreeMenu'('REPO', 'Business Model', 'Business Model')
+WebUI.delay(5)
+
 'Right click on Business Model repository'
-CustomKeywords.'actions.MenuBar.rightClickTreeMenu'('REPO', 'Business Model')
+CustomKeywords.'actions.MenuBar.rightClickTreeMenu'('REPO', 'Business Model', 'Business Model')
 
 'Select option refresh from Context Menu'
 CustomKeywords.'actions.ContextMenu.clickOption'(findTestObject('Page_nGage_Dashboard/contextMenuOptions'), 'Refresh')
