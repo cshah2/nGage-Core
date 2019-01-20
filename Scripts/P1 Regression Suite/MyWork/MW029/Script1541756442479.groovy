@@ -19,6 +19,9 @@ import internal.GlobalVariable as GlobalVariable
 'Login Into Application'
 CustomKeywords.'actions.Common.login'()
 
+'Create Docuement'
+CustomKeywords.'actions.Common.createDocument_ClosureAction'('Chintan Shah', 'Chart Data - MYWORK029')
+
 'Click on My Work link from left menu'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_My Work Left Menu'))
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
@@ -58,14 +61,18 @@ int allProcess_BarSlices = CustomKeywords.'actions.Chart.getNumberOfSlices'(find
 WebUI.verifyGreaterThan(allProcess_BarSlices, 0)
 
 'Get Row Number for closure activity process'
-int rowNo = CustomKeywords.'actions.Table.getRowNumber'(findTestObject('Page_nGage_Dashboard/My_Work/Charts/table_AllProcess'), 2, 'Closure Action')
+int rowNo = CustomKeywords.'actions.Table.getRowNumber'(findTestObject('Page_nGage_Dashboard/My_Work/Charts/table_AllProcess'), 2, 'Closure Action') 
 println 'Expected Row No is :'+rowNo
+
+'Get Slice Number for closure activity process'
+int sliceNo = CustomKeywords.'actions.Table.getCorrectSliceNumber'(findTestObject('Page_nGage_Dashboard/My_Work/Charts/table_AllProcess'), 6, 2, 'Closure Action')
+println 'Expected Row No is :'+sliceNo
 
 'Get Total record count from table for Closure Action activity'
 int totalDocs = Integer.parseInt(CustomKeywords.'actions.Table.getCellText'(findTestObject('Page_nGage_Dashboard/My_Work/Charts/table_AllProcess'), rowNo, 6))
 
 'Click on Slice in Bar graph'
-CustomKeywords.'actions.Chart.clickSlice'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Charts/Chart_AllProcess_SLAStatusView'), rowNo*4, GlobalVariable.ChartType['V_BAR'])
+CustomKeywords.'actions.Chart.clickSlice'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Charts/Chart_AllProcess_SLAStatusView'), sliceNo*4, GlobalVariable.ChartType['V_BAR'])
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Charts/iframe_iframe_105'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/Charts/iframe_MyIframe'))
 

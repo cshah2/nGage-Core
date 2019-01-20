@@ -462,12 +462,12 @@ public class Table {
 
 	@Keyword
 	def clickColumnHeader(TestObject tableHeaderLocator, String columnName) {
-		
+
 		TestObject parentObject = tableHeaderLocator.getParentObject()
-		
+
 		WebElement table = WebUtil.getWebElement(tableHeaderLocator)
 		List<WebElement> headers = getAllHeaders(table)
-		
+
 		boolean isColumnClicked = false
 		for(int i = 0; i < headers.size() ; i++) {
 
@@ -483,9 +483,9 @@ public class Table {
 				break
 			}
 		}
-		
+
 		WebUI.switchToDefaultContent()
-		
+
 		if(isColumnClicked) {
 			if(parentObject != null) {
 				new Common().waitForFrameToLoad(parentObject)
@@ -807,6 +807,39 @@ public class Table {
 		}
 		else {
 			KeywordUtil.markFailedAndStop('Actual value = '+actAttrValue+' does not matches with expected value = '+attrValue)
+		}
+	}
+	
+	
+	@Keyword
+	def getCorrectSliceNumber(TestObject tableLocator, int colNoTotal, int colNoText, String expText) {
+		
+		WebElement table = WebUtil.getWebElement(tableLocator)
+		List<WebElement> rows = getAllRows(table)
+		
+		int i = 1
+		boolean isRowFound = false
+		
+		for(WebElement row in rows) {
+			List<WebElement> cells = getAllCells(row)
+			int cellTotal = Integer.parseInt(cells.get(colNoTotal - 1).getText())
+			String cellText = cells.get(colNoText - 1).getText()
+			
+			if(cellTotal > 0) {
+				if(cellText.trim().equalsIgnoreCase(expText)) {
+					isRowFound = true
+					break
+				}
+				i++
+			}	
+		}
+		
+		WebUI.switchToDefaultContent()
+		if(isRowFound) {
+			return i
+		}
+		else {
+			KeywordUtil.markFailedAndStop('Expected row not found in table')
 		}
 	}
 }

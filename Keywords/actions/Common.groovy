@@ -1014,7 +1014,7 @@ public class Common {
 
 	}
 
-	
+
 	@Keyword
 	def createDocument_RouteAdvance(String description) {
 
@@ -1152,6 +1152,7 @@ public class Common {
 		WebUI.setText(findTestObject('Page_WMI_NEW/Correspondence/input_To Email'), toEmail)
 		WebUI.selectOptionByLabel(findTestObject('Page_WMI_NEW/Correspondence/select_Template'), template, false)
 		waitForFrameToLoad(findTestObject('Page_WMI_NEW/Correspondence/iframe_BodyText'))
+		WebUI.delay(3)
 
 		'Save details and close'
 		WebUI.click(findTestObject('Page_WMI_NEW/Correspondence/span_Save'))

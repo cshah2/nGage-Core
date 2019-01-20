@@ -38,5 +38,8 @@ WebUI.verifyElementVisible(findTestObject('Object Repository/Page_nGage_Dashboar
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/a_Advanced Search Tab'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
 
-'Verify Saved Searches Table is displayed'
-WebUI.verifyElementVisible(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/table_SavedSearch'))
+'Verify Repository drop down is visible'
+WebUI.verifyElementVisible(findTestObject('Page_nGage_Dashboard/Repository/select_Repository Drop Down'))
+
+'Verify Search For drop down is visible'
+WebUI.verifyElementVisible(findTestObject('Page_nGage_Dashboard/Repository/select_Search For Drop Down'))

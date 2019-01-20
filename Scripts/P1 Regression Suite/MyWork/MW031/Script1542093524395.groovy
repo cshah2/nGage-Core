@@ -57,7 +57,7 @@ CustomKeywords.'actions.Chart.verifyNumberOfSlices'(findTestObject('Page_nGage_D
 CustomKeywords.'actions.Chart.verifyNumberOfSlices'(findTestObject('Page_nGage_Dashboard/My_Work/Charts/Chart_SingleProcess_SLAStatusView'), recordCount*4, GlobalVariable.ChartType['V_BAR'])
 
 'Get Row Number for closure activity process'
-int rowNo = CustomKeywords.'actions.Table.getRowNumber'(findTestObject('Page_nGage_Dashboard/My_Work/Charts/table_SingleProcess'), 2, 'Activity A')
+int rowNo = CustomKeywords.'actions.Table.getCorrectSliceNumber'(findTestObject('Page_nGage_Dashboard/My_Work/Charts/table_SingleProcess'), 7, 2, 'Activity A')
 println 'Expected Row No is :'+rowNo
 
 'Click on respective slice in Bar chart'

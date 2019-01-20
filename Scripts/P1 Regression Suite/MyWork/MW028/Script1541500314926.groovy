@@ -61,7 +61,7 @@ int allProcess_BarSlices = CustomKeywords.'actions.Chart.getNumberOfSlices'(find
 WebUI.verifyGreaterThan(allProcess_BarSlices, 0)
 
 'Get Row Number for closure activity process'
-int rowNo = CustomKeywords.'actions.Table.getRowNumber'(findTestObject('Page_nGage_Dashboard/My_Work/Charts/table_AllProcess'), 2, 'Closure Action')
+int rowNo = CustomKeywords.'actions.Table.getCorrectSliceNumber'(findTestObject('Page_nGage_Dashboard/My_Work/Charts/table_AllProcess'), 6, 2, 'Closure Action')
 println 'Expected Row No is :'+rowNo
 
 'Click on respective slice in Bar chart'

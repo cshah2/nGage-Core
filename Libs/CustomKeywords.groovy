@@ -328,6 +328,18 @@ def static "actions.Table.verifyAttributeValueOfRow"(
          , 	attrValue)
 }
 
+def static "actions.Table.getCorrectSliceNumber"(
+    	TestObject tableLocator	
+     , 	int colNoTotal	
+     , 	int colNoText	
+     , 	String expText	) {
+    (new actions.Table()).getCorrectSliceNumber(
+        	tableLocator
+         , 	colNoTotal
+         , 	colNoText
+         , 	expText)
+}
+
 def static "actions.MenuBar.getRecordCountInActivity"(
     	TestObject element	) {
     (new actions.MenuBar()).getRecordCountInActivity(
