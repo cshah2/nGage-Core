@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TestCaseEntity>
-   <description>Regression test Search Repository: search class, group as folder, right click - refresh</description>
-   <name>REPO024</name>
-   <tag></tag>
-   <comment></comment>
-   <testCaseGuid>43274a5b-1ec1-45ed-9694-ba2bc2015e0f</testCaseGuid>
-</TestCaseEntity>

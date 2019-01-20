@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TestCaseEntity>
-   <description>Regression test security config/ configure Never reuse passwords in security configuration/ change password from Home menu</description>
-   <name>SC042</name>
-   <tag></tag>
-   <comment></comment>
-   <testCaseGuid>7778c7b2-dbcc-4963-9ecc-ca418c0b9e22</testCaseGuid>
-</TestCaseEntity>

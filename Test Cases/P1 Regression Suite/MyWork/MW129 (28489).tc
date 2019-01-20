@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>28489 Regression Test My Work- Task 20208 :Issue- In Bpm search class if foldering is not set in Folder Design tab and make it as enabled, then on my work error is throwing  when click on expand mark of activity .</description>
+   <name>MW129 (28489)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>0afa6684-467a-42ba-8d67-3cfba2e7664f</testCaseGuid>
+</TestCaseEntity>

@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TestCaseEntity>
-   <description>Regression test WMI :  Menu Testing for SendEmail.aspx</description>
-   <name>WMIMENU018</name>
-   <tag></tag>
-   <comment></comment>
-   <testCaseGuid>2f353600-a672-47e3-9fd4-84ad9558f22c</testCaseGuid>
-</TestCaseEntity>

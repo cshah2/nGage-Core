@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>28451 Regression test My Work (String field+WF):Field type as String,Display Type as LISTFEILD - Search should work on LISTFEILD</description>
+   <name>MW126 (28451)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>4f144ee5-e62d-4528-9aa7-47998a0c9395</testCaseGuid>
+</TestCaseEntity>

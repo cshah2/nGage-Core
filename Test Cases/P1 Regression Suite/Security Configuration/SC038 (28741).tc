@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Regression test security config/ configure Unique passwords before reuse in security configuration/ exceed unique password before reuse/ change password from Home menu</description>
+   <name>SC038 (28741)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>a79e045f-f4cf-4ac1-8b29-d6698f0c0305</testCaseGuid>
+</TestCaseEntity>

@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TestCaseEntity>
-   <description>28257 Regression test My Work: Search Results grid, page navigation, first page</description>
-   <name>MW016</name>
-   <tag></tag>
-   <comment></comment>
-   <testCaseGuid>56b3863a-7a83-4447-8079-14aa671bd013</testCaseGuid>
-</TestCaseEntity>

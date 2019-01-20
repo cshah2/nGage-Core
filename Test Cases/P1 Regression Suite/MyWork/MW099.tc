@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TestCaseEntity>
-   <description>28423 Regression test My Work (Date time field+WF):&quot;Null&quot; opeartor with feild display type &quot;DATERANGE&quot;</description>
-   <name>MW099</name>
-   <tag></tag>
-   <comment></comment>
-   <testCaseGuid>ca0b3e2a-03ba-496b-967b-3b15fb341f83</testCaseGuid>
-</TestCaseEntity>

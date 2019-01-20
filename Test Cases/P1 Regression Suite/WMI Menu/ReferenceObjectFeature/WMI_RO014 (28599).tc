@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>28599 Regression Test WMI- Reference Object ImportMode AutoCreate ( importmode=&quot;AutoCreate&quot; with filter=&quot;Include&quot;)</description>
+   <name>WMI_RO014 (28599)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>c60280a7-e488-4069-84e3-c7ec3bdf7db2</testCaseGuid>
+</TestCaseEntity>

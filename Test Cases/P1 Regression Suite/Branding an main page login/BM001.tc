@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TestCaseEntity>
-   <description>Regression test cases JQERYWMI :  Brandig- Login Page-Login button</description>
-   <name>BM001</name>
-   <tag></tag>
-   <comment></comment>
-   <testCaseGuid>ae84738e-66e8-4972-aae4-89e340dd26da</testCaseGuid>
-</TestCaseEntity>

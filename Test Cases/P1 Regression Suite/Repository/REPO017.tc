@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TestCaseEntity>
-   <description>Regression test Search Repository: Search Results grid, recall saved search( saved search serached with mandatory feilds criteria)</description>
-   <name>REPO017</name>
-   <tag></tag>
-   <comment></comment>
-   <testCaseGuid>99ddbdfa-e4b1-4dd8-ab92-d549a52ab8d3</testCaseGuid>
-</TestCaseEntity>

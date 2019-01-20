@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TestCaseEntity>
-   <description>Regression test Reports: Verify Core Reports - Out of the Box Functionality- open all Reports from difrrent catgories -Click on Design link from every Report from diffrent catgories</description>
-   <name>REPORT007</name>
-   <tag></tag>
-   <comment></comment>
-   <testCaseGuid>8bf5d622-b28f-4ff1-b45e-38914e7d53dc</testCaseGuid>
-</TestCaseEntity>

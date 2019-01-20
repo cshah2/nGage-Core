@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Regression test cases JQERYWMI :  Brandig- Login Page-Change Password link</description>
+   <name>BM002 (28084)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>aacb3605-6151-4bb9-8a09-366a17311461</testCaseGuid>
+</TestCaseEntity>

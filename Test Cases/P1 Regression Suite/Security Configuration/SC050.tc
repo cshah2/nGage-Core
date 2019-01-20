@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TestCaseEntity>
-   <description>Regression test security config/ configure Days until expiration in security configuration/ login from runtimeUrl login screen</description>
-   <name>SC050</name>
-   <tag></tag>
-   <comment>Set Last login time as current date - 366 days</comment>
-   <testCaseGuid>34d9331a-1752-462e-bb2a-204f67308183</testCaseGuid>
-</TestCaseEntity>

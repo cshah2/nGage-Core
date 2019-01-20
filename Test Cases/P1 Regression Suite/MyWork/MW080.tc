@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TestCaseEntity>
-   <description>28399 Regression test My Work: Work Items, Search filter, Required field blank for Daterange</description>
-   <name>MW080</name>
-   <tag></tag>
-   <comment></comment>
-   <testCaseGuid>9b11b220-ad9c-4a54-9c9e-6d659f232837</testCaseGuid>
-</TestCaseEntity>

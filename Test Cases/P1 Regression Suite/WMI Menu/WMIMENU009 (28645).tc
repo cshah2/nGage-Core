@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Regression test WMI :  Menu Testing for WFAudit.aspx (Business Process Audit)</description>
+   <name>WMIMENU009 (28645)</name>
+   <tag></tag>
+   <comment>Test
+BOV Check
+BOV Default Check
+BOV DocTwoRow Check</comment>
+   <testCaseGuid>7123c4da-70c6-4c4a-9421-277b1caaa34e</testCaseGuid>
+</TestCaseEntity>

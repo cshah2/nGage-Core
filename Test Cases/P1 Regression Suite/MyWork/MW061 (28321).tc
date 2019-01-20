@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>28321 Regression test My Work: Foldering - BPMEnableFoldering - true, view documents, Lookup field</description>
+   <name>MW061 (28321)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>a63d1ebe-234c-4206-a379-05717c15d989</testCaseGuid>
+</TestCaseEntity>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Regression test security config/ password less than minimum length/ change password from runtimeUrl login screen</description>
+   <name>SC067 (28770)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>8661d8dc-0256-4872-82f9-3e0b6a0fec3a</testCaseGuid>
+</TestCaseEntity>

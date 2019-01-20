@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TestCaseEntity>
-   <description>28425 Regression test My Work (Date time field+WF):Expand on Date Folder should populate child folders</description>
-   <name>MW101</name>
-   <tag></tag>
-   <comment></comment>
-   <testCaseGuid>7117160b-b9ce-48ba-958e-b9b704c73406</testCaseGuid>
-</TestCaseEntity>

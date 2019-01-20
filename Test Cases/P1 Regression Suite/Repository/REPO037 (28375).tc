@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Regression test Search Repository: Browse results tab, search result grid</description>
+   <name>REPO037 (28375)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>f3fd604b-b103-46b4-a096-c5bb7e53b2fa</testCaseGuid>
+</TestCaseEntity>

@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TestCaseEntity>
-   <description>Regression test security config/ change password of disabled user from login screen</description>
-   <name>SC014</name>
-   <tag></tag>
-   <comment></comment>
-   <testCaseGuid>9db0dc61-9c1d-487f-8e53-b47101a41471</testCaseGuid>
-</TestCaseEntity>

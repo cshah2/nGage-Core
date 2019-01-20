@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>28393 Regression test My Work: Dashboard-New vs in process:SAVBPM 53677 - Search Results grid, set layout and click on Refresh button</description>
+   <name>MW078 (28393)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>dc3b1095-845e-41a5-bae7-94b4b3ce3cb6</testCaseGuid>
+</TestCaseEntity>

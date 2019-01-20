@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>28294 Regression test My Work: Work Items, Search filter, Required field, Daterange</description>
+   <name>MW035 (28294)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>af1fc9af-067d-45fe-a526-94585abfaed5</testCaseGuid>
+</TestCaseEntity>

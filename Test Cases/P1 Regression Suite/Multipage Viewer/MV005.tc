@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TestCaseEntity>
-   <description>Regression test Multipage viewer: thumbnail, viewer pane - reset size to default</description>
-   <name>MV005</name>
-   <tag></tag>
-   <comment></comment>
-   <testCaseGuid>48a16b45-6904-4ced-b24e-8d7fd86c0dcf</testCaseGuid>
-</TestCaseEntity>

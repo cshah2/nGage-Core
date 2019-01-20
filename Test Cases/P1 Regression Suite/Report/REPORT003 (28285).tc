@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Regression test cases Reports: Schedule Report  tab-existing scheduler</description>
+   <name>REPORT003 (28285)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>cdfa1b34-0108-4964-8807-cf6996a10b54</testCaseGuid>
+</TestCaseEntity>

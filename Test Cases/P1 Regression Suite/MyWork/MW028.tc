@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TestCaseEntity>
-   <description>28274 Regression test My Work: BPMProcessAdminDashHomeURL, blank - verify pie chart</description>
-   <name>MW028</name>
-   <tag></tag>
-   <comment></comment>
-   <testCaseGuid>22c8c9a8-74ea-43f7-ac8f-470870f506db</testCaseGuid>
-</TestCaseEntity>

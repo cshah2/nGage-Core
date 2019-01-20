@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TestCaseEntity>
-   <description>Regression test security config/ configure maximum length of password in security configuration/ change password of logged in user from Home screen</description>
-   <name>SC028</name>
-   <tag></tag>
-   <comment></comment>
-   <testCaseGuid>814ef1aa-1b53-4bd5-997b-05e9127ef809</testCaseGuid>
-</TestCaseEntity>

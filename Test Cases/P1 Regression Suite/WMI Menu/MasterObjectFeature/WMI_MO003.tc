@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TestCaseEntity>
-   <description>Regression test WMI- Render as Textbox (renderas=Textbox)</description>
-   <name>WMI_MO003</name>
-   <tag></tag>
-   <comment></comment>
-   <testCaseGuid>345e7d5c-8193-47e1-915d-1a6c727f6e17</testCaseGuid>
-</TestCaseEntity>

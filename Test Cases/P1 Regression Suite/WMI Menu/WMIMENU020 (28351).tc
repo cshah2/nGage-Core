@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Regression test WMI :  Menu Testing for ShowLink.aspx</description>
+   <name>WMIMENU020 (28351)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>252e8f67-6109-4440-829f-6e9b7f748a32</testCaseGuid>
+</TestCaseEntity>

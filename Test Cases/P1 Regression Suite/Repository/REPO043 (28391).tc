@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Regression test Seaarch Repository: SAVBPM 53677 - Search Results grid, set layout and click on Refresh button</description>
+   <name>REPO043 (28391)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>5293b593-c474-4cdc-a953-a1e4cb82722c</testCaseGuid>
+</TestCaseEntity>

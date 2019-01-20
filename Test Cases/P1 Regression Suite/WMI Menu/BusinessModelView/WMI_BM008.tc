@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TestCaseEntity>
-   <description>Regression Test WMI - Standard grid - Audit History</description>
-   <name>WMI_BM008</name>
-   <tag></tag>
-   <comment></comment>
-   <testCaseGuid>d69ccc9e-4ae0-47d8-a6de-9b2b3d98c84f</testCaseGuid>
-</TestCaseEntity>

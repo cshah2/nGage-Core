@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Regression test Search Repository: verify the searched results for advance search and EDM(ex.Order)</description>
+   <name>REPO033 (28373)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>97be2355-b15d-40b7-b26a-48b70706e9de</testCaseGuid>
+</TestCaseEntity>

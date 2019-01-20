@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TestCaseEntity>
-   <description>28300 Regression test My Work: Work Items, Search result, User Grid Paging, Grid Items per page</description>
-   <name>MW041</name>
-   <tag></tag>
-   <comment></comment>
-   <testCaseGuid>6c8144a9-c1c6-4f25-aa89-380b1cbc329d</testCaseGuid>
-</TestCaseEntity>

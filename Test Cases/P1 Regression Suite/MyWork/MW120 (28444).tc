@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>28444 Regression test My Work (Date field+WF):&quot;=&quot; opeartor with feild display type &quot;DATERANGE&quot;</description>
+   <name>MW120 (28444)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>a2a9f511-35e3-4d70-b523-559b063d558d</testCaseGuid>
+</TestCaseEntity>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Regression test cases Reports: Report menu-schedule</description>
+   <name>REPORT002 (28284)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>7ea07925-ba22-4062-b31c-5dd2ef31679e</testCaseGuid>
+</TestCaseEntity>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Regression test security config/ perform forgot password for user/ lastlogindate is greater than the days of inactivity in the security config</description>
+   <name>SC016 (28721)</name>
+   <tag></tag>
+   <comment>Verify message
+Verify message</comment>
+   <testCaseGuid>6fee0982-4ec1-4013-8053-5b89966e5c4a</testCaseGuid>
+</TestCaseEntity>

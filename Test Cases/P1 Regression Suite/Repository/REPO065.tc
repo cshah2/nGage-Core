@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TestCaseEntity>
-   <description>Regression test My Work (Date time field+DM):&quot;=&quot; opeartor with feild display type &quot;DATERANGE&quot;</description>
-   <name>REPO065</name>
-   <tag></tag>
-   <comment></comment>
-   <testCaseGuid>c77a8e4e-f172-4b7a-a272-18e368f5bc22</testCaseGuid>
-</TestCaseEntity>

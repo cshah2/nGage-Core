@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>28471 Regression test My Work (Date time field+WF): Show Date group for DATE (User defined fields only)</description>
+   <name>MW128 (28471)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>1bbd3242-44fb-4eeb-8287-32def128905c</testCaseGuid>
+</TestCaseEntity>

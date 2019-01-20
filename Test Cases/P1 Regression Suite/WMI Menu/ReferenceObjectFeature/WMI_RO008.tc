@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TestCaseEntity>
-   <description>28592 Regression Test WMI- Reference Object SingleResultView( singleresultview=&quot;False&quot;, importmode=&quot;INTERACTIVE&quot;)</description>
-   <name>WMI_RO008</name>
-   <tag></tag>
-   <comment></comment>
-   <testCaseGuid>bb5df093-4e9c-4e27-824d-a23e43a1043a</testCaseGuid>
-</TestCaseEntity>

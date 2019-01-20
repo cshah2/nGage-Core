@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TestCaseEntity>
-   <description>Regression test security config/ incorrect old Password/ changing password of logged in user from Home screen</description>
-   <name>SC013</name>
-   <tag></tag>
-   <comment></comment>
-   <testCaseGuid>5d959cda-50d3-44a9-a943-d9d251315633</testCaseGuid>
-</TestCaseEntity>

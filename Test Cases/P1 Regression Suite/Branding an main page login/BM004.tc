@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TestCaseEntity>
-   <description>Regression test cases JQERYWMI :  Brandig- Main Page- Logo</description>
-   <name>BM004</name>
-   <tag></tag>
-   <comment></comment>
-   <testCaseGuid>2a53b941-c675-4865-9334-68a25c668539</testCaseGuid>
-</TestCaseEntity>

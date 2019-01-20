@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TestCaseEntity>
-   <description>Regression test My Work (Date time field+DM):{Empty} – folder returns correct workitem list in grid</description>
-   <name>REPO067</name>
-   <tag></tag>
-   <comment></comment>
-   <testCaseGuid>85695e47-b471-469d-bc3c-f9acdcec5192</testCaseGuid>
-</TestCaseEntity>

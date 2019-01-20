@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TestCaseEntity>
-   <description>28323 Regression test My Work: Actions - Show closure actions At - Work Item, View Only - unchecked</description>
-   <name>MW063</name>
-   <tag></tag>
-   <comment></comment>
-   <testCaseGuid>5201193c-e913-4865-8d0a-044bf6e603fe</testCaseGuid>
-</TestCaseEntity>

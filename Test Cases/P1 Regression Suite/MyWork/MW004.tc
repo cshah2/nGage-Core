@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TestCaseEntity>
-   <description>28244 Regression test My Work: Foldering - BPMEnableFoldering - True, No Edit unchecked, Restore default</description>
-   <name>MW004</name>
-   <tag></tag>
-   <comment></comment>
-   <testCaseGuid>33afd0e5-276f-4d23-8d4b-ed30c660b88b</testCaseGuid>
-</TestCaseEntity>

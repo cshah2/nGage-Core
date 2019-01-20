@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TestCaseEntity>
-   <description>Regression test Search : Verify Issue 19978- DateTime format with - as separator not working properly (reported by Hasmukh)</description>
-   <name>REPO046</name>
-   <tag></tag>
-   <comment></comment>
-   <testCaseGuid>e23a871f-9547-4166-a610-be9250c40039</testCaseGuid>
-</TestCaseEntity>

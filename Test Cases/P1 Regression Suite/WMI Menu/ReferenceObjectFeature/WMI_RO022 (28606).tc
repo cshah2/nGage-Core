@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>28606 Regression Test WMI- Reference Object AdhocFilter (adhocfilter, visible=&quot;false&quot;)</description>
+   <name>WMI_RO022 (28606)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>adc96064-eb87-4be0-be58-e281db2d6c06</testCaseGuid>
+</TestCaseEntity>

@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TestCaseEntity>
-   <description>28245 Regression test My Work: Foldering -  BPM Search class - disabled, BPMEnableFoldering - True</description>
-   <name>MW005</name>
-   <tag></tag>
-   <comment></comment>
-   <testCaseGuid>4e0230e2-d916-4bc1-ad7b-9d0fb178456b</testCaseGuid>
-</TestCaseEntity>

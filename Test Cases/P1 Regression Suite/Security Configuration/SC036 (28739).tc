@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Regression test security config/ configure Unique passwords before reuse in security configuration/ change password from runtimeUrl login screen</description>
+   <name>SC036 (28739)</name>
+   <tag></tag>
+   <comment>Unlock user account is already locked</comment>
+   <testCaseGuid>86ad3767-4405-4c27-9d74-6e4e89592091</testCaseGuid>
+</TestCaseEntity>

@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TestCaseEntity>
-   <description>Regression Test WMI- Reference Object InlineResultView( inlineresultview= False, disabldgridclick=False)</description>
-   <name>WMI_RO004</name>
-   <tag></tag>
-   <comment></comment>
-   <testCaseGuid>f8487d3a-aca7-45e1-b95a-2a60c47d786c</testCaseGuid>
-</TestCaseEntity>

@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TestCaseEntity>
-   <description>Regression test Search Repository (Date field+DM):&quot;Null&quot; opeartor with feild display type &quot;DATERANGE&quot;</description>
-   <name>REPO081</name>
-   <tag></tag>
-   <comment></comment>
-   <testCaseGuid>64f276ab-83d3-40df-8606-52d2a4030316</testCaseGuid>
-</TestCaseEntity>

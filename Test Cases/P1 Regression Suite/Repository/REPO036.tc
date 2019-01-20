@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TestCaseEntity>
-   <description>Regression test Search Repository: search class, advance search, field values, tooltip</description>
-   <name>REPO036</name>
-   <tag></tag>
-   <comment></comment>
-   <testCaseGuid>cdae1e49-1b57-45f7-b276-8bd2d6cb0f8f</testCaseGuid>
-</TestCaseEntity>

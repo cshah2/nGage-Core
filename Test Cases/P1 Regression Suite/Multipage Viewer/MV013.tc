@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TestCaseEntity>
-   <description>Regression test Multipage viewer: page navigation - next page negative test</description>
-   <name>MV013</name>
-   <tag></tag>
-   <comment></comment>
-   <testCaseGuid>f9329e05-0c11-4c7f-9a83-26860dd7c606</testCaseGuid>
-</TestCaseEntity>

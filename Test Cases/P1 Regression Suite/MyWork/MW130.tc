@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TestCaseEntity>
-   <description>28632 Regression test My Work: Search Results grid, sorting for WF System Field</description>
-   <name>MW130</name>
-   <tag></tag>
-   <comment></comment>
-   <testCaseGuid>35c209e0-9bd1-473d-bfea-45f633ac0404</testCaseGuid>
-</TestCaseEntity>

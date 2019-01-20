@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TestCaseEntity>
-   <description>Regression test WMI :  Menu Testing for Delete.aspx</description>
-   <name>WMIMENU006</name>
-   <tag></tag>
-   <comment></comment>
-   <testCaseGuid>d790dd67-8ab0-41cf-aa7d-01ec02646139</testCaseGuid>
-</TestCaseEntity>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Regression Test WMI - Standard grid - BPM History (No System Activity) (donotshowsystemactivity=&quot;TRUE&quot;)(hidefooter=&quot;false)</description>
+   <name>WMI_BM005 (28574)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>68f889a0-68bd-41df-a0cd-f5d6d88de945</testCaseGuid>
+</TestCaseEntity>

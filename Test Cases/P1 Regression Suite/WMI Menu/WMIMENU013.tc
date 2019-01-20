@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TestCaseEntity>
-   <description>Regression test WMI : Menu Testing for PropertyNoMenuJq.aspx</description>
-   <name>WMIMENU013</name>
-   <tag></tag>
-   <comment></comment>
-   <testCaseGuid>ce2d3837-e901-4b76-81ca-f4ce72e40f51</testCaseGuid>
-</TestCaseEntity>

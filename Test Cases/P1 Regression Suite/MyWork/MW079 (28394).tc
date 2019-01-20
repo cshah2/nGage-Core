@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>28394 Regression test My Work:Dashboard-Activity Event state:SAVBPM 53677 - Search Results grid, set layout and click on Refresh button</description>
+   <name>MW079 (28394)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>da15ae8d-c84a-4913-8395-3ef3d170a50a</testCaseGuid>
+</TestCaseEntity>

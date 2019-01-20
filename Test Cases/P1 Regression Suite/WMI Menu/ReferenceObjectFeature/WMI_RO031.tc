@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TestCaseEntity>
-   <description>28511 Regression test WMI - Reference Object Import feature- CategoryMenu</description>
-   <name>WMI_RO031</name>
-   <tag></tag>
-   <comment></comment>
-   <testCaseGuid>78552cc5-87d5-407f-b00e-341093c992c7</testCaseGuid>
-</TestCaseEntity>

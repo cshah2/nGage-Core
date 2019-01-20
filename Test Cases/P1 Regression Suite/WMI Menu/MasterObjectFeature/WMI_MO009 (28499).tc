@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Regression test WMI- BM Render As ChangeDocType  (renderas=CHANGEDOCTYPE)</description>
+   <name>WMI_MO009 (28499)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>2d931886-8d69-4616-aa50-97bb64633344</testCaseGuid>
+</TestCaseEntity>

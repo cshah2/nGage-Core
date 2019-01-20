@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TestCaseEntity>
-   <description>28450 Regression test My Work (String field+WF):Field type as String,Display Type as TEXTFEILD - Search should work onTEXTFEILD</description>
-   <name>MW125</name>
-   <tag></tag>
-   <comment></comment>
-   <testCaseGuid>0713c2ff-e63a-43fd-9307-87bdadb57d33</testCaseGuid>
-</TestCaseEntity>

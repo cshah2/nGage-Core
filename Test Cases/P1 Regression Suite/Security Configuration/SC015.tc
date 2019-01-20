@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TestCaseEntity>
-   <description>Regression test security config/ perform forgot password of disabled user from login screen</description>
-   <name>SC015</name>
-   <tag></tag>
-   <comment>Verify message</comment>
-   <testCaseGuid>0119f91d-53a3-437d-9ff1-d4835fad355b</testCaseGuid>
-</TestCaseEntity>

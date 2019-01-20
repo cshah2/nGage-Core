@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>28605 Regression test WMI -Reference Object ExtAppURL -extappurl=&quot;www.google.com&quot; ,filter=&quot;include&quot;</description>
+   <name>WMI_RO018 (28605)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>cde1aa62-b13b-457c-be21-4655d9f3dcc5</testCaseGuid>
+</TestCaseEntity>

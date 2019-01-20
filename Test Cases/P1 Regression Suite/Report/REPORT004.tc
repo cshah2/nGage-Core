@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TestCaseEntity>
-   <description>Regression test cases Reports: Schedule Report-Standard filter tab-View existing filter</description>
-   <name>REPORT004</name>
-   <tag></tag>
-   <comment></comment>
-   <testCaseGuid>f9f5ba39-ba1f-4cdf-8499-38d88acd4478</testCaseGuid>
-</TestCaseEntity>

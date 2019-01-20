@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Regression test Multipage viewer: clipboard, page, delete single page, EPMViewerSupressConfirmDialog=0</description>
+   <name>MV046 (28210)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>83203a0a-e6c5-43ae-a7dc-4c97cdf3e502</testCaseGuid>
+</TestCaseEntity>

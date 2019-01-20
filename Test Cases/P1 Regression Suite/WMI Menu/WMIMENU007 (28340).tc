@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Regression test WMI :  Menu Testing for History.aspx (Audit History)</description>
+   <name>WMIMENU007 (28340)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>d723fbc9-83a5-4420-bf1a-12630e668413</testCaseGuid>
+</TestCaseEntity>

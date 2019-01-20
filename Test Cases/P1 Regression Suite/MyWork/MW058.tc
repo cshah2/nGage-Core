@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TestCaseEntity>
-   <description>28318 Regression test My Work: Foldering - BPMEnableFoldering - true, SLA Indicator* field</description>
-   <name>MW058</name>
-   <tag></tag>
-   <comment></comment>
-   <testCaseGuid>0af9f429-9647-4564-9653-a7774e3c7531</testCaseGuid>
-</TestCaseEntity>

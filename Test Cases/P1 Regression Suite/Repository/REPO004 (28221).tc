@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Regression test Search Repository: search class, group as folder, nth level</description>
+   <name>REPO004 (28221)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>5c852eb7-20aa-4132-9f56-264220a438d6</testCaseGuid>
+</TestCaseEntity>

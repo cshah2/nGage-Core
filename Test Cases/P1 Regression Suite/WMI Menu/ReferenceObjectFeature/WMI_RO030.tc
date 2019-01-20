@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TestCaseEntity>
-   <description>28509 Regression test WMI - Reference Object Import feature- DROPDOWN</description>
-   <name>WMI_RO030</name>
-   <tag></tag>
-   <comment>click on new and select any doc type
-verify document should be opened in new window</comment>
-   <testCaseGuid>177babdd-6f8f-4b4d-94af-95b4b4da864b</testCaseGuid>
-</TestCaseEntity>

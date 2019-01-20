@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Regression test Reports: Verify Core Reports - Out of the Box Functionality</description>
+   <name>REPORT006 (28379)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>154e7b3e-35cf-48ec-982f-642f7b4ca72d</testCaseGuid>
+</TestCaseEntity>

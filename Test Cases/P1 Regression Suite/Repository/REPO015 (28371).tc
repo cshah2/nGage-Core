@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Regression test Search Repository: Search Results grid, save search (save with exact name which already exist)</description>
+   <name>REPO015 (28371)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>07937bc1-0bcf-45cf-a515-c4ace13f6f5b</testCaseGuid>
+</TestCaseEntity>

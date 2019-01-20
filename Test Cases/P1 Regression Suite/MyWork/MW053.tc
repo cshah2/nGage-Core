@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TestCaseEntity>
-   <description>28313 Regression test My Work: Foldering - BPMEnableFoldering - true, Locked/Unlocked* field</description>
-   <name>MW053</name>
-   <tag></tag>
-   <comment></comment>
-   <testCaseGuid>e352fe4b-4941-4524-bcc4-195e3dbd42e8</testCaseGuid>
-</TestCaseEntity>

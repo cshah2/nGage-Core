@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TestCaseEntity>
-   <description>My Work Simplified: SAVBPM-53653 -After click on refresh sorting is not done on the column whch is sorted before click on refresh button.</description>
-   <name>MWS005</name>
-   <tag></tag>
-   <comment></comment>
-   <testCaseGuid>c5912740-c0e0-4136-802b-8a5b1dc097b4</testCaseGuid>
-</TestCaseEntity>

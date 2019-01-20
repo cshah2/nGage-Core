@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TestCaseEntity>
-   <description>Regression test Search Repository: Browse results tab, search result grid, column width</description>
-   <name>REPO040</name>
-   <tag></tag>
-   <comment></comment>
-   <testCaseGuid>08cf6222-343a-462f-abca-5983ebf7573b</testCaseGuid>
-</TestCaseEntity>

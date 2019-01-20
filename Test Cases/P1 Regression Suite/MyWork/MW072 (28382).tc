@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>28382 Regression test My Work: Work Items-SAVBPM-53653 -After click on refresh sorting is not done on the column whch is sorted before click on refresh button.</description>
+   <name>MW072 (28382)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>d3bc0c29-8235-4290-8ddd-30f78a3c1fe4</testCaseGuid>
+</TestCaseEntity>

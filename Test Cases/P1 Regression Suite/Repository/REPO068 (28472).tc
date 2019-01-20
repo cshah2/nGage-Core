@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Regression test Search Repository (Date field+DM): Verify the Date folder should show results as date</description>
+   <name>REPO068 (28472)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>3bd5c41f-4df9-462c-9448-b85c44672728</testCaseGuid>
+</TestCaseEntity>

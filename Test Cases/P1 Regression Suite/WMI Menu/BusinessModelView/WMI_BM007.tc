@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TestCaseEntity>
-   <description>Regression Test WMI - Standard grid - BPM History (System Activity) (donotshowsystemactivity=&quot;FALSE&quot;)(pagesize=2)</description>
-   <name>WMI_BM007</name>
-   <tag></tag>
-   <comment>Add and save 3 records in the table</comment>
-   <testCaseGuid>5cf0df74-557d-4797-aed3-69873240bf5e</testCaseGuid>
-</TestCaseEntity>

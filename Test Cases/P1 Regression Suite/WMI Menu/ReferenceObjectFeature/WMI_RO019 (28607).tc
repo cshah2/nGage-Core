@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>28607 Regression test WMI -extappurl=&quot;www.google.com&quot; ,filter=&quot;exclude&quot;</description>
+   <name>WMI_RO019 (28607)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>381c0ea2-ac45-42aa-bce9-7354875dd903</testCaseGuid>
+</TestCaseEntity>

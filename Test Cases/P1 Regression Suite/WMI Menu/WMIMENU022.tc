@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TestCaseEntity>
-   <description>Regression test WMI :  Menu Testing for splitpage.aspx</description>
-   <name>WMIMENU022</name>
-   <tag></tag>
-   <comment></comment>
-   <testCaseGuid>eb80f894-a7b5-4ccc-93f2-ed138bea5514</testCaseGuid>
-</TestCaseEntity>

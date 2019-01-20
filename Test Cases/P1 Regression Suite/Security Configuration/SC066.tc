@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TestCaseEntity>
-   <description>Regression test security config/ password less than minimum length/ change password from Home menu</description>
-   <name>SC066</name>
-   <tag></tag>
-   <comment></comment>
-   <testCaseGuid>9a5aff54-79af-4f1b-9107-14998813610e</testCaseGuid>
-</TestCaseEntity>

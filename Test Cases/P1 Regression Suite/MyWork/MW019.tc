@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TestCaseEntity>
-   <description>28260 Regression test My Work: Search Results grid, page navigation, enter invalid page number</description>
-   <name>MW019</name>
-   <tag></tag>
-   <comment></comment>
-   <testCaseGuid>05e42a52-3a45-4a45-bb77-f8fdbecb6e5c</testCaseGuid>
-</TestCaseEntity>

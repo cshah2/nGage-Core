@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Regression Test WMI - Standard grid - Related documents (Child) (hidefooter=false)</description>
+   <name>WMI_BM019 (28590)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>01ddf344-95c9-49f5-b968-d2d6f08341e7</testCaseGuid>
+</TestCaseEntity>

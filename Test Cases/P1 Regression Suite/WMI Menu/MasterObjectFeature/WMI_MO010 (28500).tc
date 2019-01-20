@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Regression test WMI- Render As ChangeDocClass  (renderas=CHANGEDOCCLASS)</description>
+   <name>WMI_MO010 (28500)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>b83695b8-3025-4d32-b1fa-ac301e34bb53</testCaseGuid>
+</TestCaseEntity>

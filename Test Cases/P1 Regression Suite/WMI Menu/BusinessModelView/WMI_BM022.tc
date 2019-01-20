@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TestCaseEntity>
-   <description>Regression Test WMI -Reference grid</description>
-   <name>WMI_BM022</name>
-   <tag></tag>
-   <comment></comment>
-   <testCaseGuid>a826145e-498e-446b-990c-a2bb56a4223a</testCaseGuid>
-</TestCaseEntity>

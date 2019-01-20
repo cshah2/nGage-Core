@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TestCaseEntity>
-   <description>Regression test security config/ configure Allow unlimited password changes in security configuration/ change password of logged in user from Home screen</description>
-   <name>SC059</name>
-   <tag></tag>
-   <comment></comment>
-   <testCaseGuid>64cef029-2f95-4a75-91b1-d674bd4456cb</testCaseGuid>
-</TestCaseEntity>

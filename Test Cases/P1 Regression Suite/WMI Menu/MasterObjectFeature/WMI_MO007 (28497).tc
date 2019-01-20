@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Regression test WMI- BM Render As LinkButton  (renderas=LinkButton)</description>
+   <name>WMI_MO007 (28497)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>29df5bff-b017-452a-a073-5e6cc5327c9c</testCaseGuid>
+</TestCaseEntity>

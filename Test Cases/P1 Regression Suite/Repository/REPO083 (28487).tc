@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Regression test Search Repository (Date field+DM):Expand on Date Folder should populate child folders</description>
+   <name>REPO083 (28487)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>5eb8ed17-b50b-4504-978f-8c3ef90b9a83</testCaseGuid>
+</TestCaseEntity>

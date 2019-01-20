@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TestCaseEntity>
-   <description>Regression test security config/ configure strong password in security configuration/ change password of user from runtimeUI</description>
-   <name>SC020</name>
-   <tag></tag>
-   <comment></comment>
-   <testCaseGuid>32b1f3da-0ef0-4d43-bc26-fd456ae72966</testCaseGuid>
-</TestCaseEntity>

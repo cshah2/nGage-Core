@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Regression test Search repository-Task 21897 -Date field having &quot;-&quot; hyphen as seperator  displays wrong calender dates when click on calendar icon</description>
+   <name>REPO085 (28633)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>0436d91c-b003-40ed-b6df-9bf2cc400d8d</testCaseGuid>
+</TestCaseEntity>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Regression test Search Repository : Task 19962:Verify ISSUE : Required field icon is not displaying for every control in Search repository</description>
+   <name>REPO045 (28404)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>daa12451-14c3-439d-85f6-0d2295f92fab</testCaseGuid>
+</TestCaseEntity>

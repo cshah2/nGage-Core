@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Regression test WMI :  Menu Testing for SplitContainer.aspx</description>
+   <name>WMIMENU021 (28352)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>1ff25cbf-d37a-4510-a0ad-cfb65c4e6e1b</testCaseGuid>
+</TestCaseEntity>

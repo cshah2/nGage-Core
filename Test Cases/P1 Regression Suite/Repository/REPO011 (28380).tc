@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Regression test Search Repository: Search Results, open all selected items</description>
+   <name>REPO011 (28380)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>c46339af-de0c-418f-bfd6-5bd41ceedc7c</testCaseGuid>
+</TestCaseEntity>

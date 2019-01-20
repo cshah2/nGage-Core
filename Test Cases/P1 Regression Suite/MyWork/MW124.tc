@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TestCaseEntity>
-   <description>28448 Regression test My Work (Numeric field+WF):Field type as Currency,Display Type as Numrange - Search should work on Numeric feild for Numrange</description>
-   <name>MW124</name>
-   <tag></tag>
-   <comment></comment>
-   <testCaseGuid>dc24e0ec-44d6-431d-b0ea-1ac6aab4a28c</testCaseGuid>
-</TestCaseEntity>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Regression test WMI : Menu Testing for Reindex.aspx</description>
+   <name>WMIMENU015 (28346)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>66779ae1-acf0-49a6-8bae-8181e9276c4d</testCaseGuid>
+</TestCaseEntity>

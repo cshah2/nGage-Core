@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Regression Test WMI - Standard grid - Related documents (Parent) (pagesize=&quot;2&quot;)</description>
+   <name>WMI_BM015 (28585)</name>
+   <tag></tag>
+   <comment>Create document for Related Document (Child)
+Open Recent Document page</comment>
+   <testCaseGuid>57de41c0-d1e6-4e71-8226-e0a9bcfa0b59</testCaseGuid>
+</TestCaseEntity>

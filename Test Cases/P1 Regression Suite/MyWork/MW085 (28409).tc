@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>28409 Regression test My Work (Date time field+WF):Field Display type as DATERANGE: Click on Search folder should  show From and To Date Time Search control</description>
+   <name>MW085 (28409)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>1c4986af-535a-4006-aee9-3515fce0e64e</testCaseGuid>
+</TestCaseEntity>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>28278 Regression test My Work: BPMProcessAdminDashURL, blank - verify bar graph</description>
+   <name>MW032 (28278)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>aee3b940-8594-4a59-97a3-3e4c3eb4eace</testCaseGuid>
+</TestCaseEntity>

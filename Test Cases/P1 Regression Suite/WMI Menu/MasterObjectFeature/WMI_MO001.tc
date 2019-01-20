@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TestCaseEntity>
-   <description>Regression test WMI- Render as label (renderas=Label)</description>
-   <name>WMI_MO001</name>
-   <tag></tag>
-   <comment></comment>
-   <testCaseGuid>1724c7b2-3efb-4e94-9629-fbd9201eba43</testCaseGuid>
-</TestCaseEntity>
