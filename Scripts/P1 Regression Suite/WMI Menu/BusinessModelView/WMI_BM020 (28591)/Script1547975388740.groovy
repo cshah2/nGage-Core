@@ -16,26 +16,8 @@ import internal.GlobalVariable as GlobalVariable
 'Login Into Application'
 CustomKeywords.'actions.Common.login'()
 
-if(!CustomKeywords.'actions.MenuBar.isSubMenuPresent'('REPO', 'Render As Tab', 'Business Model', 'Business Model')) {
-	WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))
-	CustomKeywords.'actions.Common.selectDocClassAndDocTypeForGlobalNew'('Master Object Feature', 'Render As Label')
-	WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'), GlobalVariable.G_LongTimeout)
-	WebUI.click(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'))
-	
-	'switch to new window'
-	WebUI.switchToWindowTitle('(Doc ID: NEW )')
-	WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
-	
-	'Click on WMI Harness page'
-	WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Inline_Result_View/span_WMI Harness'))
-	CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Inline_Result_View/iframe_ContentPlaceHolder1_iPage'))
-	
-	'Click on Save button'
-	WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Inline_Result_View/span_Save'))
-	
-	'Click Close Window'
-	WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Inline_Result_View/span_Close Window'))
-}
+'Create Document'
+CustomKeywords.'actions.Common.createBulkDocuments_RenderAsLabel'(2)
 
 WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))
 CustomKeywords.'actions.Common.selectDocClassAndDocTypeForGlobalNew'('Business Model View', 'Render As Tab')

@@ -25,13 +25,6 @@ WebUI.click(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'))
 WebUI.switchToWindowTitle('(Doc ID: NEW )')
 WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 
-'Click on BM Reference Sequential'
-WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/BusinessModelView/ReferenceSequential/span_ReferenceSequential'))
-CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_WMI_NEW/BusinessModelView/ReferenceSequential/iframe_ReferenceSequential'))
-
-'Verify reference grids should rendered as tabs i.e multiple reference grid should be displayed in as table'
-WebUI.verifyElementPresent(findTestObject('Page_WMI_NEW/BusinessModelView/ReferenceSequential/table_HeaderText'), GlobalVariable.G_LongTimeout)
-
 'Click on Save button'
 WebUI.click(findTestObject('Page_WMI_NEW/BusinessModelView/StandardGrid/Notes/span_Save'))
 
@@ -40,6 +33,9 @@ WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feat
 
 'Switch to main window'
 WebUI.switchToWindowIndex(0)
+
+'Close popup dialog'
+WebUI.click(findTestObject('Page_nGage_Dashboard/Home/span_ui-button-icon-primary ui'))
 
 'Click on Recent Document'
 CustomKeywords.'actions.MenuBar.clickTreeMenu'('HOME', 'Recent Documents')
@@ -59,4 +55,23 @@ WebUI.switchToWindowIndex(1)
 'Click on BM Reference Sequential'
 WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/BusinessModelView/ReferenceSequential/span_ReferenceSequential'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_WMI_NEW/BusinessModelView/ReferenceSequential/iframe_ReferenceSequential'))
-WebUI.verifyElementPresent(findTestObject('Page_WMI_NEW/BusinessModelView/ReferenceSequential/table_HeaderText'), GlobalVariable.G_LongTimeout)
+
+WebUI.scrollToElement(findTestObject('Page_WMI_NEW/BusinessModelView/ReferenceSequential/table1_HeaderText'), GlobalVariable.G_LongTimeout)
+WebUI.verifyElementVisible(findTestObject('Page_WMI_NEW/BusinessModelView/ReferenceSequential/table1_HeaderText'))
+WebUI.verifyMatch(WebUI.getText(findTestObject('Page_WMI_NEW/BusinessModelView/ReferenceSequential/table1_HeaderText')), '.*Reference Object.*', true)
+
+WebUI.scrollToElement(findTestObject('Page_WMI_NEW/BusinessModelView/ReferenceSequential/table2_HeaderText'), GlobalVariable.G_LongTimeout)
+WebUI.verifyElementVisible(findTestObject('Page_WMI_NEW/BusinessModelView/ReferenceSequential/table2_HeaderText'))
+WebUI.verifyMatch(WebUI.getText(findTestObject('Page_WMI_NEW/BusinessModelView/ReferenceSequential/table2_HeaderText')), '.*New link\\(Default\\).*', true)
+
+WebUI.scrollToElement(findTestObject('Page_WMI_NEW/BusinessModelView/ReferenceSequential/table3_HeaderText'), GlobalVariable.G_LongTimeout)
+WebUI.verifyElementVisible(findTestObject('Page_WMI_NEW/BusinessModelView/ReferenceSequential/table3_HeaderText'))
+WebUI.verifyMatch(WebUI.getText(findTestObject('Page_WMI_NEW/BusinessModelView/ReferenceSequential/table3_HeaderText')), '.*Notes.*', true)
+
+WebUI.scrollToElement(findTestObject('Page_WMI_NEW/BusinessModelView/ReferenceSequential/table4_HeaderText'), GlobalVariable.G_LongTimeout)
+WebUI.verifyElementVisible(findTestObject('Page_WMI_NEW/BusinessModelView/ReferenceSequential/table4_HeaderText'))
+WebUI.verifyMatch(WebUI.getText(findTestObject('Page_WMI_NEW/BusinessModelView/ReferenceSequential/table4_HeaderText')), '.*Audit History.*', true)
+
+WebUI.scrollToElement(findTestObject('Page_WMI_NEW/BusinessModelView/ReferenceSequential/table5_HeaderText'), GlobalVariable.G_LongTimeout)
+WebUI.verifyElementVisible(findTestObject('Page_WMI_NEW/BusinessModelView/ReferenceSequential/table5_HeaderText'))
+WebUI.verifyMatch(WebUI.getText(findTestObject('Page_WMI_NEW/BusinessModelView/ReferenceSequential/table5_HeaderText')), '.*DropDown\\(Default\\).*', true)

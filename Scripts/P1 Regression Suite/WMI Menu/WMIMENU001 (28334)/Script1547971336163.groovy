@@ -20,6 +20,50 @@ String docID = ''
 'Login into application'
 CustomKeywords.'actions.Common.login'()
 
+'Create new Document'
+CustomKeywords.'actions.Common.createDocument_MultiPageViewerWithDragAndDrop'('Chintan Shah', 'No File', '')
+
+'Go to Recent Documents tab'
+CustomKeywords.'actions.MenuBar.clickTreeMenu'('HOME', 'Recent Documents')
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/iframe_iframe_103'))
+
+'Validate atleast 1 record is present in the grid.'
+int rowCount = CustomKeywords.'actions.Table.getRowsCount'(findTestObject('Page_nGage_Dashboard/Home/table_MyDocumentResults'))
+WebUI.verifyGreaterThanOrEqual(rowCount, 1)
+
+'Sort Record in grid by DocID Descending'
+CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/Home/div_Doc ID'))
+CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/Home/div_Doc ID'))
+
+int colNo_DocID = CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Page_nGage_Dashboard/Home/tableHeader_RecentDocuments'), 'Doc ID')
+
+'Open Document'
+CustomKeywords.'actions.Table.clickCell'(findTestObject('Page_nGage_Dashboard/Home/table_MyDocumentResults'), 1, colNo_DocID)
+
+'Switch to Document window'
+WebUI.switchToWindowTitle('MultipageViewer with drag and drop')
+WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+
+'Add Document to Favorite document list'
+WebUI.mouseOver(findTestObject('Page_WMI/MultiPage_Viewer_DD/span_Favorites'));
+WebUI.waitForElementClickable(findTestObject('Page_WMI/MultiPage_Viewer_DD/a_Add to Favorites'), GlobalVariable.G_SmallTimeout)
+WebUI.click(findTestObject('Page_WMI/MultiPage_Viewer_DD/a_Add to Favorites'))
+WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+
+'Verify Success message'
+WebUI.waitForElementVisible(findTestObject('Page_WMI/MultiPage_Viewer_DD/span_Document successfully add'), GlobalVariable.G_LongTimeout)
+WebUI.verifyElementText(findTestObject('Page_WMI/MultiPage_Viewer_DD/span_Document successfully add'), 'Document successfully added to Favorite Documents.')
+
+'Close WMI Window'
+WebUI.closeWindowIndex(1)
+
+'Switch to parent window'
+WebUI.switchToWindowIndex(0)
+
+'Refresh parent window'
+WebUI.refresh()
+WebUI.delay(3)
+
 //WMI Menu Bov Check
 'Pre-Requisite : Create new Document of type WMI Menu Bov'
 CustomKeywords.'actions.Common.createDocument_WMIMenuBov'()

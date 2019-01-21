@@ -3,6 +3,6 @@
    <description>Regression Test WMI -Reference grid</description>
    <name>WMI_BM022 (28602)</name>
    <tag></tag>
-   <comment></comment>
+   <comment>Verify the Window opened without any error</comment>
    <testCaseGuid>a826145e-498e-446b-990c-a2bb56a4223a</testCaseGuid>
 </TestCaseEntity>
