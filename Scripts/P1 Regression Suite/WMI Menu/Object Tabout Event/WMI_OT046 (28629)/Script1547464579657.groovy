@@ -113,6 +113,7 @@ WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 CustomKeywords.'actions.Table.clickCell'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Nested Lookup Event/tab_Inline View/table_GVGrid'), 2, 5)
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Textbox with Section Event/iframe_Close Window_ContentPla'))
 
+//TODO: There is a bug in application , will work on script once bug is resolved
 'verify document opened' 
 WebUI.verifyOptionSelectedByValue(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Nested Lookup Event/tab_Inline View/select_Master Object Nest Level 1'), '1', false,GlobalVariable.G_LongTimeout )
 WebUI.verifyOptionSelectedByValue(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Nested Lookup Event/tab_Inline View/select_Master Object Nest Level 2'), '1', false,GlobalVariable.G_LongTimeout )
