@@ -593,12 +593,6 @@
       <testCaseId>Test Cases/P1 Regression Suite/MyWork/MW043 (28302)</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>06d2cfd9-0936-48b6-ab62-69eca71d0360</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/P1 Regression Suite/MyWork/MW044 (28303)</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
       <guid>601bd738-eaa9-4a24-87d0-02599d1f13bc</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
