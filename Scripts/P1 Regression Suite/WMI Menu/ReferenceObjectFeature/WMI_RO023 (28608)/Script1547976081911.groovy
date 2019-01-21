@@ -68,6 +68,7 @@ WebUI.verifyElementPresent(findTestObject('Object Repository/Page_WMI_NEW/Refere
 'Click On Tab 1'
 WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/CustomButton/tab1_CustomButtons/span_1) Custom Buttons'))
 CustomKeywords.'actions.Common.waitForTabLoading'(null, GlobalVariable.G_LongTimeout)
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/CustomButton/tab1_CustomButtons/iframe_Close Window_ContentPla'))
 
 'Verify Document should be displayed in reference grid'
 WebUI.verifyElementPresent(findTestObject('Page_WMI_NEW/Reference_Object_Feature/CustomButton/tab1_CustomButtons/input_ Google_Button'),GlobalVariable.G_LongTimeout )

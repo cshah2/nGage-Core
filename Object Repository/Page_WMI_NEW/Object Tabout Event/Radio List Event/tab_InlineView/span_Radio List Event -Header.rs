@@ -4,6 +4,12 @@
    <name>span_Radio List Event -Header</name>
    <tag></tag>
    <elementGuidId>c44b5939-1753-4d62-acdf-40fef62f3d85</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>//span[@id = 'eform_mcb67676_TabContainer_4_TabRef_2_phBO_5_BO_InlineviewHeaderLabel' and @ref_element = 'Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/tab_InlineView/iframe_Close Window_ContentPla']</value>
+      </entry>
+   </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
    <webElementProperties>
@@ -21,7 +27,7 @@
       <value>eform_mcb67676_TabContainer_4_TabRef_2_phBO_5_BO_InlineviewHeaderLabel</value>
    </webElementProperties>
    <webElementProperties>
-      <isSelected>true</isSelected>
+      <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>text</name>
       <type>Main</type>

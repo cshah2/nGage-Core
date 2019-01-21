@@ -49,6 +49,8 @@ WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 CustomKeywords.'actions.Window.clickElementAndWaitForWindowClose'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Textbox with Section Event/span_Close Window'),GlobalVariable.G_LongTimeout)
 WebUI.switchToWindowIndex(0)
 
+'Close New Button Window'
+WebUI.click(findTestObject('Page_nGage_Dashboard/Home/span_ui-button-icon-primary ui'))
 
 'Go to Recent Documents tab'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Home/a_Recent Documents'))
@@ -65,14 +67,12 @@ WebUI.verifyElementVisible(findTestObject('Object Repository/Page_WMI_NEW/Object
 String actualtext= WebUI.getText(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/span_Business Model View - Rad'))
 WebUI.verifyMatch(actualtext, 'Business Model View - Radio List Event', false)
 
-
 'click on tab inline view'
 WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/tab_InlineView/span_InlineView'))
 
 'Sort DocID'
 CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/DropDown Event/tab_InlineView/a_Doc ID'))
 CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/DropDown Event/tab_InlineView/a_Doc ID'))
-
 
 'Click On First Row From Reference Grid'
 CustomKeywords.'actions.Table.clickCell'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Textbox with Section Event/tab_InlineView/table_GVGrid'), 1, 5)
@@ -88,17 +88,12 @@ WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/R
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/tab_InlineView/iframe_Close Window_ContentPla'))
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
-//TODO : Once Bug will solve will able to get element then it will work
 'Verify date field should not be disaply as required filed'
 WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/tab_InlineView/input_Save'))
 WebUI.verifyElementNotPresent(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/td_Required'),GlobalVariable.G_LongTimeout)
 
 'Verify Integer field should not be visible'
 WebUI.verifyElementNotVisible(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/tab_InlineView/input_Integer Field (Visible)_'))
-
-'Enter Date in Date Field'
-String val =DateUtil.getCurrentDateTime('MM-dd-yyyy HH:mm:ss a')
-CustomKeywords.'actions.Common.setText_Date'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/tab_InlineView/input_Date Field (Required)_ef'),val)
 
 'Get Background color of String Field'
 String background_Color = CustomKeywords.'actions.Common.getCssValue'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/tab_InlineView/input_String Field (Style)_efo'),'background-color' )
@@ -109,9 +104,12 @@ CustomKeywords.'actions.Common.verifyCssValue'(findTestObject('Object Repository
 'Get Font of String Field'
 String actualfont= CustomKeywords.'actions.Common.getCssValue'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/tab_SingleResultView/input_StringField_ReferenceObject'),'font-weight')
 println actualfont
-
 'Verify String filed should be with Font Normal'
 WebUI.verifyMatch(actualfont,'700',false)
+
+'Enter Date in Date Field'
+String val =DateUtil.getCurrentDateTime('MM-dd-yyyy HH:mm:ss a')
+CustomKeywords.'actions.Common.setText_Date'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/tab_InlineView/input_Date Field (Required)_ef'),val)
 
 'Click on Save from Reference Object'
 WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/tab_InlineView/input_Save'))
@@ -130,4 +128,4 @@ String actualDate=WebUI.getText(findTestObject('Object Repository/Page_WMI_NEW/O
 WebUI.verifyMatch(actualDate,val, false)
 
 'Verify No Error should be thrown'
-WebUI.verifyElementNotPresent(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/tab_InlineView/span_ErrorMessage'),GlobalVariable.G_LongTimeout)
+WebUI.verifyElementNotPresent(findTestObject('Page_WMI_NEW/Object Tabout Event/Radio List Event/tab_InlineView/span_SaveErrorMessageLine_ForRequired'),GlobalVariable.G_LongTimeout)

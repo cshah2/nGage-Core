@@ -4,7 +4,17 @@
    <name>input_Value1</name>
    <tag></tag>
    <elementGuidId>19d91be3-f110-46aa-9dd3-b24ef5b3433e</elementGuidId>
-   <selectorMethod>BASIC</selectorMethod>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>//input[@id = 'eform_mcb67676_TabContainer_4_TabRef_2_phBO_5_BO_eidmKey_BM_String_WL_0' and @type = 'radio' and @value = '1' and @checked = 'checked' and @ref_element = 'Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/tab_InlineView/iframe_Close Window_ContentPla']</value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>//*[@id=&quot;eform_mcb67676_TabContainer_4_TabRef_2_phBO_5_BO_eidmKey_BM_String_WL&quot;]/tbody/tr[1]/td/label</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
    <webElementProperties>
       <isSelected>true</isSelected>
@@ -28,14 +38,14 @@
       <value>radio</value>
    </webElementProperties>
    <webElementProperties>
-      <isSelected>true</isSelected>
+      <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>name</name>
       <type>Main</type>
       <value>eform_mcb67676$TabContainer_4$TabRef_2$phBO_5_BO$eidmKey_BM_String_WL</value>
    </webElementProperties>
    <webElementProperties>
-      <isSelected>false</isSelected>
+      <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
       <name>value</name>
       <type>Main</type>

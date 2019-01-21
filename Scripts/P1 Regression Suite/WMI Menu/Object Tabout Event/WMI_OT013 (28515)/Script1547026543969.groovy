@@ -75,7 +75,7 @@ String errorMessage = WebUI.getText(findTestObject('Object Repository/Page_WMI_N
 WebUI.verifyElementText(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/div_errorMessage'), errorMessage)
 
 
-//TODO: There is a bug (Required Field invisible which was showing before) in application , will work on script once bug is resolved
+//TODO: There is a bug (Required Field invisible which was showing before) in application , will work script once bug is resolved
 WebUI.waitForElementVisible(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/tab_SingleResultView/div_Required'),GlobalVariable.G_LongTimeout )
 String alertText = WebUI.getText(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/tab_SingleResultView/div_Required'))
 println alertText

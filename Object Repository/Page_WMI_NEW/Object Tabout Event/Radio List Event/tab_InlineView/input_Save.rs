@@ -4,7 +4,17 @@
    <name>input_Save</name>
    <tag></tag>
    <elementGuidId>cfa7f138-b5a8-4b9c-abc8-7796bf8faf44</elementGuidId>
-   <selectorMethod>BASIC</selectorMethod>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>//input[@type = 'submit' and @name = 'eform_mcb67676$TabContainer_4$TabRef_2$phBO_5_BO$btnSaveInlineDoc' and @id = 'eform_mcb67676_TabContainer_4_TabRef_2_phBO_5_BO_btnSaveInlineDoc' and @ref_element = 'Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/tab_InlineView/iframe_Close Window_ContentPla']</value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>//input[@id='eform_mcb67676_TabContainer_4_TabRef_2_phBO_5_BO_btnSaveInlineDoc']</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
    <webElementProperties>
       <isSelected>true</isSelected>

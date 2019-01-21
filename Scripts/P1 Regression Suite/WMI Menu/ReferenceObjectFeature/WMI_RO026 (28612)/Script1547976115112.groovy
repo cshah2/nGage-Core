@@ -65,6 +65,7 @@ WebUI.verifyElementPresent(findTestObject('Object Repository/Page_WMI_NEW/Refere
 
 'Click On Tab 3'
 WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/CustomButton/tab3_CustomButton/span_3) Custom Buttons'))
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/CustomButton/tab3_CustomButton/iframe_Close Window_ContentPla'))
 
 'Verify Custom button should not be visible'
 WebUI.verifyElementNotVisible(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/CustomButton/tab1_CustomButtons/input_ Google_Button'))

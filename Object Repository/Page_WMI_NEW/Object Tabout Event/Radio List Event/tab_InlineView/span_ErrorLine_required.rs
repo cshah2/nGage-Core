@@ -4,7 +4,17 @@
    <name>span_ErrorLine_required</name>
    <tag></tag>
    <elementGuidId>8cd0d3d4-54c7-4125-8258-5f6913d218f3</elementGuidId>
-   <selectorMethod>BASIC</selectorMethod>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>//span[(text() = 'This WMI imparts - Field Events in RadioList for reference object' or . = 'This WMI imparts - Field Events in RadioList for reference object') and @ref_element = 'Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/tab_InlineView/iframe_Close Window_ContentPla']</value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>//div[@id='eform_mcb67676_TabContainer_4_TabRef_2_phBO_5_BO_secpnl_1']/table/tbody/tr[2]/td/table/tbody/tr[2]/td/span</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
    <webElementProperties>
       <isSelected>true</isSelected>

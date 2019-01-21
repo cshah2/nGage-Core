@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//input[@type = 'submit' and @name = 'eform_mcb67676$TabContainer_4$TabRef_1$phBO_4_BO$grc$ctl09$custBtn_1' and @id = 'eform_mcb67676_TabContainer_4_TabRef_1_phBO_4_BO_grc_ctl09_custBtn_1' and @ref_element = 'Object Repository/Page_WMI_NEW/Reference_Object_Feature/CustomButton/tab1_CustomButtons/iframe_Close Window_ContentPla']</value>
+         <value>//input[@id = 'eform_mcb67676_TabContainer_4_TabRef_1_phBO_4_BO_grc_ctl09_custBtn_1' and @ref_element = 'Object Repository/Page_WMI_NEW/Reference_Object_Feature/CustomButton/tab1_CustomButtons/iframe_Close Window_ContentPla']</value>
       </entry>
       <entry>
          <key>XPATH</key>
@@ -24,14 +24,14 @@
       <value>input</value>
    </webElementProperties>
    <webElementProperties>
-      <isSelected>true</isSelected>
+      <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>type</name>
       <type>Main</type>
       <value>submit</value>
    </webElementProperties>
    <webElementProperties>
-      <isSelected>true</isSelected>
+      <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>name</name>
       <type>Main</type>

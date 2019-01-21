@@ -50,7 +50,7 @@ String actualColor= CustomKeywords.'actions.Common.getCssValue'(findTestObject('
 'Verify String filed should be with back ground color Red '
 CustomKeywords.'actions.Common.verifyCssValue'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/input_String Field (Style)_efo'), 'background-color',actualColor)
 
-String dateRequired = DateUtil.getCurrentDateTime('MM-dd-yyyy HH:mm:ss a')
+String dateRequired = DateUtil.getCurrentDateTime('MM-dd-yyyy hh:mm:ss aa')
 
 'Set Date in Date field Required '
 CustomKeywords.'actions.Common.setText_Date'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/input_Date Field (Required)_ef'), dateRequired)
