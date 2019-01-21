@@ -1046,6 +1046,16 @@ def static "actions.Common.verifyElementNotHasFocus"(
         	toLocator)
 }
 
+def static "actions.Common.createDocument_RenderAsLabel"() {
+    (new actions.Common()).createDocument_RenderAsLabel()
+}
+
+def static "actions.Common.createBulkDocuments_RenderAsLabel"(
+    	int requiredDocsCount	) {
+    (new actions.Common()).createBulkDocuments_RenderAsLabel(
+        	requiredDocsCount)
+}
+
 def static "actions.Window.clickElementAndWaitForWindowClose"(
     	TestObject saveButton	
      , 	int timeout	) {

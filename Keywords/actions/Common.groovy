@@ -1347,4 +1347,57 @@ public class Common {
 		WebUI.switchToDefaultContent()
 	}
 
+	@Keyword
+	def createDocument_RenderAsLabel() {
+
+		'Switch to main window'
+		WebUI.switchToWindowTitle('Savana nGage')
+
+		'Create a new BovDocTwoRow Document'
+		WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))
+
+		selectDocClassAndDocTypeForGlobalNew('Master Object Feature', 'Render As Label')
+		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'))
+
+		WebUI.switchToWindowIndex(1)
+		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+
+		'Click Save'
+		WebUI.click(findTestObject('Page_WMI_NEW/Master_Object_Feature/Render_As_Label/span_Save'))
+		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+
+		'Click close window'
+		new Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI_NEW/Master_Object_Feature/Render_As_Label/span_Close Window'), GlobalVariable.G_LongTimeout)
+
+		'Switch to main window and close'
+		WebUI.switchToWindowTitle('Savana nGage')
+		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/span_ui-button-icon-primary ui'))
+	}
+
+	@Keyword
+	def createBulkDocuments_RenderAsLabel(int requiredDocsCount) {
+
+		'Expand Repository Menu'
+		WebUI.click(findTestObject('Page_nGage_Dashboard/Repository/h3_Repository Menu'))
+		waitForFrameToLoad(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
+
+		int recordCount = 0
+
+		if(new MenuBar().isSubMenuPresent('REPO', 'Render As Label', 'Business Model', 'Business Model')) {
+			recordCount = new MenuBar().getRecordCountInActivity('REPO', 'Business Model', 'Business Model', 'Render As Label')
+		}
+
+		if(recordCount < requiredDocsCount) {
+			int extraDocsRequired = requiredDocsCount-recordCount
+			for(int i = 1; i <= extraDocsRequired; i++) {
+				createDocument_RenderAsLabel()
+			}
+		}
+
+		WebUI.refresh()
+		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+		WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
+	}
+
+
 }
