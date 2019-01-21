@@ -596,6 +596,26 @@ def static "apis.UserManagement.updateLastLoginDate"(
          , 	date)
 }
 
+def static "actions.Window.clickElementAndWaitForWindowClose"(
+    	TestObject saveButton	
+     , 	int timeout	) {
+    (new actions.Window()).clickElementAndWaitForWindowClose(
+        	saveButton
+         , 	timeout)
+}
+
+def static "actions.Window.switchToUrlContains"(
+    	String text	) {
+    (new actions.Window()).switchToUrlContains(
+        	text)
+}
+
+def static "actions.Window.verifyOpenWindowCount"(
+    	int expCount	) {
+    (new actions.Window()).verifyOpenWindowCount(
+        	expCount)
+}
+
 def static "actions.Common.maximizeWindow"() {
     (new actions.Common()).maximizeWindow()
 }
@@ -1056,24 +1076,14 @@ def static "actions.Common.createBulkDocuments_RenderAsLabel"(
         	requiredDocsCount)
 }
 
-def static "actions.Window.clickElementAndWaitForWindowClose"(
-    	TestObject saveButton	
-     , 	int timeout	) {
-    (new actions.Window()).clickElementAndWaitForWindowClose(
-        	saveButton
-         , 	timeout)
+def static "actions.Common.createDocument_ReferenceObjectInlineContentView"() {
+    (new actions.Common()).createDocument_ReferenceObjectInlineContentView()
 }
 
-def static "actions.Window.switchToUrlContains"(
-    	String text	) {
-    (new actions.Window()).switchToUrlContains(
-        	text)
-}
-
-def static "actions.Window.verifyOpenWindowCount"(
-    	int expCount	) {
-    (new actions.Window()).verifyOpenWindowCount(
-        	expCount)
+def static "actions.Common.createBulkDocuments_ReferenceObjectInlineContentView"(
+    	int requiredDocsCount	) {
+    (new actions.Common()).createBulkDocuments_ReferenceObjectInlineContentView(
+        	requiredDocsCount)
 }
 
 def static "utils.DateUtil.verifyDateFilter"(

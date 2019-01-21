@@ -16,6 +16,9 @@ import internal.GlobalVariable as GlobalVariable
 'Login Into Application'
 CustomKeywords.'actions.Common.login'()
 
+''
+CustomKeywords.'actions.Common.createBulkDocuments_ReferenceObjectInlineContentView'(5)
+
 'Create a new Refrence Object Feature Document'
 WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))
 CustomKeywords.'actions.Common.selectDocClassAndDocTypeForGlobalNew'('Reference Object Feature', 'Reference Object Grid Features')
