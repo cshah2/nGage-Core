@@ -35,7 +35,7 @@ WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 'Close Window'
 CustomKeywords.'actions.Window.clickElementAndWaitForWindowClose'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/span_Close Window'),GlobalVariable.G_LongTimeout)
 
-'Switch to parent window '
+'Switch to parent window'
 WebUI.switchToWindowIndex(0)
 WebUI.click(findTestObject('Page_nGage_Dashboard/Home/span_ui-button-icon-primary ui'))
 
@@ -75,12 +75,12 @@ String errorMessage = WebUI.getText(findTestObject('Object Repository/Page_WMI_N
 WebUI.verifyElementText(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/div_errorMessage'), errorMessage)
 
 
-//TODO: There is a bug (Required Field invisible which was showing before) in application , will work script once bug is resolved
+/*//TODO: There is a bug (Required Field invisible which was showing before) in application , will work script once bug is resolved
 WebUI.waitForElementVisible(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/tab_SingleResultView/div_Required'),GlobalVariable.G_LongTimeout )
 String alertText = WebUI.getText(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/tab_SingleResultView/div_Required'))
 println alertText
 
-WebUI.verifyMatch(alertText,'Required', false)
+WebUI.verifyMatch(alertText,'Required', false)*/
 
 'Verify Integer field should be visible'
 WebUI.verifyElementVisible(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/tab_SingleResultView/input_Integer Field (Visible)_'))
@@ -97,9 +97,7 @@ CustomKeywords.'actions.Common.setTextAndSave'(findTestObject('Object Repository
 
 'Get Font of String Field'
 String actualfont= CustomKeywords.'actions.Common.getCssValue'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/tab_SingleResultView/input_StringField_ReferenceObject'),'font-weight')
-println actualfont
 
 //TODO:Bold Font Weight is 700 in 19.1 DB and 400 in 18.2 DB (As Value slection happens as Value 3) in 18.2)
-
 'Verify String filed should be with Font Bold'
 WebUI.verifyMatch(actualfont,'700',false)

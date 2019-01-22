@@ -4,6 +4,12 @@
    <name>cell_BMStringTab1_Table</name>
    <tag></tag>
    <elementGuidId>68ef7a47-f255-4c34-a242-c5f53c64a74a</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>//td[(text() = 'test' or . = 'test') and @ref_element = 'Object Repository/Page_WMI_NEW/Reference_Object_Feature/Inline_Content_View/iframe_Close Window_ContentPla']</value>
+      </entry>
+   </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
    <webElementProperties>

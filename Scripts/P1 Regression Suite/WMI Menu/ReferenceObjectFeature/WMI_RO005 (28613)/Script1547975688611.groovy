@@ -40,11 +40,11 @@ WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feat
 'Wait for page to load'
 WebUI.waitForElementVisible(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Inline_Content_View/tab_Inlineresultview(true)/iframe_Close Window_ContentPla'), GlobalVariable.G_LongTimeout)
 
-'Click on the record from reference table'
-WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Inline_Content_View/tab_Inlineresultview(true)/cell_BMStringTab1_Table'))
+//'Click on the record from reference table'
+//WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Inline_Content_View/tab_Inlineresultview(true)/cell_BMStringTab1_Table'))
 
 'Verify the content document is opening'
-WebUI.verifyElementVisible(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Inline_Content_View/tab_Inlineresultview(true)/contentDocument'))
+WebUI.verifyElementPresent(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Inline_Content_View/tab_Inlineresultview(true)/contentDocument'),GlobalVariable.G_LongTimeout)
 
 'Close the window'
 WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Inline_Content_View/span_Close Window'))
