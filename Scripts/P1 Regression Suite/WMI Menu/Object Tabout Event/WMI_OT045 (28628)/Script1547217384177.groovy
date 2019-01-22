@@ -73,13 +73,6 @@ CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Da
 CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/Home/div_Doc ID'))
 CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/Home/div_Doc ID'))
 
-'Open Document'
-WebUI.click(findTestObject('Page_nGage_Dashboard/Home/column_RecentDocuments LastAction'))
-WebUI.switchToWindowIndex(1)
-WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
-
-//TODO: There is a bug in application , will work on script once bug is resolved
 'verify opened document'
-WebUI.verifyOptionSelectedByLabel(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Nested Lookup Event/tab_Single Result View/select_Master Object Nest Level1'), 'Value 1', false, GlobalVariable.G_LongTimeout)
-WebUI.verifyOptionSelectedByLabel(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Nested Lookup Event/tab_Single Result View/select_Master Object Nest Level2'), 'Value 1', false, GlobalVariable.G_LongTimeout)
-WebUI.verifyOptionSelectedByLabel(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Nested Lookup Event/tab_Single Result View/select_Master Object Nest Level3'), 'True', false, GlobalVariable.G_LongTimeout)
+String docType= CustomKeywords.'actions.Table.getCellText'(findTestObject('Object Repository/Page_nGage_Dashboard/Home/table_MyDocumentResults'),1 ,4)
+WebUI.verifyMatch(docType, 'Nested Lookup Event', false)

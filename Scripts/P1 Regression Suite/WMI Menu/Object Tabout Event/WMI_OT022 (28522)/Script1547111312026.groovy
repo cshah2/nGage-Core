@@ -80,11 +80,9 @@ WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Inline_Result_View/span_Save'))
 
 'Click on Value 1 check box from Reference object'
-if(!WebUI.verifyElementChecked(findTestObject('Page_WMI_NEW/Object Tabout Event/CheckboxListEvent/chkbox1_ReferenceObjectSelectOption'), GlobalVariable.G_LongTimeout)){
-WebUI.click(findTestObject('Page_WMI_NEW/Object Tabout Event/CheckboxListEvent/chkbox1_ReferenceObjectSelectOption'))
+WebUI.check(findTestObject('Page_WMI_NEW/Object Tabout Event/CheckboxListEvent/chkbox1_ReferenceObjectSelectOption'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/CheckboxListEvent/iframe_Close Window_ContentPla'))
 WebUI.delay(10)
-}
 
 'Get text from String Field(Value Change)'
 WebUI.verifyElementAttributeValue(findTestObject('Page_WMI_NEW/Object Tabout Event/CheckboxListEvent/input_StringField_ReferenceObject'), 'value', 'You selected Option 1', GlobalVariable.G_LongTimeout)

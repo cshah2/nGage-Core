@@ -89,17 +89,12 @@ CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Reposi
 WebUI.delay(10)
 
 'Click on First row to open the doc'
-/*if(WebUI.verifyElementVisible(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/CheckboxListEvent/popUpBox'), FailureHandling.STOP_ON_FAILURE)){
-	WebUI.click(findTestObject('Page_WMI_NEW/Object Tabout Event/CheckboxListEvent/close_PopUp'))
-}*/
 CustomKeywords.'actions.Table.clickCell'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/CheckboxListEvent/table_Grid'), 1, 4)
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/CheckboxListEvent/iframe_Close Window_ContentPla'))
 
 'Verify if Value1 Checkbox is checked/if checked then uncheck the checkbox'
-if(!WebUI.verifyElementChecked(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/CheckboxListEvent/checkbox1_InlineTab'), GlobalVariable.G_LongTimeout)){
-	WebUI.click(findTestObject('Page_WMI_NEW/Object Tabout Event/CheckboxListEvent/checkbox1_InlineTab'))
-	WebUI.delay(8)
-}
+WebUI.check(findTestObject('Page_WMI_NEW/Object Tabout Event/CheckboxListEvent/checkbox1_InlineTab'))
+
 
 'Verify checkbox is visible'
 WebUI.delay(5)
