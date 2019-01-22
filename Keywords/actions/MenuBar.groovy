@@ -3,6 +3,7 @@ package actions
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 
 import java.text.Collator
+import java.text.RuleBasedCollator
 import java.util.concurrent.TimeUnit
 
 import org.apache.commons.lang3.StringUtils
@@ -205,8 +206,14 @@ public class MenuBar {
 
 		Collator coll = Collator.getInstance(Locale.US);
 		coll.setStrength(Collator.IDENTICAL);
+		
+		RuleBasedCollator defaultCollator = (RuleBasedCollator) coll
+		final String rules = defaultCollator.getRules()
+		
+		RuleBasedCollator coll1 = new RuleBasedCollator(rules.replaceAll("<'\u005f'", "<' '<'\u005f'"))
+		coll1.setStrength(Collator.IDENTICAL);
 
-		Collections.sort(sortedActivityNameList, coll)
+		Collections.sort(sortedActivityNameList, coll1)
 
 		if(sortOrder.equalsIgnoreCase('desc'))
 			Collections.reverse(sortedActivityNameList)

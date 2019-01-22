@@ -80,4 +80,8 @@ CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Da
 int rowCount = CustomKeywords.'actions.Table.getRowsCount'(findTestObject('Page_nGage_Dashboard/My_Work/Charts/Table_JQGrid WorkItems'))
 
 'Verify total record counts with number of records displayed in table'
+
+if(totalDocs > 999)
+	totalDocs = 999
+	
 WebUI.verifyEqual(rowCount, totalDocs)

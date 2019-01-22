@@ -4,6 +4,7 @@
    <name>P1 Regression</name>
    <tag></tag>
    <isRerun>false</isRerun>
+   <lastRun>2019-01-21T10:11:40</lastRun>
    <mailRecipient></mailRecipient>
    <numberOfRerun>0</numberOfRerun>
    <pageLoadTimeout>30</pageLoadTimeout>

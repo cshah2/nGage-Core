@@ -32,9 +32,6 @@ CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Da
 'Verify page navigation of the grid'
 int activityCount = CustomKeywords.'actions.MenuBar.getRecordCountInActivity'('MY_WORK', 'Processes', 'Closure Action', 'Activity A')
 
-if(activityCount > 500)
-	activityCount = 500
-	
 String expText = 'Showing 1 - 10 of '+activityCount
 WebUI.verifyMatch(WebUI.getText(findTestObject('Page_nGage_Dashboard/My_Work/table_pagination_summary')), '.*'+expText+'.*', true)
 
