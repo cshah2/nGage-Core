@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Regression Test WMI-Reference Object-Label Event</description>
+   <name>WMI_OT033 (28614)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>a98df7aa-f8f8-4c13-8455-15af43bef2aa</testCaseGuid>
+</TestCaseEntity>

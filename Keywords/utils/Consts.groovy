@@ -216,8 +216,8 @@ public class Consts {
 	public static String P1_REPO014_SAVEDFILTER_RECORDCOUNT
 	public static String P1_REPO014_SAVEDFILTERNAME
 
-	
-	
+
+
 	public static final String P1_MWORK_CLOSURE_CUSTOMERNAME_DOC1 = 'Chintan Shah'
 	public static final String P1_MWORK_CLOSURE_CUSTOMERDESC_DOC1 = 'Automation test document'
 
@@ -259,7 +259,7 @@ public class Consts {
 	public static final String P1_MW083_STARTDATETIME_DATE = '30'
 	public static final String P1_MW083_STARTDATETIME_MONTH = 'Mar'
 	public static final String P1_MW083_STARTDATETIME_YEAR = '2017'
-	
+
 	public static final String P1_LOANAPPL_FIRSTNAME_DOC1 = 'Chintan'
 	public static final String P1_LOANAPPL_LASTNAME_DOC1 = 'Shah'
 	public static final String P1_LOANAPPL_AMOUNT_DOC1 = '30000'
@@ -287,8 +287,14 @@ public class Consts {
 
 	public static final String DC_DATETIMERANGEREQUIRED = 'Datetimerangerequired'
 	public static final String DT_DATETIMERANGEREQUIRED = 'Datetimerangerequired'
-	
-	
-	
+
+
+
+	//DATE - TIME FORMAT
+	public static final String DATETIME_APPLICATION = 'MM-dd-yyyy HH:mm:ss a'
+	public static final String DATE_APPLICATION_TREE = 'MM/dd/yyyy'
+
+	public static final String DATETIME_SCRIPT = 'MM-dd-yyyy HH:mm:ss a' //TODO: Code should be done such that this value should remain fixed
+	public static final String DATE_SCRIPT = 'MM-dd-yyyy' //TODO: Code should be done such that this value should remain fixed
 }
 

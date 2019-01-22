@@ -290,4 +290,10 @@ public class DateUtil {
 			return date
 		}
 	}
+
+	public static String convert(String date, String currFormat, String expFormat) {
+
+		def currFormatDate = new Date().parse(currFormat,date)
+		return currFormatDate.format(expFormat)
+	}
 }
