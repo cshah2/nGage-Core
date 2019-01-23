@@ -36,7 +36,7 @@ WebUI.verifyElementVisible(findTestObject('Object Repository/Page_WMI_NEW/Object
 
 'From Reference object select Value 3 from drop down'
 WebUI.selectOptionByValue(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/DropDown Event/tab_SingleResultView/select_Value 1Value 2Value 3Va'),'3', false)
-CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/iframe_Close Window_ContentPla'))
+CustomKeywords.'actions.Common.waitForTabLoading'(null, GlobalVariable.G_LongTimeout)
 
 'Verify In String Filed value should be  "Selected Value (Value 3 or above)"'
 String getText = WebUI.getAttribute(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/DropDown Event/tab_SingleResultView/input_String Field (Value Chan'),'value')

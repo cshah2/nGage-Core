@@ -86,10 +86,14 @@ CustomKeywords.'actions.Common.waitForTabLoading'(null, GlobalVariable.G_LongTim
 
 'Sort DocID'
 CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/DropDown Event/tab_InlineView/a_Doc ID'))
+CustomKeywords.'actions.Common.waitForTabLoading'(null, GlobalVariable.G_LongTimeout)
 CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/DropDown Event/tab_InlineView/a_Doc ID'))
+CustomKeywords.'actions.Common.waitForTabLoading'(null, GlobalVariable.G_LongTimeout)
 
 'Click Second Row from reference Grid'
-WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/DropDown Event/tab_InlineView/tr_ThirdRow_TableGVGrid'))
+//WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/DropDown Event/tab_InlineView/tr_ThirdRow_TableGVGrid'))
+CustomKeywords.'actions.Table.clickCell'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/DropDown Event/tab_InlineView/tr_ThirdRow_TableGVGrid'), 1, 7)
+
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/DropDown Event/tab_InlineView/iframe_Close Window_ContentPla'))
 
 'Verify Elements Present'
@@ -112,13 +116,14 @@ CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Reposi
 
 'Open same document from refrence grid which is saved'
 CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/DropDown Event/tab_InlineView/a_Doc ID'))
+CustomKeywords.'actions.Common.waitForTabLoading'(null, GlobalVariable.G_LongTimeout)
 CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/DropDown Event/tab_InlineView/a_Doc ID'))
+CustomKeywords.'actions.Common.waitForTabLoading'(null, GlobalVariable.G_LongTimeout)
 
 'Click on Second row from reference Grid'
 WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/DropDown Event/tab_InlineView/tr_ThirdRow_TableGVGrid'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/DropDown Event/tab_InlineView/iframe_Close Window_ContentPla'))
 
-//TODO : Will execute Correct, once bug (another document getting open) will be fix
 'Verify Document should get opened with latest changes and No Error Present'
 String valBMtext=CustomKeywords.'actions.Table.getCellText'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/DropDown Event/tab_InlineView/table_GVGrid'), 2, 9)
 println valBMtext

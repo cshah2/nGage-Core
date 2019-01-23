@@ -52,7 +52,6 @@ CustomKeywords.'actions.Table.clickCell'(findTestObject('Object Repository/Page_
 WebUI.switchToWindowIndex(1)
 WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 
-//TODO : It will work once Radio List Bug gets resolve
 'Verify Business Model View - Radio List Event doc should be open'
 WebUI.verifyElementVisible(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/span_Business Model View - Rad'))
 String actualtext= WebUI.getText(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/span_Business Model View - Rad'))
@@ -60,7 +59,7 @@ WebUI.verifyMatch(actualtext, 'Business Model View - Radio List Event', false)
 
 'Click on Value 3 radio button from refrence object'
 WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/tab_SingleResultView/input_Value 3_ReferenceObject'))
-CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/iframe_Close Window_ContentPla'))
+CustomKeywords.'actions.Common.waitForTabLoading'(null, GlobalVariable.G_LongTimeout)
 
 'Verify Elements Present'
 WebUI.verifyElementPresent(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/tab_SingleResultView/td_InformationSingleResultView'), GlobalVariable.G_LongTimeout)

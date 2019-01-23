@@ -76,12 +76,13 @@ WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/R
 
 'Sort DocID'
 CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/DropDown Event/tab_InlineView/a_Doc ID'))
+CustomKeywords.'actions.Common.waitForTabLoading'(null, GlobalVariable.G_LongTimeout)
 CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/DropDown Event/tab_InlineView/a_Doc ID'))
+CustomKeywords.'actions.Common.waitForTabLoading'(null, GlobalVariable.G_LongTimeout)
 
 'Click On First Row From Reference Grid'
 CustomKeywords.'actions.Table.clickCell'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Textbox with Section Event/tab_InlineView/table_GVGrid'), 1, 5)
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/tab_InlineView/iframe_Close Window_ContentPla'))
-WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
 'Verify document should be opened in Inline view'
 WebUI.verifyElementVisible(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/tab_InlineView/span_Radio List Event -Header'))
@@ -89,8 +90,7 @@ WebUI.verifyElementVisible(findTestObject('Object Repository/Page_WMI_NEW/Object
 
 'Click on Value 2 radio button from Refrence object'
 WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/tab_InlineView/input_Value2'))
-CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/tab_InlineView/iframe_Close Window_ContentPla'))
-WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
+CustomKeywords.'actions.Common.waitForTabLoading'(null, GlobalVariable.G_LongTimeout)
 
 'Verify date field should not be disaply as required filed'
 WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/tab_InlineView/input_Save'))
@@ -98,7 +98,9 @@ WebUI.verifyElementNotPresent(findTestObject('Object Repository/Page_WMI_NEW/Obj
 
 'Sort DocID'
 CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/DropDown Event/tab_InlineView/a_Doc ID'))
+CustomKeywords.'actions.Common.waitForTabLoading'(null, GlobalVariable.G_LongTimeout)
 CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/DropDown Event/tab_InlineView/a_Doc ID'))
+CustomKeywords.'actions.Common.waitForTabLoading'(null, GlobalVariable.G_LongTimeout)
 
 'Click On First Row From Reference Grid'
 CustomKeywords.'actions.Table.clickCell'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Textbox with Section Event/tab_InlineView/table_GVGrid'), 1, 5)
@@ -132,7 +134,9 @@ WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 
 'Open Saved document from Grid'
 CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/DropDown Event/tab_InlineView/a_Doc ID'))
+CustomKeywords.'actions.Common.waitForTabLoading'(null, GlobalVariable.G_LongTimeout)
 CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/DropDown Event/tab_InlineView/a_Doc ID'))
+CustomKeywords.'actions.Common.waitForTabLoading'(null, GlobalVariable.G_LongTimeout)
 
 'Click On First Row from Reference Grid'
 CustomKeywords.'actions.Table.clickCell'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Textbox with Section Event/tab_InlineView/table_GVGrid'), 1, 5)

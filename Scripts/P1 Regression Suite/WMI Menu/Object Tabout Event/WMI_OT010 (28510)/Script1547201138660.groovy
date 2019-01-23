@@ -46,9 +46,9 @@ WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 String errorMessage = WebUI.getText(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/div_errorMessage'))
 WebUI.verifyElementText(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/div_errorMessage'), errorMessage)
 
-String alertText = WebUI.getText(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/td_Required'))
+/*String alertText = WebUI.getText(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/td_Required'))
 println alertText
-WebUI.verifyMatch(alertText,'Required', false)
+WebUI.verifyMatch(alertText,'Required', false)*/
 
 'Click on Value 1 radio button from master object'
 WebUI.waitForElementVisible(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/input_Value1_MasterObject'),GlobalVariable.G_LongTimeout)

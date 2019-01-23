@@ -28,6 +28,10 @@ WebUI.click(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'))
 WebUI.switchToWindowTitle('(Doc ID: NEW )')
 WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 
+'Set Date in Date field Required'
+String dateRequired = DateUtil.getCurrentDateTime('MM-dd-yyyy HH:mm:ss a')
+CustomKeywords.'actions.Common.setText_Date'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/tab_SingleResultView/input_DateField_Required'), dateRequired)
+
 'Click On Save Button'
 WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/span_Save'))
 WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
@@ -60,6 +64,7 @@ WebUI.verifyMatch(actualtext, 'Business Model View - Radio List Event', false)
 'Click on Value 1 radio button from refrence object'
 WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/tab_SingleResultView/input_Value1_ReferenceObject'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/iframe_Close Window_ContentPla'))
+CustomKeywords.'actions.Common.waitForTabLoading'(null,GlobalVariable.G_LongTimeout )
 
 'Verify Elements Present'
 WebUI.verifyElementPresent(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/tab_SingleResultView/td_InformationSingleResultView'), GlobalVariable.G_LongTimeout)
@@ -68,22 +73,6 @@ WebUI.verifyElementPresent(findTestObject('Object Repository/Page_WMI_NEW/Object
 'Verify Integer field should be visible'
 WebUI.verifyElementVisible(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/tab_SingleResultView/input_Integer Field (Visible)_'))
 
-'Verify date field should be disaply as required filed'
-WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/span_Save'))
-WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
-String errorMessage = WebUI.getText(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/div_errorMessage'))
-WebUI.verifyElementText(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/div_errorMessage'), errorMessage)
-
-
-/*//TODO: There is a bug (Required Field invisible which was showing before) in application , will work script once bug is resolved
-WebUI.waitForElementVisible(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/tab_SingleResultView/div_Required'),GlobalVariable.G_LongTimeout )
-String alertText = WebUI.getText(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/tab_SingleResultView/div_Required'))
-println alertText
-
-WebUI.verifyMatch(alertText,'Required', false)*/
-
-'Verify Integer field should be visible'
-WebUI.verifyElementVisible(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/tab_SingleResultView/input_Integer Field (Visible)_'))
 
 'Get Background Color'
 String actualColor= CustomKeywords.'actions.Common.getCssValue'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/tab_SingleResultView/input_StringField_ReferenceObject'),'background-color')
@@ -98,6 +87,5 @@ CustomKeywords.'actions.Common.setTextAndSave'(findTestObject('Object Repository
 'Get Font of String Field'
 String actualfont= CustomKeywords.'actions.Common.getCssValue'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/tab_SingleResultView/input_StringField_ReferenceObject'),'font-weight')
 
-//TODO:Bold Font Weight is 700 in 19.1 DB and 400 in 18.2 DB (As Value slection happens as Value 3) in 18.2)
 'Verify String filed should be with Font Bold'
 WebUI.verifyMatch(actualfont,'700',false)

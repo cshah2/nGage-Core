@@ -3,6 +3,6 @@
    <description>28513 Regression test WMI-  Radio List Event (Combination-2)</description>
    <name>WMI_OT011 (28513)</name>
    <tag></tag>
-   <comment></comment>
+   <comment>Verify date field should not be disaply as required filed</comment>
    <testCaseGuid>590ef423-f446-41d3-a57f-42eb5c189e3a</testCaseGuid>
 </TestCaseEntity>

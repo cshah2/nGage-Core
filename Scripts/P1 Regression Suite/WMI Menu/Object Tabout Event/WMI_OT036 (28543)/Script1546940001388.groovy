@@ -36,12 +36,12 @@ WebUI.verifyElementVisible(findTestObject('Object Repository/Page_WMI_NEW/Object
 
 'From master object select Value 2 from drop down'
 WebUI.selectOptionByValue(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/DropDown Event/select_Value 1Value 2Value 3Va'),'2', false)
-CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/iframe_Close Window_ContentPla'))
+CustomKeywords.'actions.Common.waitForTabLoading'(null, GlobalVariable.G_LongTimeout)
+
+'Get Text of String Field'
+String getText = WebUI.getAttribute(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/DropDown Event/input_String Field (Value Chan'),'value')
 
 'Verify In String Filed value should be "Selected Value (Value 2)"'
-String getText = WebUI.getAttribute(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/DropDown Event/input_String Field (Value Chan'),'value')
-println getText
-//WebUI.verifyElementText(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/DropDown Event/input_String Field (Value Chan'),getText)
 WebUI.verifyMatch(getText,'Selected Value (Value 2)', false)
 
 'Verify Date Field is Not Visible'

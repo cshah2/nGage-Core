@@ -35,11 +35,11 @@ WebUI.verifyMatch(actualtext, 'Business Model View - Radio List Event', false)
 
 'Click on Value 2 radio button from master object'
 WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/input_Value2_MasterObject'))
-CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/iframe_Close Window_ContentPla'))
+CustomKeywords.'actions.Common.waitForTabLoading'(null, GlobalVariable.G_LongTimeout)
 
 'Verify date field should not be disaply as required filed'
-WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/input_Date Field (Required)_ef'))
-WebUI.verifyElementNotPresent(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/td_Required'),GlobalVariable.G_LongTimeout)
+//WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/input_Date Field (Required)_ef'))
+WebUI.verifyElementNotVisible(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/span_RequiredLabel'))
 
 'Verify Integer field should not be visible'
 WebUI.verifyElementNotVisible(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/input_Integer Field (Visible)_'))
@@ -50,15 +50,14 @@ String actualColor= CustomKeywords.'actions.Common.getCssValue'(findTestObject('
 'Verify String filed should be with back ground color Red '
 CustomKeywords.'actions.Common.verifyCssValue'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/input_String Field (Style)_efo'), 'background-color',actualColor)
 
-String dateRequired = DateUtil.getCurrentDateTime('MM-dd-yyyy HH:mm:ss a')
-
-'Set Date in Date field Required '
-CustomKeywords.'actions.Common.setText_Date'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/input_Date Field (Required)_ef'), dateRequired)
-
 String actualfont= CustomKeywords.'actions.Common.getCssValue'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/input_String Field (Style)_efo'),'font-weight')
 
 'Verify String filed should be with Font Normal'
 WebUI.verifyMatch(actualfont,'400',false)
+
+'Set Date in Date field Required'
+String dateRequired = DateUtil.getCurrentDateTime('MM-dd-yyyy HH:mm:ss a')
+CustomKeywords.'actions.Common.setText_Date'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/tab_SingleResultView/input_DateField_Required'), dateRequired)
 
 'Click On Save Button'
 WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/span_Save'))
@@ -83,6 +82,13 @@ CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Object Reposito
 CustomKeywords.'actions.Table.clickCell'(findTestObject('Object Repository/Page_nGage_Dashboard/Home/table_MyDocumentResults'), 1, 7)
 WebUI.switchToWindowIndex(1)
 WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+
+'Verify Saved Document got Opened'
+WebUI.verifyElementVisible(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/span_Business Model View - Rad'))
+WebUI.verifyMatch(actualtext, 'Business Model View - Radio List Event', false)
+
+'Verify changes in the document got Saved'
+WebUI.verifyOptionPresentByValue(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/tab_InlineView/input_Value2'),'2', false, GlobalVariable.G_LongTimeout)
 
 'Close Window() and If Error Present Document will not get Close'
 CustomKeywords.'actions.Window.clickElementAndWaitForWindowClose'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/span_Close Window'),GlobalVariable.G_LongTimeout)
