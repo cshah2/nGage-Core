@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Regression test Workflow Closure Action: Transit to Another Process</description>
+   <name>WCA010 (28365)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>3e7ce8f5-c2e3-4af3-8c8d-e7ae644841c3</testCaseGuid>
+</TestCaseEntity>
