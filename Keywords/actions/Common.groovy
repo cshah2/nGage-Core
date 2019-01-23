@@ -850,7 +850,9 @@ public class Common {
 				.pollingEvery(3, TimeUnit.SECONDS)
 				.ignoring(StaleElementReferenceException.class)
 
-		List<WebElement> loaders = driver.findElements(By.xpath("//div[contains(@id,'updProgress') or contains(@id,'UpdateWebAsyncRefreshPanel')]"))
+		////img[contains(@src,'orange_daisy.g')]/../..
+		//List<WebElement> loaders = driver.findElements(By.xpath("//div[contains(@id,'updProgress') or contains(@id,'UpdateWebAsyncRefreshPanel')]"))
+		List<WebElement> loaders = driver.findElements(By.xpath("//img[contains(@src,'orange_daisy.g')]/../.."))
 		wait.until(ExpectedConditions.invisibilityOfAllElements(loaders))
 
 		WebUI.switchToDefaultContent()
@@ -1426,7 +1428,7 @@ public class Common {
 		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/span_ui-button-icon-primary ui'))
 	}
 
-	
+
 	@Keyword
 	def createBulkDocuments_ReferenceObjectInlineContentView(int requiredDocsCount) {
 
