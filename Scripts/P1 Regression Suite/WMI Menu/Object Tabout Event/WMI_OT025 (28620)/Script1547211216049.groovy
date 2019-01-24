@@ -49,6 +49,7 @@ WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 
 'Click on Save button'
 WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Inline_Result_View/span_Save'))
+WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 
 'Click on Close Window button'
 WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Inline_Result_View/span_Close Window'))
@@ -94,7 +95,6 @@ CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Reposi
 
 'Verify if Value1 Checkbox is checked/if checked then uncheck the checkbox'
 WebUI.check(findTestObject('Page_WMI_NEW/Object Tabout Event/CheckboxListEvent/checkbox1_InlineTab'))
-
 
 'Verify checkbox is visible'
 WebUI.delay(5)
