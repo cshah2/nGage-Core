@@ -31,6 +31,7 @@ CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Reposi
 
 'Click on Save button'
 WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Inline_Result_View/span_Save'))
+WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 
 'Click on Close Window button'
 WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Inline_Result_View/span_Close Window'))
@@ -59,6 +60,7 @@ CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Reposi
 
 'Click on Save button'
 WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Inline_Result_View/span_Save'))
+WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 
 'Click on Close Window button'
 WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Inline_Result_View/span_Close Window'))
@@ -78,21 +80,21 @@ WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 
 'Click on Save '
 WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Inline_Result_View/span_Save'))
-CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/CheckboxListEvent/iframe_Close Window_ContentPla'))
+WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 
 'Click on Value 2 check box from refrence object'
 if(!WebUI.verifyElementNotChecked(findTestObject('Page_WMI_NEW/Object Tabout Event/CheckboxListEvent/chkbox1_ReferenceObjectSelectOption'), GlobalVariable.G_LongTimeout)){
 	WebUI.click(findTestObject('Page_WMI_NEW/Object Tabout Event/CheckboxListEvent/chkbox1_ReferenceObjectSelectOption'))
-	CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/CheckboxListEvent/iframe_Close Window_ContentPla'))
-	WebUI.delay(10)
+	CustomKeywords.'actions.Common.waitForTabLoading'(null, GlobalVariable.G_LongTimeout)
+	
 }
 
 WebUI.click(findTestObject('Page_WMI_NEW/Object Tabout Event/CheckboxListEvent/chkbox2_ReferenceObjectSelectOption'))
-CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/CheckboxListEvent/iframe_Close Window_ContentPla'))
-WebUI.delay(10)
+CustomKeywords.'actions.Common.waitForTabLoading'(null, GlobalVariable.G_LongTimeout)
 
 'Click on Save '
 WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Inline_Result_View/span_Save'))
+WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Inline_Result_View/span_Close Window'))
 
 'Switch to main window'

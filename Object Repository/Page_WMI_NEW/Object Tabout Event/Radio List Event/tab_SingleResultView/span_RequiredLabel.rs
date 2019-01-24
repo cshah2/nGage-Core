@@ -3,7 +3,7 @@
    <description></description>
    <name>span_RequiredLabel</name>
    <tag></tag>
-   <elementGuidId>91dcb5ac-a14f-4737-bd3a-0178558e2ce9</elementGuidId>
+   <elementGuidId>f7c608d7-00af-4cf4-86d2-699e7a8ce2dc</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
@@ -11,7 +11,7 @@
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//span[@id='eform_mcb67676_phBO_3_BO_efldlbl_eidmKey_BM_DateTime']/../span[text()='*']</value>
+         <value>//*[@id=&quot;eform_mcb67676_TabContainer_4_TabRef_1_phBO_4_BO_secpnl_2&quot;]/table/tbody/tr[2]/td[1]/table/tbody/tr[2]/td[1]/span[2]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

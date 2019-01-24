@@ -79,15 +79,16 @@ WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 'Click on Value 3 or 4 or 5 check box from master object'
 'Selecting Value 4'
 WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/CheckboxListEvent/chkbox4_MasterObjectSelectOption'))
-CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/CheckboxListEvent/iframe_Close Window_ContentPla'))
-WebUI.delay(5)
+CustomKeywords.'actions.Common.waitForTabLoading'(null, GlobalVariable.G_LongTimeout)
 
 'Get text from String Field(Value Change)'
 WebUI.verifyElementAttributeValue(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/CheckboxListEvent/input_StringField_MasterObject'), 'value', 'You have selected other option', GlobalVariable.G_LongTimeout)
 
 'Select any value from drop dowm- VALUE1>Click on Save'
 WebUI.selectOptionByLabel(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/CheckboxListEvent/select_LookupField_MasterObject'), 'Render As Label', false)
+CustomKeywords.'actions.Common.waitForTabLoading'(null, GlobalVariable.G_LongTimeout)
 WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Inline_Result_View/span_Save'))
+WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Inline_Result_View/span_Close Window'))
 
 'Switch to main window'
