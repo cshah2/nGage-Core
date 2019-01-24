@@ -95,11 +95,13 @@ public class MenuBar {
 
 		String[] parentPath = Arrays.copyOf(modulePath, modulePath.length - 1)
 
-
+		clickTreeMenu(moduleName, parentPath)
+		new Common().waitForFrameToLoad(findTestObject('Page_nGage_Dashboard/iframe_main_visible'))
+		
 		while(currentTime < endTime) {
 			println "Original Count = "+originalCount+"currentCount = "+currentCount
 			if(currentCount < 0 || currentCount <= originalCount) {
-
+				
 				rightClickTreeMenu(moduleName, parentPath)
 				WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/contextMenu'), GlobalVariable.G_SmallTimeout)
 				new ContextMenu().clickOption(findTestObject('Page_nGage_Dashboard/contextMenuOptions'), 'Refresh')
