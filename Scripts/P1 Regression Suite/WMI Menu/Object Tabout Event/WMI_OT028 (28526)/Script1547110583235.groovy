@@ -34,7 +34,7 @@ WebUI.verifyElementNotHasAttribute(findTestObject('Object Repository/Page_WMI_NE
 
 'Check Master Object CheckBox Control check box'
 WebUI.check(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/CheckBox Event/input_Master Object CheckBox C'))
-CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/CheckBox Event/iframe_Close Window_ContentPla'))
+CustomKeywords.'actions.Common.waitForTabLoading'(null, GlobalVariable.G_LongTimeout)
 
 'verify check box is checked'
 WebUI.verifyElementChecked(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/CheckBox Event/input_Master Object CheckBox C'), GlobalVariable.G_LongTimeout)

@@ -29,7 +29,7 @@ WebUI.verifyElementVisible(findTestObject('Object Repository/Page_WMI_NEW/Object
 
 'From master object select value 1 from Nested Level 1 dropdown'
 WebUI.selectOptionByLabel(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Nested Lookup Event/select_Master Object Nest Level 1'), 'Value 1', false)
-CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Nested Lookup Event/iframe_Close Window_ContentPla'))
+CustomKeywords.'actions.Common.waitForTabLoading'(null, GlobalVariable.G_LongTimeout)
 
 'verify In Nested level 2 drop down value1, value2,value3, value4,value5 fillup'
 WebUI.verifyElementPresent(findTestObject('Page_WMI_NEW/Object Tabout Event/Nested Lookup Event/option_Master Obj Level2_Value1'), GlobalVariable.G_LongTimeout)
@@ -40,7 +40,7 @@ WebUI.verifyElementPresent(findTestObject('Page_WMI_NEW/Object Tabout Event/Nest
 
 'From single result view of refrence object select value 1 from Nested Level 2 dropdown'
 WebUI.selectOptionByLabel(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Nested Lookup Event/select_Master Object Nest Level 2'), 'Value 1', false)
-CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Nested Lookup Event/iframe_Close Window_ContentPla'))
+CustomKeywords.'actions.Common.waitForTabLoading'(null, GlobalVariable.G_LongTimeout)
 
 'verify In Nested level 3 drop down values -true ,false should be fill up'
 WebUI.verifyElementPresent(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Nested Lookup Event/option_Master Obj Level3_Value True'), GlobalVariable.G_LongTimeout)
@@ -48,7 +48,7 @@ WebUI.verifyElementPresent(findTestObject('Object Repository/Page_WMI_NEW/Object
 
 'From single result view of refrence object select True from Nested Level 3 dropdown'
 WebUI.selectOptionByLabel(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Nested Lookup Event/select_Master Object Nest Level 3'),'True', false)
-CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Nested Lookup Event/iframe_Close Window_ContentPla'))
+CustomKeywords.'actions.Common.waitForTabLoading'(null, GlobalVariable.G_LongTimeout)
 
 'click on save and close'
 WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/CheckBox Event/span_Save'))
