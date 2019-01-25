@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Regression test Workflow Closure Action: Set process or activity due date</description>
+   <name>WCA008 (28363)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>e8bf7ed4-f88c-46e7-8e3d-f8e16f6fcab6</testCaseGuid>
+</TestCaseEntity>
