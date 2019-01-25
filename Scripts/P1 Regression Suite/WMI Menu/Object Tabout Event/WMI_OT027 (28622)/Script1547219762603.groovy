@@ -85,12 +85,12 @@ CustomKeywords.'actions.Common.waitForTabLoading'(null, GlobalVariable.G_LongTim
 CustomKeywords.'actions.Table.clickCell'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/CheckboxListEvent/table_Grid'), 1, 4)
 CustomKeywords.'actions.Common.waitForTabLoading'(null, GlobalVariable.G_LongTimeout)
 
-'Verify checkbox is visible'
-WebUI.waitForElementVisible(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/CheckboxListEvent/checkbox1_InlineTab'), GlobalVariable.G_LongTimeout)
-
 'Click on Value 1 check box from refrence object'
 WebUI.check(findTestObject('Page_WMI_NEW/Object Tabout Event/CheckboxListEvent/checkbox3_InlineTab'))
 CustomKeywords.'actions.Common.waitForTabLoading'(null, GlobalVariable.G_LongTimeout)
+
+'verify textbox value'
+WebUI.verifyElementAttributeValue(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/CheckboxListEvent/input_StringField_InlineView'), 'value', 'You have selected other option', GlobalVariable.G_LongTimeout)
 
 'Click on Save button in Inline tab'
 WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/CheckboxListEvent/save_InlineTab'))

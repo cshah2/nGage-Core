@@ -115,7 +115,7 @@ String background_Color = CustomKeywords.'actions.Common.getCssValue'(findTestOb
 CustomKeywords.'actions.Common.verifyCssValue'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/tab_InlineView/input_String Field (Style)_efo'),'background-color', background_Color)
 
 'Enter Date in Date Field'
-String val =DateUtil.getCurrentDateTime('MM-dd-yyyy HH:mm:ss a')
+String val =DateUtil.getCurrentDateTime('MM-dd-yyyy hh:mm:ss a')
 CustomKeywords.'actions.Common.setText_Date'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/tab_InlineView/input_Date Field (Required)_ef'),val)
 
 'Get Font of String Field'

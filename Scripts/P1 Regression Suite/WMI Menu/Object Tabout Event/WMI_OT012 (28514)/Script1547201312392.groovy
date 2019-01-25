@@ -51,7 +51,7 @@ String actualColor= CustomKeywords.'actions.Common.getCssValue'(findTestObject('
 CustomKeywords.'actions.Common.verifyCssValue'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/input_String Field (Style)_efo'), 'background-color',actualColor)
 
 'Set Date in Date field Required'
-String dateRequired = DateUtil.getCurrentDateTime('MM-dd-yyyy HH:mm:ss a')
+String dateRequired = DateUtil.getCurrentDateTime('MM-dd-yyyy hh:mm:ss a')
 CustomKeywords.'actions.Common.setText_Date'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/input_Date Field (Required)_ef'), dateRequired)
 
 String actualfont= CustomKeywords.'actions.Common.getCssValue'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/input_String Field (Style)_efo'),'font-weight')

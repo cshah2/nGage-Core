@@ -97,7 +97,7 @@ WebUI.verifyElementPresent(findTestObject('Object Repository/Page_WMI_NEW/Object
 WebUI.verifyElementPresent(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/tab_InlineView/span_SaveErrorMessageLine_ForRequired'),GlobalVariable.G_LongTimeout)
 
 'Enter Date in Date Field'
-String val =DateUtil.getCurrentDateTime('MM-dd-yyyy HH:mm:ss a')
+String val =DateUtil.getCurrentDateTime('MM-dd-yyyy hh:mm:ss a')
 CustomKeywords.'actions.Common.setText_Date'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/tab_InlineView/input_Date Field (Required)_ef'),val)
 
 'Verify Integer field should be visible'
@@ -135,5 +135,3 @@ CustomKeywords.'actions.Common.waitForTabLoading'(null, GlobalVariable.G_LongTim
 'Verify Document should got opened with latest changes in the Grid'
 String actualDate=WebUI.getAttribute(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/tab_InlineView/input_Date Field (Required)_ef'),'value')
 WebUI.verifyMatch(actualDate,val, false)
-
-

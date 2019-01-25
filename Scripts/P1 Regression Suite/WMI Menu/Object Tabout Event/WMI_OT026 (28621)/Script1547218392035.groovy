@@ -92,6 +92,9 @@ WebUI.waitForElementVisible(findTestObject('Object Repository/Page_WMI_NEW/Objec
 WebUI.check(findTestObject('Page_WMI_NEW/Object Tabout Event/CheckboxListEvent/checkbox2_InlineTab'))
 CustomKeywords.'actions.Common.waitForTabLoading'(null, GlobalVariable.G_LongTimeout)
 
+'verify textbox value'
+WebUI.verifyElementAttributeValue(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/CheckboxListEvent/input_StringField_InlineView'), 'value', 'You selected Option 2', GlobalVariable.G_LongTimeout)
+
 'Click on Save button in Inline tab'
 WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/CheckboxListEvent/save_InlineTab'))
 WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
