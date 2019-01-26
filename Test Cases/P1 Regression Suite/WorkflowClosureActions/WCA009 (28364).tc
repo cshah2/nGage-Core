@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Regression test Workflow Closure Action: Stop Action</description>
+   <name>WCA009 (28364)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>69836cca-dd97-4296-aaf1-e09ba7ba4ff8</testCaseGuid>
+</TestCaseEntity>

@@ -13,7 +13,6 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 import static utils.DateUtil.*
-import static utils.Consts.*
 
 'Login Into Application'
 CustomKeywords.'actions.Common.login'()
@@ -21,7 +20,7 @@ CustomKeywords.'actions.Common.login'()
 'Create Closure Action document'
 String timeformat = getCurrentDateTime('hhmmss')
 String primary_CustName = 'Chintan Shah - P'+timeformat
-String primary_CustDesc = 'Workflow closure action - WCA008'
+String primary_CustDesc = 'Workflow closure action - WCA006'
 
 CustomKeywords.'actions.Common.createDocument_ClosureAction'(primary_CustName, primary_CustDesc)
 
@@ -61,10 +60,19 @@ CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_WMI/Clos
 'Mouse over on menu Customer Actions'
 WebUI.mouseOver(findTestObject('Page_WMI/Closure Action/button_CustomerActions'))
 
-'Select option Set process due date'
+'Select option Update item field value'
 //WebUI.waitForElementVisible(findTestObject('Page_WMI/Closure Action/subMenu_CustActions_Update related Item field value'), GlobalVariable.G_LongTimeout)
 WebUI.delay(2)
-CustomKeywords.'actions.Window.clickElementAndWaitForWindowClose'(findTestObject('Page_WMI/Closure Action/subMenu_CustActions_Set process due date'), GlobalVariable.G_LongTimeout)
+WebUI.click(findTestObject('Page_WMI/Closure Action/subMenu_CustActions_Update Item field value'))
+WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+
+'Verify success message on dialog'
+WebUI.waitForElementVisible(findTestObject('Page_WMI/Closure Action/dialog_BPM'), GlobalVariable.G_LongTimeout)
+String message = WebUI.getText(findTestObject('Page_WMI/Closure Action/dialog_BPM_message')).trim()
+WebUI.verifyMatch(message, '.*Field updated.*', true)
+
+'Click on OK button'
+CustomKeywords.'actions.Window.clickElementAndWaitForWindowClose'(findTestObject('Page_WMI/Closure Action/dialog_BPM_btn_Ok'), GlobalVariable.G_LongTimeout)
 
 'Switch back to parent window'
 WebUI.switchToWindowIndex(0)
@@ -129,24 +137,15 @@ CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_WMI/Closur
 CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_WMI/Closure Action/BPMProcessAudit/tableHeader_Audit'), 'Interface Name')
 
 'Verify Entry for first row'
-CustomKeywords.'actions.Table.verifyCellContainsValue'(findTestObject('Page_WMI/Closure Action/BPMProcessAudit/table_Audit'), 1, 7, 'Set Process or Activity Due Date')
+CustomKeywords.'actions.Table.verifyCellContainsValue'(findTestObject('Page_WMI/Closure Action/BPMProcessAudit/table_Audit'), 1, 7, 'Updates Item  Field Values')
 
 'Verify action return type is true'
 CustomKeywords.'actions.Table.verifyCellContainsValue'(findTestObject('Page_WMI/Closure Action/BPMProcessAudit/table_Audit'), 1, 6, 'True')
 
-'Close WMI window'
-CustomKeywords.'actions.Window.clickElementAndWaitForWindowClose'(findTestObject('Page_WMI/Closure Action/span_Close Window'), GlobalVariable.G_LongTimeout)
+'Click on Customer information tab'
+WebUI.click(findTestObject('Page_WMI/Closure Action/tab_CustomerInformation'))
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_WMI/Closure Action/iframe_ContentPlaceHolder1_iPa'))
 
-'Switch back to parent window'
-WebUI.switchToWindowIndex(0)
-
-'Calculated expected process due date'
-String currDate = getCurrentDateTime(FORMAT_DATE)
-String businessDate = getBusinessDays(currDate, FORMAT_DATE, 4)
-String expProcessDueDate = businessDate+P1_WCA008_PROCESSDUETIME
-
-'Get column number for process due date'
-int colNo_ProcessDueDate = CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Page_nGage_Dashboard/My_Work/tableHeader_MyWorkSearchResult'), 'Process Due Date')
-
-'Verify process due date matches'
-CustomKeywords.'actions.Table.verifyCellContainsValue'(findTestObject('Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), 1, colNo_ProcessDueDate, expProcessDueDate)
+'Verify Customer name values is updated'
+String expBusinessDay = 'abc'
+WebUI.verifyElementAttributeValue(findTestObject('Page_WMI/Closure Action/input_eform_Customer_Name'), 'value', expBusinessDay, GlobalVariable.G_LongTimeout)

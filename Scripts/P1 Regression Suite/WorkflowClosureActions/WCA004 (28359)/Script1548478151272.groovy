@@ -12,13 +12,13 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
-import utils.DateUtil
+import static utils.DateUtil.*
 
 'Login Into Application'
 CustomKeywords.'actions.Common.login'()
 
 'Create Closure Action document'
-String timeformat = DateUtil.getCurrentDateTime('hhmmss')
+String timeformat = getCurrentDateTime('hhmmss')
 String primary_CustName = 'Chintan Shah - P'+timeformat
 String primary_CustDesc = 'Workflow closure action - WCA002'
 String attached_CustName = 'Chintan Shah - A'+timeformat
@@ -102,9 +102,10 @@ CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_WMI/Clos
 'Mouse over on menu Customer Actions'
 WebUI.mouseOver(findTestObject('Page_WMI/Closure Action/button_CustomerActions'))
 
-'Select option Search and attach related item'
-WebUI.waitForElementVisible(findTestObject('Page_WMI/Closure Action/subMenu_CustActions_Search and attach as related'), GlobalVariable.G_LongTimeout)
-CustomKeywords.'actions.Window.clickElementAndWaitForWindowClose'(findTestObject('Page_WMI/Closure Action/subMenu_CustActions_Search and attach as related'), GlobalVariable.G_LongTimeout)
+'Select option Search and process reference item'
+//WebUI.waitForElementVisible(findTestObject('Page_WMI/Closure Action/subMenu_CustActions_Update related Item field value'), GlobalVariable.G_LongTimeout)
+WebUI.delay(2)
+CustomKeywords.'actions.Window.clickElementAndWaitForWindowClose'(findTestObject('Page_WMI/Closure Action/subMenu_CustActions_Search n Process Reference'), GlobalVariable.G_LongTimeout)
 
 'Switch back to parent window'
 WebUI.switchToWindowIndex(0)
@@ -138,7 +139,8 @@ CustomKeywords.'actions.Table.refreshUntilRecordFoundInTable'(table, tableHeader
 
 'Store DocID value of attached document'
 //String docIDAttached = CustomKeywords.'actions.Table.getCellText'(findTestObject('Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), 1, colNo_DocID)
-String docIDAttached = docIDPrimary+1
+int docIDAttachedint = Integer.parseInt(docIDPrimary)+1
+String docIDAttached = docIDAttachedint.toString()
 
 //'Verify primary document is now present in grid'
 //CustomKeywords.'actions.Table.verifyCellContainsValue'(findTestObject('Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), 2, colNo_DocID, docIDPrimary)
@@ -180,7 +182,7 @@ CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_WMI/Closur
 CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_WMI/Closure Action/BPMProcessAudit/tableHeader_Audit'), 'Interface Name')
 
 'Verify Entry for first row'
-CustomKeywords.'actions.Table.verifyCellContainsValue'(findTestObject('Page_WMI/Closure Action/BPMProcessAudit/table_Audit'), 1, 7, 'Search And Attach As Related Item')
+CustomKeywords.'actions.Table.verifyCellContainsValue'(findTestObject('Page_WMI/Closure Action/BPMProcessAudit/table_Audit'), 1, 7, 'Search and process reference items')
 
 'Verify action return type is true'
 CustomKeywords.'actions.Table.verifyCellContainsValue'(findTestObject('Page_WMI/Closure Action/BPMProcessAudit/table_Audit'), 1, 6, 'True')
@@ -218,4 +220,6 @@ CustomKeywords.'actions.Table.verifyCellContainsValue'(findTestObject('Page_nGag
 CustomKeywords.'actions.Table.verifyCellContainsValue'(findTestObject('Page_nGage_Dashboard/Repository/table_SearchResults'), 2, repoColNo_DocID, docIDPrimary)
 
 int repoColNo_CustName = CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Page_nGage_Dashboard/Repository/table_Header_SearchResults'), 'Customer Name')
+CustomKeywords.'actions.Table.verifyCellContainsValue'(findTestObject('Page_nGage_Dashboard/Repository/table_SearchResults'), 1, repoColNo_CustName, 's and p ref items')
 CustomKeywords.'actions.Table.verifyCellContainsValue'(findTestObject('Page_nGage_Dashboard/Repository/table_SearchResults'), 2, repoColNo_CustName, primary_CustName)
+

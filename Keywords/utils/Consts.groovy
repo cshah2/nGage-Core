@@ -139,7 +139,7 @@ public class Consts {
 	public static final String SMOKE_REPO_DATETIMERANGE_DOC1 = '12-10-2018 12:00:00 PM'
 	public static final String SMOKE_REPO_DATERANGE_DOC1_START_FILTER = '12-03-2018'
 	public static final String SMOKE_REPO_DATERANGE_DOC1_END_FILTER = '12-07-2018'
-	
+
 
 
 	public static final String P1_MW084_STARTDATE = '01-01-2018'
@@ -298,6 +298,8 @@ public class Consts {
 	public static final String P1_LOANAPPL_FIRSTNAME_DOC3 = 'Prasad'
 	public static final String P1_LOANAPPL_LASTNAME_DOC3 = 'Patil'
 	public static final String P1_LOANAPPL_AMOUNT_DOC3 = '5000'
+	
+	public static final String P1_WCA008_PROCESSDUETIME = '12:00:00 AM'
 
 	/*
 	 * Doc Class and Doc Type Variables
@@ -316,13 +318,13 @@ public class Consts {
 	public static final String DT_DATETIMERANGEREQUIRED = 'Datetimerangerequired'
 
 
-
 	//DATE - TIME FORMAT
 	public static final String DATETIME_APPLICATION = 'MM-dd-yyyy HH:mm:ss a'
 	public static final String DATE_APPLICATION_TREE = 'MM/dd/yyyy'
 
 	public static final String FORMAT_DATETIME = 'MM-dd-yyyy hh:mm:ss a' //TODO: Code should be done such that this value should remain fixed
 	public static final String FORMAT_DATE = 'MM-dd-yyyy' //TODO: Code should be done such that this value should remain fixed
+	public static final String FORMAT_TIME = 'hh:mm:ss a' //TODO: Code should be done such that this value should remain fixed
 
 }
 

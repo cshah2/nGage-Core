@@ -5,6 +5,8 @@ import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 
+import java.util.concurrent.TimeUnit
+
 import org.apache.commons.lang3.StringUtils
 import org.openqa.selenium.By
 import org.openqa.selenium.WebDriver
@@ -226,6 +228,31 @@ public class Table {
 		else {
 			KeywordUtil.markFailedAndStop("Value "+expValue+" not found in column No : "+colNo)
 		}
+	}
+	
+	@Keyword
+	def isRecordPresentInColumn(TestObject tableLocator, int colNo, String expValue) {
+		WebElement table = WebUtil.getWebElement(tableLocator)
+		List<String> cellValues = getAllValuesFromColumn(table, colNo)
+		WebUI.switchToDefaultContent()
+
+		boolean isRecordPresent = false
+		if(cellValues.size() == 0) {
+			isRecordPresent = false
+		}
+
+		if(StringUtils.isBlank(expValue)) {
+			isRecordPresent = false
+		}
+
+		if(cellValues.contains(expValue)) {
+			isRecordPresent = true
+		}
+		else {
+			isRecordPresent = false
+		}
+		
+		return isRecordPresent
 	}
 
 	@Keyword
@@ -809,37 +836,73 @@ public class Table {
 			KeywordUtil.markFailedAndStop('Actual value = '+actAttrValue+' does not matches with expected value = '+attrValue)
 		}
 	}
-	
-	
+
+
 	@Keyword
 	def getCorrectSliceNumber(TestObject tableLocator, int colNoTotal, int colNoText, String expText) {
-		
+
 		WebElement table = WebUtil.getWebElement(tableLocator)
 		List<WebElement> rows = getAllRows(table)
-		
+
 		int i = 1
 		boolean isRowFound = false
-		
+
 		for(WebElement row in rows) {
 			List<WebElement> cells = getAllCells(row)
 			int cellTotal = Integer.parseInt(cells.get(colNoTotal - 1).getText())
 			String cellText = cells.get(colNoText - 1).getText()
-			
+
 			if(cellTotal > 0) {
 				if(cellText.trim().equalsIgnoreCase(expText)) {
 					isRowFound = true
 					break
 				}
 				i++
-			}	
+			}
 		}
-		
+
 		WebUI.switchToDefaultContent()
 		if(isRowFound) {
 			return i
 		}
 		else {
 			KeywordUtil.markFailedAndStop('Expected row not found in table')
+		}
+	}
+	
+	@Keyword
+	def refreshUntilRecordFoundInTable(TestObject table, TestObject tableHeader, TestObject refresh, String expText, int colNo, int timeout) {
+		
+		def startTime = System.currentTimeMillis()
+		def endTime = startTime + TimeUnit.SECONDS.toMillis(timeout)
+		def currentTime = System.currentTimeMillis()
+
+		boolean isFound = false
+		TestObject parentObject = table.getParentObject()
+		
+		while(currentTime < endTime) {
+			
+			//Sort records by Doc ID descending
+			clickColumnHeader(tableHeader, 'Doc ID')
+			clickColumnHeader(tableHeader, 'Doc ID')
+	
+			if(!isRecordPresentInColumn(table, colNo, expText)) {
+				WebUI.delay(5)
+				WebUI.click(refresh)
+				new Common().waitForFrameToLoad(parentObject)
+				currentTime = System.currentTimeMillis()
+			}
+			else {
+				isFound = true
+				break
+			}
+		}
+		
+		if(isFound) {
+			KeywordUtil.markPassed('Record found in grid after refreshed')
+		}
+		else {
+			KeywordUtil.markFailedAndStop('Record '+expText+' not found in grid')
 		}
 	}
 }

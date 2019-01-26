@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Regression test Workflow Closure Action: Search and Process Reference Items</description>
+   <name>WCA004 (28359)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>c49b8d1e-8ab5-418d-9814-bf97762b8c2e</testCaseGuid>
+</TestCaseEntity>

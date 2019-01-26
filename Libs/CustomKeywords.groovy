@@ -54,6 +54,16 @@ def static "actions.Table.verifyRecordPresentInColumn"(
          , 	expValue)
 }
 
+def static "actions.Table.isRecordPresentInColumn"(
+    	TestObject tableLocator	
+     , 	int colNo	
+     , 	String expValue	) {
+    (new actions.Table()).isRecordPresentInColumn(
+        	tableLocator
+         , 	colNo
+         , 	expValue)
+}
+
 def static "actions.Table.verifyRecordNotPresentInColumn"(
     	TestObject tableLocator	
      , 	int colNo	
@@ -338,6 +348,22 @@ def static "actions.Table.getCorrectSliceNumber"(
          , 	colNoTotal
          , 	colNoText
          , 	expText)
+}
+
+def static "actions.Table.refreshUntilRecordFoundInTable"(
+    	TestObject table	
+     , 	TestObject tableHeader	
+     , 	TestObject refresh	
+     , 	String expText	
+     , 	int colNo	
+     , 	int timeout	) {
+    (new actions.Table()).refreshUntilRecordFoundInTable(
+        	table
+         , 	tableHeader
+         , 	refresh
+         , 	expText
+         , 	colNo
+         , 	timeout)
 }
 
 def static "actions.MenuBar.getRecordCountInActivity"(

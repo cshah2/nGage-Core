@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description>Regression test Workflow Closure Action: Show custom message</description>
-   <name>WCA007 (28365)</name>
+   <name>WCA007 (28362)</name>
    <tag></tag>
    <comment></comment>
    <testCaseGuid>210cffbc-90e3-4ce5-8b1e-402e9aad26c6</testCaseGuid>

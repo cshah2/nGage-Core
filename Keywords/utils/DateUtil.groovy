@@ -5,6 +5,7 @@ import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 
+import java.text.SimpleDateFormat
 import java.time.LocalDateTime
 import java.time.ZonedDateTime
 import java.time.format.DateTimeFormatter
@@ -297,4 +298,31 @@ public class DateUtil {
 		return currFormatDate.format(expFormat)
 	}
 	
+	
+	public static String getBusinessDays(String dateStr, String format, int days){
+		// format of date is passed as an argument
+		SimpleDateFormat sdf = new SimpleDateFormat(format);
+		// base date which will be incremented
+		Date date = sdf.parse(dateStr);
+		Calendar c = Calendar.getInstance();
+		// set calendar time with given date
+		c.setTime(date);
+		// number of days to increment
+		c.add(Calendar.DAY_OF_WEEK, days);
+		// check if the date after addition is a working day.
+		// If not then keep on incrementing it till it is a working day
+		while(!isWorkingDay(c.getTime(), c)) {
+			c.add(Calendar.DAY_OF_WEEK, 1);
+		}
+		  return sdf.format(c.getTime());
+	}
+	
+	private static boolean isWorkingDay(Date date, Calendar calendar) {
+		calendar.setTime(date);
+		int dayOfWeek = calendar.get(Calendar.DAY_OF_WEEK);
+		if ((dayOfWeek == 7) || (dayOfWeek == 1)) {
+			return false;
+		}
+		return true;
+	 }
 }

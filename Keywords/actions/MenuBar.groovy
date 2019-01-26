@@ -97,11 +97,11 @@ public class MenuBar {
 
 		clickTreeMenu(moduleName, parentPath)
 		new Common().waitForFrameToLoad(findTestObject('Page_nGage_Dashboard/iframe_main_visible'))
-		
+
 		while(currentTime < endTime) {
 			println "Original Count = "+originalCount+"currentCount = "+currentCount
 			if(currentCount < 0 || currentCount <= originalCount) {
-				
+
 				rightClickTreeMenu(moduleName, parentPath)
 				WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/contextMenu'), GlobalVariable.G_SmallTimeout)
 				new ContextMenu().clickOption(findTestObject('Page_nGage_Dashboard/contextMenuOptions'), 'Refresh')
@@ -208,10 +208,10 @@ public class MenuBar {
 
 		Collator coll = Collator.getInstance(Locale.US);
 		coll.setStrength(Collator.IDENTICAL);
-		
+
 		RuleBasedCollator defaultCollator = (RuleBasedCollator) coll
 		final String rules = defaultCollator.getRules()
-		
+
 		RuleBasedCollator coll1 = new RuleBasedCollator(rules.replaceAll("<'\u005f'", "<' '<'\u005f'"))
 		coll1.setStrength(Collator.IDENTICAL);
 
@@ -503,7 +503,7 @@ public class MenuBar {
 		WebElement e = driver.findElement(By.xpath(treeXpath.toString()))
 
 		String bkgImage = e.getCssValue('background-image')
-		
+
 		if(bkgImage.equals('none')) {
 			KeywordUtil.markPassed('Expand Icon not visible against the last tree node')
 		}
