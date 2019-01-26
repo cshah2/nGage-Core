@@ -18,6 +18,7 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUiBuiltInKeywords
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
+import static utils.Consts.*
 
 'Login Into Application'
 CustomKeywords.'actions.Common.login'()
@@ -25,6 +26,7 @@ CustomKeywords.'actions.Common.login'()
 'Expand Repository Menu'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Repository/h3_Repository Menu'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
+WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
 'Select Repository - Advance Search tab'
 WebUI.selectOptionByLabel(findTestObject('Page_nGage_Dashboard/Repository/select_Repository Drop Down'), 'Business Model', false)
@@ -35,10 +37,10 @@ WebUI.selectOptionByLabel(findTestObject('Page_nGage_Dashboard/Repository/select
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
 
 'Enter some search data in fields DocID , BM Date Time, BM Date From and BM  Date To'
-WebUI.setText(findTestObject('Page_nGage_Dashboard/Repository/input_Doc___ID'), '100003')
+WebUI.setText(findTestObject('Page_nGage_Dashboard/Repository/input_Doc___ID'), SMOKE_REPO002_DOCID)
 
-CustomKeywords.'actions.Common.setText_Date'(findTestObject('Page_nGage_Dashboard/Repository/input_BM___Date_From'), '12-12-2018')
-CustomKeywords.'actions.Common.setText_Date'(findTestObject('Page_nGage_Dashboard/Repository/input_BM___Date_To'), '01-01-2019')
+CustomKeywords.'actions.Common.setText_Date'(findTestObject('Page_nGage_Dashboard/Repository/input_BM___Date_From'), SMOKE_REPO002_START_FILTER)
+CustomKeywords.'actions.Common.setText_Date'(findTestObject('Page_nGage_Dashboard/Repository/input_BM___Date_To'), SMOKE_REPO002_END_FILTER)
 
 'Click on Clear button'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Repository/input_btnClear'))

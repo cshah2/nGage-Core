@@ -22,6 +22,7 @@ WebUI.verifyElementVisible(findTestObject('Object Repository/Page_nGage_Dashboar
 'Click on Repository Menu'
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/h3_Repository Menu'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
+WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
 'Expand Business Model Repository'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Repository/iconExpand_BusinessModel'))

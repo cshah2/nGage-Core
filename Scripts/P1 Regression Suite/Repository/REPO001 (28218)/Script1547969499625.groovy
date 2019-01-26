@@ -21,6 +21,7 @@ WebUI.verifyElementVisible(findTestObject('Object Repository/Page_nGage_Dashboar
 'Click on Repository Menu'
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/h3_Repository Menu'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
+WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
 'Verify Recent Documents menu is displayed'
 WebUI.verifyElementVisible(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/RecentDocuments'))

@@ -12,20 +12,22 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
-import utils.Consts
+import static utils.Consts.*
+import static utils.DateUtil.*
 
 'Login into application'
 CustomKeywords.'actions.Common.login'()
 
 'Create new Document'
-CustomKeywords.'actions.Common.createDocument_DateTimeDT'(Consts.P1_REPO_BMDATE_DOC1, Consts.P1_REPO_DATERANGE_DOC1, Consts.P1_REPO_BMDATETIME_DOC1, Consts.P1_REPO_DATETIMERANGE_DOC1)
-CustomKeywords.'actions.Common.createDocument_DateTimeDT'(Consts.P1_REPO_BMDATE_DOC3, Consts.P1_REPO_DATERANGE_DOC3, Consts.P1_REPO_BMDATETIME_DOC3, Consts.P1_REPO_DATETIMERANGE_DOC3)
+CustomKeywords.'actions.Common.createDocument_DateTimeDT'(P1_REPO_BMDATE_DOC1, P1_REPO_DATERANGE_DOC1, P1_REPO_BMDATETIME_DOC1, P1_REPO_DATETIMERANGE_DOC1)
+CustomKeywords.'actions.Common.createDocument_DateTimeDT'(P1_REPO_BMDATE_DOC3, P1_REPO_DATERANGE_DOC3, P1_REPO_BMDATETIME_DOC3, P1_REPO_DATETIMERANGE_DOC3)
 
 'Click on Repository Menu'
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/h3_Repository Menu'))
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
-String filter_BM_Date = Consts.P1_REPO_BMDATE_DOC1.substring(0, 10).replaceAll('/', '-').trim()
+String filter_BM_Date = P1_REPO_BMDATE_DOC1
 
 'Select Repository - Advance Search tab'
 WebUI.selectOptionByLabel(findTestObject('Page_nGage_Dashboard/Repository/select_Repository Drop Down'), 'Date n Date time EDM', false)

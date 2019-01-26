@@ -12,17 +12,18 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
-import utils.Consts
+import static utils.Consts.*
 
 'Login into application'
 CustomKeywords.'actions.Common.login'()
 
 'Create Document Required field DT'
-CustomKeywords.'actions.Common.createDocument_RequiredFieldDT'(Consts.P1_REPO_BMTEXT_DOC1, Consts.P1_REPO_BMSTRING_DOC1, Consts.P1_REPO_INT_DOC1, Consts.P1_REPO_DATETIMEREQ_DOC1, Consts.P1_REPO_DATEREQ_DOC1)
+CustomKeywords.'actions.Common.createDocument_RequiredFieldDT'(P1_REPO_BMTEXT_DOC1, P1_REPO_BMSTRING_DOC1, P1_REPO_INT_DOC1, P1_REPO_DATETIMEREQ_DOC1, P1_REPO_DATEREQ_DOC1)
 
 'Expand Repository Menu'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Repository/h3_Repository Menu'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
+WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
 'Select Repository - Advance Search tab'
 WebUI.selectOptionByLabel(findTestObject('Page_nGage_Dashboard/Repository/select_Repository Drop Down'), 'Required Date string field EDM', false)
@@ -34,12 +35,12 @@ WebUI.selectOptionByLabel(findTestObject('Page_nGage_Dashboard/Repository/select
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
 
 'Enter data in required field'
-String filterStringRequiered = Consts.P1_REPO_BMSTRING_DOC1 
+String filterStringRequiered = P1_REPO_BMSTRING_DOC1 
 WebUI.setText(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/inpur_BM_String_Required'), filterStringRequiered)
 
 'Enter date in required field'
-String dateFrom = Consts.P1_REPO_DATEREQ_DOC1.subSequence(0, 10).replaceAll('/', '-').trim()
-String dateTo = Consts.P1_REPO_DATEREQ_DOC1.subSequence(0, 10).replaceAll('/', '-').trim()
+String dateFrom = P1_REPO_DATEREQ_DOC1
+String dateTo = P1_REPO_DATEREQ_DOC1
 CustomKeywords.'actions.Common.setText_Date'(findTestObject('Page_nGage_Dashboard/Repository/input_BM_DateFrom_Required'), dateFrom)
 CustomKeywords.'actions.Common.setText_Date'(findTestObject('Page_nGage_Dashboard/Repository/input_BM_DateTo_Required'), dateTo)
 

@@ -6,7 +6,7 @@
    <defaultProfile>false</defaultProfile>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>120</initValue>
+      <initValue>300</initValue>
       <name>G_LongTimeout</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>

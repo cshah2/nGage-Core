@@ -12,15 +12,17 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
+import static utils.Consts.*
 
 'Login Into Application'
 CustomKeywords.'actions.Common.login'()
 
 'Create Document render all fields'
-CustomKeywords.'actions.Common.createDocument_RenderAllField'('10', 'CShah', '', '', '', '', '', '', '', '', '')
+CustomKeywords.'actions.Common.createDocument_RenderAllField'(P1_REPO_RENDERALL_INTERGER_DOC1, P1_REPO_RENDERALL_STRING_DOC1, '', '', P1_REPO_RENDERALL_DATE_DOC1, '', '', '', '', '', '')
 
 'Click on Repository Menu'
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/h3_Repository Menu'))
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
 CustomKeywords.'actions.MenuBar.clickTreeMenu'('REPO', 'Business Model', 'Business Model', 'Render All Field Types')

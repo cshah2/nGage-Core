@@ -28,6 +28,7 @@ CustomKeywords.'actions.Common.login'()
 'Expand Repository Menu'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Repository/h3_Repository Menu'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
+WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
 'Get Column No for ID column'
 int colNo = CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Page_nGage_Dashboard/Repository/table_Header_SavedSearch'), 'ID')

@@ -19,6 +19,7 @@ CustomKeywords.'actions.Common.login'()
 'Expand Repository Menu'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Repository/h3_Repository Menu'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
+WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
 'Select Repository - Advance Search tab'
 WebUI.selectOptionByLabel(findTestObject('Page_nGage_Dashboard/Repository/select_Repository Drop Down'), 'Required Date time EDM', false)
@@ -39,7 +40,6 @@ WebUI.verifyElementNotPresent(findTestObject('Page_nGage_Dashboard/Repository/la
 WebUI.verifyElementNotPresent(findTestObject('Page_nGage_Dashboard/Repository/label_Required_DateRange_Start'), GlobalVariable.G_LongTimeout)
 WebUI.verifyElementText(findTestObject('Page_nGage_Dashboard/Repository/label_Required_DateTimeRange_End'), 'Required')
 WebUI.verifyElementText(findTestObject('Page_nGage_Dashboard/Repository/label_Required_DateTimeRange_Start'), 'Required')
-
 
 'Select Repository - Advance Search tab'
 WebUI.selectOptionByLabel(findTestObject('Page_nGage_Dashboard/Repository/select_Repository Drop Down'), 'Required Date string field EDM', false)

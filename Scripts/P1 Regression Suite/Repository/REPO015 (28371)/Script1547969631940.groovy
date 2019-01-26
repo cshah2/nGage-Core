@@ -28,16 +28,18 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 import utils.DateUtil
+import static utils.Consts.*
 
 'Login Into Application'
 CustomKeywords.'actions.Common.login'()
 
 'Create document'
-CustomKeywords.'actions.Common.createDocument_DateTimeDT'('12-01-2018', '12-05-2018', '12-10-2018 12:00:00 PM', '12-10-2018 12:00:00 PM')
+CustomKeywords.'actions.Common.createDocument_DateTimeDT'(P1_REPO_BMDATE_DOC6, P1_REPO_DATERANGE_DOC6, P1_REPO_BMDATETIME_DOC6, P1_REPO_DATETIMERANGE_DOC6)
 
 'Expand Repository Menu'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Repository/h3_Repository Menu'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
+WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
 'Select Repository - Advance Search tab'
 WebUI.selectOptionByLabel(findTestObject('Page_nGage_Dashboard/Repository/select_Repository Drop Down'), 'Date n Date time EDM', false)
@@ -48,8 +50,8 @@ WebUI.selectOptionByLabel(findTestObject('Page_nGage_Dashboard/Repository/select
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
 
 'Enter End Date values'
-String filterEndDate = '12-07-2018'
-CustomKeywords.'actions.Common.setText_Date'(findTestObject('Page_nGage_Dashboard/Repository/input_DateRange_To'), filterEndDate)
+//String filterEndDate = '12-07-2018'
+CustomKeywords.'actions.Common.setText_Date'(findTestObject('Page_nGage_Dashboard/Repository/input_DateRange_To'), P1_REPO_DATERANGE_FILTER_END)
 
 'Click on Search button'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Repository/input_btnSearch'))
@@ -76,7 +78,6 @@ CustomKeywords.'actions.Table.verifyRecordPresentInColumn'(findTestObject('Page_
 
 WebUI.refresh()
 
-
 'Expand Repository Menu'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Repository/h3_Repository Menu'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
@@ -90,8 +91,8 @@ WebUI.selectOptionByLabel(findTestObject('Page_nGage_Dashboard/Repository/select
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
 
 'Enter Start Date values'
-String filterStartDate = '12-03-2018'
-CustomKeywords.'actions.Common.setText_Date'(findTestObject('Page_nGage_Dashboard/Repository/input_DateRange_From'), filterStartDate)
+//String filterStartDate = '12-03-2018'
+CustomKeywords.'actions.Common.setText_Date'(findTestObject('Page_nGage_Dashboard/Repository/input_DateRange_From'), P1_REPO_DATERANGE_FILTER_START)
 
 'Click on Search button'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Repository/input_btnSearch'))

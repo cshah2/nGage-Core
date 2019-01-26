@@ -129,8 +129,17 @@ public class Consts {
 	public static final String SMOKE_WMI007_FIELD10 = 'String Field'
 	public static final String SMOKE_WMI007_FIELD11 = 'First Name'
 
+	public static final String SMOKE_REPO002_DOCID = '100003'
+	public static final String SMOKE_REPO002_START_FILTER = '12-12-2018'
+	public static final String SMOKE_REPO002_END_FILTER = '01-01-2019'
 
-
+	public static final String SMOKE_REPO_BMDATE_DOC1 = '12-01-2018'
+	public static final String SMOKE_REPO_DATERANGE_DOC1 = '12-05-2018'
+	public static final String SMOKE_REPO_BMDATETIME_DOC1 = '12-10-2018 12:00:00 PM'
+	public static final String SMOKE_REPO_DATETIMERANGE_DOC1 = '12-10-2018 12:00:00 PM'
+	public static final String SMOKE_REPO_DATERANGE_DOC1_START_FILTER = '12-03-2018'
+	public static final String SMOKE_REPO_DATERANGE_DOC1_END_FILTER = '12-07-2018'
+	
 
 
 	public static final String P1_MW084_STARTDATE = '01-01-2018'
@@ -185,16 +194,28 @@ public class Consts {
 	public static final String P1_REPO_BMDATETIME_DOC5 = '06-20-2018 01:00:00 AM'
 	public static final String P1_REPO_DATETIMERANGE_DOC5 = '09-20-2018 03:00:00 AM'
 
+	public static final String P1_REPO_BMDATE_DOC6 = '12-01-2018'
+	public static final String P1_REPO_DATERANGE_DOC6 = '12-05-2018'
+	public static final String P1_REPO_BMDATETIME_DOC6 = '12-10-2018 11:00:00 AM'
+	public static final String P1_REPO_DATETIMERANGE_DOC6 = '12-10-2018 11:00:00 AM'
+	public static final String P1_REPO_DATERANGE_FILTER_END = '12-07-2018'
+	public static final String P1_REPO_DATERANGE_FILTER_START = '12-03-2018'
+
 	public static final String P1_REPO_BMDATE_DOC3 = ''
 	public static final String P1_REPO_DATERANGE_DOC3 = ''
 	public static final String P1_REPO_BMDATETIME_DOC3 = ''
 	public static final String P1_REPO_DATETIMERANGE_DOC3 = ''
+
+	public static final String P1_REPO_RENDERALL_INTERGER_DOC1 = '10'
+	public static final String P1_REPO_RENDERALL_STRING_DOC1 = 'CShah'
+	public static final String P1_REPO_RENDERALL_DATE_DOC1 = '01-01-2020'
 
 
 	public static final String P1_REPO_BMDATE_DOC4 = ''
 	public static final String P1_REPO_DATERANGE_DOC4 = ''
 	public static final String P1_REPO_BMDATETIME_DOC4 = ''
 	public static final String P1_REPO_DATETIMERANGE_DOC4 = '09-01-2018 12:00:00 AM'
+
 	public static final String P1_REPO_DATETIMERANGEFROM_DATE_DOC4 = '31'
 	public static final String P1_REPO_DATETIMERANGEFROM_MONTH_DOC4 = 'Aug'
 	public static final String P1_REPO_DATETIMERANGEFROM_YEAR_DOC4 = '2018'
@@ -215,6 +236,12 @@ public class Consts {
 
 	public static String P1_REPO014_SAVEDFILTER_RECORDCOUNT
 	public static String P1_REPO014_SAVEDFILTERNAME
+
+	public static final String P1_REPO_DATERANGEFROM_DATE_DOC4 = '31'
+	public static final String P1_REPO_DATERANGEFROM_MONTH_DOC4 = 'Aug'
+	public static final String P1_REPO_DATERANGEFROM_YEAR_DOC4 = '2018'
+	public static final String P1_REPO_DATERANGEFROM_DOC4 = '08-31-2018'
+
 
 
 
@@ -294,7 +321,8 @@ public class Consts {
 	public static final String DATETIME_APPLICATION = 'MM-dd-yyyy HH:mm:ss a'
 	public static final String DATE_APPLICATION_TREE = 'MM/dd/yyyy'
 
-	public static final String DATETIME_SCRIPT = 'MM-dd-yyyy HH:mm:ss a' //TODO: Code should be done such that this value should remain fixed
-	public static final String DATE_SCRIPT = 'MM-dd-yyyy' //TODO: Code should be done such that this value should remain fixed
+	public static final String FORMAT_DATETIME = 'MM-dd-yyyy hh:mm:ss a' //TODO: Code should be done such that this value should remain fixed
+	public static final String FORMAT_DATE = 'MM-dd-yyyy' //TODO: Code should be done such that this value should remain fixed
+
 }
 
