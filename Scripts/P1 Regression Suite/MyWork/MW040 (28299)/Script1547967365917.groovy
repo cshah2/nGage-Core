@@ -12,26 +12,20 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
-import utils.DateUtil
+import static utils.DateUtil.*
+import static utils.Consts.*
 
 'Login Into Application'
 CustomKeywords.'actions.Common.login'()
 
 'Create Route Advance Document'
-String description = 'Test - '+DateUtil.getCurrentDateTime('MM-dd-yyyy HH:mm:ss a')
+String description = 'Test - '+getCurrentDateTime(FORMAT_DATETIME)
 CustomKeywords.'actions.Common.createDocument_RouteAdvance'(description)
 
 'Click on My Work link from left menu'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_My Work Left Menu'))
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
-
-//'Expand Route Advance'
-//WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Process_Route Advance/icon_expand_RouteAdvance'))
-//WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
-//
-//'Click on Entry Interactive User Activity'
-//WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Process_Route Advance/a_EntryInteractiveUserActivity'))
-//CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/iframe_work_items'))
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_iframe_105'))
 
 'Click on Activity'
 CustomKeywords.'actions.MenuBar.clickTreeMenu'('MY_WORK', 'Processes', 'Route Advance', 'Entry Interactive User Activity')

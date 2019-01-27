@@ -83,7 +83,7 @@ WebUI.switchToWindowIndex(1)
 WebUI.click(findTestObject('Page_WMI/Closure Action/span_Customer Information'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_WMI/Closure Action/iframe_ContentPlaceHolder1_iPa'))
 
-'Verify Customer information in window 1 for DocID = 101756'
+'Verify Customer information in window 1'
 WebUI.verifyElementAttributeValue(findTestObject('Page_WMI/Closure Action/input_eform_Customer_Name'), 'value', Consts.SMOKE_MWS007_CUSTOMERNAME, GlobalVariable.G_LongTimeout)
 WebUI.verifyElementAttributeValue(findTestObject('Page_WMI/Closure Action/input_eform_Customer_Details'), 'value', Consts.SMOKE_MWS007_CUSTOMERDETAIL, GlobalVariable.G_LongTimeout)
 

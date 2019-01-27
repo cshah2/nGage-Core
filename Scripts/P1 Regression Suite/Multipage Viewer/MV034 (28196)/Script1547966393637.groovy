@@ -13,7 +13,8 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
-import utils.DateUtil
+import static utils.DateUtil.*
+import static utils.Consts.*
 import utils.ImageUtil
 
 'Login into application'
@@ -71,7 +72,7 @@ WebUI.switchToWindowIndex(2)
 WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 
 'Enter data in text field'
-String text  = 'Automation Script '+DateUtil.getCurrentDateTime('MM-dd-yyyy HH:mm:ss a')
+String text  = 'Automation Script '+getCurrentDateTime(FORMAT_DATETIME)
 WebUI.setText(findTestObject('Page_WMI_NEW/WMI_Menu_BOV_Vertical/input_String field'), text)
 
 'Save details and close'

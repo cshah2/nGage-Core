@@ -62,7 +62,7 @@ WebUI.waitForElementVisible(findTestObject('Page_WMI_NEW/Reference_Object_Import
 WebUI.verifyElementText(findTestObject('Page_WMI_NEW/Reference_Object_Import/NewLinkModalDialog/modal dialog WMI Title'), 'Business Model View - Render All Field Types')
 
 'Set DateTime value as current date time'
-String _format = 'MM-dd-yyyy hh:mm:ss a'
+String _format = Consts.FORMAT_DATETIME
 Consts.SMOKE_WMI005_FIELD9 = DateUtil.getCurrentDateTime(_format)
 
 'Enter data in all fields in open modal dialog'

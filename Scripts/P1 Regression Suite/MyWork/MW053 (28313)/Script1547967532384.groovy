@@ -12,14 +12,14 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
-import utils.Consts
+import static utils.Consts.*
 
 'Login Into Application'
 CustomKeywords.'actions.Common.login'()
 
 'Create Documents'
-CustomKeywords.'actions.Common.createDocument_ProcessForTaskDT'(Consts.P1_MW_PROCESSFORTASK_CUSTOMERNAME_DOC1, Consts.P1_MW_PROCESSFORTASK_CUSTOMERDESC_DOC1)
-CustomKeywords.'actions.Common.createDocument_ProcessForTaskDT'(Consts.P1_MW_PROCESSFORTASK_CUSTOMERNAME_DOC2, Consts.P1_MW_PROCESSFORTASK_CUSTOMERDESC_DOC2)
+CustomKeywords.'actions.Common.createDocument_ProcessForTaskDT'(P1_MW_PROCESSFORTASK_CUSTOMERNAME_DOC1, P1_MW_PROCESSFORTASK_CUSTOMERDESC_DOC1)
+CustomKeywords.'actions.Common.createDocument_ProcessForTaskDT'(P1_MW_PROCESSFORTASK_CUSTOMERNAME_DOC2, P1_MW_PROCESSFORTASK_CUSTOMERDESC_DOC2)
 
 'Click on My Work link from left menu'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_My Work Left Menu'))

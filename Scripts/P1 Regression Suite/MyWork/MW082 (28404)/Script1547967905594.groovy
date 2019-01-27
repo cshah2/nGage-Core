@@ -15,8 +15,6 @@ import internal.GlobalVariable as GlobalVariable
 import utils.Consts
 import utils.DateUtil
 
-//TODO: Bug in MYSQL Database - Tree name mismatch "Datetime range required" it contains extra space
-
 'Login Into Application'
 CustomKeywords.'actions.Common.login'()
 

@@ -12,6 +12,7 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
+import utils.Consts
 import utils.DateUtil
 
 'Login Into Application'
@@ -29,7 +30,7 @@ WebUI.switchToWindowTitle('(Doc ID: NEW )')
 WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 
 'Set Date in Date field Required'
-String dateRequired = DateUtil.getCurrentDateTime('MM-dd-yyyy HH:mm:ss a')
+String dateRequired = DateUtil.getCurrentDateTime(Consts.FORMAT_DATETIME)
 CustomKeywords.'actions.Common.setText_Date'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/tab_SingleResultView/input_DateField_Required'), dateRequired)
 
 'Click On Save Button'
@@ -80,7 +81,7 @@ String actualColor= CustomKeywords.'actions.Common.getCssValue'(findTestObject('
 CustomKeywords.'actions.Common.verifyCssValue'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/tab_SingleResultView/input_StringField_ReferenceObject'), 'background-color',actualColor)
 
 'Set Text in String Field to Verify Font'
-String val = 'Sanyogita - '+DateUtil.getCurrentDateTime('MM-dd-yyyy HH:mm:ss a')
+String val = 'Sanyogita - '+DateUtil.getCurrentDateTime(Consts.FORMAT_DATETIME)
 CustomKeywords.'actions.Common.setTextAndSave'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/tab_SingleResultView/input_StringField_ReferenceObject'), val)
 
 'Get Font of String Field'

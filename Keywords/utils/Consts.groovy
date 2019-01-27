@@ -52,6 +52,14 @@ public class Consts {
 	public static final String SMOKE_CORRESPONDENCE_TEMPLATE = 'Template1'
 
 
+	public static final String SMOKE_MWS003_FILTER_DOCID = '106845'
+	public static final String SMOKE_MWS003_FILTER_STARTDATETIME = '01-01-2018 12:00:00 AM'
+	public static final String SMOKE_MWS003_FILTER_ENDDATETIME = '02-28-2018 12:00:00 AM'
+	
+	
+	
+	public static final String SMOKE_MW001_FILTERDATE = '12-12-2018'
+
 	public static final String SMOKE_MYWORK009_CUSTOMERNAME1 = 'Chintan Shah'
 	public static final String SMOKE_MYWORK009_CUSTOMERDETAIL1 = 'Automation test document'
 
@@ -142,42 +150,6 @@ public class Consts {
 
 
 
-	public static final String P1_MW084_STARTDATE = '01-01-2018'
-	public static final String P1_MW084_ENDDATE = '12-31-2025'
-	public static final String P1_MW084_STARTDATETIME = '06-01-2018 01:00:00 AM'
-	public static final String P1_MW084_ENDDATETIME = '05-31-2025 11:00:00 PM'
-	public static String P1_MW084_BMTEXT
-
-	public static final String P1_MW087_STARTDATE = '01-15-2019'
-	public static final String P1_MW087_ENDDATE = '12-15-2024'
-	public static final String P1_MW087_STARTDATETIME = '06-15-2019 08:00:00 AM'
-	public static final String P1_MW087_ENDDATETIME = '05-15-2024 05:00:00 PM'
-	public static String P1_MW087_BMTEXT
-
-	public static final String P1_MW_STARTDATE_DOC3 = '01-20-2019'
-	public static final String P1_MW_ENDDATE_DOC3 = '12-20-2024'
-	public static final String P1_MW_STARTDATETIME_DOC3 = '06-20-2019 08:00:00 AM'
-	public static final String P1_MW_ENDDATETIME_DOC3 = '05-20-2024 05:00:00 PM'
-	public static String P1_MW_BMTEXT_DOC3
-
-	public static final String P1_MW095_STARTDATE = ''
-	public static final String P1_MW095_ENDDATE = ''
-	public static final String P1_MW095_STARTDATETIME = ''
-	public static final String P1_MW095_ENDDATETIME = ''
-	public static String P1_MW095_BMTEXT
-
-	public static final String P1_MW097_STARTDATE = ''
-	public static final String P1_MW097_ENDDATE = ''
-	public static final String P1_MW097_STARTDATETIME = '06-01-2018 01:00:00 AM'
-	public static final String P1_MW097_ENDDATETIME = ''
-	public static String P1_MW097_BMTEXT
-
-	public static final String P1_MW117_STARTDATE = '01-01-2018'
-	public static final String P1_MW117_ENDDATE = ''
-	public static final String P1_MW117_STARTDATETIME = ''
-	public static final String P1_MW117_ENDDATETIME = ''
-	public static String P1_MW117_BMTEXT
-
 
 	public static final String P1_REPO_BMDATE_DOC1 = '01-01-2018'
 	public static final String P1_REPO_DATERANGE_DOC1 = '03-01-2018'
@@ -245,6 +217,51 @@ public class Consts {
 
 
 
+	public static final String P1_MW084_STARTDATE = '01-01-2018'
+	public static final String P1_MW084_ENDDATE = '12-31-2025'
+	public static final String P1_MW084_STARTDATETIME = '06-01-2018 01:00:00 AM'
+	public static final String P1_MW084_ENDDATETIME = '05-31-2025 11:00:00 PM'
+	public static String P1_MW084_BMTEXT
+
+
+	public static final String P1_MW087_STARTDATE = '01-15-2019'
+	public static final String P1_MW087_ENDDATE = '12-15-2024'
+	public static final String P1_MW087_STARTDATETIME = '06-15-2019 08:00:00 AM'
+	public static final String P1_MW087_ENDDATETIME = '05-15-2024 05:00:00 PM'
+	public static String P1_MW087_BMTEXT
+	public static final String P1_MW035_FILTER_START = '01-14-2019'
+	public static final String P1_MW035_FILTER_END = '01-16-2019'
+
+
+	public static final String P1_MW_STARTDATE_DOC3 = '01-20-2019'
+	public static final String P1_MW_ENDDATE_DOC3 = '12-20-2024'
+	public static final String P1_MW_STARTDATETIME_DOC3 = '06-20-2019 08:00:00 AM'
+	public static final String P1_MW_ENDDATETIME_DOC3 = '05-20-2024 05:00:00 PM'
+	public static String P1_MW_BMTEXT_DOC3
+
+	public static final String P1_MW095_STARTDATE = ''
+	public static final String P1_MW095_ENDDATE = ''
+	public static final String P1_MW095_STARTDATETIME = ''
+	public static final String P1_MW095_ENDDATETIME = ''
+	public static String P1_MW095_BMTEXT
+
+	public static final String P1_MW097_STARTDATE = ''
+	public static final String P1_MW097_ENDDATE = ''
+	public static final String P1_MW097_STARTDATETIME = '06-01-2018 01:00:00 AM'
+	public static final String P1_MW097_ENDDATETIME = ''
+	public static String P1_MW097_BMTEXT
+
+	public static final String P1_MW117_STARTDATE = '01-01-2018'
+	public static final String P1_MW117_ENDDATE = ''
+	public static final String P1_MW117_STARTDATETIME = ''
+	public static final String P1_MW117_ENDDATETIME = ''
+	public static String P1_MW117_BMTEXT
+
+
+
+
+
+
 	public static final String P1_MWORK_CLOSURE_CUSTOMERNAME_DOC1 = 'Chintan Shah'
 	public static final String P1_MWORK_CLOSURE_CUSTOMERDESC_DOC1 = 'Automation test document'
 
@@ -290,6 +307,9 @@ public class Consts {
 	public static final String P1_LOANAPPL_FIRSTNAME_DOC1 = 'Chintan'
 	public static final String P1_LOANAPPL_LASTNAME_DOC1 = 'Shah'
 	public static final String P1_LOANAPPL_AMOUNT_DOC1 = '30000'
+	public static final String P1_LOANAPPL_AMOUNT_FILTER_FROM = '20000'
+	public static final String P1_LOANAPPL_AMOUNT_FILTER_TO = '40000'
+
 
 	public static final String P1_LOANAPPL_FIRSTNAME_DOC2 = 'Atul'
 	public static final String P1_LOANAPPL_LASTNAME_DOC2 = 'Mirvankar'
@@ -298,8 +318,11 @@ public class Consts {
 	public static final String P1_LOANAPPL_FIRSTNAME_DOC3 = 'Prasad'
 	public static final String P1_LOANAPPL_LASTNAME_DOC3 = 'Patil'
 	public static final String P1_LOANAPPL_AMOUNT_DOC3 = '5000'
-	
+
 	public static final String P1_WCA008_PROCESSDUETIME = '12:00:00 AM'
+
+	public static final String P1_TIME_START = '12:00:00 AM'
+	public static final String P1_TIME_END = '11:59:59 PM'
 
 	/*
 	 * Doc Class and Doc Type Variables
@@ -325,6 +348,8 @@ public class Consts {
 	public static final String FORMAT_DATETIME = 'MM-dd-yyyy hh:mm:ss a' //TODO: Code should be done such that this value should remain fixed
 	public static final String FORMAT_DATE = 'MM-dd-yyyy' //TODO: Code should be done such that this value should remain fixed
 	public static final String FORMAT_TIME = 'hh:mm:ss a' //TODO: Code should be done such that this value should remain fixed
+
+	public static final String FORMAT_DATE_TREE = 'MM/dd/yyyy' //TODO: To be deleted once code is fixed.
 
 }
 

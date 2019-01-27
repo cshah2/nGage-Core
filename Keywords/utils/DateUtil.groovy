@@ -297,8 +297,8 @@ public class DateUtil {
 		def currFormatDate = new Date().parse(currFormat,date)
 		return currFormatDate.format(expFormat)
 	}
-	
-	
+
+
 	public static String getBusinessDays(String dateStr, String format, int days){
 		// format of date is passed as an argument
 		SimpleDateFormat sdf = new SimpleDateFormat(format);
@@ -314,9 +314,9 @@ public class DateUtil {
 		while(!isWorkingDay(c.getTime(), c)) {
 			c.add(Calendar.DAY_OF_WEEK, 1);
 		}
-		  return sdf.format(c.getTime());
+		return sdf.format(c.getTime());
 	}
-	
+
 	private static boolean isWorkingDay(Date date, Calendar calendar) {
 		calendar.setTime(date);
 		int dayOfWeek = calendar.get(Calendar.DAY_OF_WEEK);
@@ -324,5 +324,5 @@ public class DateUtil {
 			return false;
 		}
 		return true;
-	 }
+	}
 }

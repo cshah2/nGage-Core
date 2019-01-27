@@ -12,6 +12,7 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
+import utils.Consts
 import utils.DateUtil
 
 'Login Into Application'
@@ -94,7 +95,7 @@ CustomKeywords.'actions.Common.waitForTabLoading'(null, GlobalVariable.G_LongTim
 'Verify Document opening in Inline Mode'
 //WebUI.verifyElementPresent(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/ImportMode_Interactive/tab3_Interactive/input_BM String'))
 
-String BMText = 'Text - '+DateUtil.getCurrentDateTime('MM-dd-yyyy HH:mm:ss a')
+String BMText = 'Text - '+DateUtil.getCurrentDateTime(Consts.FORMAT_DATETIME)
 println BMText
 
 'Set Value in String Field'

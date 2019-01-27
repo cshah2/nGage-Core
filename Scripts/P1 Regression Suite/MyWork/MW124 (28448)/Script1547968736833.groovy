@@ -19,18 +19,6 @@ CustomKeywords.'actions.Common.login'()
 'Create Document'
 CustomKeywords.'actions.Common.createDocument_VerticalMenuWizard'('Chintan', 'Shah', '50000')
 
-//'Click on My Work link from left menu'
-//WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_My Work Left Menu'))
-//WebUI.waitForElementVisible(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/icon_Expand_Closure Actions'), GlobalVariable.G_LongTimeout)
-//
-//'expand loan interactive process'
-//WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/icon_Expand_LoanInteractive'))
-//WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
-//
-//'click on loan application activity'
-//WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_LoanApplication'))
-//CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/iframe_work_items'))
-
 'Click on My Work link from left menu'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_My Work Left Menu'))
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)

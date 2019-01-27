@@ -48,6 +48,7 @@ WebUI.verifyElementText(findTestObject('Page_WMI_NEW/Master_Object_Feature/Rende
 
 'Enter valid date in input field'
 String currentDate = DateUtil.getCurrentDateTime('MM/dd/yyyy')
+//TODO: WMI expects date format in slash instead of configured format
 WebUI.setText(findTestObject('Page_WMI_NEW/Master_Object_Feature/Render_As_Textbox/input_DateType'), currentDate)
 
 'Click Save'
@@ -86,3 +87,4 @@ WebUI.verifyElementText(findTestObject('Page_WMI_NEW/Master_Object_Feature/Rende
 
 'Verify value in datetime field is valid date'
 WebUI.verifyMatch(WebUI.getAttribute(findTestObject('Page_WMI_NEW/Master_Object_Feature/Render_As_Textbox/input_DateType'), 'value').trim().replaceAll('-', '/'), currentDate, false)
+//TODO: Date time format is not valid

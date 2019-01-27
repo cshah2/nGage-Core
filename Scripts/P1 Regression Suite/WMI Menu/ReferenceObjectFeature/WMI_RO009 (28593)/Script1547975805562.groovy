@@ -12,6 +12,7 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
+import utils.Consts
 import utils.DateUtil
 
 'Login Into Application'
@@ -72,13 +73,13 @@ WebUI.waitForElementVisible(findTestObject('Object Repository/Page_WMI_NEW/Refer
 WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/ImportMode_Interactive/tab1_Interactive/option_RenderAllFieldsTypes'))
 CustomKeywords.'actions.Common.waitForTabLoading'(null, GlobalVariable.G_LongTimeout)
 
-String BMTextBeforeSave = 'Text - '+DateUtil.getCurrentDateTime('MM-dd-yyyy HH:mm:ss a')
+String BMTextBeforeSave = 'Text - '+DateUtil.getCurrentDateTime(Consts.FORMAT_DATETIME)
 
 'Set text in BM String'
 CustomKeywords.'actions.Common.setTextJQuery'(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/ImportMode_Interactive/tab1_Interactive/tab1_dropdown_InlineForm/input_BM String'), BMTextBeforeSave)
 
 'Set Date'
-CustomKeywords.'actions.Common.setText_Date'(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/ImportMode_Interactive/tab1_Interactive/tab1_dropdown_InlineForm/input__DateTimeField_refGrid'),DateUtil.getCurrentDateTime('MM-dd-yyyy HH:mm:ss a'))
+CustomKeywords.'actions.Common.setText_Date'(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/ImportMode_Interactive/tab1_Interactive/tab1_dropdown_InlineForm/input__DateTimeField_refGrid'),DateUtil.getCurrentDateTime(Consts.FORMAT_DATETIME))
 
 'Click on Save from reference Object'
 WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/ImportMode_Interactive/tab1_Interactive/tab1_dropdown_InlineForm/input_Save'))

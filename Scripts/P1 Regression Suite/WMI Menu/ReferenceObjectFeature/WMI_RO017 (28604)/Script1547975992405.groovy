@@ -12,6 +12,7 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
+import utils.Consts
 import utils.DateUtil
 
 'Login Into Application'
@@ -49,7 +50,7 @@ WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feat
 CustomKeywords.'actions.Common.waitForTabLoading'(null, GlobalVariable.G_LongTimeout)
 
 String expectedDate= WebUI.getText(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/ExtAppURL/tab_1_ExtAppURL/span_DateTimeField')).split(' ')[0].trim()
-String CurrentDate = DateUtil.getCurrentDateTime('MM-dd-yyyy HH:mm:ss a')
+String CurrentDate = DateUtil.getCurrentDateTime(Consts.FORMAT_DATETIME)
 String[] string_array = CurrentDate.split(" ")
 String actualCurrentDate = string_array[0].trim()
 

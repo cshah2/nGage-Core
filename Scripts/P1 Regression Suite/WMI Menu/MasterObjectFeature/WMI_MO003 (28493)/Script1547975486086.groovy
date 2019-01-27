@@ -12,6 +12,7 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
+import utils.Consts
 import utils.DateUtil
 
 import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
@@ -47,7 +48,7 @@ WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 WebUI.verifyElementText(findTestObject('Page_WMI_NEW/Master_Object_Feature/Render_As_Ajaxdate/span_Information'), 'This WMI imparts - Control renderas AJAXDATE')
 
 'Enter valid date in single date field'
-String currentDate = DateUtil.getCurrentDateTime('MM-dd-yyyy')
+String currentDate = DateUtil.getCurrentDateTime(Consts.FORMAT_DATE)
 WebUI.setText(findTestObject('Page_WMI_NEW/Master_Object_Feature/Render_As_Ajaxdate/input_RenderAsAjaxdate'), currentDate)
 
 'Enter valid date in multi value field'
@@ -61,7 +62,7 @@ CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_WMI_NEW/
 WebUI.verifyOptionPresentByLabel(findTestObject('Page_WMI_NEW/Master_Object_Feature/Render_As_Ajaxdate/select_MultiValue'), currentDate, false, GlobalVariable.G_LongTimeout)
 
 'Verify Read only field contains valid date value'
-CustomKeywords.'actions.Common.verifyDateFormat'(WebUI.getText(findTestObject('Page_WMI_NEW/Master_Object_Feature/Render_As_Ajaxdate/span_AjaxDate_ReadOnly')).replaceAll('/', '-'), 'MM-dd-yyyy HH:mm:ss a')
+CustomKeywords.'actions.Common.verifyDateFormat'(WebUI.getText(findTestObject('Page_WMI_NEW/Master_Object_Feature/Render_As_Ajaxdate/span_AjaxDate_ReadOnly')), Consts.FORMAT_DATETIME)
 
 'Click Save'
 WebUI.click(findTestObject('Page_WMI_NEW/Master_Object_Feature/Render_As_Ajaxdate/span_Save'))
@@ -104,4 +105,4 @@ WebUI.verifyElementAttributeValue(findTestObject('Page_WMI_NEW/Master_Object_Fea
 WebUI.verifyOptionPresentByLabel(findTestObject('Page_WMI_NEW/Master_Object_Feature/Render_As_Ajaxdate/select_MultiValue'), currentDate, false, GlobalVariable.G_LongTimeout)
 
 'Verify Read only field contains valid date value'
-CustomKeywords.'actions.Common.verifyDateFormat'(WebUI.getText(findTestObject('Page_WMI_NEW/Master_Object_Feature/Render_As_Ajaxdate/span_AjaxDate_ReadOnly')).replaceAll('/', '-'), 'MM-dd-yyyy HH:mm:ss a')
+CustomKeywords.'actions.Common.verifyDateFormat'(WebUI.getText(findTestObject('Page_WMI_NEW/Master_Object_Feature/Render_As_Ajaxdate/span_AjaxDate_ReadOnly')), Consts.FORMAT_DATETIME)

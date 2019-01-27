@@ -19,8 +19,7 @@ import utils.DateUtil
 CustomKeywords.'actions.Common.login'()
 
 'Create two document in Date Required activity'
-Consts.P1_MW084_BMTEXT = 'Automation-'+DateUtil.getCurrentDateTimeMinusDays(0, "MM/dd/yyyy HH:mm:ss a")
-CustomKeywords.'actions.Common.createDocument_MyWorkDateTime'(Consts.DC_DATEREQUIRED, Consts.DT_DATEREQUIRED, Consts.P1_MW084_STARTDATE, Consts.P1_MW084_ENDDATE, Consts.P1_MW084_STARTDATETIME, Consts.P1_MW084_ENDDATETIME, Consts.P1_MW084_BMTEXT)
+CustomKeywords.'actions.Common.createDocument_MyWorkDateTime'(Consts.DC_DATEREQUIRED, Consts.DT_DATEREQUIRED, Consts.P1_MW084_STARTDATE, Consts.P1_MW084_ENDDATE, Consts.P1_MW084_STARTDATETIME, Consts.P1_MW084_ENDDATETIME, 'Test')
 
 'Click on My Work link from left menu'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_My Work Left Menu'))

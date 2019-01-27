@@ -13,6 +13,7 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
+import utils.Consts
 import utils.DateUtil
 
 'Login Into Application'
@@ -97,7 +98,7 @@ WebUI.verifyElementPresent(findTestObject('Object Repository/Page_WMI_NEW/Object
 WebUI.verifyElementPresent(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/tab_InlineView/span_SaveErrorMessageLine_ForRequired'),GlobalVariable.G_LongTimeout)
 
 'Enter Date in Date Field'
-String val =DateUtil.getCurrentDateTime('MM-dd-yyyy hh:mm:ss a')
+String val =DateUtil.getCurrentDateTime(Consts.FORMAT_DATETIME)
 CustomKeywords.'actions.Common.setText_Date'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/tab_InlineView/input_Date Field (Required)_ef'),val)
 
 'Verify Integer field should be visible'

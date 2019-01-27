@@ -12,7 +12,7 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
-import utils.Consts
+import static utils.Consts.*
 import utils.DateUtil
 
 //TOOD: Fix date time comparison filter, 12:00:00 AM is displayed 00:00:00 AM in result grid, customkeyword should check for it 
@@ -21,7 +21,7 @@ import utils.DateUtil
 CustomKeywords.'actions.Common.login'()
 
 'Create document'
-CustomKeywords.'actions.Common.createDocument_MyWorkDateTime'('Datetimerangerequired', 'Datetimerangerequired', Consts.P1_MW083_STARTDATE, '', Consts.P1_MW083_STARTDATETIME, '', '')
+CustomKeywords.'actions.Common.createDocument_MyWorkDateTime'(DC_DATETIMERANGEREQUIRED, DT_DATETIMERANGEREQUIRED, P1_MW083_STARTDATE, '', P1_MW083_STARTDATETIME, '', '')
 
 'Click on My Work link from left menu'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_My Work Left Menu'))
@@ -40,21 +40,20 @@ WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/h3_Se
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/iframe_work_items'))
 
 'Enter date value using calender picker'
-CustomKeywords.'actions.Calender.selectDate'(Consts.P1_MW083_STARTDATE_DATE, Consts.P1_MW083_STARTDATE_MONTH, Consts.P1_MW083_STARTDATE_YEAR, findTestObject('Page_nGage_Dashboard/My_Work/process_DatetimeRangeRequired/calender_StartTestDate'))
+CustomKeywords.'actions.Calender.selectDate'(P1_MW083_STARTDATE_DATE, P1_MW083_STARTDATE_MONTH, P1_MW083_STARTDATE_YEAR, findTestObject('Page_nGage_Dashboard/My_Work/process_DatetimeRangeRequired/calender_StartTestDate'))
 
 'Verify date value'
-WebUI.verifyElementAttributeValue(findTestObject('Page_nGage_Dashboard/My_Work/process_DatetimeRangeRequired/input_StartTestDate'), 'value', Consts.P1_MW083_STARTDATE, GlobalVariable.G_LongTimeout)
+WebUI.verifyElementAttributeValue(findTestObject('Page_nGage_Dashboard/My_Work/process_DatetimeRangeRequired/input_StartTestDate'), 'value', P1_MW083_STARTDATE, GlobalVariable.G_LongTimeout)
 
 'Enter date time value in calender picker'
-CustomKeywords.'actions.Calender.selectDateTime'(Consts.P1_MW083_STARTDATETIME_DATE, Consts.P1_MW083_STARTDATETIME_MONTH, Consts.P1_MW083_STARTDATETIME_YEAR, findTestObject('Page_nGage_Dashboard/My_Work/process_DatetimeRangeRequired/calender_StartTestDateTime_From'))
+CustomKeywords.'actions.Calender.selectDateTime'(P1_MW083_STARTDATETIME_DATE, P1_MW083_STARTDATETIME_MONTH, P1_MW083_STARTDATETIME_YEAR, findTestObject('Page_nGage_Dashboard/My_Work/process_DatetimeRangeRequired/calender_StartTestDateTime_From'))
 
 'Verify date value'
 String datetime = WebUI.getAttribute(findTestObject('Page_nGage_Dashboard/My_Work/process_DatetimeRangeRequired/input_StartTestDateTime_From'), 'value').toUpperCase()
-WebUI.verifyMatch(datetime, Consts.P1_MW083_STARTDATETIME, false)
+WebUI.verifyMatch(datetime, P1_MW083_STARTDATETIME, false)
 
 'Enter date time value in start date time to field'
-CustomKeywords.'actions.Common.setText_Date'(findTestObject('Page_nGage_Dashboard/My_Work/process_DatetimeRangeRequired/input_StartTestDateTime_To'), Consts.P1_MW083_STARTDATETIME)
-//CustomKeywords.'actions.Calender.selectDateTime'(Consts.P1_MW083_STARTDATETIME_DATE, Consts.P1_MW083_STARTDATETIME_MONTH, Consts.P1_MW083_STARTDATETIME_YEAR, findTestObject('Page_nGage_Dashboard/My_Work/process_DatetimeRangeRequired/calender_StartTestDateTime_From'))
+CustomKeywords.'actions.Common.setText_Date'(findTestObject('Page_nGage_Dashboard/My_Work/process_DatetimeRangeRequired/input_StartTestDateTime_To'), P1_MW083_STARTDATETIME)
 
 'Click On Search Button'
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/btn_Search'))
@@ -66,7 +65,7 @@ CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Object Reposito
 
 'Verify correct records are displayed'
 int colNo_StartTestDate= CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/tableHeader_MyWorkSearchResult'),'Start test date')
-CustomKeywords.'actions.Table.verifyDateFilter'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), colNo_StartTestDate, DateUtil.formatDate_Hyphen(Consts.P1_MW083_STARTDATE), '=') 
+CustomKeywords.'actions.Table.verifyDateFilter'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), colNo_StartTestDate, P1_MW083_STARTDATE, '=') 
 
 int colNo_StartTestDateTime= CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/tableHeader_MyWorkSearchResult'),'Start test datetime')
-CustomKeywords.'actions.Table.verifyDateFilter'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), colNo_StartTestDateTime, DateUtil.formatDate_Hyphen(Consts.P1_MW083_STARTDATETIME), '=')
+CustomKeywords.'actions.Table.verifyDateFilter'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), colNo_StartTestDateTime, P1_MW083_STARTDATETIME, '=')

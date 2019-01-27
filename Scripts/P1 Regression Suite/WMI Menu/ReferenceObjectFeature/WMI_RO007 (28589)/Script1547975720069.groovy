@@ -15,6 +15,7 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
+import utils.Consts
 import utils.DateUtil
 
 'Login Into Application'
@@ -35,7 +36,7 @@ WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 WebUI.switchToWindowIndex(1)
 
 'Set Date in the Field'
-String val = 'Chintan Shah - '+DateUtil.getCurrentDateTime('MM-dd-yyyy HH:mm:ss a')
+String val = 'Chintan Shah - '+DateUtil.getCurrentDateTime(Consts.FORMAT_DATETIME)
 CustomKeywords.'actions.Common.setTextAndSave'(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Single_Result_view/tab_SingleResultView/input_Reference Object Event_e'), val)
 
 'Click on Save from master object'

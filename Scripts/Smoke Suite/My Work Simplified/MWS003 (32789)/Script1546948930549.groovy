@@ -18,6 +18,7 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUiBuiltInKeywords
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
+import static utils.Consts.*
 
 'Login into application'
 CustomKeywords.'actions.Common.login'()
@@ -36,13 +37,13 @@ WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/My_Work_Simplif
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/h3_Search'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/iframe_iframe_110'))
 
-'Enter DocID value to be searched - 106845'
-String docId_Search = '106845'
+'Enter DocID value to be searched'
+String docId_Search = SMOKE_MWS003_FILTER_DOCID
 WebUI.setText(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/input_Search_DocID'), docId_Search)
 
 'Enter Process Due Date Start and End'
-CustomKeywords.'actions.Common.setText_Date'(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/input_Search_ProcessDueDate_Start'), '01-01-2018 12:00:00 AM')
-CustomKeywords.'actions.Common.setText_Date'(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/input_Search_ProcessDueDate_End'), '02-28-2018 12:00:00 AM')
+CustomKeywords.'actions.Common.setText_Date'(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/input_Search_ProcessDueDate_Start'), SMOKE_MWS003_FILTER_STARTDATETIME)
+CustomKeywords.'actions.Common.setText_Date'(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/input_Search_ProcessDueDate_End'), SMOKE_MWS003_FILTER_ENDDATETIME)
 
 'Click on Reset button'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/input_Search_btnReset'))

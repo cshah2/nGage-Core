@@ -18,13 +18,14 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUiBuiltInKeywords
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
-import utils.DateUtil
+import static utils.DateUtil.*
+import static utils.Consts.*
 
 'Login Into Application'
 CustomKeywords.'actions.Common.login'()
 
 'Create new Document'
-String BM_Text = 'Chintan Shah - '+DateUtil.getCurrentDateTime()
+String BM_Text = 'Automation - '+getCurrentDateTime(FORMAT_DATETIME)
 CustomKeywords.'actions.Common.createDocument_MyWorkDateTime'('daterequiredsearch', 'daterequiredsearch', '', '', '', '', BM_Text)
 
 'Click on My Work link from left menu'
@@ -53,7 +54,7 @@ WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/My_Work/search_
 WebUI.setText(findTestObject('Page_nGage_Dashboard/My_Work/search_DocID'), _docID)
 
 WebUI.selectOptionByLabel(findTestObject('Page_nGage_Dashboard/My_Work/Process_Date Required/select_StartDate_operator'), 'Null', false)
-CustomKeywords.'actions.Common.setText_Date'(findTestObject('Page_nGage_Dashboard/My_Work/Process_Date Required/input_StartDate'), '12-12-2018')
+CustomKeywords.'actions.Common.setText_Date'(findTestObject('Page_nGage_Dashboard/My_Work/Process_Date Required/input_StartDate'), SMOKE_MW001_FILTERDATE)
 
 'Click on Search button'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/btn_Search'))

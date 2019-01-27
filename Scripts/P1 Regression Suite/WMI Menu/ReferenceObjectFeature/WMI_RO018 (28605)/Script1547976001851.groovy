@@ -43,15 +43,9 @@ WebUI.waitForElementVisible(findTestObject('Object Repository/Page_WMI_NEW/Refer
 'Select Doc Type Render as Label'
 WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/ExtAppURL/tab_2_ExtAppURL/a_Render As Label'))
 WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
-/*
-String expectedDate= WebUI.getText(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/ExtAppURL/tab_1_ExtAppURL/span_DateTimeField')).split(' ')[0].trim()
-String CurrentDate = DateUtil.getCurrentDateTime('MM-dd-yyyy HH:mm:ss a')
-String[] string_array = CurrentDate.split(" ")
-String actualCurrentDate = string_array[0].trim()*/
 
 'Verify related document should be displayed under reference grid as inline view'
 WebUI.verifyElementPresent(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/ExtAppURL/tab_1_ExtAppURL/span_This is WMI'),GlobalVariable.G_LongTimeout)
-//WebUI.verifyMatch(actualCurrentDate, expectedDate, false)
 
 'Verify New Chrome Browser with www.google.com URL is Opened simultaneously'
 WebUI.switchToWindowIndex(2)

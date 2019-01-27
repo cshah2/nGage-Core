@@ -15,6 +15,7 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
+import utils.Consts
 import utils.DateUtil
 
 'Login Into Application'
@@ -86,7 +87,7 @@ CustomKeywords.'actions.Common.waitForTabLoading'(null, GlobalVariable.G_LongTim
 String referenceTextBox = WebUI.getAttribute(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Inline_Result_View/Tab2_Inline_Result_View/input_ReferenceObjectEvent'), 'value').trim()
 
 'Modify value in Reference Object text box'
-String addText = DateUtil.getCurrentDateTimeMinusDays(0, "MM-dd-yyyy HH:mm:ss a")
+String addText = DateUtil.getCurrentDateTimeMinusDays(0, Consts.FORMAT_DATETIME)
 CustomKeywords.'actions.Common.setTextJQuery'(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Inline_Result_View/Tab2_Inline_Result_View/input_ReferenceObjectEvent'), addText)
 
 'Click on Save button'

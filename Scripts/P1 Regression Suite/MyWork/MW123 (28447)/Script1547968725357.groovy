@@ -78,14 +78,6 @@ WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Folde
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Folder_Configuration/button_Close'))
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
-//'right click on Activity A'
-//WebUI.rightClick(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/a_Activity A'))
-//WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
-//
-//'click on refresh'
-//WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/contextMenu_Refresh'))
-//WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
-
 'click on submenu'
 CustomKeywords.'actions.MenuBar.clickTreeMenu'('My_Work','Processes','Closure Action','Activity A','1000')
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/iframe_work_items'))
