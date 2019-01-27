@@ -25,9 +25,12 @@ CustomKeywords.'actions.Common.createDocument_MyWorkDateTime'(DC_DATETIMERANGERE
 'Click on My Work link from left menu'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_My Work Left Menu'))
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_iframe_105'))
 
 String treeDate = convert(P1_MW084_STARTDATETIME, FORMAT_DATETIME, FORMAT_DATE_TREE)
 String filterDate = convert(P1_MW084_STARTDATETIME, FORMAT_DATETIME, FORMAT_DATE)
+String filterDateFrom = filterDate+' '+P1_TIME_START 
+String filterDateTo = filterDate+' '+P1_TIME_END
 
 'Expand datetime range required processes'
 CustomKeywords.'actions.MenuBar.clickTreeMenu'('MY_WORK', 'Processes', 'Datetime range required', 'Date time range required', treeDate)
@@ -43,8 +46,8 @@ WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/h3_Se
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/iframe_work_items'))
 
 'Verify auto populated values'
-WebUI.verifyElementAttributeValue(findTestObject('Page_nGage_Dashboard/My_Work/process_DatetimeRangeRequired/input_StartTestDateTime_From'), 'value', filterDate+' '+P1_TIME_START, GlobalVariable.G_LongTimeout)
-WebUI.verifyElementAttributeValue(findTestObject('Page_nGage_Dashboard/My_Work/process_DatetimeRangeRequired/input_StartTestDateTime_To'), 'value', filterDate+' '+P1_TIME_END, GlobalVariable.G_LongTimeout)
+WebUI.verifyElementAttributeValue(findTestObject('Page_nGage_Dashboard/My_Work/process_DatetimeRangeRequired/input_StartTestDateTime_From'), 'value', filterDateFrom, GlobalVariable.G_LongTimeout)
+WebUI.verifyElementAttributeValue(findTestObject('Page_nGage_Dashboard/My_Work/process_DatetimeRangeRequired/input_StartTestDateTime_To'), 'value', filterDateTo, GlobalVariable.G_LongTimeout)
 
 'Select operator as Null'
 WebUI.selectOptionByLabel(findTestObject('Page_nGage_Dashboard/My_Work/process_DatetimeRangeRequired/select_StartTestDatetime_operator'), 'Null', false)
@@ -59,4 +62,4 @@ CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Object Reposito
 int colNo_StartTestDatetime= CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/tableHeader_MyWorkSearchResult'),'Start test datetime')
 
 'Verify search result'
-CustomKeywords.'actions.Table.verifyDateFilter'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), colNo_StartTestDatetime, '', 'Null')
+CustomKeywords.'actions.Table.verifyDateTimeFilter'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), colNo_StartTestDatetime, filterDateFrom, filterDateTo, 'Null')

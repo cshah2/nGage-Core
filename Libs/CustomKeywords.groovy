@@ -74,6 +74,16 @@ def static "actions.Table.verifyRecordNotPresentInColumn"(
          , 	expValue)
 }
 
+def static "actions.Table.isRecordNotPresentInColumn"(
+    	TestObject tableLocator	
+     , 	int colNo	
+     , 	String expValue	) {
+    (new actions.Table()).isRecordNotPresentInColumn(
+        	tableLocator
+         , 	colNo
+         , 	expValue)
+}
+
 def static "actions.Table.verifyColumnIsSortedInteger"(
     	TestObject tableLocator	
      , 	int colNo	
@@ -84,37 +94,31 @@ def static "actions.Table.verifyColumnIsSortedInteger"(
          , 	sortOrder)
 }
 
-def static "actions.Table.verifyRecordsWithinDateRange"(
-    	TestObject tableLocator	
-     , 	int colNo	
-     , 	String fromDate	
-     , 	String toDate	) {
-    (new actions.Table()).verifyRecordsWithinDateRange(
-        	tableLocator
-         , 	colNo
-         , 	fromDate
-         , 	toDate)
-}
-
-def static "actions.Table.verifyRecordsInTableAreMoreThanStartDate"(
-    	TestObject tableLocator	
-     , 	int colNo	
-     , 	String fromDate	) {
-    (new actions.Table()).verifyRecordsInTableAreMoreThanStartDate(
-        	tableLocator
-         , 	colNo
-         , 	fromDate)
-}
-
 def static "actions.Table.verifyDateFilter"(
     	TestObject tableLocator	
      , 	int colNo	
-     , 	String referenceDate	
+     , 	String filterValue1	
+     , 	String filterValue2	
      , 	String operator	) {
     (new actions.Table()).verifyDateFilter(
         	tableLocator
          , 	colNo
-         , 	referenceDate
+         , 	filterValue1
+         , 	filterValue2
+         , 	operator)
+}
+
+def static "actions.Table.verifyDateTimeFilter"(
+    	TestObject tableLocator	
+     , 	int colNo	
+     , 	String filterValue1	
+     , 	String filterValue2	
+     , 	String operator	) {
+    (new actions.Table()).verifyDateTimeFilter(
+        	tableLocator
+         , 	colNo
+         , 	filterValue1
+         , 	filterValue2
          , 	operator)
 }
 
@@ -128,16 +132,6 @@ def static "actions.Table.verifyFilter"(
          , 	colNo
          , 	referenceNum
          , 	operator)
-}
-
-def static "actions.Table.verifyRecordsInTableAreLessThanEndDate"(
-    	TestObject tableLocator	
-     , 	int colNo	
-     , 	String toDate	) {
-    (new actions.Table()).verifyRecordsInTableAreLessThanEndDate(
-        	tableLocator
-         , 	colNo
-         , 	toDate)
 }
 
 def static "actions.Table.verifyAllValuesInColumnMatches"(
@@ -622,6 +616,26 @@ def static "apis.UserManagement.updateLastLoginDate"(
          , 	date)
 }
 
+def static "actions.Window.clickElementAndWaitForWindowClose"(
+    	TestObject saveButton	
+     , 	int timeout	) {
+    (new actions.Window()).clickElementAndWaitForWindowClose(
+        	saveButton
+         , 	timeout)
+}
+
+def static "actions.Window.switchToUrlContains"(
+    	String text	) {
+    (new actions.Window()).switchToUrlContains(
+        	text)
+}
+
+def static "actions.Window.verifyOpenWindowCount"(
+    	int expCount	) {
+    (new actions.Window()).verifyOpenWindowCount(
+        	expCount)
+}
+
 def static "actions.Common.maximizeWindow"() {
     (new actions.Common()).maximizeWindow()
 }
@@ -1092,36 +1106,14 @@ def static "actions.Common.createBulkDocuments_ReferenceObjectInlineContentView"
         	requiredDocsCount)
 }
 
-def static "actions.Window.clickElementAndWaitForWindowClose"(
-    	TestObject saveButton	
-     , 	int timeout	) {
-    (new actions.Window()).clickElementAndWaitForWindowClose(
-        	saveButton
-         , 	timeout)
-}
-
-def static "actions.Window.switchToUrlContains"(
-    	String text	) {
-    (new actions.Window()).switchToUrlContains(
-        	text)
-}
-
-def static "actions.Window.verifyOpenWindowCount"(
-    	int expCount	) {
-    (new actions.Window()).verifyOpenWindowCount(
-        	expCount)
-}
-
-def static "utils.DateUtil.verifyDateFilter"(
-    	String operator	
-     , 	String actualValue	
-     , 	String referenceDateValue	
-     , 	String dateTimeFormat	) {
-    (new utils.DateUtil()).verifyDateFilter(
-        	operator
-         , 	actualValue
-         , 	referenceDateValue
-         , 	dateTimeFormat)
+def static "actions.Common.createDocument_EventForRequiredField"(
+    	String dropDownControl	
+     , 	String textValue	
+     , 	String date	) {
+    (new actions.Common()).createDocument_EventForRequiredField(
+        	dropDownControl
+         , 	textValue
+         , 	date)
 }
 
 def static "apis.Users.getUserIdFromUserName"(

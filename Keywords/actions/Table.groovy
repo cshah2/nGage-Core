@@ -28,7 +28,7 @@ import com.kms.katalon.core.webui.common.WebUiCommonHelper
 import com.kms.katalon.core.webui.driver.DriverFactory
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
-
+import utils.Consts
 import utils.DateUtil
 import utils.WebUtil
 
@@ -197,7 +197,6 @@ public class Table {
 
 	/* ##################### KEYWORDS ##################### */
 
-
 	@Keyword
 	def verifyRecordsCount(TestObject tableLocator, int expCount) {
 		WebElement table = WebUtil.getWebElement(tableLocator)
@@ -207,29 +206,17 @@ public class Table {
 		WebUI.switchToDefaultContent()
 	}
 
-
 	@Keyword
 	def verifyRecordPresentInColumn(TestObject tableLocator, int colNo, String expValue) {
-		WebElement table = WebUtil.getWebElement(tableLocator)
-		List<String> cellValues = getAllValuesFromColumn(table, colNo)
-		WebUI.switchToDefaultContent()
 
-		if(cellValues.size() == 0) {
-			KeywordUtil.markFailedAndStop('No records available for comparison.')
-		}
-
-		if(StringUtils.isBlank(expValue)) {
-			KeywordUtil.markFailedAndStop('Expected value to be checked is blank '+expValue)
-		}
-
-		if(cellValues.contains(expValue)) {
-			KeywordUtil.markPassed("Value "+expValue+" found in column No : "+colNo)
+		if(isRecordPresentInColumn(tableLocator, colNo, expValue)) {
+			KeywordUtil.markPassed('Record found in table')
 		}
 		else {
-			KeywordUtil.markFailedAndStop("Value "+expValue+" not found in column No : "+colNo)
+			KeywordUtil.markFailedAndStop('Record not found in table')
 		}
 	}
-	
+
 	@Keyword
 	def isRecordPresentInColumn(TestObject tableLocator, int colNo, String expValue) {
 		WebElement table = WebUtil.getWebElement(tableLocator)
@@ -238,38 +225,59 @@ public class Table {
 
 		boolean isRecordPresent = false
 		if(cellValues.size() == 0) {
-			isRecordPresent = false
+			println "No Records are available for comparison"
+			return false
 		}
 
 		if(StringUtils.isBlank(expValue)) {
-			isRecordPresent = false
+			println "Search values provided is blank"
+			return false
 		}
 
 		if(cellValues.contains(expValue)) {
-			isRecordPresent = true
+			println "Value "+expValue+" found in column No : "+colNo
+			return true
 		}
 		else {
-			isRecordPresent = false
+			println "Value "+expValue+" not found in column No : "+colNo
+			return false
 		}
-		
-		return isRecordPresent
 	}
 
 	@Keyword
 	def verifyRecordNotPresentInColumn(TestObject tableLocator, int colNo, String expValue) {
+
+		if(isRecordNotPresentInColumn(tableLocator, colNo, expValue)) {
+			KeywordUtil.markPassed('Record not found in table')
+		}
+		else {
+			KeywordUtil.markFailedAndStop('Record found in table')
+		}
+	}
+
+	@Keyword
+	def isRecordNotPresentInColumn(TestObject tableLocator, int colNo, String expValue) {
 		WebElement table = WebUtil.getWebElement(tableLocator)
 		List<String> cellValues = getAllValuesFromColumn(table, colNo)
 		WebUI.switchToDefaultContent()
 
-		if(StringUtils.isBlank(expValue)) {
-			KeywordUtil.markFailedAndStop('Expected value to be checked is blank '+expValue)
+		if(cellValues.size() == 0) {
+			println "No Records are available for comparison"
+			return true
 		}
 
-		if(cellValues.size() > 0 && cellValues.contains(expValue)) {
-			KeywordUtil.markFailedAndStop("Value "+expValue+" found in column No : "+colNo)
+		if(StringUtils.isBlank(expValue)) {
+			println "Search values provided is blank"
+			return false
+		}
+
+		if(cellValues.contains(expValue)) {
+			println "Value "+expValue+" found in column No : "+colNo
+			return false
 		}
 		else {
-			KeywordUtil.markPassed("Value "+expValue+" not found in column No : "+colNo)
+			println "Value "+expValue+" not found in column No : "+colNo
+			return true
 		}
 	}
 
@@ -292,43 +300,7 @@ public class Table {
 	}
 
 	@Keyword
-	def verifyRecordsWithinDateRange(TestObject tableLocator, int colNo, String fromDate, String toDate) {
-		WebElement table = WebUtil.getWebElement(tableLocator)
-		List<String> cellValues = getAllValuesFromColumn(table, colNo)
-		WebUI.switchToDefaultContent()
-
-		if(cellValues.size() == 0) {
-			KeywordUtil.markFailedAndStop('No records available for comparison.')
-		}
-
-		for(String value in cellValues) {
-			boolean result = DateUtil.isRecordBetweenDateRange(value.replaceAll('/', '-'), fromDate.replaceAll('/', '-'), toDate.replaceAll('/', '-'))
-			if(!result) {
-				KeywordUtil.markFailedAndStop("Value : "+value+" is not within date range : "+fromDate+" - "+toDate)
-			}
-		}
-	}
-
-	@Keyword
-	def verifyRecordsInTableAreMoreThanStartDate(TestObject tableLocator, int colNo, String fromDate) {
-		WebElement table = WebUtil.getWebElement(tableLocator)
-		List<String> cellValues = getAllValuesFromColumn(table, colNo)
-		WebUI.switchToDefaultContent()
-
-		if(cellValues.size() == 0) {
-			KeywordUtil.markFailedAndStop('No records available for comparison.')
-		}
-
-		for(String value in cellValues) {
-			boolean result = DateUtil.isRecordDateMoreThanFilterDate(value.replaceAll('/', '-'), fromDate)
-			if(!result) {
-				KeywordUtil.markFailedAndStop("Value : "+value+" is not more than or equal to start date : "+fromDate)
-			}
-		}
-	}
-
-	@Keyword
-	def verifyDateFilter(TestObject tableLocator, int colNo, String referenceDate,String operator) {
+	def verifyDateFilter(TestObject tableLocator, int colNo, String filterValue1, String filterValue2, String operator) {
 		WebElement table = WebUtil.getWebElement(tableLocator)
 		List<String> cellValues = getAllValuesFromColumn(table, colNo)
 		WebUI.switchToDefaultContent()
@@ -340,12 +312,33 @@ public class Table {
 		boolean result
 
 		for(String value in cellValues) {
-			result = DateUtil.verifyDateFilter(operator, value.split(" ")[0].replaceAll('/', '-'), referenceDate.split(" ")[0].replaceAll('/', '-'),"MM-dd-yyyy")
+			result = DateUtil.dateFilter(operator, value, filterValue1, filterValue2)
 			if(!result) {
 				KeywordUtil.markFailedAndStop("Value : "+value+" does not satisfy filter criteria")
 			}
 		}
 	}
+
+	@Keyword
+	def verifyDateTimeFilter(TestObject tableLocator, int colNo, String filterValue1, String filterValue2, String operator) {
+		WebElement table = WebUtil.getWebElement(tableLocator)
+		List<String> cellValues = getAllValuesFromColumn(table, colNo)
+		WebUI.switchToDefaultContent()
+
+		if(cellValues.size() == 0) {
+			KeywordUtil.markFailedAndStop('No records available for comparison.')
+		}
+
+		boolean result
+
+		for(String value in cellValues) {
+			result = DateUtil.dateTimeFilter(operator, value, filterValue1, filterValue2)
+			if(!result) {
+				KeywordUtil.markFailedAndStop("Value : "+value+" does not satisfy filter criteria")
+			}
+		}
+	}
+
 
 	@Keyword
 	def verifyFilter(TestObject tableLocator, int colNo, int referenceNum,String operator) {
@@ -361,42 +354,6 @@ public class Table {
 			boolean result = verifyFilter(operator, Integer.parseInt(value), referenceNum)
 			if(!result) {
 				KeywordUtil.markFailedAndStop("Value : "+value+" does not satisfy filter criteria")
-			}
-		}
-	}
-
-
-	def verifyDateTimeFilter(TestObject tableLocator, int colNo, String referenceDate,String operator) {
-		WebElement table = WebUtil.getWebElement(tableLocator)
-		List<String> cellValues = getAllValuesFromColumn(table, colNo)
-		WebUI.switchToDefaultContent()
-
-		if(cellValues.size() == 0) {
-			KeywordUtil.markFailedAndStop('No records available for comparison.')
-		}
-
-		for(String value in cellValues) {
-			boolean result = DateUtil.verifyDateFilter(operator, value.replaceAll('/', '-'), referenceDate.replaceAll('/', '-'),"MM-dd-yyyy HH:mm:ss a")
-			if(!result) {
-				KeywordUtil.markFailedAndStop("Value : "+value+" does not satisfy filter criteria")
-			}
-		}
-	}
-
-	@Keyword
-	def verifyRecordsInTableAreLessThanEndDate(TestObject tableLocator, int colNo, String toDate) {
-		WebElement table = WebUtil.getWebElement(tableLocator)
-		List<String> cellValues = getAllValuesFromColumn(table, colNo)
-		WebUI.switchToDefaultContent()
-
-		if(cellValues.size() == 0) {
-			KeywordUtil.markFailedAndStop('No records available for comparison.')
-		}
-
-		for(String value in cellValues) {
-			boolean result = DateUtil.isRecordDateLessThanFilterDate(value.replaceAll('/', '-'), toDate)
-			if(!result) {
-				KeywordUtil.markFailedAndStop("Value : "+value+" is not less than or equal to end date : "+toDate)
 			}
 		}
 	}
@@ -592,13 +549,13 @@ public class Table {
 
 		if(sortOrder.equalsIgnoreCase('asc'))
 			for(int i=0;i<cellValues.size()-1;i++){
-				boolean result = DateUtil.verifyDateFilter('<', cellValues[i].replaceAll('/', '-'), cellValues[i+1].replaceAll('/', '-'),"MM-dd-yyyy HH:mm:ss a")
+				boolean result = DateUtil.dateTimeFilter('<', cellValues[i], cellValues[i+1], '')
 				if(!result)
 					KeywordUtil.markFailedAndStop("table records are not sorted")
 			}
 		else
 			for(int i=0;i<cellValues.size()-1;i++){
-				boolean result = DateUtil.verifyDateFilter('>', cellValues[i].replaceAll('/', '-'), cellValues[i+1].replaceAll('/', '-'),"MM-dd-yyyy HH:mm:ss a")
+				boolean result = DateUtil.dateTimeFilter('>', cellValues[i], cellValues[i+1], '')
 				if(!result)
 					KeywordUtil.markFailedAndStop("table records are not sorted")
 			}
@@ -710,7 +667,6 @@ public class Table {
 		}
 		return isIconDisplayed
 	}
-
 
 	@Keyword
 	def verifyCellDisplaysLockIcon(TestObject tableLocator, int rowNo, int colNo) {
@@ -837,7 +793,6 @@ public class Table {
 		}
 	}
 
-
 	@Keyword
 	def getCorrectSliceNumber(TestObject tableLocator, int colNoTotal, int colNoText, String expText) {
 
@@ -869,23 +824,23 @@ public class Table {
 			KeywordUtil.markFailedAndStop('Expected row not found in table')
 		}
 	}
-	
+
 	@Keyword
 	def refreshUntilRecordFoundInTable(TestObject table, TestObject tableHeader, TestObject refresh, String expText, int colNo, int timeout) {
-		
+
 		def startTime = System.currentTimeMillis()
 		def endTime = startTime + TimeUnit.SECONDS.toMillis(timeout)
 		def currentTime = System.currentTimeMillis()
 
 		boolean isFound = false
 		TestObject parentObject = table.getParentObject()
-		
+
 		while(currentTime < endTime) {
-			
+
 			//Sort records by Doc ID descending
 			clickColumnHeader(tableHeader, 'Doc ID')
 			clickColumnHeader(tableHeader, 'Doc ID')
-	
+
 			if(!isRecordPresentInColumn(table, colNo, expText)) {
 				WebUI.delay(5)
 				WebUI.click(refresh)
@@ -897,7 +852,7 @@ public class Table {
 				break
 			}
 		}
-		
+
 		if(isFound) {
 			KeywordUtil.markPassed('Record found in grid after refreshed')
 		}

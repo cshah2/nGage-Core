@@ -25,6 +25,7 @@ CustomKeywords.'actions.Common.createDocument_MyWorkDateTime'(DC_DATERANGEREQUIR
 'Click on My Work link from left menu'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_My Work Left Menu'))
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_iframe_105'))
 
 String treeDate = convert(P1_MW087_STARTDATE, FORMAT_DATE, FORMAT_DATE_TREE) 
 
@@ -50,4 +51,4 @@ int columnPosition_StartTestDate= CustomKeywords.'actions.Table.getColumnNumber'
 println columnPosition_StartTestDate
 
 'verify search result'
-CustomKeywords.'actions.Table.verifyRecordsWithinDateRange'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), columnPosition_StartTestDate, P1_MW035_FILTER_START, P1_MW035_FILTER_END)
+CustomKeywords.'actions.Table.verifyDateFilter'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), columnPosition_StartTestDate, P1_MW035_FILTER_START, P1_MW035_FILTER_END, 'between')

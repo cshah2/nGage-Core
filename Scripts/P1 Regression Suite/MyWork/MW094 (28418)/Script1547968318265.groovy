@@ -25,12 +25,13 @@ CustomKeywords.'actions.Common.createDocument_MyWorkDateTime'(DC_DATETIMEREQUIRE
 'Click on My Work link from left menu'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_My Work Left Menu'))
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_iframe_105'))
 
 String treeDate = convert(P1_MW087_STARTDATETIME, FORMAT_DATETIME, FORMAT_DATE_TREE)
 String filterDate1 = convert(P1_MW087_STARTDATETIME, FORMAT_DATETIME, FORMAT_DATE)
 
 'Expand Processes by Click on the Expand Icon and Verify Foldered data displayed (For Document 1)'
-CustomKeywords.'actions.MenuBar.clickTreeMenu'('My_Work','Processes','Datetimerequired','Datetimerequired', filterDate1)
+CustomKeywords.'actions.MenuBar.clickTreeMenu'('My_Work','Processes','Datetimerequired','Datetimerequired', treeDate)
 //TODO: Issue pending from Dev for Date format in tree MY_WORK
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/iframe_work_items'))
 
@@ -60,4 +61,4 @@ CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Object Reposito
 
 'Verify Search Result displays data as per filter'
 int colNo_StartTestDateTime= CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/tableHeader_MyWorkSearchResult'),'Start test datetime')
-CustomKeywords.'actions.Table.verifyDateFilter'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), colNo_StartTestDateTime, filterDate1, '<>')
+CustomKeywords.'actions.Table.verifyDateFilter'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), colNo_StartTestDateTime, filterDate1, '', '<>')

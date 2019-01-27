@@ -54,7 +54,7 @@ CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Da
 
 'Verify Records in table are more than start date'
 int columnNo = CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/table_SearchResultHeader'), 'Process Due Date')
-CustomKeywords.'actions.Table.verifyRecordsWithinDateRange'(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/table_SearchResult'), columnNo, process_Due_Date_Start, process_Due_Date_End)
+CustomKeywords.'actions.Table.verifyDateTimeFilter'(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/table_SearchResult'), columnNo, process_Due_Date_Start, process_Due_Date_End, 'between')
 
 'Verify search section is hidden'
 WebUI.verifyElementNotVisible(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/table_search_section'))

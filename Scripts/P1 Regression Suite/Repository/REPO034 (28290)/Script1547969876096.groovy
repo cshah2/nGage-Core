@@ -58,7 +58,7 @@ CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dash
 
 'Verify records are between the filter dates'
 int columnNoDate = CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Page_nGage_Dashboard/Repository/table_Header_SearchResults'), 'Date Required')
-CustomKeywords.'actions.Table.verifyRecordsWithinDateRange'(findTestObject('Page_nGage_Dashboard/Repository/table_SearchResults'), columnNoDate, dateFrom, dateTo)
+CustomKeywords.'actions.Table.verifyDateFilter'(findTestObject('Page_nGage_Dashboard/Repository/table_SearchResults'), columnNoDate, dateFrom, dateTo, 'between')
 
 'Verify values for BM String required fielf for all visible rows'
 int columnNoString = CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Page_nGage_Dashboard/Repository/table_Header_SearchResults'), 'BM String required')

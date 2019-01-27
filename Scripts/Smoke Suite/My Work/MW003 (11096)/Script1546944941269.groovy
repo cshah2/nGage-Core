@@ -40,8 +40,8 @@ CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Da
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/h3_Search Bar'))
 
 'Enter search filter process due date - start'
-String _startDate = getCurrentDateTimeMinusDays(0, FORMAT_DATETIME)
-CustomKeywords.'actions.Common.setText_Date'(findTestObject('Page_nGage_Dashboard/My_Work/search_ProcessDueDate_Start'), _startDate)
+String _startDateTime = getCurrentDateTimeMinusDays(0, FORMAT_DATETIME)
+CustomKeywords.'actions.Common.setText_Date'(findTestObject('Page_nGage_Dashboard/My_Work/search_ProcessDueDate_Start'), _startDateTime)
 //TODO: Issue pending from Dev for Date format in system field is in 24 hr format instead of 12
 
 'Click on search button'
@@ -50,4 +50,4 @@ CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Da
 
 'Verify process due date value of all records in result grid are more than filter date'
 int colNo = CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Page_nGage_Dashboard/My_Work/tableHeader_MyWorkSearchResult'), 'Process Due Date') 
-CustomKeywords.'actions.Table.verifyDateFilter'(findTestObject('Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), colNo, _startDate, '>=')
+CustomKeywords.'actions.Table.verifyDateTimeFilter'(findTestObject('Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), colNo, _startDateTime, '', '>=')

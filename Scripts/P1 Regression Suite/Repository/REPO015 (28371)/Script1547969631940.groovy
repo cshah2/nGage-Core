@@ -50,7 +50,6 @@ WebUI.selectOptionByLabel(findTestObject('Page_nGage_Dashboard/Repository/select
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
 
 'Enter End Date values'
-//String filterEndDate = '12-07-2018'
 CustomKeywords.'actions.Common.setText_Date'(findTestObject('Page_nGage_Dashboard/Repository/input_DateRange_To'), P1_REPO_DATERANGE_FILTER_END)
 
 'Click on Search button'
@@ -91,7 +90,6 @@ WebUI.selectOptionByLabel(findTestObject('Page_nGage_Dashboard/Repository/select
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
 
 'Enter Start Date values'
-//String filterStartDate = '12-03-2018'
 CustomKeywords.'actions.Common.setText_Date'(findTestObject('Page_nGage_Dashboard/Repository/input_DateRange_From'), P1_REPO_DATERANGE_FILTER_START)
 
 'Click on Search button'

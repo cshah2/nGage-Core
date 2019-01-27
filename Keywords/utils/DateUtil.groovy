@@ -26,119 +26,54 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
 public class DateUtil {
-	public static boolean validateRecordIsBetweenDateRange(String actualValue, String fromDateValue,String toDateValue) {
-		def actualDate = new Date().parse("MM-dd-yyyy",actualValue)
-		def fromDate = new Date().parse("MM-dd-yyyy",fromDateValue)
-		def toDate = new Date().parse("MM-dd-yyyy",toDateValue)
 
-		if((actualDate.after(fromDate) || DateUtils.isSameDay(actualDate, fromDate))   && (actualDate.before(toDate) || DateUtils.isSameDay(actualDate, toDate))) {
-			println  "Date "+actualValue+" is between date range"+fromDateValue+" - "+toDateValue
-			return true
-		}
-		else {
-			println  "Date "+actualValue+" is not between date range"+fromDateValue+" - "+toDateValue
-			return false
-		}
-	}
-
-	public static boolean isRecordBetweenDateRange(String actualValue, String fromDateValue, String toDateValue) {
-		fromDateValue.replaceAll('/', '-')
-		toDateValue.replaceAll('/', '-')
-
-		def actualDate
-		def fromDate
-		def toDate
-
-		try {
-			actualDate = new Date().parse("MM-dd-yyyy",actualValue)
-			fromDate = new Date().parse("MM-dd-yyyy",fromDateValue)
-			toDate = new Date().parse("MM-dd-yyyy",toDateValue)
-		}
-		catch(Exception e) {
-			println "Unable to parse date " +e.toString()+"\n actual date = "+actualValue+"\n from date = "+fromDateValue+"\n to date ="+toDateValue
-			return false
-		}
-
-		if((actualDate.after(fromDate) || DateUtils.isSameDay(actualDate, fromDate)) && (actualDate.before(toDate) || DateUtils.isSameDay(actualDate, toDate))) {
-			println  "Date "+actualValue+" is between date range"+fromDateValue+" - "+toDateValue
-			return true
-		}
-		else {
-			println  "Date "+actualValue+" is not between date range"+fromDateValue+" - "+toDateValue
-			return false
-		}
-	}
-
-	public static boolean isRecordDateMoreThanFilterDate(String actualValue, String fromDateValue) {
-		def actualDate = new Date().parse("MM-dd-yyyy",actualValue)
-		def fromDate = new Date().parse("MM-dd-yyyy",fromDateValue)
-
-		if((actualDate.after(fromDate) || DateUtils.isSameDay(actualDate, fromDate))) {
-			println  "Date "+actualValue+" is more than or equal to from date "+fromDateValue
-			return true
-		}
-		else {
-			println  "Date "+actualValue+" is not more than from date "+fromDateValue
-			return false
-		}
-	}
-
-	public static boolean isRecordDateLessThanFilterDate(String actualValue, String toDateValue) {
-		def actualDate = new Date().parse("MM-dd-yyyy",actualValue)
-		def toDate = new Date().parse("MM-dd-yyyy",toDateValue)
-
-		if((actualDate.before(toDate) || DateUtils.isSameDay(actualDate, toDate))) {
-			println  "Date "+actualValue+" is less than or equal to to date "+toDateValue
-			return true
-		}
-		else {
-			println  "Date "+actualValue+" is not less than to date "+toDateValue
-			return false
-		}
-	}
-
-	public static boolean verifyDateFilter(String operator,String actualValue,String referenceDateValue) {
-		def actualDate,referenceDate
+	public static boolean dateTimeFilter(String operator,String actualValue,String filterValue1, String filterValue2) {
+		def actualDate,filterDate1,filterDate2
 
 		if(actualValue=="")
 			actualDate="";
 		else
-			actualDate = new Date().parse("MM-dd-yyyy",actualValue)
+			actualDate = new Date().parse(Consts.FORMAT_DATETIME,actualValue)
 
-		if(referenceDateValue=="")
-			referenceDate="";
+		if(filterValue1=="")
+			filterDate1="";
 		else
-			referenceDate = new Date().parse("MM-dd-yyyy",referenceDateValue)
+			filterDate1 = new Date().parse(Consts.FORMAT_DATETIME,filterValue1)
+
+		if(filterValue2=="")
+			filterDate2="";
+		else
+			filterDate2 = new Date().parse(Consts.FORMAT_DATETIME,filterValue2)
 
 		boolean status=false
-		switch(operator) {
+		switch(operator.toLowerCase()) {
 			case '='://equal to
-				if(actualDate.compareTo(referenceDate)==0)
+				if(actualDate.compareTo(filterDate1)==0)
 					status=true
 				break
 
 			case '<>'://not equal to
-				if(actualDate.compareTo(referenceDate)!=0)
+				if(actualDate.compareTo(filterDate1)!=0)
 					status=true
 				break
 
 			case '>':  //greater than
-				if(actualDate.compareTo(referenceDate)>0)
+				if(actualDate.compareTo(filterDate1)>0)
 					status= true
 				break
 
 			case '<'://less than
-				if(actualDate.compareTo(referenceDate)<0)
+				if(actualDate.compareTo(filterDate1)<0)
 					status= true
 				break
 
 			case '>=':  //greater than or equal
-				if(actualDate.compareTo(referenceDate)>=0)
+				if(actualDate.compareTo(filterDate1)>=0)
 					status= true
 				break
 
 			case '<='://less than or equal
-				if(actualDate.compareTo(referenceDate)<=0)
+				if(actualDate.compareTo(filterDate1)<=0)
 					status= true
 				break
 
@@ -151,90 +86,103 @@ public class DateUtil {
 				if(!actualDate.equals(""))
 					status= true
 				break
+				
+			case 'between'://inclusive range check
+				if(filterDate1.compareTo(actualDate) * actualDate.compareTo(filterDate2) >= 0)
+					status = true
+				break
+				
+			case 'not between'://excluding range check
+				if(!(filterDate1.compareTo(actualDate) * actualDate.compareTo(filterDate2) >= 0))
+					status = true
+				break
 
 			default:
 				status = false
 				break
 
 		}
-		//		if(status) {
-		//			println 'date verified success'
-		//			return status
-		//		}
-		//		else
-		//			println 'date not verified'
 		return status
 	}
 
-	@Keyword
-	public static boolean verifyDateFilter(String operator,String actualValue,String referenceDateValue,String dateTimeFormat) {
-		def actualDate,referenceDate
+	public static boolean dateFilter(String operator,String actualValue,String filterValue1, String filterValue2) {
+		def actualDate,filterDate1,filterDate2
 
 		if(actualValue=="")
 			actualDate="";
 		else
-			actualDate = new Date().parse(dateTimeFormat,actualValue)
+			actualValue = actualValue.trim().subSequence(0, 10)
+			actualDate = new Date().parse(Consts.FORMAT_DATE,actualValue)
 
-		if(referenceDateValue=="")
-			referenceDate="";
+		if(filterValue1=="")
+			filterDate1="";
 		else
-			referenceDate = new Date().parse(dateTimeFormat,referenceDateValue)
+			filterDate1 = new Date().parse(Consts.FORMAT_DATE,filterValue1)
+
+		if(filterValue2=="")
+			filterDate2="";
+		else
+			filterDate2 = new Date().parse(Consts.FORMAT_DATE,filterValue2)
 
 		boolean status=false
-		switch(operator.toUpperCase()) {
+		switch(operator.toLowerCase()) {
 			case '='://equal to
-				if(actualDate.compareTo(referenceDate)==0)
+				if(actualDate.compareTo(filterDate1)==0)
 					status=true
 				break
 
 			case '<>'://not equal to
-				if(actualDate.compareTo(referenceDate)!=0)
+				if(actualDate.compareTo(filterDate1)!=0)
 					status=true
 				break
 
 			case '>':  //greater than
-				if(actualDate.compareTo(referenceDate)>0)
+				if(actualDate.compareTo(filterDate1)>0)
 					status= true
 				break
 
 			case '<'://less than
-				if(actualDate.compareTo(referenceDate)<0)
+				if(actualDate.compareTo(filterDate1)<0)
 					status= true
 				break
 
 			case '>=':  //greater than or equal
-				if(actualDate.compareTo(referenceDate)>=0)
+				if(actualDate.compareTo(filterDate1)>=0)
 					status= true
 				break
 
 			case '<='://less than or equal
-				if(actualDate.compareTo(referenceDate)<=0)
+				if(actualDate.compareTo(filterDate1)<=0)
 					status= true
 				break
 
-			case 'NULL'://less than or equal
+			case 'null'://less than or equal
 				if(actualDate.equals(""))
 					status= true
 				break
 
-			case 'NOT NULL':
+			case 'not null':
 				if(!actualDate.equals(""))
 					status= true
+				break
+				
+			case 'between'://inclusive range check
+				if(filterDate1.compareTo(actualDate) * actualDate.compareTo(filterDate2) >= 0)
+					status = true
+				break
+			
+			case 'not between'://excluding range check
+				if(!(filterDate1.compareTo(actualDate) * actualDate.compareTo(filterDate2) >= 0))
+					status = true
 				break
 
 			default:
 				status = false
 				break
+
 		}
-		//		if(status) {
-		//			println 'date verified success'
-		//			return status
-		//		}
-		//		else
-		//			println 'date not verified'
 		return status
 	}
-
 
 	public static String getCurrentDateTime() {
 		Date now = new Date()
@@ -276,22 +224,6 @@ public class DateUtil {
 		return dateString
 	}
 
-	public static String formatDate_Slash(String date) {
-		if(StringUtils.isNotBlank(date) && date.length() >= 10) {
-			return date.trim().substring(0, 10).replaceAll('-', '/')
-		} else {
-			return date
-		}
-	}
-
-	public static String formatDate_Hyphen(String date) {
-		if(StringUtils.isNotBlank(date) && date.length() >= 10) {
-			return date.trim().substring(0, 10).replaceAll('/', '-')
-		} else {
-			return date
-		}
-	}
-
 	public static String convert(String date, String currFormat, String expFormat) {
 
 		def currFormatDate = new Date().parse(currFormat,date)
@@ -300,17 +232,12 @@ public class DateUtil {
 
 
 	public static String getBusinessDays(String dateStr, String format, int days){
-		// format of date is passed as an argument
+
 		SimpleDateFormat sdf = new SimpleDateFormat(format);
-		// base date which will be incremented
 		Date date = sdf.parse(dateStr);
 		Calendar c = Calendar.getInstance();
-		// set calendar time with given date
 		c.setTime(date);
-		// number of days to increment
 		c.add(Calendar.DAY_OF_WEEK, days);
-		// check if the date after addition is a working day.
-		// If not then keep on incrementing it till it is a working day
 		while(!isWorkingDay(c.getTime(), c)) {
 			c.add(Calendar.DAY_OF_WEEK, 1);
 		}

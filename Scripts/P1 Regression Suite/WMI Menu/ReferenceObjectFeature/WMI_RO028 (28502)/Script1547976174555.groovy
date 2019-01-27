@@ -12,6 +12,7 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
+import utils.Consts
 
 'Login Into Application'
 CustomKeywords.'actions.Common.login'()
@@ -50,7 +51,7 @@ WebUI.verifyElementVisible(findTestObject('Object Repository/Page_WMI_NEW/Refere
 WebUI.verifyElementPresent(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Reference Object Import/tab_New Link Default/input_DateField'), GlobalVariable.G_LongTimeout)
 
 'Enter any Date in text box'
-WebUI.setText(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Reference Object Import/tab_New Link Default/input_DateField'), '01-01-2018')
+CustomKeywords.'actions.Common.setText_Date'(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Reference Object Import/tab_New Link Default/input_DateField'), Consts.P1_WMI_RO028_DATE)
 
 'click on Save button'
 WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Reference Object Import/tab_New Link Default/span_Save'))
@@ -83,4 +84,4 @@ WebUI.switchToWindowIndex(1)
 WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 
 'verify input date'
-WebUI.verifyElementAttributeValue(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Reference Object Import/tab_DROPDOWN (default)/CreatedDoc_input_Date Field'), 'value', '01-01-2018', GlobalVariable.G_LongTimeout)
+WebUI.verifyElementAttributeValue(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Reference Object Import/tab_DROPDOWN (default)/CreatedDoc_input_Date Field'), 'value', Consts.P1_WMI_RO028_DATE, GlobalVariable.G_LongTimeout)

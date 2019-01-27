@@ -25,6 +25,7 @@ CustomKeywords.'actions.Common.createDocument_MyWorkDateTime'(Consts.DC_DATETIME
 'Click on My Work link from left menu'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_My Work Left Menu'))
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_iframe_105'))
 
 //Date Range
 'Expand Processes and Verify Foldered Document Displayed'

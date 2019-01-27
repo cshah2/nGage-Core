@@ -12,6 +12,7 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
+import utils.Consts
 
 'Login Into Application'
 CustomKeywords.'actions.Common.login'()
@@ -53,7 +54,7 @@ WebUI.waitForElementPresent(findTestObject('Object Repository/Page_WMI_NEW/Refer
 WebUI.verifyElementVisible(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Reference Object Import/tab_Reference Object/dialog_span_Doc Type Label'))
 
 'enter date for document'
-CustomKeywords.'actions.Common.setText_Date'(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Reference Object Import/tab_Reference Object/dialog_input_renderastextbox'), '11/11/2018')
+CustomKeywords.'actions.Common.setText_Date'(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Reference Object Import/tab_Reference Object/dialog_input_renderastextbox'), Consts.P1_WMI_RO028_DATE)
 
 'save and close document'
 WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Reference Object Import/tab_Reference Object/dialog_span_Save'))
@@ -80,4 +81,4 @@ WebUI.switchToWindowIndex(1)
 WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 
 'verify opened document'
-WebUI.verifyElementAttributeValue(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Reference Object Import/tab_Reference Object/input_Date'), 'value', '11-11-2018', GlobalVariable.G_LongTimeout)
+WebUI.verifyElementAttributeValue(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Reference Object Import/tab_Reference Object/input_Date'), 'value', Consts.P1_WMI_RO028_DATE, GlobalVariable.G_LongTimeout)

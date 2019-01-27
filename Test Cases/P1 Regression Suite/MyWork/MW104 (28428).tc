@@ -3,6 +3,6 @@
    <description>28428 Regression test My Work (Date field+WF): Click on Date folder should show results in Search results</description>
    <name>MW104 (28428)</name>
    <tag></tag>
-   <comment></comment>
+   <comment>Create a new Document in DateTimeRequired activity</comment>
    <testCaseGuid>43a533e1-f7f8-4801-bfa4-281e081056f6</testCaseGuid>
 </TestCaseEntity>

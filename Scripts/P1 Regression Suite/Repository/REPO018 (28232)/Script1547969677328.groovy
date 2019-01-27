@@ -18,13 +18,14 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUiBuiltInKeywords
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
-import utils.DateUtil
+import static utils.DateUtil.*
+import static utils.Consts.*
 
 'Login Into Application'
 CustomKeywords.'actions.Common.login'()
 
 'Create document'
-CustomKeywords.'actions.Common.createDocument_DateTimeDT'('12-01-2018', '12-05-2018', '12-10-2018 12:00:00 PM', '12-10-2018 12:00:00 PM')
+CustomKeywords.'actions.Common.createDocument_DateTimeDT'(P1_REPO_BMDATE_DOC6, P1_REPO_DATERANGE_DOC6, P1_REPO_BMDATETIME_DOC6, P1_REPO_DATETIMERANGE_DOC6)
 
 'Expand Repository Menu'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Repository/h3_Repository Menu'))
@@ -40,7 +41,7 @@ WebUI.selectOptionByLabel(findTestObject('Page_nGage_Dashboard/Repository/select
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
 
 'Enter End Date values'
-String filterEndDate = '12-07-2018'
+String filterEndDate = P1_REPO_DATERANGE_FILTER_END
 CustomKeywords.'actions.Common.setText_Date'(findTestObject('Page_nGage_Dashboard/Repository/input_DateRange_To'), filterEndDate)
 
 'Click on Search button'
@@ -55,7 +56,7 @@ WebUI.verifyGreaterThan(rowCount, 0)
 WebUI.click(findTestObject('Page_nGage_Dashboard/Repository/input_btnSaveSearchAdv'))
 
 'Enter Saved search name'
-String filterName = 'SEARCH_'+DateUtil.getCurrentDateTime()
+String filterName = 'SEARCH_'+getCurrentDateTime()
 WebUI.setText(findTestObject('Page_nGage_Dashboard/Repository/input_txtSaveDesc'), filterName)
 
 'Click on Save button to save search criteia'

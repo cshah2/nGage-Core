@@ -12,6 +12,7 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
+import utils.Consts
 
 'Login Into Application'
 CustomKeywords.'actions.Common.login'()
@@ -59,7 +60,7 @@ WebUI.verifyElementVisible(findTestObject('Object Repository/Page_WMI_NEW/Refere
 
 'fill values for new document'
 WebUI.setText(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Reference Object Import/tab_CategoryMenu-Doc Type/NewDoc_input_Integer Field_eform_mcb6'), '50')
-WebUI.setText(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Reference Object Import/tab_CategoryMenu-Doc Type/NewDoc_input_Date Field_eform_mcb6767'), '01-01-2018')
+CustomKeywords.'actions.Common.setText_Date'(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Reference Object Import/tab_CategoryMenu-Doc Type/NewDoc_input_Date Field_eform_mcb6767'), Consts.P1_WMI_RO028_DATE)
 WebUI.setText(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Reference Object Import/tab_CategoryMenu-Doc Type/NewDoc_input_Currency Field_eform_mcb'), '75')
 
 'save and close document'
@@ -92,5 +93,5 @@ WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 
 'verify fields values of opened document'
 WebUI.verifyElementAttributeValue(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Reference Object Import/tab_CategoryMenu-Doc Type/DocCreated_input_Currency Field_eform_mcb'), 'value', '$75.00', GlobalVariable.G_LongTimeout)
-WebUI.verifyElementAttributeValue(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Reference Object Import/tab_CategoryMenu-Doc Type/DocCreated_input_Date Field_eform_mcb6767'), 'value', '01-01-2018', GlobalVariable.G_LongTimeout)
+WebUI.verifyElementAttributeValue(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Reference Object Import/tab_CategoryMenu-Doc Type/DocCreated_input_Date Field_eform_mcb6767'), 'value', Consts.P1_WMI_RO028_DATE, GlobalVariable.G_LongTimeout)
 WebUI.verifyElementAttributeValue(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Reference Object Import/tab_CategoryMenu-Doc Type/DocCreated_input_Integer Field'), 'value', '50', GlobalVariable.G_LongTimeout)

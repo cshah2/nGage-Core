@@ -12,42 +12,20 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
+import static utils.Consts.*
+import static utils.DateUtil.*
 
 'Login Into Application'
 CustomKeywords.'actions.Common.login'()
 
-'Select Doc Class as "Event for required field" and Doc type as "Event for required field " from the dropdowns and click on OK button'
-WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))
-CustomKeywords.'actions.Common.selectDocClassAndDocTypeForGlobalNew'('Event for Req Fld', 'Event for req field')
-WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'), GlobalVariable.G_LongTimeout)
-WebUI.click(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'))
-
-'Switch to new window'
-WebUI.switchToWindowIndex(1)
-WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
-
-'enter values for document'
-WebUI.selectOptionByLabel(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/process_Event For Required Field/select_MasterObjectDropdownControl'), 'Value 1', false)
-CustomKeywords.'actions.Common.waitForTabLoading'(null, GlobalVariable.G_LongTimeout)
-WebUI.clearText(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/process_Event For Required Field/input_String Field (Value Chan'))
-CustomKeywords.'actions.Common.setText_Date'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/process_Event For Required Field/input_Date Field (Visibility C'), '01-01-2018')
-WebUI.setText(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/process_Event For Required Field/input_String Field (Value Chan'), 'prasad')
-
-'save document and close'
-WebUI.mouseOver(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/process_Event For Required Field/span_Actions'))
-WebUI.waitForElementVisible(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/process_Event For Required Field/a_Save'), GlobalVariable.G_LongTimeout)
-CustomKeywords.'actions.Window.clickElementAndWaitForWindowClose'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/process_Event For Required Field/a_Save'), GlobalVariable.G_LongTimeout)
-
-'Switch to main window'
-WebUI.switchToWindowIndex(0)
-
-'Close "create new" popup dialog'
-WebUI.switchToWindowTitle('Savana nGage')
-WebUI.click(findTestObject('Page_nGage_Dashboard/Home/span_ui-button-icon-primary ui'))
+'Create Document'
+CustomKeywords.'actions.Common.createDocument_EventForRequiredField'(P1_EVENTFOREQ_DROPDOWN_DOC1, P1_EVENTFOREQ_TEXT_DOC1, P1_EVENTFOREQ_DATE_DOC1)
 
 'Click on My Work link from left menu'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_My Work Left Menu'))
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_iframe_105'))
 
+String treeDate = convert(P1_EVENTFOREQ_DATE_DOC1, FORMAT_DATE, FORMAT_DATE_TREE)
 'navigate to user activity'
-CustomKeywords.'actions.MenuBar.clickTreeMenu'('MY_WORK','Processes','Event for required field','User activity','prasad','Value 1','01/01/2018')
+CustomKeywords.'actions.MenuBar.clickTreeMenu'('MY_WORK','Processes','Event for required field','User activity',P1_EVENTFOREQ_TEXT_DOC1,P1_EVENTFOREQ_DROPDOWN_DOC1,treeDate)

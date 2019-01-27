@@ -55,9 +55,9 @@ public class Consts {
 	public static final String SMOKE_MWS003_FILTER_DOCID = '106845'
 	public static final String SMOKE_MWS003_FILTER_STARTDATETIME = '01-01-2018 12:00:00 AM'
 	public static final String SMOKE_MWS003_FILTER_ENDDATETIME = '02-28-2018 12:00:00 AM'
-	
-	
-	
+
+
+
 	public static final String SMOKE_MW001_FILTERDATE = '12-12-2018'
 
 	public static final String SMOKE_MYWORK009_CUSTOMERNAME1 = 'Chintan Shah'
@@ -318,6 +318,17 @@ public class Consts {
 	public static final String P1_LOANAPPL_FIRSTNAME_DOC3 = 'Prasad'
 	public static final String P1_LOANAPPL_LASTNAME_DOC3 = 'Patil'
 	public static final String P1_LOANAPPL_AMOUNT_DOC3 = '5000'
+
+	public static final String P1_EVENTFOREQ_DROPDOWN_DOC1 = 'Value 1'
+	public static final String P1_EVENTFOREQ_TEXT_DOC1 = 'prasad'
+	public static final String P1_EVENTFOREQ_DATE_DOC1 = '01-01-2018'
+
+	public static final String P1_EVENTFOREQ_DROPDOWN_DOC2 = 'Value 2'
+	public static final String P1_EVENTFOREQ_TEXT_DOC2 = 'chintan'
+	public static final String P1_EVENTFOREQ_DATE_DOC2 = '01-01-2019'
+	
+	public static final String P1_WMI_RO028_DATE = '01-01-2018'
+
 
 	public static final String P1_WCA008_PROCESSDUETIME = '12:00:00 AM'
 

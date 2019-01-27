@@ -19,6 +19,7 @@ CustomKeywords.'actions.Common.login'()
 'Click on My Work link from left menu'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_My Work Left Menu'))
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_iframe_105'))
 
 'Click on Global New button'
 WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))

@@ -4,12 +4,14 @@ import static utils.Consts.*
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 
 import internal.GlobalVariable as GlobalVariable
+import static utils.DateUtil.*
 
 'Login Into Application'
 CustomKeywords.'actions.Common.login'()
 
 'Create new Document'
-CustomKeywords.'actions.Common.createDocument_MyWorkDateTime'(DC_DATEREQUIRED, DT_DATEREQUIRED, '', '', '', '', 'Test')
+String BM_Text = 'Automation-'+getCurrentDateTimeMinusDays(0, FORMAT_DATETIME)
+CustomKeywords.'actions.Common.createDocument_MyWorkDateTime'(DC_DATEREQUIRED, DT_DATEREQUIRED, '', '', '', '', BM_Text)
 
 'Click on My Work link from left menu'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_My Work Left Menu'))
