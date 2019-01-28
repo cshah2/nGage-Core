@@ -74,4 +74,9 @@
       <initValue>[('MW067_UN') : 'Auto_BO_uncheck', ('MW066_UN') : 'Auto_BO_Check', ('MW065_UN') : 'Auto_AI_uncheck', ('MW064_UN') : 'Auto_AI_check', ('MW063_UN') : 'Auto_WI_uncheck', ('MW062_UN') : 'Auto_WI_Check']</initValue>
       <name>Users</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>180</initValue>
+      <name>G_ReportTimeout</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>

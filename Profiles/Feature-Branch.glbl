@@ -99,4 +99,9 @@
       <initValue>'http://savphlpedev64/Sav.Maint.AdminApi'</initValue>
       <name>BaseAdminApiURL</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>180</initValue>
+      <name>G_ReportTimeout</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>

@@ -110,9 +110,10 @@ public class DateUtil {
 
 		if(actualValue=="")
 			actualDate="";
-		else
+		else {
 			actualValue = actualValue.trim().subSequence(0, 10)
 			actualDate = new Date().parse(Consts.FORMAT_DATE,actualValue)
+		}
 
 		if(filterValue1=="")
 			filterDate1="";

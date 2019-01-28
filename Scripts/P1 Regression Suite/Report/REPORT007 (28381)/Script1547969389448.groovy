@@ -31,7 +31,7 @@ CustomKeywords.'actions.Report.clickReport'('Administration', 'Security Manageme
 CustomKeywords.'actions.Report.verifyReportIsLoaded'('User Listing', 'User Listing', 'User Listing Details')
 'Click Design button'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Report/Data_CommonFields/ToolBar1_Design'))
-CustomKeywords.'actions.Common.waitForReportToLoad'(300)
+CustomKeywords.'actions.Common.waitForReportToLoad'(GlobalVariable.G_ReportTimeout)
 CustomKeywords.'actions.Report.verifyDesignPageIsLoaded'('V_ADM_USERS_DETAILS')
 
 //Report 2
@@ -40,7 +40,7 @@ CustomKeywords.'actions.Report.clickReport'('Administration', 'Security Manageme
 CustomKeywords.'actions.Report.verifyReportIsLoaded'('User Group Membership', 'User Group Membership', 'Assigned User and BPM User Groups for a User')
 'Click Design button'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Report/Data_CommonFields/ToolBar1_Design'))
-CustomKeywords.'actions.Common.waitForReportToLoad'(300)
+CustomKeywords.'actions.Common.waitForReportToLoad'(GlobalVariable.G_ReportTimeout)
 CustomKeywords.'actions.Report.verifyDesignPageIsLoaded'('V_ADM_U_GROUP_MBR')
 
 //Report 3
@@ -49,7 +49,7 @@ CustomKeywords.'actions.Report.clickReport'('Administration', 'Security Manageme
 CustomKeywords.'actions.Report.verifyReportIsLoaded'('User Group Listing', 'User Group Listing', 'List of users in the user groups')
 'Click Design button'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Report/Data_CommonFields/ToolBar1_Design'))
-CustomKeywords.'actions.Common.waitForReportToLoad'(300)
+CustomKeywords.'actions.Common.waitForReportToLoad'(GlobalVariable.G_ReportTimeout)
 CustomKeywords.'actions.Report.verifyDesignPageIsLoaded'('V_ADM_USERGROUP')
 
 //Report 4
@@ -58,7 +58,7 @@ CustomKeywords.'actions.Report.clickReport'('Administration', 'Security Manageme
 CustomKeywords.'actions.Report.verifyReportIsLoaded'('User Access to Document Classes', 'User Access to Document Classes', 'User Access to Document Classes (shows a specific users access to document classes, with rights)')
 'Click Design button'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Report/Data_CommonFields/ToolBar1_Design'))
-CustomKeywords.'actions.Common.waitForReportToLoad'(300)
+CustomKeywords.'actions.Common.waitForReportToLoad'(GlobalVariable.G_ReportTimeout)
 CustomKeywords.'actions.Report.verifyDesignPageIsLoaded'('V_ADM_USER_DOCCLASS')
 
 //Report 5
@@ -67,7 +67,7 @@ CustomKeywords.'actions.Report.clickReport'('Administration', 'Security Manageme
 CustomKeywords.'actions.Report.verifyReportIsLoaded'('Audit of Standard Document Action', 'Audit of Standard Document Action', 'User Audit History of Standard Document Actions (action audit table details)')
 'Click Design button'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Report/Data_CommonFields/ToolBar1_Design'))
-CustomKeywords.'actions.Common.waitForReportToLoad'(300)
+CustomKeywords.'actions.Common.waitForReportToLoad'(GlobalVariable.G_ReportTimeout)
 CustomKeywords.'actions.Report.verifyDesignPageIsLoaded'('V_ADM_USER_AUDIT_HIS')
 
 //Report 6
@@ -76,7 +76,7 @@ CustomKeywords.'actions.Report.clickReport'('Administration', 'Security Manageme
 CustomKeywords.'actions.Report.verifyReportIsLoaded'('User Security Audit History', 'User Security Audit History', 'User Security Audit History (security audit table details)')
 'Click Design button'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Report/Data_CommonFields/ToolBar1_Design'))
-CustomKeywords.'actions.Common.waitForReportToLoad'(300)
+CustomKeywords.'actions.Common.waitForReportToLoad'(GlobalVariable.G_ReportTimeout)
 CustomKeywords.'actions.Report.verifyDesignPageIsLoaded'('V_ADM_USER_SECURITY')
 
 //Report 7
@@ -85,7 +85,7 @@ CustomKeywords.'actions.Report.clickReport'('Administration', 'Security Manageme
 CustomKeywords.'actions.Report.verifyReportIsLoaded'('Organizations', 'Organizations', 'Organizations')
 'Click Design button'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Report/Data_CommonFields/ToolBar1_Design'))
-CustomKeywords.'actions.Common.waitForReportToLoad'(300)
+CustomKeywords.'actions.Common.waitForReportToLoad'(GlobalVariable.G_ReportTimeout)
 CustomKeywords.'actions.Report.verifyDesignPageIsLoaded'('V_ADM_ORGANIZATIONS')
 
 //Report 8
@@ -94,7 +94,7 @@ CustomKeywords.'actions.Report.clickReport'('Administration', 'Security Manageme
 CustomKeywords.'actions.Report.verifyReportIsLoaded'('Categories', 'Categories', 'Categories')
 'Click Design button'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Report/Data_CommonFields/ToolBar1_Design'))
-CustomKeywords.'actions.Common.waitForReportToLoad'(300)
+CustomKeywords.'actions.Common.waitForReportToLoad'(GlobalVariable.G_ReportTimeout)
 CustomKeywords.'actions.Report.verifyDesignPageIsLoaded'('V_ADM_CATEGORY')
 
 //Report 9
@@ -103,7 +103,7 @@ CustomKeywords.'actions.Report.clickReport'('Administration', 'Security Manageme
 CustomKeywords.'actions.Report.verifyReportIsLoaded'('User Directory Details', 'User Directory Details', 'User Directory Details')
 'Click Design button'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Report/Data_CommonFields/ToolBar1_Design'))
-CustomKeywords.'actions.Common.waitForReportToLoad'(300)
+CustomKeywords.'actions.Common.waitForReportToLoad'(GlobalVariable.G_ReportTimeout)
 CustomKeywords.'actions.Report.verifyDesignPageIsLoaded'('V_ADM_USER_DIRECTORY')
 
 //Report 10
@@ -112,7 +112,7 @@ CustomKeywords.'actions.Report.clickReport'('Administration', 'Security Manageme
 CustomKeywords.'actions.Report.verifyReportIsLoaded'('User Directory Other Attributes', 'User Directory Other Attributes', 'User Directory Other Attributes')
 'Click Design button'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Report/Data_CommonFields/ToolBar1_Design'))
-CustomKeywords.'actions.Common.waitForReportToLoad'(300)
+CustomKeywords.'actions.Common.waitForReportToLoad'(GlobalVariable.G_ReportTimeout)
 CustomKeywords.'actions.Report.verifyDesignPageIsLoaded'('V_ADM_USER_DIR_ATTRIB')
 
 //Report 11
@@ -121,7 +121,7 @@ CustomKeywords.'actions.Report.clickReport'('Administration', 'Security Manageme
 CustomKeywords.'actions.Report.verifyReportIsLoaded'('Organizations with User Membership', 'Organizations with User Membership', 'Organizations with User Membership')
 'Click Design button'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Report/Data_CommonFields/ToolBar1_Design'))
-CustomKeywords.'actions.Common.waitForReportToLoad'(300)
+CustomKeywords.'actions.Common.waitForReportToLoad'(GlobalVariable.G_ReportTimeout)
 CustomKeywords.'actions.Report.verifyDesignPageIsLoaded'('V_ADM_ORGAN_PERM')
 
 //Report 12
@@ -130,7 +130,7 @@ CustomKeywords.'actions.Report.clickReport'('Administration', 'Security Manageme
 CustomKeywords.'actions.Report.verifyReportIsLoaded'('Category with User Membership', 'Category with User Membership', 'Category with User Membership')
 'Click Design button'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Report/Data_CommonFields/ToolBar1_Design'))
-CustomKeywords.'actions.Common.waitForReportToLoad'(300)
+CustomKeywords.'actions.Common.waitForReportToLoad'(GlobalVariable.G_ReportTimeout)
 CustomKeywords.'actions.Report.verifyDesignPageIsLoaded'('V_ADM_CAT_PERM')
 
 //Report 13
@@ -139,7 +139,7 @@ CustomKeywords.'actions.Report.clickReport'('Administration', 'Security Manageme
 CustomKeywords.'actions.Report.verifyReportIsLoaded'('User Concurrent Usage', 'User Concurrent Usage', 'User Concurrent Usage Report - the list of users who actively logged in')
 'Click Design button'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Report/Data_CommonFields/ToolBar1_Design'))
-CustomKeywords.'actions.Common.waitForReportToLoad'(300)
+CustomKeywords.'actions.Common.waitForReportToLoad'(GlobalVariable.G_ReportTimeout)
 CustomKeywords.'actions.Report.verifyDesignPageIsLoaded'('V_ADM_USER_CURR_USG')
 
 //Report 14
@@ -148,7 +148,7 @@ CustomKeywords.'actions.Report.clickReport'('Administration', 'Security Manageme
 CustomKeywords.'actions.Report.verifyReportIsLoaded'('User Concurrent Usage By Half Hour', null, null)
 'Click Design button'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Report/Data_CommonFields/ToolBar1_Design'))
-CustomKeywords.'actions.Common.waitForReportToLoad'(300)
+CustomKeywords.'actions.Common.waitForReportToLoad'(GlobalVariable.G_ReportTimeout)
 CustomKeywords.'actions.Report.verifyDesignPageIsLoaded'('V_ADM_USER_CURR_HALFHR')
 
 //Report 15
@@ -157,7 +157,7 @@ CustomKeywords.'actions.Report.clickReport'('Administration', 'Security Manageme
 CustomKeywords.'actions.Report.verifyReportIsLoaded'('Licensing', 'Monthly Licensing', 'Monthly Licensing Report')
 'Click Design button'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Report/Data_CommonFields/ToolBar1_Design'))
-CustomKeywords.'actions.Common.waitForReportToLoad'(300)
+CustomKeywords.'actions.Common.waitForReportToLoad'(GlobalVariable.G_ReportTimeout)
 CustomKeywords.'actions.Report.verifyDesignPageIsLoaded'('V_RPT_Licensing')
 
 //Report 16
@@ -166,7 +166,7 @@ CustomKeywords.'actions.Report.clickReport'('Administration', 'Field Definition'
 CustomKeywords.'actions.Report.verifyReportIsLoaded'('Field Usage', 'Field Usage', 'Field Usage (shows field usage against document tables)')
 'Click Design button'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Report/Data_CommonFields/ToolBar1_Design'))
-CustomKeywords.'actions.Common.waitForReportToLoad'(300)
+CustomKeywords.'actions.Common.waitForReportToLoad'(GlobalVariable.G_ReportTimeout)
 CustomKeywords.'actions.Report.verifyDesignPageIsLoaded'('V_ADM_FIELD_USAGE')
 
 //Report 17
@@ -175,7 +175,7 @@ CustomKeywords.'actions.Report.clickReport'('Administration', 'Field Definition'
 CustomKeywords.'actions.Report.verifyReportIsLoaded'('Field Lookup List Functions', 'Field Lookup (list functions)', 'Field Lookup (list field functions)')
 'Click Design button'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Report/Data_CommonFields/ToolBar1_Design'))
-CustomKeywords.'actions.Common.waitForReportToLoad'(300)
+CustomKeywords.'actions.Common.waitForReportToLoad'(GlobalVariable.G_ReportTimeout)
 CustomKeywords.'actions.Report.verifyDesignPageIsLoaded'('V_ADM_FIELD_LOOKUP')
 
 //Report 18
@@ -184,7 +184,7 @@ CustomKeywords.'actions.Report.clickReport'('Administration', 'Field Definition'
 CustomKeywords.'actions.Report.verifyReportIsLoaded'('Lookup Value List', 'Lookup Value List', 'Lookup Value List')
 'Click Design button'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Report/Data_CommonFields/ToolBar1_Design'))
-CustomKeywords.'actions.Common.waitForReportToLoad'(300)
+CustomKeywords.'actions.Common.waitForReportToLoad'(GlobalVariable.G_ReportTimeout)
 CustomKeywords.'actions.Report.verifyDesignPageIsLoaded'('V_ADM_LOOKUP_VALUES')
 
 //Report 19
@@ -193,7 +193,7 @@ CustomKeywords.'actions.Report.clickReport'('Administration', 'Field Definition'
 CustomKeywords.'actions.Report.verifyReportIsLoaded'('Field Data Dictionary', null, null)
 'Click Design button'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Report/Data_CommonFields/ToolBar1_Design'))
-CustomKeywords.'actions.Common.waitForReportToLoad'(300)
+CustomKeywords.'actions.Common.waitForReportToLoad'(GlobalVariable.G_ReportTimeout)
 CustomKeywords.'actions.Report.verifyDesignPageIsLoaded'('V_ADM_FIELD_DATA')
 
 //Report 20
@@ -202,7 +202,7 @@ CustomKeywords.'actions.Report.clickReport'('Administration', 'Document Tables',
 CustomKeywords.'actions.Report.verifyReportIsLoaded'('Document Tables', 'Document Tables', 'List of Document Tables')
 'Click Design button'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Report/Data_CommonFields/ToolBar1_Design'))
-CustomKeywords.'actions.Common.waitForReportToLoad'(300)
+CustomKeywords.'actions.Common.waitForReportToLoad'(GlobalVariable.G_ReportTimeout)
 CustomKeywords.'actions.Report.verifyDesignPageIsLoaded'('V_ADM_DOCTABLES')
 
 //Report 21
@@ -211,7 +211,7 @@ CustomKeywords.'actions.Report.clickReport'('Administration', 'Document Tables',
 CustomKeywords.'actions.Report.verifyReportIsLoaded'('Doc Table Doc Class Membership', 'Doc Table Doc Class Membership', 'Doc Table Doc Class Membership')
 'Click Design button'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Report/Data_CommonFields/ToolBar1_Design'))
-CustomKeywords.'actions.Common.waitForReportToLoad'(300)
+CustomKeywords.'actions.Common.waitForReportToLoad'(GlobalVariable.G_ReportTimeout)
 CustomKeywords.'actions.Report.verifyDesignPageIsLoaded'('V_ADM_DOCTBL_DCCLASS')
 
 //Report 22
@@ -220,7 +220,7 @@ CustomKeywords.'actions.Report.clickReport'('Administration', 'Document Tables',
 CustomKeywords.'actions.Report.verifyReportIsLoaded'('Document Tables Field Design', 'Document Tables Field Design', 'Document Tables Field Design')
 'Click Design button'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Report/Data_CommonFields/ToolBar1_Design'))
-CustomKeywords.'actions.Common.waitForReportToLoad'(300)
+CustomKeywords.'actions.Common.waitForReportToLoad'(GlobalVariable.G_ReportTimeout)
 CustomKeywords.'actions.Report.verifyDesignPageIsLoaded'('V_ADM_DOCTBL_FIELDS')
 
 //Report 23
@@ -229,7 +229,7 @@ CustomKeywords.'actions.Report.clickReport'('Administration', 'Document Tables',
 CustomKeywords.'actions.Report.verifyReportIsLoaded'('Document Classes', 'Document Classes', 'List of Document Classes')
 'Click Design button'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Report/Data_CommonFields/ToolBar1_Design'))
-CustomKeywords.'actions.Common.waitForReportToLoad'(300)
+CustomKeywords.'actions.Common.waitForReportToLoad'(GlobalVariable.G_ReportTimeout)
 CustomKeywords.'actions.Report.verifyDesignPageIsLoaded'('V_ADM_DOCCLASS_DETAIL')
 
 //Report 24
@@ -238,7 +238,7 @@ CustomKeywords.'actions.Report.clickReport'('Administration', 'Document Tables',
 CustomKeywords.'actions.Report.verifyReportIsLoaded'('Document Types', 'Document Types', 'List of Document Types')
 'Click Design button'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Report/Data_CommonFields/ToolBar1_Design'))
-CustomKeywords.'actions.Common.waitForReportToLoad'(300)
+CustomKeywords.'actions.Common.waitForReportToLoad'(GlobalVariable.G_ReportTimeout)
 CustomKeywords.'actions.Report.verifyDesignPageIsLoaded'('V_ADM_DOCTYPES_DETL')
 
 //Report 25
@@ -247,7 +247,7 @@ CustomKeywords.'actions.Report.clickReport'('Administration', 'Document Tables',
 CustomKeywords.'actions.Report.verifyReportIsLoaded'('Document Class User Group Security Summary', 'Document Class User Group Security Summary', 'Document Class User Group Security Summary')
 'Click Design button'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Report/Data_CommonFields/ToolBar1_Design'))
-CustomKeywords.'actions.Common.waitForReportToLoad'(300)
+CustomKeywords.'actions.Common.waitForReportToLoad'(GlobalVariable.G_ReportTimeout)
 CustomKeywords.'actions.Report.verifyDesignPageIsLoaded'('V_ADM_DOCCLASS_PERM')
 
 //Report 26
@@ -256,7 +256,7 @@ CustomKeywords.'actions.Report.clickReport'('Administration', 'Document Tables',
 CustomKeywords.'actions.Report.verifyReportIsLoaded'('Document Class User to Group', 'Document Class User to Group', 'Document Class with Assigned User to Group Rights')
 'Click Design button'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Report/Data_CommonFields/ToolBar1_Design'))
-CustomKeywords.'actions.Common.waitForReportToLoad'(300)
+CustomKeywords.'actions.Common.waitForReportToLoad'(GlobalVariable.G_ReportTimeout)
 CustomKeywords.'actions.Report.verifyDesignPageIsLoaded'('V_ADM_DOCCLASS_PERM')
 
 //Report 27
@@ -265,7 +265,7 @@ CustomKeywords.'actions.Report.clickReport'('Administration', 'Document Tables',
 CustomKeywords.'actions.Report.verifyReportIsLoaded'('Document Classes Field Design', 'Document Classes Field Design', 'List of field document classes with field design')
 'Click Design button'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Report/Data_CommonFields/ToolBar1_Design'))
-CustomKeywords.'actions.Common.waitForReportToLoad'(300)
+CustomKeywords.'actions.Common.waitForReportToLoad'(GlobalVariable.G_ReportTimeout)
 CustomKeywords.'actions.Report.verifyDesignPageIsLoaded'('V_ADM_DCLASS_FIELD')
 
 //Report 28
@@ -274,7 +274,7 @@ CustomKeywords.'actions.Report.clickReport'('Administration', 'Search Management
 CustomKeywords.'actions.Report.verifyReportIsLoaded'('Search Class Details', 'Search Class Details', 'Search Class Details')
 'Click Design button'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Report/Data_CommonFields/ToolBar1_Design'))
-CustomKeywords.'actions.Common.waitForReportToLoad'(300)
+CustomKeywords.'actions.Common.waitForReportToLoad'(GlobalVariable.G_ReportTimeout)
 CustomKeywords.'actions.Report.verifyDesignPageIsLoaded'('V_ADM_SEARCHCLASS')
 
 //Report 29
@@ -283,7 +283,7 @@ CustomKeywords.'actions.Report.clickReport'('Administration', 'Search Management
 CustomKeywords.'actions.Report.verifyReportIsLoaded'('Search Class Design', 'Search Class Design', 'Search Class Design')
 'Click Design button'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Report/Data_CommonFields/ToolBar1_Design'))
-CustomKeywords.'actions.Common.waitForReportToLoad'(300)
+CustomKeywords.'actions.Common.waitForReportToLoad'(GlobalVariable.G_ReportTimeout)
 CustomKeywords.'actions.Report.verifyDesignPageIsLoaded'('V_ADM_SRCHCLASS_DSGN')
 
 //Report 30
@@ -292,7 +292,7 @@ CustomKeywords.'actions.Report.clickReport'('Administration', 'Search Management
 CustomKeywords.'actions.Report.verifyReportIsLoaded'('Search Class Security', 'Search Class Security', 'Search Class Security')
 'Click Design button'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Report/Data_CommonFields/ToolBar1_Design'))
-CustomKeywords.'actions.Common.waitForReportToLoad'(300)
+CustomKeywords.'actions.Common.waitForReportToLoad'(GlobalVariable.G_ReportTimeout)
 CustomKeywords.'actions.Report.verifyDesignPageIsLoaded'('V_ADM_SRCHCLASS_SEC')
 
 //Report 31
@@ -301,7 +301,7 @@ CustomKeywords.'actions.Report.clickReport'('Administration', 'Search Management
 CustomKeywords.'actions.Report.verifyReportIsLoaded'('EDM Details', 'EDM Details', 'EDM Details')
 'Click Design button'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Report/Data_CommonFields/ToolBar1_Design'))
-CustomKeywords.'actions.Common.waitForReportToLoad'(300)
+CustomKeywords.'actions.Common.waitForReportToLoad'(GlobalVariable.G_ReportTimeout)
 CustomKeywords.'actions.Report.verifyDesignPageIsLoaded'('V_ADM_EDM_DETAILS')
 
 //Report 32
@@ -310,7 +310,7 @@ CustomKeywords.'actions.Report.clickReport'('Administration', 'Search Management
 CustomKeywords.'actions.Report.verifyReportIsLoaded'('EDM Search Class Report', 'EDM Search Class Report', 'EDM Search Class Report')
 'Click Design button'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Report/Data_CommonFields/ToolBar1_Design'))
-CustomKeywords.'actions.Common.waitForReportToLoad'(300)
+CustomKeywords.'actions.Common.waitForReportToLoad'(GlobalVariable.G_ReportTimeout)
 CustomKeywords.'actions.Report.verifyDesignPageIsLoaded'('V_ADM_EDM_SRCHCLASS')
 
 //Report 33
@@ -319,7 +319,7 @@ CustomKeywords.'actions.Report.clickReport'('Administration', 'Search Management
 CustomKeywords.'actions.Report.verifyReportIsLoaded'('EDM User Group and User Security', 'EDM User Group and User Security', 'EDM User Group and User Security')
 'Click Design button'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Report/Data_CommonFields/ToolBar1_Design'))
-CustomKeywords.'actions.Common.waitForReportToLoad'(300)
+CustomKeywords.'actions.Common.waitForReportToLoad'(GlobalVariable.G_ReportTimeout)
 CustomKeywords.'actions.Report.verifyDesignPageIsLoaded'('V_ADM_EDM_UGROUP_SEC')
 
 //Report 34 //NOTE:ReportTitle is displayed twice
@@ -328,7 +328,7 @@ CustomKeywords.'actions.Report.clickReport'('Administration', 'Search Management
 CustomKeywords.'actions.Report.verifyReportIsLoaded'('BPM Activity Assigned Users and UserGroups', 'BPM Activity Assigned Users and UserGroups', 'BPM Activity Assigned To Users and UserGroups')
 'Click Design button'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Report/Data_CommonFields/ToolBar1_Design'))
-CustomKeywords.'actions.Common.waitForReportToLoad'(300)
+CustomKeywords.'actions.Common.waitForReportToLoad'(GlobalVariable.G_ReportTimeout)
 CustomKeywords.'actions.Report.verifyDesignPageIsLoaded'('V_RPT_BPMACT_U_N_UG')
 
 //Report 35
@@ -337,7 +337,7 @@ CustomKeywords.'actions.Report.clickReport'('System Stat Reports', 'Document Man
 CustomKeywords.'actions.Report.verifyReportIsLoaded'('Summary of Documents by Class and Type', 'Summary of Documents by Class and Type', 'Summary of Documents by Class and Type')
 'Click Design button'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Report/Data_CommonFields/ToolBar1_Design'))
-CustomKeywords.'actions.Common.waitForReportToLoad'(300)
+CustomKeywords.'actions.Common.waitForReportToLoad'(GlobalVariable.G_ReportTimeout)
 CustomKeywords.'actions.Report.verifyDesignPageIsLoaded'('V_STAT_DCLASS_DTYPE')
 
 //Report 36
@@ -346,7 +346,7 @@ CustomKeywords.'actions.Report.clickReport'('System Stat Reports', 'Document Man
 CustomKeywords.'actions.Report.verifyReportIsLoaded'('New Document addition for Date Range', 'New Document addition for Date Range', 'New Document addition for Date Range')
 'Click Design button'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Report/Data_CommonFields/ToolBar1_Design'))
-CustomKeywords.'actions.Common.waitForReportToLoad'(300)
+CustomKeywords.'actions.Common.waitForReportToLoad'(GlobalVariable.G_ReportTimeout)
 CustomKeywords.'actions.Report.verifyDesignPageIsLoaded'('V_STAT_NEW_DOC_ADD')
 
 //Report 37
@@ -355,7 +355,7 @@ CustomKeywords.'actions.Report.clickReport'('System Stat Reports', 'Document Man
 CustomKeywords.'actions.Report.verifyReportIsLoaded'('Modified Documents by Date Range', 'Modified Documents by Date Range', 'Modified Documents by Date Range')
 'Click Design button'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Report/Data_CommonFields/ToolBar1_Design'))
-CustomKeywords.'actions.Common.waitForReportToLoad'(300)
+CustomKeywords.'actions.Common.waitForReportToLoad'(GlobalVariable.G_ReportTimeout)
 CustomKeywords.'actions.Report.verifyDesignPageIsLoaded'('V_STAT_MODIFY_DOC')
 
 //Report 38
@@ -364,7 +364,7 @@ CustomKeywords.'actions.Report.clickReport'('System Stat Reports', 'Document Man
 CustomKeywords.'actions.Report.verifyReportIsLoaded'('Access Summaries by Period', null, null)
 'Click Design button'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Report/Data_CommonFields/ToolBar1_Design'))
-CustomKeywords.'actions.Common.waitForReportToLoad'(300)
+CustomKeywords.'actions.Common.waitForReportToLoad'(GlobalVariable.G_ReportTimeout)
 CustomKeywords.'actions.Report.verifyDesignPageIsLoaded'('V_STAT_ACCESS_SUM')
 
 //Report 39
@@ -373,7 +373,7 @@ CustomKeywords.'actions.Report.clickReport'('System Stat Reports', 'Document Man
 CustomKeywords.'actions.Report.verifyReportIsLoaded'('Audit Report for Single Document', null, null)
 'Click Design button'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Report/Data_CommonFields/ToolBar1_Design'))
-CustomKeywords.'actions.Common.waitForReportToLoad'(300)
+CustomKeywords.'actions.Common.waitForReportToLoad'(GlobalVariable.G_ReportTimeout)
 CustomKeywords.'actions.Report.verifyDesignPageIsLoaded'('V_STAT_AUDIT_SNGL_DOC')
 
 //Report 40
@@ -382,7 +382,7 @@ CustomKeywords.'actions.Report.clickReport'('System Stat Reports', 'Document Man
 CustomKeywords.'actions.Report.verifyReportIsLoaded'('Related Document for Single Doc', null, null)
 'Click Design button'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Report/Data_CommonFields/ToolBar1_Design'))
-CustomKeywords.'actions.Common.waitForReportToLoad'(300)
+CustomKeywords.'actions.Common.waitForReportToLoad'(GlobalVariable.G_ReportTimeout)
 CustomKeywords.'actions.Report.verifyDesignPageIsLoaded'('V_STAT_REL_DOC_SNGL')
 
 //Report 41
@@ -391,7 +391,7 @@ CustomKeywords.'actions.Report.clickReport'('System Stat Reports', 'Document Man
 CustomKeywords.'actions.Report.verifyReportIsLoaded'('Revision History For Single Document', null, null)
 'Click Design button'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Report/Data_CommonFields/ToolBar1_Design'))
-CustomKeywords.'actions.Common.waitForReportToLoad'(300)
+CustomKeywords.'actions.Common.waitForReportToLoad'(GlobalVariable.G_ReportTimeout)
 CustomKeywords.'actions.Report.verifyDesignPageIsLoaded'('V_STAT_REV_HSTR_SNGL')
 
 //Report 42
@@ -400,7 +400,7 @@ CustomKeywords.'actions.Report.clickReport'('System Stat Reports', 'Document Man
 CustomKeywords.'actions.Report.verifyReportIsLoaded'('Deleted Document Waiting for Purge', null, null)
 'Click Design button'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Report/Data_CommonFields/ToolBar1_Design'))
-CustomKeywords.'actions.Common.waitForReportToLoad'(300)
+CustomKeywords.'actions.Common.waitForReportToLoad'(GlobalVariable.G_ReportTimeout)
 CustomKeywords.'actions.Report.verifyDesignPageIsLoaded'('V_STAT_DEL_DOC_PURGE')
 
 //Report 43
@@ -409,7 +409,7 @@ CustomKeywords.'actions.Report.clickReport'('System Management', 'System Health'
 CustomKeywords.'actions.Report.verifyReportIsLoaded'('All Work Items in Error', 'All Work Items in Error', 'All Work Items in Error')
 'Click Design button'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Report/Data_CommonFields/ToolBar1_Design'))
-CustomKeywords.'actions.Common.waitForReportToLoad'(300)
+CustomKeywords.'actions.Common.waitForReportToLoad'(GlobalVariable.G_ReportTimeout)
 CustomKeywords.'actions.Report.verifyDesignPageIsLoaded'('V_RPT_WFAllErrorItems')
 
 //Report 44
@@ -418,7 +418,7 @@ CustomKeywords.'actions.Report.clickReport'('System Management', 'System Health'
 CustomKeywords.'actions.Report.verifyReportIsLoaded'('All Looping Workitems', 'All Looping Workitems', 'All Looping Workitems since yesterday')
 'Click Design button'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Report/Data_CommonFields/ToolBar1_Design'))
-CustomKeywords.'actions.Common.waitForReportToLoad'(300)
+CustomKeywords.'actions.Common.waitForReportToLoad'(GlobalVariable.G_ReportTimeout)
 CustomKeywords.'actions.Report.verifyDesignPageIsLoaded'('V_RPT_WFAllLoopingItemsPerDay')
 
 //Report 45
@@ -427,7 +427,7 @@ CustomKeywords.'actions.Report.clickReport'('System Management', 'System Health'
 CustomKeywords.'actions.Report.verifyReportIsLoaded'('Engine Activity Status', null, null)
 'Click Design button'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Report/Data_CommonFields/ToolBar1_Design'))
-CustomKeywords.'actions.Common.waitForReportToLoad'(300)
+CustomKeywords.'actions.Common.waitForReportToLoad'(GlobalVariable.G_ReportTimeout)
 CustomKeywords.'actions.Report.verifyDesignPageIsLoaded'('V_RPT_WFEngineActivityStatus')
 
 //Report 46
@@ -436,7 +436,7 @@ CustomKeywords.'actions.Report.clickReport'('System Management', 'System Health'
 CustomKeywords.'actions.Report.verifyReportIsLoaded'('Engine Throughput Today', null, null)
 'Click Design button'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Report/Data_CommonFields/ToolBar1_Design'))
-CustomKeywords.'actions.Common.waitForReportToLoad'(300)
+CustomKeywords.'actions.Common.waitForReportToLoad'(GlobalVariable.G_ReportTimeout)
 CustomKeywords.'actions.Report.verifyDesignPageIsLoaded'('V_RPT_WFEngineThrougputToday')
 
 //Report 47
@@ -445,7 +445,7 @@ CustomKeywords.'actions.Report.clickReport'('System Management', 'System Health'
 CustomKeywords.'actions.Report.verifyReportIsLoaded'('Engine Perf Per Hour', null, null)
 'Click Design button'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Report/Data_CommonFields/ToolBar1_Design'))
-CustomKeywords.'actions.Common.waitForReportToLoad'(300)
+CustomKeywords.'actions.Common.waitForReportToLoad'(GlobalVariable.G_ReportTimeout)
 CustomKeywords.'actions.Report.verifyDesignPageIsLoaded'('V_RPT_WFEnginePerfPerHour')
 
 //Report 48
@@ -454,7 +454,7 @@ CustomKeywords.'actions.Report.clickReport'('System Management', 'System Health'
 CustomKeywords.'actions.Report.verifyReportIsLoaded'('Engine Throughput Last Hour', null, null)
 'Click Design button'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Report/Data_CommonFields/ToolBar1_Design'))
-CustomKeywords.'actions.Common.waitForReportToLoad'(300)
+CustomKeywords.'actions.Common.waitForReportToLoad'(GlobalVariable.G_ReportTimeout)
 CustomKeywords.'actions.Report.verifyDesignPageIsLoaded'('V_RPT_WFEngineThrougputLastHr')
 
 //Report 49
@@ -463,7 +463,7 @@ CustomKeywords.'actions.Report.clickReport'('System Management', 'System Health'
 CustomKeywords.'actions.Report.verifyReportIsLoaded'('Re-process Work Item in Error', null, null)
 'Click Design button'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Report/Data_CommonFields/ToolBar1_Design'))
-CustomKeywords.'actions.Common.waitForReportToLoad'(300)
+CustomKeywords.'actions.Common.waitForReportToLoad'(GlobalVariable.G_ReportTimeout)
 CustomKeywords.'actions.Report.verifyDesignPageIsLoaded'('V_RPT_WFErrorItemDetails')
 
 //Report 50
@@ -472,7 +472,7 @@ CustomKeywords.'actions.Report.clickReport'('System Management', 'System Health'
 CustomKeywords.'actions.Report.verifyReportIsLoaded'('Work Items created in last 7 days', null, null)
 'Click Design button'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Report/Data_CommonFields/ToolBar1_Design'))
-CustomKeywords.'actions.Common.waitForReportToLoad'(300)
+CustomKeywords.'actions.Common.waitForReportToLoad'(GlobalVariable.G_ReportTimeout)
 CustomKeywords.'actions.Report.verifyDesignPageIsLoaded'('V_RPT_WFItemCreatedInLst7Day')
 
 //Report 51
@@ -481,7 +481,7 @@ CustomKeywords.'actions.Report.clickReport'('System Management', 'System Health'
 CustomKeywords.'actions.Report.verifyReportIsLoaded'('Work Items to run Next Day', null, null)
 'Click Design button'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Report/Data_CommonFields/ToolBar1_Design'))
-CustomKeywords.'actions.Common.waitForReportToLoad'(300)
+CustomKeywords.'actions.Common.waitForReportToLoad'(GlobalVariable.G_ReportTimeout)
 CustomKeywords.'actions.Report.verifyDesignPageIsLoaded'('V_RPT_WFItemsToRunNextDay')
 
 //Report 52
@@ -490,7 +490,7 @@ CustomKeywords.'actions.Report.clickReport'('System Management', 'System Health'
 CustomKeywords.'actions.Report.verifyReportIsLoaded'('Work items Waiting', null, null)
 'Click Design button'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Report/Data_CommonFields/ToolBar1_Design'))
-CustomKeywords.'actions.Common.waitForReportToLoad'(300)
+CustomKeywords.'actions.Common.waitForReportToLoad'(GlobalVariable.G_ReportTimeout)
 CustomKeywords.'actions.Report.verifyDesignPageIsLoaded'('V_RPT_WFWaitingItems')
 
 //Report 53
@@ -499,7 +499,7 @@ CustomKeywords.'actions.Report.clickReport'('System Management', 'System Health'
 CustomKeywords.'actions.Report.verifyReportIsLoaded'('Security Audit', 'Security Audit', 'Security Audit')
 'Click Design button'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Report/Data_CommonFields/ToolBar1_Design'))
-CustomKeywords.'actions.Common.waitForReportToLoad'(300)
+CustomKeywords.'actions.Common.waitForReportToLoad'(GlobalVariable.G_ReportTimeout)
 CustomKeywords.'actions.Report.verifyDesignPageIsLoaded'('V_RPT_SecurityAudit')
 
 //Report 54
@@ -508,7 +508,7 @@ CustomKeywords.'actions.Report.clickReport'('System Management', 'System Health'
 CustomKeywords.'actions.Report.verifyReportIsLoaded'('Logins', null, null)
 'Click Design button'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Report/Data_CommonFields/ToolBar1_Design'))
-CustomKeywords.'actions.Common.waitForReportToLoad'(300)
+CustomKeywords.'actions.Common.waitForReportToLoad'(GlobalVariable.G_ReportTimeout)
 CustomKeywords.'actions.Report.verifyDesignPageIsLoaded'('V_RPT_Logins')
 
 //Report 55
@@ -517,5 +517,5 @@ CustomKeywords.'actions.Report.clickReport'('System Management', 'System Health'
 CustomKeywords.'actions.Report.verifyReportIsLoaded'('App Exception Log', null, null)
 'Click Design button'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Report/Data_CommonFields/ToolBar1_Design'))
-CustomKeywords.'actions.Common.waitForReportToLoad'(300)
+CustomKeywords.'actions.Common.waitForReportToLoad'(GlobalVariable.G_ReportTimeout)
 CustomKeywords.'actions.Report.verifyDesignPageIsLoaded'('V_RPT_AppExceptionLog')

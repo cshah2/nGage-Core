@@ -28,7 +28,7 @@ CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Da
 CustomKeywords.'actions.MenuBar.clickTreeMenu'('REPORT', 'Administration', 'Security Management', 'User Listing')
 
 'Wait For Report to load'
-CustomKeywords.'actions.Common.waitForReportToLoad'(300)
+CustomKeywords.'actions.Common.waitForReportToLoad'(GlobalVariable.G_ReportTimeout)
 WebUI.verifyElementVisible(findTestObject('Page_nGage_Dashboard/Report/User Listing/ToolBar_1'))
 WebUI.verifyElementVisible(findTestObject('Page_nGage_Dashboard/Report/User Listing/ToolBar_2'))
 
@@ -36,6 +36,6 @@ WebUI.verifyElementVisible(findTestObject('Page_nGage_Dashboard/Report/User List
 CustomKeywords.'actions.MenuBar.clickTreeMenu'('REPORT', 'Administration', 'Security Management', 'Categories')
 
 'Wait For Report to load'
-CustomKeywords.'actions.Common.waitForReportToLoad'(300)
+CustomKeywords.'actions.Common.waitForReportToLoad'(GlobalVariable.G_ReportTimeout)
 WebUI.verifyElementVisible(findTestObject('Page_nGage_Dashboard/Report/Categories/ToolBar_1'))
 WebUI.verifyElementVisible(findTestObject('Page_nGage_Dashboard/Report/Categories/ToolBar_2'))

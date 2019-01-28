@@ -103,7 +103,7 @@ public class Report {
 		setLevelTwo(lvl_one)
 		setLevelThree(lvl_one, lvl_two)
 		lvlThree.get(lvl_three).click()
-		new Common().waitForReportToLoad(300)
+		new Common().waitForReportToLoad(GlobalVariable.G_ReportTimeout)
 	}
 
 	@Keyword

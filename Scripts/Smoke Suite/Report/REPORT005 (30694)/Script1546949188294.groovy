@@ -25,7 +25,7 @@ CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Da
 CustomKeywords.'actions.MenuBar.clickTreeMenu'('REPORT', 'System Management', 'System Health', 'All Work Items in Error')
 
 'Wait For Report to load'
-CustomKeywords.'actions.Common.waitForReportToLoad'(300)
+CustomKeywords.'actions.Common.waitForReportToLoad'(GlobalVariable.G_ReportTimeout)
 WebUI.verifyElementVisible(findTestObject('Page_nGage_Dashboard/Report/All Work Items In Error/ToolBar_1'))
 WebUI.verifyElementVisible(findTestObject('Page_nGage_Dashboard/Report/All Work Items In Error/ToolBar_2'))
 
@@ -33,6 +33,6 @@ WebUI.verifyElementVisible(findTestObject('Page_nGage_Dashboard/Report/All Work 
 CustomKeywords.'actions.MenuBar.clickTreeMenu'('REPORT', 'System Management', 'System Health', 'Work items Waiting')
 
 'Wait For Report to load'
-CustomKeywords.'actions.Common.waitForReportToLoad'(300)
+CustomKeywords.'actions.Common.waitForReportToLoad'(GlobalVariable.G_ReportTimeout)
 WebUI.verifyElementVisible(findTestObject('Page_nGage_Dashboard/Report/Work Items In Waiting/ToolBar_1'))
 WebUI.verifyElementVisible(findTestObject('Page_nGage_Dashboard/Report/Work Items In Waiting/ToolBar_2'))

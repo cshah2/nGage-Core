@@ -125,13 +125,11 @@ CustomKeywords.'actions.MenuBar.clickTreeMenu'('MY_WORK', 'Processes', 'Closure 
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_work_items'))
 
 'Wait for action to complete'
-//WebUI.delay(30)
-//CustomKeywords.'actions.MenuBar.refreshActivityUntilRecordCountIncreases'(originalCount, 600, 'MY_WORK', 'Processes', 'Closure Action', 'Activity A')
 TestObject table = findTestObject('Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults')
 TestObject tableHeader = findTestObject('Page_nGage_Dashboard/My_Work/tableHeader_MyWorkSearchResult')
 TestObject refresh = findTestObject('Page_nGage_Dashboard/My_Work/table_refreshButton')
 
-CustomKeywords.'actions.Table.refreshUntilRecordFoundInTable'(table, tableHeader, refresh, docIDPrimary, colNo_DocID, 600)
+CustomKeywords.'actions.Table.refreshUntilRecordFoundInTable'(table, tableHeader, refresh, docIDPrimary, colNo_DocID, GlobalVariable.G_LongTimeout)
 
 //'Sort records by Doc ID descending'
 //CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/My_Work/tableHeader_MyWorkSearchResult'), 'Doc ID')
