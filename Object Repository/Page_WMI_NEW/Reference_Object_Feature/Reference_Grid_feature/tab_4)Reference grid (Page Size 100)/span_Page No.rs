@@ -4,6 +4,12 @@
    <name>span_Page No</name>
    <tag></tag>
    <elementGuidId>27480dac-2b8d-421b-90dc-7220b6711484</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>//span[@id = 'eform_mcb67676_TabContainer_4_TabRef_4_phBO_7_BO_grc_ctl01_CurrentPageLabel' and @ref_element = 'Object Repository/Page_WMI_NEW/Reference_Object_Feature/Reference_Grid_feature/tab_4)Reference grid (Page Size 100)/iframe_Close Window_ContentPla']</value>
+      </entry>
+   </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
    <webElementProperties>
@@ -21,7 +27,7 @@
       <value>eform_mcb67676_TabContainer_4_TabRef_4_phBO_7_BO_grc_ctl01_CurrentPageLabel</value>
    </webElementProperties>
    <webElementProperties>
-      <isSelected>true</isSelected>
+      <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>text</name>
       <type>Main</type>

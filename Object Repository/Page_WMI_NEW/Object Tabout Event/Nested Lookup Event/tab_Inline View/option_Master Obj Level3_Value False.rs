@@ -6,12 +6,12 @@
    <elementGuidId>7bff4e99-700f-4cfe-8130-7cec48545d88</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>BASIC</key>
-         <value>//span[@id = 'eform_mcb67676_phBO_3_BO_headerTitle' and (text() = 'Business Model View - Nested Lookup Event' or . = 'Business Model View - Nested Lookup Event') and @ref_element = 'Object Repository/Page_WMI_NEW/Object Tabout Event/Nested Lookup Event/iframe_Close Window_ContentPla']</value>
+         <key>XPATH</key>
+         <value>//select[@name=&quot;eform_mcb67676$TabContainer_4$TabRef_1$phBO_4_BO$eidmKey_BM_String_Lookup_Field&quot; or @name='eform_mcb67676$TabContainer_4$TabRef_2$phBO_5_BO$eidmKey_BM_String_Lookup_Field']/option[text()='False']</value>
       </entry>
       <entry>
-         <key>XPATH</key>
-         <value>//select[@name=&quot;eform_mcb67676$TabContainer_4$TabRef_1$phBO_4_BO$eidmKey_BM_String_Lookup_Field&quot;]/option[text()='False']</value>
+         <key>BASIC</key>
+         <value>//span[@id = 'eform_mcb67676_phBO_3_BO_headerTitle' and (text() = 'Business Model View - Nested Lookup Event' or . = 'Business Model View - Nested Lookup Event') and @ref_element = 'Object Repository/Page_WMI_NEW/Object Tabout Event/Nested Lookup Event/iframe_Close Window_ContentPla']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

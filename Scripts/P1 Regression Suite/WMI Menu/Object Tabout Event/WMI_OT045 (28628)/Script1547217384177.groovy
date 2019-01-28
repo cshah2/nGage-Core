@@ -35,19 +35,19 @@ WebUI.selectOptionByLabel(findTestObject('Object Repository/Page_WMI_NEW/Object 
 CustomKeywords.'actions.Common.waitForTabLoading'(null, GlobalVariable.G_LongTimeout)
 
 'In Nested level 2 drop down value1, value2,value3, value4,value5 should be fillup'
-WebUI.verifyElementPresent(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Nested Lookup Event/tab_Single Result View/option_Master Obj Level2_Value1'), GlobalVariable.G_LongTimeout)
-WebUI.verifyElementPresent(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Nested Lookup Event/tab_Single Result View/option_Master Obj Level2_Value2'), GlobalVariable.G_LongTimeout)
-WebUI.verifyElementPresent(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Nested Lookup Event/tab_Single Result View/option_Master Obj Level2_Value3'), GlobalVariable.G_LongTimeout)
-WebUI.verifyElementPresent(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Nested Lookup Event/tab_Single Result View/option_Master Obj Level2_Value4'), GlobalVariable.G_LongTimeout)
-WebUI.verifyElementPresent(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Nested Lookup Event/tab_Single Result View/option_Master Obj Level2_Value5'), GlobalVariable.G_LongTimeout)
+WebUI.verifyOptionPresentByLabel(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Nested Lookup Event/tab_Single Result View/select_Master Object Nest Level2'), 'Value 1', false, GlobalVariable.G_LongTimeout)
+WebUI.verifyOptionPresentByLabel(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Nested Lookup Event/tab_Single Result View/select_Master Object Nest Level2'), 'Value 2', false, GlobalVariable.G_LongTimeout)
+WebUI.verifyOptionPresentByLabel(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Nested Lookup Event/tab_Single Result View/select_Master Object Nest Level2'), 'Value 3', false, GlobalVariable.G_LongTimeout)
+WebUI.verifyOptionPresentByLabel(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Nested Lookup Event/tab_Single Result View/select_Master Object Nest Level2'), 'Value 4', false, GlobalVariable.G_LongTimeout)
+WebUI.verifyOptionPresentByLabel(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Nested Lookup Event/tab_Single Result View/select_Master Object Nest Level2'), 'Value 5', false, GlobalVariable.G_LongTimeout)
 
 'From single result view of refrence object select value 1 from Nested Level 2 dropdown'
 WebUI.selectOptionByLabel(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Nested Lookup Event/tab_Single Result View/select_Master Object Nest Level2'), 'Value 1', false)
 CustomKeywords.'actions.Common.waitForTabLoading'(null, GlobalVariable.G_LongTimeout)
 
 'In Nested level 3 drop down values -true ,false should be fill up'
-WebUI.verifyElementPresent(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Nested Lookup Event/tab_Single Result View/option_Master Obj Level3_Value True'), GlobalVariable.G_LongTimeout)
-WebUI.verifyElementPresent(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Nested Lookup Event/tab_Single Result View/option_Master Obj Level3_Value False'), GlobalVariable.G_LongTimeout)
+WebUI.verifyOptionPresentByLabel(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Nested Lookup Event/tab_Single Result View/select_Master Object Nest Level3'), 'True', false, GlobalVariable.G_LongTimeout)
+WebUI.verifyOptionPresentByLabel(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Nested Lookup Event/tab_Single Result View/select_Master Object Nest Level3'), 'False', false, GlobalVariable.G_LongTimeout)
 
 'From single result view of refrence object select True from Nested Level 3 dropdown'
 WebUI.selectOptionByLabel(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Nested Lookup Event/tab_Single Result View/select_Master Object Nest Level3'), 'True', false)

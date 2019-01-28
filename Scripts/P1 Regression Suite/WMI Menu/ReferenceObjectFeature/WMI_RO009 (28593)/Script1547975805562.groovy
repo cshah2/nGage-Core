@@ -71,18 +71,18 @@ CustomKeywords.'actions.Common.waitForTabLoading'(null, GlobalVariable.G_LongTim
 WebUI.mouseOver(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/ImportMode_Interactive/tab1_Interactive/select_New'))
 WebUI.waitForElementVisible(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/ImportMode_Interactive/tab1_Interactive/option_RenderAllFieldsTypes'), GlobalVariable.G_LongTimeout)
 WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/ImportMode_Interactive/tab1_Interactive/option_RenderAllFieldsTypes'))
-CustomKeywords.'actions.Common.waitForTabLoading'(null, GlobalVariable.G_LongTimeout)
-
+WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 String BMTextBeforeSave = 'Text - '+DateUtil.getCurrentDateTime(Consts.FORMAT_DATETIME)
 
 'Set text in BM String'
 CustomKeywords.'actions.Common.setTextJQuery'(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/ImportMode_Interactive/tab1_Interactive/tab1_dropdown_InlineForm/input_BM String'), BMTextBeforeSave)
 
 'Set Date'
-CustomKeywords.'actions.Common.setText_Date'(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/ImportMode_Interactive/tab1_Interactive/tab1_dropdown_InlineForm/input__DateTimeField_refGrid'),DateUtil.getCurrentDateTime(Consts.FORMAT_DATETIME))
+CustomKeywords.'actions.Common.setTextJQuery'(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/ImportMode_Interactive/tab1_Interactive/tab1_dropdown_InlineForm/input__DateTimeField_refGrid'),DateUtil.getCurrentDateTime(Consts.FORMAT_DATETIME))
 
 'Click on Save from reference Object'
 WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/ImportMode_Interactive/tab1_Interactive/tab1_dropdown_InlineForm/input_Save'))
+WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 
 'Switch to parent window'
 CustomKeywords.'actions.Window.clickElementAndWaitForWindowClose'(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/ImportMode_Interactive/span_Close Window'), GlobalVariable.G_LongTimeout)

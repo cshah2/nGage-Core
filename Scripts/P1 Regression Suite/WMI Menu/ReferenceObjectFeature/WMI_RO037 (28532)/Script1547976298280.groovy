@@ -17,7 +17,7 @@ import internal.GlobalVariable as GlobalVariable
 CustomKeywords.'actions.Common.login'()
 
 'Create Bulk documents'
-CustomKeywords.'actions.Common.createBulkDocuments_RenderAsLabel'(16)
+CustomKeywords.'actions.Common.createBulkDocuments_RenderAsLabel'(30)
 
 'Create a new Refrence Object Feature Document'
 WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))
