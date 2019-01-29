@@ -45,11 +45,8 @@ WebUI.verifyElementNotPresent(findTestObject('Object Repository/Page_WMI_NEW/Obj
 'Verify Integer field should be visible'
 WebUI.verifyElementVisible(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/input_Integer Field (Visible)_'))
 
-'Get Background Color'
-String actualColor= CustomKeywords.'actions.Common.getCssValue'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/input_String Field (Style)_efo'),'background-color')
-
-'Verify String filed should be with back ground color Red '
-CustomKeywords.'actions.Common.verifyCssValue'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/input_String Field (Style)_efo'), 'background-color',actualColor)
+'Verify String filed should be with back ground color Blue '
+CustomKeywords.'actions.Common.verifyCssValue'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/input_String Field (Style)_efo'), 'background-color','rgba(0, 0, 255, 1)')
 
 'Set Date in Date field Required'
 String dateRequired = DateUtil.getCurrentDateTime(Consts.FORMAT_DATETIME)
@@ -94,7 +91,7 @@ WebUI.verifyMatch(actualtext, 'Business Model View - Radio List Event', false)
 
 'Verify Changes Saved in Document'
 WebUI.verifyElementAttributeValue(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/input_Date Field (Required)_ef'), 'value',dateRequired,GlobalVariable.G_LongTimeout)
-CustomKeywords.'actions.Common.verifyCssValue'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/input_String Field (Style)_efo'), 'background-color',actualColor)
+CustomKeywords.'actions.Common.verifyCssValue'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/input_String Field (Style)_efo'), 'background-color','rgba(0, 0, 255, 1)')
 
 'Close Window() and If Error Present Document will not get Close'
 CustomKeywords.'actions.Window.clickElementAndWaitForWindowClose'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/span_Close Window'),GlobalVariable.G_LongTimeout)

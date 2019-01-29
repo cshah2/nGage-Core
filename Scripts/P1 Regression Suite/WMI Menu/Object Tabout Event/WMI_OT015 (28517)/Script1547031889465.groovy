@@ -75,11 +75,8 @@ WebUI.verifyElementText(findTestObject('Object Repository/Page_WMI_NEW/Object Ta
 'Verify Integer field should be visible'
 WebUI.verifyElementVisible(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/tab_SingleResultView/input_Integer Field (Visible)_'))
 
-'Get Background Color'
-String actualColor= CustomKeywords.'actions.Common.getCssValue'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/tab_SingleResultView/input_StringField_ReferenceObject'),'background-color')
-
 'Verify String filed should be with back ground color Red '
-CustomKeywords.'actions.Common.verifyCssValue'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/tab_SingleResultView/input_StringField_ReferenceObject'), 'background-color',actualColor)
+CustomKeywords.'actions.Common.verifyCssValue'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/tab_SingleResultView/input_StringField_ReferenceObject'), 'background-color','rgba(0, 0, 255, 1)')
 
 'Set Text in String Field to Verify Font'
 String val = 'Sanyogita - '+DateUtil.getCurrentDateTime(Consts.FORMAT_DATETIME)

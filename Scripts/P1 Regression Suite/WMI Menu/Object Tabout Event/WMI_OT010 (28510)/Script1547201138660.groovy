@@ -59,11 +59,8 @@ CustomKeywords.'actions.Common.waitForTabLoading'(null, GlobalVariable.G_LongTim
 'Verify Integer field should be visible'
 WebUI.verifyElementVisible(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/input_Integer Field (Visible)_'))
 
-'Get Background Color'
-String actualColor= CustomKeywords.'actions.Common.getCssValue'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/input_String Field (Style)_efo'),'background-color')
-
 'Verify String filed should be with back ground color Red '
-CustomKeywords.'actions.Common.verifyCssValue'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/input_String Field (Style)_efo'), 'background-color',actualColor)
+CustomKeywords.'actions.Common.verifyCssValue'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/input_String Field (Style)_efo'), 'background-color','rgba(255, 0, 0, 1)')
 
 'Set Date in Date field Required '
 String dateRequired = DateUtil.getCurrentDateTime(Consts.FORMAT_DATETIME)
