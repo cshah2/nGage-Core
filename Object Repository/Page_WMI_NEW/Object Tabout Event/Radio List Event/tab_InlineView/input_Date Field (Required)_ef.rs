@@ -4,6 +4,12 @@
    <name>input_Date Field (Required)_ef</name>
    <tag></tag>
    <elementGuidId>a5bb835d-7868-4cd7-aeb9-c4fe9b9c744e</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>//input[@id = 'eform_mcb67676_TabContainer_4_TabRef_2_phBO_5_BO_eidmKey_BM_DateTime' and @ref_element = 'Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/tab_InlineView/iframe_Close Window_ContentPla']</value>
+      </entry>
+   </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
    <webElementProperties>
@@ -14,14 +20,14 @@
       <value>input</value>
    </webElementProperties>
    <webElementProperties>
-      <isSelected>true</isSelected>
+      <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>name</name>
       <type>Main</type>
       <value>eform_mcb67676$TabContainer_4$TabRef_2$phBO_5_BO$eidmKey_BM_DateTime</value>
    </webElementProperties>
    <webElementProperties>
-      <isSelected>true</isSelected>
+      <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>type</name>
       <type>Main</type>

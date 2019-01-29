@@ -1481,5 +1481,36 @@ public class Common {
 		WebUI.switchToWindowTitle('Savana nGage')
 		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/span_ui-button-icon-primary ui'))
 	}
+	
+	@Keyword
+	def createDocument_ForSingleResultView() {
+		
+		'Expand Repository Menu'
+		WebUI.click(findTestObject('Page_nGage_Dashboard/Repository/h3_Repository Menu'))
+		waitForFrameToLoad(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
+		WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
+		
+		'Select Repository - Advance Search tab'
+		WebUI.selectOptionByLabel(findTestObject('Page_nGage_Dashboard/Repository/select_Repository Drop Down'), 'Business Model', false)
+		waitForFrameToLoad(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
+		
+		'Selinput_btnSearchect Search For - Advance Search tab'
+		WebUI.selectOptionByLabel(findTestObject('Page_nGage_Dashboard/Repository/select_Search For Drop Down'), 'TopOneRowSC', false)
+		waitForFrameToLoad(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
+		
+		'Click on Search button'
+		WebUI.click(findTestObject('Page_nGage_Dashboard/Repository/input_btnSearch'))
+		waitForFrameToLoad(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
+		
+		'Verify table contains atleast 1 record'
+		int rowCount = new Table().getRowsCount(findTestObject('Page_nGage_Dashboard/Repository/table_SearchResults'))
+		if(rowCount <= 0) {
+			createDocument_RenderAllField('10', '', '', '', '', '', '', '', '', '', '')
+		}
+		
+		WebUI.refresh()
+		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+		WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
+	}
 
 }
