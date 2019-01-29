@@ -37,6 +37,7 @@ CustomKeywords.'actions.Window.clickElementAndWaitForWindowClose'(findTestObject
 
 'Switch to main window'
 WebUI.switchToWindowIndex(0)
+WebUI.click(findTestObject('Page_nGage_Dashboard/Home/span_ui-button-icon-primary ui'))
 
 'Click on Recent Document'
 CustomKeywords.'actions.MenuBar.clickTreeMenu'('HOME', 'Recent Documents')
@@ -53,6 +54,7 @@ CustomKeywords.'actions.Table.clickCell'(findTestObject('Page_nGage_Dashboard/Ho
 'Switch to WMI Window'
 WebUI.switchToWindowIndex(1)
 WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+
 'Click on Value 2 check box from refrence object'
 WebUI.uncheck(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/CheckboxListEvent/chkbox1_ReferenceObjectSelectOption'))
 CustomKeywords.'actions.Common.waitForTabLoading'(null, GlobalVariable.G_LongTimeout)
