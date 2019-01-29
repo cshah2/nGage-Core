@@ -4,6 +4,12 @@
    <name>contentDocument</name>
    <tag></tag>
    <elementGuidId>e4238314-2dcf-4573-b6e6-24ae783ba1ce</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>//td[@id = 'eform_mcb67676_TabContainer_4_TabRef_2_phBO_5_BO_ifrmenativeCloseTableCell' and @ref_element = 'Object Repository/Page_WMI_NEW/Reference_Object_Feature/Inline_Content_View/tab_Inlineresultview(false)/iframe_Close Window_ContentPla (2)']</value>
+      </entry>
+   </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
    <webElementProperties>
@@ -14,7 +20,7 @@
       <value>td</value>
    </webElementProperties>
    <webElementProperties>
-      <isSelected>false</isSelected>
+      <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
       <name>id</name>
       <type>Main</type>
@@ -28,7 +34,7 @@
       <value>headerBusinessObject</value>
    </webElementProperties>
    <webElementProperties>
-      <isSelected>true</isSelected>
+      <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>

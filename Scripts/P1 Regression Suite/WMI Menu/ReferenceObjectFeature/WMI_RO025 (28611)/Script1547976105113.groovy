@@ -82,7 +82,7 @@ WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feat
 
 'Verify MSN Page opens in New Window'
 WebUI.switchToWindowIndex(2)
-WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+/*WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)*/
 
 String msnUrlAfterClick= WebUI.getUrl()
 WebUI.verifyMatch(msnUrlAfterClick, '.*https://www.msn.com.*', true)

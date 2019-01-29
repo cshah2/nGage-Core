@@ -24,6 +24,25 @@ WebUI.click(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'))
 WebUI.switchToWindowTitle('(Doc ID: NEW )')
 WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 
+'Click on Save Button'
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Inline_Content_View/iframe_Close Window_ContentPla'))
+WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Inline_Content_View/span_Save'))
+
+'Click on Close window'
+WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Inline_Content_View/span_Close Window'))
+
+'Switch to main window'
+WebUI.switchToWindowIndex(0)
+
+'Create a new Refrence Object Feature Document'
+WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))
+CustomKeywords.'actions.Common.selectDocClassAndDocTypeForGlobalNew'('Reference Object Feature', 'Reference Object InlineContentView')
+WebUI.click(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'))
+
+WebUI.switchToWindowTitle('(Doc ID: NEW )')
+WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+
 'Verify two tabs 1) InlineContentView-inlineresultview(true) and 2) InlineContentView-inlineresultview(false)'
 WebUI.verifyElementVisible(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Inline_Content_View/a_1) InlineContentView-inliner'))
 WebUI.verifyElementVisible(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Inline_Content_View/a_2) InlineContentView-inliner'))
@@ -62,11 +81,15 @@ WebUI.verifyElementVisible(findTestObject('Object Repository/Page_WMI_NEW/Refere
 WebUI.click(findTestObject('Page_WMI_NEW/Reference_Object_Feature/Inline_Content_View/a_2) InlineContentView-inliner'))
 
 'Click on any of the part of the doc in the reference grid. other than PDF icon.'
-WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Inline_Content_View/tab_Inlineresultview(false)/cell_BMStringTab2_Table'))
-WebUI.delay(2)
+CustomKeywords.'actions.Table.clickCell'(findTestObject('Page_WMI_NEW/Reference_Object_Feature/Inline_Content_View/tab_Inlineresultview(false)/table_BMStringTab2'), 1, 3)
+WebUI.delay(5)
 
 'Verify the document is opening'
-WebUI.verifyElementVisible(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Inline_Content_View/tab_Inlineresultview(false)/contentDocument'))
+WebUI.switchToWindowIndex(2)
+WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_WMI_NEW/Reference_Object_Feature/Inline_Content_View/tab_Inlineresultview(false)/iframe_Close Window_ContentPla'))
+WebUI.click(findTestObject('Page_WMI_NEW/Reference_Object_Feature/Inline_Content_View/a_2) InlineContentView-inliner'))
+WebUI.verifyElementVisible(findTestObject('Page_WMI_NEW/Reference_Object_Feature/Inline_Content_View/tab_Inlineresultview(false)/span_Information'))
 
 'Close the window'
 WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Inline_Content_View/span_Close Window'))

@@ -11,10 +11,10 @@
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//input[@id='eform_mcb67676_TabContainer_4_TabRef_1_phBO_4_BO_grc_ctl09_custBtn_1']</value>
+         <value>//table[@id='eform_mcb67676_TabContainer_4_TabRef_1_phBO_4_BO_grc']//input[@value='Google']</value>
       </entry>
    </selectorCollection>
-   <selectorMethod>BASIC</selectorMethod>
+   <selectorMethod>XPATH</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
    <webElementProperties>
       <isSelected>true</isSelected>

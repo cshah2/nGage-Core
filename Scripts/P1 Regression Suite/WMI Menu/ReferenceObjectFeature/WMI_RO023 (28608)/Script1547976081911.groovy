@@ -16,6 +16,9 @@ import internal.GlobalVariable as GlobalVariable
 'Login Into Application'
 CustomKeywords.'actions.Common.login'()
 
+'Create Bulk documents render as label'
+CustomKeywords.'actions.Common.createBulkDocuments_RenderAsLabel'(3)
+
 'Create a new Refrence Object Feature Document'
 WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))
 CustomKeywords.'actions.Common.selectDocClassAndDocTypeForGlobalNew'('Reference Object Feature', 'Reference Object CustomButton')
@@ -72,11 +75,16 @@ CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Reposi
 
 'Verify Document should be displayed in reference grid'
 WebUI.verifyElementPresent(findTestObject('Page_WMI_NEW/Reference_Object_Feature/CustomButton/tab1_CustomButtons/input_ Google_Button'),GlobalVariable.G_LongTimeout )
+WebUI.verifyElementVisible(findTestObject('Page_WMI_NEW/Reference_Object_Feature/CustomButton/tab1_CustomButtons/input_ Google_Button'))
 
 'Select mutiple check boxes from grid'
-WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/CustomButton/tab1_CustomButtons/input_BM Text_eform_mcb67676Ta'))
-WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/CustomButton/tab1_CustomButtons/input_Label Control_eform_mcb6'))
-WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/CustomButton/tab1_CustomButtons/input_You selected Option 1_ef'))
+//WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/CustomButton/tab1_CustomButtons/input_BM Text_eform_mcb67676Ta'))
+//WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/CustomButton/tab1_CustomButtons/input_Label Control_eform_mcb6'))
+//WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/CustomButton/tab1_CustomButtons/input_You selected Option 1_ef'))
+CustomKeywords.'actions.Table.checkRecordInTable'(findTestObject('Page_WMI_NEW/Reference_Object_Feature/CustomButton/tab1_CustomButtons/table_ResultGrid'), 1)
+CustomKeywords.'actions.Table.checkRecordInTable'(findTestObject('Page_WMI_NEW/Reference_Object_Feature/CustomButton/tab1_CustomButtons/table_ResultGrid'), 2)
+CustomKeywords.'actions.Table.checkRecordInTable'(findTestObject('Page_WMI_NEW/Reference_Object_Feature/CustomButton/tab1_CustomButtons/table_ResultGrid'), 3)
+
 
 'Verify selected check boxes should be check'
 WebUI.verifyElementChecked(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/CustomButton/tab1_CustomButtons/input_BM Text_eform_mcb67676Ta'),GlobalVariable.G_LongTimeout)
