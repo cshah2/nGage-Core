@@ -26,13 +26,13 @@ WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_My Work Left Menu'))
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_iframe_105'))
 
-'Verify Tree structure contains [Empty] folder'
-CustomKeywords.'actions.MenuBar.verifySubMenuPresent'('My_Work','[empty]', 'Processes','Datetimerequired','Datetimerequired')
+'Verify Tree structure contains empty folder'
+CustomKeywords.'actions.MenuBar.verifySubMenuPresent'('My_Work',TREE_EMPTY, 'Processes','Datetimerequired','Datetimerequired')
 
 'Expand Processes by Click on the Expand Icon and Verify Foldered data displayed (For Document 1)'
-CustomKeywords.'actions.MenuBar.clickTreeMenu'('My_Work','Processes','Datetimerequired','Datetimerequired', '[empty]')
+CustomKeywords.'actions.MenuBar.clickTreeMenu'('My_Work','Processes','Datetimerequired','Datetimerequired', TREE_EMPTY)
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/iframe_work_items'))
 
 'Verify record count in activity and in table matches'
-int recordCount = CustomKeywords.'actions.MenuBar.getRecordCountInActivity'('My_Work','Processes','Datetimerequired','Datetimerequired', '[empty]')
+int recordCount = CustomKeywords.'actions.MenuBar.getRecordCountInActivity'('My_Work','Processes','Datetimerequired','Datetimerequired', TREE_EMPTY)
 CustomKeywords.'actions.Common.verifyTotalRecordCountFromPageSummary'(findTestObject('Page_nGage_Dashboard/My_Work/table_pagination_summary'), recordCount)

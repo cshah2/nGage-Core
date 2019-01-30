@@ -20,6 +20,7 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 
 import internal.GlobalVariable as GlobalVariable
 import utils.WebUtil
+import static utils.Consts.*
 
 public class MenuBar {
 
@@ -342,7 +343,7 @@ public class MenuBar {
 
 		for(WebElement e in eleList) {
 			String dateValue = e.getText().split(' \\(')[0].trim()
-			if(!dateValue.equalsIgnoreCase('[Empty]'))
+			if(!dateValue.equalsIgnoreCase(TREE_EMPTY))
 				(new Common()).verifyDateFormat(dateValue, dateFormat)
 		}
 	}

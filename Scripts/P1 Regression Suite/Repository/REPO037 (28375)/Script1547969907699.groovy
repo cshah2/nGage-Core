@@ -35,4 +35,7 @@ CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Reposi
 
 'Verify Record count in activity and table matches'
 int activityRecordCount = CustomKeywords.'actions.MenuBar.getRecordCountInActivity'('REPO', 'Business Model', 'Business Model', 'Render All Field Types')
+
+if(activityRecordCount > 500)
+	activityRecordCount = 500
 CustomKeywords.'actions.Common.verifyTotalRecordCountFromPageSummary'(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/BrowseResults Tab/Table_PageResults'), activityRecordCount)

@@ -58,16 +58,16 @@ WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Folde
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
 'Verify Folders are configured as per Firstname value'
-CustomKeywords.'actions.MenuBar.verifySubMenuPresent'('MY_WORK', '[empty]', 'Processes', 'Loan Interactive', 'Loan Application')
+CustomKeywords.'actions.MenuBar.verifySubMenuPresent'('MY_WORK', TREE_EMPTY, 'Processes', 'Loan Interactive', 'Loan Application')
 CustomKeywords.'actions.MenuBar.verifySubMenuPresent'('MY_WORK', 'pdf', 'Processes', 'Loan Interactive', 'Loan Application')
 CustomKeywords.'actions.MenuBar.verifySubMenuPresent'('MY_WORK', 'DOC', 'Processes', 'Loan Interactive', 'Loan Application')
 
 'Click on Foldered Menu under Loan application'
-CustomKeywords.'actions.MenuBar.clickTreeMenu'('MY_WORK', 'Processes', 'Loan Interactive', 'Loan Application', '[empty]')
+CustomKeywords.'actions.MenuBar.clickTreeMenu'('MY_WORK', 'Processes', 'Loan Interactive', 'Loan Application', TREE_EMPTY)
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_work_items'))
 
 'get record count displayed in tree'
-int recordCountActivity = CustomKeywords.'actions.MenuBar.getRecordCountInActivity'('MY_WORK', 'Processes', 'Loan Interactive', 'Loan Application', '[empty]')
+int recordCountActivity = CustomKeywords.'actions.MenuBar.getRecordCountInActivity'('MY_WORK', 'Processes', 'Loan Interactive', 'Loan Application', TREE_EMPTY)
 
 'Verify record count in activity tree and grid matches'
 CustomKeywords.'actions.Common.verifyTotalRecordCountFromPageSummary'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/div_PageCount'), recordCountActivity)

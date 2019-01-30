@@ -14,6 +14,8 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 import static utils.Consts.*
 
+import java.text.NumberFormat
+
 'Login Into Application'
 CustomKeywords.'actions.Common.login'()
 
@@ -32,7 +34,7 @@ CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Da
 'Verify page navigation of the grid'
 int activityCount = CustomKeywords.'actions.MenuBar.getRecordCountInActivity'('MY_WORK', 'Processes', 'Closure Action', 'Activity A')
 
-String expText = 'Showing 1 - 10 of '+activityCount
+String expText = 'Showing 1 - 10 of '+NumberFormat.getNumberInstance(Locale.US).format(activityCount)
 WebUI.verifyMatch(WebUI.getText(findTestObject('Page_nGage_Dashboard/My_Work/table_pagination_summary')), '.*'+expText+'.*', true)
 
 WebUI.verifyElementAttributeValue(findTestObject('Page_nGage_Dashboard/My_Work/table_page_number_input'), 'value', '1', GlobalVariable.G_LongTimeout)

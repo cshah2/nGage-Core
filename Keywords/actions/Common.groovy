@@ -7,6 +7,7 @@ import java.text.SimpleDateFormat;
 import java.util.concurrent.TimeUnit
 
 import org.apache.commons.lang3.StringUtils
+import org.apache.commons.lang3.math.NumberUtils
 import org.openqa.selenium.By
 import org.openqa.selenium.Dimension
 import org.openqa.selenium.Keys
@@ -646,7 +647,8 @@ public class Common {
 
 		int actCount
 		try {
-			actCount = Integer.parseInt(text.split(' of ')[1].trim())
+			//actCount = Integer.parseInt(text.split(' of ')[1].trim())
+			actCount = Integer.parseInt(text.split(' of ')[1].trim().replaceAll(',', ''))
 		}
 		catch(Exception e) {
 			KeywordUtil.markFailedAndStop('Could not get total record counts from page summary '+text)

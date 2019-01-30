@@ -351,6 +351,7 @@ public class Consts {
 	public static final String DC_DATETIMERANGEREQUIRED = 'Datetimerangerequired'
 	public static final String DT_DATETIMERANGEREQUIRED = 'Datetimerangerequired'
 
+	public static final String TREE_EMPTY = '[Empty]'
 
 	//DATE - TIME FORMAT
 	public static final String DATETIME_APPLICATION = 'MM-dd-yyyy HH:mm:ss a'
