@@ -378,12 +378,6 @@ def static "actions.MenuBar.refreshActivityUntilRecordCountIncreases"(
          , 	modulePath)
 }
 
-def static "actions.MenuBar.getAllSubMenu"(
-    	TestObject menu	) {
-    (new actions.MenuBar()).getAllSubMenu(
-        	menu)
-}
-
 def static "actions.MenuBar.getAllSubMenus"(
     	String moduleName	
      , 	String[] menuPath	) {

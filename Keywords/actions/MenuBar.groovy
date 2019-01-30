@@ -49,44 +49,9 @@ public class MenuBar {
 		}
 	}
 
-	//	@Keyword
-	//	def refreshActivityUntilRecordCountIncreases(TestObject element, int timeout) {
-	//		int originalCount = getRecordCountInActivity(element)
-	//		int currentCount = originalCount
-	//		boolean hasRecordCountIncreased = false
-	//
-	//		def startTime = System.currentTimeMillis()
-	//		def endTime = startTime + TimeUnit.SECONDS.toMillis(timeout)
-	//		def currentTime = System.currentTimeMillis()
-	//
-	//		while(currentTime < endTime) {
-	//			println "Original Count = "+originalCount+"currentCount = "+currentCount
-	//			if(originalCount < 0 || currentCount < 0 || currentCount <= originalCount) {
-	//				WebUI.rightClick(element)
-	//				WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/My_Work/contextMenu_Refresh'), GlobalVariable.G_SmallTimeout)
-	//				WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/contextMenu_Refresh'))
-	//				WebUI.waitForJQueryLoad(GlobalVariable.G_SmallTimeout)
-	//				WebUI.delay(5)
-	//				currentCount = getRecordCountInActivity(element)
-	//				currentTime = System.currentTimeMillis()
-	//			}
-	//			else {
-	//				hasRecordCountIncreased = true
-	//				break
-	//			}
-	//		}
-	//
-	//		if(hasRecordCountIncreased) {
-	//			KeywordUtil.markPassed("Activity count refreshed")
-	//		}
-	//		else {
-	//			KeywordUtil.markFailedAndStop("Activity count not refreshed in given time "+timeout+" Seconds")
-	//		}
-	//	}
 
 	@Keyword
 	def refreshActivityUntilRecordCountIncreases(int originalCount, int timeout, String moduleName, String... modulePath) {
-		//int originalCount = getRecordCountInActivity(element)
 		int currentCount = originalCount
 		boolean hasRecordCountIncreased = false
 
@@ -123,19 +88,6 @@ public class MenuBar {
 		else {
 			KeywordUtil.markFailedAndStop("Activity count not refreshed in given time "+timeout+" Seconds")
 		}
-	}
-
-	@Keyword
-	def getAllSubMenu(TestObject menu) {
-		WebElement menuWebElement=WebUtil.getWebElement(menu)
-		WebElement parent = menuWebElement.findElement(By.xpath(".."))
-		List<WebElement> elements = parent.findElements(By.xpath('./ul/li/a'))
-
-		List<String> subMenu=new ArrayList()
-		for(WebElement element in elements) {
-			subMenu.add(element.getText().trim())
-		}
-		return subMenu
 	}
 
 	@Keyword
@@ -247,8 +199,8 @@ public class MenuBar {
 		if(!moduleName.equalsIgnoreCase('REPORT'))
 			appendBrace = lastIndex>1?" (":""
 
-		treeXpath.append("/ul/li/a[starts-with(normalize-space(text()),'"+menuPath[size-1]+appendBrace+"')]")
-		//treeXpath.append("/ul/li/a[starts-with(normalize-space(text()),'"+path+appendBrace+"')]")
+		//treeXpath.append("/ul/li/a[starts-with(normalize-space(text()),'"+menuPath[size-1]+appendBrace+"')]")
+		treeXpath.append(xpathText(menuPath[size-1]+appendBrace))
 
 		WebDriver driver = DriverFactory.getWebDriver()
 		driver.findElement(By.xpath(treeXpath.toString())).click()
@@ -268,7 +220,8 @@ public class MenuBar {
 		if(!moduleName.equalsIgnoreCase('REPORT'))
 			appendBrace = lastIndex>1?" (":""
 
-		treeXpath.append("/ul/li/a[starts-with(normalize-space(text()),'"+menuPath[size-1]+appendBrace+"')]")
+		//treeXpath.append("/ul/li/a[starts-with(normalize-space(text()),'"+menuPath[size-1]+appendBrace+"')]")
+		treeXpath.append(xpathText(menuPath[size-1]+appendBrace))
 		WebDriver driver = DriverFactory.getWebDriver()
 		WebElement e = driver.findElement(By.xpath(treeXpath.toString()))
 
@@ -290,7 +243,8 @@ public class MenuBar {
 		if(!moduleName.equalsIgnoreCase('REPORT'))
 			appendBrace = lastIndex>1?" (":""
 
-		treeXpath.append("/ul/li/a[starts-with(normalize-space(text()),'"+menuPath[size-1]+appendBrace+"')]")
+		//treeXpath.append("/ul/li/a[starts-with(normalize-space(text()),'"+menuPath[size-1]+appendBrace+"')]")
+		treeXpath.append(xpathText(menuPath[size-1]+appendBrace))
 		WebDriver driver = DriverFactory.getWebDriver()
 		WebElement e = driver.findElement(By.xpath(treeXpath.toString()))
 
@@ -313,7 +267,8 @@ public class MenuBar {
 			if(!moduleName.equalsIgnoreCase('REPORT'))
 				appendBrace = lastIndex>1?" (":""
 
-			treeXpath.append("/ul/li/a[starts-with(normalize-space(text()),'"+menuPath[size-1]+appendBrace+"')]")
+			//treeXpath.append("/ul/li/a[starts-with(normalize-space(text()),'"+menuPath[size-1]+appendBrace+"')]")
+			treeXpath.append(xpathText(menuPath[size-1]+appendBrace))
 			WebDriver driver = DriverFactory.getWebDriver()
 			String nodeText = driver.findElement(By.xpath(treeXpath.toString())).getText()
 
@@ -384,7 +339,8 @@ public class MenuBar {
 			String appendBrace = ""
 			if(!moduleName.equalsIgnoreCase('REPORT'))
 				appendBrace = i>1?" (":""
-			treeXpath.append("/ul/li/a[starts-with(normalize-space(text()),'"+path+appendBrace+"')]")
+			//treeXpath.append("/ul/li/a[starts-with(normalize-space(text()),'"+path+appendBrace+"')]")
+			treeXpath.append(xpathText(path+appendBrace))
 			a = driver.findElement(By.xpath(treeXpath.toString()))
 			treeXpath.append("/..")
 			li = a.findElement(By.xpath(".."))
@@ -426,10 +382,10 @@ public class MenuBar {
 			String dateValue = e.getText().trim()
 			int startIndex = 0
 			int endIndex = dateValue.lastIndexOf(' (')+1
-			subNodeNames.add(dateValue.substring(startIndex, endIndex).trim())
+			subNodeNames.add(dateValue.substring(startIndex, endIndex).trim().toLowerCase())
 		}
 
-		if(subNodeNames.contains(expMenu.trim()))
+		if(subNodeNames.contains(expMenu.trim().toLowerCase()))
 			KeywordUtil.markPassed('Sub Node '+expMenu+' found in list')
 		else
 			KeywordUtil.markFailedAndStop('Sub Node '+expMenu+' not found in list')
@@ -453,10 +409,10 @@ public class MenuBar {
 			String dateValue = e.getText().trim()
 			int startIndex = 0
 			int endIndex = dateValue.lastIndexOf(' (')+1
-			subNodeNames.add(dateValue.substring(startIndex, endIndex).trim())
+			subNodeNames.add(dateValue.substring(startIndex, endIndex).trim().toLowerCase())
 		}
 
-		return subNodeNames.contains(expMenu.trim())
+		return subNodeNames.contains(expMenu.trim().toLowerCase())
 	}
 
 	@Keyword
@@ -473,7 +429,8 @@ public class MenuBar {
 		if(!moduleName.equalsIgnoreCase('REPORT'))
 			appendBrace = lastIndex>1?" (":""
 
-		treeXpath.append("/ul/li/a[starts-with(text(),'"+menuPath[size-1]+appendBrace+"')]")
+		//treeXpath.append("/ul/li/a[starts-with(text(),'"+menuPath[size-1]+appendBrace+"')]")
+		treeXpath.append(xpathText(menuPath[size-1]+appendBrace))
 		WebDriver driver = DriverFactory.getWebDriver()
 		WebElement e = driver.findElement(By.xpath(treeXpath.toString()))
 
@@ -499,7 +456,8 @@ public class MenuBar {
 		if(!moduleName.equalsIgnoreCase('REPORT'))
 			appendBrace = lastIndex>1?" (":""
 
-		treeXpath.append("/ul/li/a[starts-with(text(),'"+menuPath[size-1]+appendBrace+"')]/../i")
+		//treeXpath.append("/ul/li/a[starts-with(text(),'"+menuPath[size-1]+appendBrace+"')]/../i")
+		treeXpath.append(xpathText(menuPath[size-1]+appendBrace)+"/../i")
 		WebDriver driver = DriverFactory.getWebDriver()
 		WebElement e = driver.findElement(By.xpath(treeXpath.toString()))
 
@@ -512,5 +470,9 @@ public class MenuBar {
 			KeywordUtil.markFailedAndStop('Expand Icon is visible against the last tree node')
 		}
 
+	}
+	
+	private String xpathText(String activityName) {
+		String text = "/ul/li/a[starts-with(translate(normalize-space(text()),'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz'),'"+activityName.toLowerCase()+"')]"
 	}
 }
