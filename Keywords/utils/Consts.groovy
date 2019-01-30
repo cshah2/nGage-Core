@@ -326,7 +326,7 @@ public class Consts {
 	public static final String P1_EVENTFOREQ_DROPDOWN_DOC2 = 'Value 2'
 	public static final String P1_EVENTFOREQ_TEXT_DOC2 = 'chintan'
 	public static final String P1_EVENTFOREQ_DATE_DOC2 = '01-01-2019'
-	
+
 	public static final String P1_WMI_RO028_DATE = '01-01-2018'
 
 
@@ -360,7 +360,7 @@ public class Consts {
 	public static final String FORMAT_DATE = 'MM-dd-yyyy' //TODO: Code should be done such that this value should remain fixed
 	public static final String FORMAT_TIME = 'hh:mm:ss a' //TODO: Code should be done such that this value should remain fixed
 
-	public static final String FORMAT_DATE_TREE = 'MM/dd/yyyy' //TODO: To be deleted once code is fixed.
+	public static final String FORMAT_DATE_TREE = 'MM-dd-yyyy' //TODO: To be deleted once code is fixed.
 
 }
 
