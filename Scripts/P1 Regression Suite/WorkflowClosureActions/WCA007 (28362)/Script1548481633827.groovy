@@ -18,9 +18,9 @@ import static utils.DateUtil.*
 CustomKeywords.'actions.Common.login'()
 
 'Create Closure Action document'
-String timeformat = getCurrentDateTime('hhmmss')
-String primary_CustName = 'Chintan Shah - P'+timeformat
-String primary_CustDesc = 'Workflow closure action - WCA007'
+//String timeformat = getCurrentDateTime('hhmmss')
+String primary_CustName = 'Chintan Shah - PWCA007'
+String primary_CustDesc = 'Workflow closure action - PWCA007'
 
 CustomKeywords.'actions.Common.createDocument_ClosureAction'(primary_CustName, primary_CustDesc)
 
@@ -140,6 +140,3 @@ CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_WMI/Closur
 
 'Verify Entry for first row'
 CustomKeywords.'actions.Table.verifyCellContainsValue'(findTestObject('Page_WMI/Closure Action/BPMProcessAudit/table_Audit'), 1, 7, 'Show Custom Message')
-
-'Verify action return type is true'
-CustomKeywords.'actions.Table.verifyCellContainsValue'(findTestObject('Page_WMI/Closure Action/BPMProcessAudit/table_Audit'), 1, 6, 'True')

@@ -19,9 +19,9 @@ import static utils.Consts.*
 CustomKeywords.'actions.Common.login'()
 
 'Create Closure Action document'
-String timeformat = getCurrentDateTime('hhmmss')
-String primary_CustName = 'Chintan Shah - P'+timeformat
-String primary_CustDesc = 'Workflow closure action - WCA009'
+//String timeformat = getCurrentDateTime('hhmmss')
+String primary_CustName = 'Chintan Shah - PWCA009'
+String primary_CustDesc = 'Workflow closure action - PWCA009'
 
 CustomKeywords.'actions.Common.createDocument_ClosureAction'(primary_CustName, primary_CustDesc)
 
@@ -133,5 +133,14 @@ CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_WMI/Closur
 'Verify Entry for first row'
 CustomKeywords.'actions.Table.verifyCellContainsValue'(findTestObject('Page_WMI/Closure Action/BPMProcessAudit/table_Audit'), 1, 7, 'Stop Action')
 
-'Verify action return type is true'
-CustomKeywords.'actions.Table.verifyCellContainsValue'(findTestObject('Page_WMI/Closure Action/BPMProcessAudit/table_Audit'), 1, 6, 'True')
+'Click on first row'
+CustomKeywords.'actions.Table.clickCell'(findTestObject('Page_WMI/Closure Action/BPMProcessAudit/table_Audit'), 1, 7)
+
+'Expand Audit description'
+WebUI.click(findTestObject('Page_WMI/Closure Action/BPMProcessAudit/header_Audit Description'))
+WebUI.verifyElementVisible(findTestObject('Page_WMI/Closure Action/BPMProcessAudit/textarea_AuditDescription'))
+WebUI.scrollToElement(findTestObject('Page_WMI/Closure Action/BPMProcessAudit/textarea_AuditDescription'), GlobalVariable.G_LongTimeout)
+
+'Verify message in audit log'
+String textAudit = WebUI.getAttribute(findTestObject('Page_WMI/Closure Action/BPMProcessAudit/textarea_AuditDescription'), 'value')
+WebUI.verifyMatch(textAudit, '.*Message:@EPM_NO_DIALOG@.*', true)

@@ -75,8 +75,11 @@ CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Da
 'Get total no of records displayed in table'
 int rowCount = CustomKeywords.'actions.Table.getRowsCount'(findTestObject('Page_nGage_Dashboard/My_Work/Charts/Table_JQGrid WorkItems'))
 
-if(totalDocs > 999)
-	totalDocs = 999
-
 'Verify total record counts with number of records displayed in table'
-WebUI.verifyEqual(rowCount, totalDocs)
+if(totalDocs > 100)
+	WebUI.verifyEqual(rowCount, 100)
+else
+	WebUI.verifyEqual(rowCount, totalDocs)
+
+'Verify pagination summary'
+CustomKeywords.'actions.Common.verifyTotalRecordCountFromPageSummary'(findTestObject('Page_nGage_Dashboard/My_Work/Charts/Table_PaginationSummary'), totalDocs)

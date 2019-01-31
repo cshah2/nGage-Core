@@ -33,6 +33,8 @@ CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Da
 
 'Verify record counts are matching'
 int recordCountInActivity = CustomKeywords.'actions.MenuBar.getRecordCountInActivity'('REPO', 'Business Model', 'Business Model', 'Render All Field Types')
+if(recordCountInActivity > 500)
+	recordCountInActivity = 500
 CustomKeywords.'actions.Common.verifyTotalRecordCountFromPageSummary'(findTestObject('Page_nGage_Dashboard/Repository/BrowseResults Tab/Table_PageResults'), recordCountInActivity)
 
 'Verify Browser tab tool tip'

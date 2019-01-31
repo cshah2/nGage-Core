@@ -19,9 +19,9 @@ import static utils.Consts.*
 CustomKeywords.'actions.Common.login'()
 
 'Create Closure Action document'
-String timeformat = getCurrentDateTime('hhmmss')
-String primary_CustName = 'Chintan Shah - P'+timeformat
-String primary_CustDesc = 'Workflow closure action - WCA008'
+//String timeformat = getCurrentDateTime('hhmmss')
+String primary_CustName = 'Chintan Shah - PWCA008'
+String primary_CustDesc = 'Workflow closure action - PWCA008'
 
 CustomKeywords.'actions.Common.createDocument_ClosureAction'(primary_CustName, primary_CustDesc)
 
@@ -141,7 +141,7 @@ WebUI.switchToWindowIndex(0)
 'Calculated expected process due date'
 String currDate = getCurrentDateTime(FORMAT_DATE)
 String businessDate = getBusinessDays(currDate, FORMAT_DATE, 4)
-String expProcessDueDate = businessDate+P1_WCA008_PROCESSDUETIME
+String expProcessDueDate = businessDate+' '+P1_WCA008_PROCESSDUETIME
 
 'Get column number for process due date'
 int colNo_ProcessDueDate = CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Page_nGage_Dashboard/My_Work/tableHeader_MyWorkSearchResult'), 'Process Due Date')

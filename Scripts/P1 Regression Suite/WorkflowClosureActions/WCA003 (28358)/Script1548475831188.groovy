@@ -18,11 +18,11 @@ import static utils.DateUtil.*
 CustomKeywords.'actions.Common.login'()
 
 'Create Closure Action document'
-String timeformat = getCurrentDateTime('hhmmss')
-String primary_CustName = 'Chintan Shah - P'+timeformat
-String primary_CustDesc = 'Workflow closure action - WCA002'
-String attached_CustName = 'Chintan Shah - A'+timeformat
-String attached_CustDesc = 'Workflow closure action - WCA002'
+//String timeformat = getCurrentDateTime('hhmmss')
+String primary_CustName = 'Chintan Shah - PWCA003'
+String primary_CustDesc = 'Workflow closure action - PWCA003'
+String attached_CustName = 'Chintan Shah - AWCA003'
+String attached_CustDesc = 'Workflow closure action - AWCA003'
 
 CustomKeywords.'actions.Common.createDocument_ClosureAction'(primary_CustName, primary_CustDesc)
 
