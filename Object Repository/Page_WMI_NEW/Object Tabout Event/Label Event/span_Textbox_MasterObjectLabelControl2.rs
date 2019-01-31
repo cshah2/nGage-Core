@@ -4,6 +4,12 @@
    <name>span_Textbox_MasterObjectLabelControl2</name>
    <tag></tag>
    <elementGuidId>ada3ee2a-977b-4c4c-8b2e-de0eaa95b1e5</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>//span[@id = 'eform_mcb67676_phBO_3_BO_eidmKey_BM_text2']</value>
+      </entry>
+   </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
    <webElementProperties>
@@ -18,7 +24,7 @@
       <matchCondition>equals</matchCondition>
       <name>id</name>
       <type>Main</type>
-      <value>eform_mcb67676_phBO_3_BO_eidmKey_BM_String_Nested_Field</value>
+      <value>eform_mcb67676_phBO_3_BO_eidmKey_BM_text2</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -47,13 +53,6 @@
       <name>text</name>
       <type>Main</type>
       <value>Condition2</value>
-   </webElementProperties>
-   <webElementProperties>
-      <isSelected>false</isSelected>
-      <matchCondition>equals</matchCondition>
-      <name>xpath</name>
-      <type>Main</type>
-      <value>id(&quot;eform_mcb67676_phBO_3_BO_eidmKey_BM_String_Nested_Field&quot;)</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>

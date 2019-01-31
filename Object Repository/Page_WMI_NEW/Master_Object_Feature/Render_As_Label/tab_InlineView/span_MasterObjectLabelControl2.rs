@@ -7,14 +7,14 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//span[@id = 'eform_mcb67676_TabContainer_4_TabRef_2_phBO_5_BO_eidmKey_BM_String_Nested_Field' and (text() = 'Condition2' or . = 'Condition2') and @ref_element = 'Object Repository/Page_WMI_NEW/Master_Object_Feature/Render_As_Label/tab_InlineView/iframe_Close Window_ContentPla']</value>
+         <value>//span[@id = 'eform_mcb67676_TabContainer_4_TabRef_2_phBO_5_BO_eidmKey_BM_String_Nested_Field' and @ref_element = 'Object Repository/Page_WMI_NEW/Master_Object_Feature/Render_As_Label/tab_InlineView/iframe_Close Window_ContentPla']</value>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//span[@id='eform_mcb67676_TabContainer_4_TabRef_2_phBO_5_BO_eidmKey_BM_String_Nested_Field']</value>
+         <value>//span[@id='eform_mcb67676_TabContainer_4_TabRef_2_phBO_5_BO_eidmKey_BM_text2']</value>
       </entry>
    </selectorCollection>
-   <selectorMethod>BASIC</selectorMethod>
+   <selectorMethod>XPATH</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
    <webElementProperties>
       <isSelected>true</isSelected>
@@ -52,7 +52,7 @@
       <value>1</value>
    </webElementProperties>
    <webElementProperties>
-      <isSelected>true</isSelected>
+      <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>text</name>
       <type>Main</type>

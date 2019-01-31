@@ -11,7 +11,7 @@
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//span[@id='eform_mcb67676_phBO_3_BO_headerTitle' and text()='Business Model View - Render As Label']</value>
+         <value>//span[@id='eform_mcb67676_phBO_3_BO_headerTitle' and text()='Business Model View - Label Event']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

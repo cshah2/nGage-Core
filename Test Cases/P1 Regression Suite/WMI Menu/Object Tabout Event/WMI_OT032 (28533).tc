@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
-   <description></description>
+   <description>(28533)  Regression Test WMI-Label event</description>
    <name>WMI_OT032 (28533)</name>
    <tag></tag>
    <comment></comment>
