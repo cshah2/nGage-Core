@@ -6,12 +6,11 @@
    <elementGuidId>005cad8d-0f2f-48c4-aeb8-23d2d1f51f43</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>XPATH</key>
-         <value>//select[@name = '100055' and @id = '100055']</value>
+         <key>BASIC</key>
       </entry>
       <entry>
-         <key>BASIC</key>
-         <value></value>
+         <key>XPATH</key>
+         <value>//table[@id='tblSearch']//td[normalize-space(text())='String WL']/../td[3]/select</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

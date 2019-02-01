@@ -45,57 +45,36 @@ CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dash
 'Store DocID value of primary document'
 String docIDPrimary = CustomKeywords.'actions.Table.getCellText'(findTestObject('Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), 1, colNo_DocID)
 
-'Store record count for Activity A'
-int originalCount = CustomKeywords.'actions.MenuBar.getRecordCountInActivity'('MY_WORK', 'Processes', 'Closure Action', 'Activity A')
+CustomKeywords.'actions.Common.createDocument_ClosureAction'(attached_CustName, attached_CustDesc)
 
-'Open first document from the grid'
-CustomKeywords.'actions.Table.clickCell'(findTestObject('Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), 1, colNo_DocID)
+WebUI.refresh()
+WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
+
+'Click on My Work link from left menu'
+WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_My Work Left Menu'))
+WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_iframe_105'))
+
+'Click on Tree Menu'
+CustomKeywords.'actions.MenuBar.clickTreeMenu'('MY_WORK', 'Processes', 'Closure Action', 'Activity A')
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_work_items'))
+
+'Sort records by Doc ID descending'
+CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/My_Work/tableHeader_MyWorkSearchResult'), 'Doc ID')
+CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/My_Work/tableHeader_MyWorkSearchResult'), 'Doc ID')
+
+'Store DocID value of primary document'
+String docIDAttached = CustomKeywords.'actions.Table.getCellText'(findTestObject('Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), 1, colNo_DocID)
+
+'Open second document from the grid'
+CustomKeywords.'actions.Table.clickCell'(findTestObject('Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), 2, colNo_DocID)
 
 'Switch to WMI'
 WebUI.switchToWindowIndex(1)
 WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 
 'Click on Customer information tab'
-WebUI.click(findTestObject('Page_WMI/Closure Action/tab_CustomerInformation'))
-CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_WMI/Closure Action/iframe_ContentPlaceHolder1_iPa'))
-
-'Mouse over on menu Attachements'
-WebUI.mouseOver(findTestObject('Page_WMI/Closure Action/menu_Attachments'))
-
-'Select option Attach new documents'
-WebUI.waitForElementVisible(findTestObject('Page_WMI/Closure Action/subMenu_Attachements_Attach New Document'), GlobalVariable.G_LongTimeout)
-WebUI.click(findTestObject('Page_WMI/Closure Action/subMenu_Attachements_Attach New Document'))
-WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
-CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_WMI/Closure Action/AttachDocument/iframe_Close Window_ContentPla'))
-
-'Select option in Doc Class drop down'
-WebUI.selectOptionByLabel(findTestObject('Page_WMI/Closure Action/AttachDocument/select_DocClass'), 'Closure Action', false)
-WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
-CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_WMI/Closure Action/AttachDocument/iframe_Close Window_ContentPla'))
-
-'Select option in Doc Type drop down'
-WebUI.selectOptionByLabel(findTestObject('Page_WMI/Closure Action/AttachDocument/select_DocType'), 'Closure Action', false)
-WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
-CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_WMI/Closure Action/AttachDocument/iframe_Close Window_ContentPla'))
-
-'Verify Customer Details value are present'
-WebUI.verifyElementAttributeValue(findTestObject('Page_WMI/Closure Action/AttachDocument/textarea_Customer Name'), 'value', primary_CustName, GlobalVariable.G_LongTimeout)
-WebUI.verifyElementAttributeValue(findTestObject('Page_WMI/Closure Action/AttachDocument/textarea_Customer Details'), 'value', primary_CustDesc, GlobalVariable.G_LongTimeout)
-WebUI.setText(findTestObject('Page_WMI/Closure Action/AttachDocument/textarea_Customer Name'), attached_CustName)
-WebUI.setText(findTestObject('Page_WMI/Closure Action/AttachDocument/textarea_Customer Details'), attached_CustDesc)
-
-'Click on Attach document button'
-WebUI.click(findTestObject('Page_WMI/Closure Action/AttachDocument/button_Attach Document'))
-WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
-
-'Verify success message on dialog'
-WebUI.verifyMatch(WebUI.getText(findTestObject('Page_WMI/Closure Action/AttachDocument/alertDialog_Message')), '.*Document was attached successfully.*', true)
-
-'Click on OK button on dialog'
-WebUI.click(findTestObject('Page_WMI/Closure Action/AttachDocument/alertDialog_Ok'))
-WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
-
-'Go back to Customer information tab'
 WebUI.click(findTestObject('Page_WMI/Closure Action/tab_CustomerInformation'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_WMI/Closure Action/iframe_ContentPlaceHolder1_iPa'))
 
@@ -129,9 +108,6 @@ TestObject tableHeader = findTestObject('Page_nGage_Dashboard/My_Work/tableHeade
 TestObject refresh = findTestObject('Page_nGage_Dashboard/My_Work/table_refreshButton')
 
 CustomKeywords.'actions.Table.refreshUntilRecordFoundInTable'(table, tableHeader, refresh, docIDPrimary, colNo_DocID, GlobalVariable.G_LongTimeout)
-
-'Store DocID value of attached document'
-String docIDAttached = docIDPrimary+1
 
 'Re-open primary document'
 CustomKeywords.'actions.Table.clickCell'(findTestObject('Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), 2, colNo_DocID)
@@ -175,6 +151,18 @@ CustomKeywords.'actions.Table.verifyCellContainsValue'(findTestObject('Page_WMI/
 'Verify action return type is true'
 CustomKeywords.'actions.Table.verifyCellContainsValue'(findTestObject('Page_WMI/Closure Action/BPMProcessAudit/table_Audit'), 1, 6, 'True')
 
+'Click on Audit entry row'
+CustomKeywords.'actions.Table.clickCell'(findTestObject('Page_WMI/Closure Action/BPMProcessAudit/table_Audit'), 1, 7)
+
+'Expand Audit Description header'
+WebUI.click(findTestObject('Page_WMI/Closure Action/BPMProcessAudit/header_Audit Description'))
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_WMI/Closure Action/BPMProcessAudit/iframe_Close Window_ContentPla'))
+
+'Verify Audit description message'
+WebUI.scrollToElement(findTestObject('Page_WMI/Closure Action/BPMProcessAudit/textarea_AuditDescription'), GlobalVariable.G_LongTimeout)
+String auditDescMsg = WebUI.getAttribute(findTestObject('Page_WMI/Closure Action/BPMProcessAudit/textarea_AuditDescription'), 'value')
+WebUI.verifyMatch(auditDescMsg, '.*Current Docid='+docIDPrimary+' attached successfully to searched document id='+docIDAttached+'.*', true)
+
 'Close WMI'
 CustomKeywords.'actions.Window.clickElementAndWaitForWindowClose'(findTestObject('Page_WMI/Closure Action/span_Close Window'), GlobalVariable.G_LongTimeout)
 
@@ -197,6 +185,10 @@ CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Da
 'Click on Search button'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Repository/input_btnSearch'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
+
+'Sort records by DocID descending'
+CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/Repository/table_Header_SearchResults'), 'Doc ID')
+CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/Repository/table_Header_SearchResults'), 'Doc ID')
 
 'Verify the table is loaded'
 int repoRowCount = CustomKeywords.'actions.Table.getRowsCount'(findTestObject('Page_nGage_Dashboard/Repository/table_SearchResults'))

@@ -6,12 +6,11 @@
    <elementGuidId>6f85400d-cf3e-4fa9-aa27-25df5eea4b9b</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>XPATH</key>
-         <value>//select[@id='ddlOperators_100055']</value>
+         <key>BASIC</key>
       </entry>
       <entry>
-         <key>BASIC</key>
-         <value></value>
+         <key>XPATH</key>
+         <value>//table[@id='tblSearch']//td[normalize-space(text())='String WL']/../td[2]/select</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
