@@ -6,3 +6,5 @@
 /Reports/
 .project
 /Libs/TempTestCase*.groovy
+/Libs/
+debug.log
