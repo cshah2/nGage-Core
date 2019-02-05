@@ -121,7 +121,7 @@ public class MenuBar {
 			}
 			catch(Exception e) {
 				println "Coult not get record count "+e.toString()
-				KeywordUtil.markErrorAndStop('Cannot fetch activity record count. Activity name = '+subMenuText)
+				KeywordUtil.markFailedAndStop('Cannot fetch activity record count. Activity name = '+subMenuText)
 			}
 		}
 
@@ -179,7 +179,7 @@ public class MenuBar {
 		println 'Exp: '+sortedActivityNameList
 		isSorted=subMenus.equals(sortedActivityNameList)
 		if(!isSorted)
-			KeywordUtil.markErrorAndStop("submenus are not sorted")
+			KeywordUtil.markFailedAndStop("submenus are not sorted")
 		else
 			KeywordUtil.markPassed("submenus are in sorted order")
 	}
@@ -410,7 +410,7 @@ public class MenuBar {
 		if(subNodeNames.contains(expMenu.trim().toLowerCase()))
 			KeywordUtil.markPassed('Sub Node '+expMenu+' found in list')
 		else
-			KeywordUtil.markFailedAndStop('Sub Node '+expMenu+' not found in list')
+			KeywordUtil.markFailedAndStop('Sub Node '+expMenu+' not found in list'+subNodeNames)
 
 	}
 

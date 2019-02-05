@@ -96,6 +96,7 @@ public class Table {
 	private void compareTwoLists(def actList, def expList) {
 		if(!actList.equals(expList)) {
 			println "Actual List = ${actList}"
+			println "Expected List = ${expList}"
 			KeywordUtil.markFailedAndStop('Records are not sorted')
 		}
 		else
@@ -213,6 +214,7 @@ public class Table {
 			KeywordUtil.markPassed('Record found in table')
 		}
 		else {
+			WebUI.takeScreenshot()
 			KeywordUtil.markFailedAndStop('Record not found in table')
 		}
 	}
@@ -251,6 +253,7 @@ public class Table {
 			KeywordUtil.markPassed('Record not found in table')
 		}
 		else {
+			WebUI.takeScreenshot()
 			KeywordUtil.markFailedAndStop('Record found in table')
 		}
 	}
@@ -287,6 +290,7 @@ public class Table {
 		List<Integer> actList = getAllValueFromColumnInteger(table, colNo)
 
 		if(actList.size() == 0) {
+			WebUI.takeScreenshot()
 			KeywordUtil.markFailedAndStop('No records available.')
 		}
 
@@ -306,6 +310,7 @@ public class Table {
 		WebUI.switchToDefaultContent()
 
 		if(cellValues.size() == 0) {
+			WebUI.takeScreenshot()
 			KeywordUtil.markFailedAndStop('No records available for comparison.')
 		}
 
@@ -314,6 +319,7 @@ public class Table {
 		for(String value in cellValues) {
 			result = DateUtil.dateFilter(operator, value, filterValue1, filterValue2)
 			if(!result) {
+				WebUI.takeScreenshot()
 				KeywordUtil.markFailedAndStop("Value : "+value+" does not satisfy filter criteria")
 			}
 		}
@@ -326,6 +332,7 @@ public class Table {
 		WebUI.switchToDefaultContent()
 
 		if(cellValues.size() == 0) {
+			WebUI.takeScreenshot()
 			KeywordUtil.markFailedAndStop('No records available for comparison.')
 		}
 
@@ -334,6 +341,7 @@ public class Table {
 		for(String value in cellValues) {
 			result = DateUtil.dateTimeFilter(operator, value, filterValue1, filterValue2)
 			if(!result) {
+				WebUI.takeScreenshot()
 				KeywordUtil.markFailedAndStop("Value : "+value+" does not satisfy filter criteria")
 			}
 		}
@@ -347,12 +355,14 @@ public class Table {
 		WebUI.switchToDefaultContent()
 
 		if(cellValues.size() == 0) {
+			WebUI.takeScreenshot()
 			KeywordUtil.markFailedAndStop('No records available for comparison.')
 		}
 
 		for(String value in cellValues) {
 			boolean result = verifyFilter(operator, Integer.parseInt(value), referenceNum)
 			if(!result) {
+				WebUI.takeScreenshot()
 				KeywordUtil.markFailedAndStop("Value : "+value+" does not satisfy filter criteria")
 			}
 		}
@@ -365,11 +375,13 @@ public class Table {
 		WebUI.switchToDefaultContent()
 
 		if(cellValues.size() == 0) {
+			WebUI.takeScreenshot()
 			KeywordUtil.markFailedAndStop('No records available for comparison.')
 		}
 
 		for(String value in cellValues) {
 			if(!expValue.trim().equalsIgnoreCase(value.trim())) {
+				WebUI.takeScreenshot()
 				KeywordUtil.markFailedAndStop("Record does not match the expected value in one of the row. Expected Value = "+expValue+" Actual Value ="+value)
 			}
 		}
@@ -431,6 +443,7 @@ public class Table {
 			KeywordUtil.markPassed('All Records are selected')
 		}
 		else {
+			WebUI.takeScreenshot()
 			KeywordUtil.markFailedAndStop('Record at row no '+failedRowNo+' is not selected')
 		}
 	}
@@ -477,6 +490,7 @@ public class Table {
 			KeywordUtil.markPassed('Column clicked')
 		}
 		else {
+			WebUI.takeScreenshot()
 			KeywordUtil.markFailedAndStop('Column '+columnName+' not found')
 		}
 	}
@@ -502,6 +516,7 @@ public class Table {
 			KeywordUtil.markPassed('Expected String '+expText+' is found in actual String '+actText)
 		}
 		else {
+			WebUI.takeScreenshot()
 			KeywordUtil.markFailedAndStop('Expected String '+expText+' is not found in actual String '+actText)
 		}
 	}
@@ -524,6 +539,7 @@ public class Table {
 		WebUI.switchToDefaultContent()
 
 		if(cellValues.size() == 0) {
+			WebUI.takeScreenshot()
 			KeywordUtil.markFailedAndStop('No records available for comparison.')
 		}
 
@@ -531,8 +547,10 @@ public class Table {
 			value=value.replaceAll('\\$','').replaceAll(',', '')
 
 			int actualValue=Double.parseDouble(value)
-			if(actualValue<fromValue || actualValue>toValue)
+			if(actualValue<fromValue || actualValue>toValue) {
+				WebUI.takeScreenshot()
 				KeywordUtil.markFailedAndStop("Value : "+value+" is not within  range : "+fromValue+" - "+toValue)
+			}
 		}
 		KeywordUtil.markPassed("all the records values are in given range")
 	}
@@ -544,20 +562,26 @@ public class Table {
 		WebUI.switchToDefaultContent()
 
 		if(cellValues.size() == 0) {
+			WebUI.takeScreenshot()
 			KeywordUtil.markFailedAndStop('No records available for comparison.')
 		}
 
 		if(sortOrder.equalsIgnoreCase('asc'))
 			for(int i=0;i<cellValues.size()-1;i++){
 				boolean result = DateUtil.dateTimeFilter('<', cellValues[i], cellValues[i+1], '')
-				if(!result)
+				if(!result) {
+					WebUI.takeScreenshot()
 					KeywordUtil.markFailedAndStop("table records are not sorted")
+				}
+					
 			}
 		else
 			for(int i=0;i<cellValues.size()-1;i++){
 				boolean result = DateUtil.dateTimeFilter('>', cellValues[i], cellValues[i+1], '')
-				if(!result)
+				if(!result) {
+					WebUI.takeScreenshot()
 					KeywordUtil.markFailedAndStop("table records are not sorted")
+				}
 			}
 		KeywordUtil.markPassed("table records are sorted")
 	}
@@ -598,6 +622,7 @@ public class Table {
 			KeywordUtil.markPassed('Icon found in table')
 		}
 		else {
+			WebUI.takeScreenshot()
 			KeywordUtil.markFailedAndStop('Icon not found in table')
 		}
 	}
@@ -623,6 +648,7 @@ public class Table {
 			KeywordUtil.markPassed('Icon not found in table')
 		}
 		else {
+			WebUI.takeScreenshot()
 			KeywordUtil.markFailedAndStop('Icon found in table')
 		}
 	}
@@ -648,6 +674,7 @@ public class Table {
 			return i
 		}
 		else {
+			WebUI.takeScreenshot()
 			KeywordUtil.markFailedAndStop('Expected Row not found')
 		}
 	}
@@ -678,6 +705,7 @@ public class Table {
 			KeywordUtil.markPassed('Lock icon is displayed')
 		}
 		else {
+			WebUI.takeScreenshot()
 			KeywordUtil.markFailedAndStop('Lock icon is not displayed')
 		}
 		WebUI.switchToDefaultContent()
@@ -693,6 +721,7 @@ public class Table {
 			KeywordUtil.markPassed('Lock icon is not displayed')
 		}
 		else {
+			WebUI.takeScreenshot()
 			KeywordUtil.markFailedAndStop('Lock icon displayed')
 		}
 		WebUI.switchToDefaultContent()
@@ -707,6 +736,7 @@ public class Table {
 		int rowNo = 1
 		for(WebElement row in rows) {
 			if(!isCellDisplaysLockIcon(tableLocator, row, colNo)) {
+				WebUI.takeScreenshot()
 				KeywordUtil.markFailedAndStop('Lock icon not present in rowNo '+rowNo)
 			}
 			rowNo++
@@ -714,6 +744,7 @@ public class Table {
 		WebUI.switchToDefaultContent()
 
 		if(rowNo == 1) {
+			WebUI.takeScreenshot()
 			KeywordUtil.markFailedAndStop('No record available in result table for verification')
 		}
 		else {
@@ -730,6 +761,7 @@ public class Table {
 		int rowNo = 1
 		for(WebElement row in rows) {
 			if(isCellDisplaysLockIcon(tableLocator, row, colNo)) {
+				WebUI.takeScreenshot()
 				KeywordUtil.markFailedAndStop('Lock icon present in rowNo '+rowNo)
 			}
 			rowNo++
@@ -737,6 +769,7 @@ public class Table {
 		WebUI.switchToDefaultContent()
 
 		if(rowNo == 1) {
+			WebUI.takeScreenshot()
 			KeywordUtil.markFailedAndStop('No record available in result table for verification')
 		}
 		else {
@@ -771,6 +804,7 @@ public class Table {
 			KeywordUtil.markPassed('Attribute value for all row matches')
 		}
 		else {
+			WebUI.takeScreenshot()
 			KeywordUtil.markFailedAndStop('Actual value = '+actAttrValue+' does not matches with expected value = '+attrValue)
 		}
 	}
@@ -789,6 +823,7 @@ public class Table {
 			KeywordUtil.markPassed('Attribute value matches')
 		}
 		else {
+			WebUI.takeScreenshot()
 			KeywordUtil.markFailedAndStop('Actual value = '+actAttrValue+' does not matches with expected value = '+attrValue)
 		}
 	}
@@ -821,6 +856,7 @@ public class Table {
 			return i
 		}
 		else {
+			WebUI.takeScreenshot()
 			KeywordUtil.markFailedAndStop('Expected row not found in table')
 		}
 	}
@@ -857,6 +893,7 @@ public class Table {
 			KeywordUtil.markPassed('Record found in grid after refreshed')
 		}
 		else {
+			WebUI.takeScreenshot()
 			KeywordUtil.markFailedAndStop('Record '+expText+' not found in grid')
 		}
 	}

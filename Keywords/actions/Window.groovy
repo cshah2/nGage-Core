@@ -78,6 +78,7 @@ public class Window {
 			KeywordUtil.markPassed("Switched to window containing URL text "+text)
 		}
 		else {
+			WebUI.takeScreenshot()
 			KeywordUtil.markFailedAndStop("Could not find window containing URL text "+text)
 		}
 	}

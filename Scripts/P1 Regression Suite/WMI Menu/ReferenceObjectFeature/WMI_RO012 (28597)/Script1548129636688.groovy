@@ -14,8 +14,6 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-//KeywordUtil.markFailedAndStop('Script development pending because of Bug in application')
-
 'Login Into Application'
 CustomKeywords.'actions.Common.login'()
 

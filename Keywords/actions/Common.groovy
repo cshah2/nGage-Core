@@ -74,6 +74,7 @@ public class Common {
 			KeywordUtil.markPassed("Window maximized")
 		}
 		else {
+			WebUI.takeScreenshot()
 			KeywordUtil.markFailedAndStop("Could not maximize window")
 		}
 	}
@@ -330,6 +331,7 @@ public class Common {
 		}
 		else
 		{
+			WebUI.takeScreenshot()
 			KeywordUtil.markFailedAndStop("attribute: "+actualValue +" contains "+expValue)
 		}
 	}
@@ -646,8 +648,10 @@ public class Common {
 	@Keyword
 	def verifyTotalRecordCountFromPageSummary(TestObject to, int expCount) {
 		String text = WebUI.getText(to).trim()
-		if(expCount < 0)
+		if(expCount < 0) {
+			WebUI.takeScreenshot()
 			KeywordUtil.markFailedAndStop('Expected record count is less than 0')
+		}
 
 		int actCount
 		try {
@@ -710,6 +714,7 @@ public class Common {
 			KeywordUtil.markPassed('Actual JQuery status = '+isJqueryRunning.toString()+' ,Expected JQuery status = '+isExpectedToBeRunning.toString())
 		}
 		else {
+			WebUI.takeScreenshot()
 			KeywordUtil.markFailedAndStop('Actual JQuery status = '+isJqueryRunning.toString()+' ,Expected JQuery status = '+isExpectedToBeRunning.toString())
 		}
 	}
@@ -1338,6 +1343,7 @@ public class Common {
 		WebElement element = WebUtil.getWebElement(toLocator)
 		WebDriver driver = DriverFactory.getWebDriver()
 		if(!element.equals(driver.switchTo().activeElement())) {
+			WebUI.takeScreenshot()
 			KeywordUtil.markFailedAndStop('Provided element does not have focus')
 		}
 		WebUI.switchToDefaultContent()
@@ -1348,6 +1354,7 @@ public class Common {
 		WebElement element = WebUtil.getWebElement(toLocator)
 		WebDriver driver = DriverFactory.getWebDriver()
 		if(element.equals(driver.switchTo().activeElement())) {
+			WebUI.takeScreenshot()
 			KeywordUtil.markFailedAndStop('Provided element  has focus')
 		}
 		WebUI.switchToDefaultContent()

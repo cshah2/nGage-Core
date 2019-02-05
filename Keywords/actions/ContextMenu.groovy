@@ -62,6 +62,7 @@ public class ContextMenu {
 			KeywordUtil.markPassed("All Entries are present.")
 		}
 		else {
+			WebUI.takeScreenshot()
 			KeywordUtil.markFailedAndStop("Entry "+entryNotFound+" is not found in the context Menu")
 		}
 	}
@@ -80,6 +81,7 @@ public class ContextMenu {
 			KeywordUtil.markPassed("All Entries are present.")
 		}
 		else {
+			WebUI.takeScreenshot()
 			KeywordUtil.markFailedAndStop("Entry "+option+" is not found in the context Menu")
 		}
 	}
@@ -92,6 +94,7 @@ public class ContextMenu {
 			e.click()
 		}
 		else {
+			WebUI.takeScreenshot()
 			KeywordUtil.markFailedAndStop("Entry "+option+" is not found in the context Menu")
 		}
 		WebUI.switchToDefaultContent()
