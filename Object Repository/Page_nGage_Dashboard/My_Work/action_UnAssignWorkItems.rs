@@ -6,11 +6,11 @@
    <elementGuidId>e28abd12-cfd8-4f46-b9b0-a394f9a6fd9c</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>XPATH</key>
-         <value>//li[@id='ui-id-4']/a</value>
+         <key>BASIC</key>
       </entry>
       <entry>
-         <key>BASIC</key>
+         <key>XPATH</key>
+         <value>//li[@title='Workflow Actions']/ul/li/a[normalize-space(text())='Unassign Work Items']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

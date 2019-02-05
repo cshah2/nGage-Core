@@ -6,11 +6,11 @@
    <elementGuidId>88fae5c6-9df3-4ed8-9726-d6cf298c5e23</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>XPATH</key>
-         <value>//li[@id='ui-id-5']/a</value>
+         <key>BASIC</key>
       </entry>
       <entry>
-         <key>BASIC</key>
+         <key>XPATH</key>
+         <value>//li[@title='Workflow Actions']/ul/li/a[normalize-space(text())='Unlock Work Items']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

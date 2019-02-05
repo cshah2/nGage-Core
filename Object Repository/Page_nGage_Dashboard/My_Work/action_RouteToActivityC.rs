@@ -10,7 +10,7 @@
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//ul[@id='ui-id-2']/li/a[text()='Route to another ActivityC']</value>
+         <value>//li[@title='Workflow Actions']/ul/li/a[normalize-space(text())='Route to another ActivityC']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

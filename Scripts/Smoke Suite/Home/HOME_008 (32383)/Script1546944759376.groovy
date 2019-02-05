@@ -52,7 +52,8 @@ int colNo_DocID = CustomKeywords.'actions.Table.getColumnNumber'(findTestObject(
 CustomKeywords.'actions.Table.clickCell'(findTestObject('Page_nGage_Dashboard/Home/table_MyDocumentResults'), 1, colNo_DocID)
 
 'Switch to window'
-WebUI.switchToWindowTitle('WMI Menu BOV Vertical')
+//WebUI.switchToWindowTitle('WMI Menu BOV Vertical')
+WebUI.switchToWindowIndex(1)
 WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_WMI/WMI_Menu_BOV_Vertical/iframe_westContainerFrame'))
 

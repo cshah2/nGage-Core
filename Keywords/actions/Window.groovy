@@ -54,6 +54,7 @@ public class Window {
 			KeywordUtil.markPassed("Pop up window is closed")
 		}
 		else {
+			WebUI.takeScreenshot()
 			KeywordUtil.markFailedAndStop("Window did not closed in given timeout period "+timeout)
 		}
 	}
@@ -80,7 +81,7 @@ public class Window {
 			KeywordUtil.markFailedAndStop("Could not find window containing URL text "+text)
 		}
 	}
-	
+
 	@Keyword
 	def verifyOpenWindowCount(int expCount) {
 		WebDriver driver = DriverFactory.getWebDriver()

@@ -139,7 +139,8 @@ CustomKeywords.'actions.Window.clickElementAndWaitForWindowClose'(findTestObject
 WebUI.switchToWindowIndex(0)
 
 'Calculated expected process due date'
-String currDate = getCurrentDateTime(FORMAT_DATE)
+//String currDate = getCurrentDateTime(FORMAT_DATE)
+String currDate = getCurrentDateTimeMinusDays(0, FORMAT_DATE)
 String businessDate = getBusinessDays(currDate, FORMAT_DATE, 4)
 String expProcessDueDate = businessDate+' '+P1_WCA008_PROCESSDUETIME
 

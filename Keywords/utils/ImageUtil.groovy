@@ -58,9 +58,9 @@ public class ImageUtil {
 
 		return filePath
 	}
-	
+
 	public static String captureImage(TestObject element) {
-		
+
 		//Get Start position of Iframe
 		//TestObject element = findTestObject('Page_WMI/WMI_Menu_BOV_Vertical/ContentFrame/image')
 		WebElement pIframe = WebUtil.getWebElement(element.getParentObject())

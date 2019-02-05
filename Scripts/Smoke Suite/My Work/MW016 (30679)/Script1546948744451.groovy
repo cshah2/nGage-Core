@@ -92,11 +92,11 @@ slices = CustomKeywords.'actions.Chart.getNumberOfSlices'(findTestObject('Page_n
 WebUI.verifyGreaterThan(slices, 0)
 
 'Verify tool tip is displayed on performing mouse over on bar chart'
-CustomKeywords.'actions.Chart.mousOverOnSlice'(findTestObject('Page_nGage_Dashboard/My_Work/TAB_Dashboard_Obj/Chart_ActivityEventState_Summary'), 1, GlobalVariable.ChartType['V_BAR'])
+CustomKeywords.'actions.Chart.mousOverOnSlice'(findTestObject('Page_nGage_Dashboard/My_Work/TAB_Dashboard_Obj/Chart_ActivityEventState_Summary'), 4, GlobalVariable.ChartType['V_BAR'])
 WebUI.verifyElementVisible(findTestObject('Page_nGage_Dashboard/My_Work/TAB_Dashboard_Obj/chartToolTip_ActivityEvent'))
 
 'Click on Bar 1'
-CustomKeywords.'actions.Chart.clickSlice'(findTestObject('Page_nGage_Dashboard/My_Work/TAB_Dashboard_Obj/Chart_ActivityEventState_Summary'), 1, GlobalVariable.ChartType['V_BAR'])
+CustomKeywords.'actions.Chart.clickSlice'(findTestObject('Page_nGage_Dashboard/My_Work/TAB_Dashboard_Obj/Chart_ActivityEventState_Summary'), 4, GlobalVariable.ChartType['V_BAR'])
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/TAB_Dashboard_Obj/iframe_BAMActivityWorkIt_ActivityEvent'))
 
 'Verify table is displayed'

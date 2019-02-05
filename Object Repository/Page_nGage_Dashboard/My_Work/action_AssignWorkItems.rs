@@ -6,11 +6,11 @@
    <elementGuidId>a8ab9145-8153-4198-8007-1d57c90538f7</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>XPATH</key>
-         <value>//li[@id='ui-id-3']/a</value>
+         <key>BASIC</key>
       </entry>
       <entry>
-         <key>BASIC</key>
+         <key>XPATH</key>
+         <value>//li[@title='Workflow Actions']/ul/li/a[normalize-space(text())='Assign Work Items']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

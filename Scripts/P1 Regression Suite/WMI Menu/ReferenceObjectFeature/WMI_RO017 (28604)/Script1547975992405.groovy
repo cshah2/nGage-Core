@@ -49,14 +49,17 @@ WebUI.waitForElementVisible(findTestObject('Object Repository/Page_WMI_NEW/Refer
 WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/ExtAppURL/tab_1_ExtAppURL/a_Render As Label'))
 CustomKeywords.'actions.Common.waitForTabLoading'(null, GlobalVariable.G_LongTimeout)
 
-String expectedDate= WebUI.getText(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/ExtAppURL/tab_1_ExtAppURL/span_DateTimeField')).split(' ')[0].trim()
-String CurrentDate = DateUtil.getCurrentDateTime(Consts.FORMAT_DATETIME)
-String[] string_array = CurrentDate.split(" ")
-String actualCurrentDate = string_array[0].trim()
+//String expectedDate= WebUI.getText(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/ExtAppURL/tab_1_ExtAppURL/span_DateTimeField')).split(' ')[0].trim()
+String expectedDate= WebUI.getText(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/ExtAppURL/tab_1_ExtAppURL/span_DateTimeField')).trim()
+//String CurrentDate = DateUtil.getCurrentDateTime(Consts.FORMAT_DATETIME)
+//String currentDate = DateUtil.getCurrentDateTimeMinusDays(0, Consts.FORMAT_DATE)
+//String[] string_array = CurrentDate.split(" ")
+//String actualCurrentDate = string_array[0].trim()
 
 'Verify related document should be displayed under reference grid as inline view'
 WebUI.verifyElementPresent(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/ExtAppURL/tab_1_ExtAppURL/span_This is WMI'),GlobalVariable.G_LongTimeout)
-WebUI.verifyMatch(actualCurrentDate, expectedDate, false)
+//WebUI.verifyMatch(currentDate, expectedDate, false)
+CustomKeywords.'actions.Common.verifyDateFormat'(expectedDate, Consts.FORMAT_DATETIME)
 
 'Verify New Chrome Browser with www.google.com URL is Opened simultaneously'
 WebUI.switchToWindowIndex(2)
@@ -111,4 +114,3 @@ WebUI.verifyMatch(docTypeInRecentDocuments, windowTitleAfterSave,false)
 
 'Close Window() and If Error Present Document will not get Close'
 CustomKeywords.'actions.Window.clickElementAndWaitForWindowClose'(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/ImportMode_Interactive/span_Close Window'), GlobalVariable.G_LongTimeout)
-

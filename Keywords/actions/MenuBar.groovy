@@ -44,8 +44,9 @@ public class MenuBar {
 			return Integer.parseInt(recordCountInString)
 		}
 		catch(Exception e) {
-			println "Coult not get record count "+e.toString()
-			return -1
+
+			WebUI.takeScreenshot()
+			KeywordUtil.markFailedAndStop('Coult not get record count '+e.toString())
 		}
 	}
 
@@ -86,6 +87,7 @@ public class MenuBar {
 			KeywordUtil.markPassed("Activity count refreshed")
 		}
 		else {
+			WebUI.takeScreenshot()
 			KeywordUtil.markFailedAndStop("Activity count not refreshed in given time "+timeout+" Seconds")
 		}
 	}
@@ -188,68 +190,88 @@ public class MenuBar {
 	@Keyword
 	def clickTreeMenu(String moduleName, String... menuPath) {
 
-		int size = menuPath.length
+		try {
+			int size = menuPath.length
 
-		List<String> treePath = new ArrayList<String>(Arrays.asList(menuPath))
-		int lastIndex = treePath.size()-1
-		treePath.remove(lastIndex)
-		expandTree(moduleName, treePath)
+			List<String> treePath = new ArrayList<String>(Arrays.asList(menuPath))
+			int lastIndex = treePath.size()-1
+			treePath.remove(lastIndex)
+			expandTree(moduleName, treePath)
 
-		String appendBrace = ""
-		if(!moduleName.equalsIgnoreCase('REPORT'))
-			appendBrace = lastIndex>1?" (":""
+			String appendBrace = ""
+			if(!moduleName.equalsIgnoreCase('REPORT'))
+				appendBrace = lastIndex>1?" (":""
 
-		//treeXpath.append("/ul/li/a[starts-with(normalize-space(text()),'"+menuPath[size-1]+appendBrace+"')]")
-		treeXpath.append(xpathText(menuPath[size-1]+appendBrace))
+			treeXpath.append(xpathText(menuPath[size-1]+appendBrace))
 
-		WebDriver driver = DriverFactory.getWebDriver()
-		driver.findElement(By.xpath(treeXpath.toString())).click()
+			WebDriver driver = DriverFactory.getWebDriver()
+			driver.findElement(By.xpath(treeXpath.toString())).click()
+
+		}
+		catch(Exception e) {
+
+			WebUI.takeScreenshot()
+			KeywordUtil.markFailedAndStop('Could not click on Tree menu'+e.toString())
+		}
 	}
 
 	@Keyword
 	def doubleClickTreeMenu(String moduleName, String... menuPath) {
 
-		int size = menuPath.length
+		try {
+			int size = menuPath.length
 
-		List<String> treePath = new ArrayList<String>(Arrays.asList(menuPath))
-		int lastIndex = treePath.size()-1
-		treePath.remove(lastIndex)
-		expandTree(moduleName, treePath)
+			List<String> treePath = new ArrayList<String>(Arrays.asList(menuPath))
+			int lastIndex = treePath.size()-1
+			treePath.remove(lastIndex)
+			expandTree(moduleName, treePath)
 
-		String appendBrace = ""
-		if(!moduleName.equalsIgnoreCase('REPORT'))
-			appendBrace = lastIndex>1?" (":""
+			String appendBrace = ""
+			if(!moduleName.equalsIgnoreCase('REPORT'))
+				appendBrace = lastIndex>1?" (":""
 
-		//treeXpath.append("/ul/li/a[starts-with(normalize-space(text()),'"+menuPath[size-1]+appendBrace+"')]")
-		treeXpath.append(xpathText(menuPath[size-1]+appendBrace))
-		WebDriver driver = DriverFactory.getWebDriver()
-		WebElement e = driver.findElement(By.xpath(treeXpath.toString()))
+			//treeXpath.append("/ul/li/a[starts-with(normalize-space(text()),'"+menuPath[size-1]+appendBrace+"')]")
+			treeXpath.append(xpathText(menuPath[size-1]+appendBrace))
+			WebDriver driver = DriverFactory.getWebDriver()
+			WebElement e = driver.findElement(By.xpath(treeXpath.toString()))
 
-		Actions aDriver = new Actions(driver)
-		aDriver.doubleClick(e).build().perform()
+			Actions aDriver = new Actions(driver)
+			aDriver.doubleClick(e).build().perform()
+		}
+		catch(Exception e) {
+			WebUI.takeScreenshot()
+			KeywordUtil.markFailedAndStop('Could not double click on Tree menu'+e.toString())
+		}
 	}
 
 	@Keyword
 	def rightClickTreeMenu(String moduleName, String... menuPath) {
 
-		int size = menuPath.length
+		try {
+			int size = menuPath.length
 
-		List<String> treePath = new ArrayList<String>(Arrays.asList(menuPath))
-		int lastIndex = treePath.size()-1
-		treePath.remove(lastIndex)
-		expandTree(moduleName, treePath)
+			List<String> treePath = new ArrayList<String>(Arrays.asList(menuPath))
+			int lastIndex = treePath.size()-1
+			treePath.remove(lastIndex)
+			expandTree(moduleName, treePath)
 
-		String appendBrace = ""
-		if(!moduleName.equalsIgnoreCase('REPORT'))
-			appendBrace = lastIndex>1?" (":""
+			String appendBrace = ""
+			if(!moduleName.equalsIgnoreCase('REPORT'))
+				appendBrace = lastIndex>1?" (":""
 
-		//treeXpath.append("/ul/li/a[starts-with(normalize-space(text()),'"+menuPath[size-1]+appendBrace+"')]")
-		treeXpath.append(xpathText(menuPath[size-1]+appendBrace))
-		WebDriver driver = DriverFactory.getWebDriver()
-		WebElement e = driver.findElement(By.xpath(treeXpath.toString()))
+			//treeXpath.append("/ul/li/a[starts-with(normalize-space(text()),'"+menuPath[size-1]+appendBrace+"')]")
+			treeXpath.append(xpathText(menuPath[size-1]+appendBrace))
+			WebDriver driver = DriverFactory.getWebDriver()
+			WebElement e = driver.findElement(By.xpath(treeXpath.toString()))
 
-		Actions aDriver = new Actions(driver)
-		aDriver.contextClick(e).build().perform()
+			Actions aDriver = new Actions(driver)
+			aDriver.contextClick(e).build().perform()
+
+		}
+		catch(Exception e) {
+			WebUI.takeScreenshot()
+			KeywordUtil.markFailedAndStop('Could not right click on Tree menu'+e.toString())
+		}
 	}
 
 	@Keyword
@@ -279,8 +301,8 @@ public class MenuBar {
 			return Integer.parseInt(recordCountInString)
 		}
 		catch(Exception e) {
-			println "Coult not get record count "+e.toString()
-			return -1
+			WebUI.takeScreenshot()
+			KeywordUtil.markFailedAndStop('Could not get record count in activity'+e.toString())
 		}
 	}
 
@@ -439,6 +461,7 @@ public class MenuBar {
 			KeywordUtil.markPassed('Tree path is selected')
 		}
 		else {
+			WebUI.takeScreenshot()
 			KeywordUtil.markFailedAndStop('Tree path is not selected')
 		}
 	}
@@ -467,11 +490,12 @@ public class MenuBar {
 			KeywordUtil.markPassed('Expand Icon not visible against the last tree node')
 		}
 		else {
+			WebUI.takeScreenshot()
 			KeywordUtil.markFailedAndStop('Expand Icon is visible against the last tree node')
 		}
 
 	}
-	
+
 	private String xpathText(String activityName) {
 		String text = "/ul/li/a[starts-with(translate(normalize-space(text()),'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz'),'"+activityName.toLowerCase()+"')]"
 	}

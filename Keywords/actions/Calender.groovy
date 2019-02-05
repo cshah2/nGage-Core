@@ -28,17 +28,45 @@ public class Calender {
 	static final String YEAR_XPATH = "//div[@id='ui-datepicker-div']//select[@data-handler = 'selectYear']"
 	static final String MONTH_XPATH = "//div[@id='ui-datepicker-div']//select[@data-handler = 'selectMonth']"
 	static final String DONE_XPATH = "//div[@id='ui-datepicker-div']//button[text()='Done']"
-	
-	
+
+
 	@Keyword
 	def selectDate(String date, String month, String year, TestObject element) {
 
+		TestObject parentObject = element.getParentObject()
+		WebUI.click(element)
+		(new Common()).waitForFrameToLoad(parentObject)
+		WebUI.switchToFrame(parentObject, GlobalVariable.G_LongTimeout)
+
 		try {
-			TestObject parentObject = element.getParentObject()
-			WebUI.click(element)
-			(new Common()).waitForFrameToLoad(parentObject)
-			WebUI.switchToFrame(parentObject, GlobalVariable.G_LongTimeout)
-	
+
+			WebDriver driver = DriverFactory.getWebDriver()
+			Select selYear = new Select(driver.findElement(By.xpath(YEAR_XPATH)))
+			selYear.selectByVisibleText(year)
+			WebUI.delay(1)
+
+			Select selMonth = new Select(driver.findElement(By.xpath(MONTH_XPATH)))
+			selMonth.selectByVisibleText(month)
+			WebUI.delay(1)
+
+			driver.findElement(By.xpath("//div[@id='ui-datepicker-div']//td[@data-handler='selectDay']/a[text()='"+date+"']")).click()
+			WebUI.delay(1)
+		}
+		catch(Exception e) {
+			WebUI.takeScreenshot()
+			KeywordUtil.markFailedAndStop('Unable to select date from Calender picker \n'+e.toString())
+		}
+		WebUI.switchToDefaultContent()
+	}
+
+	@Keyword
+	def selectDateTime(String date, String month, String year, TestObject element) {
+		TestObject parentObject = element.getParentObject()
+		WebUI.click(element)
+		(new Common()).waitForFrameToLoad(parentObject)
+		WebUI.switchToFrame(parentObject, GlobalVariable.G_LongTimeout)
+
+		try {
 			WebDriver driver = DriverFactory.getWebDriver()
 			Select selYear = new Select(driver.findElement(By.xpath(YEAR_XPATH)))
 			selYear.selectByVisibleText(year)
@@ -50,35 +78,14 @@ public class Calender {
 	
 			driver.findElement(By.xpath("//div[@id='ui-datepicker-div']//td[@data-handler='selectDay']/a[text()='"+date+"']")).click()
 			WebUI.delay(1)
+	
+			'Click on Done button'
+			driver.findElement(By.xpath(DONE_XPATH)).click()
 		}
 		catch(Exception e) {
-			KeywordUtil.markFailedAndStop('Unable to select date from Calender picker \n'+e.toString())
+			WebUI.takeScreenshot()
+			KeywordUtil.markFailedAndStop('Unable to select date time from Calender picker \n'+e.toString())
 		}
-		WebUI.switchToDefaultContent()
-	}
-	
-	@Keyword
-	def selectDateTime(String date, String month, String year, TestObject element) {
-		TestObject parentObject = element.getParentObject()
-		WebUI.click(element)
-		(new Common()).waitForFrameToLoad(parentObject)
-		WebUI.switchToFrame(parentObject, GlobalVariable.G_LongTimeout)
-
-		WebDriver driver = DriverFactory.getWebDriver()
-		Select selYear = new Select(driver.findElement(By.xpath(YEAR_XPATH)))
-		selYear.selectByVisibleText(year)
-		WebUI.delay(1)
-
-		Select selMonth = new Select(driver.findElement(By.xpath(MONTH_XPATH)))
-		selMonth.selectByVisibleText(month)
-		WebUI.delay(1)
-
-		driver.findElement(By.xpath("//div[@id='ui-datepicker-div']//td[@data-handler='selectDay']/a[text()='"+date+"']")).click()
-		WebUI.delay(1)
-
-		'Click on Done button'
-		driver.findElement(By.xpath(DONE_XPATH)).click()
-		
 		WebUI.switchToDefaultContent()
 	}
 }

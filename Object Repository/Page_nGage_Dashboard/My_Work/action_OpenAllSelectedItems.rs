@@ -6,11 +6,11 @@
    <elementGuidId>c63ea170-c268-4689-a990-be9b3c5be756</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>XPATH</key>
-         <value>//li[@id='ui-id-6']/a</value>
+         <key>BASIC</key>
       </entry>
       <entry>
-         <key>BASIC</key>
+         <key>XPATH</key>
+         <value>//li[@title='Workflow Actions']/ul/li/a[normalize-space(text())='Open All Selected item(s)']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

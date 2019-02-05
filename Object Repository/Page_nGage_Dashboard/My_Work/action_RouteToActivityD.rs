@@ -7,11 +7,10 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value></value>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//li/a[text()='Route to another ActivityD']</value>
+         <value>//li[@title='Workflow Actions']/ul/li/a[normalize-space(text())='Route to another ActivityD']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

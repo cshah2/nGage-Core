@@ -48,7 +48,8 @@ int colNo_DocID = CustomKeywords.'actions.Table.getColumnNumber'(findTestObject(
 'Open Document'
 CustomKeywords.'actions.Table.clickCell'(findTestObject('Page_nGage_Dashboard/Home/table_MyDocumentResults'), 1, colNo_DocID)
 
-WebUI.switchToWindowTitle('MultipageViewer with drag and drop')
+//WebUI.switchToWindowTitle('MultipageViewer with drag and drop')
+WebUI.switchToWindowIndex(1)
 WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 
 'Verify field values of document'
