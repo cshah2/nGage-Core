@@ -50,8 +50,8 @@ int colNo_BM_DateTime = CustomKeywords.'actions.Table.getColumnNumber'(findTestO
 int colNo_DateTimeRange = CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Page_nGage_Dashboard/Repository/BrowseResults Tab/table_Header_SearchResults'), 'Date time range')
 
 'Sort records by DocID descending'
-CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/Repository/BrowseResults Tab/columnHeader_DocID'))
-CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/Repository/BrowseResults Tab/columnHeader_DocID'))
+CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/Repository/BrowseResults Tab/table_Header_SearchResults'), 'Doc ID')
+CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/Repository/BrowseResults Tab/table_Header_SearchResults'), 'Doc ID')
 
 'Verify date values in table'
 String act_BM_Date = CustomKeywords.'actions.Table.getCellText'(findTestObject('Page_nGage_Dashboard/Repository/BrowseResults Tab/table_SearchResults'), 1, colNo_BM_Date)

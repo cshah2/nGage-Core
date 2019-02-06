@@ -448,14 +448,14 @@ public class Table {
 		}
 	}
 
-	@Keyword
-	def clickColumnHeader(TestObject column) {
-
-		TestObject parentObject = column.getParentObject()
-		WebUI.focus(column)
-		WebUI.click(column)
-		new Common().waitForFrameToLoad(parentObject)
-	}
+//	@Keyword
+//	def clickColumnHeader(TestObject column) {
+//
+//		TestObject parentObject = column.getParentObject()
+//		WebUI.focus(column)
+//		WebUI.click(column)
+//		new Common().waitForFrameToLoad(parentObject)
+//	}
 
 	@Keyword
 	def clickColumnHeader(TestObject tableHeaderLocator, String columnName) {
@@ -573,7 +573,7 @@ public class Table {
 					WebUI.takeScreenshot()
 					KeywordUtil.markFailedAndStop("table records are not sorted")
 				}
-					
+
 			}
 		else
 			for(int i=0;i<cellValues.size()-1;i++){

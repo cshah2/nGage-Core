@@ -138,9 +138,9 @@ CustomKeywords.'actions.Table.clickCell'(findTestObject('Page_WMI/Closure Action
 
 'Expand Audit description'
 WebUI.click(findTestObject('Page_WMI/Closure Action/BPMProcessAudit/header_Audit Description'))
-WebUI.verifyElementVisible(findTestObject('Page_WMI/Closure Action/BPMProcessAudit/textarea_AuditDescription'))
-WebUI.scrollToElement(findTestObject('Page_WMI/Closure Action/BPMProcessAudit/textarea_AuditDescription'), GlobalVariable.G_LongTimeout)
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_WMI/Closure Action/BPMProcessAudit/iframe_Close Window_ContentPla'))
 
 'Verify message in audit log'
+WebUI.scrollToElement(findTestObject('Page_WMI/Closure Action/BPMProcessAudit/textarea_AuditDescription'), GlobalVariable.G_LongTimeout)
 String textAudit = WebUI.getAttribute(findTestObject('Page_WMI/Closure Action/BPMProcessAudit/textarea_AuditDescription'), 'value')
 WebUI.verifyMatch(textAudit, '.*Message:@EPM_NO_DIALOG@.*', true)

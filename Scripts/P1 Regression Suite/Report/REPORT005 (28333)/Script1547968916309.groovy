@@ -62,7 +62,7 @@ WebUI.click(findTestObject('Page_nGage_Dashboard/Report/ScheduleReport/TAB_Sched
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Report/ScheduleReport/TAB_ScheduleReport/iframe_ScheduleReportTab'))
 
 'Click on ID column header to sort record by Descending'
-CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/Report/ScheduleReport/TAB_ScheduleReport/tableHeader_ID'))
+CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/Report/ScheduleReport/TAB_ScheduleReport/tableHeader_ScheduleReport_Data'), 'ID')
 
 'Verify name of the first record'
 CustomKeywords.'actions.Table.verifyCellContainsValue'(findTestObject('Page_nGage_Dashboard/Report/ScheduleReport/TAB_ScheduleReport/table_ScheduleReport_Data'), 1, 2, scheduleName)
