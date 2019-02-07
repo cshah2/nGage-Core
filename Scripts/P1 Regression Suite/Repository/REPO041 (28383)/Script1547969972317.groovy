@@ -40,8 +40,7 @@ CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Da
 int columnID = CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/table_Header_SearchResults'), 'Doc ID')
 
 'Click on Doc ID header'
-WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/columnHeader_DocID'))
-CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
+CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/Repository/table_Header_SearchResults'), 'Doc ID')
 
 'Verify records are sorted in ascending order'
 CustomKeywords.'actions.Table.verifyColumnIsSortedInteger'(findTestObject('Page_nGage_Dashboard/Repository/table_SearchResults'), columnID, 'ASC')
@@ -51,15 +50,13 @@ WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/br
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
 
 'Click on Doc ID header'
-WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/columnHeader_DocID'))
-CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
+CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/Repository/table_Header_SearchResults'), 'Doc ID')
 
 'Verify records are sorted in ascending order'
 CustomKeywords.'actions.Table.verifyColumnIsSortedInteger'(findTestObject('Page_nGage_Dashboard/Repository/table_SearchResults'), columnID, 'ASC')
 
 'Click on Doc ID column'
-WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/columnHeader_DocID'))
-CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
+CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/Repository/table_Header_SearchResults'), 'Doc ID')
 
 'Verify records are sorted in decending order'
 CustomKeywords.'actions.Table.verifyColumnIsSortedInteger'(findTestObject('Page_nGage_Dashboard/Repository/table_SearchResults'), columnID, 'DESC')
