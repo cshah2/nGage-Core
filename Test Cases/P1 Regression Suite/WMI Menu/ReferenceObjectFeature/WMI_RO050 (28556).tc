@@ -3,6 +3,6 @@
    <description>28556 Regression test WMI - Reference Grid feature-Reference Grid (Resizable/Height,Width)</description>
    <name>WMI_RO050 (28556)</name>
    <tag></tag>
-   <comment></comment>
+   <comment>verify document window resizable</comment>
    <testCaseGuid>2000d5f5-8a57-4845-afcc-6fd24fbea18d</testCaseGuid>
 </TestCaseEntity>

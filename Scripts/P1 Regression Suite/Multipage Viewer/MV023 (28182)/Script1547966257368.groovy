@@ -13,6 +13,7 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
+import utils.FileUtil
 import utils.ImageUtil
 
 'Login into application'
@@ -69,3 +70,5 @@ String image =  ImageUtil.captureImage()
 String actText = CustomKeywords.'actions.OCR.readTextFromImage'(image)
 
 WebUI.verifyMatch(actText, '.*PAGE 4.*', true)
+
+FileUtil.delete(image)

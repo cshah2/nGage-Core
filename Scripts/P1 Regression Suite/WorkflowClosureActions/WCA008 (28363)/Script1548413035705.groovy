@@ -12,6 +12,8 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
+import utils.DateUtil
+
 import static utils.DateUtil.*
 import static utils.Consts.*
 
@@ -37,12 +39,18 @@ CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Da
 'Get column number of Doc ID column'
 int colNo_DocID = CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Page_nGage_Dashboard/My_Work/tableHeader_MyWorkSearchResult'), 'Doc ID')
 
+'Get column number for process due date'
+int colNo_ProcessDueDate = CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Page_nGage_Dashboard/My_Work/tableHeader_MyWorkSearchResult'), 'Process Due Date')
+
 'Sort records by Doc ID descending'
 CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/My_Work/tableHeader_MyWorkSearchResult'), 'Doc ID')
 CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/My_Work/tableHeader_MyWorkSearchResult'), 'Doc ID')
 
 'Store DocID value of primary document'
 String docIDPrimary = CustomKeywords.'actions.Table.getCellText'(findTestObject('Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), 1, colNo_DocID)
+
+'Store Process Due date value of primary document'
+String processDueDate_original = CustomKeywords.'actions.Table.getCellText'(findTestObject('Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), 1, colNo_ProcessDueDate)
 
 'Store record count for Activity A'
 int originalCount = CustomKeywords.'actions.MenuBar.getRecordCountInActivity'('MY_WORK', 'Processes', 'Closure Action', 'Activity A')
@@ -62,7 +70,6 @@ CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_WMI/Clos
 WebUI.mouseOver(findTestObject('Page_WMI/Closure Action/button_CustomerActions'))
 
 'Select option Set process due date'
-//WebUI.waitForElementVisible(findTestObject('Page_WMI/Closure Action/subMenu_CustActions_Update related Item field value'), GlobalVariable.G_LongTimeout)
 WebUI.delay(2)
 CustomKeywords.'actions.Window.clickElementAndWaitForWindowClose'(findTestObject('Page_WMI/Closure Action/subMenu_CustActions_Set process due date'), GlobalVariable.G_LongTimeout)
 
@@ -138,14 +145,19 @@ CustomKeywords.'actions.Window.clickElementAndWaitForWindowClose'(findTestObject
 'Switch back to parent window'
 WebUI.switchToWindowIndex(0)
 
-'Calculated expected process due date'
-//String currDate = getCurrentDateTime(FORMAT_DATE)
-String currDate = getCurrentDateTimeMinusDays(0, FORMAT_DATE)
-String businessDate = getBusinessDays(currDate, FORMAT_DATE, 4)
-String expProcessDueDate = businessDate+' '+P1_WCA008_PROCESSDUETIME
+//'Calculated expected process due date'
+////String currDate = getCurrentDateTime(FORMAT_DATE)
+//String currDate = getCurrentDateTimeMinusDays(0, FORMAT_DATE)
+//String businessDate = getBusinessDays(currDate, FORMAT_DATE, 4)
+//String expProcessDueDate = businessDate+' '+P1_WCA008_PROCESSDUETIME
 
-'Get column number for process due date'
-int colNo_ProcessDueDate = CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Page_nGage_Dashboard/My_Work/tableHeader_MyWorkSearchResult'), 'Process Due Date')
+'Store Process Due date value of primary document'
+String processDueDate_After = CustomKeywords.'actions.Table.getCellText'(findTestObject('Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), 1, colNo_ProcessDueDate)
 
-'Verify process due date matches'
-CustomKeywords.'actions.Table.verifyCellContainsValue'(findTestObject('Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), 1, colNo_ProcessDueDate, expProcessDueDate)
+//'Verify process due date matches'
+//CustomKeywords.'actions.Table.verifyCellContainsValue'(findTestObject('Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), 1, colNo_ProcessDueDate, expProcessDueDate)
+
+'Verify New process due date is less than original process due date'
+println "Process Due date original = "+processDueDate_original+"After event = "+processDueDate_After
+WebUI.verifyEqual(DateUtil.dateTimeFilter('<', processDueDate_After, processDueDate_original, ''),true)
+

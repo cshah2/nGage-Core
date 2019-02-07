@@ -15,6 +15,8 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 import static utils.DateUtil.*
 import static utils.Consts.*
+
+import utils.FileUtil
 import utils.ImageUtil
 
 'Login into application'
@@ -132,8 +134,8 @@ CustomKeywords.'actions.Common.waitForImageToRender'(findTestObject('Page_WMI/WM
 'Verify page count summary'
 WebUI.verifyMatch(WebUI.getText(findTestObject('Page_WMI/WMI_Menu_BOV_Vertical/ContentFrame/pageCount')).trim(), '.*Page 1/2.*', true)
 
-String image =  ImageUtil.captureImage()
-String actText = CustomKeywords.'actions.OCR.readTextFromImage'(image)
+String image1 =  ImageUtil.captureImage()
+String actText = CustomKeywords.'actions.OCR.readTextFromImage'(image1)
 
 WebUI.verifyMatch(actText, '.*PAGE 2.*', true)
 
@@ -145,7 +147,10 @@ CustomKeywords.'actions.Common.waitForImageToRender'(findTestObject('Page_WMI/WM
 'Verify page count summary'
 WebUI.verifyMatch(WebUI.getText(findTestObject('Page_WMI/WMI_Menu_BOV_Vertical/ContentFrame/pageCount')).trim(), '.*Page 2/2.*', true)
 
-image =  ImageUtil.captureImage()
-actText = CustomKeywords.'actions.OCR.readTextFromImage'(image)
+String image2 =  ImageUtil.captureImage()
+actText = CustomKeywords.'actions.OCR.readTextFromImage'(image2)
 
 WebUI.verifyMatch(actText, '.*PAGE 4.*', true)
+
+FileUtil.delete(image1)
+FileUtil.delete(image2)

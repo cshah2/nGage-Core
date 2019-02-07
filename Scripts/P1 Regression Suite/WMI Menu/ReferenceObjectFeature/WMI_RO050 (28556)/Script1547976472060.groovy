@@ -40,22 +40,30 @@ WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feat
 'verify document opened in window'
 CustomKeywords.'actions.Window.verifyOpenWindowCount'(3)
 WebUI.switchToWindowIndex(2)
+WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 
 int height_BeforeResize=WebUI.getPageHeight()
 int width_BeforeResize=WebUI.getPageWidth()
 
-'verify height and width of document as per configuration '
-WebUI.verifyMatch(height_BeforeResize.toString(), '436', false)
-WebUI.verifyMatch(width_BeforeResize.toString(), '198', false)
+'verify height and width of document as per configuration ' //height = 436 , width 198
+println "Height = "+height_BeforeResize+" and Width = "+width_BeforeResize
+WebUI.verifyGreaterThanOrEqual(height_BeforeResize, 430)
+WebUI.verifyLessThanOrEqual(height_BeforeResize, 500)
+
+WebUI.verifyGreaterThanOrEqual(width_BeforeResize, 190)
+WebUI.verifyLessThanOrEqual(width_BeforeResize, 200)
+
 
 'verify document window resizable'
 'resize document'
 WebUI.maximizeWindow()
 WebUI.delay(5)
 
+
 int height_AfterResize=WebUI.getPageHeight()
 int width_AfterResize=WebUI.getPageWidth()
 
 'verify window resizable'
+println "Height = "+height_AfterResize+" and Width = "+width_AfterResize
 WebUI.verifyGreaterThan(height_AfterResize,height_BeforeResize)
 WebUI.verifyGreaterThan(width_AfterResize,width_BeforeResize)

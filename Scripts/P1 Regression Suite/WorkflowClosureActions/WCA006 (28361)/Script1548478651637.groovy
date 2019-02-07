@@ -145,5 +145,6 @@ WebUI.click(findTestObject('Page_WMI/Closure Action/tab_CustomerInformation'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_WMI/Closure Action/iframe_ContentPlaceHolder1_iPa'))
 
 'Verify Customer name values is updated'
-String expBusinessDay = '2/7/2018 11:58:00 PM'
-WebUI.verifyElementAttributeValue(findTestObject('Page_WMI/Closure Action/input_eform_Customer_Name'), 'value', expBusinessDay, GlobalVariable.G_LongTimeout)
+String expBusinessDay = '2/7/2018'
+String actBusinessDay = WebUI.getAttribute(findTestObject('Page_WMI/Closure Action/input_eform_Customer_Name'), 'value').split(" ")[0].trim()
+WebUI.verifyEqual(actBusinessDay, expBusinessDay)

@@ -3,7 +3,6 @@
    <description>Regression test Multipage viewer: rotate 180, do not save</description>
    <name>MV025 (28184)</name>
    <tag></tag>
-   <comment>Verify Image is Rotated
-Verify Image is set to original position</comment>
+   <comment></comment>
    <testCaseGuid>6caf0d3b-2ef3-48dc-9a3c-8d2c23760a06</testCaseGuid>
 </TestCaseEntity>
