@@ -35,10 +35,10 @@ int rowCount = CustomKeywords.'actions.Table.getRowsCount'(findTestObject('Page_
 WebUI.verifyGreaterThanOrEqual(rowCount, 1)
 
 'Sort records in tables based on DOC ID - Descending'
-CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/Home/tableHeader_RecentDocuments'), 'Doc ID')
-CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/Home/tableHeader_RecentDocuments'), 'Doc ID')
+CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/Home/tableHeader_FavoriteDocuments'), 'Doc ID')
+CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/Home/tableHeader_FavoriteDocuments'), 'Doc ID')
 
-int colNo_DocID = CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Page_nGage_Dashboard/Home/tableHeader_RecentDocuments'), 'Doc ID')
+int colNo_DocID = CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Page_nGage_Dashboard/Home/tableHeader_FavoriteDocuments'), 'Doc ID')
 
 'Validate Document is not present in favorites grid.'
 CustomKeywords.'actions.Table.verifyRecordNotPresentInColumn'(findTestObject('Page_nGage_Dashboard/Home/table_MyDocumentResults'), colNo_DocID, Consts.SMOKE_HOME005_DOCID)
