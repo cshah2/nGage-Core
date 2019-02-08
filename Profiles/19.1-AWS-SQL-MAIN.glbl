@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GlobalVariableEntities>
    <description></description>
-   <name>PEDEV</name>
+   <name>19.1-AWS-SQL-MAIN</name>
    <tag></tag>
    <defaultProfile>false</defaultProfile>
    <GlobalVariableEntity>
@@ -16,7 +16,7 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'http://savphlpedev64/Sav.Maint.UI'</initValue>
+      <initValue>'http://savphlpetest64/Sav.Main.UI'</initValue>
       <name>BaseURL</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
@@ -31,18 +31,8 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'IPM_EPM50MASTER_502_AUTOMATION'</initValue>
+      <initValue>'AWS_SQLSERVER_QA'</initValue>
       <name>Database</name>
-   </GlobalVariableEntity>
-   <GlobalVariableEntity>
-      <description>Business Model View</description>
-      <initValue>'100005'</initValue>
-      <name>DocumentClass</name>
-   </GlobalVariableEntity>
-   <GlobalVariableEntity>
-      <description>Multipage viewer with Drag and Drop</description>
-      <initValue>'100153'</initValue>
-      <name>DocumentType</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description>Document ID Generated in Script</description>
@@ -50,29 +40,9 @@
       <name>DocumentID</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
-      <description>Store number of records displayed in filter</description>
-      <initValue>''</initValue>
-      <name>RecordsInFilter</name>
-   </GlobalVariableEntity>
-   <GlobalVariableEntity>
       <description>Name of the search filter to be saved</description>
       <initValue>''</initValue>
       <name>FilterName</name>
-   </GlobalVariableEntity>
-   <GlobalVariableEntity>
-      <description></description>
-      <initValue>[('Field1') : '50', ('Field2') : 'WMI005_Auto_test', ('Field3') : 'Value 2', ('Field4') : '20', ('Field5') : '08-10-2018', ('Field6') : '60.129', ('Field7') : '25', ('Field8') : 'Text Field', ('Field9') : '08-10-2018 12:00:00 AM', ('Field10') : 'String Field', ('Field11') : 'Last Name', ('Field4_View') : '$20.00']</initValue>
-      <name>WMI005</name>
-   </GlobalVariableEntity>
-   <GlobalVariableEntity>
-      <description></description>
-      <initValue>[('Field1') : '40', ('Field2') : 'WMI006_Auto_test', ('Field3') : 'Value 3', ('Field4') : '10', ('Field5') : '08-16-2018', ('Field6') : '70.854', ('Field7') : '60', ('Field8') : 'Text Field', ('Field9') : '08-16-2018 12:00:00 AM', ('Field10') : 'String Field', ('Field11') : 'Middle Name', ('Field4_View') : '$10.00']</initValue>
-      <name>WMI006</name>
-   </GlobalVariableEntity>
-   <GlobalVariableEntity>
-      <description></description>
-      <initValue>[('Field1') : '90', ('Field2') : 'WMI007_Auto_test', ('Field3') : 'Value 1', ('Field4') : '30', ('Field5') : '08-20-2018', ('Field6') : '90.113', ('Field7') : '30', ('Field8') : 'Text Field', ('Field9') : '08-20-2018 12:00:00 AM', ('Field10') : 'String Field', ('Field11') : 'First Name', ('Field4_View') : '$30.00']</initValue>
-      <name>WMI007</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
@@ -98,6 +68,11 @@
       <description></description>
       <initValue>'http://savphlpedev64/Sav.Maint.AdminApi'</initValue>
       <name>BaseAdminApiURL</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>[('MW067_UN') : 'Auto_BO_uncheck', ('MW066_UN') : 'Auto_BO_Check', ('MW065_UN') : 'Auto_AI_uncheck', ('MW064_UN') : 'Auto_AI_check', ('MW063_UN') : 'Auto_WI_uncheck', ('MW062_UN') : 'Auto_WI_Check']</initValue>
+      <name>Users</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
