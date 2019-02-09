@@ -33,7 +33,9 @@ WebUI.waitForElementVisible(findTestObject('Page_WMI/WMI_Menu_BOV/a_Email  Favor
 WebUI.mouseOver(findTestObject('Page_WMI/WMI_Menu_BOV/a_Email  Favorites_1'))
 WebUI.waitForElementVisible(findTestObject('Page_WMI/WMI_Menu_BOV/a_Send To Recepient By Email'), GlobalVariable.G_LongTimeout)
 WebUI.click(findTestObject('Page_WMI/WMI_Menu_BOV/a_Send To Recepient By Email'))
+WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 WebUI.click(findTestObject('Page_WMI/WMI_Menu_BOV/SendToRecepient/button_TO'))
+WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 WebUI.verifyMatch(WebUI.getAttribute(findTestObject('Page_WMI/WMI_Menu_BOV/SendToRecepient/EmailFinder/iframe_Close_iframeDialog'), 'src'), '.*SelectUserEmail.aspx.*', true)
 WebUI.click(findTestObject('Object Repository/Page_WMI/WMI_Menu_BOV/span_Close'))
 
@@ -53,7 +55,9 @@ WebUI.waitForElementVisible(findTestObject('Page_WMI/WMI_Menu_BOV_Default/a_Emai
 WebUI.mouseOver(findTestObject('Page_WMI/WMI_Menu_BOV_Default/a_Email  Favorites_1'))
 WebUI.waitForElementVisible(findTestObject('Page_WMI/WMI_Menu_BOV_Default/a_Send To Recepient By Email'), GlobalVariable.G_LongTimeout)
 WebUI.click(findTestObject('Page_WMI/WMI_Menu_BOV_Default/a_Send To Recepient By Email'))
+WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 WebUI.click(findTestObject('Page_WMI/WMI_Menu_BOV_Default/SendToRecepient/button_TO'))
+WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 WebUI.verifyMatch(WebUI.getAttribute(findTestObject('Page_WMI/WMI_Menu_BOV_Default/SendToRecepient/EmailFinder/iframe_Close_iframeDialog'), 'src'), '.*SelectUserEmail.aspx.*', true)
 WebUI.click(findTestObject('Object Repository/Page_WMI/WMI_Menu_BOV_Default/span_Close'))
 
@@ -72,6 +76,8 @@ WebUI.waitForElementVisible(findTestObject('Page_WMI/WMI_Menu_BOV_DocTwoRow/a_Em
 WebUI.mouseOver(findTestObject('Page_WMI/WMI_Menu_BOV_DocTwoRow/a_Email  Favorites_1'))
 WebUI.waitForElementVisible(findTestObject('Page_WMI/WMI_Menu_BOV_DocTwoRow/a_Send To Recepient By Email'), GlobalVariable.G_LongTimeout)
 WebUI.click(findTestObject('Page_WMI/WMI_Menu_BOV_DocTwoRow/a_Send To Recepient By Email'))
+WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 WebUI.click(findTestObject('Page_WMI/WMI_Menu_BOV_DocTwoRow/SendToRecepient/button_TO'))
+WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 WebUI.verifyMatch(WebUI.getAttribute(findTestObject('Page_WMI/WMI_Menu_BOV_DocTwoRow/SendToRecepient/EmailFinder/iframe_Close_iframeDialog'), 'src'), '.*SelectUserEmail.aspx.*', true)
 WebUI.click(findTestObject('Object Repository/Page_WMI/WMI_Menu_BOV_DocTwoRow/span_Close'))

@@ -31,6 +31,7 @@ WebUI.click(findTestObject('Object Repository/Page_WMI/WMI_Menu_BOV/div_Capture 
 WebUI.mouseOver(findTestObject('Page_WMI/WMI_Menu_BOV/span_MORE'))
 WebUI.waitForElementVisible(findTestObject('Page_WMI/WMI_Menu_BOV/a_Split Page'), GlobalVariable.G_LongTimeout)
 WebUI.click(findTestObject('Page_WMI/WMI_Menu_BOV/a_Split Page'))
+WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 WebUI.verifyMatch(WebUI.getAttribute(findTestObject('Page_WMI/WMI_Menu_BOV/form_ContentPlaceHolder1'), 'action'), '.*splitpage.aspx.*', true)
 WebUI.click(findTestObject('Object Repository/Page_WMI/WMI_Menu_BOV/span_Close'))
 
@@ -48,6 +49,7 @@ WebUI.click(findTestObject('Object Repository/Page_WMI/WMI_Menu_BOV_Default/div_
 WebUI.mouseOver(findTestObject('Object Repository/Page_WMI/WMI_Menu_BOV_Default/span_MORE'))
 WebUI.waitForElementVisible(findTestObject('Page_WMI/WMI_Menu_BOV_Default/a_Split Page'), GlobalVariable.G_LongTimeout)
 WebUI.click(findTestObject('Page_WMI/WMI_Menu_BOV_Default/a_Split Page'))
+WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 WebUI.verifyMatch(WebUI.getAttribute(findTestObject('Page_WMI/WMI_Menu_BOV_Default/form_ContentPlaceHolder1'), 'action'), '.*splitpage.aspx.*', true)
 WebUI.click(findTestObject('Object Repository/Page_WMI/WMI_Menu_BOV_Default/span_Close'))
 
@@ -64,5 +66,6 @@ WebUI.click(findTestObject('Object Repository/Page_WMI/WMI_Menu_BOV_DocTwoRow/di
 WebUI.mouseOver(findTestObject('Object Repository/Page_WMI/WMI_Menu_BOV_DocTwoRow/span_MORE'))
 WebUI.waitForElementVisible(findTestObject('Page_WMI/WMI_Menu_BOV_DocTwoRow/a_Split Page'), GlobalVariable.G_LongTimeout)
 WebUI.click(findTestObject('Page_WMI/WMI_Menu_BOV_DocTwoRow/a_Split Page'))
+WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 WebUI.verifyMatch(WebUI.getAttribute(findTestObject('Page_WMI/WMI_Menu_BOV_DocTwoRow/form_ContentPlaceHolder1'), 'action'), '.*splitpage.aspx.*', true)
 WebUI.click(findTestObject('Object Repository/Page_WMI/WMI_Menu_BOV_DocTwoRow/span_Close'))

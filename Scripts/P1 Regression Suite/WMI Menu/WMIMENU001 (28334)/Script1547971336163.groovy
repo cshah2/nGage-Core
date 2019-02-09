@@ -76,6 +76,7 @@ WebUI.waitForElementVisible(findTestObject('Page_WMI/WMI_Menu_BOV/span_Attachmen
 WebUI.mouseOver(findTestObject('Page_WMI/WMI_Menu_BOV/span_Attachments'))
 WebUI.waitForElementVisible(findTestObject('Page_WMI/WMI_Menu_BOV/a_AttachFromFavorites'), GlobalVariable.G_LongTimeout)
 WebUI.click(findTestObject('Page_WMI/WMI_Menu_BOV/a_AttachFromFavorites'))
+WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 WebUI.verifyMatch(WebUI.getAttribute(findTestObject('Object Repository/Page_WMI/WMI_Menu_BOV/iframe_Close_ContentPlaceHolde'), 'src'), '.*AttachFavorite.aspx.*', true)
 
 'Select 1st Document in the table and attache it'
@@ -87,6 +88,7 @@ WebUI.click(findTestObject('Page_WMI/WMI_Menu_BOV/Attachements/btn_AttacheDocume
 WebUI.mouseOver(findTestObject('Object Repository/Page_WMI/WMI_Menu_BOV/span_Attachments'))
 WebUI.waitForElementVisible(findTestObject('Page_WMI/WMI_Menu_BOV/a_Current Attachments'), GlobalVariable.G_LongTimeout)
 WebUI.click(findTestObject('Page_WMI/WMI_Menu_BOV/a_Current Attachments'))
+WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 
 'Verify correct document is attached'
 CustomKeywords.'actions.Table.verifyRecordsCount'(findTestObject('Page_WMI/WMI_Menu_BOV/Attachements/table_CurrentAttachements_Documents'), 1)
@@ -108,6 +110,7 @@ WebUI.waitForElementVisible(findTestObject('Object Repository/Page_WMI/WMI_Menu_
 WebUI.mouseOver(findTestObject('Object Repository/Page_WMI/WMI_Menu_BOV_Default/span_Attachments'))
 WebUI.waitForElementVisible(findTestObject('Page_WMI/WMI_Menu_BOV_Default/a_AttachFromFavorites'), GlobalVariable.G_LongTimeout)
 WebUI.click(findTestObject('Page_WMI/WMI_Menu_BOV_Default/a_AttachFromFavorites'))
+WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 WebUI.verifyMatch(WebUI.getAttribute(findTestObject('Object Repository/Page_WMI/WMI_Menu_BOV_Default/iframe_Close_ContentPlaceHolde'), 'src'), '.*AttachFavorite.aspx.*', true)
 
 'Select 1st Document in the table and attache it'
@@ -119,6 +122,7 @@ WebUI.click(findTestObject('Page_WMI/WMI_Menu_BOV_Default/Attachements/btn_Attac
 WebUI.mouseOver(findTestObject('Object Repository/Page_WMI/WMI_Menu_BOV_Default/span_Attachments'))
 WebUI.waitForElementVisible(findTestObject('Page_WMI/WMI_Menu_BOV_Default/a_Current Attachments'), GlobalVariable.G_LongTimeout)
 WebUI.click(findTestObject('Page_WMI/WMI_Menu_BOV_Default/a_Current Attachments'))
+WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 
 'Verify correct document is attached'
 CustomKeywords.'actions.Table.verifyRecordsCount'(findTestObject('Page_WMI/WMI_Menu_BOV_Default/Attachements/table_CurrentAttachements_Documents'), 1)
@@ -139,6 +143,7 @@ WebUI.waitForElementVisible(findTestObject('Object Repository/Page_WMI/WMI_Menu_
 WebUI.mouseOver(findTestObject('Object Repository/Page_WMI/WMI_Menu_BOV_DocTwoRow/span_Attachments'))
 WebUI.waitForElementVisible(findTestObject('Page_WMI/WMI_Menu_BOV_DocTwoRow/a_AttachFromFavorites'), GlobalVariable.G_LongTimeout)
 WebUI.click(findTestObject('Page_WMI/WMI_Menu_BOV_DocTwoRow/a_AttachFromFavorites'))
+WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 WebUI.verifyMatch(WebUI.getAttribute(findTestObject('Object Repository/Page_WMI/WMI_Menu_BOV_DocTwoRow/iframe_Close_ContentPlaceHolde'), 'src'), '.*AttachFavorite.aspx.*', true)
 
 'Select 1st Document in the table and attache it'
@@ -150,6 +155,7 @@ WebUI.click(findTestObject('Page_WMI/WMI_Menu_BOV_DocTwoRow/Attachements/btn_Att
 WebUI.mouseOver(findTestObject('Object Repository/Page_WMI/WMI_Menu_BOV_DocTwoRow/span_Attachments'))
 WebUI.waitForElementVisible(findTestObject('Page_WMI/WMI_Menu_BOV_DocTwoRow/a_Current Attachments'), GlobalVariable.G_LongTimeout)
 WebUI.click(findTestObject('Page_WMI/WMI_Menu_BOV_DocTwoRow/a_Current Attachments'))
+WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 
 'Verify correct document is attached'
 CustomKeywords.'actions.Table.verifyRecordsCount'(findTestObject('Page_WMI/WMI_Menu_BOV_DocTwoRow/Attachements/table_CurrentAttachements_Documents'), 1)
