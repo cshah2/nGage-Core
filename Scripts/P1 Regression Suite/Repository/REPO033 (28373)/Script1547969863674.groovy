@@ -40,9 +40,12 @@ WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/Repository/tabl
 WebUI.verifyMatch(WebUI.getText(findTestObject('Page_nGage_Dashboard/Repository/Table_SearchResult_PageCount')), '.*Showing 1 - 10.*', true)
 
 'Open Closure tab from EDM'
-WebUI.doubleClick(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/Business_Model_Tree/EDM_Closure'))
-WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
-WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/Business_Model_Tree/EDM_Closure_SubMenu_Closure'))
+CustomKeywords.'actions.MenuBar.clickTreeMenu'('REPO', 'Closure', 'Closure')
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/Closure_Tab/iframe_Closure'))
+//
+//WebUI.doubleClick(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/Business_Model_Tree/EDM_Closure'))
+//WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
+//WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/Business_Model_Tree/EDM_Closure_SubMenu_Closure'))
 
 'Verify Closure tab is opened'
 WebUI.verifyElementPresent(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/Business_Model_Tree/Tab_Closure'), GlobalVariable.G_LongTimeout)
@@ -50,7 +53,7 @@ CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Reposi
 
 'Click on Search button on closure tab'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Repository/Closure_Tab/searchButton_ClosureTab'))
-CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/iframe_iframe_104'))
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/Closure_Tab/iframe_Closure'))
 
 'Verify records in table'
 WebUI.verifyMatch(WebUI.getText(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/Closure_Tab/table_SearchResultCount_ClosureTab')), '.*Showing 1 - 10.*', true)

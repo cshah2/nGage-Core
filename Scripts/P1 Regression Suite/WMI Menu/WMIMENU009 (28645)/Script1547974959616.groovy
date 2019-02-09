@@ -30,6 +30,7 @@ WebUI.waitForElementVisible(findTestObject('Page_WMI/WMI_Menu_BOV/span_History')
 WebUI.mouseOver(findTestObject('Page_WMI/WMI_Menu_BOV/span_History'))
 WebUI.waitForElementVisible(findTestObject('Object Repository/Page_WMI/WMI_Menu_BOV/a_BusinessProcessAudit'), GlobalVariable.G_LongTimeout)
 WebUI.click(findTestObject('Object Repository/Page_WMI/WMI_Menu_BOV/a_BusinessProcessAudit'))
+WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 WebUI.verifyMatch(WebUI.getAttribute(findTestObject('Object Repository/Page_WMI/WMI_Menu_BOV/iframe_Close_ContentPlaceHolde'), 'src'), '.*WFAudit.aspx.*', true)
 WebUI.click(findTestObject('Object Repository/Page_WMI/WMI_Menu_BOV/span_Close'))
 
@@ -45,6 +46,7 @@ WebUI.waitForElementVisible(findTestObject('Object Repository/Page_WMI/WMI_Menu_
 WebUI.mouseOver(findTestObject('Object Repository/Page_WMI/WMI_Menu_BOV_Default/span_History'))
 WebUI.waitForElementVisible(findTestObject('Object Repository/Page_WMI/WMI_Menu_BOV_Default/a_BusinessProcessAudit'), GlobalVariable.G_LongTimeout)
 WebUI.click(findTestObject('Object Repository/Page_WMI/WMI_Menu_BOV_Default/a_BusinessProcessAudit'))
+WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 WebUI.verifyMatch(WebUI.getAttribute(findTestObject('Object Repository/Page_WMI/WMI_Menu_BOV_Default/iframe_Close_ContentPlaceHolde'), 'src'), '.*WFAudit.aspx.*', true)
 WebUI.click(findTestObject('Object Repository/Page_WMI/WMI_Menu_BOV_Default/span_Close'))
 
@@ -60,6 +62,7 @@ WebUI.waitForElementVisible(findTestObject('Object Repository/Page_WMI/WMI_Menu_
 WebUI.mouseOver(findTestObject('Object Repository/Page_WMI/WMI_Menu_BOV_DocTwoRow/span_History'))
 WebUI.waitForElementVisible(findTestObject('Object Repository/Page_WMI/WMI_Menu_BOV_DocTwoRow/a_BusinessProcessAudit'), GlobalVariable.G_LongTimeout)
 WebUI.click(findTestObject('Object Repository/Page_WMI/WMI_Menu_BOV_DocTwoRow/a_BusinessProcessAudit'))
+WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 WebUI.verifyMatch(WebUI.getAttribute(findTestObject('Object Repository/Page_WMI/WMI_Menu_BOV_DocTwoRow/iframe_Close_ContentPlaceHolde'), 'src'), '.*WFAudit.aspx.*', true)
 WebUI.click(findTestObject('Object Repository/Page_WMI/WMI_Menu_BOV_DocTwoRow/span_Close'))
 

@@ -30,6 +30,7 @@ WebUI.waitForElementVisible(findTestObject('Page_WMI/WMI_Menu_BOV/span_CheckOut'
 WebUI.mouseOver(findTestObject('Page_WMI/WMI_Menu_BOV/span_CheckOut'))
 WebUI.waitForElementVisible(findTestObject('Object Repository/Page_WMI/WMI_Menu_BOV/a_Check Out'), GlobalVariable.G_LongTimeout)
 WebUI.click(findTestObject('Object Repository/Page_WMI/WMI_Menu_BOV/a_Check Out'))
+WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 WebUI.verifyMatch(WebUI.getAttribute(findTestObject('Object Repository/Page_WMI/WMI_Menu_BOV/iframe_Close_ContentPlaceHolde'), 'src'), '.*checkout.aspx.*', true)
 WebUI.click(findTestObject('Page_WMI/WMI_Menu_BOV/span_Close'))
 
@@ -45,6 +46,7 @@ WebUI.waitForElementVisible(findTestObject('Page_WMI/WMI_Menu_BOV_Default/span_C
 WebUI.mouseOver(findTestObject('Page_WMI/WMI_Menu_BOV_Default/span_CheckOut'))
 WebUI.waitForElementVisible(findTestObject('Object Repository/Page_WMI/WMI_Menu_BOV_Default/a_Check Out'), GlobalVariable.G_LongTimeout)
 WebUI.click(findTestObject('Object Repository/Page_WMI/WMI_Menu_BOV_Default/a_Check Out'))
+WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 WebUI.verifyMatch(WebUI.getAttribute(findTestObject('Object Repository/Page_WMI/WMI_Menu_BOV_Default/iframe_Close_ContentPlaceHolde'), 'src'), '.*checkout.aspx.*', true)
 WebUI.click(findTestObject('Object Repository/Page_WMI/WMI_Menu_BOV_Default/span_Close'))
 
@@ -60,6 +62,7 @@ WebUI.waitForElementVisible(findTestObject('Page_WMI/WMI_Menu_BOV_DocTwoRow/span
 WebUI.mouseOver(findTestObject('Page_WMI/WMI_Menu_BOV_DocTwoRow/span_CheckOut'))
 WebUI.waitForElementVisible(findTestObject('Object Repository/Page_WMI/WMI_Menu_BOV_DocTwoRow/a_Check Out'), GlobalVariable.G_LongTimeout)
 WebUI.click(findTestObject('Object Repository/Page_WMI/WMI_Menu_BOV_DocTwoRow/a_Check Out'))
+WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 WebUI.verifyMatch(WebUI.getAttribute(findTestObject('Object Repository/Page_WMI/WMI_Menu_BOV_DocTwoRow/iframe_Close_ContentPlaceHolde'), 'src'), '.*checkout.aspx.*', true)
 WebUI.click(findTestObject('Object Repository/Page_WMI/WMI_Menu_BOV_DocTwoRow/span_Close'))
 

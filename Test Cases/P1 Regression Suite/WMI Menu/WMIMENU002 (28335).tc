@@ -3,9 +3,6 @@
    <description>Regression test WMI :  Menu Testing for  AttachNew.aspx</description>
    <name>WMIMENU002 (28335)</name>
    <tag></tag>
-   <comment>Test
-BOV Check
-BOV Default Check
-BOV DocTwoRow Check</comment>
+   <comment></comment>
    <testCaseGuid>839eaf03-5d57-449b-886b-8928662fe8ff</testCaseGuid>
 </TestCaseEntity>

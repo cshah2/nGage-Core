@@ -28,6 +28,7 @@ CustomKeywords.'actions.Common.openDocumentFromRecentGrid'('WMI Menu BOV')
 'Navigate and verify pageSource'
 WebUI.waitForElementVisible(findTestObject('Page_WMI/WMI_Menu_BOV/span_MORE'), GlobalVariable.G_LongTimeout)
 WebUI.click(findTestObject('Object Repository/Page_WMI/WMI_Menu_BOV/div_Capture object_northToggle'))
+WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 WebUI.verifyMatch(WebUI.getAttribute(findTestObject('Object Repository/Page_WMI/WMI_Menu_BOV/iframe_Close_ContentPlaceHolde'), 'src'), '.*PropertyNoMenujq.*', true)
 WebUI.click(findTestObject('Object Repository/Page_WMI/WMI_Menu_BOV/span_Close'))
 
@@ -42,6 +43,7 @@ CustomKeywords.'actions.Common.openDocumentFromRecentGrid'('WMI Menu Default')
 'Navigate and verify pageSource'
 WebUI.waitForElementVisible(findTestObject('Object Repository/Page_WMI/WMI_Menu_BOV_Default/span_MORE'), GlobalVariable.G_LongTimeout)
 WebUI.click(findTestObject('Object Repository/Page_WMI/WMI_Menu_BOV_Default/div_Capture object_northToggle'))
+WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 WebUI.verifyMatch(WebUI.getAttribute(findTestObject('Object Repository/Page_WMI/WMI_Menu_BOV_Default/iframe_Close_ContentPlaceHolde'), 'src'), '.*PropertyNoMenujq.aspx.*', true)
 WebUI.click(findTestObject('Object Repository/Page_WMI/WMI_Menu_BOV_Default/span_Close'))
 
@@ -55,6 +57,7 @@ CustomKeywords.'actions.Common.openDocumentFromRecentGrid'('WMI Menu DocTwoRow')
 'Navigate and verify pageSource'
 WebUI.waitForElementVisible(findTestObject('Object Repository/Page_WMI/WMI_Menu_BOV_DocTwoRow/span_MORE'), GlobalVariable.G_LongTimeout)
 WebUI.click(findTestObject('Object Repository/Page_WMI/WMI_Menu_BOV_DocTwoRow/div_Capture object_northToggle'))
+WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 WebUI.verifyMatch(WebUI.getAttribute(findTestObject('Object Repository/Page_WMI/WMI_Menu_BOV_DocTwoRow/iframe_Close_ContentPlaceHolde'), 'src'), '.*PropertyNoMenujq.aspx.*', true)
 WebUI.click(findTestObject('Object Repository/Page_WMI/WMI_Menu_BOV_DocTwoRow/span_Close'))
 

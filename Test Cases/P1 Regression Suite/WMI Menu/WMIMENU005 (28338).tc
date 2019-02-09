@@ -3,9 +3,6 @@
    <description>Regression test WMI :  Menu Testing for CopyDocument.aspx</description>
    <name>WMIMENU005 (28338)</name>
    <tag></tag>
-   <comment>Test
-BOV Check
-BOV Default Check
-BOV DocTwoRow Check</comment>
+   <comment></comment>
    <testCaseGuid>487c4d17-0c1c-41fa-bb2e-9742597c1a23</testCaseGuid>
 </TestCaseEntity>

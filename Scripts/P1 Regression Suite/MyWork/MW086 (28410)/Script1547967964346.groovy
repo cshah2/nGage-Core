@@ -46,6 +46,10 @@ CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Reposi
 'Verify date autopopulated should show in the search panel'
 WebUI.verifyElementAttributeValue(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/process_DateTimeRequired/input_StartDateTimeRequired'), 'value', filterDate, GlobalVariable.G_LongTimeout)
 
+'Verify result grid contains atleast 1 record'
+int rowsCount = CustomKeywords.'actions.Table.getRowsCount'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'))
+WebUI.verifyGreaterThan(rowsCount, 0)
+
 'Sort records in result grid by Doc ID'
 CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/My_Work/tableHeader_MyWorkSearchResult'), 'Doc ID')
 CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/My_Work/tableHeader_MyWorkSearchResult'), 'Doc ID')

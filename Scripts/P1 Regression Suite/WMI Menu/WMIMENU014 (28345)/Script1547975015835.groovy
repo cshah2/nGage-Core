@@ -31,6 +31,7 @@ WebUI.click(findTestObject('Object Repository/Page_WMI/WMI_Menu_BOV/div_Capture 
 WebUI.mouseOver(findTestObject('Page_WMI/WMI_Menu_BOV/span_MORE'))
 WebUI.waitForElementVisible(findTestObject('Page_WMI/WMI_Menu_BOV/a_Search documents'), GlobalVariable.G_LongTimeout)
 WebUI.click(findTestObject('Page_WMI/WMI_Menu_BOV/a_Search documents'))
+WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 WebUI.verifyMatch(WebUI.getAttribute(findTestObject('Object Repository/Page_WMI/WMI_Menu_BOV/iframe_Close_ContentPlaceHolde'), 'src'), '.*ReferenceDocs.aspx.*', true)
 WebUI.click(findTestObject('Object Repository/Page_WMI/WMI_Menu_BOV/span_Close'))
 
@@ -48,6 +49,7 @@ WebUI.click(findTestObject('Object Repository/Page_WMI/WMI_Menu_BOV_Default/div_
 WebUI.mouseOver(findTestObject('Object Repository/Page_WMI/WMI_Menu_BOV_Default/span_MORE'))
 WebUI.waitForElementVisible(findTestObject('Page_WMI/WMI_Menu_BOV_Default/a_Search documents'), GlobalVariable.G_LongTimeout)
 WebUI.click(findTestObject('Page_WMI/WMI_Menu_BOV_Default/a_Search documents'))
+WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 WebUI.verifyMatch(WebUI.getAttribute(findTestObject('Object Repository/Page_WMI/WMI_Menu_BOV_Default/iframe_Close_ContentPlaceHolde'), 'src'), '.*ReferenceDocs.aspx.*', true)
 WebUI.click(findTestObject('Object Repository/Page_WMI/WMI_Menu_BOV_Default/span_Close'))
 
@@ -64,6 +66,7 @@ WebUI.click(findTestObject('Object Repository/Page_WMI/WMI_Menu_BOV_DocTwoRow/di
 WebUI.mouseOver(findTestObject('Object Repository/Page_WMI/WMI_Menu_BOV_DocTwoRow/span_MORE'))
 WebUI.waitForElementVisible(findTestObject('Page_WMI/WMI_Menu_BOV_DocTwoRow/a_Search documents'), GlobalVariable.G_LongTimeout)
 WebUI.click(findTestObject('Page_WMI/WMI_Menu_BOV_DocTwoRow/a_Search documents'))
+WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 WebUI.verifyMatch(WebUI.getAttribute(findTestObject('Object Repository/Page_WMI/WMI_Menu_BOV_DocTwoRow/iframe_Close_ContentPlaceHolde'), 'src'), '.*ReferenceDocs.aspx.*', true)
 WebUI.click(findTestObject('Object Repository/Page_WMI/WMI_Menu_BOV_DocTwoRow/span_Close'))
 

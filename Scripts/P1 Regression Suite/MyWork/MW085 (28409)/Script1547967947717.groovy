@@ -47,6 +47,10 @@ CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Reposi
 WebUI.verifyElementAttributeValue(findTestObject('Page_nGage_Dashboard/My_Work/process_DatetimeRangeRequired/input_StartTestDateTime_From'), 'value', filterDate+' '+P1_TIME_START, GlobalVariable.G_LongTimeout)
 WebUI.verifyElementAttributeValue(findTestObject('Page_nGage_Dashboard/My_Work/process_DatetimeRangeRequired/input_StartTestDateTime_To'), 'value', filterDate+' '+P1_TIME_END, GlobalVariable.G_LongTimeout)
 
+'Verify result grid contains atleast 1 record'
+int rowsCount = CustomKeywords.'actions.Table.getRowsCount'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'))
+WebUI.verifyGreaterThan(rowsCount, 0)
+
 'Sort records in result grid by Doc ID'
 CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/My_Work/tableHeader_MyWorkSearchResult'), 'Doc ID')
 CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/My_Work/tableHeader_MyWorkSearchResult'), 'Doc ID')
