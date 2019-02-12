@@ -34,7 +34,12 @@ CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Da
 int activityRecordCountBefore = CustomKeywords.'actions.MenuBar.getRecordCountInActivity'('REPO', 'Business Model', 'Business Model', 'Render All Field Types', 'Chintan Shah')
 
 'Verify Record count in actvity matches with record count in grid'
-CustomKeywords.'actions.Common.verifyTotalRecordCountFromPageSummary'(findTestObject('Page_nGage_Dashboard/Repository/BrowseResults Tab/Table_PageResults'), activityRecordCountBefore)
+if(activityRecordCountBefore > 500) {
+	CustomKeywords.'actions.Common.verifyTotalRecordCountFromPageSummary'(findTestObject('Page_nGage_Dashboard/Repository/BrowseResults Tab/Table_PageResults'), 500)
+}
+else {
+	CustomKeywords.'actions.Common.verifyTotalRecordCountFromPageSummary'(findTestObject('Page_nGage_Dashboard/Repository/BrowseResults Tab/Table_PageResults'), activityRecordCountBefore)
+}
 
 'Create another Ddocument render all fields'
 CustomKeywords.'actions.Common.createDocument_RenderAllField'('20', 'AMirvankar', '', '', '', '', '', '', '', '', '')
@@ -53,7 +58,12 @@ CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Da
 int activityRecordCountAfter = CustomKeywords.'actions.MenuBar.getRecordCountInActivity'('REPO', 'Business Model', 'Business Model', 'Render All Field Types', 'Chintan Shah')
 
 'Verify Record count in actvity matches with record count in grid'
-CustomKeywords.'actions.Common.verifyTotalRecordCountFromPageSummary'(findTestObject('Page_nGage_Dashboard/Repository/BrowseResults Tab/Table_PageResults'), activityRecordCountAfter)
+if(activityRecordCountAfter > 500) {
+	CustomKeywords.'actions.Common.verifyTotalRecordCountFromPageSummary'(findTestObject('Page_nGage_Dashboard/Repository/BrowseResults Tab/Table_PageResults'), 500)
+}
+else {
+	CustomKeywords.'actions.Common.verifyTotalRecordCountFromPageSummary'(findTestObject('Page_nGage_Dashboard/Repository/BrowseResults Tab/Table_PageResults'), activityRecordCountAfter)
+}
 
 'Verify Before and After count'
 WebUI.verifyEqual(activityRecordCountAfter, activityRecordCountBefore+1)
