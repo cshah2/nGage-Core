@@ -82,7 +82,7 @@ WebUI.click(findTestObject('Page_WMI_NEW/Reference_Object_Feature/Inline_Content
 
 'Click on any of the part of the doc in the reference grid. other than PDF icon.'
 CustomKeywords.'actions.Table.clickCell'(findTestObject('Page_WMI_NEW/Reference_Object_Feature/Inline_Content_View/tab_Inlineresultview(false)/table_BMStringTab2'), 1, 3)
-WebUI.delay(5)
+CustomKeywords.'actions.Common.waitForTabLoading'(null, GlobalVariable.G_LongTimeout)
 
 'Verify the document is opening'
 WebUI.switchToWindowIndex(2)

@@ -78,7 +78,7 @@ int beforeColumnCount = CustomKeywords.'actions.Table.getRowsCount'(findTestObje
 'Click on the first row in table'
 WebUI.click(findTestObject('Page_WMI_NEW/Reference_Object_Feature/Inline_Result_View/Tab3_Inline_Result_View/table_CellBMString'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Inline_Result_View/iframe_ContentPlaceHolder1_iPage'))
-WebUI.delay(10)
+CustomKeywords.'actions.Common.waitForTabLoading'(null, GlobalVariable.G_LongTimeout)
 
 'Get page source after clicking on table'
 int afterColumnCount = CustomKeywords.'actions.Table.getRowsCount'(findTestObject('Page_WMI_NEW/Reference_Object_Feature/Inline_Result_View/Tab3_Inline_Result_View/main_table'))

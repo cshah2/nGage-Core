@@ -118,7 +118,7 @@ WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feat
 'Click on the first row in table'
 WebUI.click(findTestObject('Page_WMI_NEW/Reference_Object_Feature/Inline_Result_View/Tab2_Inline_Result_View/table_CellBMString'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Inline_Result_View/iframe_ContentPlaceHolder1_iPage'))
-WebUI.delay(10)
+CustomKeywords.'actions.Common.waitForTabLoading'(null, GlobalVariable.G_LongTimeout)
 
 'Verify the document is opened in InlineView'
 WebUI.verifyElementVisible(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Inline_Result_View/Tab2_Inline_Result_View/input_ReferenceObjectEvent'))
