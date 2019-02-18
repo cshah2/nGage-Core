@@ -3,6 +3,6 @@
    <description>Validate clicking on search button yields result</description>
    <name>REPO001 (32774)</name>
    <tag></tag>
-   <comment></comment>
+   <comment>Create new Document</comment>
    <testCaseGuid>bfa19e27-99a2-40b5-a378-0d5ebea9fb31</testCaseGuid>
 </TestCaseEntity>

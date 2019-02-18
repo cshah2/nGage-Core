@@ -52,7 +52,7 @@ WebUI.verifyNotMatch(width_BeforeResize.toString(), '1366', false)
 'verify document window resizable'
 'resize document'
 WebUI.maximizeWindow()
-WebUI.delay(5)
+WebUI.delay(2)
 
 int height_AfterResize=WebUI.getPageHeight()
 int width_AfterResize=WebUI.getPageWidth()

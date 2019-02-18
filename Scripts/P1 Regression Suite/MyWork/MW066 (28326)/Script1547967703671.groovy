@@ -46,7 +46,6 @@ CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dash
 'Open work item'
 CustomKeywords.'actions.Table.clickCell'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'),1,8)
 
-//WebUI.delay(10)
 'switch to new window'
 WebUI.switchToWindowIndex(1)
 

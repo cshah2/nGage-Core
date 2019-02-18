@@ -42,16 +42,17 @@ public class Table {
 	private List<WebElement> getAllRows(WebElement table) {
 
 		List<WebElement> visibleRows = new ArrayList<WebElement>()
-		//List<WebElement> rows = table.findElements(By.tagName("tr"))
-		List<WebElement> rows = table.findElements(By.xpath("./tbody/tr"))
+		return table.findElements(By.xpath("./tbody/tr[contains(@class,'GVRow') or contains(@class,'GVAltRow') or @tabindex]"))
 
-		for(WebElement row in rows) {
-			if(isVisibleDataRow(row))
-				visibleRows.add(row)
-		}
-		println "Total Rows Count = "+rows.size()
-		println "Visible Rows Count = "+visibleRows.size()
-		return visibleRows
+		//		List<WebElement> rows = table.findElements(By.xpath("./tbody/tr"))
+		//
+		//		for(WebElement row in rows) {
+		//			if(isVisibleDataRow(row))
+		//				visibleRows.add(row)
+		//		}
+		//		println "Total Rows Count = "+rows.size()
+		//		println "Visible Rows Count = "+visibleRows.size()
+		//		return visibleRows
 	}
 
 	private boolean isVisibleDataRow(WebElement row) {
@@ -66,14 +67,16 @@ public class Table {
 	 */
 	private List<WebElement> getAllCells(WebElement row) {
 		List<WebElement> visibleCells = new ArrayList<WebElement>()
-		List<WebElement> cells = new ArrayList<WebElement>()
-		cells = row.findElements(By.tagName("td"))
-		for(WebElement cell in cells) {
-			if(cell.isDisplayed()) {
-				visibleCells.add(cell)
-			}
-		}
-		return visibleCells
+		return row.findElements(By.xpath("./td[not(@class='hiddencol') and not(contains(@style,'none;'))]"))
+
+		//		List<WebElement> cells = new ArrayList<WebElement>()
+		//		cells = row.findElements(By.tagName("td"))
+		//		for(WebElement cell in cells) {
+		//			if(cell.isDisplayed()) {
+		//				visibleCells.add(cell)
+		//			}
+		//		}
+		//		return visibleCells
 	}
 
 	private List<String> getAllValuesFromColumn(WebElement table, int colNo) {
@@ -118,14 +121,15 @@ public class Table {
 
 	private List<WebElement> getAllHeaders(WebElement table) {
 
-		List<WebElement> allHeaders = table.findElements(By.tagName("th"))
-		List<WebElement> visibleHeaders = new ArrayList<WebElement>()
-		for(WebElement header in allHeaders) {
-			String cssDisplay = header.getCssValue('display')
-			if(cssDisplay != 'none')
-				visibleHeaders.add(header)
-		}
-		return visibleHeaders
+		return table.findElements(By.xpath("thead/tr[1]/th[not(@class='hiddencol') and not(contains(@style,'none;'))]"))
+		//		List<WebElement> allHeaders = table.findElements(By.tagName("th"))
+		//		List<WebElement> visibleHeaders = new ArrayList<WebElement>()
+		//		for(WebElement header in allHeaders) {
+		//			String cssDisplay = header.getCssValue('display')
+		//			if(cssDisplay != 'none')
+		//				visibleHeaders.add(header)
+		//		}
+		//		return visibleHeaders
 	}
 
 	private int getColumnNumberOfHeader(List<WebElement> headers , String columnName) {
@@ -447,15 +451,6 @@ public class Table {
 			KeywordUtil.markFailedAndStop('Record at row no '+failedRowNo+' is not selected')
 		}
 	}
-
-//	@Keyword
-//	def clickColumnHeader(TestObject column) {
-//
-//		TestObject parentObject = column.getParentObject()
-//		WebUI.focus(column)
-//		WebUI.click(column)
-//		new Common().waitForFrameToLoad(parentObject)
-//	}
 
 	@Keyword
 	def clickColumnHeader(TestObject tableHeaderLocator, String columnName) {

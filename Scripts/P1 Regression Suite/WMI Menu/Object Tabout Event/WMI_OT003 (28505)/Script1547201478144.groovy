@@ -34,6 +34,7 @@ WebUI.waitForElementVisible(findTestObject('Object Repository/Page_WMI_NEW/Objec
 WebUI.setText(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Textbox with Section Event/input_Master Object Event_efor'), 'Background')
 WebUI.sendKeys(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Textbox with Section Event/input_Master Object Event_efor'), Keys.chord(Keys.TAB))
 CustomKeywords.'actions.Common.waitForTabLoading'(null, GlobalVariable.G_LongTimeout)
+//CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_WMI_NEW/iframe_Close Window_ContentPla'))
 
 'verify background color'
 WebUI.verifyElementPresent(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Textbox with Section Event/span_Sample Section - Visible'), GlobalVariable.G_LongTimeout)

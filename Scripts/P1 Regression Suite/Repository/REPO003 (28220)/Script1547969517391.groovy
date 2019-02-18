@@ -29,10 +29,12 @@ WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
 'Click Tree menu'
 CustomKeywords.'actions.MenuBar.clickTreeMenu'('REPO', 'Business Model', 'Business Model')
-WebUI.delay(5)
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_iframe_104'))
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_visible'))
 
 'Right click on Business Model repository'
 CustomKeywords.'actions.MenuBar.rightClickTreeMenu'('REPO', 'Business Model', 'Business Model')
+WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
 'Select option refresh from Context Menu'
 CustomKeywords.'actions.ContextMenu.clickOption'(findTestObject('Page_nGage_Dashboard/contextMenuOptions'), 'Refresh')

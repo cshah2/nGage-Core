@@ -34,13 +34,8 @@ WebUI.click(findTestObject('Page_nGage_Dashboard/Repository/h3_Repository Menu')
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
-'Select Repository - Advance Search tab'
-WebUI.selectOptionByLabel(findTestObject('Page_nGage_Dashboard/Repository/select_Repository Drop Down'), 'Date n Date time EDM', false)
-CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
-
-'Select input_btnSearchect Search For - Advance Search tab'
-WebUI.selectOptionByLabel(findTestObject('Page_nGage_Dashboard/Repository/select_Search For Drop Down'), 'Date n Date time search class', false)
-CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
+'Select value in Repository and Search For drop down'
+CustomKeywords.'actions.Common.selectRepositoryAndSearchFor'('Date n Date time EDM', 'Date n Date time search class')
 
 'Enter Start Date and End Date values'
 String filterEndDate = SMOKE_REPO_DATERANGE_DOC1_END_FILTER
@@ -55,6 +50,8 @@ SMOKE_REPO006_SAVEDFILTER_RECORDCOUNT = WebUI.getText(findTestObject('Page_nGage
 
 'Click on Save search button'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Repository/input_btnSaveSearchAdv'))
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
+WebUI.waitForElementAttributeValue(findTestObject('Page_nGage_Dashboard/Repository/h3_Search Bar'), 'aria-expanded', 'false', GlobalVariable.G_LongTimeout)
 
 'Enter Saved search name'
 String now = getCurrentDateTime()

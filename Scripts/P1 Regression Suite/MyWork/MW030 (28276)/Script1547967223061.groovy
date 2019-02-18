@@ -24,6 +24,7 @@ CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Da
 'Click Processes'
 CustomKeywords.'actions.MenuBar.clickTreeMenu'('MY_WORK', 'Processes')
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_iframe_105'))
+WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 WebUI.delay(5)
 
 'Verify Chart sections and its contents'
@@ -61,6 +62,7 @@ println 'Expected Row No is :'+rowNo
 'Click on Row'
 CustomKeywords.'actions.Table.clickCell'(findTestObject('Page_nGage_Dashboard/My_Work/Charts/table_AllProcess'), rowNo, 2)
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_iframe_105'))
+WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 WebUI.delay(5)
 
 'Verify Chart sections and its contents'

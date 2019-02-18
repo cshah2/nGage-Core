@@ -57,7 +57,7 @@ WebUI.verifyLessThanOrEqual(width_BeforeResize, 200)
 'verify document window resizable'
 'resize document'
 WebUI.maximizeWindow()
-WebUI.delay(5)
+WebUI.delay(2)
 
 
 int height_AfterResize=WebUI.getPageHeight()

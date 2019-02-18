@@ -31,7 +31,7 @@ CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Da
 
 'Click on Reset layout to bring columns to original position'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/td_ResetLayout'))
-WebUI.delay(3)
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_work_items'))
 
 int colNo_DocID_Original=CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/tableHeader_MyWorkSearchResult'), 'Doc ID')
 int colNo_DocCreateDate_Original = CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/tableHeader_MyWorkSearchResult'), 'Doc Create Date')
@@ -45,7 +45,7 @@ int colNo_DocCreateDate_After = CustomKeywords.'actions.Table.getColumnNumber'(f
 'click on set layout'
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/span_SetLayout'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/iframe_work_items'))
-WebUI.delay(3)
+WebUI.delay(2) //This is needed as Alert is being displayed for 1.5 sec
 
 WebUI.verifyEqual(colNo_DocCreateDate_After, colNo_DocID_Original)
 
@@ -106,4 +106,4 @@ WebUI.verifyEqual(colNo_DocCreateDate_After4, colNo_DocID_Original)
 
 'Click on Reset layout to bring columns to original position'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/td_ResetLayout'))
-WebUI.delay(3)
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_work_items'))

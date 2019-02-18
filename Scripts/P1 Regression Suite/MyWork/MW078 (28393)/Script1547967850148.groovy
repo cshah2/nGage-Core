@@ -36,7 +36,7 @@ CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Reposi
 'click on new Vs In Process'
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/TAB_Dashboard_Obj/tab_New vs. In Process'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/TAB_Dashboard_Obj/iframe_Dashboard'))
-WebUI.delay(5)
+WebUI.delay(5) //wait for chart to plot
 
 'Verify chart is visible'
 int totalSlices = CustomKeywords.'actions.Chart.getNumberOfSlices'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/TAB_Dashboard_Obj/Chart_NewvsInProcess_SLAStatusView'), GlobalVariable.ChartType['V_BAR'])
@@ -68,7 +68,7 @@ int DocCreateDate_Index_After= CustomKeywords.'actions.Table.getColumnNumber'(fi
 'click on set layout button'
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/TAB_Dashboard_Obj/span_SetLayout_NewVsInProcess'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/TAB_Dashboard_Obj/iframe_BAMActivityWorkIt_NewVsInProcess'))
-WebUI.delay(3)
+WebUI.delay(2) //This is needed as Alert is being displayed for 1.5 sec
 
 'verify layout'
 WebUI.verifyEqual(DocID_Index_Before, DocCreateDate_Index_After)
@@ -97,7 +97,7 @@ CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Reposi
 'click on new Vs In Process'
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/TAB_Dashboard_Obj/tab_New vs. In Process'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/TAB_Dashboard_Obj/iframe_Dashboard'))
-WebUI.delay(5)
+WebUI.delay(5) //wait for chart to plot
 
 'Verify chart is visible'
 totalSlices = CustomKeywords.'actions.Chart.getNumberOfSlices'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/TAB_Dashboard_Obj/Chart_NewvsInProcess_SLAStatusView'), GlobalVariable.ChartType['V_BAR'])

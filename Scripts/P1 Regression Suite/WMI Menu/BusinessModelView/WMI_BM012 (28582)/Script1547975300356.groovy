@@ -59,33 +59,50 @@ CustomKeywords.'actions.Common.verifyCssValue'(findTestObject('Page_WMI_NEW/Busi
 'Verify that maximum 2 Revision history entries (notes revision) are displayed in the grid.'
 'Checkout the document'
 WebUI.mouseOver(findTestObject('Object Repository/Page_WMI_NEW/BusinessModelView/StandardGrid/RevisionHistory/menu_CheckOut'))
+WebUI.waitForElementVisible(findTestObject('Page_WMI_NEW/BusinessModelView/StandardGrid/RevisionHistory/subMenu_CheckOut'), GlobalVariable.G_LongTimeout)
 WebUI.click(findTestObject('Page_WMI_NEW/BusinessModelView/StandardGrid/RevisionHistory/subMenu_CheckOut'))
+WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+
+'Click on button Checkout Document'
 WebUI.click(findTestObject('Page_WMI_NEW/BusinessModelView/StandardGrid/RevisionHistory/button_CheckoutDocument'))
-WebUI.delay(2)
+WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 
 'CheckIn the document'
 WebUI.mouseOver(findTestObject('Object Repository/Page_WMI_NEW/BusinessModelView/StandardGrid/RevisionHistory/menu_CheckIn'))
+WebUI.waitForElementVisible(findTestObject('Page_WMI_NEW/BusinessModelView/StandardGrid/RevisionHistory/subMenu_CheckInNewDocument'), GlobalVariable.G_LongTimeout)
 WebUI.click(findTestObject('Page_WMI_NEW/BusinessModelView/StandardGrid/RevisionHistory/subMenu_CheckInNewDocument'))
+WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 
+'Set check in comments'
 WebUI.setText(findTestObject('Object Repository/Page_WMI_NEW/BusinessModelView/StandardGrid/RevisionHistory/textarea_Revision Comments_com'), 'Test')
-CustomKeywords.'actions.Common.waitForElementVisible'(findTestObject('Page_WMI_NEW/BusinessModelView/StandardGrid/RevisionHistory/button_CheckInDocument'), GlobalVariable.G_LongTimeout)
+
+'Click on Check In document button'
 WebUI.click(findTestObject('Page_WMI_NEW/BusinessModelView/StandardGrid/RevisionHistory/button_CheckInDocument'))
-WebUI.delay(2)
+WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 
 'Repeat the steps 1 more time to add record'
+'Checkout the document'
 WebUI.mouseOver(findTestObject('Object Repository/Page_WMI_NEW/BusinessModelView/StandardGrid/RevisionHistory/menu_CheckOut'))
+WebUI.waitForElementVisible(findTestObject('Page_WMI_NEW/BusinessModelView/StandardGrid/RevisionHistory/subMenu_CheckOut'), GlobalVariable.G_LongTimeout)
 WebUI.click(findTestObject('Page_WMI_NEW/BusinessModelView/StandardGrid/RevisionHistory/subMenu_CheckOut'))
+WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+
+'Click on button Checkout Document'
 WebUI.click(findTestObject('Page_WMI_NEW/BusinessModelView/StandardGrid/RevisionHistory/button_CheckoutDocument'))
-WebUI.delay(2)
+WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 
 'CheckIn the document'
 WebUI.mouseOver(findTestObject('Object Repository/Page_WMI_NEW/BusinessModelView/StandardGrid/RevisionHistory/menu_CheckIn'))
+WebUI.waitForElementVisible(findTestObject('Page_WMI_NEW/BusinessModelView/StandardGrid/RevisionHistory/subMenu_CheckInNewDocument'), GlobalVariable.G_LongTimeout)
 WebUI.click(findTestObject('Page_WMI_NEW/BusinessModelView/StandardGrid/RevisionHistory/subMenu_CheckInNewDocument'))
+WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 
+'Set check in comments'
 WebUI.setText(findTestObject('Object Repository/Page_WMI_NEW/BusinessModelView/StandardGrid/RevisionHistory/textarea_Revision Comments_com'), 'Test')
-CustomKeywords.'actions.Common.waitForElementVisible'(findTestObject('Page_WMI_NEW/BusinessModelView/StandardGrid/RevisionHistory/button_CheckInDocument'), GlobalVariable.G_LongTimeout)
+
+'Click on Check In document button'
 WebUI.click(findTestObject('Page_WMI_NEW/BusinessModelView/StandardGrid/RevisionHistory/button_CheckInDocument'))
-WebUI.delay(2)
+WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 
 'Click on Revision History Tab'
 WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/BusinessModelView/StandardGrid/a_Revision History'))

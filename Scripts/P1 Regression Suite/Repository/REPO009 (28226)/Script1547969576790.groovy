@@ -44,7 +44,6 @@ WebUI.verifyGreaterThan(rowCount, 0)
 'Click Reset grid layout button'
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/resultGrid_ResetLayout'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
-WebUI.delay(3)
 
 int accountNoUserColumnNo_Before = CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/table_Header_SearchResults'), 'Account No User')
 int docCreateDateColumnNo_Before = CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/table_Header_SearchResults'), 'Doc Create Date')
@@ -59,7 +58,7 @@ WebUI.verifyEqual(accountNoUserColumnNo_Before, docCreateDateColumnNo_After)
 'Click Set Layout option'
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/resultGrid_SetLayout'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
-WebUI.delay(3)
+WebUI.delay(2) //This is needed as Alert is being displayed for 1.5 sec
 
 int docCreateDateColumnNo_After_1 = CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/table_Header_SearchResults'), 'Doc Create Date')
 WebUI.verifyEqual(accountNoUserColumnNo_Before, docCreateDateColumnNo_After_1)
@@ -67,7 +66,6 @@ WebUI.verifyEqual(accountNoUserColumnNo_Before, docCreateDateColumnNo_After_1)
 'Click Reset Layout option'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Repository/resultGrid_ResetLayout'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
-WebUI.delay(3)
 
 int docCreateDateColumnNo_After_2 = CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/table_Header_SearchResults'), 'Doc Create Date')
 WebUI.verifyEqual(docCreateDateColumnNo_Before, docCreateDateColumnNo_After_2)

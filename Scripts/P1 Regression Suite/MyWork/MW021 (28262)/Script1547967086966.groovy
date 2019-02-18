@@ -35,12 +35,12 @@ CustomKeywords.'actions.Common.createDocument_ClosureAction'('Chintan Shah', 'MW
 
 'refresh activity A'
 CustomKeywords.'actions.MenuBar.rightClickTreeMenu'('MY_WORK', 'Processes', 'Closure Action', 'Activity A')
-WebUI.delay(2)
+WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
 'Click on Refresh option'
 CustomKeywords.'actions.ContextMenu.clickOption'(findTestObject('Page_nGage_Dashboard/contextMenuOptions'), 'Refresh')
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
-WebUI.delay(2)
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_work_items'))
 
 'store value of  activity count after refresh'
 int activityCount_After=CustomKeywords.'actions.MenuBar.getRecordCountInActivity'('MY_WORK', 'Processes', 'Closure Action', 'Activity A', 'Chintan Shah')

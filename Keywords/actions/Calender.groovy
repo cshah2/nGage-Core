@@ -43,14 +43,14 @@ public class Calender {
 			WebDriver driver = DriverFactory.getWebDriver()
 			Select selYear = new Select(driver.findElement(By.xpath(YEAR_XPATH)))
 			selYear.selectByVisibleText(year)
-			WebUI.delay(1)
+			WebUtil.delay(100)
 
 			Select selMonth = new Select(driver.findElement(By.xpath(MONTH_XPATH)))
 			selMonth.selectByVisibleText(month)
-			WebUI.delay(1)
+			WebUtil.delay(100)
 
 			driver.findElement(By.xpath("//div[@id='ui-datepicker-div']//td[@data-handler='selectDay']/a[text()='"+date+"']")).click()
-			WebUI.delay(1)
+			WebUtil.delay(100)
 		}
 		catch(Exception e) {
 			WebUI.takeScreenshot()
@@ -70,14 +70,14 @@ public class Calender {
 			WebDriver driver = DriverFactory.getWebDriver()
 			Select selYear = new Select(driver.findElement(By.xpath(YEAR_XPATH)))
 			selYear.selectByVisibleText(year)
-			WebUI.delay(1)
+			WebUtil.delay(100)
 
 			Select selMonth = new Select(driver.findElement(By.xpath(MONTH_XPATH)))
 			selMonth.selectByVisibleText(month)
-			WebUI.delay(1)
+			WebUtil.delay(100)
 
 			driver.findElement(By.xpath("//div[@id='ui-datepicker-div']//td[@data-handler='selectDay']/a[text()='"+date+"']")).click()
-			WebUI.delay(1)
+			WebUtil.delay(100)
 
 			'Click on Done button'
 			driver.findElement(By.xpath(DONE_XPATH)).click()

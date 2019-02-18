@@ -18,6 +18,7 @@ import org.openqa.selenium.WebElement
 import org.openqa.selenium.interactions.Actions
 import org.openqa.selenium.support.ui.ExpectedConditions
 import org.openqa.selenium.support.ui.FluentWait
+import org.openqa.selenium.support.ui.Select
 
 import com.gargoylesoftware.htmlunit.javascript.background.JavaScriptExecutor
 import com.kms.katalon.core.annotation.Keyword
@@ -172,6 +173,7 @@ public class Common {
 
 	@Keyword
 	def waitForFrameToLoad(TestObject iFrame) {
+		WebUtil.waitForAjax(DriverFactory.getWebDriver(), "MicrosoftAjax")
 		WebUtil.switchFrameAndWaitForLoad(iFrame, GlobalVariable.G_LongTimeout)
 		WebUI.switchToDefaultContent()
 	}
@@ -245,6 +247,9 @@ public class Common {
 		WebUI.switchToWindowTitle(documentTitle)
 		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 		//waitForFrameToLoad(findTestObject('Page_WMI/WMI_Menu_BOV_Vertical/iframe_westContainerFrame'))
+
+		WebUI.maximizeWindow()
+		WebUI.delay(1)
 
 		WebUI.switchToDefaultContent()
 	}
@@ -570,9 +575,8 @@ public class Common {
 		WebUI.click(findTestObject('Page_WMI_NEW/Date Date Time DT/span_Save'))
 
 		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
-		WebUI.delay(5)
+		waitForFrameToLoad(findTestObject('Page_WMI/Date Date Time DT/iframe_ContentPlaceHolder1'))
 		new Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI/Date Date Time DT/span_Close Window'), GlobalVariable.G_LongTimeout)
-
 
 		'Switch to main window and close'
 		WebUI.switchToWindowTitle('Savana nGage')
@@ -637,7 +641,8 @@ public class Common {
 		'Save details and close'
 		WebUI.click(findTestObject('Page_WMI_NEW/MyWork_DateTime/span_Save'))
 		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
-		WebUI.delay(5)
+
+		waitForFrameToLoad(findTestObject('Page_WMI/MyWork_DateTime/iframe_ContentPlaceHolder'))
 		new Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI/MyWork_DateTime/span_Close Window'), GlobalVariable.G_LongTimeout)
 
 		'Switch to main window and close'
@@ -680,10 +685,9 @@ public class Common {
 		list.add(e)
 		WebUI.executeJavaScript('arguments[0].value = "'+text+'"', list)
 		WebUI.switchToDefaultContent()
-		WebUI.delay(1)
 		WebUI.click(to)
 		WebUI.sendKeys(to, Keys.chord(Keys.TAB))
-		WebUI.delay(1)
+		WebUtil.delay(100)
 	}
 
 	@Keyword
@@ -845,24 +849,21 @@ public class Common {
 	@Keyword
 	def waitForTabLoading(TestObject iframe, int timeout) {
 
-		WebUI.delay(1)
-
+		WebUI.waitForElementPresent(findTestObject('Page_WMI_NEW/visibleLoader'), 5)
+		
 		if(iframe != null) {
 			WebUI.switchToFrame(iframe, timeout)
 		} else {
 			WebUI.switchToFrame(findTestObject('Page_WMI_NEW/iframe_Close Window_ContentPla'), timeout)
 		}
-
+		
 		WebDriver driver = DriverFactory.getWebDriver()
 		FluentWait<WebDriver> wait = new FluentWait<WebDriver>(driver)
 				.withTimeout(timeout, TimeUnit.SECONDS)
 				.pollingEvery(3, TimeUnit.SECONDS)
 				.ignoring(StaleElementReferenceException.class)
 
-		////img[contains(@src,'orange_daisy.g')]/../..
-		//List<WebElement> loaders = driver.findElements(By.xpath("//div[contains(@id,'updProgress') or contains(@id,'UpdateWebAsyncRefreshPanel')]"))
-		List<WebElement> loaders = driver.findElements(By.xpath("//img[contains(@src,'orange_daisy.g')]/../.."))
-		wait.until(ExpectedConditions.invisibilityOfAllElements(loaders))
+		wait.until(ExpectedConditions.not(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//img[contains(@src,'orange_daisy.g')]/../../../div[contains(@style,'block')]"))))
 
 		WebUI.switchToDefaultContent()
 	}
@@ -906,7 +907,6 @@ public class Common {
 			}
 		}
 		WebUI.delay(3)
-		//waitForImageToRender(findTestObject('Page_WMI/WMI_Menu_BOV_Vertical/ContentFrame/iFrame_Image_EPMMultipageViewer'))
 	}
 
 	@Keyword
@@ -923,7 +923,6 @@ public class Common {
 			}
 		}
 		WebUI.delay(3)
-		//waitForImageToRender(findTestObject('Page_WMI/WMI_Menu_BOV_Vertical/ContentFrame/iFrame_Image_EPMMultipageViewer'))
 	}
 
 	@Keyword
@@ -949,7 +948,8 @@ public class Common {
 		'Save details and close'
 		WebUI.click(findTestObject('Page_WMI_NEW/VerticalMenuWizard/ShowVerticalMenu_True/span_Save'))
 		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
-		WebUI.delay(5)
+		waitForFrameToLoad(findTestObject('Page_WMI_NEW/VerticalMenuWizard/ShowVerticalMenu_True/iframe_Menus_ContentPlaceHolde'))
+
 		new Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI_NEW/VerticalMenuWizard/ShowVerticalMenu_True/a_Close Window'), GlobalVariable.G_LongTimeout)
 
 		'Switch to main window and close'
@@ -981,7 +981,8 @@ public class Common {
 		'Save details and close'
 		WebUI.click(findTestObject('Page_WMI_NEW/VerticalMenuWizard/ShowVerticalMenu_True/span_Save'))
 		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
-		WebUI.delay(5)
+		waitForFrameToLoad(findTestObject('Page_WMI_NEW/VerticalMenuWizard/ShowVerticalMenu_True/iframe_Menus_ContentPlaceHolde'))
+
 		new Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI_NEW/VerticalMenuWizard/ShowVerticalMenu_True/a_Close Window'), GlobalVariable.G_LongTimeout)
 
 		'Switch to main window and close'
@@ -1016,7 +1017,8 @@ public class Common {
 		'Save details and close'
 		WebUI.click(findTestObject('Page_WMI_NEW/VerticalMenuWizard/ShowVerticalMenu_True/span_Save'))
 		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
-		WebUI.delay(5)
+		waitForFrameToLoad(findTestObject('Page_WMI_NEW/VerticalMenuWizard/ShowVerticalMenu_True/iframe_Menus_ContentPlaceHolde'))
+
 		new Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI_NEW/VerticalMenuWizard/ShowVerticalMenu_True/a_Close Window'), GlobalVariable.G_LongTimeout)
 
 		'Switch to main window and close'
@@ -1116,7 +1118,8 @@ public class Common {
 		WebUI.selectOptionByLabel(findTestObject('Page_WMI_NEW/Master_Object/select_String Field With Lookup'), stringFieldLookup, false)	//String Field With Lookup
 		WebUI.setText(findTestObject('Page_WMI_NEW/Master_Object/input_Currency Field'), currencyField)	//Currency Field
 		WebUI.sendKeys(findTestObject('Page_WMI_NEW/Master_Object/input_Currency Field'), Keys.chord(Keys.TAB))
-		WebUI.delay(2)
+		//WebUI.delay(2)
+		WebUtil.delay(100)
 		setText_Date(findTestObject('Page_WMI_NEW/Master_Object/input_Date Field'), dateField)
 		WebUI.setText(findTestObject('Page_WMI_NEW/Master_Object/input_Float Field (Precision3minval-10maxval-100)'), floatField)	//Float Field (Precision:3,minval-10,maxval-100)
 		WebUI.setText(findTestObject('Page_WMI_NEW/Master_Object/input_Small Integer Field(minval-10maxval-100)'), smallIntField)	//Small Integer Field(minval-10,maxval-100)
@@ -1153,7 +1156,6 @@ public class Common {
 		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'))
 
 		'Switch to new Window'
-		//WebUI.switchToWindowTitle('(Doc ID: NEW )')
 		WebUI.switchToWindowIndex(1)
 		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 
@@ -1162,8 +1164,9 @@ public class Common {
 		WebUI.setText(findTestObject('Page_WMI_NEW/Correspondence/input_Last Name'), lastName)
 		WebUI.setText(findTestObject('Page_WMI_NEW/Correspondence/input_To Email'), toEmail)
 		WebUI.selectOptionByLabel(findTestObject('Page_WMI_NEW/Correspondence/select_Template'), template, false)
+		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+		WebUI.delay(2)
 		waitForFrameToLoad(findTestObject('Page_WMI_NEW/Correspondence/iframe_BodyText'))
-		WebUI.delay(3)
 
 		'Save details and close'
 		WebUI.click(findTestObject('Page_WMI_NEW/Correspondence/span_Save'))
@@ -1529,4 +1532,56 @@ public class Common {
 		WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 	}
 
+	@Keyword
+	def waitUntilDropDownHasOption(TestObject to, int timeout) {
+
+		def startTime = System.currentTimeMillis()
+		def endTime = startTime + TimeUnit.SECONDS.toMillis(timeout)
+		def currentTime = System.currentTimeMillis()
+		boolean isLoaded = false
+
+
+
+		while(currentTime < endTime) {
+			try {
+				WebElement dropDown = WebUtil.getWebElement(to)
+				Select selElement = new Select(dropDown)
+				List<WebElement> allOptions = selElement.getOptions()
+				if(allOptions.size() > 0) {
+					isLoaded = true
+					break
+				}
+				else {
+					WebUI.switchToDefaultContent()
+					WebUI.delay(1)
+					currentTime = System.currentTimeMillis()
+				}
+			}
+			catch(Exception e) {
+				WebUI.switchToDefaultContent()
+				WebUI.delay(1)
+				currentTime = System.currentTimeMillis()
+			}
+		}
+
+		WebUI.switchToDefaultContent()
+		if(isLoaded) {
+			KeywordUtil.markPassed("Drop down is loaded and it has one option")
+		}
+		else {
+			KeywordUtil.markFailedAndStop("Drop down is not loaded in time "+timeout)
+		}
+	}
+
+	@Keyword
+	def selectRepositoryAndSearchFor(String repository, String searchFor) {
+
+		'Select Repository - Advance Search tab'
+		WebUI.selectOptionByLabel(findTestObject('Page_nGage_Dashboard/Repository/select_Repository Drop Down'), repository, false)
+		waitUntilDropDownHasOption(findTestObject('Page_nGage_Dashboard/Repository/select_Search For Drop Down'), GlobalVariable.G_LongTimeout)
+
+		'Select Search For - Advance Search tab'
+		WebUI.selectOptionByLabel(findTestObject('Page_nGage_Dashboard/Repository/select_Search For Drop Down'), searchFor, false)
+		WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/Repository/filtersTable'), GlobalVariable.G_LongTimeout)
+	}
 }

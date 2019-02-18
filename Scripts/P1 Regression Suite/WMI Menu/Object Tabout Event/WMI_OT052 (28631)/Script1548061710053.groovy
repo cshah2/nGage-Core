@@ -78,11 +78,8 @@ WebUI.verifyElementVisible(findTestObject('Object Repository/Page_WMI_NEW/Object
 
 WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/DoNotSetValueOnLoad SetFocus Event/InlineView/a_InlineView'))
 
-'Verify the reference grid with documents in grid'
-WebUI.verifyElementVisible(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/DoNotSetValueOnLoad SetFocus Event/InlineView/cell_DocID'))
-
-'Click and open doc with doc type name "Donotsetvalueonload and setfocus Event"'
-WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/DoNotSetValueOnLoad SetFocus Event/InlineView/cell_DocID'))
+'Select document from the grid'
+CustomKeywords.'actions.Table.clickCell'(findTestObject('Page_WMI_NEW/Object Tabout Event/DoNotSetValueOnLoad SetFocus Event/InlineView/table_InlineResultView'), 1, 6)
 
 'Inline document should get opened with save and button'
 CustomKeywords.'actions.Common.waitForTabLoading'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/DoNotSetValueOnLoad SetFocus Event/InlineView/iframe_Close Window_ContentPla'), GlobalVariable.G_LongTimeout)

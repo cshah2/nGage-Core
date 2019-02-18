@@ -46,8 +46,8 @@ WebUI.verifyOptionPresentByLabel(findTestObject('Page_WMI_NEW/Master_Object_Feat
 
 'Select WMI Menu Doc class from the list'
 WebUI.selectOptionByLabel(findTestObject('Page_WMI_NEW/Master_Object_Feature/Render_As_ChangeDocClass/select_CurrentDocClass'), 'WMI Menu', false)
-//WebUI.delay(5)
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_WMI_NEW/Master_Object_Feature/Render_As_ChangeDocClass/iframe_Close Window_ContentPla'))
+WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 
 WebUI.verifyOptionPresentByLabel(findTestObject('Page_WMI_NEW/Master_Object_Feature/Render_As_ChangeDocClass/select_CurrentDocType'), 'WMI Menu BOV', false, GlobalVariable.G_LongTimeout)
 WebUI.verifyOptionPresentByLabel(findTestObject('Page_WMI_NEW/Master_Object_Feature/Render_As_ChangeDocClass/select_CurrentDocType'), 'WMI Menu BOV Vertical', false, GlobalVariable.G_LongTimeout)
@@ -57,7 +57,8 @@ WebUI.verifyOptionPresentByLabel(findTestObject('Page_WMI_NEW/Master_Object_Feat
 
 'Select WMI Menu Doc Default type from the list'
 WebUI.selectOptionByLabel(findTestObject('Page_WMI_NEW/Master_Object_Feature/Render_As_ChangeDocClass/select_CurrentDocType'), 'WMI Menu Default', false)
-WebUI.delay(5)
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_WMI_NEW/Master_Object_Feature/Render_As_ChangeDocClass/iframe_Close Window_ContentPla'))
+
 WebUI.switchToWindowIndex(1)
 WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 
@@ -100,5 +101,3 @@ WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 WebUI.verifyOptionSelectedByLabel(findTestObject('Page_WMI/WMI_Menu_BOV_Default/select_CustomerId'), '200', false, GlobalVariable.G_LongTimeout)
 WebUI.verifyElementAttributeValue(findTestObject('Page_WMI/WMI_Menu_BOV_Default/textarea_BM String'), 'value', 'Test', GlobalVariable.G_LongTimeout)
 WebUI.verifyElementAttributeValue(findTestObject('Page_WMI/WMI_Menu_BOV_Default/textarea_Customer Name'), 'value', 'Chintan Shah', GlobalVariable.G_LongTimeout)
-
-

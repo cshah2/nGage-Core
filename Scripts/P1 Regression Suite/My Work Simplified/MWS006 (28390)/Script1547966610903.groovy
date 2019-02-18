@@ -35,24 +35,23 @@ CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Da
 'Click on Reset layout'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/Reset Layout'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/iframe_iframe_110'))
-WebUI.delay(5)
 
 'Get colNo before drag and drop'
-int colNo_DocCreateDate_Before = CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/table_SearchResultHeader'), 'Doc Create Date')
-int colNo_ActivityState_Before =  CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/table_SearchResultHeader'), 'Activity State')
+int colNo_DocCreateDate_Before = CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/tableHeader_SearchResult'), 'Doc Create Date')
+int colNo_ActivityState_Before =  CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/tableHeader_SearchResult'), 'Activity State')
 
 'Drag and drop columns'
 WebUI.dragAndDropToObject(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/tableHeader_DocCreateDate'), findTestObject('Page_nGage_Dashboard/My_Work_Simplified/tableHeader_ActivityState'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/iframe_iframe_110'))
 
 'Get colNo after drag and drop'
-int colNo_DocCreateDate_After = CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/table_SearchResultHeader'), 'Doc Create Date')
-int colNo_ActivityState_After =  CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/table_SearchResultHeader'), 'Activity State')
+int colNo_DocCreateDate_After = CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/tableHeader_SearchResult'), 'Doc Create Date')
+int colNo_ActivityState_After =  CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/tableHeader_SearchResult'), 'Activity State')
 
 'Click on Set layout'
 WebUI.click(findTestObject("Page_nGage_Dashboard/My_Work_Simplified/Set Layout"))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/iframe_iframe_110'))
-WebUI.delay(5)
+WebUI.delay(2) //This is needed as Alert is being displayed for 1.5 sec
 
 'Verify columns are switched'
 WebUI.verifyEqual(colNo_DocCreateDate_After, colNo_ActivityState_Before)
@@ -60,11 +59,10 @@ WebUI.verifyEqual(colNo_DocCreateDate_After, colNo_ActivityState_Before)
 'Click on Reset layout'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/Reset Layout'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/iframe_iframe_110'))
-WebUI.delay(5)
 
 'Get colNo after reset'
-int colNo_DocCreateDate_AfterReset = CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/table_SearchResultHeader'), 'Doc Create Date')
-int colNo_ActivityState_AfterReset =  CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/table_SearchResultHeader'), 'Activity State')
+int colNo_DocCreateDate_AfterReset = CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/tableHeader_SearchResult'), 'Doc Create Date')
+int colNo_ActivityState_AfterReset =  CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/tableHeader_SearchResult'), 'Activity State')
 
 'Verify column positon are reset'
 WebUI.verifyEqual(colNo_DocCreateDate_AfterReset, colNo_DocCreateDate_Before)

@@ -50,7 +50,7 @@ WebUI.verifyEqual(docTypeNameColumnNo_Before, currentRevisionColumnNo_After)
 'Click Set Layout option'
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/BrowseResults Tab/browserResult_SetLayout'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/BrowseResults Tab/iframe_BROWSETAB_iframe'))
-WebUI.delay(3)
+WebUI.delay(2) //This is needed as Alert is being displayed for 1.5 sec
 
 WebUI.refresh()
 

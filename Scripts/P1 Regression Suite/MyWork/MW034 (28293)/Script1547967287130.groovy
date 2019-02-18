@@ -34,7 +34,7 @@ CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Da
 
 'Click on Reset layout to bring columns to original position'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/td_ResetLayout'))
-WebUI.delay(3)
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_work_items'))
 
 'Expand Search bar'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/h3_Search Bar'))
@@ -43,11 +43,13 @@ CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Da
 'Enter filter criteria Loan amount range'
 WebUI.setText(findTestObject('Page_nGage_Dashboard/My_Work/search_LoanAmount_From'), P1_LOANAPPL_AMOUNT_FILTER_FROM)
 WebUI.sendKeys(findTestObject('Page_nGage_Dashboard/My_Work/search_LoanAmount_From'), Keys.chord(Keys.TAB))
-WebUI.delay(1)
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_work_items'))
+//WebUI.delay(1)
 
 WebUI.setText(findTestObject('Page_nGage_Dashboard/My_Work/search_LoanAmount_To'), P1_LOANAPPL_AMOUNT_FILTER_TO)
 WebUI.sendKeys(findTestObject('Page_nGage_Dashboard/My_Work/search_LoanAmount_To'), Keys.chord(Keys.TAB))
-WebUI.delay(1)
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_work_items'))
+//WebUI.delay(1)
 
 'Click on Search button'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/btn_Search'))
@@ -69,7 +71,7 @@ int colNo_DocCreateDate_After = CustomKeywords.'actions.Table.getColumnNumber'(f
 'click on set layout'
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/span_SetLayout'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/iframe_work_items'))
-WebUI.delay(3)
+WebUI.delay(2) //This is needed as Alert is being displayed for 1.5 sec
 
 WebUI.verifyEqual(colNo_DocCreateDate_After, colNo_DocID_Original)
 
@@ -130,4 +132,4 @@ WebUI.verifyEqual(colNo_DocCreateDate_After4, colNo_DocID_Original)
 
 'Click on Reset layout to bring columns to original position'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/td_ResetLayout'))
-WebUI.delay(3)
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_work_items'))

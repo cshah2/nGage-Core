@@ -82,10 +82,9 @@ CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_WMI/Clos
 WebUI.mouseOver(findTestObject('Page_WMI/Closure Action/button_CustomerActions'))
 
 'Select option Search and process reference item'
-WebUI.delay(2)
+CustomKeywords.'actions.Common.waitForElementVisible'(findTestObject('Page_WMI/Closure Action/list_CustomerActions'), GlobalVariable.G_LongTimeout)
 WebUI.click(findTestObject('Page_WMI/Closure Action/subMenu_CustActions_Search n Process Reference'))
 WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
-//CustomKeywords.'actions.Window.clickElementAndWaitForWindowClose'(findTestObject('Page_WMI/Closure Action/subMenu_CustActions_Search n Process Reference'), GlobalVariable.G_LongTimeout)
 
 'Verify dialog message'
 WebUI.verifyElementVisible(findTestObject('Page_WMI/Closure Action/dialog_BPM'))

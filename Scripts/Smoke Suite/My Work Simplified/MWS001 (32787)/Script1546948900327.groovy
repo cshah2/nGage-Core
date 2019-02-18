@@ -36,7 +36,7 @@ WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/My_Work_Simplif
 WebUI.selectOptionByLabel(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/select_Auto Import Controlled'), 'Closure Action - Activity A', false)
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/iframe_iframe_110'))
 
-int wfItemActivityName = CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work_Simplified/table_SearchResultHeader'), 'WFItemActivityName')
+int wfItemActivityName = CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/tableHeader_SearchResult'), 'WFItemActivityName')
 
 'Verify Result grid contains all document whose WFItemActivityName column contains name as "Activity A"'
 CustomKeywords.'actions.Table.verifyAllValuesInColumnMatches'(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/table_SearchResult'), wfItemActivityName, 'Activity A')

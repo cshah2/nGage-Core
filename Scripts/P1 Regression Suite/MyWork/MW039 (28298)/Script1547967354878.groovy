@@ -35,7 +35,7 @@ CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Da
 
 'Click on Reset layout to bring columns to original position'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/td_ResetLayout'))
-WebUI.delay(3)
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_work_items'))
 
 'Expand Search bar'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/h3_Search Bar'))
@@ -44,11 +44,11 @@ CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Da
 'Enter filter criteria Loan amount range'
 WebUI.setText(findTestObject('Page_nGage_Dashboard/My_Work/search_LoanAmount_From'), P1_LOANAPPL_AMOUNT_FILTER_FROM)
 WebUI.sendKeys(findTestObject('Page_nGage_Dashboard/My_Work/search_LoanAmount_From'), Keys.chord(Keys.TAB))
-WebUI.delay(1)
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_work_items'))
 
 WebUI.setText(findTestObject('Page_nGage_Dashboard/My_Work/search_LoanAmount_To'), P1_LOANAPPL_AMOUNT_FILTER_TO)
 WebUI.sendKeys(findTestObject('Page_nGage_Dashboard/My_Work/search_LoanAmount_To'), Keys.chord(Keys.TAB))
-WebUI.delay(1)
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_work_items'))
 
 'Click on Search button'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/btn_Search'))

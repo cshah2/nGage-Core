@@ -39,7 +39,7 @@ WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
 'Close Business Model Repository'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Repository/iconExpand_BusinessModel_SubMenu'))
-WebUI.delay(2)
+WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout) 
 
 'Expand again Business Model Repository'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Repository/iconExpand_BusinessModel_SubMenu'))

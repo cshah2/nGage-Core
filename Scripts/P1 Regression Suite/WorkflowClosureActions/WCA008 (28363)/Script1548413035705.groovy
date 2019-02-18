@@ -70,7 +70,7 @@ CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_WMI/Clos
 WebUI.mouseOver(findTestObject('Page_WMI/Closure Action/button_CustomerActions'))
 
 'Select option Set process due date'
-WebUI.delay(2)
+CustomKeywords.'actions.Common.waitForElementVisible'(findTestObject('Page_WMI/Closure Action/list_CustomerActions'), GlobalVariable.G_LongTimeout)
 CustomKeywords.'actions.Window.clickElementAndWaitForWindowClose'(findTestObject('Page_WMI/Closure Action/subMenu_CustActions_Set process due date'), GlobalVariable.G_LongTimeout)
 
 'Switch back to parent window'

@@ -30,7 +30,7 @@ WebUI.selectOptionByLabel(findTestObject('Page_nGage_Dashboard/My_Work_Simplifie
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/iframe_iframe_110'))
 
 'Verify Result grid contains all document whose WFItemActivityName column contains name as "Activity A"'
-int colNo_ActivityName = CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/table_SearchResultHeader'), 'WFItemActivityName')
+int colNo_ActivityName = CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/tableHeader_SearchResult'), 'WFItemActivityName')
 CustomKeywords.'actions.Table.verifyAllValuesInColumnMatches'(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/table_SearchResult'), colNo_ActivityName, 'Activity A')
 
 'verify the Get Next Item button is displayed'

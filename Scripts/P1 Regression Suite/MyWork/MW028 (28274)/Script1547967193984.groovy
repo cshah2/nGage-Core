@@ -30,7 +30,8 @@ CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Da
 'Click Processes'
 CustomKeywords.'actions.MenuBar.clickTreeMenu'('MY_WORK', 'Processes')
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_iframe_105'))
-WebUI.delay(5)
+WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
+WebUI.delay(5) //Wait for charts to plot
 
 'Verify Chart sections and its contents'
 WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/My_Work/Charts/Bar Chart - Header'), GlobalVariable.G_LongTimeout)
@@ -67,7 +68,7 @@ println 'Expected Row No is :'+rowNo
 'Click on respective slice in Bar chart'
 CustomKeywords.'actions.Chart.clickSlice'(findTestObject('Page_nGage_Dashboard/My_Work/Charts/Chart_AllProcess_Summary'), rowNo, GlobalVariable.ChartType['PIE'])
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_iframe_105'))
-WebUI.delay(5)
+WebUI.delay(5) //Wait for charts to plot
 
 'Verify Chart sections and its contents'
 WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/My_Work/Charts/Bar Chart - Header'), GlobalVariable.G_LongTimeout)

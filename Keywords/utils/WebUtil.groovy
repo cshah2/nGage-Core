@@ -5,7 +5,11 @@ import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 
+import java.util.concurrent.TimeUnit
+
+import org.openqa.selenium.JavascriptExecutor
 import org.openqa.selenium.StaleElementReferenceException
+import org.openqa.selenium.WebDriver
 import org.openqa.selenium.WebElement
 import org.openqa.selenium.support.ui.FluentWait
 
@@ -50,7 +54,7 @@ public class WebUtil {
 		WebUI.switchToFrame(frame, timeout)
 		WebUI.waitForPageLoad(timeout)
 		WebUI.waitForJQueryLoad(timeout)
-		WebUI.delay(1)
+		//WebUI.delay(1)
 	}
 
 	public static void killProcess(String processName) {
@@ -58,5 +62,28 @@ public class WebUtil {
 		String command = "TASKKILL /F /IM "+processName+" /T"
 		Process process = Runtime.getRuntime().exec(command)
 		process.destroy()
+	}
+
+	public static void delay(int milliSeconds) {
+		try {
+			Thread.sleep(milliSeconds)
+		}catch(Exception e) {
+			println "Exception occured while waiting for "+milliSeconds+" milliseconds"
+			println e.toString()
+		}
+	}
+
+	public static void waitForAjax(WebDriver driver, String action) {
+		driver.manage().timeouts().setScriptTimeout(GlobalVariable.G_LongTimeout, TimeUnit.SECONDS);
+		((JavascriptExecutor) driver).executeAsyncScript(
+				"var callback = arguments[arguments.length - 1];" +
+				"var xhr = new XMLHttpRequest();" +
+				"xhr.open('POST', '/" + action + "', true);" +
+				"xhr.onreadystatechange = function() {" +
+				"  if (xhr.readyState == 4) {" +
+				"    callback(xhr.responseText);" +
+				"  }" +
+				"};" +
+				"xhr.send();");
 	}
 }

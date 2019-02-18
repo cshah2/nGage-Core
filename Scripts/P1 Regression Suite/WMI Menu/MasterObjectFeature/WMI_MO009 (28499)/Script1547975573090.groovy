@@ -54,14 +54,14 @@ WebUI.verifyOptionPresentByLabel(findTestObject('Page_WMI_NEW/Master_Object_Feat
 
 'Select drop down as Render as TextBox'
 WebUI.selectOptionByLabel(findTestObject('Page_WMI_NEW/Master_Object_Feature/Render_As_ChangeDocType/select_StringField'), 'Render As TextBox', false)
-WebUI.delay(5)
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_WMI_NEW/Master_Object_Feature/Render_As_ChangeDocType/iframe_Close Window_ContentPla'))
+WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 
 'Verify Information Text'
 WebUI.verifyElementText(findTestObject('Page_WMI_NEW/Master_Object_Feature/Render_As_Textbox/span_Information'), 'This WMI imparts - Control renderas Textbox')
 
 'Enter valid date in input field'
 String currentDate = DateUtil.getCurrentDateTime('MM/dd/yyyy')
-//TODO: Date time format is not valid
 WebUI.setText(findTestObject('Page_WMI_NEW/Master_Object_Feature/Render_As_Textbox/input_DateType'), currentDate)
 
 'Click Save'

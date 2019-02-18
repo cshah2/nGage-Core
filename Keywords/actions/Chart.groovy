@@ -107,9 +107,7 @@ public class Chart {
 		argList.add(slice)
 		WebUI.executeJavaScript("var evt = document.createEvent('MouseEvents');" + "evt.initMouseEvent('mouseover',true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0,null);" + "arguments[0].dispatchEvent(evt);", argList)
 
-		//		Actions aDriver = new Actions(DriverFactory.getWebDriver())
-		//		aDriver.moveToElement(slice).build().perform()
-		WebUI.delay(3)
+		WebUI.delay(2)
 		WebUI.switchToDefaultContent()
 	}
 

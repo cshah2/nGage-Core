@@ -62,7 +62,8 @@ WebUI.switchToWindowIndex(0)
 
 'Refresh parent window'
 WebUI.refresh()
-WebUI.delay(3)
+WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
 //WMI Menu Bov Check
 'Pre-Requisite : Create new Document of type WMI Menu Bov'

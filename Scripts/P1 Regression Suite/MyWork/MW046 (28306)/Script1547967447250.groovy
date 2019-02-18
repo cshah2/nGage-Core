@@ -35,7 +35,7 @@ CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Da
 
 'right click on (option)loan approval'
 CustomKeywords.'actions.MenuBar.rightClickTreeMenu'('MY_WORK', 'Processes', 'Loan Interactive', 'Loan Application')
-WebUI.delay(2)
+WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
 'Select Foldering configuration option from context menu'
 CustomKeywords.'actions.ContextMenu.clickOption'(findTestObject('Page_nGage_Dashboard/contextMenuOptions'), 'Foldering Configuration')
@@ -80,7 +80,7 @@ CustomKeywords.'actions.Common.verifyTotalRecordCountFromPageSummary'(findTestOb
 
 'right click on (option)loan approval'
 CustomKeywords.'actions.MenuBar.rightClickTreeMenu'('MY_WORK', 'Processes', 'Loan Interactive', 'Loan Application')
-WebUI.delay(2)
+WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
 'Select Foldering configuration option from context menu'
 CustomKeywords.'actions.ContextMenu.clickOption'(findTestObject('Page_nGage_Dashboard/contextMenuOptions'), 'Foldering Configuration')

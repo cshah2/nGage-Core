@@ -40,7 +40,6 @@ WebUI.verifyGreaterThan(recordsCount, 0)
 'Reset columns'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Repository/resultGrid_ResetLayout'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
-WebUI.delay(5)
 
 int accountNoUserColumnNo_Before = CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/table_Header_SearchResults'), 'Account No User')
 
@@ -51,7 +50,7 @@ CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Da
 'Click Set Layout option'
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/resultGrid_SetLayout'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
-WebUI.delay(5)
+WebUI.delay(2) //This is needed as Alert is being displayed for 1.5 sec
 
 int docCreateDateColumnNo_After = CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/table_Header_SearchResults'), 'Doc Create Date')
 WebUI.verifyEqual(accountNoUserColumnNo_Before, docCreateDateColumnNo_After)
@@ -59,7 +58,6 @@ WebUI.verifyEqual(accountNoUserColumnNo_Before, docCreateDateColumnNo_After)
 'Click on Refresh button'
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/browseResult_Refresh'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
-WebUI.delay(3)
 
 int docCreateDateColumnNo_AfterRefresh = CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/table_Header_SearchResults'), 'Doc Create Date')
 WebUI.verifyEqual(accountNoUserColumnNo_Before, docCreateDateColumnNo_AfterRefresh)
@@ -70,4 +68,3 @@ WebUI.verifyEqual(accountNoUserColumnNo_Before, docCreateDateColumnNo_After)
 'Reset columns'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Repository/resultGrid_ResetLayout'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
-WebUI.delay(5)

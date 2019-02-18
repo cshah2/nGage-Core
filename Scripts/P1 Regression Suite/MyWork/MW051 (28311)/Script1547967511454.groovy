@@ -32,7 +32,7 @@ CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Da
 
 'right click on (option)loan approval'
 CustomKeywords.'actions.MenuBar.rightClickTreeMenu'('MY_WORK', 'Processes', 'Loan Interactive', 'Loan Application')
-WebUI.delay(2)
+WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
 'Select Foldering configuration option from context menu'
 CustomKeywords.'actions.ContextMenu.clickOption'(findTestObject('Page_nGage_Dashboard/contextMenuOptions'), 'Foldering Configuration')
@@ -59,7 +59,7 @@ CustomKeywords.'actions.MenuBar.verifySubMenuPresent'('MY_WORK', P1_LOANAPPL_FIR
 
 'right click on submenu under loan approval'
 CustomKeywords.'actions.MenuBar.rightClickTreeMenu'('MY_WORK', 'Processes', 'Loan Interactive', 'Loan Application', P1_LOANAPPL_FIRSTNAME_DOC1)
-WebUI.delay(2)
+WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
 'Select Foldering configuration option from context menu'
 CustomKeywords.'actions.ContextMenu.clickOption'(findTestObject('Page_nGage_Dashboard/contextMenuOptions'), 'Foldering Configuration')
@@ -93,7 +93,7 @@ CustomKeywords.'actions.MenuBar.verifyAllSubmenuAreSortedByActivityCount'(subMen
 
 'right click on (option)loan approval'
 CustomKeywords.'actions.MenuBar.rightClickTreeMenu'('MY_WORK', 'Processes', 'Loan Interactive', 'Loan Application')
-WebUI.delay(2)
+WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
 'Select Foldering configuration option from context menu'
 CustomKeywords.'actions.ContextMenu.clickOption'(findTestObject('Page_nGage_Dashboard/contextMenuOptions'), 'Foldering Configuration')

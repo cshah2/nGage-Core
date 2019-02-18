@@ -103,8 +103,7 @@ CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_WMI/Clos
 WebUI.mouseOver(findTestObject('Page_WMI/Closure Action/button_CustomerActions'))
 
 'Select option Update related item field value'
-//WebUI.waitForElementVisible(findTestObject('Page_WMI/Closure Action/subMenu_CustActions_Update related Item field value'), GlobalVariable.G_LongTimeout)
-WebUI.delay(2)
+CustomKeywords.'actions.Common.waitForElementVisible'(findTestObject('Page_WMI/Closure Action/list_CustomerActions'), GlobalVariable.G_LongTimeout)
 CustomKeywords.'actions.Window.clickElementAndWaitForWindowClose'(findTestObject('Page_WMI/Closure Action/subMenu_CustActions_Update related Item field value'), GlobalVariable.G_LongTimeout)
 
 'Switch back to parent window'

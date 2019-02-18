@@ -3,6 +3,6 @@
    <description>Regression Test WMI - BM Standard grid - Revision History (page size=&quot;2&quot;)</description>
    <name>WMI_BM012 (28582)</name>
    <tag></tag>
-   <comment></comment>
+   <comment>Verify that maximum 2 Revision history entries (notes revision) are displayed in the grid.</comment>
    <testCaseGuid>a02d7912-c57e-454d-86b9-ed1f97e91b4d</testCaseGuid>
 </TestCaseEntity>
