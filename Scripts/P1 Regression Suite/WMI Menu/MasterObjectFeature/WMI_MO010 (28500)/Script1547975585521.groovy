@@ -48,6 +48,7 @@ WebUI.verifyOptionPresentByLabel(findTestObject('Page_WMI_NEW/Master_Object_Feat
 WebUI.selectOptionByLabel(findTestObject('Page_WMI_NEW/Master_Object_Feature/Render_As_ChangeDocClass/select_CurrentDocClass'), 'WMI Menu', false)
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_WMI_NEW/Master_Object_Feature/Render_As_ChangeDocClass/iframe_Close Window_ContentPla'))
 WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_WMI_NEW/Master_Object_Feature/Render_As_ChangeDocClass/iframe_Close Window_ContentPla'))
 
 WebUI.verifyOptionPresentByLabel(findTestObject('Page_WMI_NEW/Master_Object_Feature/Render_As_ChangeDocClass/select_CurrentDocType'), 'WMI Menu BOV', false, GlobalVariable.G_LongTimeout)
 WebUI.verifyOptionPresentByLabel(findTestObject('Page_WMI_NEW/Master_Object_Feature/Render_As_ChangeDocClass/select_CurrentDocType'), 'WMI Menu BOV Vertical', false, GlobalVariable.G_LongTimeout)
@@ -58,9 +59,9 @@ WebUI.verifyOptionPresentByLabel(findTestObject('Page_WMI_NEW/Master_Object_Feat
 'Select WMI Menu Doc Default type from the list'
 WebUI.selectOptionByLabel(findTestObject('Page_WMI_NEW/Master_Object_Feature/Render_As_ChangeDocClass/select_CurrentDocType'), 'WMI Menu Default', false)
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_WMI_NEW/Master_Object_Feature/Render_As_ChangeDocClass/iframe_Close Window_ContentPla'))
-
+WebUI.delay(3)
 WebUI.switchToWindowIndex(1)
-WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+WebUI.waitForElementVisible(findTestObject('Page_WMI_NEW/WMI_Menu_BOV_Default/customerID'), GlobalVariable.G_LongTimeout)
 
 'Fill the details required'
 WebUI.selectOptionByLabel(findTestObject('Object Repository/Page_WMI_NEW/WMI_Menu_BOV_Default/customerID'), '200',false)

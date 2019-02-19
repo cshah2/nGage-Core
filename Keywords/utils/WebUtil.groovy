@@ -24,6 +24,7 @@ import com.kms.katalon.core.testdata.TestData
 import com.kms.katalon.core.testobject.TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.common.WebUiCommonHelper
+import com.kms.katalon.core.webui.driver.DriverFactory
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
@@ -86,4 +87,26 @@ public class WebUtil {
 				"};" +
 				"xhr.send();");
 	}
+	
+	public static void closeAllPopUpWindows() {
+		
+		WebDriver driver = DriverFactory.getWebDriver()
+		String originalHandle = Consts.ORIGINAL_WINDOW_HANDLE
+
+		for(String handle : driver.getWindowHandles()) {
+			if (!handle.equals(originalHandle)) {
+				driver.switchTo().window(handle);
+				driver.close();
+			}
+		}
+		
+		driver.switchTo().window(originalHandle);
+	}
+
+	
+	public static String getCurrentWindowHandle() {
+		WebDriver driver = DriverFactory.getWebDriver()
+		return driver.getWindowHandle();
+	}
+
 }

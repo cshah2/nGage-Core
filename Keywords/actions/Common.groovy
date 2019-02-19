@@ -176,6 +176,7 @@ public class Common {
 		WebUtil.waitForAjax(DriverFactory.getWebDriver(), "MicrosoftAjax")
 		WebUtil.switchFrameAndWaitForLoad(iFrame, GlobalVariable.G_LongTimeout)
 		WebUI.switchToDefaultContent()
+		WebUtil.delay(100)
 	}
 
 	@Keyword
@@ -850,22 +851,23 @@ public class Common {
 	def waitForTabLoading(TestObject iframe, int timeout) {
 
 		WebUI.waitForElementPresent(findTestObject('Page_WMI_NEW/visibleLoader'), 5)
-		
-		if(iframe != null) {
-			WebUI.switchToFrame(iframe, timeout)
-		} else {
-			WebUI.switchToFrame(findTestObject('Page_WMI_NEW/iframe_Close Window_ContentPla'), timeout)
-		}
-		
-		WebDriver driver = DriverFactory.getWebDriver()
-		FluentWait<WebDriver> wait = new FluentWait<WebDriver>(driver)
-				.withTimeout(timeout, TimeUnit.SECONDS)
-				.pollingEvery(3, TimeUnit.SECONDS)
-				.ignoring(StaleElementReferenceException.class)
+		WebUI.waitForElementNotPresent(findTestObject('Page_WMI_NEW/visibleLoader'), timeout)
 
-		wait.until(ExpectedConditions.not(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//img[contains(@src,'orange_daisy.g')]/../../../div[contains(@style,'block')]"))))
-
-		WebUI.switchToDefaultContent()
+		//		if(iframe != null) {
+		//			WebUI.switchToFrame(iframe, timeout)
+		//		} else {
+		//			WebUI.switchToFrame(findTestObject('Page_WMI_NEW/iframe_Close Window_ContentPla'), timeout)
+		//		}
+		//
+		//		WebDriver driver = DriverFactory.getWebDriver()
+		//		FluentWait<WebDriver> wait = new FluentWait<WebDriver>(driver)
+		//				.withTimeout(timeout, TimeUnit.SECONDS)
+		//				.pollingEvery(3, TimeUnit.SECONDS)
+		//				.ignoring(StaleElementReferenceException.class)
+		//
+		//		wait.until(ExpectedConditions.not(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//img[contains(@src,'orange_daisy.g')]/../../../div[contains(@style,'block')]"))))
+		//
+		//		WebUI.switchToDefaultContent()
 	}
 
 	@Keyword
@@ -1576,12 +1578,18 @@ public class Common {
 	@Keyword
 	def selectRepositoryAndSearchFor(String repository, String searchFor) {
 
+		'Wait for drop downs to be visible'
+		WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/Repository/select_Repository Drop Down'), GlobalVariable.G_LongTimeout)
+
 		'Select Repository - Advance Search tab'
 		WebUI.selectOptionByLabel(findTestObject('Page_nGage_Dashboard/Repository/select_Repository Drop Down'), repository, false)
+		waitForFrameToLoad(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
 		waitUntilDropDownHasOption(findTestObject('Page_nGage_Dashboard/Repository/select_Search For Drop Down'), GlobalVariable.G_LongTimeout)
 
 		'Select Search For - Advance Search tab'
 		WebUI.selectOptionByLabel(findTestObject('Page_nGage_Dashboard/Repository/select_Search For Drop Down'), searchFor, false)
 		WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/Repository/filtersTable'), GlobalVariable.G_LongTimeout)
 	}
+
+	
 }

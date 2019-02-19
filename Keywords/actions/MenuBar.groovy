@@ -11,6 +11,8 @@ import org.openqa.selenium.By
 import org.openqa.selenium.WebDriver
 import org.openqa.selenium.WebElement
 import org.openqa.selenium.interactions.Actions
+import org.openqa.selenium.support.ui.ExpectedConditions
+import org.openqa.selenium.support.ui.WebDriverWait
 
 import com.kms.katalon.core.annotation.Keyword
 import com.kms.katalon.core.testobject.TestObject
@@ -205,8 +207,13 @@ public class MenuBar {
 			treeXpath.append(xpathText(menuPath[size-1]+appendBrace))
 
 			WebDriver driver = DriverFactory.getWebDriver()
-			driver.findElement(By.xpath(treeXpath.toString())).click()
-
+			//driver.findElement(By.xpath(treeXpath.toString())).click()
+			WebElement lastNode = driver.findElement(By.xpath(treeXpath.toString()))
+			Actions asDriver = new Actions(driver)
+			asDriver.moveToElement(lastNode).build().perform()
+//			WebDriverWait wait = new WebDriverWait(driver, 5)
+//			wait.until(ExpectedConditions.elementToBeClickable(lastNode))
+			lastNode.click()
 		}
 		catch(Exception e) {
 

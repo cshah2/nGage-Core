@@ -34,7 +34,7 @@ WebUI.verifyElementVisible(findTestObject('Object Repository/Page_WMI_NEW/Refere
 
 'Click on tab - 3) Reference grid(Page size)'
 WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Reference_Grid_feature/span_3) Reference Grid (Pagesi'))
-CustomKeywords.'actions.Common.waitForTabLoading'(null, GlobalVariable.G_LongTimeout)
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Reference_Grid_feature/iframe_Close Window_ContentPla'))
 
 'verify maximum of 10 document should be displayed per page in the grid'
 int rowsCount=CustomKeywords.'actions.Table.getRowsCount'(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Reference_Grid_feature/tab_3 Reference grid(Page size)/table_GVGrid'))

@@ -89,19 +89,3 @@ WebUI.waitForPageLoad(60)
 
 //verify the data
 WebUI.verifyElementAttributeValue(findTestObject('Page_WMI/WMI_Menu_BOV_Vertical/input_eform_String_Input_Field'), 'value', 'A', GlobalVariable.G_LongTimeout)
-
-WebUI.closeBrowser()
-
-
-
-
-
-
-
-
-
-
-
-
-
-

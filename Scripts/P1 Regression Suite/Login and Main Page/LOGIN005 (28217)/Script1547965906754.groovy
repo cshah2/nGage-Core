@@ -45,8 +45,3 @@ WebUI.click(findTestObject("Object Repository/Page_Login/Back to Login link"))
 //verify login page
 
 WebUI.verifyElementVisible(findTestObject("Page_Login/input_UserName"))
-
-WebUI.closeBrowser()
-
-
-

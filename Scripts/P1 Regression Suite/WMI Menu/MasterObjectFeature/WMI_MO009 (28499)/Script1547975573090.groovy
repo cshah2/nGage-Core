@@ -58,6 +58,7 @@ CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_WMI_NEW/
 WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 
 'Verify Information Text'
+WebUI.waitForElementVisible(findTestObject('Page_WMI_NEW/Master_Object_Feature/Render_As_Textbox/input_DateType'), GlobalVariable.G_LongTimeout)
 WebUI.verifyElementText(findTestObject('Page_WMI_NEW/Master_Object_Feature/Render_As_Textbox/span_Information'), 'This WMI imparts - Control renderas Textbox')
 
 'Enter valid date in input field'

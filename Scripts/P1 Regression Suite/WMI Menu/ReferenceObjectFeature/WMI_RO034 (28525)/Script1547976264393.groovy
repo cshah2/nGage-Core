@@ -32,7 +32,7 @@ WebUI.verifyElementVisible(findTestObject('Object Repository/Page_WMI_NEW/Refere
 
 'Click on tab - 1) Reference grid (sorting)'
 WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Reference_Grid_feature/span_1) Reference Grid (Sortin'))
-CustomKeywords.'actions.Common.waitForTabLoading'(null, GlobalVariable.G_LongTimeout)
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_WMI_NEW/Reference_Object_Feature/Reference_Grid_feature/iframe_Close Window_ContentPla'))
 
 'verify grid present'
 WebUI.verifyElementPresent(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Reference_Grid_feature/tab_1) Reference grid (sorting)/table_GVGrid'), GlobalVariable.G_LongTimeout)

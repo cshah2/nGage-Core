@@ -40,14 +40,3 @@ WebUI.verifyElementVisible(findTestObject("Object Repository/Page_Login/Lost Pas
 
 //Verify Submit button is present
 WebUI.verifyElementVisible(findTestObject("Object Repository/Page_Login/Submit button"))
-//close the browser
-WebUI.closeBrowser()
-
-
-
-
-
-
-
-
-
