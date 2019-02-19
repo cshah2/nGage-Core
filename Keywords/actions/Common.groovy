@@ -102,9 +102,14 @@ public class Common {
 
 	@Keyword
 	def login(String username, String password, String database) {
-		if(DriverFactory.getWebDriver() == null) {
+
+		try{
+			DriverFactory.getWebDriver()
+		}
+		catch(Exception e) {
 			WebUtil.openBrowser()
 		}
+
 		//WebUI.openBrowser('')
 		//		if(DriverFactory.getExecutedBrowser().getName() != 'EDGE_DRIVER') {
 		//			WebUI.maximizeWindow()
