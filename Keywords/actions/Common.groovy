@@ -83,26 +83,29 @@ public class Common {
 	@Keyword
 	def login() {
 
-		int retryAttempt = 0
-		while(retryAttempt < 3) {
-			try {
-				login(GlobalVariable.Username, GlobalVariable.Password, GlobalVariable.Database)
-				break
-			}
-			catch(Exception  e) {
-				println "Unable to Login into portal "+e.toString()
-				WebUI.closeBrowser()
-				killDriverProcesses()
-				retryAttempt++
-			}
-		}
+		//		int retryAttempt = 0
+		//		while(retryAttempt < 3) {
+		//			try {
+		//				login(GlobalVariable.Username, GlobalVariable.Password, GlobalVariable.Database)
+		//				break
+		//			}
+		//			catch(Exception  e) {
+		//				println "Unable to Login into portal "+e.toString()
+		//				WebUI.closeBrowser()
+		//				killDriverProcesses()
+		//				retryAttempt++
+		//			}
+		//		}
 
-		WebUI.verifyElementVisible(findTestObject('Page_nGage_Dashboard/input_btnLogout'))
+		login(GlobalVariable.Username, GlobalVariable.Password, GlobalVariable.Database)
 	}
 
 	@Keyword
 	def login(String username, String password, String database) {
-		WebUI.openBrowser('')
+		if(DriverFactory.getWebDriver() == null) {
+			WebUtil.openBrowser()
+		}
+		//WebUI.openBrowser('')
 		//		if(DriverFactory.getExecutedBrowser().getName() != 'EDGE_DRIVER') {
 		//			WebUI.maximizeWindow()
 		//		}
@@ -117,6 +120,7 @@ public class Common {
 		WebUI.click(findTestObject('Page_Login/button_Login'))
 		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 		WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
+		WebUI.verifyElementVisible(findTestObject('Page_nGage_Dashboard/input_btnLogout'))
 	}
 
 	@Keyword
@@ -1591,5 +1595,5 @@ public class Common {
 		WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/Repository/filtersTable'), GlobalVariable.G_LongTimeout)
 	}
 
-	
+
 }

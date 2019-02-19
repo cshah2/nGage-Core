@@ -87,9 +87,9 @@ public class WebUtil {
 				"};" +
 				"xhr.send();");
 	}
-	
+
 	public static void closeAllPopUpWindows() {
-		
+
 		WebDriver driver = DriverFactory.getWebDriver()
 		String originalHandle = Consts.ORIGINAL_WINDOW_HANDLE
 
@@ -99,14 +99,19 @@ public class WebUtil {
 				driver.close();
 			}
 		}
-		
+
 		driver.switchTo().window(originalHandle);
 	}
 
-	
+
 	public static String getCurrentWindowHandle() {
 		WebDriver driver = DriverFactory.getWebDriver()
 		return driver.getWindowHandle();
 	}
-
+	
+	public static void openBrowser() {
+		WebUI.openBrowser('')
+		WebUI.maximizeWindow()
+		Consts.ORIGINAL_WINDOW_HANDLE = getCurrentWindowHandle()
+	}
 }

@@ -84,8 +84,8 @@ int colNo_DocCreateDate_After3 = CustomKeywords.'actions.Table.getColumnNumber'(
 
 WebUI.verifyEqual(colNo_DocCreateDate_After3, colNo_DocID_Original)
 
-'Logout and close browser'
-WebUI.closeBrowser()
+//'Logout and close browser'
+//WebUI.closeBrowser()
 
 'Login Into Application'
 CustomKeywords.'actions.Common.login'()

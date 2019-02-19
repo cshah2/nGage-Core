@@ -13,12 +13,6 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-'Open Browser'
-WebUI.openBrowser('')
-
-'Maximize window'
-WebUI.maximizeWindow()
-
 'Delet cookies'
 WebUI.deleteAllCookies()
 
