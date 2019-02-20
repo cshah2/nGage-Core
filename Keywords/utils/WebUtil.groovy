@@ -55,7 +55,6 @@ public class WebUtil {
 		WebUI.switchToFrame(frame, timeout)
 		WebUI.waitForPageLoad(timeout)
 		WebUI.waitForJQueryLoad(timeout)
-		//WebUI.delay(1)
 	}
 
 	public static void killProcess(String processName) {

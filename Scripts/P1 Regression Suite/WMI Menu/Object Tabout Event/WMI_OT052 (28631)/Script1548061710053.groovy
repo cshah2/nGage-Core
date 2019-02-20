@@ -93,6 +93,8 @@ WebUI.verifyElementVisible(findTestObject('Object Repository/Page_WMI_NEW/Object
 'Verify that reference object checkbox control (checkbox) is checked'
 WebUI.check(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/DoNotSetValueOnLoad SetFocus Event/InlineView/input_ReferenceObjectCheckBox'))
 CustomKeywords.'actions.Common.waitForTabLoading'(null, GlobalVariable.G_LongTimeout)
+
+WebUI.waitForElementVisible(findTestObject('Page_WMI_NEW/Object Tabout Event/DoNotSetValueOnLoad SetFocus Event/InlineView/input_ReferenceObjectCheckBox'), GlobalVariable.G_LongTimeout)
 WebUI.verifyElementChecked(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/DoNotSetValueOnLoad SetFocus Event/InlineView/input_ReferenceObjectCheckBox'), GlobalVariable.G_LongTimeout)
 
 'String field (text box with view check box is checked)'

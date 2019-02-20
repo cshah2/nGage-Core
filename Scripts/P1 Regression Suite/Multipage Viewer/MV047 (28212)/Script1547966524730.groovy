@@ -127,6 +127,8 @@ WebUI.click(findTestObject('Page_WMI/WMI_Menu_BOV_Vertical/ContentFrame/subMenu_
 
 'Switch to WMI Document'
 WebUI.switchToWindowTitle('Clipboard')
+WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+CustomKeywords.'actions.Common.waitForImageToRender'(findTestObject('Page_WMI/Clipboard/iFrame_Image_EPMMultipageViewer'))
 
 'Verify Page summary'
 WebUI.verifyMatch(WebUI.getText(findTestObject('Page_WMI/Clipboard/pagination_summary')).trim(), '.*Page 1/1.*', true)
