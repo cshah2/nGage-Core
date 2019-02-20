@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>search_DocID</name>
+   <name>search_Operator_DocID</name>
    <tag></tag>
-   <elementGuidId>4b4ed6e3-080a-4ebf-b2d7-61e8460880b5</elementGuidId>
+   <elementGuidId>e53eebdb-c9b0-46ca-8873-8ecdb459e00e</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//table[@id='tblPlaceHolder']//table[@id='tblSearch']//td[text()='Doc ID']/..//input[1]</value>
+         <value>//table[@id='tblPlaceHolder']//table[@id='tblSearch']//td[text()='Doc ID']/..//select[1]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

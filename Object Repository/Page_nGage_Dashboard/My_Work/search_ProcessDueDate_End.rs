@@ -10,7 +10,7 @@
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//input[@id='100096_2']</value>
+         <value>//table[@id='tblPlaceHolder']//table[@id='tblSearch']//td[text()='Process Due Date']/..//input[2]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

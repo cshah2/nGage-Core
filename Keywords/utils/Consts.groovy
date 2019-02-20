@@ -364,13 +364,14 @@ public class Consts {
 	public static final String FORMAT_DATE_TREE = 'MM-dd-yyyy' //TODO: To be deleted once code is fixed.
 
 	public static String ORIGINAL_WINDOW_HANDLE //Not to be deleted
-	
-	
-	
+
+
+
 	/* All variable listed below are flag representing documents are successfully created.
 	 *  These flags are useful for test cases which are dependent on data created in another test case*/
-	
+
 	public static boolean FLAG_SMOKE_MWS004 = false
+	public static boolean FLAG_SMOKE_MW003 	= false
 
 }
 

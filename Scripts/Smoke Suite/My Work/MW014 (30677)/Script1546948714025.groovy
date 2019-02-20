@@ -23,8 +23,8 @@ import utils.Consts
 'Login Into Application'
 CustomKeywords.'actions.Common.login'()
 
-'Create Docuement'
-CustomKeywords.'actions.Common.createDocument_ClosureAction'(Consts.SMOKE_MYWORK003_CUSTOMERNAME, Consts.SMOKE_MYWORK003_CUSTOMERDETAIL)
+'Create closure action document if it is not availble'
+CustomKeywords.'actions.Common.createBulkDocuments_ClosureAction'(1)
 
 'Click on My Work link from left menu'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_My Work Left Menu'))

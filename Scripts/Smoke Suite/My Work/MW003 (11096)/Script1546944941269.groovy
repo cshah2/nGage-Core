@@ -26,6 +26,7 @@ CustomKeywords.'actions.Common.login'()
 
 'Create Docuement'
 CustomKeywords.'actions.Common.createDocument_ClosureAction'(SMOKE_MYWORK003_CUSTOMERNAME, SMOKE_MYWORK003_CUSTOMERDETAIL)
+FLAG_SMOKE_MW003 = true
 
 'Click on My Work link from left menu'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_My Work Left Menu'))
@@ -37,12 +38,13 @@ CustomKeywords.'actions.MenuBar.clickTreeMenu'('MY_WORK', 'Processes', 'Closure 
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_work_items'))
 
 'Open Search bar'
+WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/My_Work/h3_Search Bar'), GlobalVariable.G_LongTimeout)
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/h3_Search Bar'))
+WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/My_Work/table_search_section'), GlobalVariable.G_LongTimeout)
 
 'Enter search filter process due date - start'
 String _startDateTime = getCurrentDateTimeMinusDays(0, FORMAT_DATETIME)
 CustomKeywords.'actions.Common.setText_Date'(findTestObject('Page_nGage_Dashboard/My_Work/search_ProcessDueDate_Start'), _startDateTime)
-//TODO: Issue pending from Dev for Date format in system field is in 24 hr format instead of 12
 
 'Click on search button'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/btn_Search'))

@@ -27,9 +27,12 @@ import static utils.DateUtil.*
 'Login Into Application'
 CustomKeywords.'actions.Common.login'()
 
-'Create 2 documents'
-CustomKeywords.'actions.Common.createDocument_ClosureAction'(SMOKE_MYWORK003_CUSTOMERNAME, SMOKE_MYWORK003_CUSTOMERDETAIL)
-CustomKeywords.'actions.Common.createDocument_ClosureAction'(SMOKE_MYWORK003_CUSTOMERNAME, SMOKE_MYWORK003_CUSTOMERDETAIL)
+'Create documents if not available already'
+CustomKeywords.'actions.Common.createBulkDocuments_ClosureAction'(3)
+
+//'Create 2 documents'
+//CustomKeywords.'actions.Common.createDocument_ClosureAction'(SMOKE_MYWORK003_CUSTOMERNAME, SMOKE_MYWORK003_CUSTOMERDETAIL)
+//CustomKeywords.'actions.Common.createDocument_ClosureAction'(SMOKE_MYWORK003_CUSTOMERNAME, SMOKE_MYWORK003_CUSTOMERDETAIL)
 
 'Click on My Work link from left menu'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_My Work Left Menu'))
@@ -40,15 +43,29 @@ CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Da
 CustomKeywords.'actions.MenuBar.clickTreeMenu'('MY_WORK', 'Processes', 'Closure Action', 'Activity A')
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_work_items'))
 
-'Open Search bar'
-WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/h3_Search Bar'))
+'Click on DocID column header to sort records in descending order'
+CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/My_Work/tableHeader_MyWorkSearchResult'), 'Doc ID')
+CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/My_Work/tableHeader_MyWorkSearchResult'), 'Doc ID')
 
-'Enter search filter process due date - start and end'
-String _startDate = getCurrentDateTimeMinusDays(0, FORMAT_DATETIME)
-String _endDate = getCurrentDateTimeMinusDays(-10, FORMAT_DATETIME)
-CustomKeywords.'actions.Common.setText_Date'(findTestObject('Page_nGage_Dashboard/My_Work/search_ProcessDueDate_Start'), _startDate)
-CustomKeywords.'actions.Common.setText_Date'(findTestObject('Page_nGage_Dashboard/My_Work/search_ProcessDueDate_End'), _endDate)
-//TODO: Issue pending from Dev for Date format in system field is in 24 hr format instead of 12
+'Get DocID from second row'
+int colNo_DocID = CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Page_nGage_Dashboard/My_Work/tableHeader_MyWorkSearchResult'), 'Doc ID')
+String docID = CustomKeywords.'actions.Table.getCellText'(findTestObject('Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), 2, colNo_DocID)
+
+'Open Search bar'
+WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/My_Work/h3_Search Bar'), GlobalVariable.G_LongTimeout)
+WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/h3_Search Bar'))
+WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/My_Work/table_search_section'), GlobalVariable.G_LongTimeout)
+
+'Enter Doc ID value for serch'
+WebUI.selectOptionByLabel(findTestObject('Page_nGage_Dashboard/My_Work/search_Operator_DocID'), '>=', false)
+WebUI.setText(findTestObject('Page_nGage_Dashboard/My_Work/search_DocID'), docID)
+//
+//'Enter search filter process due date - start and end'
+//String _startDate = getCurrentDateTimeMinusDays(0, FORMAT_DATETIME)
+//String _endDate = getCurrentDateTimeMinusDays(-10, FORMAT_DATETIME)
+//CustomKeywords.'actions.Common.setText_Date'(findTestObject('Page_nGage_Dashboard/My_Work/search_ProcessDueDate_Start'), _startDate)
+//CustomKeywords.'actions.Common.setText_Date'(findTestObject('Page_nGage_Dashboard/My_Work/search_ProcessDueDate_End'), _endDate)
+////TODO: Issue pending from Dev for Date format in system field is in 24 hr format instead of 12
 
 'Click on search button'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/btn_Search'))
@@ -58,16 +75,14 @@ CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Da
 int rowCount = CustomKeywords.'actions.Table.getRowsCount'(findTestObject('Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'))
 WebUI.verifyGreaterThanOrEqual(rowCount, 2)
 
-int colNo = CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Page_nGage_Dashboard/My_Work/tableHeader_MyWorkSearchResult'), 'Doc ID')
-
 'Click on DocID column header to sort records in ascending order'
 CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/My_Work/tableHeader_MyWorkSearchResult'), 'Doc ID')
 
 'Verify records are sorted in ascending order'
-CustomKeywords.'actions.Table.verifyColumnIsSortedInteger'(findTestObject('Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), colNo, 'ASC')
+CustomKeywords.'actions.Table.verifyColumnIsSortedInteger'(findTestObject('Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), colNo_DocID, 'ASC')
 
 'Click on DocID column header again to sort records in descending order'
 CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/My_Work/tableHeader_MyWorkSearchResult'), 'Doc ID')
 
 'Verify records are sorted in descending order'
-CustomKeywords.'actions.Table.verifyColumnIsSortedInteger'(findTestObject('Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), colNo, 'DESC')
+CustomKeywords.'actions.Table.verifyColumnIsSortedInteger'(findTestObject('Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), colNo_DocID, 'DESC')

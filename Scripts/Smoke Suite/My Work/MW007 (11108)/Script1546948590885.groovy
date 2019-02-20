@@ -22,8 +22,8 @@ import internal.GlobalVariable as GlobalVariable
 'Login Into Application'
 CustomKeywords.'actions.Common.login'()
 
-'Create Document for reload on postback'
-CustomKeywords.'actions.Common.createDocument_ReloadOnPostBack'('Chintan Shah')
+'Create Document for reload on postback if not present already'
+CustomKeywords.'actions.Common.createBulkDocuments_ReloadOnPostBack'(1)
 
 'Click on My Work link from left menu'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_My Work Left Menu'))
