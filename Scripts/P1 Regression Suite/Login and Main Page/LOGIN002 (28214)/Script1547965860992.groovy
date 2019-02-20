@@ -13,11 +13,8 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-'Delet cookies'
-WebUI.deleteAllCookies()
-
-'Open URL'
-WebUI.navigateToUrl(WebUI.concatenate(GlobalVariable.BaseURL, '/login.aspx'));
+'Navigate to login page'
+CustomKeywords.'actions.Common.navigateToLoginPage'()
 
 'Get Viewport width'
 float viewPortWidth = WebUI.getViewportWidth()

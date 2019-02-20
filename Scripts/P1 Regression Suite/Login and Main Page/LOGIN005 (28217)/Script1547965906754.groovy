@@ -13,33 +13,27 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-WebUI.deleteAllCookies()
-//open the url
-WebUI.navigateToUrl(WebUI.concatenate(GlobalVariable.BaseURL, '/login.aspx'));
-WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+'Navigate to login page'
+CustomKeywords.'actions.Common.navigateToLoginPage'()
 
-
-//Enter the Credentials
-WebUI.waitForElementVisible(findTestObject('Page_Login/input_UserName'), GlobalVariable.G_LongTimeout)
+'Enter the Credentials'
 WebUI.setText(findTestObject('Page_Login/input_UserName'), 'apatiln')
 WebUI.selectOptionByValue(findTestObject("Page_Login/select_Schema"), GlobalVariable.Database, true)
 
-//click on Forgot Password link
+'click on Forgot Password link'
 WebUI.verifyElementVisible(findTestObject("Page_Login/link_Forgot Password"))
 WebUI.click(findTestObject("Page_Login/link_Forgot Password"))
-WebUI.waitForPageLoad(60)
+WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 
-//Verify Back to Login link is present
+'Verify Back to Login link is present'
 WebUI.verifyElementVisible(findTestObject("Object Repository/Page_Login/Back to Login link"))
 
-//Verify Lost Password link is present
+'Verify Lost Password link is present'
 WebUI.verifyElementVisible(findTestObject("Object Repository/Page_Login/Lost Password link"))
 
-//click on back to Login button
-
+'click on back to Login button'
 WebUI.verifyElementVisible(findTestObject("Object Repository/Page_Login/Back to Login link"))
 WebUI.click(findTestObject("Object Repository/Page_Login/Back to Login link"))
 
-//verify login page
-
+'verify login page'
 WebUI.verifyElementVisible(findTestObject("Page_Login/input_UserName"))

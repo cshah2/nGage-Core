@@ -21,10 +21,9 @@ CustomKeywords.'actions.Common.createBulkDocuments_Correpondence'(30)
 
 'Click on "My Work Simplified" link'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/a_My Work Simplified'))
-CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/iframe_iframe_110'))
+WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/table_SearchResult'), GlobalVariable.G_LongTimeout)
 
 'Select Activity "Correspondence Generation - Correspondence" from Drop down'
-WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/select_Auto Import Controlled'), GlobalVariable.G_LongTimeout)
 WebUI.selectOptionByLabel(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/select_Auto Import Controlled'), 'Correspondence Generation - Correspondence', false)
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/iframe_iframe_110'))
 
@@ -33,5 +32,6 @@ String pageSummary = WebUI.getText(findTestObject('Page_nGage_Dashboard/My_Work_
 WebUI.verifyMatch(pageSummary, '.*Showing 1 - 25 of.*', true)
 
 'Check row count of table should be 25rows'
-CustomKeywords.'actions.Table.checkRecordInTable'(findTestObject("Page_nGage_Dashboard/My_Work_Simplified/table_SearchResult"), 25)
+int rowsCount = CustomKeywords.'actions.Table.getRowsCount'(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/table_SearchResult'))
+WebUI.verifyEqual(rowsCount, 25)
 

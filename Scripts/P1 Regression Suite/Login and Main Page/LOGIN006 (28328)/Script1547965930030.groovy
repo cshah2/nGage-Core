@@ -14,68 +14,40 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-//Login Into Application
+'Login Into Application'
 CustomKeywords.'actions.Common.login'()
 
-//Click on Global New button
-WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/input_btnGlobalNew'))
+'Create document'
+String BM_String = 'A'
+String filePath = RunConfiguration.getProjectDir().replace('/', '\\')+'\\Data Files\\FileUploads\\50 Pages PDF file.pdf'
+CustomKeywords.'actions.Common.createDocument_WMIMenuBovVertical'(BM_String, filePath)
 
-//Select Document class and Document Type
+'click on recent document link'
+CustomKeywords.'actions.MenuBar.clickTreeMenu'('HOME', 'Recent Documents')
+WebUI.click(findTestObject("Object Repository/Page_nGage_Dashboard/Home/a_Recent Documents"))
+WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/Home/table_MyDocumentResults'), GlobalVariable.G_LongTimeout)
 
-CustomKeywords.'actions.Common.selectDocClassAndDocTypeForGlobalNew'('WMI Menu', 'WMI Menu BOV Vertical')
-
-//Click on OK Button
-WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/Home/input_btnsave'))
-WebUI.switchToWindowTitle('(Doc ID: NEW )')
+'Click on first row in table to open document'
+int colNo_DocID = CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Page_nGage_Dashboard/Home/tableHeader_RecentDocuments'), 'Doc ID')
+CustomKeywords.'actions.Table.clickCell'(findTestObject('Page_nGage_Dashboard/Home/table_MyDocumentResults'), 1, colNo_DocID)
+WebUI.switchToWindowIndex(1)
 WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 
-//Set Data
-String filePath = RunConfiguration.getProjectDir().replace('/', '\\')+'\\Data Files\\FileUploads\\50 Pages PDF file.pdf'
-WebUI.setText(findTestObject('Page_WMI_NEW/WMI_Menu_BOV_Vertical/input_String field'), 'A')
-WebUI.uploadFile(findTestObject('Page_WMI_NEW/WMI_Menu_BOV_Vertical/input__file_upload'), filePath)
-
-//Click on Save button
-WebUI.mouseOver(findTestObject('Page_WMI_NEW/WMI_Menu_BOV_Vertical/menu_Standard Actions'))
-WebUI.waitForElementVisible(findTestObject('Page_WMI_NEW/WMI_Menu_BOV_Vertical/button_Save'), GlobalVariable.G_LongTimeout)
-CustomKeywords.'actions.Window.clickElementAndWaitForWindowClose'(findTestObject('Page_WMI_NEW/WMI_Menu_BOV_Vertical/button_Save'), GlobalVariable.G_LongTimeout)
-
-//switch to landing page
-WebUI.switchToWindowTitle('Savana nGage')
-
-//close the create new pop up
-WebUI.click(findTestObject('Page_nGage_Dashboard/Home/span_ui-button-icon-primary ui'))
-
-//click on recent document link
-WebUI.click(findTestObject("Object Repository/Page_nGage_Dashboard/Home/a_Recent Documents"))
-CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/iframe_iframe_103'))
-
-//click on Refresh button
-WebUI.click(findTestObject("Object Repository/Page_nGage_Dashboard/Home/span_Refresh Grid"))
-CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/iframe_iframe_103'))
-
-//open newly created document from recent doc
-WebUI.verifyElementPresent(findTestObject("Object Repository/Page_nGage_Dashboard/Home/tableRow_recentDocuments_firstRow"), 5)
-WebUI.click(findTestObject("Object Repository/Page_nGage_Dashboard/Home/tableRow_recentDocuments_firstRow"))
-WebUI.switchToWindowTitle("WMI Menu BOV Vertical")
-WebUI.waitForPageLoad(60)
-
-//hover mouse on More
+'hover mouse on More'
 WebUI.verifyElementPresent(findTestObject("Page_WMI/WMI_Menu_BOV_Vertical/menu_MORE .."), GlobalVariable.G_LongTimeout)
 WebUI.mouseOver(findTestObject("Page_WMI/WMI_Menu_BOV_Vertical/menu_MORE .."))
 WebUI.waitForElementVisible(findTestObject("Page_WMI/WMI_Menu_BOV_Vertical/option_Email  Favorites_1"), GlobalVariable.G_LongTimeout)
 WebUI.mouseOver(findTestObject("Page_WMI/WMI_Menu_BOV_Vertical/option_Email  Favorites_1"))
 WebUI.waitForElementVisible(findTestObject("Page_WMI/WMI_Menu_BOV_Vertical/option_Show Link"), GlobalVariable.G_LongTimeout)
 WebUI.click(findTestObject("Page_WMI/WMI_Menu_BOV_Vertical/option_Show Link"))
-WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 
+WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 WebUI.waitForElementVisible(findTestObject("Page_WMI/WMI_Menu_BOV_Vertical/button_TestLink"), GlobalVariable.G_LongTimeout)
 WebUI.click(findTestObject("Page_WMI/WMI_Menu_BOV_Vertical/button_TestLink"))
 
-
-//switch to new login window
-
-WebUI.switchToWindowTitle("..:: Savana nGage - Login Screen ::..")
-WebUI.waitForPageLoad(60)
+'switch to new login window'
+WebUI.switchToWindowIndex(2)
+WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 
 WebUI.waitForElementVisible(findTestObject('Page_Login/input_UserName'), GlobalVariable.G_LongTimeout)
 WebUI.setText(findTestObject('Page_Login/input_UserName'), GlobalVariable.Username)
@@ -85,7 +57,5 @@ WebUI.click(findTestObject('Page_Login/button_Login'))
 WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
-WebUI.waitForPageLoad(60)
-
-//verify the data
-WebUI.verifyElementAttributeValue(findTestObject('Page_WMI/WMI_Menu_BOV_Vertical/input_eform_String_Input_Field'), 'value', 'A', GlobalVariable.G_LongTimeout)
+'verify the data'
+WebUI.verifyElementAttributeValue(findTestObject('Page_WMI/WMI_Menu_BOV_Vertical/input_eform_String_Input_Field'), 'value', BM_String, GlobalVariable.G_LongTimeout)

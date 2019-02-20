@@ -82,26 +82,24 @@ public class Common {
 
 	@Keyword
 	def login() {
-
-		//		int retryAttempt = 0
-		//		while(retryAttempt < 3) {
-		//			try {
-		//				login(GlobalVariable.Username, GlobalVariable.Password, GlobalVariable.Database)
-		//				break
-		//			}
-		//			catch(Exception  e) {
-		//				println "Unable to Login into portal "+e.toString()
-		//				WebUI.closeBrowser()
-		//				killDriverProcesses()
-		//				retryAttempt++
-		//			}
-		//		}
-
 		login(GlobalVariable.Username, GlobalVariable.Password, GlobalVariable.Database)
 	}
 
 	@Keyword
 	def login(String username, String password, String database) {
+
+		navigateToLoginPage()
+		WebUI.setText(findTestObject('Page_Login/input_UserName'), username)
+		WebUI.setText(findTestObject('Page_Login/input_Password'), password)
+		WebUI.selectOptionByLabel(findTestObject('Page_Login/select_Schema'), GlobalVariable.Database, false)
+		WebUI.click(findTestObject('Page_Login/button_Login'))
+		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+		WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
+		WebUI.verifyElementVisible(findTestObject('Page_nGage_Dashboard/input_btnLogout'))
+	}
+
+	@Keyword
+	def navigateToLoginPage() {
 
 		try{
 			DriverFactory.getWebDriver()
@@ -110,22 +108,11 @@ public class Common {
 			WebUtil.openBrowser()
 		}
 
-		//WebUI.openBrowser('')
-		//		if(DriverFactory.getExecutedBrowser().getName() != 'EDGE_DRIVER') {
-		//			WebUI.maximizeWindow()
-		//		}
 		WebUI.maximizeWindow()
 		WebUI.deleteAllCookies()
 		WebUI.navigateToUrl(WebUI.concatenate(GlobalVariable.BaseURL, '/login.aspx'));
 		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 		WebUI.waitForElementVisible(findTestObject('Page_Login/input_UserName'), GlobalVariable.G_LongTimeout)
-		WebUI.setText(findTestObject('Page_Login/input_UserName'), username)
-		WebUI.setText(findTestObject('Page_Login/input_Password'), password)
-		WebUI.selectOptionByLabel(findTestObject('Page_Login/select_Schema'), GlobalVariable.Database, false)
-		WebUI.click(findTestObject('Page_Login/button_Login'))
-		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
-		WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
-		WebUI.verifyElementVisible(findTestObject('Page_nGage_Dashboard/input_btnLogout'))
 	}
 
 	@Keyword

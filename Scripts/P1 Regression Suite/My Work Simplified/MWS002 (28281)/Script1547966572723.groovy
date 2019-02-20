@@ -16,27 +16,17 @@ import internal.GlobalVariable as GlobalVariable
 'Login into application'
 CustomKeywords.'actions.Common.login'()
 
-'Create document Closure Action - Activity A'
-CustomKeywords.'actions.Common.createDocument_ClosureAction'('Chintan Shah', 'My Work Simplified - MWS002')
+'Create closure action document if it is not availble'
+CustomKeywords.'actions.Common.createBulkDocuments_ClosureAction'(1)
 
 'Click on "My Work Simplified" link'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/a_My Work Simplified'))
-CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/iframe_iframe_110'))
+WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/table_SearchResult'), GlobalVariable.G_LongTimeout)
 
 'Select Activity "Closure Action - Activity A" from Drop down'
-WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/select_Auto Import Controlled'), GlobalVariable.G_LongTimeout)
 WebUI.selectOptionByLabel(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/select_Auto Import Controlled'), 'Closure Action - Activity A', false)
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/iframe_iframe_110'))
 
 'Verify Result grid contains all document whose WFItemActivityName column contains name as "Activity A"'
 int colNo_ActivityName = CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/tableHeader_SearchResult'), 'WFItemActivityName')
 CustomKeywords.'actions.Table.verifyAllValuesInColumnMatches'(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/table_SearchResult'), colNo_ActivityName, 'Activity A')
-
-'click on Search icon to expand search panel'
-WebUI.waitForElementClickable(findTestObject("Object Repository/Page_nGage_Dashboard/My_Work_Simplified/h3_Search"), GlobalVariable.G_LongTimeout)
-WebUI.click(findTestObject("Object Repository/Page_nGage_Dashboard/My_Work_Simplified/h3_Search"))
-CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/iframe_iframe_110'))
-
-'Verify search and reset button is visible'
-WebUI.verifyElementVisible(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/input_Search_btnSearch'))
-WebUI.verifyElementVisible(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/input_Search_btnReset'))

@@ -13,13 +13,8 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-'Clear cookies'
-WebUI.deleteAllCookies()
-
 'Navigate to login page'
-WebUI.navigateToUrl(WebUI.concatenate(GlobalVariable.BaseURL, '/login.aspx'));
-WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
-WebUI.waitForElementVisible(findTestObject('Page_Login/input_UserName'), GlobalVariable.G_LongTimeout)
+CustomKeywords.'actions.Common.navigateToLoginPage'()
 
 'Verify name of submit button is Login'
 WebUI.verifyElementVisible(findTestObject('Page_Login/button_Login'))
