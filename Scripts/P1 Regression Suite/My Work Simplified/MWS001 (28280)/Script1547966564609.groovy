@@ -21,14 +21,15 @@ CustomKeywords.'actions.Common.createBulkDocuments_ClosureAction'(1)
 
 'Click on "My Work Simplified" link'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/a_My Work Simplified'))
-WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/table_SearchResult'), GlobalVariable.G_LongTimeout)
+WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/select_Auto Import Controlled'), GlobalVariable.G_LongTimeout)
 
 'Select Activity "Closure Action - Activity A" from Drop down'
 WebUI.selectOptionByLabel(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/select_Auto Import Controlled'), 'Closure Action - Activity A', false)
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/iframe_iframe_110'))
 
 'click on Search header to expand search panel'
-WebUI.click(findTestObject("Object Repository/Page_nGage_Dashboard/My_Work_Simplified/h3_Search"))
+WebUI.waitForElementClickable(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/h3_Search'), GlobalVariable.G_LongTimeout)
+WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/h3_Search'))
 WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/table_search_section'), GlobalVariable.G_LongTimeout)
 
 'Verify search and reset button is visible'

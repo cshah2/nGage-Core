@@ -23,16 +23,17 @@ import utils.Consts
 'Login into application'
 CustomKeywords.'actions.Common.login'()
 
-'Create document Correspondance Generation'
-CustomKeywords.'actions.Common.createDocument_ClosureAction'(Consts.SMOKE_MWS002_CUSTOMERNAME, Consts.SMOKE_MWS002_CUSTOMERDETAIL)
-CustomKeywords.'actions.Common.createDocument_Correspondence'(Consts.SMOKE_CORRESPONDENCE_FIRSTNAME, Consts.SMOKE_CORRESPONDENCE_LASTNAME, Consts.SMOKE_CORRESPONDENCE_TOEMAIL, Consts.SMOKE_CORRESPONDENCE_TEMPLATE)
+'Create closure action document if it is not availble'
+CustomKeywords.'actions.Common.createBulkDocuments_ClosureAction'(1)
+
+'Create Correspondence document if it is not availble'
+CustomKeywords.'actions.Common.createBulkDocuments_Correpondence'(1)
 
 'Click on "My Work Simplified" link'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/a_My Work Simplified'))
-CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/iframe_iframe_110'))
+WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/select_Auto Import Controlled'), GlobalVariable.G_LongTimeout)
 
 'Select Activity Closure Action - Activity A from Drop down'
-WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/select_Auto Import Controlled'), GlobalVariable.G_LongTimeout)
 WebUI.selectOptionByLabel(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/select_Auto Import Controlled'), 'Closure Action - Activity A', false)
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/iframe_iframe_110'))
 
@@ -40,7 +41,6 @@ CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Da
 WebUI.verifyElementVisible(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/input_btnGetNext'))
 
 'Select Activity Correspondence Generation - Correspondence from Drop down (Other than closure activity)'
-WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/select_Auto Import Controlled'), GlobalVariable.G_LongTimeout)
 WebUI.selectOptionByLabel(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/select_Auto Import Controlled'), 'Correspondence Generation - Correspondence', false)
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/iframe_iframe_110'))
 

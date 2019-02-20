@@ -16,6 +16,7 @@ import internal.GlobalVariable as GlobalVariable
 'Login into application'
 CustomKeywords.'actions.Common.login'()
 
+'Verify the Repository Menu is visible'
 WebUI.verifyElementVisible(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/h3_Repository Menu'))
 
 'Click on Repository Menu'
@@ -34,10 +35,6 @@ WebUI.verifyElementVisible(findTestObject('Object Repository/Page_nGage_Dashboar
 
 'Verify Saved searches menu is displayed'
 WebUI.verifyElementVisible(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/li_SavedSearch'))
-
-'Click on Advance Search Tab'
-WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/a_Advanced Search Tab'))
-CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
 
 'Verify Repository drop down is visible'
 WebUI.verifyElementVisible(findTestObject('Page_nGage_Dashboard/Repository/select_Repository Drop Down'))

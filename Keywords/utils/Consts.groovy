@@ -362,8 +362,15 @@ public class Consts {
 	public static final String FORMAT_TIME = 'hh:mm:ss a' //TODO: Code should be done such that this value should remain fixed
 
 	public static final String FORMAT_DATE_TREE = 'MM-dd-yyyy' //TODO: To be deleted once code is fixed.
-	
+
 	public static String ORIGINAL_WINDOW_HANDLE //Not to be deleted
+	
+	
+	
+	/* All variable listed below are flag representing documents are successfully created.
+	 *  These flags are useful for test cases which are dependent on data created in another test case*/
+	
+	public static boolean FLAG_SMOKE_MWS004 = false
 
 }
 
