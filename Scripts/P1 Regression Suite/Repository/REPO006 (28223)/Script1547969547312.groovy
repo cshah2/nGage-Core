@@ -15,12 +15,16 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
+import static utils.Consts.*
 
 'Login into application'
 CustomKeywords.'actions.Common.login'()
 
-'Create Document'
-CustomKeywords.'actions.Common.createDocument_RenderAllField'('10', '', '', '', '', '', '', '', '', '', '')
+'Create Document if not present'
+if(!FLAG_P1_REPO_DOC10) {
+	CustomKeywords.'actions.Common.createDocument_RenderAllField'(P1_REPO_FIELD1_DOC10, P1_REPO_FIELD2_DOC10, '', '', P1_REPO_FIELD5_DOC10, '', '', '', '', '', '')
+	FLAG_P1_REPO_DOC10 = true
+}
 
 'Click on Repository Menu'
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/h3_Repository Menu'))

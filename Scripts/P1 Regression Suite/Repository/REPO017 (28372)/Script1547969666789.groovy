@@ -12,34 +12,32 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
-import utils.Consts
-import utils.DateUtil
+import static utils.Consts.*
+import static utils.DateUtil.*
 
 'Login into application'
 CustomKeywords.'actions.Common.login'()
 
-'Create Document'
-CustomKeywords.'actions.Common.createDocument_RequiredFieldDT'(Consts.P1_REPO_BMTEXT_DOC1, Consts.P1_REPO_BMSTRING_DOC1, Consts.P1_REPO_INT_DOC1, Consts.P1_REPO_DATETIMEREQ_DOC1, Consts.P1_REPO_DATEREQ_DOC1)
+'Create Document if not present'
+if(!FLAG_P1_REPO_DOC11) {
+	CustomKeywords.'actions.Common.createDocument_RequiredFieldDT'(P1_REPO_BMTEXT_DOC11, P1_REPO_BMSTRING_DOC11, P1_REPO_INT_DOC11, P1_REPO_DATETIMEREQ_DOC11, P1_REPO_DATEREQ_DOC11)
+	FLAG_P1_REPO_DOC11 = true
+}
 
 'Expand Repository Menu'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Repository/h3_Repository Menu'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
-'Select Repository - Advance Search tab'
-WebUI.selectOptionByLabel(findTestObject('Page_nGage_Dashboard/Repository/select_Repository Drop Down'), 'Required Date string field EDM', false)
-CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
-
-'Selinput_btnSearchect Search For - Advance Search tab'
-WebUI.selectOptionByLabel(findTestObject('Page_nGage_Dashboard/Repository/select_Search For Drop Down'), 'Required field date string search class', false)
-CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
+'Select repository and search for value in drop down'
+CustomKeywords.'actions.Common.selectRepositoryAndSearchFor'('Required Date string field EDM', 'Required field date string search class')
 
 'Enter data in required field'
-WebUI.setText(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/inpur_BM_String_Required'), Consts.P1_REPO_BMSTRING_DOC1)
+WebUI.setText(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/inpur_BM_String_Required'), P1_REPO_BMSTRING_DOC11)
 
 'Enter date in required field'
-CustomKeywords.'actions.Common.setText_Date'(findTestObject('Page_nGage_Dashboard/Repository/input_BM_DateFrom_Required'), Consts.P1_REPO_DATEREQ_DOC1)
-CustomKeywords.'actions.Common.setText_Date'(findTestObject('Page_nGage_Dashboard/Repository/input_BM_DateTo_Required'), Consts.P1_REPO_DATEREQ_DOC1)
+CustomKeywords.'actions.Common.setText_Date'(findTestObject('Page_nGage_Dashboard/Repository/input_BM_DateFrom_Required'), P1_REPO_DATEREQ_DOC11)
+CustomKeywords.'actions.Common.setText_Date'(findTestObject('Page_nGage_Dashboard/Repository/input_BM_DateTo_Required'), P1_REPO_DATEREQ_DOC11)
 
 'Click on Search button'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Repository/input_btnSearch'))
@@ -59,7 +57,7 @@ WebUI.click(findTestObject('Page_nGage_Dashboard/Repository/input_btnSaveSearchA
 WebUI.verifyElementVisible(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/save_Search_Description'))
 
 'Enter Search critera name'
-String now = DateUtil.getCurrentDateTime()
+String now = getCurrentDateTime()
 String fileName = 'SAVED_SEARCH_'+now
 WebUI.setText(findTestObject('Page_nGage_Dashboard/Repository/input_txtSaveDesc'), fileName)
 

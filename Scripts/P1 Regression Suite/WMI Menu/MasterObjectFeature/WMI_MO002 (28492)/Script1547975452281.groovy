@@ -87,4 +87,4 @@ WebUI.verifyElementText(findTestObject('Page_WMI_NEW/Master_Object_Feature/Rende
 
 'Verify value in datetime field is valid date'
 WebUI.verifyMatch(WebUI.getAttribute(findTestObject('Page_WMI_NEW/Master_Object_Feature/Render_As_Textbox/input_DateType'), 'value').trim().replaceAll('-', '/'), currentDate, false)
-//TODO: Date time format is not valid
+//TODO: Date time format is not valid, Manoj to check

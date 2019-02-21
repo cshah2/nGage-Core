@@ -16,8 +16,8 @@ import internal.GlobalVariable as GlobalVariable
 'Login Into Application'
 CustomKeywords.'actions.Common.login'()
 
-'Create Document'
-CustomKeywords.'actions.Common.createDocument_ClosureAction'('Chintan Shah', 'P1 - REPO008')
+'Create closure action document if it is not availble'
+CustomKeywords.'actions.Common.createBulkDocuments_ClosureAction'(1)
 
 'Expand Repository Menu'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Repository/h3_Repository Menu'))

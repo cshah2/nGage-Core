@@ -17,8 +17,11 @@ import static utils.Consts.*
 'Login Into Application'
 CustomKeywords.'actions.Common.login'()
 
-'Create Document render all fields'
-CustomKeywords.'actions.Common.createDocument_RenderAllField'(P1_REPO_RENDERALL_INTERGER_DOC1, P1_REPO_RENDERALL_STRING_DOC1, '', '', P1_REPO_RENDERALL_DATE_DOC1, '', '', '', '', '', '')
+'Create document is not present'
+if(!FLAG_P1_REPO_DOC10) {
+	CustomKeywords.'actions.Common.createDocument_RenderAllField'(P1_REPO_FIELD1_DOC10, P1_REPO_FIELD2_DOC10, '', '', P1_REPO_FIELD5_DOC10, '', '', '', '', '', '')
+	FLAG_P1_REPO_DOC10 = true
+}
 
 'Click on Repository Menu'
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/h3_Repository Menu'))

@@ -18,14 +18,16 @@ import static utils.Consts.*
 'Login into application'
 CustomKeywords.'actions.Common.login'()
 
-//Pre-requisite : Add new document of Doc Class : Date n time
-String BM_Date = getCurrentDateTimeMinusDays(0, FORMAT_DATE) //Level1
-String DateRange = getCurrentDateTimeMinusDays(1, FORMAT_DATE) // Level2
-String BM_DateTime = getCurrentDateTimeMinusDays(2, FORMAT_DATETIME) //Level 3
-String DateTimeRange = getCurrentDateTimeMinusDays(3, FORMAT_DATETIME) //Level 4
+String BM_Date = P1_REPO_BMDATE_DOC0//Level1
+String DateRange = P1_REPO_DATERANGE_DOC0 // Level2
+String BM_DateTime = P1_REPO_BMDATETIME_DOC0 //Level 3
+String DateTimeRange = P1_REPO_DATETIMERANGE_DOC0 //Level 4
 
-'Create new Document'
-CustomKeywords.'actions.Common.createDocument_DateTimeDT'(BM_Date, DateRange, BM_DateTime, DateTimeRange)
+if(!FLAG_P1_REPO_DOC0) {
+	'Create new Document'
+	CustomKeywords.'actions.Common.createDocument_DateTimeDT'(BM_Date, DateRange, BM_DateTime, DateTimeRange)
+	FLAG_P1_REPO_DOC0 = true
+}
 
 'Click on Repository Menu'
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/h3_Repository Menu'))
@@ -36,15 +38,32 @@ String tree_DateRange = DateRange
 String tree_BM_DateTime = convert(BM_DateTime, FORMAT_DATETIME, FORMAT_DATE) 
 String tree_DateTimeRange = convert(DateTimeRange, FORMAT_DATETIME, FORMAT_DATE)
 
-'Verify correct tree path is loaded at each level'
-CustomKeywords.'actions.MenuBar.verifySubMenuPresent'('REPO', tree_BM_Date, 'Date n Date time EDM','Date n Date time search class')
-CustomKeywords.'actions.MenuBar.verifySubMenuPresent'('REPO', tree_DateRange, 'Date n Date time EDM','Date n Date time search class', tree_BM_Date)
-CustomKeywords.'actions.MenuBar.verifySubMenuPresent'('REPO', tree_BM_DateTime, 'Date n Date time EDM','Date n Date time search class', tree_BM_Date, tree_DateRange)
-CustomKeywords.'actions.MenuBar.verifySubMenuPresent'('REPO', tree_DateTimeRange, 'Date n Date time EDM','Date n Date time search class', tree_BM_Date, tree_DateRange, tree_BM_DateTime)
+'Click on Foldered date 1st level'
+CustomKeywords.'actions.MenuBar.clickTreeMenu'('REPO', 'Date n Date time EDM','Date n Date time search class', tree_BM_Date)
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/BrowseResults Tab/iframe_BROWSETAB_iframe'))
 
-'Click on Last Tree node'
+'Verify record count in activity and grid matches'
+int recordCountInFirstNode = CustomKeywords.'actions.MenuBar.getRecordCountInActivity'('REPO', 'Date n Date time EDM','Date n Date time search class', tree_BM_Date)
+CustomKeywords.'actions.Common.verifyTotalRecordCountFromPageSummary'(findTestObject('Page_nGage_Dashboard/Repository/BrowseResults Tab/Table_PageResults'), recordCountInFirstNode)
+
+'Click on Foldered date 2nd level'
+CustomKeywords.'actions.MenuBar.clickTreeMenu'('REPO', 'Date n Date time EDM','Date n Date time search class', tree_BM_Date, tree_DateRange)
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/BrowseResults Tab/iframe_BROWSETAB_iframe'))
+
+'Verify record count in activity and grid matches'
+int recordCountInSecondNode = CustomKeywords.'actions.MenuBar.getRecordCountInActivity'('REPO', 'Date n Date time EDM','Date n Date time search class', tree_BM_Date, tree_DateRange)
+CustomKeywords.'actions.Common.verifyTotalRecordCountFromPageSummary'(findTestObject('Page_nGage_Dashboard/Repository/BrowseResults Tab/Table_PageResults'), recordCountInSecondNode)
+
+'Click on Foldered date 3rd level'
 CustomKeywords.'actions.MenuBar.clickTreeMenu'('REPO', 'Date n Date time EDM','Date n Date time search class', tree_BM_Date, tree_DateRange, tree_BM_DateTime)
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/BrowseResults Tab/iframe_BROWSETAB_iframe'))
 
-int recordCountInActivity = CustomKeywords.'actions.MenuBar.getRecordCountInActivity'('REPO', 'Date n Date time EDM','Date n Date time search class', tree_BM_Date, tree_DateRange, tree_BM_DateTime)
-CustomKeywords.'actions.Common.verifyTotalRecordCountFromPageSummary'(findTestObject('Page_nGage_Dashboard/Repository/BrowseResults Tab/Table_PageResults'), recordCountInActivity)
+int recordCountInThirdNode = CustomKeywords.'actions.MenuBar.getRecordCountInActivity'('REPO', 'Date n Date time EDM','Date n Date time search class', tree_BM_Date, tree_DateRange, tree_BM_DateTime)
+CustomKeywords.'actions.Common.verifyTotalRecordCountFromPageSummary'(findTestObject('Page_nGage_Dashboard/Repository/BrowseResults Tab/Table_PageResults'), recordCountInThirdNode)
+
+'Click on Foldered date 4th level'
+CustomKeywords.'actions.MenuBar.clickTreeMenu'('REPO', 'Date n Date time EDM','Date n Date time search class', tree_BM_Date, tree_DateRange, tree_BM_DateTime, tree_DateTimeRange)
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/BrowseResults Tab/iframe_BROWSETAB_iframe'))
+
+int recordCountInFourthNode = CustomKeywords.'actions.MenuBar.getRecordCountInActivity'('REPO', 'Date n Date time EDM','Date n Date time search class', tree_BM_Date, tree_DateRange, tree_BM_DateTime, tree_DateTimeRange)
+CustomKeywords.'actions.Common.verifyTotalRecordCountFromPageSummary'(findTestObject('Page_nGage_Dashboard/Repository/BrowseResults Tab/Table_PageResults'), recordCountInFourthNode)

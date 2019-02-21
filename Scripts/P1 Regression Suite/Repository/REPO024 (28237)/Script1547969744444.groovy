@@ -12,14 +12,16 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
-
-//Note: Checked with Manoj, Record count in folder gets updated when user peforms refresh on parent folder.
+import static utils.Consts.*
 
 'Login Into Application'
 CustomKeywords.'actions.Common.login'()
 
-'Create Document render all fields'
-CustomKeywords.'actions.Common.createDocument_RenderAllField'('10', 'CShah', '', '', '', '', '', '', '', '', '')
+'Create document is not present'
+if(!FLAG_P1_REPO_DOC10) {
+	CustomKeywords.'actions.Common.createDocument_RenderAllField'(P1_REPO_FIELD1_DOC10, P1_REPO_FIELD2_DOC10, '', '', P1_REPO_FIELD5_DOC10, '', '', '', '', '', '')
+	FLAG_P1_REPO_DOC10 = true
+}
 
 'Expand Repository Menu'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Repository/h3_Repository Menu'))
@@ -41,7 +43,7 @@ else {
 	CustomKeywords.'actions.Common.verifyTotalRecordCountFromPageSummary'(findTestObject('Page_nGage_Dashboard/Repository/BrowseResults Tab/Table_PageResults'), activityRecordCountBefore)
 }
 
-'Create another Ddocument render all fields'
+'Create another document render all fields'
 CustomKeywords.'actions.Common.createDocument_RenderAllField'('20', 'AMirvankar', '', '', '', '', '', '', '', '', '')
 
 'Right click on Render All Field Types Sub Menu'

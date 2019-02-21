@@ -84,7 +84,6 @@ CustomKeywords.'actions.Common.verifyDateFormat'(WebUI.getText(findTestObject('P
 String text = WebUI.getText(findTestObject('Page_WMI_NEW/Master_Object_Feature/Render_As_Label/span_DateTimeMVField')).trim()
 String value1 = text.split(',')[0]
 CustomKeywords.'actions.Common.verifyDateFormat'(value1.replaceAll('/', '-'), Consts.FORMAT_DATETIME)
-//TODO: Date time format is not valid
 
 'Verify value in LabelControl field'
 WebUI.verifyElementText(findTestObject('Page_WMI_NEW/Master_Object_Feature/Render_As_Label/span_ValueLabelField'), 'Label Control')

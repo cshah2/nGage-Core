@@ -24,24 +24,27 @@ import static utils.Consts.*
 'Login Into Application'
 CustomKeywords.'actions.Common.login'()
 
-'Create document'
-CustomKeywords.'actions.Common.createDocument_DateTimeDT'(P1_REPO_BMDATE_DOC6, P1_REPO_DATERANGE_DOC6, P1_REPO_BMDATETIME_DOC6, P1_REPO_DATETIMERANGE_DOC6)
+String BM_Date = P1_REPO_BMDATE_DOC0//Level1
+String DateRange = P1_REPO_DATERANGE_DOC0 // Level2
+String BM_DateTime = P1_REPO_BMDATETIME_DOC0 //Level 3
+String DateTimeRange = P1_REPO_DATETIMERANGE_DOC0 //Level 4
+
+if(!FLAG_P1_REPO_DOC0) {
+	'Create new Document'
+	CustomKeywords.'actions.Common.createDocument_DateTimeDT'(BM_Date, DateRange, BM_DateTime, DateTimeRange)
+	FLAG_P1_REPO_DOC0 = true
+}
 
 'Expand Repository Menu'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Repository/h3_Repository Menu'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
-'Select Repository - Advance Search tab'
-WebUI.selectOptionByLabel(findTestObject('Page_nGage_Dashboard/Repository/select_Repository Drop Down'), 'Date n Date time EDM', false)
-CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
-
-'Select input_btnSearchect Search For - Advance Search tab'
-WebUI.selectOptionByLabel(findTestObject('Page_nGage_Dashboard/Repository/select_Search For Drop Down'), 'Date n Date time search class', false)
-CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
+'Select repository and search for value in drop down'
+CustomKeywords.'actions.Common.selectRepositoryAndSearchFor'('Date n Date time EDM', 'Date n Date time search class')
 
 'Enter End Date values'
-String filterEndDate = P1_REPO_DATERANGE_FILTER_END
+String filterEndDate = P1_REPO_DATERANGE_DOC0_FILTER_TO
 CustomKeywords.'actions.Common.setText_Date'(findTestObject('Page_nGage_Dashboard/Repository/input_DateRange_To'), filterEndDate)
 
 'Click on Search button'

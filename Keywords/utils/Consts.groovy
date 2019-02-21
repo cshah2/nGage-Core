@@ -149,6 +149,25 @@ public class Consts {
 	public static final String SMOKE_REPO_DATERANGE_DOC1_END_FILTER = '12-07-2018'
 
 
+	//Document 0 - Date time DT
+	public static final String P1_REPO_BMDATE_DOC0 = '02-10-2019'
+	public static final String P1_REPO_DATERANGE_DOC0 = '02-11-2019'
+	public static final String P1_REPO_BMDATETIME_DOC0 = '02-13-2019 01:00:00 AM'
+	public static final String P1_REPO_DATETIMERANGE_DOC0 = '02-14-2019 03:00:00 AM'
+	public static final String P1_REPO_DATERANGE_DOC0_FILTER_TO = '02-09-2019'
+	public static final String P1_REPO_DATERANGE_DOC0_FILTER_FROM = '02-13-2019'
+
+	//Document 10 - Render All Field types
+	public static final String P1_REPO_FIELD1_DOC10 = '10'
+	public static final String P1_REPO_FIELD2_DOC10 = 'CShah'
+	public static final String P1_REPO_FIELD5_DOC10 = '01-01-2020'
+
+	//Document 11 - Required field DT
+	public static final String P1_REPO_BMTEXT_DOC11 = 'TEXT'
+	public static final String P1_REPO_BMSTRING_DOC11 = 'STRING REQ'
+	public static final String P1_REPO_INT_DOC11 = '30'
+	public static final String P1_REPO_DATETIMEREQ_DOC11 = '07-01-2018 03:00:00 AM'
+	public static final String P1_REPO_DATEREQ_DOC11 = '10-01-2018'
 
 
 	public static final String P1_REPO_BMDATE_DOC1 = '01-01-2018'
@@ -166,12 +185,12 @@ public class Consts {
 	public static final String P1_REPO_BMDATETIME_DOC5 = '06-20-2018 01:00:00 AM'
 	public static final String P1_REPO_DATETIMERANGE_DOC5 = '09-20-2018 03:00:00 AM'
 
-	public static final String P1_REPO_BMDATE_DOC6 = '12-01-2018'
-	public static final String P1_REPO_DATERANGE_DOC6 = '12-05-2018'
-	public static final String P1_REPO_BMDATETIME_DOC6 = '12-10-2018 11:00:00 AM'
-	public static final String P1_REPO_DATETIMERANGE_DOC6 = '12-10-2018 11:00:00 AM'
-	public static final String P1_REPO_DATERANGE_FILTER_END = '12-07-2018'
-	public static final String P1_REPO_DATERANGE_FILTER_START = '12-03-2018'
+	//	public static final String P1_REPO_BMDATE_DOC6 = '12-01-2018'
+	//	public static final String P1_REPO_DATERANGE_DOC6 = '12-05-2018'
+	//	public static final String P1_REPO_BMDATETIME_DOC6 = '12-10-2018 11:00:00 AM'
+	//	public static final String P1_REPO_DATETIMERANGE_DOC6 = '12-10-2018 11:00:00 AM'
+	//	public static final String P1_REPO_DATERANGE_FILTER_END = '12-07-2018'
+	//	public static final String P1_REPO_DATERANGE_FILTER_START = '12-03-2018'
 
 	public static final String P1_REPO_BMDATE_DOC3 = ''
 	public static final String P1_REPO_DATERANGE_DOC3 = ''
@@ -197,11 +216,11 @@ public class Consts {
 	public static final String P1_REPO_DATETIMERANGETO_YEAR_DOC4 = '2018'
 	public static final String P1_REPO_DATETIMERANGETO_DOC4 = '09-02-2018 12:00:00 AM'
 
-	public static final String P1_REPO_BMTEXT_DOC1 = 'TEXT'
-	public static final String P1_REPO_BMSTRING_DOC1 = 'STRING REQ'
-	public static final String P1_REPO_INT_DOC1 = '30'
-	public static final String P1_REPO_DATETIMEREQ_DOC1 = '07-01-2018 03:00:00 AM'
-	public static final String P1_REPO_DATEREQ_DOC1 = '10-01-2018'
+	//	public static final String P1_REPO_BMTEXT_DOC1 = 'TEXT'
+	//	public static final String P1_REPO_BMSTRING_DOC1 = 'STRING REQ'
+	//	public static final String P1_REPO_INT_DOC1 = '30'
+	//	public static final String P1_REPO_DATETIMEREQ_DOC1 = '07-01-2018 03:00:00 AM'
+	//	public static final String P1_REPO_DATEREQ_DOC1 = '10-01-2018'
 
 	public static final String P1_REPO_CLOSURE_CUSTOMERNAME_DOC1 = 'Chintan Shah'
 	public static final String P1_REPO_CLOSURE_CUSTOMERDESC_DOC1 = 'P1 - REPO - OPEN ALL DOCUMENTS'
@@ -373,6 +392,9 @@ public class Consts {
 	public static boolean FLAG_SMOKE_MWS004 	= false
 	public static boolean FLAG_SMOKE_MW003 		= false
 	public static boolean FLAG_SMOKE_REPO003 	= false
-	
+
+	public static boolean FLAG_P1_REPO_DOC0		= false
+	public static boolean FLAG_P1_REPO_DOC10	= false
+	public static boolean FLAG_P1_REPO_DOC11	= false
 }
 

@@ -17,24 +17,22 @@ import static utils.Consts.*
 'Login Into Application'
 CustomKeywords.'actions.Common.login'()
 
-'Create Document render all fields'
-CustomKeywords.'actions.Common.createDocument_RenderAllField'(P1_REPO_RENDERALL_INTERGER_DOC1, P1_REPO_RENDERALL_STRING_DOC1, '', '', P1_REPO_RENDERALL_DATE_DOC1, '', '', '', '', '', '')
+'Create document is not present'
+if(!FLAG_P1_REPO_DOC10) {
+	CustomKeywords.'actions.Common.createDocument_RenderAllField'(P1_REPO_FIELD1_DOC10, P1_REPO_FIELD2_DOC10, '', '', P1_REPO_FIELD5_DOC10, '', '', '', '', '', '')
+	FLAG_P1_REPO_DOC10 = true
+}
 
 'Expand Repository Menu'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Repository/h3_Repository Menu'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
-'Select Repository - Advance Search tab'
-WebUI.selectOptionByLabel(findTestObject('Page_nGage_Dashboard/Repository/select_Repository Drop Down'), 'Business Model', false)
-CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
-
-'Selinput_btnSearchect Search For - Advance Search tab'
-WebUI.selectOptionByLabel(findTestObject('Page_nGage_Dashboard/Repository/select_Search For Drop Down'), 'Business Model', false)
-CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
+'Select repository and search for value in drop down'
+CustomKeywords.'actions.Common.selectRepositoryAndSearchFor'('Business Model', 'Business Model')
 
 'Enter Only End Date in Search field'
-CustomKeywords.'actions.Common.setText_Date'(findTestObject('Page_nGage_Dashboard/Repository/input_BM___Date_From'), P1_REPO_RENDERALL_DATE_DOC1)
+CustomKeywords.'actions.Common.setText_Date'(findTestObject('Page_nGage_Dashboard/Repository/input_BM___Date_From'), P1_REPO_FIELD5_DOC10)
 
 'Click on Search button'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Repository/input_btnSearch'))
@@ -49,5 +47,5 @@ WebUI.waitForElementVisible(findTestObject('Object Repository/Page_nGage_Dashboa
 
 String toolTipValue = WebUI.getText(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/BrowseResults Tab/Browser_ToolTip')).trim()
 WebUI.verifyMatch(toolTipValue, '.*Business Model - Business Model.*', true)
-String expValueLine2 = '.*BM Date >= '+P1_REPO_RENDERALL_DATE_DOC1+'.*'
+String expValueLine2 = '.*BM Date >= '+P1_REPO_FIELD5_DOC10+'.*'
 WebUI.verifyMatch(toolTipValue, expValueLine2, true)
