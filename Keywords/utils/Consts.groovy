@@ -370,8 +370,9 @@ public class Consts {
 	/* All variable listed below are flag representing documents are successfully created.
 	 *  These flags are useful for test cases which are dependent on data created in another test case*/
 
-	public static boolean FLAG_SMOKE_MWS004 = false
-	public static boolean FLAG_SMOKE_MW003 	= false
-
+	public static boolean FLAG_SMOKE_MWS004 	= false
+	public static boolean FLAG_SMOKE_MW003 		= false
+	public static boolean FLAG_SMOKE_REPO003 	= false
+	
 }
 

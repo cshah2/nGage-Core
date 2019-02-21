@@ -27,15 +27,15 @@ CustomKeywords.'actions.Common.login'()
 WebUI.click(findTestObject('Page_nGage_Dashboard/Repository/h3_Repository Menu'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
 
-'Select Saved search filter from the table'
+'Sort saved search filter table by Modified Date descending'
 CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/Repository/table_Header_SavedSearch'), 'Modified Date')
 CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/Repository/table_Header_SavedSearch'), 'Modified Date')
 
-'Validate Search criteria is displayed in the saved search grid'
+'Verify filter created in previous test cases is present in the grid'
 int colNo_filterName = CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Page_nGage_Dashboard/Repository/table_Header_SavedSearch'), 'Search Description')
 CustomKeywords.'actions.Table.verifyRecordPresentInColumn'(findTestObject('Page_nGage_Dashboard/Repository/table_SavedSearch'), colNo_filterName, Consts.SMOKE_REPO006_SAVEDFILTERNAME)
 
-'Select filter from table'
+'Select saved filter from table'
 CustomKeywords.'actions.Table.clickCell'(findTestObject('Page_nGage_Dashboard/Repository/table_SavedSearch'), 1, colNo_filterName)
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
 

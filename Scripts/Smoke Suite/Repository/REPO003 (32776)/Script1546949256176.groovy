@@ -25,6 +25,7 @@ CustomKeywords.'actions.Common.login'()
 
 'Create document'
 CustomKeywords.'actions.Common.createDocument_DateTimeDT'(SMOKE_REPO_BMDATE_DOC1, SMOKE_REPO_DATERANGE_DOC1, SMOKE_REPO_BMDATETIME_DOC1, SMOKE_REPO_DATETIMERANGE_DOC1)
+FLAG_SMOKE_REPO003 = true
 
 'Expand Repository Menu'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Repository/h3_Repository Menu'))

@@ -1341,6 +1341,7 @@ public class Common {
 
 	@Keyword
 	def verifyElementHasFocus(TestObject toLocator) {
+		WebUtil.delay(100)
 		WebElement element = WebUtil.getWebElement(toLocator)
 		WebDriver driver = DriverFactory.getWebDriver()
 		if(!element.equals(driver.switchTo().activeElement())) {
@@ -1586,6 +1587,53 @@ public class Common {
 		WebUI.selectOptionByLabel(findTestObject('Page_nGage_Dashboard/Repository/select_Search For Drop Down'), searchFor, false)
 		WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/Repository/filtersTable'), GlobalVariable.G_LongTimeout)
 	}
+	
+	@Keyword
+	def waitUntilDropDownHasOption(TestObject to, String option, int timeout) {
+		
+		def startTime = System.currentTimeMillis()
+		def endTime = startTime + TimeUnit.SECONDS.toMillis(timeout)
+		def currentTime = System.currentTimeMillis()
+
+		boolean isFound = false
+		
+		while(currentTime < endTime) {
+			try {
+				WebElement element = WebUtil.getWebElement(to)
+				Select select = new Select(element)
+				List<WebElement> options = select.getOptions()
+				for (opt in options) {
+					if(opt.getText().trim().equalsIgnoreCase(option.trim())) {
+						isFound = true
+						break
+					}
+				}
+				
+				if(isFound) {
+					break
+				}
+				WebUI.switchToDefaultContent()
+				WebUI.delay(1)
+				currentTime = System.currentTimeMillis()
+	
+			}
+			catch(Exception e) {
+
+				WebUI.switchToDefaultContent()
+				WebUI.delay(1)
+				currentTime = System.currentTimeMillis()
+			}
+		}
+		
+		WebUI.switchToDefaultContent()
+		if(isFound) {
+			KeywordUtil.markPassed('Drop down has option present')
+		}
+		else {
+			KeywordUtil.markFailedAndStop('Drop down does not have provided option in given time '+GlobalVariable.G_LongTimeout)
+		}
+	}
+	
 
 
 }

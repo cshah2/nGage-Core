@@ -58,7 +58,6 @@ Consts.SMOKE_HOME002_DOCID = CustomKeywords.'actions.Table.getCellText'(findTest
 CustomKeywords.'actions.Table.clickCell'(findTestObject('Page_nGage_Dashboard/Home/table_MyDocumentResults'), 1, colNo_DocID)
 
 'Switch to Document window'
-//WebUI.switchToWindowTitle('MultipageViewer with drag and drop')
 WebUI.switchToWindowIndex(1)
 WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 

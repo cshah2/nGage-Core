@@ -23,8 +23,10 @@ import static utils.Consts.*
 'Login Into Application'
 CustomKeywords.'actions.Common.login'()
 
-'Create document'
-CustomKeywords.'actions.Common.createDocument_DateTimeDT'(SMOKE_REPO_BMDATE_DOC1, SMOKE_REPO_DATERANGE_DOC1, SMOKE_REPO_BMDATETIME_DOC1, SMOKE_REPO_DATETIMERANGE_DOC1)
+'Create Docuement if document is not created in previous test case SMOKE_REPO003'
+if(!FLAG_SMOKE_REPO003) {
+	CustomKeywords.'actions.Common.createDocument_DateTimeDT'(SMOKE_REPO_BMDATE_DOC1, SMOKE_REPO_DATERANGE_DOC1, SMOKE_REPO_BMDATETIME_DOC1, SMOKE_REPO_DATETIMERANGE_DOC1)
+}
 
 'Expand Repository Menu'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Repository/h3_Repository Menu'))

@@ -29,7 +29,7 @@ import utils.WebUtil
 CustomKeywords.'actions.Common.login'()
 
 'Create new Document'
-CustomKeywords.'actions.Common.createDocument_MultiPageViewerWithDragAndDrop'(Consts.SMOKE_REPO001_STRINGFIELD, Consts.SMOKE_REPO001_FILENAME, '')
+CustomKeywords.'actions.Common.createBulkDocuments_RenderAllFields'(1)
 
 'Expand Repository Menu'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Repository/h3_Repository Menu'))

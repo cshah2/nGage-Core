@@ -89,4 +89,46 @@ public class Window {
 		int actCount = driver.getWindowHandles().size()
 		WebUI.verifyEqual(actCount, expCount)
 	}
+	
+	@Keyword
+	def switchToUrlContains(String url, int timeout) {
+
+		def startTime = System.currentTimeMillis()
+		def endTime = startTime + TimeUnit.SECONDS.toMillis(timeout)
+		def currentTime = System.currentTimeMillis()
+
+		boolean isWindowFound = false
+		
+		while(currentTime < endTime) {
+			try {
+				WebDriver driver = DriverFactory.getWebDriver()
+				Set<String> handles = driver.getWindowHandles()
+				for (handle in handles) {
+					driver.switchTo().window(handle)
+					
+					if(driver.getCurrentUrl().trim().toLowerCase().contains(url.trim().toLowerCase())) {
+						isWindowFound = true
+						break
+					}
+				}
+				if(isWindowFound) {
+					break
+				}
+				WebUI.delay(1)
+				currentTime = System.currentTimeMillis()
+			}
+			catch(Exception e) {
+				WebUI.delay(1)
+				currentTime = System.currentTimeMillis()
+			}
+		}
+		
+		if(isWindowFound) {
+			KeywordUtil.markPassed('Window found and switched to')
+		}
+		else {
+			KeywordUtil.markFailedAndStop('Could not found window in given time '+GlobalVariable.G_LongTimeout)
+		}
+	}
+
 }

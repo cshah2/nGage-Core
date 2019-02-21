@@ -99,117 +99,195 @@ public class Report {
 	/* ############################# KEYWORDS ##################################### */	
 	@Keyword
 	def clickReport(String lvl_one, String lvl_two, String lvl_three) {
-		setLevelOne()
-		setLevelTwo(lvl_one)
-		setLevelThree(lvl_one, lvl_two)
-		lvlThree.get(lvl_three).click()
+		
+		try {
+			setLevelOne()
+			setLevelTwo(lvl_one)
+			setLevelThree(lvl_one, lvl_two)
+			lvlThree.get(lvl_three).click()
+		}
+		catch(Exception e) {
+			WebUI.takeScreenshot()
+			KeywordUtil.markFailedAndStop('Unable to click report '+lvl_one+' -> '+lvl_two+' -> '+lvl_three+'\n'+e.toString())
+		}
 		new Common().waitForReportToLoad(GlobalVariable.G_ReportTimeout)
 	}
 
 	@Keyword
 	def rightClickReport(String lvl_one, String lvl_two, String lvl_three) {
-		setLevelOne()
-		setLevelTwo(lvl_one)
-		setLevelThree(lvl_one, lvl_two)
-		Actions actions = new Actions(driver)
-		actions.contextClick(lvlThree.get(lvl_three)).build().perform()
+		try {
+			setLevelOne()
+			setLevelTwo(lvl_one)
+			setLevelThree(lvl_one, lvl_two)
+			Actions actions = new Actions(driver)
+			actions.contextClick(lvlThree.get(lvl_three)).build().perform()
+		}
+		catch(Exception e) {
+			WebUI.takeScreenshot()
+			KeywordUtil.markFailedAndStop('Unable to right click report '+lvl_one+' -> '+lvl_two+' -> '+lvl_three+'\n'+e.toString())
+		}
 	}
 
 	@Keyword
 	def verifyReportIsPresentUnderSubGroup(String lvl_one, String lvl_two, String reportName) {
-		setLevelOne()
-		setLevelTwo(lvl_one)
-		setLevelThree(lvl_one, lvl_two)
-		if(lvlThree.containsKey(reportName)) {
+		
+		boolean isFound = false
+		try {
+			setLevelOne()
+			setLevelTwo(lvl_one)
+			setLevelThree(lvl_one, lvl_two)
+			if(lvlThree.containsKey(reportName)) {
+				isFound = true
+			}
+		}
+		catch(Exception e) {
+			WebUI.takeScreenshot()
+			KeywordUtil.markFailedAndStop('Unable to verify sub report is present'+lvl_one+' -> '+lvl_two+' -> '+reportName+'\n'+e.toString())
+		}
+		if(isFound) {
 			KeywordUtil.markPassed('Report '+reportName+' is found under subGroup '+lvl_two)
 		}
 		else {
+			WebUI.takeScreenshot()
 			KeywordUtil.markFailedAndStop('Report '+reportName+' is not found under subGroup '+lvl_two)
 		}
 	}
 
 	@Keyword
 	def verifyReportIsNotPresentUnderSubGroup(String lvl_one, String lvl_two, String reportName) {
-		setLevelOne()
-		setLevelTwo(lvl_one)
-		setLevelThree(lvl_one, lvl_two)
-		if(!lvlThree.containsKey(reportName)) {
+		
+		boolean isNotFound = false
+		try {
+			setLevelOne()
+			setLevelTwo(lvl_one)
+			setLevelThree(lvl_one, lvl_two)
+			if(!lvlThree.containsKey(reportName)) {
+				isNotFound = true
+			}
+		}
+		catch(Exception e) {
+			WebUI.takeScreenshot()
+			KeywordUtil.markFailedAndStop('Unable to verify sub report is not present'+lvl_one+' -> '+lvl_two+' -> '+reportName+'\n'+e.toString())
+		}
+		if(isNotFound) {
 			KeywordUtil.markPassed('Report '+reportName+' is not found under subGroup '+lvl_two)
 		}
 		else {
+			WebUI.takeScreenshot()
 			KeywordUtil.markFailedAndStop('Report '+reportName+' is found under subGroup '+lvl_two)
 		}
 	}
 
 	@Keyword
 	def verifySubGroupIsPresentUnderGroup(String lvl_one, String subGroupName) {
-		setLevelOne()
-		setLevelTwo(lvl_one)
-		if(lvlTwo.containsKey(subGroupName)) {
+		boolean isFound = false
+		try {
+			setLevelOne()
+			setLevelTwo(lvl_one)
+			if(lvlTwo.containsKey(subGroupName)) {
+				isFound = true
+			}
+		}
+		catch(Exception e) {
+			WebUI.takeScreenshot()
+			KeywordUtil.markFailedAndStop('Unable to verify sub group is present'+lvl_one+' -> '+subGroupName+'\n'+e.toString())
+		}
+		if(isFound) {
 			KeywordUtil.markPassed('Sub Group '+subGroupName+' is found under Group '+lvl_one)
 		}
 		else {
+			WebUI.takeScreenshot()
 			KeywordUtil.markFailedAndStop('Sub Group '+subGroupName+' is not found under Group '+lvl_one)
 		}
 	}
 
 	@Keyword
 	def verifySubGroupIsNotPresentUnderGroup(String lvl_one, String subGroupName) {
-		setLevelOne()
-		setLevelTwo(lvl_one)
-		if(!lvlTwo.containsKey(subGroupName)) {
+		
+		boolean isNotFound = false
+		try {
+			setLevelOne()
+			setLevelTwo(lvl_one)
+			if(!lvlTwo.containsKey(subGroupName)) {
+				isNotFound = true
+			}
+		}
+		catch(Exception e) {
+			WebUI.takeScreenshot()
+			KeywordUtil.markFailedAndStop('Unable to verify sub group is not present'+lvl_one+' -> '+subGroupName+'\n'+e.toString())
+		}
+		if(isNotFound) {
 			KeywordUtil.markPassed('Sub Group '+subGroupName+' is not found under Group '+lvl_one)
 		}
 		else {
+			WebUI.takeScreenshot()
 			KeywordUtil.markFailedAndStop('Sub Group '+subGroupName+' is found under Group '+lvl_one)
 		}
 	}
 
 	@Keyword
 	def verifyAllReportsUnderSubGroup(String lvl_one, String lvl_two, String... reportNames) {
-		setLevelOne()
-		setLevelTwo(lvl_one)
-		setLevelThree(lvl_one, lvl_two)
-
-		int actReportCount = lvlThree.size()
-		int expReportCount = reportNames.length
-		WebUI.verifyEqual(actReportCount, expReportCount)
-
+		
 		boolean isReportPresent = true
 		String notFoundReport = ''
-		for(String reportName in reportNames) {
-			if(!lvlThree.containsKey(reportName)) {
-				isReportPresent = false
-				notFoundReport = reportName
-				break
+		
+		try {
+			setLevelOne()
+			setLevelTwo(lvl_one)
+			setLevelThree(lvl_one, lvl_two)
+	
+			int actReportCount = lvlThree.size()
+			int expReportCount = reportNames.length
+			WebUI.verifyEqual(actReportCount, expReportCount)
+	
+			
+			for(String reportName in reportNames) {
+				if(!lvlThree.containsKey(reportName)) {
+					isReportPresent = false
+					notFoundReport = reportName
+					break
+				}
 			}
+		}
+		catch(Exception e) {
+			WebUI.takeScreenshot()
+			KeywordUtil.markFailedAndStop('Exception occured while verifying all reports under sub group \n'+e.toString())
 		}
 
 		if(isReportPresent) {
 			KeywordUtil.markPassed('All Reports are present in sub group')
 		}
 		else {
+			WebUI.takeScreenshot()
 			KeywordUtil.markFailedAndStop('Report '+notFoundReport+' is not present in Sub Group '+lvl_two)
 		}
 	}
 
 	@Keyword
 	def verifyAllSubGroupsUnderGroup(String lvl_one, String... subGroups) {
-		setLevelOne()
-		setLevelTwo(lvl_one)
-
-		int actSubGroupsCount = lvlTwo.size()
-		int expSubGroupsCount = subGroups.length
-		WebUI.verifyEqual(actSubGroupsCount, expSubGroupsCount)
-
+		
 		boolean isSubGroupPresent = true
 		String notFoundSubGroup = ''
-		for(String subGroup in subGroups) {
-			if(!lvlTwo.containsKey(subGroup)) {
-				isSubGroupPresent = false
-				notFoundSubGroup = subGroup
-				break
+
+		try {
+			setLevelOne()
+			setLevelTwo(lvl_one)
+	
+			int actSubGroupsCount = lvlTwo.size()
+			int expSubGroupsCount = subGroups.length
+			WebUI.verifyEqual(actSubGroupsCount, expSubGroupsCount)
+	
+			for(String subGroup in subGroups) {
+				if(!lvlTwo.containsKey(subGroup)) {
+					isSubGroupPresent = false
+					notFoundSubGroup = subGroup
+					break
+				}
 			}
+		}
+		catch(Exception e) {
+			WebUI.takeScreenshot()
+			KeywordUtil.markFailedAndStop('Exception occured while verifying all sub groups under group \n'+e.toString())
 		}
 
 		if(isSubGroupPresent) {

@@ -28,9 +28,8 @@ import org.openqa.selenium.WebDriver as WebDriver
 'Login Into Application'
 CustomKeywords.'actions.Common.login'()
 
-String filePath = RunConfiguration.getProjectDir().replace('/', '\\')+'\\Data Files\\FileUploads\\50 Pages PDF file.pdf'
-
 'Create new document'
+String filePath = RunConfiguration.getProjectDir().replace('/', '\\')+'\\Data Files\\FileUploads\\50 Pages PDF file.pdf'
 CustomKeywords.'actions.Common.createDocument_WMIMenuBovVertical'(Consts.SMOKE_HOME007_BMSTRING, filePath)
 
 'Go to Recent Documents tab'

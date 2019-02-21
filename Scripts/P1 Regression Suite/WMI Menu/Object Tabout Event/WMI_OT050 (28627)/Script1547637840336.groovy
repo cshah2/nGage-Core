@@ -50,12 +50,8 @@ WebUI.check(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/D
 CustomKeywords.'actions.Common.waitForTabLoading'(null, GlobalVariable.G_LongTimeout)
 
 'Verify that reference object checkbox control (checkbox) is checked'
-WebUI.waitForElementVisible(findTestObject('Page_WMI_NEW/Object Tabout Event/DoNotSetValueOnLoad SetFocus Event/SingleResultView_tab/input_Reference Object CheckBox'), GlobalVariable.G_LongTimeout)
+WebUI.waitForElementAttributeValue(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/DoNotSetValueOnLoad SetFocus Event/SingleResultView_tab/input_String Field'), 'value', 'Checkbox is checked', GlobalVariable.G_LongTimeout)
 WebUI.verifyElementChecked(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/DoNotSetValueOnLoad SetFocus Event/SingleResultView_tab/input_Reference Object CheckBox'),GlobalVariable.G_LongTimeout)
-
-'Verify String Field (text box with view check box is un-checked) is Present'
-String textOfStringField = WebUI.getAttribute(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/DoNotSetValueOnLoad SetFocus Event/SingleResultView_tab/input_String Field'),'value')
-WebUI.verifyMatch(textOfStringField, 'Checkbox is checked', false)
 
 'Verify currency feild text box displayed with Cursor'
 CustomKeywords.'actions.Common.verifyElementHasFocus'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/DoNotSetValueOnLoad SetFocus Event/SingleResultView_tab/input_Currency Field'))

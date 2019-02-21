@@ -27,25 +27,26 @@ import utils.Consts
 CustomKeywords.'actions.Common.login'()
 
 'Create 2 documents for verifying sort'
-CustomKeywords.'actions.Common.createDocument_MultiPageViewerWithDragAndDrop'(Consts.SMOKE_HOME001_STRINGFIELD, Consts.SMOKE_HOME001_FILENAME, '')
-CustomKeywords.'actions.Common.createDocument_MultiPageViewerWithDragAndDrop'(Consts.SMOKE_HOME001_STRINGFIELD, Consts.SMOKE_HOME001_FILENAME, '')
+CustomKeywords.'actions.Common.createBulkDocuments_RenderAllFields'(2)
 
 'Go to Recent Documents tab'
 CustomKeywords.'actions.MenuBar.clickTreeMenu'('HOME', 'Recent Documents')
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/iframe_iframe_103'))
 
-'Validate atleast 1 record is present in the grid.'
+'Validate atleast 2 record is present in the grid.'
 int rowCount = CustomKeywords.'actions.Table.getRowsCount'(findTestObject('Page_nGage_Dashboard/Home/table_MyDocumentResults'))
-WebUI.verifyGreaterThanOrEqual(rowCount, 1)
+WebUI.verifyGreaterThanOrEqual(rowCount, 2)
+
+int colNo_DocID = CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Page_nGage_Dashboard/Home/tableHeader_RecentDocuments'), 'Doc ID')
 
 'Click on DocID Header to sort records in Ascending order'
 CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/Home/tableHeader_RecentDocuments'), 'Doc ID')
 
 'Verify records in grid are sorted in ascending order'
-CustomKeywords.'actions.Table.verifyColumnIsSortedInteger'(findTestObject('Page_nGage_Dashboard/Home/table_MyDocumentResults'), 7, 'ASC')
+CustomKeywords.'actions.Table.verifyColumnIsSortedInteger'(findTestObject('Page_nGage_Dashboard/Home/table_MyDocumentResults'), colNo_DocID, 'ASC')
 
 'Click again on DocID Header to sort records in Descending order'
 CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/Home/tableHeader_RecentDocuments'), 'Doc ID')
 
 'Verify records in grid are sorted in descending order'
-CustomKeywords.'actions.Table.verifyColumnIsSortedInteger'(findTestObject('Page_nGage_Dashboard/Home/table_MyDocumentResults'), 7, 'DESC')
+CustomKeywords.'actions.Table.verifyColumnIsSortedInteger'(findTestObject('Page_nGage_Dashboard/Home/table_MyDocumentResults'), colNo_DocID, 'DESC')
