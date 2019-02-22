@@ -18,14 +18,16 @@ import static utils.Consts.*
 'Login into application'
 CustomKeywords.'actions.Common.login'()
 
-//Pre-requisite : Add new document of Doc Class : Date n time
-String BM_Date = getCurrentDateTimeMinusDays(0, FORMAT_DATE) //Level1
-String DateRange = getCurrentDateTimeMinusDays(1, FORMAT_DATE) // Level2
-String BM_DateTime = getCurrentDateTimeMinusDays(2, FORMAT_DATETIME) //Level 3
-String DateTimeRange = getCurrentDateTimeMinusDays(3, FORMAT_DATETIME) //Level 4
+String BM_Date = P1_REPO_BMDATE_DOC0//Level1
+String DateRange = P1_REPO_DATERANGE_DOC0 // Level2
+String BM_DateTime = P1_REPO_BMDATETIME_DOC0 //Level 3
+String DateTimeRange = P1_REPO_DATETIMERANGE_DOC0 //Level 4
 
-'Create new Document'
-CustomKeywords.'actions.Common.createDocument_DateTimeDT'(BM_Date, DateRange, BM_DateTime, DateTimeRange)
+if(!FLAG_P1_REPO_DOC0) {
+	'Create new Document'
+	CustomKeywords.'actions.Common.createDocument_DateTimeDT'(BM_Date, DateRange, BM_DateTime, DateTimeRange)
+	FLAG_P1_REPO_DOC0 = true
+}
 
 'Click on Repository Menu'
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/h3_Repository Menu'))

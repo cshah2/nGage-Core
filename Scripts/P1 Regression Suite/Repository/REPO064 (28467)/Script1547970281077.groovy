@@ -29,13 +29,8 @@ WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 String filter_DateTimeRangeStart = ''
 String filter_DateTimeRangeEnd = ''
 
-'Select Repository - Advance Search tab'
-WebUI.selectOptionByLabel(findTestObject('Page_nGage_Dashboard/Repository/select_Repository Drop Down'), 'Date n Date time EDM', false)
-CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
-
-'Selinput_btnSearchect Search For - Advance Search tab'
-WebUI.selectOptionByLabel(findTestObject('Page_nGage_Dashboard/Repository/select_Search For Drop Down'), 'Date n Date time search class', false)
-CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
+'Select repository and search for value in drop down'
+CustomKeywords.'actions.Common.selectRepositoryAndSearchFor'('Date n Date time EDM', 'Date n Date time search class')
 
 'Select operator (Null)'
 WebUI.selectOptionByLabel(findTestObject('Page_nGage_Dashboard/Repository/select_DateTimeRange'), 'Null', false)

@@ -156,6 +156,26 @@ public class Consts {
 	public static final String P1_REPO_DATETIMERANGE_DOC0 = '02-14-2019 03:00:00 AM'
 	public static final String P1_REPO_DATERANGE_DOC0_FILTER_TO = '02-09-2019'
 	public static final String P1_REPO_DATERANGE_DOC0_FILTER_FROM = '02-13-2019'
+	
+	//Document 4 & 5 - Date time DT - Calender picker tests
+	public static final String P1_REPO_BMDATE_DOC4 = ''
+	public static final String P1_REPO_DATERANGE_DOC4 = ''
+	public static final String P1_REPO_BMDATETIME_DOC4 = ''
+	public static final String P1_REPO_DATETIMERANGE_DOC4 = '09-01-2018 12:00:00 AM'
+	
+	public static final String P1_REPO_BMDATE_DOC5 = '01-20-2018'
+	public static final String P1_REPO_DATERANGE_DOC5 = '03-20-2018'
+	public static final String P1_REPO_BMDATETIME_DOC5 = '06-20-2018 01:00:00 AM'
+	public static final String P1_REPO_DATETIMERANGE_DOC5 = '09-20-2018 03:00:00 AM'
+
+	public static final String P1_REPO_DATETIMERANGEFROM_DATE_DOC4 = '31'
+	public static final String P1_REPO_DATETIMERANGEFROM_MONTH_DOC4 = 'Aug'
+	public static final String P1_REPO_DATETIMERANGEFROM_YEAR_DOC4 = '2018'
+	public static final String P1_REPO_DATETIMERANGEFROM_DOC4 = '08-31-2018 12:00:00 AM'
+	public static final String P1_REPO_DATETIMERANGETO_DATE_DOC4 = '2'
+	public static final String P1_REPO_DATETIMERANGETO_MONTH_DOC4 = 'Sep'
+	public static final String P1_REPO_DATETIMERANGETO_YEAR_DOC4 = '2018'
+	public static final String P1_REPO_DATETIMERANGETO_DOC4 = '09-02-2018 12:00:00 AM'
 
 	//Document 10 - Render All Field types
 	public static final String P1_REPO_FIELD1_DOC10 = '10'
@@ -180,10 +200,6 @@ public class Consts {
 	public static final String P1_REPO_BMDATETIME_DOC2 = '06-15-2018 01:00:00 AM'
 	public static final String P1_REPO_DATETIMERANGE_DOC2 = '09-15-2018 03:00:00 AM'
 
-	public static final String P1_REPO_BMDATE_DOC5 = '01-20-2018'
-	public static final String P1_REPO_DATERANGE_DOC5 = '03-20-2018'
-	public static final String P1_REPO_BMDATETIME_DOC5 = '06-20-2018 01:00:00 AM'
-	public static final String P1_REPO_DATETIMERANGE_DOC5 = '09-20-2018 03:00:00 AM'
 
 	//	public static final String P1_REPO_BMDATE_DOC6 = '12-01-2018'
 	//	public static final String P1_REPO_DATERANGE_DOC6 = '12-05-2018'
@@ -197,24 +213,12 @@ public class Consts {
 	public static final String P1_REPO_BMDATETIME_DOC3 = ''
 	public static final String P1_REPO_DATETIMERANGE_DOC3 = ''
 
-	public static final String P1_REPO_RENDERALL_INTERGER_DOC1 = '10'
-	public static final String P1_REPO_RENDERALL_STRING_DOC1 = 'CShah'
-	public static final String P1_REPO_RENDERALL_DATE_DOC1 = '01-01-2020'
+	//	public static final String P1_REPO_RENDERALL_INTERGER_DOC1 = '10'
+	//	public static final String P1_REPO_RENDERALL_STRING_DOC1 = 'CShah'
+	//	public static final String P1_REPO_RENDERALL_DATE_DOC1 = '01-01-2020'
 
 
-	public static final String P1_REPO_BMDATE_DOC4 = ''
-	public static final String P1_REPO_DATERANGE_DOC4 = ''
-	public static final String P1_REPO_BMDATETIME_DOC4 = ''
-	public static final String P1_REPO_DATETIMERANGE_DOC4 = '09-01-2018 12:00:00 AM'
 
-	public static final String P1_REPO_DATETIMERANGEFROM_DATE_DOC4 = '31'
-	public static final String P1_REPO_DATETIMERANGEFROM_MONTH_DOC4 = 'Aug'
-	public static final String P1_REPO_DATETIMERANGEFROM_YEAR_DOC4 = '2018'
-	public static final String P1_REPO_DATETIMERANGEFROM_DOC4 = '08-31-2018 12:00:00 AM'
-	public static final String P1_REPO_DATETIMERANGETO_DATE_DOC4 = '2'
-	public static final String P1_REPO_DATETIMERANGETO_MONTH_DOC4 = 'Sep'
-	public static final String P1_REPO_DATETIMERANGETO_YEAR_DOC4 = '2018'
-	public static final String P1_REPO_DATETIMERANGETO_DOC4 = '09-02-2018 12:00:00 AM'
 
 	//	public static final String P1_REPO_BMTEXT_DOC1 = 'TEXT'
 	//	public static final String P1_REPO_BMSTRING_DOC1 = 'STRING REQ'
@@ -232,9 +236,6 @@ public class Consts {
 	public static final String P1_REPO_DATERANGEFROM_MONTH_DOC4 = 'Aug'
 	public static final String P1_REPO_DATERANGEFROM_YEAR_DOC4 = '2018'
 	public static final String P1_REPO_DATERANGEFROM_DOC4 = '08-31-2018'
-
-
-
 
 	public static final String P1_MW084_STARTDATE = '01-01-2018'
 	public static final String P1_MW084_ENDDATE = '12-31-2025'

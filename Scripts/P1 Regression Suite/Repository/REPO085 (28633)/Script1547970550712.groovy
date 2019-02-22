@@ -22,13 +22,8 @@ WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/h3
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
-'Select Repository - Advance Search tab'
-WebUI.selectOptionByLabel(findTestObject('Page_nGage_Dashboard/Repository/select_Repository Drop Down'), 'Date n Date time EDM', false)
-CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
-
-'Selinput_btnSearchect Search For - Advance Search tab'
-WebUI.selectOptionByLabel(findTestObject('Page_nGage_Dashboard/Repository/select_Search For Drop Down'), 'Date n Date time search class', false)
-CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
+'Select repository and search for value in drop down'
+CustomKeywords.'actions.Common.selectRepositoryAndSearchFor'('Date n Date time EDM', 'Date n Date time search class')
 
 'Enter date using calender picker'
 CustomKeywords.'actions.Calender.selectDate'(P1_REPO_DATERANGEFROM_DATE_DOC4, P1_REPO_DATERANGEFROM_MONTH_DOC4, P1_REPO_DATERANGEFROM_YEAR_DOC4, findTestObject('Page_nGage_Dashboard/Repository/calender_DateRange_From'))
