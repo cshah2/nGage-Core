@@ -18,17 +18,15 @@ import static utils.DateUtil.*
 'Login into application'
 CustomKeywords.'actions.Common.login'()
 
-'Create new Document'
-CustomKeywords.'actions.Common.createDocument_DateTimeDT'(P1_REPO_BMDATE_DOC1, P1_REPO_DATERANGE_DOC1, P1_REPO_BMDATETIME_DOC1, P1_REPO_DATETIMERANGE_DOC1)
-CustomKeywords.'actions.Common.createDocument_DateTimeDT'(P1_REPO_BMDATE_DOC2, P1_REPO_DATERANGE_DOC2, P1_REPO_BMDATETIME_DOC2, P1_REPO_DATETIMERANGE_DOC2)
-CustomKeywords.'actions.Common.createDocument_DateTimeDT'(P1_REPO_BMDATE_DOC3, P1_REPO_DATERANGE_DOC3, P1_REPO_BMDATETIME_DOC3, P1_REPO_DATETIMERANGE_DOC3)
+'Create all date filter data if not present'
+CustomKeywords.'actions.Common.createDateFilterDataRepository'()
 
 'Click on Repository Menu'
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/h3_Repository Menu'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
-String filter_BM_Date = P1_REPO_BMDATE_DOC2
+String filter_BM_Date = P1_REPO_DOCC_BMDATE
 
 'Select repository and search for value in drop down'
 CustomKeywords.'actions.Common.selectRepositoryAndSearchFor'('Date n Date time EDM', 'Date n Date time search class')
@@ -54,3 +52,6 @@ CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dash
 'Get the cell value to verify date format'
 int colNo_BMDate = CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Page_nGage_Dashboard/Repository/table_Header_SearchResults'), 'BM Date')
 CustomKeywords.'actions.Table.verifyDateFilter'(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/table_SearchResults'), colNo_BMDate, filter_BM_Date, '', '>=')
+CustomKeywords.'actions.Table.verifyRecordPresentInColumn'(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/table_SearchResults'), colNo_BMDate, P1_REPO_DOCC_BMDATE)
+CustomKeywords.'actions.Table.verifyRecordPresentInColumn'(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/table_SearchResults'), colNo_BMDate, P1_REPO_DOCD_BMDATE)
+CustomKeywords.'actions.Table.verifyRecordPresentInColumn'(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/table_SearchResults'), colNo_BMDate, P1_REPO_DOCE_BMDATE)

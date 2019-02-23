@@ -18,15 +18,15 @@ import static utils.DateUtil.*
 'Login into application'
 CustomKeywords.'actions.Common.login'()
 
-'Create new Document'
-CustomKeywords.'actions.Common.createDocument_DateTimeDT'(P1_REPO_BMDATE_DOC1, P1_REPO_DATERANGE_DOC1, P1_REPO_BMDATETIME_DOC1, P1_REPO_DATETIMERANGE_DOC1)
+'Create all date filter data if not present'
+CustomKeywords.'actions.Common.createDateFilterDataRepository'()
 
 'Click on Repository Menu'
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/h3_Repository Menu'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
-String filter_BM_DateTime = convert(P1_REPO_BMDATETIME_DOC1, FORMAT_DATETIME, FORMAT_DATE)
+String filter_BM_DateTime = convert(P1_REPO_DOCC_BMDATETIME, FORMAT_DATETIME, FORMAT_DATE)
 
 'Select repository and search for value in drop down'
 CustomKeywords.'actions.Common.selectRepositoryAndSearchFor'('Date n Date time EDM', 'Date n Date time search class')
@@ -48,6 +48,7 @@ CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dash
 'Get the cell value to verify date format'
 int colNo_BMDateTime = CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Page_nGage_Dashboard/Repository/table_Header_SearchResults'), 'BM DateTime')
 CustomKeywords.'actions.Table.verifyDateFilter'(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/table_SearchResults'), colNo_BMDateTime, filter_BM_DateTime, '', '=')
+CustomKeywords.'actions.Table.verifyRecordPresentInColumn'(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/table_SearchResults'), colNo_BMDateTime, P1_REPO_DOCC_BMDATETIME)
 
 'Verify Date format in cell'
 String dateValue = CustomKeywords.'actions.Table.getCellText'(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/table_SearchResults'), 1, colNo_BMDateTime)

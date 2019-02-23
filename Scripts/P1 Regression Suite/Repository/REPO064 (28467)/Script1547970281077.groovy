@@ -17,9 +17,8 @@ import static utils.Consts.*
 'Login into application'
 CustomKeywords.'actions.Common.login'()
 
-'Create new Document'
-CustomKeywords.'actions.Common.createDocument_DateTimeDT'(P1_REPO_BMDATE_DOC1, P1_REPO_DATERANGE_DOC1, P1_REPO_BMDATETIME_DOC1, P1_REPO_DATETIMERANGE_DOC1)
-CustomKeywords.'actions.Common.createDocument_DateTimeDT'(P1_REPO_BMDATE_DOC3, P1_REPO_DATERANGE_DOC3, P1_REPO_BMDATETIME_DOC3, P1_REPO_DATETIMERANGE_DOC3)
+'Create all date filter data if not present'
+CustomKeywords.'actions.Common.createDateFilterDataRepository'()
 
 'Click on Repository Menu'
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/h3_Repository Menu'))

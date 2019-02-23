@@ -188,8 +188,49 @@ public class Consts {
 	public static final String P1_REPO_INT_DOC11 = '30'
 	public static final String P1_REPO_DATETIMEREQ_DOC11 = '07-01-2018 03:00:00 AM'
 	public static final String P1_REPO_DATEREQ_DOC11 = '10-01-2018'
+	
+	//Document A-F - Date time DT - Filter test
+	public static final String P1_REPO_DOCA_BMDATE = '01-01-2018'
+	public static final String P1_REPO_DOCA_DATERANGE = '02-01-2018'
+	public static final String P1_REPO_DOCA_BMDATETIME = '03-01-2018 01:00:00 AM'
+	public static final String P1_REPO_DOCA_DATETIMERANGE = '04-01-2018 01:00:00 AM'
 
+	public static final String P1_REPO_DOCB_BMDATE = '01-03-2018'
+	public static final String P1_REPO_DOCB_DATERANGE = '02-03-2018'
+	public static final String P1_REPO_DOCB_BMDATETIME = '03-03-2018 01:00:00 AM'
+	public static final String P1_REPO_DOCB_DATETIMERANGE = '04-03-2018 03:00:00 AM'
 
+	public static final String P1_REPO_DOCC_BMDATE = '01-05-2018'
+	public static final String P1_REPO_DOCC_DATERANGE = '02-05-2018'
+	public static final String P1_REPO_DOCC_BMDATETIME = '03-05-2018 01:00:00 AM'
+	public static final String P1_REPO_DOCC_DATETIMERANGE = '04-05-2018 03:00:00 AM'
+
+	public static final String P1_REPO_DOCD_BMDATE = '01-07-2018'
+	public static final String P1_REPO_DOCD_DATERANGE = '02-07-2018'
+	public static final String P1_REPO_DOCD_BMDATETIME = '03-07-2018 01:00:00 AM'
+	public static final String P1_REPO_DOCD_DATETIMERANGE = '04-07-2018 03:00:00 AM'
+
+	public static final String P1_REPO_DOCE_BMDATE = '01-09-2018'
+	public static final String P1_REPO_DOCE_DATERANGE = '02-09-2018'
+	public static final String P1_REPO_DOCE_BMDATETIME = '03-09-2018 01:00:00 AM'
+	public static final String P1_REPO_DOCE_DATETIMERANGE = '04-09-2018 03:00:00 AM'
+
+	public static final String P1_REPO_DOCF_BMDATE = ''
+	public static final String P1_REPO_DOCF_DATERANGE = ''
+	public static final String P1_REPO_DOCF_BMDATETIME = ''
+	public static final String P1_REPO_DOCF_DATETIMERANGE = ''
+	
+//	public static final String P1_REPO_FILTER_DATE = P1_REPO_DOCC_BMDATE
+//	public static final String P1_REPO_FILTER_DATE_FROM = P1_REPO_DOCC_BMDATETIME
+//	public static final String P1_REPO_FILTER_DATE_TO = P1_REPO_DOCB_BMDATE
+//	public static final String P1_REPO_FILTER_DATETIME = P1_REPO_DOCD_BMDATE
+//	public static final String P1_REPO_FILTER_DATETIME_FROM = P1_REPO_DOCB_BMDATETIME
+//	public static final String P1_REPO_FILTER_DATETIME_TO = P1_REPO_DOCD_BMDATETIME
+	
+	
+
+	
+	
 	public static final String P1_REPO_BMDATE_DOC1 = '01-01-2018'
 	public static final String P1_REPO_DATERANGE_DOC1 = '03-01-2018'
 	public static final String P1_REPO_BMDATETIME_DOC1 = '06-01-2018 01:00:00 AM'
@@ -397,5 +438,12 @@ public class Consts {
 	public static boolean FLAG_P1_REPO_DOC0		= false
 	public static boolean FLAG_P1_REPO_DOC10	= false
 	public static boolean FLAG_P1_REPO_DOC11	= false
+	
+	public static boolean FLAG_P1_DOCA_REPO		= false
+	public static boolean FLAG_P1_DOCB_REPO		= false
+	public static boolean FLAG_P1_DOCC_REPO		= false
+	public static boolean FLAG_P1_DOCD_REPO		= false
+	public static boolean FLAG_P1_DOCE_REPO		= false
+	public static boolean FLAG_P1_DOCF_REPO		= false
 }
 

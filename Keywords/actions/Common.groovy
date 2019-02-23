@@ -32,6 +32,7 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 
 import internal.GlobalVariable as GlobalVariable
 import utils.WebUtil
+import static utils.Consts.*
 
 public class Common {
 
@@ -1587,16 +1588,16 @@ public class Common {
 		WebUI.selectOptionByLabel(findTestObject('Page_nGage_Dashboard/Repository/select_Search For Drop Down'), searchFor, false)
 		WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/Repository/filtersTable'), GlobalVariable.G_LongTimeout)
 	}
-	
+
 	@Keyword
 	def waitUntilDropDownHasOption(TestObject to, String option, int timeout) {
-		
+
 		def startTime = System.currentTimeMillis()
 		def endTime = startTime + TimeUnit.SECONDS.toMillis(timeout)
 		def currentTime = System.currentTimeMillis()
 
 		boolean isFound = false
-		
+
 		while(currentTime < endTime) {
 			try {
 				WebElement element = WebUtil.getWebElement(to)
@@ -1608,14 +1609,14 @@ public class Common {
 						break
 					}
 				}
-				
+
 				if(isFound) {
 					break
 				}
 				WebUI.switchToDefaultContent()
 				WebUI.delay(1)
 				currentTime = System.currentTimeMillis()
-	
+
 			}
 			catch(Exception e) {
 
@@ -1624,7 +1625,7 @@ public class Common {
 				currentTime = System.currentTimeMillis()
 			}
 		}
-		
+
 		WebUI.switchToDefaultContent()
 		if(isFound) {
 			KeywordUtil.markPassed('Drop down has option present')
@@ -1634,6 +1635,40 @@ public class Common {
 		}
 	}
 	
+	@Keyword
+	def createDateFilterDataRepository() {
+		if(!FLAG_P1_DOCA_REPO) {
+			createDocument_DateTimeDT(P1_REPO_DOCA_BMDATE, P1_REPO_DOCA_DATERANGE, P1_REPO_DOCA_BMDATETIME, P1_REPO_DOCA_DATETIMERANGE)
+			FLAG_P1_DOCA_REPO = true
+		}
+		
+		if(!FLAG_P1_DOCB_REPO) {
+			createDocument_DateTimeDT(P1_REPO_DOCB_BMDATE, P1_REPO_DOCB_DATERANGE, P1_REPO_DOCB_BMDATETIME, P1_REPO_DOCB_DATETIMERANGE)
+			FLAG_P1_DOCB_REPO = true
+		}
+		
+		if(!FLAG_P1_DOCC_REPO) {
+			createDocument_DateTimeDT(P1_REPO_DOCC_BMDATE, P1_REPO_DOCC_DATERANGE, P1_REPO_DOCC_BMDATETIME, P1_REPO_DOCC_DATETIMERANGE)
+			FLAG_P1_DOCC_REPO = true
+		}
+		
+		if(!FLAG_P1_DOCD_REPO) {
+			createDocument_DateTimeDT(P1_REPO_DOCD_BMDATE, P1_REPO_DOCD_DATERANGE, P1_REPO_DOCD_BMDATETIME, P1_REPO_DOCD_DATETIMERANGE)
+			FLAG_P1_DOCD_REPO = true
+		}
+		
+		if(!FLAG_P1_DOCE_REPO) {
+			createDocument_DateTimeDT(P1_REPO_DOCE_BMDATE, P1_REPO_DOCE_DATERANGE, P1_REPO_DOCE_BMDATETIME, P1_REPO_DOCE_DATETIMERANGE)
+			FLAG_P1_DOCE_REPO = true
+		}
+		
+		if(!FLAG_P1_DOCF_REPO) {
+			createDocument_DateTimeDT(P1_REPO_DOCF_BMDATE, P1_REPO_DOCF_DATERANGE, P1_REPO_DOCF_BMDATETIME, P1_REPO_DOCF_DATETIMERANGE)
+			FLAG_P1_DOCF_REPO = true
+		}
+		
+	}
+
 
 
 }

@@ -18,17 +18,16 @@ import static utils.DateUtil.*
 'Login into application'
 CustomKeywords.'actions.Common.login'()
 
-'Create new Document'
-CustomKeywords.'actions.Common.createDocument_DateTimeDT'(P1_REPO_BMDATE_DOC1, P1_REPO_DATERANGE_DOC1, P1_REPO_BMDATETIME_DOC1, P1_REPO_DATETIMERANGE_DOC1)
-CustomKeywords.'actions.Common.createDocument_DateTimeDT'(P1_REPO_BMDATE_DOC2, P1_REPO_DATERANGE_DOC2, P1_REPO_BMDATETIME_DOC2, P1_REPO_DATETIMERANGE_DOC2)
+'Create all date filter data if not present'
+CustomKeywords.'actions.Common.createDateFilterDataRepository'()
 
 'Click on Repository Menu'
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/h3_Repository Menu'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
-String filter_DateTimeRangeStart = convert(P1_REPO_DATETIMERANGE_DOC1, FORMAT_DATETIME, FORMAT_DATE)+' 12:00:01 AM'
-String filter_DateTimeRangeEnd = convert(P1_REPO_DATETIMERANGE_DOC1, FORMAT_DATETIME, FORMAT_DATE)+'  12:59:59 PM'
+String filter_DateTimeRangeStart = convert(P1_REPO_DOCB_DATETIMERANGE, FORMAT_DATETIME, FORMAT_DATE)+' 12:00:01 AM'
+String filter_DateTimeRangeEnd = convert(P1_REPO_DOCD_DATETIMERANGE, FORMAT_DATETIME, FORMAT_DATE)+'  12:59:59 PM'
 
 'Select repository and search for value in drop down'
 CustomKeywords.'actions.Common.selectRepositoryAndSearchFor'('Date n Date time EDM', 'Date n Date time search class')
@@ -55,3 +54,6 @@ CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dash
 'Get the cell value to verify date format'
 int colNo_DateTimeRange = CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Page_nGage_Dashboard/Repository/table_Header_SearchResults'), 'Date time range')
 CustomKeywords.'actions.Table.verifyDateTimeFilter'(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/table_SearchResults'), colNo_DateTimeRange, filter_DateTimeRangeStart, filter_DateTimeRangeEnd, 'between')
+CustomKeywords.'actions.Table.verifyRecordPresentInColumn'(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/table_SearchResults'), colNo_DateTimeRange, P1_REPO_DOCB_DATETIMERANGE)
+CustomKeywords.'actions.Table.verifyRecordPresentInColumn'(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/table_SearchResults'), colNo_DateTimeRange, P1_REPO_DOCC_DATETIMERANGE)
+CustomKeywords.'actions.Table.verifyRecordPresentInColumn'(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/table_SearchResults'), colNo_DateTimeRange, P1_REPO_DOCD_DATETIMERANGE)

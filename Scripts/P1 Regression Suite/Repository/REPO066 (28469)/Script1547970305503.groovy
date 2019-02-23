@@ -18,26 +18,18 @@ import static utils.Consts.*
 'Login into application'
 CustomKeywords.'actions.Common.login'()
 
-String BM_Date = P1_REPO_BMDATE_DOC0//Level1
-String DateRange = P1_REPO_DATERANGE_DOC0 // Level2
-String BM_DateTime = P1_REPO_BMDATETIME_DOC0 //Level 3
-String DateTimeRange = P1_REPO_DATETIMERANGE_DOC0 //Level 4
-
-if(!FLAG_P1_REPO_DOC0) {
-	'Create new Document'
-	CustomKeywords.'actions.Common.createDocument_DateTimeDT'(BM_Date, DateRange, BM_DateTime, DateTimeRange)
-	FLAG_P1_REPO_DOC0 = true
-}
+'Create all date filter data if not present'
+CustomKeywords.'actions.Common.createDateFilterDataRepository'()
 
 'Click on Repository Menu'
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/h3_Repository Menu'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
-String tree_BM_Date = BM_Date
-String tree_DateRange = DateRange
-String tree_BM_DateTime = convert(BM_DateTime, FORMAT_DATETIME, FORMAT_DATE) 
-String tree_DateTimeRange = convert(DateTimeRange, FORMAT_DATETIME, FORMAT_DATE)
+String tree_BM_Date = P1_REPO_DOCA_BMDATE
+String tree_DateRange = P1_REPO_DOCA_DATERANGE
+String tree_BM_DateTime = convert(P1_REPO_DOCA_BMDATETIME, FORMAT_DATETIME, FORMAT_DATE) 
+String tree_DateTimeRange = convert(P1_REPO_DOCA_DATETIMERANGE, FORMAT_DATETIME, FORMAT_DATE)
 
 CustomKeywords.'actions.MenuBar.verifyAllActivityNamesAreValidDate'('REPO', FORMAT_DATE, 'Date n Date time EDM','Date n Date time search class')
 CustomKeywords.'actions.MenuBar.verifyAllActivityNamesAreValidDate'('REPO', FORMAT_DATE, 'Date n Date time EDM','Date n Date time search class', tree_BM_Date)
