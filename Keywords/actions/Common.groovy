@@ -1342,7 +1342,7 @@ public class Common {
 
 	@Keyword
 	def verifyElementHasFocus(TestObject toLocator) {
-		WebUtil.delay(100)
+		WebUtil.delay(500)
 		WebElement element = WebUtil.getWebElement(toLocator)
 		WebDriver driver = DriverFactory.getWebDriver()
 		if(!element.equals(driver.switchTo().activeElement())) {
