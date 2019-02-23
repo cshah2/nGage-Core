@@ -149,6 +149,8 @@ public class Consts {
 	public static final String SMOKE_REPO_DATERANGE_DOC1_END_FILTER = '12-07-2018'
 
 
+	/* Refactored Documents*/
+
 	//Document 0 - Date time DT
 	public static final String P1_REPO_BMDATE_DOC0 = '02-10-2019'
 	public static final String P1_REPO_DATERANGE_DOC0 = '02-11-2019'
@@ -156,13 +158,13 @@ public class Consts {
 	public static final String P1_REPO_DATETIMERANGE_DOC0 = '02-14-2019 03:00:00 AM'
 	public static final String P1_REPO_DATERANGE_DOC0_FILTER_TO = '02-09-2019'
 	public static final String P1_REPO_DATERANGE_DOC0_FILTER_FROM = '02-13-2019'
-	
+
 	//Document 4 & 5 - Date time DT - Calender picker tests
 	public static final String P1_REPO_BMDATE_DOC4 = ''
 	public static final String P1_REPO_DATERANGE_DOC4 = ''
 	public static final String P1_REPO_BMDATETIME_DOC4 = ''
 	public static final String P1_REPO_DATETIMERANGE_DOC4 = '09-01-2018 12:00:00 AM'
-	
+
 	public static final String P1_REPO_BMDATE_DOC5 = '01-20-2018'
 	public static final String P1_REPO_DATERANGE_DOC5 = '03-20-2018'
 	public static final String P1_REPO_BMDATETIME_DOC5 = '06-20-2018 01:00:00 AM'
@@ -188,7 +190,7 @@ public class Consts {
 	public static final String P1_REPO_INT_DOC11 = '30'
 	public static final String P1_REPO_DATETIMEREQ_DOC11 = '07-01-2018 03:00:00 AM'
 	public static final String P1_REPO_DATEREQ_DOC11 = '10-01-2018'
-	
+
 	//Document A-F - Date time DT - Filter test
 	public static final String P1_REPO_DOCA_BMDATE = '01-01-2018'
 	public static final String P1_REPO_DOCA_DATERANGE = '02-01-2018'
@@ -219,18 +221,67 @@ public class Consts {
 	public static final String P1_REPO_DOCF_DATERANGE = ''
 	public static final String P1_REPO_DOCF_BMDATETIME = ''
 	public static final String P1_REPO_DOCF_DATETIMERANGE = ''
-	
-//	public static final String P1_REPO_FILTER_DATE = P1_REPO_DOCC_BMDATE
-//	public static final String P1_REPO_FILTER_DATE_FROM = P1_REPO_DOCC_BMDATETIME
-//	public static final String P1_REPO_FILTER_DATE_TO = P1_REPO_DOCB_BMDATE
-//	public static final String P1_REPO_FILTER_DATETIME = P1_REPO_DOCD_BMDATE
-//	public static final String P1_REPO_FILTER_DATETIME_FROM = P1_REPO_DOCB_BMDATETIME
-//	public static final String P1_REPO_FILTER_DATETIME_TO = P1_REPO_DOCD_BMDATETIME
-	
-	
 
-	
-	
+	//Document for testing Folder configuration
+	//Document 0 - Loan Application Has document
+	public static final String P1_MW_DOC0_FIRSTNAME = 'Chintan'
+	public static final String P1_MW_DOC0_LASTNAME = 'Shah'
+	public static final String P1_MW_DOC0_AMOUNT = '5000'
+
+	//Document 1 - Loan Application no document
+	public static final String P1_MW_DOC1_FIRSTNAME = 'Chintan'
+	public static final String P1_MW_DOC1_LASTNAME = 'Shah'
+	public static final String P1_MW_DOC1_AMOUNT = '1000'
+
+	//Document 2 - Loan Application no document
+	public static final String P1_MW_DOC2_FIRSTNAME = 'Atul'
+	public static final String P1_MW_DOC2_LASTNAME = 'Mirvankar'
+	public static final String P1_MW_DOC2_AMOUNT = '2000'
+
+	//Document 3 - Loan Application no document //Lock Document
+	public static final String P1_MW_DOC3_FIRSTNAME = 'Prasad'
+	public static final String P1_MW_DOC3_LASTNAME = 'Patil'
+	public static final String P1_MW_DOC3_AMOUNT = '2500'
+
+	//Document 4 - Loan Application no document // Assigned to User Group
+	public static final String P1_MW_DOC4_FIRSTNAME = 'Sanyogita'
+	public static final String P1_MW_DOC4_LASTNAME = 'Apte'
+	public static final String P1_MW_DOC4_AMOUNT = '3000'
+	public static String P1_MW_DOC4_DOCID = ''
+
+	//Document 5 - Loan Application no document // Assign to User
+	public static final String P1_MW_DOC5_FIRSTNAME = 'Manoj'
+	public static final String P1_MW_DOC5_LASTNAME = 'Gosavi'
+	public static final String P1_MW_DOC5_AMOUNT = '0'
+	public static String P1_MW_DOC5_DOCID = ''
+
+	//Document 6 - Loan Application no document // Assign to User
+	public static final String P1_MW_DOC6_FIRSTNAME = 'Amol'
+	public static final String P1_MW_DOC6_LASTNAME = 'Patil'
+	public static final String P1_MW_DOC6_AMOUNT = '6000'
+	public static String P1_MW_DOC6_DOCID = ''
+
+
+
+
+
+
+
+
+
+
+
+	//	public static final String P1_REPO_FILTER_DATE = P1_REPO_DOCC_BMDATE
+	//	public static final String P1_REPO_FILTER_DATE_FROM = P1_REPO_DOCC_BMDATETIME
+	//	public static final String P1_REPO_FILTER_DATE_TO = P1_REPO_DOCB_BMDATE
+	//	public static final String P1_REPO_FILTER_DATETIME = P1_REPO_DOCD_BMDATE
+	//	public static final String P1_REPO_FILTER_DATETIME_FROM = P1_REPO_DOCB_BMDATETIME
+	//	public static final String P1_REPO_FILTER_DATETIME_TO = P1_REPO_DOCD_BMDATETIME
+
+
+
+
+
 	public static final String P1_REPO_BMDATE_DOC1 = '01-01-2018'
 	public static final String P1_REPO_DATERANGE_DOC1 = '03-01-2018'
 	public static final String P1_REPO_BMDATETIME_DOC1 = '06-01-2018 01:00:00 AM'
@@ -438,12 +489,20 @@ public class Consts {
 	public static boolean FLAG_P1_REPO_DOC0		= false
 	public static boolean FLAG_P1_REPO_DOC10	= false
 	public static boolean FLAG_P1_REPO_DOC11	= false
-	
 	public static boolean FLAG_P1_DOCA_REPO		= false
 	public static boolean FLAG_P1_DOCB_REPO		= false
 	public static boolean FLAG_P1_DOCC_REPO		= false
 	public static boolean FLAG_P1_DOCD_REPO		= false
 	public static boolean FLAG_P1_DOCE_REPO		= false
 	public static boolean FLAG_P1_DOCF_REPO		= false
+
+	public static boolean FLAG_P1_MW_DOC0 		= false
+	public static boolean FLAG_P1_MW_DOC1 		= false
+	public static boolean FLAG_P1_MW_DOC2 		= false
+	public static boolean FLAG_P1_MW_DOC3 		= false
+	public static boolean FLAG_P1_MW_DOC4 		= false
+	public static boolean FLAG_P1_MW_DOC5 		= false
+	public static boolean FLAG_P1_MW_DOC6 		= false
+
 }
 

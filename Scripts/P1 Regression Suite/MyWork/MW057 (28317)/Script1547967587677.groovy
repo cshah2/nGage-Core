@@ -18,12 +18,8 @@ import static utils.Consts.*
 'Login Into Application'
 CustomKeywords.'actions.Common.login'()
 
-'Create Documents'
-CustomKeywords.'actions.Common.createDocument_VerticalMenuWizard'(P1_LOANAPPL_FIRSTNAME_DOC1, P1_LOANAPPL_LASTNAME_DOC1, P1_LOANAPPL_AMOUNT_DOC1, '')
-String pdfPath = RunConfiguration.getProjectDir().replace('/', '\\')+'\\Data Files\\FileUploads\\TextPDF.pdf'
-CustomKeywords.'actions.Common.createDocument_VerticalMenuWizard'(P1_LOANAPPL_FIRSTNAME_DOC2, P1_LOANAPPL_LASTNAME_DOC2, P1_LOANAPPL_AMOUNT_DOC2, pdfPath)
-String docPath = RunConfiguration.getProjectDir().replace('/', '\\')+'\\Data Files\\FileUploads\\TextPDF.docx'
-CustomKeywords.'actions.Common.createDocument_VerticalMenuWizard'(P1_LOANAPPL_FIRSTNAME_DOC3, P1_LOANAPPL_LASTNAME_DOC3, P1_LOANAPPL_AMOUNT_DOC3, docPath)
+'Create Data for verifying Folder configuarion'
+CustomKeywords.'actions.Common.createFolderingDataMyWork'()
 
 'Click on My Work link from left menu'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_My Work Left Menu'))

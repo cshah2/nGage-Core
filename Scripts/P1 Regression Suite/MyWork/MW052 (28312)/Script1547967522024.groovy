@@ -17,9 +17,8 @@ import static utils.Consts.*
 'Login Into Application'
 CustomKeywords.'actions.Common.login'()
 
-'Create Documents'
-CustomKeywords.'actions.Common.createDocument_VerticalMenuWizard'(P1_LOANAPPL_FIRSTNAME_DOC1, P1_LOANAPPL_LASTNAME_DOC1, P1_LOANAPPL_AMOUNT_DOC1, '')
-CustomKeywords.'actions.Common.createDocument_VerticalMenuWizard'(P1_LOANAPPL_FIRSTNAME_DOC2, P1_LOANAPPL_LASTNAME_DOC2, P1_LOANAPPL_AMOUNT_DOC2, '')
+'Create Data for verifying Folder configuarion'
+CustomKeywords.'actions.Common.createFolderingDataMyWork'()
 
 'Click on My Work link from left menu'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_My Work Left Menu'))
@@ -54,11 +53,11 @@ WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Folde
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
 'Verify Folders are configured as per Firstname value'
-CustomKeywords.'actions.MenuBar.verifySubMenuPresent'('MY_WORK', P1_LOANAPPL_FIRSTNAME_DOC1, 'Processes', 'Loan Interactive', 'Loan Application')
-CustomKeywords.'actions.MenuBar.verifySubMenuPresent'('MY_WORK', P1_LOANAPPL_FIRSTNAME_DOC2, 'Processes', 'Loan Interactive', 'Loan Application')
+CustomKeywords.'actions.MenuBar.verifySubMenuPresent'('MY_WORK', P1_MW_DOC0_FIRSTNAME, 'Processes', 'Loan Interactive', 'Loan Application')
+CustomKeywords.'actions.MenuBar.verifySubMenuPresent'('MY_WORK', P1_MW_DOC2_FIRSTNAME, 'Processes', 'Loan Interactive', 'Loan Application')
 
 'right click on submenu under loan approval'
-CustomKeywords.'actions.MenuBar.rightClickTreeMenu'('MY_WORK', 'Processes', 'Loan Interactive', 'Loan Application', P1_LOANAPPL_FIRSTNAME_DOC1)
+CustomKeywords.'actions.MenuBar.rightClickTreeMenu'('MY_WORK', 'Processes', 'Loan Interactive', 'Loan Application', P1_MW_DOC0_FIRSTNAME)
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
 'Select Foldering configuration option from context menu'
@@ -81,8 +80,8 @@ WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Folde
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
 'Verify Folders are configured as per Firstname value'
-CustomKeywords.'actions.MenuBar.verifySubMenuPresent'('MY_WORK', P1_LOANAPPL_FIRSTNAME_DOC1, 'Processes', 'Loan Interactive', 'Loan Application')
-CustomKeywords.'actions.MenuBar.verifySubMenuPresent'('MY_WORK', P1_LOANAPPL_FIRSTNAME_DOC2, 'Processes', 'Loan Interactive', 'Loan Application')
+CustomKeywords.'actions.MenuBar.verifySubMenuPresent'('MY_WORK', P1_MW_DOC0_FIRSTNAME, 'Processes', 'Loan Interactive', 'Loan Application')
+CustomKeywords.'actions.MenuBar.verifySubMenuPresent'('MY_WORK', P1_MW_DOC2_FIRSTNAME, 'Processes', 'Loan Interactive', 'Loan Application')
 
 'Get All subMenus from under Loan application'
 List<String> subMenus = CustomKeywords.'actions.MenuBar.getAllSubMenus'('MY_WORK', 'Processes', 'Loan Interactive', 'Loan Application')

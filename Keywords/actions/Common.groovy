@@ -1634,39 +1634,60 @@ public class Common {
 			KeywordUtil.markFailedAndStop('Drop down does not have provided option in given time '+GlobalVariable.G_LongTimeout)
 		}
 	}
-	
+
 	@Keyword
 	def createDateFilterDataRepository() {
 		if(!FLAG_P1_DOCA_REPO) {
 			createDocument_DateTimeDT(P1_REPO_DOCA_BMDATE, P1_REPO_DOCA_DATERANGE, P1_REPO_DOCA_BMDATETIME, P1_REPO_DOCA_DATETIMERANGE)
 			FLAG_P1_DOCA_REPO = true
 		}
-		
+
 		if(!FLAG_P1_DOCB_REPO) {
 			createDocument_DateTimeDT(P1_REPO_DOCB_BMDATE, P1_REPO_DOCB_DATERANGE, P1_REPO_DOCB_BMDATETIME, P1_REPO_DOCB_DATETIMERANGE)
 			FLAG_P1_DOCB_REPO = true
 		}
-		
+
 		if(!FLAG_P1_DOCC_REPO) {
 			createDocument_DateTimeDT(P1_REPO_DOCC_BMDATE, P1_REPO_DOCC_DATERANGE, P1_REPO_DOCC_BMDATETIME, P1_REPO_DOCC_DATETIMERANGE)
 			FLAG_P1_DOCC_REPO = true
 		}
-		
+
 		if(!FLAG_P1_DOCD_REPO) {
 			createDocument_DateTimeDT(P1_REPO_DOCD_BMDATE, P1_REPO_DOCD_DATERANGE, P1_REPO_DOCD_BMDATETIME, P1_REPO_DOCD_DATETIMERANGE)
 			FLAG_P1_DOCD_REPO = true
 		}
-		
+
 		if(!FLAG_P1_DOCE_REPO) {
 			createDocument_DateTimeDT(P1_REPO_DOCE_BMDATE, P1_REPO_DOCE_DATERANGE, P1_REPO_DOCE_BMDATETIME, P1_REPO_DOCE_DATETIMERANGE)
 			FLAG_P1_DOCE_REPO = true
 		}
-		
+
 		if(!FLAG_P1_DOCF_REPO) {
 			createDocument_DateTimeDT(P1_REPO_DOCF_BMDATE, P1_REPO_DOCF_DATERANGE, P1_REPO_DOCF_BMDATETIME, P1_REPO_DOCF_DATETIMERANGE)
 			FLAG_P1_DOCF_REPO = true
 		}
+
+	}
+	
+	@Keyword
+	def createFolderingDataMyWork() {
+		String pdfPath = RunConfiguration.getProjectDir().replace('/', '\\')+'\\Data Files\\FileUploads\\TextPDF.pdf'
+		String docPath = RunConfiguration.getProjectDir().replace('/', '\\')+'\\Data Files\\FileUploads\\TextPDF.docx'
 		
+		if(!FLAG_P1_MW_DOC0) {
+			createDocument_VerticalMenuWizard(P1_MW_DOC0_FIRSTNAME, P1_MW_DOC0_LASTNAME, P1_MW_DOC0_AMOUNT, pdfPath)
+			FLAG_P1_MW_DOC0 = true
+		}
+		
+		if(!FLAG_P1_MW_DOC1) {
+			createDocument_VerticalMenuWizard(P1_MW_DOC1_FIRSTNAME, P1_MW_DOC1_LASTNAME, P1_MW_DOC1_AMOUNT, docPath)
+			FLAG_P1_MW_DOC1 = true
+		}
+
+		if(!FLAG_P1_MW_DOC2) {
+			createDocument_VerticalMenuWizard(P1_MW_DOC2_FIRSTNAME, P1_MW_DOC2_LASTNAME, P1_MW_DOC2_AMOUNT, '')
+			FLAG_P1_MW_DOC2 = true
+		}
 	}
 
 

@@ -17,17 +17,22 @@ import static utils.Consts.*
 'Login Into Application'
 CustomKeywords.'actions.Common.login'()
 
-'Create Documents'
-CustomKeywords.'actions.Common.createDocument_ProcessForTaskDT'(P1_MW_PROCESSFORTASK_CUSTOMERNAME_DOC1, P1_MW_PROCESSFORTASK_CUSTOMERDESC_DOC1)
-CustomKeywords.'actions.Common.createDocument_ProcessForTaskDT'(P1_MW_PROCESSFORTASK_CUSTOMERNAME_DOC2, P1_MW_PROCESSFORTASK_CUSTOMERDESC_DOC2)
+'Create Data for verifying Folder configuarion'
+CustomKeywords.'actions.Common.createFolderingDataMyWork'()
+
+//Create Additional document and lock the same.
+if(!FLAG_P1_MW_DOC3) {
+	CustomKeywords.'actions.Common.createDocument_VerticalMenuWizard'(P1_MW_DOC3_FIRSTNAME, P1_MW_DOC3_LASTNAME, P1_MW_DOC3_AMOUNT, '')
+	FLAG_P1_MW_DOC3 = true
+}
 
 'Click on My Work link from left menu'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_My Work Left Menu'))
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_iframe_105'))
 
-'Click Tree Menu ProcessforTaskDT - Activity A'
-CustomKeywords.'actions.MenuBar.clickTreeMenu'('MY_WORK', 'Processes', 'ProcessforTask', 'Activity A')
+'Click Tree Menu Loan Interactive - Loan application'
+CustomKeywords.'actions.MenuBar.clickTreeMenu'('MY_WORK', 'Processes', 'Loan Interactive', 'Loan Application')
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_work_items'))
 
 'Sort records by DocID descending'
@@ -43,19 +48,20 @@ WebUI.switchToWindowIndex(1)
 WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 WebUI.closeWindowIndex(1)
 
+//Test Steps
 'Switch to parent window'
 WebUI.switchToWindowIndex(0)
 
-'Right click ProcessForTaskDT - Activity A'
-CustomKeywords.'actions.MenuBar.rightClickTreeMenu'('MY_WORK', 'Processes', 'ProcessforTask', 'Activity A')
-CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_work_items'))
+'right click on (option)loan approval'
+CustomKeywords.'actions.MenuBar.rightClickTreeMenu'('MY_WORK', 'Processes', 'Loan Interactive', 'Loan Application')
+WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
-'Open Foldering configuration'
-CustomKeywords.'actions.ContextMenu.verifyOptionPresent'(findTestObject('Page_nGage_Dashboard/contextMenuOptions'), 'Foldering Configuration')
+'Select Foldering configuration option from context menu'
 CustomKeywords.'actions.ContextMenu.clickOption'(findTestObject('Page_nGage_Dashboard/contextMenuOptions'), 'Foldering Configuration')
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_work_items'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/Folder_Configuration/iframe_Close_iframe_folderingC'))
 
-'Click on Restore Defaults button'
+'Click on Restore defaults'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/Folder_Configuration/button_Restore Default'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/Folder_Configuration/iframe_Close_iframe_folderingC'))
 
@@ -72,11 +78,11 @@ WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/Folder_Configuration/bu
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
 'Verify Sub Menus present under Activity A'
-CustomKeywords.'actions.MenuBar.verifySubMenuPresent'('MY_WORK', 'Locked', 'Processes', 'ProcessforTask', 'Activity A')
-CustomKeywords.'actions.MenuBar.verifySubMenuPresent'('MY_WORK', 'UnLocked', 'Processes', 'ProcessforTask', 'Activity A')
+CustomKeywords.'actions.MenuBar.verifySubMenuPresent'('MY_WORK', 'Locked', 'Processes', 'Loan Interactive', 'Loan Application')
+CustomKeywords.'actions.MenuBar.verifySubMenuPresent'('MY_WORK', 'UnLocked', 'Processes', 'Loan Interactive', 'Loan Application')
 
 'Click Tree Menu - Locked'
-CustomKeywords.'actions.MenuBar.clickTreeMenu'('MY_WORK', 'Processes', 'ProcessforTask', 'Activity A', 'Locked')
+CustomKeywords.'actions.MenuBar.clickTreeMenu'('MY_WORK', 'Processes', 'Loan Interactive', 'Loan Application', 'Locked')
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_work_items'))
 
 'Sort records by DocID descending'
@@ -84,14 +90,14 @@ CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dash
 CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/My_Work/tableHeader_MyWorkSearchResult'), 'Doc ID')
 
 'Verify record count in Activity matches with record count in table'
-int rowCount_Locked = CustomKeywords.'actions.MenuBar.getRecordCountInActivity'('MY_WORK', 'Processes', 'ProcessforTask', 'Activity A', 'Locked') 
+int rowCount_Locked = CustomKeywords.'actions.MenuBar.getRecordCountInActivity'('MY_WORK', 'Processes', 'Loan Interactive', 'Loan Application', 'Locked') 
 CustomKeywords.'actions.Common.verifyTotalRecordCountFromPageSummary'(findTestObject('Page_nGage_Dashboard/My_Work/table_pagination_summary'), rowCount_Locked)
 
 'Verify all records displays Lock icon'
 CustomKeywords.'actions.Table.verifyAllRecordsDisplayLockIcon'(findTestObject('Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), 3)
 
 'Click Tree Menu - Unlocked'
-CustomKeywords.'actions.MenuBar.clickTreeMenu'('MY_WORK', 'Processes', 'ProcessforTask', 'Activity A', 'UnLocked')
+CustomKeywords.'actions.MenuBar.clickTreeMenu'('MY_WORK', 'Processes', 'Loan Interactive', 'Loan Application', 'UnLocked')
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_work_items'))
 
 'Sort records by DocID descending'
@@ -99,21 +105,22 @@ CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dash
 CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/My_Work/tableHeader_MyWorkSearchResult'), 'Doc ID')
 
 'Verify record count in Activity matches with record count in table'
-int rowCount_UnLocked = CustomKeywords.'actions.MenuBar.getRecordCountInActivity'('MY_WORK', 'Processes', 'ProcessforTask', 'Activity A', 'UnLocked')
+int rowCount_UnLocked = CustomKeywords.'actions.MenuBar.getRecordCountInActivity'('MY_WORK', 'Processes', 'Loan Interactive', 'Loan Application', 'UnLocked')
 CustomKeywords.'actions.Common.verifyTotalRecordCountFromPageSummary'(findTestObject('Page_nGage_Dashboard/My_Work/table_pagination_summary'), rowCount_UnLocked)
 
 'Verify all records does not displays Lock icon'
 CustomKeywords.'actions.Table.verifyAllRecordsDoesNotDisplayLockIcon'(findTestObject('Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), 3)
 
-'Right click ProcessForTaskDT - Activity A'
-CustomKeywords.'actions.MenuBar.rightClickTreeMenu'('MY_WORK', 'Processes', 'ProcessforTask', 'Activity A')
+'right click on (option)loan approval'
+CustomKeywords.'actions.MenuBar.rightClickTreeMenu'('MY_WORK', 'Processes', 'Loan Interactive', 'Loan Application')
+WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
-'Open Foldering configuration'
-CustomKeywords.'actions.ContextMenu.verifyOptionPresent'(findTestObject('Page_nGage_Dashboard/contextMenuOptions'), 'Foldering Configuration')
+'Select Foldering configuration option from context menu'
 CustomKeywords.'actions.ContextMenu.clickOption'(findTestObject('Page_nGage_Dashboard/contextMenuOptions'), 'Foldering Configuration')
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_work_items'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/Folder_Configuration/iframe_Close_iframe_folderingC'))
 
-'Click on Restore Defaults button'
+'Click on Restore defaults'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/Folder_Configuration/button_Restore Default'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/Folder_Configuration/iframe_Close_iframe_folderingC'))
 
