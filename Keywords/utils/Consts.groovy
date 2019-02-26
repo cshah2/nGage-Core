@@ -149,8 +149,7 @@ public class Consts {
 	public static final String SMOKE_REPO_DATERANGE_DOC1_END_FILTER = '12-07-2018'
 
 
-	/* Refactored Documents*/
-
+	/* ######################## Refactored Documents ######################## */
 	//Document 0 - Date time DT
 	public static final String P1_REPO_BMDATE_DOC0 = '02-10-2019'
 	public static final String P1_REPO_DATERANGE_DOC0 = '02-11-2019'
@@ -222,7 +221,7 @@ public class Consts {
 	public static final String P1_REPO_DOCF_BMDATETIME = ''
 	public static final String P1_REPO_DOCF_DATETIMERANGE = ''
 
-	//Document for testing Folder configuration
+	//Document for testing Folder configuration  (NO EDIT UNCHECKED)
 	//Document 0 - Loan Application Has document
 	public static final String P1_MW_DOC0_FIRSTNAME = 'Chintan'
 	public static final String P1_MW_DOC0_LASTNAME = 'Shah'
@@ -261,7 +260,20 @@ public class Consts {
 	public static final String P1_MW_DOC6_AMOUNT = '6000'
 	public static String P1_MW_DOC6_DOCID = ''
 
+	//Document 7 - Event for Required Field 
+	public static final String P1_MW_DOC7_DROPDOWN = 'Value 1'
+	public static final String P1_MW_DOC7_TEXT = 'prasad'
+	public static final String P1_MW_DOC7_DATE = '01-01-2018'
 
+	//Document 8 - Event for Required Field
+	public static final String P1_MW_DOC8_DROPDOWN = 'Value 2'
+	public static final String P1_MW_DOC8_TEXT = 'chintan'
+	public static final String P1_MW_DOC8_DATE = '01-01-2019'
+
+	//Document for charts testing
+	//Document 9 - Closure Action
+	public static final String P1_MW_DOC9_CUSTNAME = 'Chintan Shah'
+	public static final String P1_MW_DOC9_CUSTDESC = 'Automation test document'
 
 
 
@@ -278,20 +290,15 @@ public class Consts {
 	//	public static final String P1_REPO_FILTER_DATETIME_FROM = P1_REPO_DOCB_BMDATETIME
 	//	public static final String P1_REPO_FILTER_DATETIME_TO = P1_REPO_DOCD_BMDATETIME
 
+	//	public static final String P1_REPO_BMDATE_DOC1 = '01-01-2018'
+	//	public static final String P1_REPO_DATERANGE_DOC1 = '03-01-2018'
+	//	public static final String P1_REPO_BMDATETIME_DOC1 = '06-01-2018 01:00:00 AM'
+	//	public static final String P1_REPO_DATETIMERANGE_DOC1 = '09-01-2018 03:00:00 AM'
 
-
-
-
-	public static final String P1_REPO_BMDATE_DOC1 = '01-01-2018'
-	public static final String P1_REPO_DATERANGE_DOC1 = '03-01-2018'
-	public static final String P1_REPO_BMDATETIME_DOC1 = '06-01-2018 01:00:00 AM'
-	public static final String P1_REPO_DATETIMERANGE_DOC1 = '09-01-2018 03:00:00 AM'
-
-	public static final String P1_REPO_BMDATE_DOC2 = '01-15-2018'
-	public static final String P1_REPO_DATERANGE_DOC2 = '03-15-2018'
-	public static final String P1_REPO_BMDATETIME_DOC2 = '06-15-2018 01:00:00 AM'
-	public static final String P1_REPO_DATETIMERANGE_DOC2 = '09-15-2018 03:00:00 AM'
-
+	//	public static final String P1_REPO_BMDATE_DOC2 = '01-15-2018'
+	//	public static final String P1_REPO_DATERANGE_DOC2 = '03-15-2018'
+	//	public static final String P1_REPO_BMDATETIME_DOC2 = '06-15-2018 01:00:00 AM'
+	//	public static final String P1_REPO_DATETIMERANGE_DOC2 = '09-15-2018 03:00:00 AM'
 
 	//	public static final String P1_REPO_BMDATE_DOC6 = '12-01-2018'
 	//	public static final String P1_REPO_DATERANGE_DOC6 = '12-05-2018'
@@ -300,17 +307,14 @@ public class Consts {
 	//	public static final String P1_REPO_DATERANGE_FILTER_END = '12-07-2018'
 	//	public static final String P1_REPO_DATERANGE_FILTER_START = '12-03-2018'
 
-	public static final String P1_REPO_BMDATE_DOC3 = ''
-	public static final String P1_REPO_DATERANGE_DOC3 = ''
-	public static final String P1_REPO_BMDATETIME_DOC3 = ''
-	public static final String P1_REPO_DATETIMERANGE_DOC3 = ''
+	//	public static final String P1_REPO_BMDATE_DOC3 = ''
+	//	public static final String P1_REPO_DATERANGE_DOC3 = ''
+	//	public static final String P1_REPO_BMDATETIME_DOC3 = ''
+	//	public static final String P1_REPO_DATETIMERANGE_DOC3 = ''
 
 	//	public static final String P1_REPO_RENDERALL_INTERGER_DOC1 = '10'
 	//	public static final String P1_REPO_RENDERALL_STRING_DOC1 = 'CShah'
 	//	public static final String P1_REPO_RENDERALL_DATE_DOC1 = '01-01-2020'
-
-
-
 
 	//	public static final String P1_REPO_BMTEXT_DOC1 = 'TEXT'
 	//	public static final String P1_REPO_BMSTRING_DOC1 = 'STRING REQ'
@@ -503,6 +507,9 @@ public class Consts {
 	public static boolean FLAG_P1_MW_DOC4 		= false
 	public static boolean FLAG_P1_MW_DOC5 		= false
 	public static boolean FLAG_P1_MW_DOC6 		= false
+	public static boolean FLAG_P1_MW_DOC7 		= false
+	public static boolean FLAG_P1_MW_DOC8 		= false
+	public static boolean FLAG_P1_MW_DOC9 		= false
 
 }
 

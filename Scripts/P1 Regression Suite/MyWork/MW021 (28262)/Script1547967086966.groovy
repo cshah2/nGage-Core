@@ -12,12 +12,16 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
+import static utils.Consts.*
 
 'Login Into Application'
 CustomKeywords.'actions.Common.login'()
 
 'Create Document'
-CustomKeywords.'actions.Common.createDocument_ClosureAction'('Chintan Shah', 'MW021 - Doc1')
+if(!FLAG_P1_MW_DOC7) {
+	CustomKeywords.'actions.Common.createDocument_EventForRequiredField'(P1_MW_DOC7_DROPDOWN, P1_MW_DOC7_TEXT, P1_MW_DOC7_DATE)
+	FLAG_P1_MW_DOC7 = true
+}
 
 'Click on My Work link from left menu'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_My Work Left Menu'))
@@ -25,16 +29,16 @@ WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_iframe_105'))
 
 'Click Tree Menu'
-CustomKeywords.'actions.MenuBar.clickTreeMenu'('MY_WORK', 'Processes', 'Closure Action', 'Activity A', 'Chintan Shah')
+CustomKeywords.'actions.MenuBar.clickTreeMenu'('MY_WORK', 'Processes','Event for required field','User activity', P1_MW_DOC7_TEXT)
 
 'keep track of activity count before refresh'
-int activityCount_Before=CustomKeywords.'actions.MenuBar.getRecordCountInActivity'('MY_WORK', 'Processes', 'Closure Action', 'Activity A', 'Chintan Shah')
+int activityCount_Before=CustomKeywords.'actions.MenuBar.getRecordCountInActivity'('MY_WORK', 'Processes','Event for required field','User activity', P1_MW_DOC7_TEXT)
 
-'Create Document'
-CustomKeywords.'actions.Common.createDocument_ClosureAction'('Chintan Shah', 'MW021 - Doc2')
+'Create new document with same value in text field'
+CustomKeywords.'actions.Common.createDocument_EventForRequiredField'(P1_MW_DOC7_DROPDOWN, P1_MW_DOC7_TEXT, P1_MW_DOC7_DATE)
 
-'refresh activity A'
-CustomKeywords.'actions.MenuBar.rightClickTreeMenu'('MY_WORK', 'Processes', 'Closure Action', 'Activity A')
+'Right click on Tree'
+CustomKeywords.'actions.MenuBar.rightClickTreeMenu'('MY_WORK', 'Processes','Event for required field','User activity')
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
 'Click on Refresh option'
@@ -42,8 +46,8 @@ CustomKeywords.'actions.ContextMenu.clickOption'(findTestObject('Page_nGage_Dash
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_work_items'))
 
-'store value of  activity count after refresh'
-int activityCount_After=CustomKeywords.'actions.MenuBar.getRecordCountInActivity'('MY_WORK', 'Processes', 'Closure Action', 'Activity A', 'Chintan Shah')
+'keep track of activity count before refresh'
+int activityCount_After=CustomKeywords.'actions.MenuBar.getRecordCountInActivity'('MY_WORK', 'Processes','Event for required field','User activity', P1_MW_DOC7_TEXT)
 
-'verify count after refresh '
-WebUI.verifyEqual(activityCount_Before+1, activityCount_After)
+'Verify record count has increased'
+WebUI.verifyEqual(activityCount_After, activityCount_Before+1)

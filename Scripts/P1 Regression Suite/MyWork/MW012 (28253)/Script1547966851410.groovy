@@ -8,9 +8,8 @@ import internal.GlobalVariable as GlobalVariable
 'Login Into Application'
 CustomKeywords.'actions.Common.login'()
 
-'Create 2 Docuement'
-CustomKeywords.'actions.Common.createDocument_ClosureAction'(SMOKE_MYWORK009_CUSTOMERNAME1, SMOKE_MYWORK009_CUSTOMERDETAIL1)
-CustomKeywords.'actions.Common.createDocument_ClosureAction'(SMOKE_MYWORK009_CUSTOMERNAME1, SMOKE_MYWORK009_CUSTOMERDETAIL1)
+'Create document is not present'
+CustomKeywords.'actions.Common.createBulkDocuments_ClosureAction'(2)
 
 'Click on My Work link from left menu'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_My Work Left Menu'))
@@ -26,10 +25,10 @@ int rowCount = CustomKeywords.'actions.Table.getRowsCount'(findTestObject('Page_
 WebUI.verifyGreaterThanOrEqual(rowCount, 2)
 
 'click first check box'
-WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/input_FirstCheckBox'))
+WebUI.check(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/input_FirstCheckBox'))
 
 'Click on Select All icon'
-WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/input_SelectAllCheckBoxes'))
+WebUI.check(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/input_SelectAllCheckBoxes'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/iframe_iframe_105'))
 
 'verify all records checked'

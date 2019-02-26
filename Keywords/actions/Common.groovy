@@ -1204,6 +1204,35 @@ public class Common {
 		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 		WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 	}
+	
+	
+	@Keyword
+	def createBulkDocuments_VerticalMenuWizard(int requiredDocsCount){
+
+		'Click on My Work link from left menu'
+		WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_My Work Left Menu'))
+		WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
+		waitForFrameToLoad(findTestObject('Page_nGage_Dashboard/My_Work/iframe_iframe_105'))
+
+		int recordCount = 0
+
+		if(new MenuBar().isSubMenuPresent('MY_WORK', 'Loan Application', 'Processes', 'Loan Interactive')) {
+			recordCount = new MenuBar().getRecordCountInActivity('MY_WORK', 'Processes', 'Loan Interactive', 'Loan Application')
+		}
+
+		if(recordCount < requiredDocsCount) {
+			int extraDocsRequired = requiredDocsCount-recordCount
+			for(int i = 1; i <= extraDocsRequired; i++) {
+				//createDocument_ClosureAction('Chintan Shah', 'Document '+i)
+				createDocument_VerticalMenuWizard('Chintan', 'Shah', '1000', '')
+			}
+		}
+		WebUI.refresh()
+		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+		WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
+	}
+
+	
 
 	@Keyword
 	def createBulkDocuments_RenderAllFields(int requiredDocsCount) {
@@ -1467,8 +1496,7 @@ public class Common {
 		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 		WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 	}
-
-
+	
 	@Keyword
 	def createDocument_EventForRequiredField(String dropDownControl, String textValue, String date) {
 
@@ -1668,17 +1696,17 @@ public class Common {
 		}
 
 	}
-	
+
 	@Keyword
 	def createFolderingDataMyWork() {
 		String pdfPath = RunConfiguration.getProjectDir().replace('/', '\\')+'\\Data Files\\FileUploads\\TextPDF.pdf'
 		String docPath = RunConfiguration.getProjectDir().replace('/', '\\')+'\\Data Files\\FileUploads\\TextPDF.docx'
-		
+
 		if(!FLAG_P1_MW_DOC0) {
 			createDocument_VerticalMenuWizard(P1_MW_DOC0_FIRSTNAME, P1_MW_DOC0_LASTNAME, P1_MW_DOC0_AMOUNT, pdfPath)
 			FLAG_P1_MW_DOC0 = true
 		}
-		
+
 		if(!FLAG_P1_MW_DOC1) {
 			createDocument_VerticalMenuWizard(P1_MW_DOC1_FIRSTNAME, P1_MW_DOC1_LASTNAME, P1_MW_DOC1_AMOUNT, docPath)
 			FLAG_P1_MW_DOC1 = true
@@ -1689,7 +1717,4 @@ public class Common {
 			FLAG_P1_MW_DOC2 = true
 		}
 	}
-
-
-
 }

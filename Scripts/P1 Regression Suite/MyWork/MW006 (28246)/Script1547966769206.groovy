@@ -17,92 +17,105 @@ import static utils.Consts.*
 'Login Into Application'
 CustomKeywords.'actions.Common.login'()
 
-'Create Docuement'
-CustomKeywords.'actions.Common.createDocument_ClosureAction'(SMOKE_MYWORK009_CUSTOMERNAME1, SMOKE_MYWORK009_CUSTOMERDETAIL1)
-
-'Create Docuement'
-CustomKeywords.'actions.Common.createDocument_ClosureAction'(SMOKE_MYWORK009_CUSTOMERNAME2, SMOKE_MYWORK009_CUSTOMERDETAIL2)
+'Create Data for verifying Folder configuarion'
+CustomKeywords.'actions.Common.createFolderingDataMyWork'()
 
 'Click on My Work link from left menu'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_My Work Left Menu'))
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_iframe_105'))
 
-'Click Closure Action - Activity A'
-CustomKeywords.'actions.MenuBar.clickTreeMenu'('MY_WORK', 'Processes', 'Closure Action', 'Activity A')
+'Click Tree Menu Loan Interactive - Loan application'
+CustomKeywords.'actions.MenuBar.clickTreeMenu'('MY_WORK', 'Processes', 'Loan Interactive', 'Loan Application')
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_work_items'))
 
-'Perform right click operation on Activity A'
-CustomKeywords.'actions.MenuBar.rightClickTreeMenu'('MY_WORK', 'Processes', 'Closure Action', 'Activity A')
-
-'Verify Foldering configuration option is present in context menu'
-CustomKeywords.'actions.ContextMenu.verifyAllOptions'(findTestObject('Page_nGage_Dashboard/contextMenuOptions'), 'Refresh', 'Foldering Configuration')
-
-'Click on Foldering configuration option'
-CustomKeywords.'actions.ContextMenu.clickOption'(findTestObject('Page_nGage_Dashboard/contextMenuOptions'), 'Foldering Configuration')
-
-'Click on Restore defaults button'
-WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/Folder_Configuration/button_Restore Default'))
-
-'Verify default options selected in configuration dialog'
-WebUI.verifyOptionSelectedByLabel(findTestObject('Page_nGage_Dashboard/My_Work/Folder_Configuration/Level1_FieldAssigned'), 'Customer Name', false, GlobalVariable.G_LongTimeout)
-WebUI.verifyOptionSelectedByLabel(findTestObject('Page_nGage_Dashboard/My_Work/Folder_Configuration/Level1_Sorting'), 'None', false, GlobalVariable.G_LongTimeout)
-
-WebUI.verifyOptionSelectedByLabel(findTestObject('Page_nGage_Dashboard/My_Work/Folder_Configuration/Level2_FieldAssigned'), 'Select a Field', false, GlobalVariable.G_LongTimeout)
-WebUI.verifyOptionSelectedByLabel(findTestObject('Page_nGage_Dashboard/My_Work/Folder_Configuration/Level2_Sorting'), 'None', false, GlobalVariable.G_LongTimeout)
-
-WebUI.verifyOptionSelectedByLabel(findTestObject('Page_nGage_Dashboard/My_Work/Folder_Configuration/Level3_FieldAssigned'), 'Select a Field', false, GlobalVariable.G_LongTimeout)
-WebUI.verifyOptionSelectedByLabel(findTestObject('Page_nGage_Dashboard/My_Work/Folder_Configuration/Level3_Sorting'), 'None', false, GlobalVariable.G_LongTimeout)
-
-'Perform lvl1 foldering by Customer Name - Desending by field'
-WebUI.selectOptionByLabel(findTestObject('Page_nGage_Dashboard/My_Work/Folder_Configuration/Level1_FieldAssigned'), 'Customer Name', false)
-WebUI.selectOptionByLabel(findTestObject('Page_nGage_Dashboard/My_Work/Folder_Configuration/Level1_Sorting'), 'Desc by Field', false)
-
-'Click on Save button on dialog'
-WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/Folder_Configuration/button_Save'))
-
-'Click on Close button on dialog'
-WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/Folder_Configuration/button_Close'))
+'right click on (option)loan approval'
+CustomKeywords.'actions.MenuBar.rightClickTreeMenu'('MY_WORK', 'Processes', 'Loan Interactive', 'Loan Application')
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
-List<String> subMenus = CustomKeywords.'actions.MenuBar.getAllSubMenus'('MY_WORK', 'Processes', 'Closure Action', 'Activity A')
-CustomKeywords.'actions.MenuBar.verifyAllSubmenuAreSortedByActivityName'(subMenus, 'Desc')
-
-'Perform right click operation on Activity A'
-CustomKeywords.'actions.MenuBar.rightClickTreeMenu'('MY_WORK', 'Processes', 'Closure Action', 'Activity A', 'Chintan Shah')
-
-'Click on Foldering configuration option'
+'Select Foldering configuration option from context menu'
 CustomKeywords.'actions.ContextMenu.clickOption'(findTestObject('Page_nGage_Dashboard/contextMenuOptions'), 'Foldering Configuration')
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_work_items'))
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/Folder_Configuration/iframe_Close_iframe_folderingC'))
 
-'Perform lvl1 foldering by Customer Name - Ascending by field'
-WebUI.selectOptionByLabel(findTestObject('Page_nGage_Dashboard/My_Work/Folder_Configuration/Level1_FieldAssigned'), 'Customer Name', false)
-WebUI.selectOptionByLabel(findTestObject('Page_nGage_Dashboard/My_Work/Folder_Configuration/Level1_Sorting'), 'Asc by Field', false)
+'Click on Restore defaults'
+WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/Folder_Configuration/button_Restore Default'))
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/Folder_Configuration/iframe_Close_iframe_folderingC'))
 
-'Click on Save button on dialog'
-WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/Folder_Configuration/button_Save'))
+'select drpdown options'
+WebUI.selectOptionByLabel(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Folder_Configuration/Level1_FieldAssigned'),'First Name',false)
+WebUI.selectOptionByLabel(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Folder_Configuration/Level1_Sorting'), 'Asc by Field',false)
 
-'Click on Close button on dialog'
-WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/Folder_Configuration/button_Close'))
+'click submit button'
+WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Folder_Configuration/button_Save'))
+
+'click close button'
+WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Folder_Configuration/button_Close'))
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
-List<String> subMenus2 = CustomKeywords.'actions.MenuBar.getAllSubMenus'('MY_WORK', 'Processes', 'Closure Action', 'Activity A')
-CustomKeywords.'actions.MenuBar.verifyAllSubmenuAreSortedByActivityName'(subMenus2, 'Asc')
+'Verify Folders are configured as per Firstname value'
+CustomKeywords.'actions.MenuBar.verifySubMenuPresent'('MY_WORK', P1_MW_DOC0_FIRSTNAME, 'Processes', 'Loan Interactive', 'Loan Application')
+CustomKeywords.'actions.MenuBar.verifySubMenuPresent'('MY_WORK', P1_MW_DOC2_FIRSTNAME, 'Processes', 'Loan Interactive', 'Loan Application')
 
-'Perform right click operation on Activity A'
-CustomKeywords.'actions.MenuBar.rightClickTreeMenu'('MY_WORK', 'Processes', 'Closure Action', 'Activity A')
+'Get All subMenus from under Loan application'
+List<String> subMenusAsc = CustomKeywords.'actions.MenuBar.getAllSubMenus'('MY_WORK', 'Processes', 'Loan Interactive', 'Loan Application')
+WebUI.verifyGreaterThan(subMenusAsc.size(), 0)
 
-'Click on Foldering configuration option'
+'Verify all subMenus are sorted as per Ascending firstname'
+CustomKeywords.'actions.MenuBar.verifyAllSubmenuAreSortedByActivityName'(subMenusAsc, 'Asc')
+
+'right click on submenu under loan approval'
+CustomKeywords.'actions.MenuBar.rightClickTreeMenu'('MY_WORK', 'Processes', 'Loan Interactive', 'Loan Application', P1_MW_DOC0_FIRSTNAME)
+WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
+
+'Select Foldering configuration option from context menu'
 CustomKeywords.'actions.ContextMenu.clickOption'(findTestObject('Page_nGage_Dashboard/contextMenuOptions'), 'Foldering Configuration')
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_work_items'))
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/Folder_Configuration/iframe_Close_iframe_folderingC'))
 
-'Click on Restore defaults button'
+'Verify drop down has correct options selected'
+WebUI.verifyOptionSelectedByLabel(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Folder_Configuration/Level1_FieldAssigned'),'First Name',false, GlobalVariable.G_LongTimeout)
+WebUI.verifyOptionSelectedByLabel(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Folder_Configuration/Level1_Sorting'), 'Asc by Field',false, GlobalVariable.G_LongTimeout)
+
+'Select option as descending by field'
+WebUI.selectOptionByLabel(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Folder_Configuration/Level1_FieldAssigned'),'First Name',false)
+WebUI.selectOptionByLabel(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Folder_Configuration/Level1_Sorting'), 'Desc by Field',false)
+
+'click submit button'
+WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Folder_Configuration/button_Save'))
+
+'click close button'
+WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Folder_Configuration/button_Close'))
+WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
+
+'Verify Folders are configured as per Firstname value'
+CustomKeywords.'actions.MenuBar.verifySubMenuPresent'('MY_WORK', P1_MW_DOC0_FIRSTNAME, 'Processes', 'Loan Interactive', 'Loan Application')
+CustomKeywords.'actions.MenuBar.verifySubMenuPresent'('MY_WORK', P1_MW_DOC2_FIRSTNAME, 'Processes', 'Loan Interactive', 'Loan Application')
+
+'Get All subMenus from under Loan application'
+List<String> subMenusDesc = CustomKeywords.'actions.MenuBar.getAllSubMenus'('MY_WORK', 'Processes', 'Loan Interactive', 'Loan Application')
+WebUI.verifyGreaterThan(subMenusDesc.size(), 0)
+
+'Verify all subMenus are sorted as per Ascending firstname'
+CustomKeywords.'actions.MenuBar.verifyAllSubmenuAreSortedByActivityName'(subMenusDesc, 'Desc')
+
+
+'right click on (option)loan approval'
+CustomKeywords.'actions.MenuBar.rightClickTreeMenu'('MY_WORK', 'Processes', 'Loan Interactive', 'Loan Application')
+WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
+
+'Select Foldering configuration option from context menu'
+CustomKeywords.'actions.ContextMenu.clickOption'(findTestObject('Page_nGage_Dashboard/contextMenuOptions'), 'Foldering Configuration')
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_work_items'))
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/Folder_Configuration/iframe_Close_iframe_folderingC'))
+
+'Click on Restore defaults'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/Folder_Configuration/button_Restore Default'))
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/Folder_Configuration/iframe_Close_iframe_folderingC'))
 
-'Verify default options selected in configuration dialog'
-WebUI.verifyOptionSelectedByLabel(findTestObject('Page_nGage_Dashboard/My_Work/Folder_Configuration/Level1_FieldAssigned'), 'Customer Name', false, GlobalVariable.G_LongTimeout)
-WebUI.verifyOptionSelectedByLabel(findTestObject('Page_nGage_Dashboard/My_Work/Folder_Configuration/Level1_Sorting'), 'None', false, GlobalVariable.G_LongTimeout)
+'click submit button'
+WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Folder_Configuration/button_Save'))
 
-WebUI.verifyOptionSelectedByLabel(findTestObject('Page_nGage_Dashboard/My_Work/Folder_Configuration/Level2_FieldAssigned'), 'Select a Field', false, GlobalVariable.G_LongTimeout)
-WebUI.verifyOptionSelectedByLabel(findTestObject('Page_nGage_Dashboard/My_Work/Folder_Configuration/Level2_Sorting'), 'None', false, GlobalVariable.G_LongTimeout)
-
-WebUI.verifyOptionSelectedByLabel(findTestObject('Page_nGage_Dashboard/My_Work/Folder_Configuration/Level3_FieldAssigned'), 'Select a Field', false, GlobalVariable.G_LongTimeout)
-WebUI.verifyOptionSelectedByLabel(findTestObject('Page_nGage_Dashboard/My_Work/Folder_Configuration/Level3_Sorting'), 'None', false, GlobalVariable.G_LongTimeout)
+'click close button'
+WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Folder_Configuration/button_Close'))
+WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)

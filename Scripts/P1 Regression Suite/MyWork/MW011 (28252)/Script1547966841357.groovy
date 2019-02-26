@@ -16,8 +16,8 @@ import internal.GlobalVariable as GlobalVariable
 'Login Into Application'
 CustomKeywords.'actions.Common.login'()
 
-'Create new document'
-CustomKeywords.'actions.Common.createDocument_ClosureAction'('Chintan Shah', 'Result grid refresh test - Doc1')
+'Create document is not present'
+CustomKeywords.'actions.Common.createBulkDocuments_ClosureAction'(1)
 
 'Click on My Work link from left menu'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_My Work Left Menu'))
@@ -37,7 +37,7 @@ int colNo_DocID = CustomKeywords.'actions.Table.getColumnNumber'(findTestObject(
 String docId = CustomKeywords.'actions.Table.getCellText'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), 1, colNo_DocID)
 
 'Create new document'
-CustomKeywords.'actions.Common.createDocument_ClosureAction'('Chintan Shah', 'Result grid refresh test - Doc2')
+CustomKeywords.'actions.Common.createDocument_ClosureAction'('Chintan Shah', 'Result grid refresh test')
 
 'Click on refresh button in result grid'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/td_refreshGrid MyWorkSearchResult'))

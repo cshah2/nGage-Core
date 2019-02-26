@@ -19,13 +19,19 @@ import static utils.DateUtil.*
 CustomKeywords.'actions.Common.login'()
 
 'Create Document'
-CustomKeywords.'actions.Common.createDocument_EventForRequiredField'(P1_EVENTFOREQ_DROPDOWN_DOC1, P1_EVENTFOREQ_TEXT_DOC1, P1_EVENTFOREQ_DATE_DOC1)
+if(!FLAG_P1_MW_DOC7) {
+	CustomKeywords.'actions.Common.createDocument_EventForRequiredField'(P1_MW_DOC7_DROPDOWN, P1_MW_DOC7_TEXT, P1_MW_DOC7_DATE)
+	FLAG_P1_MW_DOC7 = true
+}
 
 'Click on My Work link from left menu'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_My Work Left Menu'))
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_iframe_105'))
 
-String treeDate = convert(P1_EVENTFOREQ_DATE_DOC1, FORMAT_DATE, FORMAT_DATE_TREE)
-'navigate to user activity'
-CustomKeywords.'actions.MenuBar.clickTreeMenu'('MY_WORK','Processes','Event for required field','User activity',P1_EVENTFOREQ_TEXT_DOC1,P1_EVENTFOREQ_DROPDOWN_DOC1,treeDate)
+String treeDate = convert(P1_MW_DOC7_DATE, FORMAT_DATE, FORMAT_DATE_TREE)
+
+'Verify tree folder is correct'
+CustomKeywords.'actions.MenuBar.verifySubMenuPresent'('MY_WORK', P1_MW_DOC7_TEXT, 'Processes','Event for required field','User activity')
+CustomKeywords.'actions.MenuBar.verifySubMenuPresent'('MY_WORK', P1_MW_DOC7_DROPDOWN, 'Processes','Event for required field','User activity', P1_MW_DOC7_TEXT)
+CustomKeywords.'actions.MenuBar.verifySubMenuPresent'('MY_WORK', treeDate, 'Processes','Event for required field','User activity', P1_MW_DOC7_TEXT, P1_MW_DOC7_DROPDOWN)
