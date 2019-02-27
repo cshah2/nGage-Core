@@ -19,8 +19,8 @@ import java.text.NumberFormat
 'Login Into Application'
 CustomKeywords.'actions.Common.login'()
 
-'Create Document for Closure Action A'
-CustomKeywords.'actions.Common.createDocument_ClosureAction'(P1_MWORK_CLOSURE_CUSTOMERNAME_DOC1, P1_MWORK_CLOSURE_CUSTOMERDESC_DOC1)
+'Create document if not available'
+CustomKeywords.'actions.Common.createBulkDocuments_ClosureAction'(1)
 
 'Click on My Work link from left menu'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_My Work Left Menu'))

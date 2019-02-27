@@ -17,79 +17,43 @@ import static utils.Consts.*
 'Login Into Application'
 CustomKeywords.'actions.Common.login'()
 
-'Create Documents'
-CustomKeywords.'actions.Common.createDocument_ProcessForTaskDT'(P1_MW_PROCESSFORTASK_CUSTOMERNAME_DOC1, P1_MW_PROCESSFORTASK_CUSTOMERDESC_DOC1)
-CustomKeywords.'actions.Common.createDocument_ProcessForTaskDT'(P1_MW_PROCESSFORTASK_CUSTOMERNAME_DOC2, P1_MW_PROCESSFORTASK_CUSTOMERDESC_DOC2)
+'Create Document'
+if(!FLAG_P1_MW_DOC7) {
+	CustomKeywords.'actions.Common.createDocument_EventForRequiredField'(P1_MW_DOC7_DROPDOWN, P1_MW_DOC7_TEXT, P1_MW_DOC7_DATE)
+	FLAG_P1_MW_DOC7 = true
+}
+
+'Create Document'
+if(!FLAG_P1_MW_DOC8) {
+	CustomKeywords.'actions.Common.createDocument_EventForRequiredField'(P1_MW_DOC8_DROPDOWN, P1_MW_DOC8_TEXT, P1_MW_DOC8_DATE)
+	FLAG_P1_MW_DOC8 = true
+}
 
 'Click on My Work link from left menu'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_My Work Left Menu'))
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_iframe_105'))
 
-'Click Tree Menu ProcessforTaskDT - Activity A'
-CustomKeywords.'actions.MenuBar.clickTreeMenu'('MY_WORK', 'Processes', 'ProcessforTask', 'Activity A')
+'Verify tree folder is correct'
+CustomKeywords.'actions.MenuBar.verifySubMenuPresent'('MY_WORK', P1_MW_DOC7_TEXT, 'Processes','Event for required field','User activity')
+CustomKeywords.'actions.MenuBar.verifySubMenuPresent'('MY_WORK', P1_MW_DOC7_DROPDOWN, 'Processes','Event for required field','User activity', P1_MW_DOC7_TEXT)
+
+'Click Tree Menu'
+CustomKeywords.'actions.MenuBar.clickTreeMenu'('MY_WORK', 'Processes','Event for required field','User activity', P1_MW_DOC7_TEXT, P1_MW_DOC7_DROPDOWN)
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_work_items'))
 
-'Sort records by DocID descending'
-CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/My_Work/tableHeader_MyWorkSearchResult'), 'Doc ID')
-CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/My_Work/tableHeader_MyWorkSearchResult'), 'Doc ID')
+'keep track of activity count before refresh'
+int activityCount1=CustomKeywords.'actions.MenuBar.getRecordCountInActivity'('MY_WORK', 'Processes','Event for required field','User activity', P1_MW_DOC7_TEXT, P1_MW_DOC7_DROPDOWN)
+CustomKeywords.'actions.Common.verifyTotalRecordCountFromPageSummary'(findTestObject('Page_nGage_Dashboard/My_Work/table_pagination_summary'), activityCount1)
 
-'Right click ProcessForTaskDT - Activity A'
-CustomKeywords.'actions.MenuBar.rightClickTreeMenu'('MY_WORK', 'Processes', 'ProcessforTask', 'Activity A')
+'Verify tree folder is correct'
+CustomKeywords.'actions.MenuBar.verifySubMenuPresent'('MY_WORK', P1_MW_DOC8_TEXT, 'Processes','Event for required field','User activity')
+CustomKeywords.'actions.MenuBar.verifySubMenuPresent'('MY_WORK', P1_MW_DOC8_DROPDOWN, 'Processes','Event for required field','User activity', P1_MW_DOC8_TEXT)
 
-'Open Foldering configuration'
-CustomKeywords.'actions.ContextMenu.verifyOptionPresent'(findTestObject('Page_nGage_Dashboard/contextMenuOptions'), 'Foldering Configuration')
-CustomKeywords.'actions.ContextMenu.clickOption'(findTestObject('Page_nGage_Dashboard/contextMenuOptions'), 'Foldering Configuration')
-CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/Folder_Configuration/iframe_Close_iframe_folderingC'))
-
-'Click on Restore Defaults button'
-WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/Folder_Configuration/button_Restore Default'))
-CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/Folder_Configuration/iframe_Close_iframe_folderingC'))
-
-'Select Level 1 Foldering as Locked/Unlocked'
-WebUI.selectOptionByLabel(findTestObject('Page_nGage_Dashboard/My_Work/Folder_Configuration/Level1_FieldAssigned'), 'Customer Name', false)
-WebUI.selectOptionByLabel(findTestObject('Page_nGage_Dashboard/My_Work/Folder_Configuration/Level1_Sorting'), 'Asc by Field', false)
-
-'Click on SAVE button'
-WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/Folder_Configuration/button_Save'))
-CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/Folder_Configuration/iframe_Close_iframe_folderingC'))
-
-'Click on CLOSE button'
-WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/Folder_Configuration/button_Close'))
-WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
-
-'Verify Sub Menus present under Activity A'
-CustomKeywords.'actions.MenuBar.verifySubMenuPresent'('MY_WORK', 'Chintan Shah', 'Processes', 'ProcessforTask', 'Activity A')
-CustomKeywords.'actions.MenuBar.verifySubMenuPresent'('MY_WORK', 'Atul Mirvankar', 'Processes', 'ProcessforTask', 'Activity A')
-
-'Click Tree Menu - Chintan Shah'
-CustomKeywords.'actions.MenuBar.clickTreeMenu'('MY_WORK', 'Processes', 'ProcessforTask', 'Activity A', 'Chintan Shah')
+'Click Tree Menu'
+CustomKeywords.'actions.MenuBar.clickTreeMenu'('MY_WORK', 'Processes','Event for required field','User activity', P1_MW_DOC8_TEXT, P1_MW_DOC8_DROPDOWN)
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_work_items'))
 
-'Verify record count in Activity matches with record count in table'
-int rowCount_ChintanShah = CustomKeywords.'actions.MenuBar.getRecordCountInActivity'('MY_WORK', 'Processes', 'ProcessforTask', 'Activity A', 'Chintan Shah')
-CustomKeywords.'actions.Common.verifyTotalRecordCountFromPageSummary'(findTestObject('Page_nGage_Dashboard/My_Work/table_pagination_summary'), rowCount_ChintanShah)
-
-'Click Tree Menu - Atul Mirvankar'
-CustomKeywords.'actions.MenuBar.clickTreeMenu'('MY_WORK', 'Processes', 'ProcessforTask', 'Activity A', 'Atul Mirvankar')
-CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_work_items'))
-
-'Verify record count in Activity matches with record count in table'
-int rowCount_AtulMirvankar = CustomKeywords.'actions.MenuBar.getRecordCountInActivity'('MY_WORK', 'Processes', 'ProcessforTask', 'Activity A', 'Atul Mirvankar')
-CustomKeywords.'actions.Common.verifyTotalRecordCountFromPageSummary'(findTestObject('Page_nGage_Dashboard/My_Work/table_pagination_summary'), rowCount_AtulMirvankar)
-
-'Right click ProcessForTaskDT - Activity A'
-CustomKeywords.'actions.MenuBar.rightClickTreeMenu'('MY_WORK', 'Processes', 'ProcessforTask', 'Activity A')
-
-'Open Foldering configuration'
-CustomKeywords.'actions.ContextMenu.verifyOptionPresent'(findTestObject('Page_nGage_Dashboard/contextMenuOptions'), 'Foldering Configuration')
-CustomKeywords.'actions.ContextMenu.clickOption'(findTestObject('Page_nGage_Dashboard/contextMenuOptions'), 'Foldering Configuration')
-CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/Folder_Configuration/iframe_Close_iframe_folderingC'))
-
-'Click on Restore Defaults button'
-WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/Folder_Configuration/button_Restore Default'))
-CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/Folder_Configuration/iframe_Close_iframe_folderingC'))
-
-'Click on SAVE button'
-WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/Folder_Configuration/button_Save'))
-CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/Folder_Configuration/iframe_Close_iframe_folderingC'))
+'keep track of activity count before refresh'
+int activityCount2=CustomKeywords.'actions.MenuBar.getRecordCountInActivity'('MY_WORK', 'Processes','Event for required field','User activity', P1_MW_DOC8_TEXT, P1_MW_DOC8_DROPDOWN)
+CustomKeywords.'actions.Common.verifyTotalRecordCountFromPageSummary'(findTestObject('Page_nGage_Dashboard/My_Work/table_pagination_summary'), activityCount2)

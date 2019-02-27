@@ -15,8 +15,6 @@ import internal.GlobalVariable as GlobalVariable
 import static utils.Consts.*
 import utils.DateUtil
 
-//TOOD: Fix date time comparison filter, 12:00:00 AM is displayed 00:00:00 AM in result grid, customkeyword should check for it 
-
 'Login Into Application'
 CustomKeywords.'actions.Common.login'()
 

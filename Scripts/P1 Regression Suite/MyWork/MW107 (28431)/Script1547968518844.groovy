@@ -21,22 +21,20 @@ import static utils.DateUtil.*
 'Login Into Application'
 CustomKeywords.'actions.Common.login'()
 
-'Create a new Document in DateTimeRequired activity'
-CustomKeywords.'actions.Common.createDocument_MyWorkDateTime'(DC_DATEREQUIRED, DT_DATEREQUIRED, P1_MW084_STARTDATE, P1_MW084_ENDDATE, P1_MW084_STARTDATETIME, P1_MW084_ENDDATETIME, 'Test')
-CustomKeywords.'actions.Common.createDocument_MyWorkDateTime'(DC_DATEREQUIRED, DT_DATEREQUIRED, P1_MW087_STARTDATE, P1_MW087_ENDDATE, P1_MW087_STARTDATETIME, P1_MW087_ENDDATETIME, 'Test')
+'Create a documents for filter testing'
+CustomKeywords.'actions.Common.createDateFilterDataMyWork'()
 
 'Click on My Work link from left menu'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_My Work Left Menu'))
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_iframe_105'))
 
-String treeDate = convert(P1_MW084_STARTDATE, FORMAT_DATE, FORMAT_DATE_TREE)
-String filterDate1 = P1_MW084_STARTDATE
-String filterDate2 = P1_MW087_STARTDATE
+String treeDate = convert(P1_MW_DOCA_STARTDATE, FORMAT_DATE, FORMAT_DATE_TREE)
+String filterDate1 = P1_MW_DOCA_STARTDATE
+String filterDate2 = P1_MW_DOCB_STARTDATE
 
 'Expand Processes by Click on the Expand Icon and Verify Foldered data displayed'
 CustomKeywords.'actions.MenuBar.clickTreeMenu'('My_Work','Processes','Date Required','Daterequiredsearch', treeDate)
-//TODO: Issue pending from Dev for Date format in tree MY_WORK
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/iframe_work_items'))
 
 'Click On Search Bar to open'

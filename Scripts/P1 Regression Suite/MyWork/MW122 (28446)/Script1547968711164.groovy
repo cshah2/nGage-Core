@@ -19,7 +19,10 @@ import static utils.DateUtil.*
 CustomKeywords.'actions.Common.login'()
 
 'Create two document in Date Required activity'
-CustomKeywords.'actions.Common.createDocument_MyWorkDateTime'(DC_DATEREQUIRED, DT_DATEREQUIRED, P1_MW084_STARTDATE, P1_MW084_ENDDATE, P1_MW084_STARTDATETIME, P1_MW084_ENDDATETIME, 'Test')
+if (!(FLAG_P1_MW_DOCE)) {
+	CustomKeywords.'actions.Common.createDocument_MyWorkDateTime'(DC_DATEREQUIRED, DT_DATEREQUIRED, P1_MW_DOCE_STARTDATE, P1_MW_DOCE_ENDDATE, P1_MW_DOCE_STARTDATETIME, P1_MW_DOC_ENDDATETIME, '')
+    FLAG_P1_MW_DOCE = true
+}
 
 'Click on My Work link from left menu'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_My Work Left Menu'))

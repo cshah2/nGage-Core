@@ -32,8 +32,10 @@ import static utils.Consts.*
 'Login Into Application'
 CustomKeywords.'actions.Common.login'()
 
-'Create Docuement'
-CustomKeywords.'actions.Common.createDocument_VerticalMenuWizard'(P1_LOANAPPL_FIRSTNAME_DOC1, P1_LOANAPPL_LASTNAME_DOC1, P1_LOANAPPL_AMOUNT_DOC1, '')
+if(!FLAG_P1_MW_DOC2) {
+	CustomKeywords.'actions.Common.createDocument_VerticalMenuWizard'(P1_MW_DOC2_FIRSTNAME, P1_MW_DOC2_LASTNAME, P1_MW_DOC2_AMOUNT, '')
+	FLAG_P1_MW_DOC2 = true
+}
 
 'Click on My Work link from left menu'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_My Work Left Menu'))

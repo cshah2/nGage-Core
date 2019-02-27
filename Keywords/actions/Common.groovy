@@ -1204,8 +1204,8 @@ public class Common {
 		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 		WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 	}
-	
-	
+
+
 	@Keyword
 	def createBulkDocuments_VerticalMenuWizard(int requiredDocsCount){
 
@@ -1232,7 +1232,7 @@ public class Common {
 		WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 	}
 
-	
+
 
 	@Keyword
 	def createBulkDocuments_RenderAllFields(int requiredDocsCount) {
@@ -1496,7 +1496,7 @@ public class Common {
 		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 		WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 	}
-	
+
 	@Keyword
 	def createDocument_EventForRequiredField(String dropDownControl, String textValue, String date) {
 
@@ -1717,4 +1717,67 @@ public class Common {
 			FLAG_P1_MW_DOC2 = true
 		}
 	}
+	
+	@Keyword
+	def createDateFilterDataMyWork() {
+		if(!FLAG_P1_MW_DOCA) {
+			createDocument_MyWorkDateTime(DC_DATEREQUIRED, DT_DATEREQUIRED, P1_MW_DOCA_STARTDATE, P1_MW_DOCA_ENDDATE, P1_MW_DOCA_STARTDATETIME, P1_MW_DOCA_ENDDATETIME, "")
+			FLAG_P1_MW_DOCA = true
+		}
+
+		if(!FLAG_P1_MW_DOCB) {
+			createDocument_MyWorkDateTime(DC_DATEREQUIRED, DT_DATEREQUIRED, P1_MW_DOCB_STARTDATE, P1_MW_DOCB_ENDDATE, P1_MW_DOCB_STARTDATETIME, P1_MW_DOCB_ENDDATETIME, "")
+			FLAG_P1_MW_DOCB = true
+		}
+
+		if(!FLAG_P1_MW_DOCC) {
+			createDocument_MyWorkDateTime(DC_DATEREQUIRED, DT_DATEREQUIRED, P1_MW_DOCC_STARTDATE, P1_MW_DOCC_ENDDATE, P1_MW_DOCC_STARTDATETIME, P1_MW_DOCC_ENDDATETIME, "")
+			FLAG_P1_MW_DOCC = true
+		}
+
+		if(!FLAG_P1_MW_DOCD) {
+			createDocument_MyWorkDateTime(DC_DATEREQUIRED, DT_DATEREQUIRED, P1_MW_DOCD_STARTDATE, P1_MW_DOCD_ENDDATE, P1_MW_DOCD_STARTDATETIME, P1_MW_DOCD_ENDDATETIME, "")
+			FLAG_P1_MW_DOCD = true
+		}
+
+		if(!FLAG_P1_MW_DOCE) {
+			createDocument_MyWorkDateTime(DC_DATEREQUIRED, DT_DATEREQUIRED, P1_MW_DOCE_STARTDATE, P1_MW_DOCE_ENDDATE, P1_MW_DOCE_STARTDATETIME, P1_MW_DOCE_ENDDATETIME, "")
+			FLAG_P1_MW_DOCE = true
+		}
+	}
+
+	@Keyword
+	def createDateRangeFilterDataMyWork() {
+		if(!FLAG_P1_MW_DOCF) {
+			createDocument_MyWorkDateTime(DC_DATERANGEREQUIRED, DT_DATERANGEREQUIRED, P1_MW_DOCF_STARTDATE, P1_MW_DOCF_ENDDATE, P1_MW_DOCF_STARTDATETIME, P1_MW_DOCF_ENDDATETIME, "")
+			FLAG_P1_MW_DOCF = true
+		}
+
+		if(!FLAG_P1_MW_DOCG) {
+			createDocument_MyWorkDateTime(DC_DATERANGEREQUIRED, DT_DATERANGEREQUIRED, P1_MW_DOCG_STARTDATE, P1_MW_DOCG_ENDDATE, P1_MW_DOCG_STARTDATETIME, P1_MW_DOCG_ENDDATETIME, "")
+			FLAG_P1_MW_DOCG = true
+		}
+
+		if(!FLAG_P1_MW_DOCH) {
+			createDocument_MyWorkDateTime(DC_DATERANGEREQUIRED, DT_DATERANGEREQUIRED, P1_MW_DOCH_STARTDATE, P1_MW_DOCH_ENDDATE, P1_MW_DOCH_STARTDATETIME, P1_MW_DOCH_ENDDATETIME, "")
+			FLAG_P1_MW_DOCH = true
+		}
+
+		if(!FLAG_P1_MW_DOCI) {
+			createDocument_MyWorkDateTime(DC_DATERANGEREQUIRED, DT_DATERANGEREQUIRED, P1_MW_DOCI_STARTDATE, P1_MW_DOCI_ENDDATE, P1_MW_DOCI_STARTDATETIME, P1_MW_DOCI_ENDDATETIME, "")
+			FLAG_P1_MW_DOCF = true
+		}
+
+		if(!FLAG_P1_MW_DOCJ) {
+			createDocument_MyWorkDateTime(DC_DATERANGEREQUIRED, DT_DATERANGEREQUIRED, P1_MW_DOCJ_STARTDATE, P1_MW_DOCJ_ENDDATE, P1_MW_DOCJ_STARTDATETIME, P1_MW_DOCJ_ENDDATETIME, "")
+			FLAG_P1_MW_DOCJ = true
+		}
+
+		if(!FLAG_P1_MW_DOCK) {
+			createDocument_MyWorkDateTime(DC_DATERANGEREQUIRED, DT_DATERANGEREQUIRED, P1_MW_DOCK_STARTDATE, P1_MW_DOCK_ENDDATE, P1_MW_DOCK_STARTDATETIME, P1_MW_DOCK_ENDDATETIME, "")
+			FLAG_P1_MW_DOCK = true
+		}
+	}
+
+
 }

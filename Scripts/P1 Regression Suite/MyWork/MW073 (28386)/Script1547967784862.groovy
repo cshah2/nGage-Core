@@ -15,12 +15,21 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
+import static utils.Consts.*
 
 'Login Into Application'
 CustomKeywords.'actions.Common.login'()
 
-'Create Document'
-CustomKeywords.'actions.Common.createDocument_ClosureAction'('Chintan Shah', 'P1- Chart - MW073')
+'Create Docuements if not present'
+if(!FLAG_P1_MW_DOC9) {
+	CustomKeywords.'actions.Common.createDocument_ClosureAction'(P1_MW_DOC9_CUSTNAME, P1_MW_DOC9_CUSTDESC)
+	FLAG_P1_MW_DOC9 = true
+}
+
+if(!FLAG_P1_MW_DOC10) {
+	CustomKeywords.'actions.Common.createDocument_ClosureAction'(P1_MW_DOC10_CUSTNAME, P1_MW_DOC10_CUSTDESC)
+	FLAG_P1_MW_DOC10 = true
+}
 
 'Click on My Work link from left menu'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_My Work Left Menu'))
