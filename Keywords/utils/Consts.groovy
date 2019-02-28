@@ -337,57 +337,68 @@ public class Consts {
 	public static final String P1_MW_DOCK_ENDDATETIME = ''
 
 	//Documents for Date Time Filter (Date Required)
-//	public static final String P1_MW_DOCK_STARTDATE = '01-01-2018'
-//	public static final String P1_MW_DOCK_ENDDATE = '02-01-2018'
-//	public static final String P1_MW_DOCK_STARTDATETIME = '03-01-2018 01:00:00 AM'
-//	public static final String P1_MW_DOCK_ENDDATETIME = '04-01-2018 03:00:00 AM'
+	public static final String P1_MW_DOCL_STARTDATE = '01-01-2018'
+	public static final String P1_MW_DOCL_ENDDATE = '02-01-2018'
+	public static final String P1_MW_DOCL_STARTDATETIME = '03-01-2018 01:00:00 AM'
+	public static final String P1_MW_DOCL_ENDDATETIME = '04-01-2018 03:00:00 AM'
 
-	public static final String P1_MW_DOCL_STARTDATE = '01-03-2018'
-	public static final String P1_MW_DOCL_ENDDATE = '02-03-2018'
-	public static final String P1_MW_DOCL_STARTDATETIME = '03-03-2018 01:00:00 AM'
-	public static final String P1_MW_DOCL_ENDDATETIME = '04-03-2018 03:00:00 AM'
+	public static final String P1_MW_DOCM_STARTDATE = '01-03-2018'
+	public static final String P1_MW_DOCM_ENDDATE = '02-03-2018'
+	public static final String P1_MW_DOCM_STARTDATETIME = '03-03-2018 01:00:00 AM'
+	public static final String P1_MW_DOCM_ENDDATETIME = '04-03-2018 03:00:00 AM'
 
-	public static final String P1_MW_DOCM_STARTDATE = '01-05-2018'
-	public static final String P1_MW_DOCM_ENDDATE = '02-05-2018'
-	public static final String P1_MW_DOCM_STARTDATETIME = '03-05-2018 01:00:00 AM'
-	public static final String P1_MW_DOCM_ENDDATETIME = '04-05-2018 03:00:00 AM'
+	public static final String P1_MW_DOCN_STARTDATE = '01-05-2018'
+	public static final String P1_MW_DOCN_ENDDATE = '02-05-2018'
+	public static final String P1_MW_DOCN_STARTDATETIME = '03-05-2018 01:00:00 AM'
+	public static final String P1_MW_DOCN_ENDDATETIME = '04-05-2018 03:00:00 AM'
 
-	public static final String P1_MW_DOCN_STARTDATE = ''
-	public static final String P1_MW_DOCN_ENDDATE = ''
-	public static final String P1_MW_DOCN_STARTDATETIME = ''
-	public static final String P1_MW_DOCN_ENDDATETIME = ''
+	public static final String P1_MW_DOCO_STARTDATE = '01-05-2018'
+	public static final String P1_MW_DOCO_ENDDATE = '02-05-2018'
+	public static final String P1_MW_DOCO_STARTDATETIME = '03-05-2018 01:00:00 AM'
+	public static final String P1_MW_DOCO_ENDDATETIME = ''
+
+	public static final String P1_MW_DOCP_STARTDATE = ''
+	public static final String P1_MW_DOCP_ENDDATE = ''
+	public static final String P1_MW_DOCP_STARTDATETIME = ''
+	public static final String P1_MW_DOCP_ENDDATETIME = ''
 
 	//Documents for Date Time Range Filter (Date Range Required)
 
-	public static final String P1_MW_DOCO_STARTDATE = '01-01-2018'
-	public static final String P1_MW_DOCO_ENDDATE = '02-01-2018'
-	public static final String P1_MW_DOCO_STARTDATETIME = '03-01-2018 01:00:00 AM'
-	public static final String P1_MW_DOCO_ENDDATETIME = '04-01-2018 03:00:00 AM'
+	public static final String P1_MW_DOCQ_STARTDATE = '01-01-2018'
+	public static final String P1_MW_DOCQ_ENDDATE = '02-01-2018'
+	public static final String P1_MW_DOCQ_STARTDATETIME = '03-01-2018 01:00:00 AM'
+	public static final String P1_MW_DOCQ_ENDDATETIME = '04-01-2018 03:00:00 AM'
+	public static final String P1_MW_DOCQ_STARTDATE_DATE = '1'
+	public static final String P1_MW_DOCQ_STARTDATE_MONTH = 'Jan'
+	public static final String P1_MW_DOCQ_STARTDATE_YEAR = '2018'
+	public static final String P1_MW_DOCQ_STARTDATETIME_DATE = '1'
+	public static final String P1_MW_DOCQ_STARTDATETIME_MONTH = 'Mar'
+	public static final String P1_MW_DOCQ_STARTDATETIME_YEAR = '2018'
 
-	public static final String P1_MW_DOCP_STARTDATE = '01-03-2018'
-	public static final String P1_MW_DOCP_ENDDATE = '02-03-2018'
-	public static final String P1_MW_DOCP_STARTDATETIME = '03-03-2018 01:00:00 AM'
-	public static final String P1_MW_DOCP_ENDDATETIME = '04-03-2018 03:00:00 AM'
+	public static final String P1_MW_DOCR_STARTDATE = '01-03-2018'
+	public static final String P1_MW_DOCR_ENDDATE = '02-03-2018'
+	public static final String P1_MW_DOCR_STARTDATETIME = '03-03-2018 01:00:00 AM'
+	public static final String P1_MW_DOCR_ENDDATETIME = '04-03-2018 03:00:00 AM'
 
-	public static final String P1_MW_DOCQ_STARTDATE = '01-05-2018'
-	public static final String P1_MW_DOCQ_ENDDATE = '02-05-2018'
-	public static final String P1_MW_DOCQ_STARTDATETIME = '03-05-2018 01:00:00 AM'
-	public static final String P1_MW_DOCQ_ENDDATETIME = '04-05-2018 03:00:00 AM'
+	public static final String P1_MW_DOCS_STARTDATE = '01-05-2018'
+	public static final String P1_MW_DOCS_ENDDATE = '02-05-2018'
+	public static final String P1_MW_DOCS_STARTDATETIME = '03-05-2018 01:00:00 AM'
+	public static final String P1_MW_DOCS_ENDDATETIME = '04-05-2018 03:00:00 AM'
 
-	public static final String P1_MW_DOCR_STARTDATE = '01-07-2018'
-	public static final String P1_MW_DOCR_ENDDATE = '02-07-2018'
-	public static final String P1_MW_DOCR_STARTDATETIME = '03-07-2018 01:00:00 AM'
-	public static final String P1_MW_DOCR_ENDDATETIME = '04-07-2018 03:00:00 AM'
+	public static final String P1_MW_DOCT_STARTDATE = '01-07-2018'
+	public static final String P1_MW_DOCT_ENDDATE = '02-07-2018'
+	public static final String P1_MW_DOCT_STARTDATETIME = '03-07-2018 01:00:00 AM'
+	public static final String P1_MW_DOCT_ENDDATETIME = '04-07-2018 03:00:00 AM'
 
-	public static final String P1_MW_DOCS_STARTDATE = '01-09-2018'
-	public static final String P1_MW_DOCS_ENDDATE = '02-09-2018'
-	public static final String P1_MW_DOCS_STARTDATETIME = '03-09-2018 01:00:00 AM'
-	public static final String P1_MW_DOCS_ENDDATETIME = '04-09-2018 03:00:00 AM'
+	public static final String P1_MW_DOCU_STARTDATE = '01-09-2018'
+	public static final String P1_MW_DOCU_ENDDATE = '02-09-2018'
+	public static final String P1_MW_DOCU_STARTDATETIME = '03-09-2018 01:00:00 AM'
+	public static final String P1_MW_DOCU_ENDDATETIME = '04-09-2018 03:00:00 AM'
 
-	public static final String P1_MW_DOCT_STARTDATE = ''
-	public static final String P1_MW_DOCT_ENDDATE = ''
-	public static final String P1_MW_DOCT_STARTDATETIME = ''
-	public static final String P1_MW_DOCT_ENDDATETIME = ''
+	public static final String P1_MW_DOCV_STARTDATE = ''
+	public static final String P1_MW_DOCV_ENDDATE = ''
+	public static final String P1_MW_DOCV_STARTDATETIME = ''
+	public static final String P1_MW_DOCV_ENDDATETIME = ''
 
 
 
@@ -642,6 +653,8 @@ public class Consts {
 	public static boolean FLAG_P1_MW_DOCR 		= false
 	public static boolean FLAG_P1_MW_DOCS 		= false
 	public static boolean FLAG_P1_MW_DOCT 		= false
-
+	public static boolean FLAG_P1_MW_DOCU 		= false
+	public static boolean FLAG_P1_MW_DOCV 		= false
+	
 }
 
