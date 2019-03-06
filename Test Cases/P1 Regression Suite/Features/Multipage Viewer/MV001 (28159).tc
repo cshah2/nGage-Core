@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Regression test Multipage viewer: all menus, jquery menu</description>
+   <name>MV001 (28159)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>66ebca6d-c5a4-4c87-8937-b84ea608c5e6</testCaseGuid>
+</TestCaseEntity>

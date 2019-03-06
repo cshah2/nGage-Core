@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Regression test My Work-Search the Document from My Work</description>
+   <name>ED003 (35837)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>c6ebdfba-e294-4f00-b99c-1be1c56d0b21</testCaseGuid>
+</TestCaseEntity>

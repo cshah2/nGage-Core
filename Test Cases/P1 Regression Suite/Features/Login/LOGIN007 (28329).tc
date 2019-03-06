@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Regression test cases : Login Page-Drpdown list for System( Db schema)</description>
+   <name>LOGIN007 (28329)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>d326226e-fb2f-4807-a79d-05196f3bf99f</testCaseGuid>
+</TestCaseEntity>

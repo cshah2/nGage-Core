@@ -47,8 +47,9 @@ public class MenuBar {
 		}
 		catch(Exception e) {
 
-			WebUI.takeScreenshot()
-			KeywordUtil.markFailedAndStop('Coult not get record count '+e.toString())
+			return 0
+//			WebUI.takeScreenshot()
+//			KeywordUtil.markFailedAndStop('Coult not get record count '+e.toString())
 		}
 	}
 

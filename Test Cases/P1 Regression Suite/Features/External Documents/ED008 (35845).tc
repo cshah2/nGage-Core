@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Regression test Search Repository: Delete the document</description>
+   <name>ED008 (35845)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>e87104ec-dbeb-4edb-9a7d-ac5b5857958f</testCaseGuid>
+</TestCaseEntity>

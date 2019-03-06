@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Regression test Search Repository: Search the document</description>
+   <name>ED007 (35836)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>eac8acde-f2fa-4154-8cf9-6b345b2c2d01</testCaseGuid>
+</TestCaseEntity>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Regression test Multipage viewer: total page count</description>
+   <name>MV027 (28186)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>a47b71d5-8585-4822-992d-5e130c2d5231</testCaseGuid>
+</TestCaseEntity>

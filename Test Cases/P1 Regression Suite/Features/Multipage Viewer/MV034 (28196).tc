@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Regression test Multipage viewer: split to PDF, selected(multiple pages), check index document</description>
+   <name>MV034 (28196)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>62ed6ff9-7448-474f-a068-3af9e06be61a</testCaseGuid>
+</TestCaseEntity>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Regression test Multipage viewer: page navigation - enter page number negative test</description>
+   <name>MV017 (28176)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>d304407f-474d-4f05-8ae8-fc49b606fb67</testCaseGuid>
+</TestCaseEntity>

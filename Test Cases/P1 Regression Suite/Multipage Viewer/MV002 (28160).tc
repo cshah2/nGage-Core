@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TestCaseEntity>
-   <description>Regression test Multipage viewer: thumbnail, select page</description>
-   <name>MV002 (28160)</name>
-   <tag></tag>
-   <comment></comment>
-   <testCaseGuid>7434e0e4-f778-407e-996c-82e139bd5280</testCaseGuid>
-</TestCaseEntity>

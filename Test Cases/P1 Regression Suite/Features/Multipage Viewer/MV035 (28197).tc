@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Regression test Multipage viewer: split to TIFF, selected(multiple pages), check index document</description>
+   <name>MV035 (28197)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>fc4ca8d2-40fe-4bb0-a4ed-914593179fbb</testCaseGuid>
+</TestCaseEntity>
