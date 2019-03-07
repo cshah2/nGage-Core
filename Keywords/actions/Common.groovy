@@ -110,7 +110,7 @@ public class Common {
 			WebUtil.openBrowser()
 			WebUI.maximizeWindow()
 		}
-		
+
 		WebUI.deleteAllCookies()
 		WebUI.navigateToUrl(WebUI.concatenate(GlobalVariable.BaseURL, '/login.aspx'));
 		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)

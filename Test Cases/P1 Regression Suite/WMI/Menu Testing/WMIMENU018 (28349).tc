@@ -3,6 +3,6 @@
    <description>Regression test WMI :  Menu Testing for SendEmail.aspx</description>
    <name>WMIMENU018 (28349)</name>
    <tag></tag>
-   <comment></comment>
+   <comment>Pre-Requisite : Create new Document of type WMI Menu Default</comment>
    <testCaseGuid>2f353600-a672-47e3-9fd4-84ad9558f22c</testCaseGuid>
 </TestCaseEntity>

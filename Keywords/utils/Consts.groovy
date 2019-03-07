@@ -7,6 +7,7 @@ import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 
 import com.kms.katalon.core.annotation.Keyword
 import com.kms.katalon.core.checkpoint.Checkpoint
+import com.kms.katalon.core.configuration.RunConfiguration
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
 import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
 import com.kms.katalon.core.model.FailureHandling
@@ -666,7 +667,7 @@ public class Consts {
 
 	/* ####################### REFACTORED DATA ####################### */
 
-	//Tree Structure
+	/* -------- TREE --------*/
 	public static final String MW_LVL0 = 'Processes'
 	public static final String MW_LVL1_COMPLAINTS_TEMPLATE = "Complaints Template"
 	public static final String MW_LVL2_COMPLAINT_TEMPLATE = "Complaint Template"
@@ -677,7 +678,7 @@ public class Consts {
 
 
 
-	//Data
+	/* -------- DATA --------*/
 
 	//001 - 020 For Complaint Template
 	public static final Map<Fields, String> P1_MW_DOC001 //Used in Data Creation and Validation
@@ -727,5 +728,37 @@ public class Consts {
 		P1_REPO_DOC006.put(Fields.TEMPLATE_NAME, 'Template3_Automation')
 		P1_REPO_DOC006.put(Fields.TEMPLATE_TEXT, 'Template Text - Automation')
 	}
+	
+	//021 - 040 For WMI Menu Bov, WMI Menu Default, WMI Menu DocTwoRow
+	public static final Map<Fields, String> P1_WMI_DOC021 //Used in WMI Menu Testing
+	public static boolean FLAG_P1_WMI_DOC021 = false
+	static {
+		P1_WMI_DOC021 = new HashMap<Fields, String>()
+		P1_WMI_DOC021.put(Fields.CUSTOMER_ID, '200')
+		P1_WMI_DOC021.put(Fields.BM_STRING, 'Test1')
+		P1_WMI_DOC021.put(Fields.CUSTOMER_NAME, 'Roshan')
+		P1_WMI_DOC021.put(Fields.UPLOAD_FILE, RunConfiguration.getProjectDir().replace('/', '\\')+'\\Data Files\\FileUploads\\50 Pages PDF file.pdf')
+	}
+
+	public static final Map<Fields, String> P1_WMI_DOC022 //Used in WMI Menu Testing
+	public static boolean FLAG_P1_WMI_DOC022 = false
+	static {
+		P1_WMI_DOC022 = new HashMap<Fields, String>()
+		P1_WMI_DOC022.put(Fields.CUSTOMER_ID, '200')
+		P1_WMI_DOC022.put(Fields.BM_STRING, 'Test1')
+		P1_WMI_DOC022.put(Fields.CUSTOMER_NAME, 'Roshan')
+		P1_WMI_DOC022.put(Fields.UPLOAD_FILE, RunConfiguration.getProjectDir().replace('/', '\\')+'\\Data Files\\FileUploads\\50 Pages PDF file.pdf')
+	}
+
+	public static final Map<Fields, String> P1_WMI_DOC023 //Used in WMI Menu Testing
+	public static boolean FLAG_P1_WMI_DOC023 = false
+	static {
+		P1_WMI_DOC023 = new HashMap<Fields, String>()
+		P1_WMI_DOC023.put(Fields.CUSTOMER_ID, '200')
+		P1_WMI_DOC023.put(Fields.BM_STRING, 'Test1')
+		P1_WMI_DOC023.put(Fields.CUSTOMER_NAME, 'Roshan')
+		P1_WMI_DOC023.put(Fields.UPLOAD_FILE, RunConfiguration.getProjectDir().replace('/', '\\')+'\\Data Files\\FileUploads\\50 Pages PDF file.pdf')
+	}
+	
 }
 

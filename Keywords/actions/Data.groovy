@@ -9,6 +9,7 @@ import org.apache.commons.lang3.StringUtils
 
 import com.kms.katalon.core.annotation.Keyword
 import com.kms.katalon.core.checkpoint.Checkpoint
+import com.kms.katalon.core.configuration.RunConfiguration
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
 import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
 import com.kms.katalon.core.model.FailureHandling
@@ -50,6 +51,18 @@ public class Data {
 				complaintTemplate(data)
 				break
 
+			case DocType.WMI_MENU_BOV:
+				wmiMenuBov(data)
+				break
+				
+			case DocType.WMI_MENU_DEFAULT:
+				wmiMenuDefault(data)
+				break
+			
+			case DocType.WMI_MENU_DOCTWOROW:
+				wmiMenuDocTwoRow(data)
+				break
+			
 			default:
 				WebUI.takeScreenshot()
 				KeywordUtil.markFailedAndStop('Unable to create document, Invalid docType provided : '+docType)
@@ -74,7 +87,68 @@ public class Data {
 			WebUI.setText(findTestObject('Page_WMI_NEW/Complaints Templates/Complaint Template/input_Template Name'), templateName)
 		if(StringUtils.isNotBlank(templateText))
 			WebUI.setText(findTestObject('Page_WMI_NEW/Complaints Templates/Complaint Template/body_Template Text'), templateText)
+
 		//Click on Save button
 		new Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI_NEW/Complaints Templates/Complaint Template/btn_Save'), GlobalVariable.G_LongTimeout)
+	}
+	
+	private void wmiMenuBov(Map<Fields, String> data) {
+
+		//Get Data from Map
+		String custId = data.get(Fields.CUSTOMER_ID)
+		String bmString = data.get(Fields.BM_STRING)
+		String custName = data.get(Fields.CUSTOMER_NAME)
+		String file = data.get(Fields.UPLOAD_FILE)
+
+		//Fill Form
+		WebUI.selectOptionByLabel(findTestObject('Object Repository/Page_WMI_NEW/WMI_Menu_BOV/selectCustomerId'), custId,false)
+		WebUI.sendKeys(findTestObject('Object Repository/Page_WMI_NEW/WMI_Menu_BOV/inputBMString'), bmString)
+		WebUI.sendKeys(findTestObject('Object Repository/Page_WMI_NEW/WMI_Menu_BOV/inputCustomerName'), custName)
+		WebUI.uploadFile(findTestObject('Object Repository/Page_WMI_NEW/WMI_Menu_BOV/inputUpload'), file)
+
+		//Save and Close window
+		WebUI.mouseOver(findTestObject('Object Repository/Page_WMI_NEW/WMI_Menu_BOV/buttonStandardActions'))
+		WebUI.waitForElementVisible(findTestObject('Object Repository/Page_WMI_NEW/WMI_Menu_BOV/buttonSave'), GlobalVariable.G_LongTimeout)
+		new Window().clickElementAndWaitForWindowClose(findTestObject('Object Repository/Page_WMI_NEW/WMI_Menu_BOV/buttonSave'),GlobalVariable.G_LongTimeout)
+	}
+	
+	private void wmiMenuDefault(Map<Fields, String> data) {
+		
+		//Get Data from Map
+		String custId = data.get(Fields.CUSTOMER_ID)
+		String bmString = data.get(Fields.BM_STRING)
+		String custName = data.get(Fields.CUSTOMER_NAME)
+		String file = data.get(Fields.UPLOAD_FILE)
+
+		//Fill Form
+		WebUI.selectOptionByLabel(findTestObject('Object Repository/Page_WMI_NEW/WMI_Menu_BOV_Default/customerID'), custId,false)
+		WebUI.sendKeys(findTestObject('Object Repository/Page_WMI_NEW/WMI_Menu_BOV_Default/BMString'), bmString)
+		WebUI.sendKeys(findTestObject('Object Repository/Page_WMI_NEW/WMI_Menu_BOV_Default/customerName'), custName)
+		WebUI.uploadFile(findTestObject('Object Repository/Page_WMI_NEW/WMI_Menu_BOV_Default/chooseFile'), file)
+
+		//Save and Close window
+		WebUI.mouseOver(findTestObject('Object Repository/Page_WMI_NEW/WMI_Menu_BOV_Default/standardActionsUIButton'))
+		WebUI.waitForElementVisible(findTestObject('Object Repository/Page_WMI_NEW/WMI_Menu_BOV_Default/Save'), GlobalVariable.G_LongTimeout)
+		new Window().clickElementAndWaitForWindowClose(findTestObject('Object Repository/Page_WMI_NEW/WMI_Menu_BOV_Default/Save'),GlobalVariable.G_LongTimeout)
+	}
+	
+	private void wmiMenuDocTwoRow(Map<Fields, String> data) {
+
+		//Get Data from Map
+		String custId = data.get(Fields.CUSTOMER_ID)
+		String bmString = data.get(Fields.BM_STRING)
+		String custName = data.get(Fields.CUSTOMER_NAME)
+		String file = data.get(Fields.UPLOAD_FILE)
+
+		//Fill Form
+		WebUI.selectOptionByLabel(findTestObject('Object Repository/Page_WMI_NEW/WMI_Menu_BOV_DocTwoRow/customerId'), custId,false)
+		WebUI.sendKeys(findTestObject('Object Repository/Page_WMI_NEW/WMI_Menu_BOV_DocTwoRow/BMString'), bmString)
+		WebUI.sendKeys(findTestObject('Object Repository/Page_WMI_NEW/WMI_Menu_BOV_DocTwoRow/customerName'), custName)
+		WebUI.uploadFile(findTestObject('Object Repository/Page_WMI_NEW/WMI_Menu_BOV_DocTwoRow/chooseFile'), file)
+
+		//Save and Close window
+		WebUI.mouseOver(findTestObject('Object Repository/Page_WMI_NEW/WMI_Menu_BOV_DocTwoRow/dropdownStandardActions'))
+		WebUI.waitForElementVisible(findTestObject('Object Repository/Page_WMI_NEW/WMI_Menu_BOV_DocTwoRow/Save'), GlobalVariable.G_LongTimeout)
+		new Window().clickElementAndWaitForWindowClose(findTestObject('Object Repository/Page_WMI_NEW/WMI_Menu_BOV_DocTwoRow/Save'),GlobalVariable.G_LongTimeout)
 	}
 }

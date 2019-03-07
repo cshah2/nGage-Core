@@ -20,17 +20,20 @@ import internal.GlobalVariable
 
 public enum DocType {
 	CLOSURE_ACTION("Closure Action"),
-	COMPLAINT_TEMPLATE("Complaint Template")
-	
+	COMPLAINT_TEMPLATE("Complaint Template"),
+	WMI_MENU_BOV("WMI Menu BOV"),
+	WMI_MENU_BOV_VERTICAL("WMI Menu BOV Vertical"),
+	WMI_MENU_DEFAULT("WMI Menu Default"),
+	WMI_MENU_DOCTWOROW("WMI Menu DocTwoRow")
+
 	private final String text
-	
+
 	DocType(String text) {
 		this.text = text
 	}
-	
+
 	@Override
 	public String toString() {
 		return text
 	}
-
 }

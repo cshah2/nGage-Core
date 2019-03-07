@@ -20,14 +20,15 @@ import internal.GlobalVariable
 
 public enum DocClass {
 	CLOSURE_ACTION("Closure Action"),
-	COMPLAINTS_TEMPLATES("Complaints Templates")
-	
+	COMPLAINTS_TEMPLATES("Complaints Templates"),
+	WMI_MENU("WMI Menu")
+
 	private final String text
-	
+
 	DocClass(String text) {
 		this.text = text
 	}
-	
+
 	@Override
 	public String toString() {
 		return text

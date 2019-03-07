@@ -19,6 +19,10 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable
 
 public enum Fields {
-	TEMPLATE_NAME,
-	TEMPLATE_TEXT
+	TEMPLATE_NAME,		//Complaint Template
+	TEMPLATE_TEXT,		//Complaint Template
+	CUSTOMER_ID,		//WMI Menu Bov, WMI Menu Default, WMI Menu DocTwoRow	
+	BM_STRING,			//WMI Menu Bov, WMI Menu Default, WMI Menu DocTwoRow
+	CUSTOMER_NAME,		//WMI Menu Bov, WMI Menu Default, WMI Menu DocTwoRow
+	UPLOAD_FILE			//WMI Menu Bov, WMI Menu Default, WMI Menu DocTwoRow
 }
