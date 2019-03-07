@@ -103,13 +103,14 @@ public class Common {
 	def navigateToLoginPage() {
 
 		try{
-			DriverFactory.getWebDriver()
+			WebUI.switchToWindowIndex(0)
+			WebUI.maximizeWindow()
 		}
 		catch(Exception e) {
 			WebUtil.openBrowser()
+			WebUI.maximizeWindow()
 		}
-
-		WebUI.maximizeWindow()
+		
 		WebUI.deleteAllCookies()
 		WebUI.navigateToUrl(WebUI.concatenate(GlobalVariable.BaseURL, '/login.aspx'));
 		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)

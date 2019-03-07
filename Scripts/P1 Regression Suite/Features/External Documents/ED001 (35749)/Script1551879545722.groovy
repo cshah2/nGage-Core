@@ -12,7 +12,9 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
-import utils.Fields
+import common.DocClass
+import common.DocType
+import common.Fields
 import static utils.Consts.*
 
 'Login Into Application'
@@ -27,7 +29,7 @@ CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Da
 int currentCount = CustomKeywords.'actions.MenuBar.getRecordCountInActivity'('MY_WORK', MW_LVL0, MW_LVL1_COMPLAINTS_TEMPLATE, MW_LVL2_COMPLAINT_TEMPLATE)
 
 'Create Document'
-CustomKeywords.'actions.Data.create'(DC_COMPLAINTS_TEMPLATES, DT_COMPLAINT_TEMPLATE, P1_MW_DOC001)
+CustomKeywords.'actions.Data.create'(DocClass.COMPLAINTS_TEMPLATES, DocType.COMPLAINT_TEMPLATE, P1_MW_DOC001)
 FLAG_P1_MW_DOC001 = true
 
 WebUI.refresh()

@@ -20,31 +20,33 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 
 import internal.GlobalVariable
-import utils.Fields
+import common.DocClass
+import common.DocType
+import common.Fields
 import static utils.Consts.*
 
 public class Data {
-	
+
 	@Keyword
-	def create(String docClass, String docType, Map<Fields, String> data) {
+	def create(DocClass docClass, DocType docType, Map<Fields, String> data) {
 
 		//Switch to main window
 		WebUI.switchToWindowTitle('Savana nGage')
 
 		//Select DocClass and Doc Type
 		WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))
-		new Common().selectDocClassAndDocTypeForGlobalNew(docClass, docType)
-		
+		new Common().selectDocClassAndDocTypeForGlobalNew(docClass.toString(), docType.toString())
+
 		//Click on OK button
 		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'))
 
 		//Switch to new Window
 		WebUI.switchToWindowIndex(1)
 		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
-		
+
 		switch(docType) {
-			
-			case DT_COMPLAINT_TEMPLATE:
+
+			case DocType.COMPLAINT_TEMPLATE:
 				complaintTemplate(data)
 				break
 
@@ -53,20 +55,20 @@ public class Data {
 				KeywordUtil.markFailedAndStop('Unable to create document, Invalid docType provided : '+docType)
 				break
 		}
-		
+
 		//Switch to main window
 		WebUI.switchToWindowTitle('Savana nGage')
-		
+
 		//Close pop up dialog
 		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/span_ui-button-icon-primary ui'))
 	}
-	
+
 	private void complaintTemplate(Map<Fields, String> data) {
-		
+
 		//Get Data from Map
 		String templateName = data.get(Fields.TEMPLATE_NAME)
 		String templateText = data.get(Fields.TEMPLATE_TEXT)
-		
+
 		//Fill form
 		if(StringUtils.isNotBlank(templateName))
 			WebUI.setText(findTestObject('Page_WMI_NEW/Complaints Templates/Complaint Template/input_Template Name'), templateName)

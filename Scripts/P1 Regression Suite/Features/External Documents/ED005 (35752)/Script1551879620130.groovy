@@ -12,7 +12,9 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
-import utils.Fields
+import common.DocClass
+import common.DocType
+import common.Fields
 
 import static utils.Consts.*
 
@@ -20,7 +22,7 @@ import static utils.Consts.*
 CustomKeywords.'actions.Common.login'()
 
 'Create Document'
-CustomKeywords.'actions.Data.create'(DC_COMPLAINTS_TEMPLATES, DT_COMPLAINT_TEMPLATE, P1_REPO_DOC002)
+CustomKeywords.'actions.Data.create'(DocClass.COMPLAINTS_TEMPLATES, DocType.COMPLAINT_TEMPLATE, P1_REPO_DOC002)
 FLAG_P1_REPO_DOC002 = true
 
 'Expand Repository Menu'

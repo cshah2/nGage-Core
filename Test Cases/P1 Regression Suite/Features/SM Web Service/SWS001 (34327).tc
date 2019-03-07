@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Verify - uploaded content file retrieve correctly and  has been store on correct stroage path  when Objet type is File System.</description>
+   <name>SWS001 (34327)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>bab957fc-40a7-4a40-8201-c5f659cec4b7</testCaseGuid>
+</TestCaseEntity>

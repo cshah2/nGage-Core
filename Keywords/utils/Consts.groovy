@@ -17,6 +17,7 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 
 import internal.GlobalVariable
+import common.Fields
 
 public class Consts {
 
@@ -665,17 +666,11 @@ public class Consts {
 
 	/* ####################### REFACTORED DATA ####################### */
 
-	//Doc Class and Doc Types
-	public static final String DC_COMPLAINTS_TEMPLATES = "Complaints Templates"
-	public static final String DT_COMPLAINT_TEMPLATE = "Complaint Template"
-
-
-
 	//Tree Structure
 	public static final String MW_LVL0 = 'Processes'
 	public static final String MW_LVL1_COMPLAINTS_TEMPLATE = "Complaints Template"
 	public static final String MW_LVL2_COMPLAINT_TEMPLATE = "Complaint Template"
-	
+
 	public static final String REPO_LVL1_COMPLAINTS_TEMPLATE = "Complaint Templates"
 	public static final String REPO_LVL2_COMPLAINT_TEMPLATE = "Complaint Templates"
 
@@ -684,7 +679,7 @@ public class Consts {
 
 	//Data
 
-	//001 - 020 For Complaint Template 
+	//001 - 020 For Complaint Template
 	public static final Map<Fields, String> P1_MW_DOC001 //Used in Data Creation and Validation
 	public static boolean FLAG_P1_MW_DOC001 = false
 	static {
@@ -692,7 +687,7 @@ public class Consts {
 		P1_MW_DOC001.put(Fields.TEMPLATE_NAME, 'Template1_Automation')
 		P1_MW_DOC001.put(Fields.TEMPLATE_TEXT, 'Template Text - Automation')
 	}
-	
+
 	public static final Map<Fields, String> P1_REPO_DOC002 //Used in Data Creation and Validation
 	public static boolean FLAG_P1_REPO_DOC002 = false
 	static {
@@ -700,7 +695,7 @@ public class Consts {
 		P1_REPO_DOC002.put(Fields.TEMPLATE_NAME, 'Template1_Automation')
 		P1_REPO_DOC002.put(Fields.TEMPLATE_TEXT, 'Template Text - Automation')
 	}
-	
+
 	public static final Map<Fields, String> P1_REPO_DOC003 //Used in Filter Testing
 	public static boolean FLAG_P1_REPO_DOC003 = false
 	static {
@@ -708,7 +703,7 @@ public class Consts {
 		P1_REPO_DOC003.put(Fields.TEMPLATE_NAME, 'Template2_Automation')
 		P1_REPO_DOC003.put(Fields.TEMPLATE_TEXT, 'Template Text - Automation')
 	}
-	
+
 	public static final Map<Fields, String> P1_MW_DOC004 //Used in Filter Testing
 	public static boolean FLAG_P1_MW_DOC004 = false
 	static {
@@ -716,7 +711,7 @@ public class Consts {
 		P1_MW_DOC004.put(Fields.TEMPLATE_NAME, 'Template2_Automation')
 		P1_MW_DOC004.put(Fields.TEMPLATE_TEXT, 'Template Text - Automation')
 	}
-	
+
 	public static final Map<Fields, String> P1_MW_DOC005 //Used in Delete operation
 	public static boolean FLAG_P1_MW_DOC005 = false
 	static {
@@ -724,7 +719,7 @@ public class Consts {
 		P1_MW_DOC005.put(Fields.TEMPLATE_NAME, 'Template3_Automation')
 		P1_MW_DOC005.put(Fields.TEMPLATE_TEXT, 'Template Text - Automation')
 	}
-	
+
 	public static final Map<Fields, String> P1_REPO_DOC006 //Used in Delete operation
 	public static boolean FLAG_P1_REPO_DOC006 = false
 	static {

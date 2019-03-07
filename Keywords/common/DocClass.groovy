@@ -1,4 +1,4 @@
-package utils
+package common
 
 import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
 import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
@@ -18,7 +18,18 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 
 import internal.GlobalVariable
 
-public enum Fields {
-	TEMPLATE_NAME,
-	TEMPLATE_TEXT
+public enum DocClass {
+	CLOSURE_ACTION("Closure Action"),
+	COMPLAINTS_TEMPLATES("Complaints Templates")
+	
+	private final String text
+	
+	DocClass(String text) {
+		this.text = text
+	}
+	
+	@Override
+	public String toString() {
+		return text
+	}
 }

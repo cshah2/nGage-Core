@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Verify -  uploaded content file retrieve correctly and  has been store on correct stroage table when Objet type is Database.</description>
+   <name>SWS002 (34329)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>bb41a843-8a27-420f-bca2-d40dea9fe4b8</testCaseGuid>
+</TestCaseEntity>
