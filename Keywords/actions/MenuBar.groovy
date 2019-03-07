@@ -290,9 +290,9 @@ public class MenuBar {
 		List<String> treePath = new ArrayList<String>(Arrays.asList(menuPath))
 		int lastIndex = treePath.size()-1
 		treePath.remove(lastIndex)
-		expandTree(moduleName, treePath)
 
 		try {
+			expandTree(moduleName, treePath)
 			String appendBrace = ""
 			if(!moduleName.equalsIgnoreCase('REPORT'))
 				appendBrace = lastIndex>1?" (":""
@@ -309,8 +309,10 @@ public class MenuBar {
 			return Integer.parseInt(recordCountInString)
 		}
 		catch(Exception e) {
-			WebUI.takeScreenshot()
-			KeywordUtil.markFailedAndStop('Could not get record count in activity'+e.toString())
+			
+			return 0
+//			WebUI.takeScreenshot()
+//			KeywordUtil.markFailedAndStop('Could not get record count in activity'+e.toString())
 		}
 	}
 
