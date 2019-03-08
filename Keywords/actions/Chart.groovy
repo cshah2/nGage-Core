@@ -25,6 +25,7 @@ import com.kms.katalon.core.webui.common.WebUiCommonHelper
 import com.kms.katalon.core.webui.driver.DriverFactory
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 
+import common.ChartType
 import internal.GlobalVariable
 import utils.WebUtil
 
@@ -34,27 +35,27 @@ public class Chart {
 	/* ##################### KEYWORDS ##################### */
 
 	@Keyword
-	def verifyNumberOfSlices(TestObject chartLocator, int expCount, String sliceLocator) {
+	def verifyNumberOfSlices(TestObject chartLocator, int expCount, ChartType type) {
 		WebElement chart = WebUtil.getWebElement(chartLocator)
-		List<WebElement> slices = chart.findElements(By.xpath(sliceLocator))
+		List<WebElement> slices = chart.findElements(By.xpath(type.getXpath()))
 		WebUI.switchToDefaultContent()
 		int actCount = slices.size()
 		WebUI.verifyEqual(actCount, expCount)
 	}
 
 	@Keyword
-	def getNumberOfSlices(TestObject chartLocator, String sliceLocator) {
+	def getNumberOfSlices(TestObject chartLocator, ChartType type) {
 
 		WebElement chart = WebUtil.getWebElement(chartLocator)
-		List<WebElement> slices = chart.findElements(By.xpath(sliceLocator))
+		List<WebElement> slices = chart.findElements(By.xpath(type.getXpath()))
 		WebUI.switchToDefaultContent()
 		return slices.size()
 	}
 
 	@Keyword
-	def verifyToolTipText(TestObject chartLocator, int sliceNo, String expToolTipText, String sliceLocator) {
+	def verifyToolTipText(TestObject chartLocator, int sliceNo, String expToolTipText, ChartType type) {
 		WebElement chart = WebUtil.getWebElement(chartLocator)
-		List<WebElement> slices = chart.findElements(By.xpath(sliceLocator))
+		List<WebElement> slices = chart.findElements(By.xpath(type.getXpath()))
 
 		WebDriver driver = DriverFactory.getWebDriver()
 		Actions action = new Actions(driver)
@@ -70,9 +71,9 @@ public class Chart {
 	}
 
 	@Keyword
-	def verifyToolTipText(TestObject chartLocator, int sliceNo, String expKey, String expValue, String sliceLocator) {
+	def verifyToolTipText(TestObject chartLocator, int sliceNo, String expKey, String expValue, ChartType type) {
 		WebElement chart = WebUtil.getWebElement(chartLocator)
-		List<WebElement> slices = chart.findElements(By.xpath(sliceLocator))
+		List<WebElement> slices = chart.findElements(By.xpath(type.getXpath()))
 
 		WebDriver driver = DriverFactory.getWebDriver()
 		Actions action = new Actions(driver)
@@ -91,9 +92,9 @@ public class Chart {
 	}
 
 	@Keyword
-	def mousOverOnSlice(TestObject chartLocator, int sliceNo, String sliceLocator) {
+	def mousOverOnSlice(TestObject chartLocator, int sliceNo, ChartType type) {
 		WebElement chart = WebUtil.getWebElement(chartLocator)
-		List<WebElement> slices = chart.findElements(By.xpath(sliceLocator))
+		List<WebElement> slices = chart.findElements(By.xpath(type.getXpath()))
 
 		WebElement slice
 		try {
@@ -112,9 +113,9 @@ public class Chart {
 	}
 
 	@Keyword
-	def clickSlice(TestObject chartLocator, int sliceNo, String sliceLocator) {
+	def clickSlice(TestObject chartLocator, int sliceNo, ChartType type) {
 		WebElement chart = WebUtil.getWebElement(chartLocator)
-		List<WebElement> slices = chart.findElements(By.xpath(sliceLocator))
+		List<WebElement> slices = chart.findElements(By.xpath(type.getXpath()))
 
 		WebElement slice
 		try {

@@ -11,6 +11,8 @@ import com.kms.katalon.core.testdata.TestData as TestData
 import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+
+import common.ChartType
 import internal.GlobalVariable as GlobalVariable
 import static utils.Consts.*
 
@@ -54,10 +56,10 @@ WebUI.verifyMatch(WebUI.getText(findTestObject('Page_nGage_Dashboard/My_Work/Cha
 int recordCount = CustomKeywords.'actions.Table.getRowsCount'(findTestObject('Page_nGage_Dashboard/My_Work/Charts/table_SingleProcess'))
 
 'Verify correct number of slices are displayed in pie chart'
-CustomKeywords.'actions.Chart.verifyNumberOfSlices'(findTestObject('Page_nGage_Dashboard/My_Work/Charts/Chart_SingleProcess_Summary'), recordCount, GlobalVariable.ChartType['PIE'])
+CustomKeywords.'actions.Chart.verifyNumberOfSlices'(findTestObject('Page_nGage_Dashboard/My_Work/Charts/Chart_SingleProcess_Summary'), recordCount, ChartType.PIE)
 
 'Verify correct number of slices in bar chart'
-CustomKeywords.'actions.Chart.verifyNumberOfSlices'(findTestObject('Page_nGage_Dashboard/My_Work/Charts/Chart_SingleProcess_SLAStatusView'), recordCount*4, GlobalVariable.ChartType['V_BAR'])
+CustomKeywords.'actions.Chart.verifyNumberOfSlices'(findTestObject('Page_nGage_Dashboard/My_Work/Charts/Chart_SingleProcess_SLAStatusView'), recordCount*4, ChartType.BAR_VERTICAL)
 
 'Get Row Number for closure activity process'
 int rowNo = CustomKeywords.'actions.Table.getRowNumber'(findTestObject('Page_nGage_Dashboard/My_Work/Charts/table_SingleProcess'), 2, 'Activity A')
@@ -71,7 +73,7 @@ println 'Expected Row No is :'+sliceNo
 int totalDocs = Integer.parseInt(CustomKeywords.'actions.Table.getCellText'(findTestObject('Page_nGage_Dashboard/My_Work/Charts/table_SingleProcess'), rowNo, 7))
 
 'Click on Slice in Bar graph'
-CustomKeywords.'actions.Chart.clickSlice'(findTestObject('Page_nGage_Dashboard/My_Work/Charts/Chart_SingleProcess_SLAStatusView'), sliceNo*4, GlobalVariable.ChartType['V_BAR'])
+CustomKeywords.'actions.Chart.clickSlice'(findTestObject('Page_nGage_Dashboard/My_Work/Charts/Chart_SingleProcess_SLAStatusView'), sliceNo*4, ChartType.BAR_VERTICAL)
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Charts/iframe_iframe_105'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/Charts/iframe_MyIframe'))
 

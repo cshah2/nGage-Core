@@ -13,6 +13,7 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 import utils.DateUtil
+import static utils.Consts.*
 
 'Login into application'
 CustomKeywords.'actions.Common.login'()
@@ -36,17 +37,17 @@ WebUI.verifyMatch(WebUI.getText(findTestObject('Page_nGage_Dashboard/Report/Copy
 'Verify Current Report name field value'
 WebUI.verifyMatch(WebUI.getText(findTestObject('Page_nGage_Dashboard/Report/CopyReport/label_CurrentReportName')).trim(), '.*BASE REPORT.*', true)
 
-GlobalVariable.Copy_Report_Name = 'COPY:'+DateUtil.getCurrentDateTime('yyyyMMdd:HHmmss')
+COPY_REPORT_NAME = 'COPY:'+DateUtil.getCurrentDateTime('yyyyMMdd:HHmmss')
 
 'Provide new report name'
-WebUI.setText(findTestObject('Page_nGage_Dashboard/Report/CopyReport/input_NewReportName'), GlobalVariable.Copy_Report_Name)
+WebUI.setText(findTestObject('Page_nGage_Dashboard/Report/CopyReport/input_NewReportName'), COPY_REPORT_NAME)
 
 'Click on Save button'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Report/CopyReport/button_Save'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Report/CopyReport/iframe_Copy_Report'))
 
 'Verify success message'
-WebUI.verifyMatch(WebUI.getText(findTestObject('Page_nGage_Dashboard/Report/CopyReport/label_SuccessMessage')).trim(), GlobalVariable.Copy_Report_Name+' has been created successfully.', false)
+WebUI.verifyMatch(WebUI.getText(findTestObject('Page_nGage_Dashboard/Report/CopyReport/label_SuccessMessage')).trim(), COPY_REPORT_NAME+' has been created successfully.', false)
 
 'Verify new report is now displayed in the tree'
-CustomKeywords.'actions.Report.verifyReportIsPresentUnderSubGroup'('New Group', 'new catagory', GlobalVariable.Copy_Report_Name)
+CustomKeywords.'actions.Report.verifyReportIsPresentUnderSubGroup'('New Group', 'new catagory', COPY_REPORT_NAME)

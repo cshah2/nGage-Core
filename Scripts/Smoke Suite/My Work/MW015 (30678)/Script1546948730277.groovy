@@ -17,6 +17,8 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WSBuiltInKey
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUiBuiltInKeywords
 
+import common.ChartType
+
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 import static utils.Consts.*
@@ -45,17 +47,17 @@ WebUI.delay(5)
 
 'Verify Number of bars in Bar charts'
 WebUI.verifyElementVisible(findTestObject('Page_nGage_Dashboard/My_Work/TAB_Dashboard_Obj/Chart_Asignee_ActivityDue'))
-int slices = CustomKeywords.'actions.Chart.getNumberOfSlices'(findTestObject('Page_nGage_Dashboard/My_Work/TAB_Dashboard_Obj/Chart_Asignee_ActivityDue'), GlobalVariable.ChartType['H_BAR'])
+int slices = CustomKeywords.'actions.Chart.getNumberOfSlices'(findTestObject('Page_nGage_Dashboard/My_Work/TAB_Dashboard_Obj/Chart_Asignee_ActivityDue'), ChartType.BAR_HORIZONTAL)
 WebUI.verifyGreaterThan(slices, 0)
 
 'Verify Count on Tool tip of Bar1'
-CustomKeywords.'actions.Chart.mousOverOnSlice'(findTestObject('Page_nGage_Dashboard/My_Work/TAB_Dashboard_Obj/Chart_Asignee_ActivityDue'), 1, GlobalVariable.ChartType['H_BAR'])
+CustomKeywords.'actions.Chart.mousOverOnSlice'(findTestObject('Page_nGage_Dashboard/My_Work/TAB_Dashboard_Obj/Chart_Asignee_ActivityDue'), 1, ChartType.BAR_HORIZONTAL)
 
 'Verify tool-tip is visible'
 WebUI.verifyElementVisible(findTestObject('Page_nGage_Dashboard/My_Work/TAB_Dashboard_Obj/chartToolTip_Assignee'))
 
 'Click on Bar 1'
-CustomKeywords.'actions.Chart.clickSlice'(findTestObject('Page_nGage_Dashboard/My_Work/TAB_Dashboard_Obj/Chart_Asignee_ActivityDue'), 1, GlobalVariable.ChartType['H_BAR'])
+CustomKeywords.'actions.Chart.clickSlice'(findTestObject('Page_nGage_Dashboard/My_Work/TAB_Dashboard_Obj/Chart_Asignee_ActivityDue'), 1, ChartType.BAR_HORIZONTAL)
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/TAB_Dashboard_Obj/iframe_BAMActivityWorkIt_Assignee'))
 
 'Verify table is displayed'

@@ -16,6 +16,9 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WSBuiltInKeywords
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUiBuiltInKeywords
+
+import common.ChartType
+
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 import utils.Consts
@@ -60,10 +63,10 @@ WebUI.verifyGreaterThan(recordCount, 0)
 
 'Verify correct number of slices are displayed in pie chart'
 WebUI.verifyElementVisible(findTestObject('Page_nGage_Dashboard/My_Work/Charts/Chart_SingleProcess_Summary'))
-int slices = CustomKeywords.'actions.Chart.getNumberOfSlices'(findTestObject('Page_nGage_Dashboard/My_Work/Charts/Chart_SingleProcess_Summary'), GlobalVariable.ChartType['PIE'])
+int slices = CustomKeywords.'actions.Chart.getNumberOfSlices'(findTestObject('Page_nGage_Dashboard/My_Work/Charts/Chart_SingleProcess_Summary'), ChartType.PIE)
 WebUI.verifyGreaterThan(slices, 0)
 
 'Verify correct number of slices in bar chart'
 WebUI.verifyElementVisible(findTestObject('Page_nGage_Dashboard/My_Work/Charts/Chart_SingleProcess_SLAStatusView'))
-slices = CustomKeywords.'actions.Chart.getNumberOfSlices'(findTestObject('Page_nGage_Dashboard/My_Work/Charts/Chart_SingleProcess_SLAStatusView'), GlobalVariable.ChartType['V_BAR'])
+slices = CustomKeywords.'actions.Chart.getNumberOfSlices'(findTestObject('Page_nGage_Dashboard/My_Work/Charts/Chart_SingleProcess_SLAStatusView'), ChartType.BAR_VERTICAL)
 WebUI.verifyGreaterThan(slices, 0)

@@ -12,6 +12,7 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
+import static utils.Consts.*
 
 'Login into application'
 CustomKeywords.'actions.Common.login'()
@@ -22,10 +23,10 @@ WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Report/IFrame_108'))
 
 'Verify new report is now displayed in the tree'
-CustomKeywords.'actions.Report.verifyReportIsPresentUnderSubGroup'('New Group', 'new catagory', GlobalVariable.Copy_Report_Name)
+CustomKeywords.'actions.Report.verifyReportIsPresentUnderSubGroup'('New Group', 'new catagory', COPY_REPORT_NAME)
 
 'Right click on report'
-CustomKeywords.'actions.Report.rightClickReport'('New Group', 'new catagory', GlobalVariable.Copy_Report_Name)
+CustomKeywords.'actions.Report.rightClickReport'('New Group', 'new catagory', COPY_REPORT_NAME)
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
 'Select option DELETE on context menu'
@@ -36,7 +37,7 @@ CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Da
 WebUI.verifyMatch(WebUI.getText(findTestObject('Page_nGage_Dashboard/Report/DeleteReport/header_Delete Report')).trim(), 'Delete Report', false)
 
 'Verify Current Report name field value'
-WebUI.verifyMatch(WebUI.getText(findTestObject('Page_nGage_Dashboard/Report/DeleteReport/label_ReportName')).trim(), GlobalVariable.Copy_Report_Name, false)
+WebUI.verifyMatch(WebUI.getText(findTestObject('Page_nGage_Dashboard/Report/DeleteReport/label_ReportName')).trim(), COPY_REPORT_NAME, false)
 
 'Click on Delete button'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Report/DeleteReport/button_Delete'))
@@ -46,4 +47,4 @@ CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Da
 WebUI.verifyMatch(WebUI.getText(findTestObject('Page_nGage_Dashboard/Report/DeleteReport/label_SuccessMessage')).trim(), 'Report Deleted Successfully.', false)
 
 'Verify Report is not displayed in tree'
-CustomKeywords.'actions.Report.verifyReportIsNotPresentUnderSubGroup'('New Group', 'new catagory', GlobalVariable.Copy_Report_Name)
+CustomKeywords.'actions.Report.verifyReportIsNotPresentUnderSubGroup'('New Group', 'new catagory', COPY_REPORT_NAME)

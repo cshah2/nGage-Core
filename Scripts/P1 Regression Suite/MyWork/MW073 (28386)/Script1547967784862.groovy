@@ -14,6 +14,8 @@ import com.kms.katalon.core.testdata.TestData as TestData
 import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+
+import common.ChartType
 import internal.GlobalVariable as GlobalVariable
 import static utils.Consts.*
 
@@ -50,11 +52,11 @@ CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Reposi
 WebUI.delay(5) //wait for chart to plot
 
 'Verify chart is visible'
-int totalSlices = CustomKeywords.'actions.Chart.getNumberOfSlices'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/TAB_Dashboard_Obj/Chart_ActivityEventState_SLAStatusView'), GlobalVariable.ChartType['V_BAR'])
+int totalSlices = CustomKeywords.'actions.Chart.getNumberOfSlices'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/TAB_Dashboard_Obj/Chart_ActivityEventState_SLAStatusView'), ChartType.BAR_VERTICAL)
 WebUI.verifyGreaterThan(totalSlices, 0)
 
 'click on Bar graph slice'
-CustomKeywords.'actions.Chart.clickSlice'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/TAB_Dashboard_Obj/Chart_ActivityEventState_SLAStatusView'), 4,GlobalVariable.ChartType['V_BAR'])
+CustomKeywords.'actions.Chart.clickSlice'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/TAB_Dashboard_Obj/Chart_ActivityEventState_SLAStatusView'), 4, ChartType.BAR_VERTICAL)
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/TAB_Dashboard_Obj/iframe_ACTEVENTSTATE_iframe'))
 
 'verify table is present and contains atleast 1 record'

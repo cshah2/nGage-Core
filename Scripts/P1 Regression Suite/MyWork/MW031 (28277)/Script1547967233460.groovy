@@ -11,6 +11,8 @@ import com.kms.katalon.core.testdata.TestData as TestData
 import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+
+import common.ChartType
 import internal.GlobalVariable as GlobalVariable
 import static utils.Consts.*
 
@@ -54,17 +56,17 @@ WebUI.verifyMatch(WebUI.getText(findTestObject('Page_nGage_Dashboard/My_Work/Cha
 int recordCount = CustomKeywords.'actions.Table.getRowsCount'(findTestObject('Page_nGage_Dashboard/My_Work/Charts/table_SingleProcess'))
 
 'Verify correct number of slices are displayed in pie chart'
-CustomKeywords.'actions.Chart.verifyNumberOfSlices'(findTestObject('Page_nGage_Dashboard/My_Work/Charts/Chart_SingleProcess_Summary'), recordCount, GlobalVariable.ChartType['PIE'])
+CustomKeywords.'actions.Chart.verifyNumberOfSlices'(findTestObject('Page_nGage_Dashboard/My_Work/Charts/Chart_SingleProcess_Summary'), recordCount, ChartType.PIE)
 
 'Verify correct number of slices in bar chart'
-CustomKeywords.'actions.Chart.verifyNumberOfSlices'(findTestObject('Page_nGage_Dashboard/My_Work/Charts/Chart_SingleProcess_SLAStatusView'), recordCount*4, GlobalVariable.ChartType['V_BAR'])
+CustomKeywords.'actions.Chart.verifyNumberOfSlices'(findTestObject('Page_nGage_Dashboard/My_Work/Charts/Chart_SingleProcess_SLAStatusView'), recordCount*4, ChartType.BAR_VERTICAL)
 
 'Get Row Number for closure activity process'
 int rowNo = CustomKeywords.'actions.Table.getCorrectSliceNumber'(findTestObject('Page_nGage_Dashboard/My_Work/Charts/table_SingleProcess'), 7, 2, 'Activity A')
 println 'Expected Row No is :'+rowNo
 
 'Click on respective slice in Bar chart'
-CustomKeywords.'actions.Chart.clickSlice'(findTestObject('Page_nGage_Dashboard/My_Work/Charts/Chart_SingleProcess_Summary'), rowNo, GlobalVariable.ChartType['PIE'])
+CustomKeywords.'actions.Chart.clickSlice'(findTestObject('Page_nGage_Dashboard/My_Work/Charts/Chart_SingleProcess_Summary'), rowNo, ChartType.PIE)
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_iframe_105'))
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 

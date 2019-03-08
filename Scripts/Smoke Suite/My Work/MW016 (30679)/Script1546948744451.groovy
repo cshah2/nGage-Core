@@ -19,6 +19,9 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WSBuiltInKeywords
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUiBuiltInKeywords
+
+import common.ChartType
+
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 import static utils.Consts.*
@@ -51,15 +54,15 @@ WebUI.delay(5)
 
 'Verify Pie chart is displayed'
 WebUI.verifyElementVisible(findTestObject('Page_nGage_Dashboard/My_Work/TAB_Dashboard_Obj/Chart_ActivityEventState_Summary'))
-int slices = CustomKeywords.'actions.Chart.getNumberOfSlices'(findTestObject('Page_nGage_Dashboard/My_Work/TAB_Dashboard_Obj/Chart_ActivityEventState_Summary'), GlobalVariable.ChartType['PIE'])
+int slices = CustomKeywords.'actions.Chart.getNumberOfSlices'(findTestObject('Page_nGage_Dashboard/My_Work/TAB_Dashboard_Obj/Chart_ActivityEventState_Summary'), ChartType.PIE)
 WebUI.verifyGreaterThan(slices, 0)
 
 'Verify tool tip is displayed on performing mouse over on pie slice'
-CustomKeywords.'actions.Chart.mousOverOnSlice'(findTestObject('Page_nGage_Dashboard/My_Work/TAB_Dashboard_Obj/Chart_ActivityEventState_Summary'), 1, GlobalVariable.ChartType['PIE'])
+CustomKeywords.'actions.Chart.mousOverOnSlice'(findTestObject('Page_nGage_Dashboard/My_Work/TAB_Dashboard_Obj/Chart_ActivityEventState_Summary'), 1, ChartType.PIE)
 WebUI.verifyElementVisible(findTestObject('Page_nGage_Dashboard/My_Work/TAB_Dashboard_Obj/chartToolTip_ActivityEvent'))
 
 'Click on Slice 1'
-CustomKeywords.'actions.Chart.clickSlice'(findTestObject('Page_nGage_Dashboard/My_Work/TAB_Dashboard_Obj/Chart_ActivityEventState_Summary'), 1, GlobalVariable.ChartType['PIE'])
+CustomKeywords.'actions.Chart.clickSlice'(findTestObject('Page_nGage_Dashboard/My_Work/TAB_Dashboard_Obj/Chart_ActivityEventState_Summary'), 1, ChartType.PIE)
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/TAB_Dashboard_Obj/iframe_BAMActivityWorkIt_ActivityEvent'))
 
 'Verify table is displayed'
@@ -90,15 +93,15 @@ CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Da
 
 'Verify Bar chart is displayed'
 WebUI.verifyElementVisible(findTestObject('Page_nGage_Dashboard/My_Work/TAB_Dashboard_Obj/Chart_ActivityEventState_SLAStatusView'))
-slices = CustomKeywords.'actions.Chart.getNumberOfSlices'(findTestObject('Page_nGage_Dashboard/My_Work/TAB_Dashboard_Obj/Chart_ActivityEventState_SLAStatusView'), GlobalVariable.ChartType['V_BAR'])
+slices = CustomKeywords.'actions.Chart.getNumberOfSlices'(findTestObject('Page_nGage_Dashboard/My_Work/TAB_Dashboard_Obj/Chart_ActivityEventState_SLAStatusView'), ChartType.BAR_VERTICAL)
 WebUI.verifyGreaterThan(slices, 0)
 
 'Verify tool tip is displayed on performing mouse over on bar chart'
-CustomKeywords.'actions.Chart.mousOverOnSlice'(findTestObject('Page_nGage_Dashboard/My_Work/TAB_Dashboard_Obj/Chart_ActivityEventState_Summary'), 4, GlobalVariable.ChartType['V_BAR'])
+CustomKeywords.'actions.Chart.mousOverOnSlice'(findTestObject('Page_nGage_Dashboard/My_Work/TAB_Dashboard_Obj/Chart_ActivityEventState_Summary'), 4, ChartType.BAR_VERTICAL)
 WebUI.verifyElementVisible(findTestObject('Page_nGage_Dashboard/My_Work/TAB_Dashboard_Obj/chartToolTip_ActivityEvent'))
 
 'Click on Bar 1'
-CustomKeywords.'actions.Chart.clickSlice'(findTestObject('Page_nGage_Dashboard/My_Work/TAB_Dashboard_Obj/Chart_ActivityEventState_Summary'), 4, GlobalVariable.ChartType['V_BAR'])
+CustomKeywords.'actions.Chart.clickSlice'(findTestObject('Page_nGage_Dashboard/My_Work/TAB_Dashboard_Obj/Chart_ActivityEventState_Summary'), 4, ChartType.BAR_VERTICAL)
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/TAB_Dashboard_Obj/iframe_BAMActivityWorkIt_ActivityEvent'))
 
 'Verify table is displayed'

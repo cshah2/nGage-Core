@@ -11,6 +11,8 @@ import com.kms.katalon.core.testdata.TestData as TestData
 import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+
+import common.ChartType
 import internal.GlobalVariable as GlobalVariable
 import static utils.Consts.*
 
@@ -54,12 +56,12 @@ WebUI.verifyGreaterThan(totalRecords, 0)
 
 'Verify correct number of slices are displayed in pie chart'
 WebUI.verifyElementVisible(findTestObject('Page_nGage_Dashboard/My_Work/Charts/Chart_AllProcess_Summary'))
-int allProcess_PieSlices = CustomKeywords.'actions.Chart.getNumberOfSlices'(findTestObject('Page_nGage_Dashboard/My_Work/Charts/Chart_AllProcess_Summary'), GlobalVariable.ChartType['PIE'])
+int allProcess_PieSlices = CustomKeywords.'actions.Chart.getNumberOfSlices'(findTestObject('Page_nGage_Dashboard/My_Work/Charts/Chart_AllProcess_Summary'), ChartType.PIE)
 WebUI.verifyGreaterThan(allProcess_PieSlices, 0)
 
 'Verify correct number of slices in bar chart'
 WebUI.verifyElementVisible(findTestObject('Page_nGage_Dashboard/My_Work/Charts/Chart_AllProcess_SLAStatusView'))
-int allProcess_BarSlices = CustomKeywords.'actions.Chart.getNumberOfSlices'(findTestObject('Page_nGage_Dashboard/My_Work/Charts/Chart_AllProcess_SLAStatusView'), GlobalVariable.ChartType['V_BAR'])
+int allProcess_BarSlices = CustomKeywords.'actions.Chart.getNumberOfSlices'(findTestObject('Page_nGage_Dashboard/My_Work/Charts/Chart_AllProcess_SLAStatusView'), ChartType.BAR_VERTICAL)
 WebUI.verifyGreaterThan(allProcess_BarSlices, 0)
 
 'Get Row Number for closure activity process'

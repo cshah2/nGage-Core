@@ -11,6 +11,8 @@ import com.kms.katalon.core.testdata.TestData as TestData
 import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+
+import common.ChartType
 import internal.GlobalVariable as GlobalVariable
 import static utils.Consts.*
 
@@ -47,11 +49,11 @@ CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Reposi
 WebUI.delay(5) //wait for chart to plot
 
 'Verify chart is visible'
-int totalSlices = CustomKeywords.'actions.Chart.getNumberOfSlices'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/TAB_Dashboard_Obj/Chart_Asignee_ActivityDue'), GlobalVariable.ChartType['H_BAR'])
+int totalSlices = CustomKeywords.'actions.Chart.getNumberOfSlices'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/TAB_Dashboard_Obj/Chart_Asignee_ActivityDue'), ChartType.BAR_HORIZONTAL)
 WebUI.verifyGreaterThan(totalSlices, 0)
 
 'click on bar graph slice'
-CustomKeywords.'actions.Chart.clickSlice'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/TAB_Dashboard_Obj/Chart_Asignee_ActivityDue'), 1, GlobalVariable.ChartType['H_BAR'] )
+CustomKeywords.'actions.Chart.clickSlice'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/TAB_Dashboard_Obj/Chart_Asignee_ActivityDue'), 1, ChartType.BAR_HORIZONTAL)
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/TAB_Dashboard_Obj/iframe_ASIGNEE'))
 
 'check if table is present'

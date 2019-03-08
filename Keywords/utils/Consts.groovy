@@ -676,7 +676,9 @@ public class Consts {
 	public static final String REPO_LVL2_COMPLAINT_TEMPLATE = "Complaint Templates"
 
 
-
+	/* ------- STORE -------*/
+	public static String COPY_REPORT_NAME = ""
+	
 
 	/* -------- DATA --------*/
 
@@ -759,7 +761,7 @@ public class Consts {
 		P1_WMI_DOC023.put(Fields.CUSTOMER_NAME, 'Roshan')
 		P1_WMI_DOC023.put(Fields.UPLOAD_FILE, RunConfiguration.getProjectDir().replace('/', '\\')+'\\Data Files\\FileUploads\\50 Pages PDF file.pdf')
 	}
-	
+
 	//041 - 060 For SM Web Service
 	public static final Map<Fields, String> P1_WMI_DOC041 //Used in SM Web Service File 0001 - Encryption ON
 	public static boolean FLAG_P1_WMI_DOC041 = false

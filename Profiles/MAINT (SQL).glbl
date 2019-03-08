@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GlobalVariableEntities>
    <description></description>
-   <name>19.1-AWS-SQL</name>
+   <name>MAINT (SQL)</name>
    <tag></tag>
    <defaultProfile>false</defaultProfile>
    <GlobalVariableEntity>
@@ -16,7 +16,7 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'http://savphlpedev64/Sav.191Features.Runtime'</initValue>
+      <initValue>'http://savphlpetest64/Sav.Main.UI'</initValue>
       <name>BaseURL</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
@@ -33,36 +33,6 @@
       <description></description>
       <initValue>'AWS_SQLSERVER_QA'</initValue>
       <name>Database</name>
-   </GlobalVariableEntity>
-   <GlobalVariableEntity>
-      <description>Document ID Generated in Script</description>
-      <initValue>''</initValue>
-      <name>DocumentID</name>
-   </GlobalVariableEntity>
-   <GlobalVariableEntity>
-      <description>Name of the search filter to be saved</description>
-      <initValue>''</initValue>
-      <name>FilterName</name>
-   </GlobalVariableEntity>
-   <GlobalVariableEntity>
-      <description></description>
-      <initValue>''</initValue>
-      <name>MW018_DocID</name>
-   </GlobalVariableEntity>
-   <GlobalVariableEntity>
-      <description></description>
-      <initValue>[('PIE') : '//*[name() = \'g\' and contains(@class,\'nv-slice\')]', ('V_BAR') : '//*[name()=\'rect\' and not(@height = \'0\') and contains(@class, \'nv-bar\')]', ('H_BAR') : '//*[name()=\'rect\' and not(@width = \'0\')]']</initValue>
-      <name>ChartType</name>
-   </GlobalVariableEntity>
-   <GlobalVariableEntity>
-      <description></description>
-      <initValue>60</initValue>
-      <name>Standard_Timeout</name>
-   </GlobalVariableEntity>
-   <GlobalVariableEntity>
-      <description></description>
-      <initValue>''</initValue>
-      <name>Copy_Report_Name</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
