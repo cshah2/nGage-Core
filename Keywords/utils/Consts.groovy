@@ -728,7 +728,7 @@ public class Consts {
 		P1_REPO_DOC006.put(Fields.TEMPLATE_NAME, 'Template3_Automation')
 		P1_REPO_DOC006.put(Fields.TEMPLATE_TEXT, 'Template Text - Automation')
 	}
-	
+
 	//021 - 040 For WMI Menu Bov, WMI Menu Default, WMI Menu DocTwoRow
 	public static final Map<Fields, String> P1_WMI_DOC021 //Used in WMI Menu Testing
 	public static boolean FLAG_P1_WMI_DOC021 = false
@@ -760,5 +760,42 @@ public class Consts {
 		P1_WMI_DOC023.put(Fields.UPLOAD_FILE, RunConfiguration.getProjectDir().replace('/', '\\')+'\\Data Files\\FileUploads\\50 Pages PDF file.pdf')
 	}
 	
+	//041 - 060 For SM Web Service
+	public static final Map<Fields, String> P1_WMI_DOC041 //Used in SM Web Service File 0001 - Encryption ON
+	public static boolean FLAG_P1_WMI_DOC041 = false
+	static {
+		P1_WMI_DOC041 = new HashMap<Fields, String>()
+		P1_WMI_DOC041.put(Fields.STRING_FIELD, 'SM Web Service File 0001')
+		P1_WMI_DOC041.put(Fields.FILE_NAME, 'Encryption ON')
+		P1_WMI_DOC041.put(Fields.UPLOAD_FILE, RunConfiguration.getProjectDir().replace('/', '\\')+'\\Data Files\\FileUploads\\TextPDF.pdf')
+	}
+
+	public static final Map<Fields, String> P1_WMI_DOC042 //Used in SM Web Service Db 0001 - Encryption ON
+	public static boolean FLAG_P1_WMI_DOC042 = false
+	static {
+		P1_WMI_DOC042 = new HashMap<Fields, String>()
+		P1_WMI_DOC042.put(Fields.STRING_FIELD, 'SM Web Service Db 0001')
+		P1_WMI_DOC042.put(Fields.FILE_NAME, 'Encryption ON')
+		P1_WMI_DOC042.put(Fields.UPLOAD_FILE, RunConfiguration.getProjectDir().replace('/', '\\')+'\\Data Files\\FileUploads\\TextPDF.pdf')
+	}
+
+	public static final Map<Fields, String> P1_WMI_DOC043 //Used in SM Web Service File 0002 - Encryption OFF
+	public static boolean FLAG_P1_WMI_DOC043 = false
+	static {
+		P1_WMI_DOC043 = new HashMap<Fields, String>()
+		P1_WMI_DOC043.put(Fields.STRING_FIELD, 'SM Web Service File 0002')
+		P1_WMI_DOC043.put(Fields.FILE_NAME, 'Encryption OFF')
+		P1_WMI_DOC043.put(Fields.UPLOAD_FILE, RunConfiguration.getProjectDir().replace('/', '\\')+'\\Data Files\\FileUploads\\TextPDF.pdf')
+	}
+
+	public static final Map<Fields, String> P1_WMI_DOC044 //Used in SM Web Service Db 0001 - Encryption OFF
+	public static boolean FLAG_P1_WMI_DOC044 = false
+	static {
+		P1_WMI_DOC044 = new HashMap<Fields, String>()
+		P1_WMI_DOC044.put(Fields.STRING_FIELD, 'SM Web Service Db 0002')
+		P1_WMI_DOC044.put(Fields.FILE_NAME, 'Encryption OFF')
+		P1_WMI_DOC044.put(Fields.UPLOAD_FILE, RunConfiguration.getProjectDir().replace('/', '\\')+'\\Data Files\\FileUploads\\TextPDF.pdf')
+	}
+
 }
 

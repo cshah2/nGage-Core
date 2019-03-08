@@ -21,7 +21,11 @@ import internal.GlobalVariable
 public enum DocClass {
 	CLOSURE_ACTION("Closure Action"),
 	COMPLAINTS_TEMPLATES("Complaints Templates"),
-	WMI_MENU("WMI Menu")
+	WMI_MENU("WMI Menu"),
+	SM_WEBSERVICE_FILE_1("StorageSrvr0001"),			//Encryption ON
+	SM_WEBSERVICE_DB_1("StorageSrvr0001DbObject"),		//Encryption ON
+	SM_WEBSERVICE_FILE_2("StorageSrvr0002 FileObject"),	//Encryption OFF
+	SM_WEBSERVICE_DB_2("StorageSrvr0002 Db object")		//Encryption OFF
 
 	private final String text
 
