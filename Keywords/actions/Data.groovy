@@ -79,6 +79,9 @@ public class Data {
 				smWebServiceDb0002(data)
 				break
 
+			case DocType.WMI_MENU_BOV_VERTICAL:
+				wmiMenuBovVertical(data)
+				break
 			default:
 				WebUI.takeScreenshot()
 				KeywordUtil.markFailedAndStop('Unable to create document, Invalid docType provided : '+docType)
@@ -179,41 +182,43 @@ public class Data {
 		WebUI.waitForElementVisible(findTestObject('Object Repository/Page_WMI_NEW/WMI_Menu_BOV_DocTwoRow/Save'), GlobalVariable.G_LongTimeout)
 		new Window().clickElementAndWaitForWindowClose(findTestObject('Object Repository/Page_WMI_NEW/WMI_Menu_BOV_DocTwoRow/Save'),GlobalVariable.G_LongTimeout)
 	}
-	
+
 	private void smWebServiceFile0001(Map<Fields, String> data) {
-		
+
 		//Get Data from Map
 		String stringField = data.get(Fields.STRING_FIELD)
 		String fileName = data.get(Fields.FILE_NAME)
 		String file = data.get(Fields.UPLOAD_FILE)
-		
+
+		//Fill Form
 		if(StringUtils.isNotBlank(stringField))
 			WebUI.setText(findTestObject('Page_WMI_NEW/SM Web Service/FILE_0001/input_String field'), stringField)
 		if(StringUtils.isNotBlank(fileName))
 			WebUI.setText(findTestObject('Page_WMI_NEW/SM Web Service/FILE_0001/input_File Name'), fileName)
 		if(StringUtils.isNotBlank(file))
 			WebUI.uploadFile(findTestObject('Page_WMI_NEW/SM Web Service/FILE_0001/input_File Upload'), file)
-			
+
 		//Save and Close window
 		WebUI.mouseOver(findTestObject('Page_WMI_NEW/SM Web Service/FILE_0001/menu_Standard Actions'))
 		WebUI.waitForElementVisible(findTestObject('Page_WMI_NEW/SM Web Service/FILE_0001/submenu_Save'), GlobalVariable.G_LongTimeout)
 		new Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI_NEW/SM Web Service/FILE_0001/submenu_Save'),GlobalVariable.G_LongTimeout)
 	}
-	
+
 	private void smWebServiceDb0001(Map<Fields, String> data) {
-		
+
 		//Get Data from Map
 		String stringField = data.get(Fields.STRING_FIELD)
 		String fileName = data.get(Fields.FILE_NAME)
 		String file = data.get(Fields.UPLOAD_FILE)
-		
+
+		//Fill Form
 		if(StringUtils.isNotBlank(stringField))
 			WebUI.setText(findTestObject('Page_WMI_NEW/SM Web Service/DB_0001/input_String field'), stringField)
 		if(StringUtils.isNotBlank(fileName))
 			WebUI.setText(findTestObject('Page_WMI_NEW/SM Web Service/DB_0001/input_File Name'), fileName)
 		if(StringUtils.isNotBlank(file))
 			WebUI.uploadFile(findTestObject('Page_WMI_NEW/SM Web Service/DB_0001/input_File Upload'), file)
-			
+
 		//Save and Close window
 		WebUI.mouseOver(findTestObject('Page_WMI_NEW/SM Web Service/DB_0001/menu_Standard Actions'))
 		WebUI.waitForElementVisible(findTestObject('Page_WMI_NEW/SM Web Service/DB_0001/submenu_Save'), GlobalVariable.G_LongTimeout)
@@ -221,19 +226,20 @@ public class Data {
 	}
 
 	private void smWebServiceFile0002(Map<Fields, String> data) {
-		
+
 		//Get Data from Map
 		String stringField = data.get(Fields.STRING_FIELD)
 		String fileName = data.get(Fields.FILE_NAME)
 		String file = data.get(Fields.UPLOAD_FILE)
-		
+
+		//Fill Form
 		if(StringUtils.isNotBlank(stringField))
 			WebUI.setText(findTestObject('Page_WMI_NEW/SM Web Service/FILE_0002/input_String field'), stringField)
 		if(StringUtils.isNotBlank(fileName))
 			WebUI.setText(findTestObject('Page_WMI_NEW/SM Web Service/FILE_0002/input_File Name'), fileName)
 		if(StringUtils.isNotBlank(file))
 			WebUI.uploadFile(findTestObject('Page_WMI_NEW/SM Web Service/FILE_0002/input_File Upload'), file)
-			
+
 		//Save and Close window
 		WebUI.mouseOver(findTestObject('Page_WMI_NEW/SM Web Service/FILE_0002/menu_Standard Actions'))
 		WebUI.waitForElementVisible(findTestObject('Page_WMI_NEW/SM Web Service/FILE_0002/submenu_Save'), GlobalVariable.G_LongTimeout)
@@ -241,22 +247,41 @@ public class Data {
 	}
 
 	private void smWebServiceDb0002(Map<Fields, String> data) {
-		
+
 		//Get Data from Map
 		String stringField = data.get(Fields.STRING_FIELD)
 		String fileName = data.get(Fields.FILE_NAME)
 		String file = data.get(Fields.UPLOAD_FILE)
-		
+
+		//Fill Form
 		if(StringUtils.isNotBlank(stringField))
 			WebUI.setText(findTestObject('Page_WMI_NEW/SM Web Service/DB_0002/input_String field'), stringField)
 		if(StringUtils.isNotBlank(fileName))
 			WebUI.setText(findTestObject('Page_WMI_NEW/SM Web Service/DB_0002/input_File Name'), fileName)
 		if(StringUtils.isNotBlank(file))
 			WebUI.uploadFile(findTestObject('Page_WMI_NEW/SM Web Service/DB_0002/input_File Upload'), file)
-			
+
 		//Save and Close window
 		WebUI.mouseOver(findTestObject('Page_WMI_NEW/SM Web Service/DB_0002/menu_Standard Actions'))
 		WebUI.waitForElementVisible(findTestObject('Page_WMI_NEW/SM Web Service/DB_0002/submenu_Save'), GlobalVariable.G_LongTimeout)
 		new Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI_NEW/SM Web Service/DB_0002/submenu_Save'),GlobalVariable.G_LongTimeout)
+	}
+	
+	private void wmiMenuBovVertical(Map<Fields, String> data) {
+
+		//Get Data from Map
+		String bmString = data.get(Fields.BM_STRING)
+		String file = data.get(Fields.UPLOAD_FILE)
+		
+		//Fill Form
+		if(StringUtils.isNotBlank(file))
+			WebUI.setText(findTestObject('Page_WMI_NEW/WMI_Menu_BOV_Vertical/input_String field'), bmString)
+		if(StringUtils.isNotBlank(file))
+			WebUI.uploadFile(findTestObject('Page_WMI_NEW/WMI_Menu_BOV_Vertical/input__file_upload'), file)
+
+		'Save details and close'
+		WebUI.mouseOver(findTestObject('Page_WMI_NEW/WMI_Menu_BOV/buttonStandardActions'))
+		WebUI.waitForElementVisible(findTestObject('Page_WMI_NEW/WMI_Menu_BOV/buttonSave'), GlobalVariable.G_LongTimeout)
+		new Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI_NEW/WMI_Menu_BOV/buttonSave'),GlobalVariable.G_LongTimeout)
 	}
 }

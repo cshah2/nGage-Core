@@ -678,7 +678,7 @@ public class Consts {
 
 	/* ------- STORE -------*/
 	public static String COPY_REPORT_NAME = ""
-	
+
 
 	/* -------- DATA --------*/
 
@@ -797,6 +797,15 @@ public class Consts {
 		P1_WMI_DOC044.put(Fields.STRING_FIELD, 'SM Web Service Db 0002')
 		P1_WMI_DOC044.put(Fields.FILE_NAME, 'Encryption OFF')
 		P1_WMI_DOC044.put(Fields.UPLOAD_FILE, RunConfiguration.getProjectDir().replace('/', '\\')+'\\Data Files\\FileUploads\\TextPDF.pdf')
+	}
+	
+	//061 - 080 For WMI Menu Bov Vertical
+	public static final Map<Fields, String> P1_WMI_DOC061 //Used in Multipage viewer
+	public static boolean FLAG_P1_WMI_DOC061 = false
+	static {
+		P1_WMI_DOC061 = new HashMap<Fields, String>()
+		P1_WMI_DOC061.put(Fields.BM_STRING, '8 Page PDF File')
+		P1_WMI_DOC061.put(Fields.UPLOAD_FILE, RunConfiguration.getProjectDir().replace('/', '\\')+'\\Data Files\\FileUploads\\TextPDF.pdf')
 	}
 
 }

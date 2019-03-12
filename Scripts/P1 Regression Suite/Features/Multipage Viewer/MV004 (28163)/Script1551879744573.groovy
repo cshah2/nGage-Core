@@ -11,13 +11,23 @@ import com.kms.katalon.core.testdata.TestData as TestData
 import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+
+import common.DocClass
+import common.DocType
 import internal.GlobalVariable as GlobalVariable
+import static utils.Consts.*
 
 'Login into application'
 CustomKeywords.'actions.Common.login'()
 
 'Pre-Requisite : Create new Document of type WMI Menu Bov Vertical'
-CustomKeywords.'actions.Common.createDocument_WMIMenuBovVertical'()
+String isPresent = CustomKeywords.'actions.Common.isRecordPresentInRecentGridTable'(1, 'Doc Type', DocType.WMI_MENU_BOV_VERTICAL.toString())
+
+if(!(FLAG_P1_WMI_DOC061 && isPresent)){
+	CustomKeywords.'actions.Data.create'(DocClass.WMI_MENU, DocType.WMI_MENU_BOV_VERTICAL, P1_WMI_DOC061)
+	FLAG_P1_WMI_DOC061 = true
+	WebUI.refresh()
+}
 
 'Pre-Requisite : Open newly created document from recent grid'
 CustomKeywords.'actions.Common.openDocumentFromRecentGrid'('WMI Menu BOV Vertical')

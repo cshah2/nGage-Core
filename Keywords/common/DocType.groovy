@@ -30,7 +30,7 @@ public enum DocType {
 	SM_WEBSERVICE_FILE_2("StorageServer 0002"),				//Encryption OFF
 	SM_WEBSERVICE_DB_2("Storage Server 0002")				//Encryption OFF
 
-	
+
 	private final String text
 
 	DocType(String text) {
