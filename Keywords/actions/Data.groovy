@@ -82,6 +82,11 @@ public class Data {
 			case DocType.WMI_MENU_BOV_VERTICAL:
 				wmiMenuBovVertical(data)
 				break
+
+			case DocType.SHOW_VERTICAL_MENU_TRUE:
+				showVerticalMenuTrue(data)
+				break
+
 			default:
 				WebUI.takeScreenshot()
 				KeywordUtil.markFailedAndStop('Unable to create document, Invalid docType provided : '+docType)
@@ -283,5 +288,30 @@ public class Data {
 		WebUI.mouseOver(findTestObject('Page_WMI_NEW/WMI_Menu_BOV/buttonStandardActions'))
 		WebUI.waitForElementVisible(findTestObject('Page_WMI_NEW/WMI_Menu_BOV/buttonSave'), GlobalVariable.G_LongTimeout)
 		new Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI_NEW/WMI_Menu_BOV/buttonSave'),GlobalVariable.G_LongTimeout)
+	}
+
+	private void showVerticalMenuTrue(Map<Fields, String> data) {
+		
+		//Get Data from Map
+		String firstName = data.get(Fields.FIRST_NAME)
+		String lastName = data.get(Fields.LAST_NAME)
+		String amount = data.get(Fields.AMOUNT)
+		String file = data.get(Fields.UPLOAD_FILE)
+
+		//Fill Form
+		if(StringUtils.isNotBlank(firstName))
+			WebUI.setText(findTestObject('Page_WMI_NEW/VerticalMenuWizard/ShowVerticalMenu_True/input_First Name'), firstName)
+		if(StringUtils.isNotBlank(lastName))
+			WebUI.setText(findTestObject('Page_WMI_NEW/VerticalMenuWizard/ShowVerticalMenu_True/input_Last Name'), lastName)
+		if(StringUtils.isNotBlank(file))
+			WebUI.setText(findTestObject('Page_WMI_NEW/VerticalMenuWizard/ShowVerticalMenu_True/input_Amount'), amount)
+		if(StringUtils.isNotBlank(file))
+			WebUI.uploadFile(findTestObject('Page_WMI_NEW/WMI_Menu_BOV_Vertical/input__file_upload'), file)
+
+		'Save details and close'
+		WebUI.click(findTestObject('Page_WMI_NEW/VerticalMenuWizard/ShowVerticalMenu_True/span_Save'))
+		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+		new Common().waitForFrameToLoad(findTestObject('Page_WMI_NEW/VerticalMenuWizard/ShowVerticalMenu_True/iframe_Menus_ContentPlaceHolde'))
+		new Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI_NEW/VerticalMenuWizard/ShowVerticalMenu_True/a_Close Window'), GlobalVariable.G_LongTimeout)
 	}
 }

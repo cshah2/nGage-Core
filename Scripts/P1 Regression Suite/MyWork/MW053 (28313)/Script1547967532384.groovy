@@ -11,6 +11,9 @@ import com.kms.katalon.core.testdata.TestData as TestData
 import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+
+import common.DocClass
+import common.DocType
 import internal.GlobalVariable as GlobalVariable
 import static utils.Consts.*
 
@@ -20,11 +23,9 @@ CustomKeywords.'actions.Common.login'()
 'Create Data for verifying Folder configuarion'
 CustomKeywords.'actions.Common.createFolderingDataMyWork'()
 
-//Create Additional document and lock the same.
-if(!FLAG_P1_MW_DOC3) {
-	CustomKeywords.'actions.Common.createDocument_VerticalMenuWizard'(P1_MW_DOC3_FIRSTNAME, P1_MW_DOC3_LASTNAME, P1_MW_DOC3_AMOUNT, '')
-	FLAG_P1_MW_DOC3 = true
-}
+'Create Additional document and lock the same'
+CustomKeywords.'actions.Data.create'(DocClass.VERTICAL_MENU_WIZARD, DocType.SHOW_VERTICAL_MENU_TRUE, P1_MW_DOC086)
+FLAG_P1_MW_DOC086 = true
 
 'Click on My Work link from left menu'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_My Work Left Menu'))

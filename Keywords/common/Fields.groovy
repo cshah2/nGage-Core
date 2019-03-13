@@ -24,7 +24,10 @@ public enum Fields {
 	CUSTOMER_ID,		//WMI Menu Bov, WMI Menu Default, WMI Menu DocTwoRow
 	BM_STRING,			//WMI Menu Bov, WMI Menu Default, WMI Menu DocTwoRow
 	CUSTOMER_NAME,		//WMI Menu Bov, WMI Menu Default, WMI Menu DocTwoRow
-	UPLOAD_FILE,		//WMI Menu Bov, WMI Menu Default, WMI Menu DocTwoRow, SM WEB SERVICE
+	UPLOAD_FILE,		//WMI Menu Bov, WMI Menu Default, WMI Menu DocTwoRow, SM WEB SERVICE, Vertical Menu Wizard
 	STRING_FIELD,		//SM WEB SERVICE
-	FILE_NAME			//SM WEB SERVICE
+	FILE_NAME,			//SM WEB SERVICE
+	FIRST_NAME,			//Vertical Menu Wizard
+	LAST_NAME,			//Vertical Menu Wizard
+	AMOUNT				//Vertical Menu Wizard
 }

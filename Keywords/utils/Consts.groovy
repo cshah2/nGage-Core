@@ -224,43 +224,43 @@ public class Consts {
 	public static final String P1_REPO_DOCF_DATETIMERANGE = ''
 
 	//Document for testing Folder configuration  (NO EDIT UNCHECKED)
-	//Document 0 - Loan Application Has document
-	public static final String P1_MW_DOC0_FIRSTNAME = 'Chintan'
-	public static final String P1_MW_DOC0_LASTNAME = 'Shah'
-	public static final String P1_MW_DOC0_AMOUNT = '5000'
-
-	//Document 1 - Loan Application no document
-	public static final String P1_MW_DOC1_FIRSTNAME = 'Chintan'
-	public static final String P1_MW_DOC1_LASTNAME = 'Shah'
-	public static final String P1_MW_DOC1_AMOUNT = '1000'
-
-	//Document 2 - Loan Application no document
-	public static final String P1_MW_DOC2_FIRSTNAME = 'Atul'
-	public static final String P1_MW_DOC2_LASTNAME = 'Mirvankar'
-	public static final String P1_MW_DOC2_AMOUNT = '2000'
-
-	//Document 3 - Loan Application no document //Lock Document
-	public static final String P1_MW_DOC3_FIRSTNAME = 'Prasad'
-	public static final String P1_MW_DOC3_LASTNAME = 'Patil'
-	public static final String P1_MW_DOC3_AMOUNT = '2500'
-
-	//Document 4 - Loan Application no document // Assigned to User Group
-	public static final String P1_MW_DOC4_FIRSTNAME = 'Sanyogita'
-	public static final String P1_MW_DOC4_LASTNAME = 'Apte'
-	public static final String P1_MW_DOC4_AMOUNT = '3000'
-	public static String P1_MW_DOC4_DOCID = ''
-
-	//Document 5 - Loan Application no document // Assign to User
-	public static final String P1_MW_DOC5_FIRSTNAME = 'Manoj'
-	public static final String P1_MW_DOC5_LASTNAME = 'Gosavi'
-	public static final String P1_MW_DOC5_AMOUNT = '0'
-	public static String P1_MW_DOC5_DOCID = ''
-
-	//Document 6 - Loan Application no document // Assign to User
-	public static final String P1_MW_DOC6_FIRSTNAME = 'Amol'
-	public static final String P1_MW_DOC6_LASTNAME = 'Patil'
-	public static final String P1_MW_DOC6_AMOUNT = '6000'
-	public static String P1_MW_DOC6_DOCID = ''
+//	//Document 0 - Loan Application Has document
+//	public static final String P1_MW_DOC0_FIRSTNAME = 'Chintan'
+//	public static final String P1_MW_DOC0_LASTNAME = 'Shah'
+//	public static final String P1_MW_DOC0_AMOUNT = '5000'
+//
+//	//Document 1 - Loan Application no document
+//	public static final String P1_MW_DOC1_FIRSTNAME = 'Chintan'
+//	public static final String P1_MW_DOC1_LASTNAME = 'Shah'
+//	public static final String P1_MW_DOC1_AMOUNT = '1000'
+//
+//	//Document 2 - Loan Application no document
+//	public static final String P1_MW_DOC2_FIRSTNAME = 'Atul'
+//	public static final String P1_MW_DOC2_LASTNAME = 'Mirvankar'
+//	public static final String P1_MW_DOC2_AMOUNT = '2000'
+//
+//	//Document 3 - Loan Application no document //Lock Document
+//	public static final String P1_MW_DOC3_FIRSTNAME = 'Prasad'
+//	public static final String P1_MW_DOC3_LASTNAME = 'Patil'
+//	public static final String P1_MW_DOC3_AMOUNT = '2500'
+//
+//	//Document 4 - Loan Application no document // Assigned to User Group
+//	public static final String P1_MW_DOC4_FIRSTNAME = 'Sanyogita'
+//	public static final String P1_MW_DOC4_LASTNAME = 'Apte'
+//	public static final String P1_MW_DOC4_AMOUNT = '3000'
+//	public static String P1_MW_DOC4_DOCID = ''
+//
+//	//Document 5 - Loan Application no document // Assign to User
+//	public static final String P1_MW_DOC5_FIRSTNAME = 'Manoj'
+//	public static final String P1_MW_DOC5_LASTNAME = 'Gosavi'
+//	public static final String P1_MW_DOC5_AMOUNT = '0'
+//	public static String P1_MW_DOC5_DOCID = ''
+//
+//	//Document 6 - Loan Application no document // Assign to User
+//	public static final String P1_MW_DOC6_FIRSTNAME = 'Amol'
+//	public static final String P1_MW_DOC6_LASTNAME = 'Patil'
+//	public static final String P1_MW_DOC6_AMOUNT = '6000'
+//	public static String P1_MW_DOC6_DOCID = ''
 
 	//Document 7 - Event for Required Field
 	public static final String P1_MW_DOC7_DROPDOWN = 'Value 1'
@@ -544,20 +544,20 @@ public class Consts {
 	public static final String P1_MW083_STARTDATETIME_MONTH = 'Mar'
 	public static final String P1_MW083_STARTDATETIME_YEAR = '2017'
 
-	public static final String P1_LOANAPPL_FIRSTNAME_DOC1 = 'Chintan'
-	public static final String P1_LOANAPPL_LASTNAME_DOC1 = 'Shah'
-	public static final String P1_LOANAPPL_AMOUNT_DOC1 = '30000'
-	public static final String P1_LOANAPPL_AMOUNT_FILTER_FROM = '20000'
-	public static final String P1_LOANAPPL_AMOUNT_FILTER_TO = '40000'
+//	public static final String P1_LOANAPPL_FIRSTNAME_DOC1 = 'Chintan'
+//	public static final String P1_LOANAPPL_LASTNAME_DOC1 = 'Shah'
+//	public static final String P1_LOANAPPL_AMOUNT_DOC1 = '30000'
+//	public static final String P1_LOANAPPL_AMOUNT_FILTER_FROM = '20000'
+//	public static final String P1_LOANAPPL_AMOUNT_FILTER_TO = '40000'
 
 
-	public static final String P1_LOANAPPL_FIRSTNAME_DOC2 = 'Atul'
-	public static final String P1_LOANAPPL_LASTNAME_DOC2 = 'Mirvankar'
-	public static final String P1_LOANAPPL_AMOUNT_DOC2 = '10000'
-
-	public static final String P1_LOANAPPL_FIRSTNAME_DOC3 = 'Prasad'
-	public static final String P1_LOANAPPL_LASTNAME_DOC3 = 'Patil'
-	public static final String P1_LOANAPPL_AMOUNT_DOC3 = '5000'
+//	public static final String P1_LOANAPPL_FIRSTNAME_DOC2 = 'Atul'
+//	public static final String P1_LOANAPPL_LASTNAME_DOC2 = 'Mirvankar'
+//	public static final String P1_LOANAPPL_AMOUNT_DOC2 = '10000'
+//
+//	public static final String P1_LOANAPPL_FIRSTNAME_DOC3 = 'Prasad'
+//	public static final String P1_LOANAPPL_LASTNAME_DOC3 = 'Patil'
+//	public static final String P1_LOANAPPL_AMOUNT_DOC3 = '5000'
 
 	public static final String P1_EVENTFOREQ_DROPDOWN_DOC1 = 'Value 1'
 	public static final String P1_EVENTFOREQ_TEXT_DOC1 = 'prasad'
@@ -808,7 +808,7 @@ public class Consts {
 		P1_WMI_DOC061.put(Fields.UPLOAD_FILE, RunConfiguration.getProjectDir().replace('/', '\\')+'\\Data Files\\FileUploads\\TextPDF.pdf')
 	}
 
-	public static final Map<Fields, String> P1_WMI_DOC062 //Used in Login, Bulk Documents - 50 Page PDF 
+	public static final Map<Fields, String> P1_WMI_DOC062 //Used in Login, Bulk Documents - 50 Page PDF
 	public static boolean FLAG_P1_WMI_DOC062 = false
 	static {
 		P1_WMI_DOC062 = new HashMap<Fields, String>()
@@ -822,6 +822,93 @@ public class Consts {
 		SMOKE_WMI_DOC061 = new HashMap<Fields, String>()
 		SMOKE_WMI_DOC061.put(Fields.STRING_FIELD, 'Automation test document')
 		SMOKE_WMI_DOC061.put(Fields.UPLOAD_FILE, RunConfiguration.getProjectDir().replace('/', '\\')+'\\Data Files\\FileUploads\\TextPDF.pdf')
+	}
+	
+	//081 - 100 For Show Vertical Menu True (Loan Application)
+	
+	public static final Map<Fields, String> P1_MW_DOC081 //Used in Bulk Documents, Foldering - No Attachement, Filter
+	public static boolean FLAG_P1_MW_DOC081 = false
+	static {
+		P1_MW_DOC081 = new HashMap<Fields, String>()
+		P1_MW_DOC081.put(Fields.FIRST_NAME, 'Atul')
+		P1_MW_DOC081.put(Fields.LAST_NAME, 'Mirvankar')
+		P1_MW_DOC081.put(Fields.AMOUNT, '2000')
+	}
+	
+	public static final Map<Fields, String> P1_MW_DOC082 //Used in Foldering - PDF
+	public static boolean FLAG_P1_MW_DOC082 = false
+	static {
+		P1_MW_DOC082 = new HashMap<Fields, String>()
+		P1_MW_DOC082.put(Fields.FIRST_NAME, 'Chintan')
+		P1_MW_DOC082.put(Fields.LAST_NAME, 'Shah')
+		P1_MW_DOC082.put(Fields.AMOUNT, '5000')
+		P1_MW_DOC082.put(Fields.UPLOAD_FILE, RunConfiguration.getProjectDir().replace('/', '\\')+'\\Data Files\\FileUploads\\TextPDF.pdf')
+	}
+
+	public static final Map<Fields, String> P1_MW_DOC083 //Used in Foldering - DOCX
+	public static boolean FLAG_P1_MW_DOC083 = false
+	static {
+		P1_MW_DOC083 = new HashMap<Fields, String>()
+		P1_MW_DOC083.put(Fields.FIRST_NAME, 'Chintan')
+		P1_MW_DOC083.put(Fields.LAST_NAME, 'Shah')
+		P1_MW_DOC083.put(Fields.AMOUNT, '1000')
+		P1_MW_DOC083.put(Fields.UPLOAD_FILE, RunConfiguration.getProjectDir().replace('/', '\\')+'\\Data Files\\FileUploads\\TextPDF.docx')
+	}
+
+	public static final Map<Fields, String> P1_MW_DOC084 //Used in Amount Filter
+	public static boolean FLAG_P1_MW_DOC084 = false
+	static {
+		P1_MW_DOC084 = new HashMap<Fields, String>()
+		P1_MW_DOC084.put(Fields.FIRST_NAME, 'Chintan')
+		P1_MW_DOC084.put(Fields.LAST_NAME, 'Shah')
+		P1_MW_DOC084.put(Fields.AMOUNT, '3000')
+	}
+	
+	public static final Map<Fields, String> P1_MW_DOC085 //Used in Amount Filter
+	public static boolean FLAG_P1_MW_DOC085 = false
+	static {
+		P1_MW_DOC085 = new HashMap<Fields, String>()
+		P1_MW_DOC085.put(Fields.FIRST_NAME, 'Atul')
+		P1_MW_DOC085.put(Fields.LAST_NAME, 'Mirvankar')
+		P1_MW_DOC085.put(Fields.AMOUNT, '1000')
+	}
+	public static final String P1_MW_DOC081_AMOUNT_FROM = '1500'
+	public static final String P1_MW_DOC081_AMOUNT_TO = '2500'
+
+	public static final Map<Fields, String> P1_MW_DOC086 //Used in Foldering - Lock Document
+	public static boolean FLAG_P1_MW_DOC086 = false
+	static {
+		P1_MW_DOC086 = new HashMap<Fields, String>()
+		P1_MW_DOC086.put(Fields.FIRST_NAME, 'Prasad')
+		P1_MW_DOC086.put(Fields.LAST_NAME, 'Patil')
+		P1_MW_DOC086.put(Fields.AMOUNT, '2500')
+	}
+
+	public static final Map<Fields, String> P1_MW_DOC087 //Used in Foldering - Assign to User Group
+	public static boolean FLAG_P1_MW_DOC087 = false
+	static {
+		P1_MW_DOC087 = new HashMap<Fields, String>()
+		P1_MW_DOC087.put(Fields.FIRST_NAME, 'Sanyogita')
+		P1_MW_DOC087.put(Fields.LAST_NAME, 'Apte')
+		P1_MW_DOC087.put(Fields.AMOUNT, '3000')
+	}
+
+	public static final Map<Fields, String> P1_MW_DOC088 //Used in Foldering - Assign to User
+	public static boolean FLAG_P1_MW_DOC088 = false
+	static {
+		P1_MW_DOC088 = new HashMap<Fields, String>()
+		P1_MW_DOC088.put(Fields.FIRST_NAME, 'Manoj')
+		P1_MW_DOC088.put(Fields.LAST_NAME, 'Gosavi')
+		P1_MW_DOC088.put(Fields.AMOUNT, '0')
+	}
+	
+	public static final Map<Fields, String> P1_MW_DOC089 //Used in Foldering - Assign to User
+	public static boolean FLAG_P1_MW_DOC089 = false
+	static {
+		P1_MW_DOC089 = new HashMap<Fields, String>()
+		P1_MW_DOC089.put(Fields.FIRST_NAME, 'Amol')
+		P1_MW_DOC089.put(Fields.LAST_NAME, 'Patil')
+		P1_MW_DOC089.put(Fields.AMOUNT, '6000')
 	}
 }
 

@@ -11,13 +11,30 @@ import com.kms.katalon.core.testdata.TestData as TestData
 import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+
+import common.DocClass
+import common.DocType
 import internal.GlobalVariable as GlobalVariable
+import static utils.Consts.*
 
 'Login Into Application'
 CustomKeywords.'actions.Common.login'()
 
-'Create Document'
-CustomKeywords.'actions.Common.createDocument_VerticalMenuWizard'('Chintan', 'Shah', '50000')
+'Create Documents if not available'
+if(!FLAG_P1_MW_DOC081) {
+	CustomKeywords.'actions.Data.create'(DocClass.VERTICAL_MENU_WIZARD, DocType.SHOW_VERTICAL_MENU_TRUE, P1_MW_DOC081)
+	FLAG_P1_MW_DOC081 = true
+}
+
+if(!FLAG_P1_MW_DOC084) {
+	CustomKeywords.'actions.Data.create'(DocClass.VERTICAL_MENU_WIZARD, DocType.SHOW_VERTICAL_MENU_TRUE, P1_MW_DOC084)
+	FLAG_P1_MW_DOC084 = true
+}
+
+if(!FLAG_P1_MW_DOC085) {
+	CustomKeywords.'actions.Data.create'(DocClass.VERTICAL_MENU_WIZARD, DocType.SHOW_VERTICAL_MENU_TRUE, P1_MW_DOC085)
+	FLAG_P1_MW_DOC085 = true
+}
 
 'Click on My Work link from left menu'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_My Work Left Menu'))
@@ -42,8 +59,8 @@ WebUI.verifyElementVisible(findTestObject('Object Repository/Page_nGage_Dashboar
 WebUI.verifyElementVisible(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/process_Loan Interactive/input_LoanAppln_LoanAmtTo'))
 
 'Enter loan amount range values'
-WebUI.setText(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/process_Loan Interactive/input_Loan Appln_LoanAmtFrom'), '45000')
-WebUI.setText(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/process_Loan Interactive/input_LoanAppln_LoanAmtTo'), '55000')
+WebUI.setText(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/process_Loan Interactive/input_Loan Appln_LoanAmtFrom'), P1_MW_DOC081_AMOUNT_FROM)
+WebUI.setText(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/process_Loan Interactive/input_LoanAppln_LoanAmtTo'), P1_MW_DOC081_AMOUNT_TO)
 
 'click on search button'
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/btn_Search'))
@@ -55,10 +72,10 @@ int loanAmount_Position=CustomKeywords.'actions.Table.getColumnNumber'(findTestO
 CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/tableHeader_MyWorkSearchResult'), 'Loan Amount')
 
 'verify grid records according to filter applied'
-CustomKeywords.'actions.Table.verifyRecordsWithinRange'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), loanAmount_Position, 45000, 55000)
+CustomKeywords.'actions.Table.verifyRecordsWithinRange'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), loanAmount_Position, Double.parseDouble(P1_MW_DOC081_AMOUNT_FROM), Double.parseDouble(P1_MW_DOC081_AMOUNT_TO))
 
 'Click Column Header Loan Amount to sort records by Descending'
 CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/tableHeader_MyWorkSearchResult'), 'Loan Amount')
 
 'verify grid records according to filter applied'
-CustomKeywords.'actions.Table.verifyRecordsWithinRange'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), loanAmount_Position, 45000, 55000)
+CustomKeywords.'actions.Table.verifyRecordsWithinRange'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), loanAmount_Position, Double.parseDouble(P1_MW_DOC081_AMOUNT_FROM), Double.parseDouble(P1_MW_DOC081_AMOUNT_TO))

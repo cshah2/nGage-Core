@@ -2,6 +2,7 @@ import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 
+import common.Fields
 import internal.GlobalVariable as GlobalVariable
 import static utils.Consts.*
 
@@ -44,8 +45,8 @@ WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Folde
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
 'Verify Folders are configured as per Firstname value'
-CustomKeywords.'actions.MenuBar.verifySubMenuPresent'('MY_WORK', P1_MW_DOC0_FIRSTNAME, 'Processes', 'Loan Interactive', 'Loan Application')
-CustomKeywords.'actions.MenuBar.verifySubMenuPresent'('MY_WORK', P1_MW_DOC2_FIRSTNAME, 'Processes', 'Loan Interactive', 'Loan Application')
+CustomKeywords.'actions.MenuBar.verifySubMenuPresent'('MY_WORK', P1_MW_DOC082.get(Fields.FIRST_NAME), 'Processes', 'Loan Interactive', 'Loan Application')
+CustomKeywords.'actions.MenuBar.verifySubMenuPresent'('MY_WORK', P1_MW_DOC081.get(Fields.FIRST_NAME), 'Processes', 'Loan Interactive', 'Loan Application')
 
 'right click on (option)loan approval'
 CustomKeywords.'actions.MenuBar.rightClickTreeMenu'('MY_WORK', 'Processes', 'Loan Interactive', 'Loan Application')

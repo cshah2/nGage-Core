@@ -11,6 +11,9 @@ import com.kms.katalon.core.testdata.TestData as TestData
 import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+
+import common.DocClass
+import common.DocType
 import internal.GlobalVariable as GlobalVariable
 import static utils.Consts.*
 
@@ -20,11 +23,9 @@ CustomKeywords.'actions.Common.login'()
 'Create Data for verifying Folder configuarion'
 CustomKeywords.'actions.Common.createFolderingDataMyWork'()
 
-//Create Additional document and assign it to user
-if(!FLAG_P1_MW_DOC6) {
-	CustomKeywords.'actions.Common.createDocument_VerticalMenuWizard'(P1_MW_DOC6_FIRSTNAME, P1_MW_DOC6_LASTNAME, P1_MW_DOC6_AMOUNT, '')
-	FLAG_P1_MW_DOC6 = true
-}
+'Create Additional document'
+CustomKeywords.'actions.Data.create'(DocClass.VERTICAL_MENU_WIZARD, DocType.SHOW_VERTICAL_MENU_TRUE, P1_MW_DOC089)
+FLAG_P1_MW_DOC089 = true
 
 'Click on My Work link from left menu'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_My Work Left Menu'))
@@ -41,7 +42,7 @@ CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dash
 
 'Store DocID values of both documents'
 int colNo_DocID =  CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Page_nGage_Dashboard/My_Work/tableHeader_MyWorkSearchResult'), 'Doc ID')
-P1_MW_DOC6_DOCID = CustomKeywords.'actions.Table.getCellText'(findTestObject('Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), 1, colNo_DocID)
+String docID = CustomKeywords.'actions.Table.getCellText'(findTestObject('Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), 1, colNo_DocID)
 
 'Select Checkbox against document in table'
 CustomKeywords.'actions.Table.checkRecordInTable'(findTestObject('Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), 1)
@@ -111,7 +112,7 @@ int rowCount_UnAssigned = CustomKeywords.'actions.MenuBar.getRecordCountInActivi
 CustomKeywords.'actions.Common.verifyTotalRecordCountFromPageSummary'(findTestObject('Page_nGage_Dashboard/My_Work/table_pagination_summary'), rowCount_UnAssigned)
 
 'Verify Correct Document ID is present in grid'
-CustomKeywords.'actions.Table.verifyRecordNotPresentInColumn'(findTestObject('Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), colNo_DocID, P1_MW_DOC6_DOCID)
+CustomKeywords.'actions.Table.verifyRecordNotPresentInColumn'(findTestObject('Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), colNo_DocID, docID)
 String docId_Unassigned = CustomKeywords.'actions.Table.getCellText'(findTestObject('Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), 1, colNo_DocID)
 
 'Click Tree Menu - Assigned'
@@ -127,7 +128,7 @@ int rowCount_Assigned = CustomKeywords.'actions.MenuBar.getRecordCountInActivity
 CustomKeywords.'actions.Common.verifyTotalRecordCountFromPageSummary'(findTestObject('Page_nGage_Dashboard/My_Work/table_pagination_summary'), rowCount_Assigned)
 
 'Verify Correct Document ID is present in grid'
-CustomKeywords.'actions.Table.verifyRecordPresentInColumn'(findTestObject('Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), colNo_DocID, P1_MW_DOC6_DOCID)
+CustomKeywords.'actions.Table.verifyRecordPresentInColumn'(findTestObject('Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), colNo_DocID, docID)
 CustomKeywords.'actions.Table.verifyRecordNotPresentInColumn'(findTestObject('Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), colNo_DocID, docId_Unassigned)
 
 'right click on (option)loan approval'

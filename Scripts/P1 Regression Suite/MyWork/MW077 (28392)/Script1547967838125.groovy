@@ -13,6 +13,8 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 
 import common.ChartType
+import common.DocClass
+import common.DocType
 import internal.GlobalVariable as GlobalVariable
 
 import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
@@ -34,9 +36,9 @@ import static utils.Consts.*
 'Login Into Application'
 CustomKeywords.'actions.Common.login'()
 
-if(!FLAG_P1_MW_DOC2) {
-	CustomKeywords.'actions.Common.createDocument_VerticalMenuWizard'(P1_MW_DOC2_FIRSTNAME, P1_MW_DOC2_LASTNAME, P1_MW_DOC2_AMOUNT, '')
-	FLAG_P1_MW_DOC2 = true
+'Create document if not available'
+if(!FLAG_P1_MW_DOC084) {
+	CustomKeywords.'actions.Data.create'(DocClass.VERTICAL_MENU_WIZARD, DocType.SHOW_VERTICAL_MENU_TRUE, P1_MW_DOC084)
 }
 
 'Click on My Work link from left menu'

@@ -30,24 +30,32 @@ public class Window {
 
 	@Keyword
 	def clickElementAndWaitForWindowClose(TestObject saveButton, int timeout) {
-		WebDriver driver = DriverFactory.getWebDriver()
-		String currentWindow = driver.getWindowHandle()
-		WebUI.click(saveButton)
 
 		def startTime = System.currentTimeMillis()
 		def endTime = startTime + TimeUnit.SECONDS.toMillis(timeout)
 		def currentTime = System.currentTimeMillis()
-
 		boolean isWindowClosed = false
-		Set<String> allWindows = driver.getWindowHandles()
-		while(currentTime < endTime) {
-			if(!allWindows.contains(currentWindow)) {
-				isWindowClosed = true
-				break
+		
+		try {
+			WebDriver driver = DriverFactory.getWebDriver()
+			String currentWindow = driver.getWindowHandle()
+			WebUI.click(saveButton)
+	
+			
+			Set<String> allWindows = driver.getWindowHandles()
+			while(currentTime < endTime) {
+				if(!allWindows.contains(currentWindow)) {
+					isWindowClosed = true
+					break
+				}
+				WebUI.delay(2)
+				currentTime = System.currentTimeMillis()
+				allWindows = driver.getWindowHandles()
 			}
-			WebUI.delay(2)
-			currentTime = System.currentTimeMillis()
-			allWindows = driver.getWindowHandles()
+		}
+		catch(Exception e) {
+			WebUI.takeScreenshot()
+			KeywordUtil.markFailedAndStop("Exception occurred while processing command "+e.toString())
 		}
 
 		if(isWindowClosed) {
@@ -89,7 +97,7 @@ public class Window {
 		int actCount = driver.getWindowHandles().size()
 		WebUI.verifyEqual(actCount, expCount)
 	}
-	
+
 	@Keyword
 	def switchToUrlContains(String url, int timeout) {
 
@@ -98,14 +106,14 @@ public class Window {
 		def currentTime = System.currentTimeMillis()
 
 		boolean isWindowFound = false
-		
+
 		while(currentTime < endTime) {
 			try {
 				WebDriver driver = DriverFactory.getWebDriver()
 				Set<String> handles = driver.getWindowHandles()
 				for (handle in handles) {
 					driver.switchTo().window(handle)
-					
+
 					if(driver.getCurrentUrl().trim().toLowerCase().contains(url.trim().toLowerCase())) {
 						isWindowFound = true
 						break
@@ -122,7 +130,7 @@ public class Window {
 				currentTime = System.currentTimeMillis()
 			}
 		}
-		
+
 		if(isWindowFound) {
 			KeywordUtil.markPassed('Window found and switched to')
 		}
@@ -130,5 +138,4 @@ public class Window {
 			KeywordUtil.markFailedAndStop('Could not found window in given time '+GlobalVariable.G_LongTimeout)
 		}
 	}
-
 }
