@@ -17,17 +17,20 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WSBuiltInKeywords
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUiBuiltInKeywords
+
+import common.DocClass
+import common.DocType
+import common.Fields
+
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
-import utils.Consts
+import static utils.Consts.*
 
 'Login Into Application'
 CustomKeywords.'actions.Common.login'()
 
-String filePath = RunConfiguration.getProjectDir().replace('/', '\\')+'\\Data Files\\FileUploads\\50 Pages PDF file.pdf'
-
 'Create new document'
-CustomKeywords.'actions.Common.createDocument_WMIMenuBovVertical'(Consts.SMOKE_HOME008_BMSTRING, filePath)
+CustomKeywords.'actions.Data.create'(DocClass.WMI_MENU, DocType.WMI_MENU_BOV_VERTICAL, SMOKE_WMI_DOC061)
 
 'Go to Recent Documents tab'
 CustomKeywords.'actions.MenuBar.clickTreeMenu'('HOME', 'Recent Documents')
@@ -56,7 +59,6 @@ int colNo_DocID = CustomKeywords.'actions.Table.getColumnNumber'(findTestObject(
 CustomKeywords.'actions.Table.clickCell'(findTestObject('Page_nGage_Dashboard/Home/table_MyDocumentResults'), 1, colNo_DocID)
 
 'Switch to window'
-//WebUI.switchToWindowTitle('WMI Menu BOV Vertical')
 WebUI.switchToWindowIndex(1)
 WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_WMI/WMI_Menu_BOV_Vertical/iframe_westContainerFrame'))
@@ -64,11 +66,11 @@ CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_WMI/WMI_
 'Verify values of the fields'
 WebUI.waitForElementPresent(findTestObject('Page_WMI/WMI_Menu_BOV_Vertical/input_eform_String_Input_Field'), GlobalVariable.G_LongTimeout)
 WebUI.waitForElementVisible(findTestObject('Page_WMI/WMI_Menu_BOV_Vertical/input_eform_String_Input_Field'), GlobalVariable.G_LongTimeout)
-WebUI.verifyElementAttributeValue(findTestObject('Page_WMI/WMI_Menu_BOV_Vertical/input_eform_String_Input_Field'), 'value', Consts.SMOKE_HOME008_BMSTRING, GlobalVariable.G_LongTimeout)
+WebUI.verifyElementAttributeValue(findTestObject('Page_WMI/WMI_Menu_BOV_Vertical/input_eform_String_Input_Field'), 'value', SMOKE_WMI_DOC061.get(Fields.STRING_FIELD), GlobalVariable.G_LongTimeout)
 
 'Verify Content is displayed'
 WebUI.verifyElementVisible(findTestObject('Page_WMI/WMI_Menu_BOV_Vertical/iframe_westContainerFrame'))
 
 'Verify Page size of PDF File'
 WebUI.waitForElementVisible(findTestObject('Page_WMI/WMI_Menu_BOV_Vertical/span_Page Number'), GlobalVariable.G_LongTimeout)
-WebUI.verifyElementText(findTestObject('Page_WMI/WMI_Menu_BOV_Vertical/span_Page Number'), 'Page 1/50')
+WebUI.verifyElementText(findTestObject('Page_WMI/WMI_Menu_BOV_Vertical/span_Page Number'), 'Page 1/8')

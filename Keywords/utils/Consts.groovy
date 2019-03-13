@@ -798,15 +798,30 @@ public class Consts {
 		P1_WMI_DOC044.put(Fields.FILE_NAME, 'Encryption OFF')
 		P1_WMI_DOC044.put(Fields.UPLOAD_FILE, RunConfiguration.getProjectDir().replace('/', '\\')+'\\Data Files\\FileUploads\\TextPDF.pdf')
 	}
-	
+
 	//061 - 080 For WMI Menu Bov Vertical
-	public static final Map<Fields, String> P1_WMI_DOC061 //Used in Multipage viewer
+	public static final Map<Fields, String> P1_WMI_DOC061 //Used in Multipage viewer - 8 Page PDF
 	public static boolean FLAG_P1_WMI_DOC061 = false
 	static {
 		P1_WMI_DOC061 = new HashMap<Fields, String>()
-		P1_WMI_DOC061.put(Fields.BM_STRING, '8 Page PDF File')
+		P1_WMI_DOC061.put(Fields.STRING_FIELD, '8 Page PDF File')
 		P1_WMI_DOC061.put(Fields.UPLOAD_FILE, RunConfiguration.getProjectDir().replace('/', '\\')+'\\Data Files\\FileUploads\\TextPDF.pdf')
 	}
 
+	public static final Map<Fields, String> P1_WMI_DOC062 //Used in Login, Bulk Documents - 50 Page PDF 
+	public static boolean FLAG_P1_WMI_DOC062 = false
+	static {
+		P1_WMI_DOC062 = new HashMap<Fields, String>()
+		P1_WMI_DOC062.put(Fields.STRING_FIELD, 'A')
+		P1_WMI_DOC062.put(Fields.UPLOAD_FILE, RunConfiguration.getProjectDir().replace('/', '\\')+'\\Data Files\\FileUploads\\50 Pages PDF file.pdf')
+	}
+
+	public static final Map<Fields, String> SMOKE_WMI_DOC061 //Used in Home Module - 8 Page PDF
+	public static boolean FLAG_SMOKE_WMI_DOC061 = false
+	static {
+		SMOKE_WMI_DOC061 = new HashMap<Fields, String>()
+		SMOKE_WMI_DOC061.put(Fields.STRING_FIELD, 'Automation test document')
+		SMOKE_WMI_DOC061.put(Fields.UPLOAD_FILE, RunConfiguration.getProjectDir().replace('/', '\\')+'\\Data Files\\FileUploads\\TextPDF.pdf')
+	}
 }
 

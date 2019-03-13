@@ -31,6 +31,10 @@ import com.kms.katalon.core.util.KeywordUtil
 import com.kms.katalon.core.webui.common.WebUiCommonHelper
 import com.kms.katalon.core.webui.driver.DriverFactory
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+
+import common.DocClass
+import common.DocType
+
 import com.google.common.base.Predicate
 
 import internal.GlobalVariable as GlobalVariable
@@ -754,36 +758,36 @@ public class Common {
 		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/span_ui-button-icon-primary ui'))
 	}
 
-	@Keyword
-	def createDocument_WMIMenuBovVertical(String BM_String, String filePath) {
-
-		'Switch to main window'
-		WebUI.switchToWindowTitle('Savana nGage')
-
-		'Create a new BovDocTwoRow Document'
-		WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))
-		selectDocClassAndDocTypeForGlobalNew('WMI Menu', 'WMI Menu BOV Vertical')
-		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'))
-
-		'Switch to new Window'
-		WebUI.switchToWindowTitle('(Doc ID: NEW )')
-		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
-
-		'Fill the details required'
-		WebUI.setText(findTestObject('Page_WMI_NEW/WMI_Menu_BOV_Vertical/input_String field'), BM_String)
-		if(StringUtils.isNotBlank(filePath)) {
-			WebUI.uploadFile(findTestObject('Page_WMI_NEW/WMI_Menu_BOV_Vertical/input__file_upload'), filePath)
-		}
-
-		'Save details and close'
-		WebUI.mouseOver(findTestObject('Object Repository/Page_WMI_NEW/WMI_Menu_BOV/buttonStandardActions'))
-		WebUI.waitForElementVisible(findTestObject('Object Repository/Page_WMI_NEW/WMI_Menu_BOV/buttonSave'), GlobalVariable.G_LongTimeout)
-		new Window().clickElementAndWaitForWindowClose(findTestObject('Object Repository/Page_WMI_NEW/WMI_Menu_BOV/buttonSave'),GlobalVariable.G_LongTimeout)
-
-		'Switch to main window and close'
-		WebUI.switchToWindowTitle('Savana nGage')
-		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/span_ui-button-icon-primary ui'))
-	}
+	//	@Keyword
+	//	def createDocument_WMIMenuBovVertical(String BM_String, String filePath) {
+	//
+	//		'Switch to main window'
+	//		WebUI.switchToWindowTitle('Savana nGage')
+	//
+	//		'Create a new BovDocTwoRow Document'
+	//		WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))
+	//		selectDocClassAndDocTypeForGlobalNew('WMI Menu', 'WMI Menu BOV Vertical')
+	//		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'))
+	//
+	//		'Switch to new Window'
+	//		WebUI.switchToWindowTitle('(Doc ID: NEW )')
+	//		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+	//
+	//		'Fill the details required'
+	//		WebUI.setText(findTestObject('Page_WMI_NEW/WMI_Menu_BOV_Vertical/input_String field'), BM_String)
+	//		if(StringUtils.isNotBlank(filePath)) {
+	//			WebUI.uploadFile(findTestObject('Page_WMI_NEW/WMI_Menu_BOV_Vertical/input__file_upload'), filePath)
+	//		}
+	//
+	//		'Save details and close'
+	//		WebUI.mouseOver(findTestObject('Object Repository/Page_WMI_NEW/WMI_Menu_BOV/buttonStandardActions'))
+	//		WebUI.waitForElementVisible(findTestObject('Object Repository/Page_WMI_NEW/WMI_Menu_BOV/buttonSave'), GlobalVariable.G_LongTimeout)
+	//		new Window().clickElementAndWaitForWindowClose(findTestObject('Object Repository/Page_WMI_NEW/WMI_Menu_BOV/buttonSave'),GlobalVariable.G_LongTimeout)
+	//
+	//		'Switch to main window and close'
+	//		WebUI.switchToWindowTitle('Savana nGage')
+	//		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/span_ui-button-icon-primary ui'))
+	//	}
 
 	@Keyword
 	def createDocument_ClosureAction(String customerName, String customerDetails) {
@@ -1141,14 +1145,14 @@ public class Common {
 		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/span_ui-button-icon-primary ui'))
 	}
 
-//	@Keyword
-//	def waitForImageToRender(TestObject to) {
-//		//		waitForFrameToLoad(to)
-//		//		WebUI.delay(5)
-//
-//		WebUI.waitForElementNotVisible(findTestObject('Page_WMI/WMI_Menu_BOV_Vertical/ContentFrame/image_Processing'), GlobalVariable.G_LongTimeout)
-//		waitForImageRender(findTestObject('Page_WMI/WMI_Menu_BOV_Vertical/ContentFrame/image'))
-//	}
+	//	@Keyword
+	//	def waitForImageToRender(TestObject to) {
+	//		//		waitForFrameToLoad(to)
+	//		//		WebUI.delay(5)
+	//
+	//		WebUI.waitForElementNotVisible(findTestObject('Page_WMI/WMI_Menu_BOV_Vertical/ContentFrame/image_Processing'), GlobalVariable.G_LongTimeout)
+	//		waitForImageRender(findTestObject('Page_WMI/WMI_Menu_BOV_Vertical/ContentFrame/image'))
+	//	}
 
 	@Keyword
 	def createDocument_Correspondence(String firstName, String lastName, String toEmail, String template) {
@@ -1268,8 +1272,6 @@ public class Common {
 	@Keyword
 	def createBulkDocuments_WMIMenuBovVertical(int requiredDocsCount) {
 
-		String filePath = RunConfiguration.getProjectDir().replace('/', '\\')+'\\Data Files\\FileUploads\\50 Pages PDF file.pdf'
-
 		'Expand Repository Menu'
 		WebUI.click(findTestObject('Page_nGage_Dashboard/Repository/h3_Repository Menu'))
 		waitForFrameToLoad(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
@@ -1283,7 +1285,7 @@ public class Common {
 		if(recordCount < requiredDocsCount) {
 			int extraDocsRequired = requiredDocsCount-recordCount
 			for(int i = 1; i <= extraDocsRequired; i++) {
-				createDocument_WMIMenuBovVertical('Chintan Shah '+i, filePath)
+				new Data().create(DocClass.WMI_MENU, DocType.WMI_MENU_BOV_VERTICAL, P1_WMI_DOC062)
 			}
 		}
 		WebUI.refresh()
@@ -1873,7 +1875,7 @@ public class Common {
 			return false
 		}
 	}
-	
+
 	@Keyword
 	def waitForImageRender(TestObject to) {
 
@@ -1883,7 +1885,7 @@ public class Common {
 		def startTime = System.currentTimeMillis()
 		def endTime = startTime + TimeUnit.SECONDS.toMillis(GlobalVariable.G_LongTimeout)
 		def currentTime = System.currentTimeMillis()
-		int i = 0  
+		int i = 0
 
 		while(currentTime < endTime) {
 
@@ -1891,10 +1893,10 @@ public class Common {
 			image = WebUtil.getWebElement(to)
 			list = new ArrayList<WebElement>()
 			list.add(image)
-	
+
 			isLoaded = (Boolean)WebUI.executeJavaScript('return arguments[0].complete && typeof arguments[0].naturalWidth != \"undefined\" && arguments[0].naturalWidth > 0', list)
 			WebUI.switchToDefaultContent()
-			
+
 			if(isLoaded) {
 				break
 			}
@@ -1903,9 +1905,9 @@ public class Common {
 				currentTime = System.currentTimeMillis()
 			}
 			i++
-			
+
 		}
-		
+
 		if(isLoaded) {
 			KeywordUtil.markPassed('Wait complete')
 		}
@@ -1913,7 +1915,7 @@ public class Common {
 			WebUI.takeScreenshot()
 			KeywordUtil.markFailedAndStop('Image not rendered within 120 sec')
 		}
-		
+
 		WebUI.switchToDefaultContent()
 	}
 }

@@ -266,16 +266,16 @@ public class Data {
 		WebUI.waitForElementVisible(findTestObject('Page_WMI_NEW/SM Web Service/DB_0002/submenu_Save'), GlobalVariable.G_LongTimeout)
 		new Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI_NEW/SM Web Service/DB_0002/submenu_Save'),GlobalVariable.G_LongTimeout)
 	}
-	
+
 	private void wmiMenuBovVertical(Map<Fields, String> data) {
 
 		//Get Data from Map
-		String bmString = data.get(Fields.BM_STRING)
+		String stringField = data.get(Fields.STRING_FIELD)
 		String file = data.get(Fields.UPLOAD_FILE)
-		
+
 		//Fill Form
 		if(StringUtils.isNotBlank(file))
-			WebUI.setText(findTestObject('Page_WMI_NEW/WMI_Menu_BOV_Vertical/input_String field'), bmString)
+			WebUI.setText(findTestObject('Page_WMI_NEW/WMI_Menu_BOV_Vertical/input_String field'), stringField)
 		if(StringUtils.isNotBlank(file))
 			WebUI.uploadFile(findTestObject('Page_WMI_NEW/WMI_Menu_BOV_Vertical/input__file_upload'), file)
 

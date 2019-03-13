@@ -18,8 +18,11 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WSBuiltInKey
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.driver.DriverFactory as DriverFactory
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUiBuiltInKeywords
+
+import common.DocClass
+import common.DocType
 import internal.GlobalVariable
-import utils.Consts
+import static utils.Consts.*
 
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import org.openqa.selenium.Keys as Keys
@@ -29,8 +32,7 @@ import org.openqa.selenium.WebDriver as WebDriver
 CustomKeywords.'actions.Common.login'()
 
 'Create new document'
-String filePath = RunConfiguration.getProjectDir().replace('/', '\\')+'\\Data Files\\FileUploads\\50 Pages PDF file.pdf'
-CustomKeywords.'actions.Common.createDocument_WMIMenuBovVertical'(Consts.SMOKE_HOME007_BMSTRING, filePath)
+CustomKeywords.'actions.Data.create'(DocClass.WMI_MENU, DocType.WMI_MENU_BOV_VERTICAL, SMOKE_WMI_DOC061)
 
 'Go to Recent Documents tab'
 CustomKeywords.'actions.MenuBar.clickTreeMenu'('HOME', 'Recent Documents')

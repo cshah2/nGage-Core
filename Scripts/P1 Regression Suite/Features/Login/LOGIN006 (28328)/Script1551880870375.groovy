@@ -12,15 +12,18 @@ import com.kms.katalon.core.testdata.TestData as TestData
 import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+
+import common.DocClass
+import common.DocType
+import common.Fields
 import internal.GlobalVariable as GlobalVariable
+import static utils.Consts.*
 
 'Login Into Application'
 CustomKeywords.'actions.Common.login'()
 
 'Create document'
-String BM_String = 'A'
-String filePath = RunConfiguration.getProjectDir().replace('/', '\\')+'\\Data Files\\FileUploads\\50 Pages PDF file.pdf'
-CustomKeywords.'actions.Common.createDocument_WMIMenuBovVertical'(BM_String, filePath)
+CustomKeywords.'actions.Data.create'(DocClass.WMI_MENU, DocType.WMI_MENU_BOV_VERTICAL, P1_WMI_DOC062)
 
 'click on recent document link'
 CustomKeywords.'actions.MenuBar.clickTreeMenu'('HOME', 'Recent Documents')
@@ -58,4 +61,4 @@ WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
 'verify the data'
-WebUI.verifyElementAttributeValue(findTestObject('Page_WMI/WMI_Menu_BOV_Vertical/input_eform_String_Input_Field'), 'value', BM_String, GlobalVariable.G_LongTimeout)
+WebUI.verifyElementAttributeValue(findTestObject('Page_WMI/WMI_Menu_BOV_Vertical/input_eform_String_Input_Field'), 'value', P1_WMI_DOC062.get(Fields.STRING_FIELD), GlobalVariable.G_LongTimeout)
