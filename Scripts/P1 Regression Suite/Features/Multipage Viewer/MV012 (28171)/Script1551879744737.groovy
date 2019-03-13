@@ -37,7 +37,8 @@ if(!(FLAG_P1_WMI_DOC061 && isPresent)){
 
 'Pre-Requisite : Open newly created document from recent grid'
 CustomKeywords.'actions.Common.openDocumentFromRecentGrid'('WMI Menu BOV Vertical')
-CustomKeywords.'actions.Common.waitForImageToRender'(findTestObject('Page_WMI/WMI_Menu_BOV_Vertical/ContentFrame/iFrame_Image_EPMMultipageViewer'))
+WebUI.waitForElementNotVisible(findTestObject('Page_WMI/WMI_Menu_BOV_Vertical/ContentFrame/image_Processing'), GlobalVariable.G_LongTimeout)
+CustomKeywords.'actions.Common.waitForImageRender'(findTestObject('Page_WMI/WMI_Menu_BOV_Vertical/ContentFrame/image'))
 
 'Verify page count summary'
 WebUI.verifyMatch(WebUI.getText(findTestObject('Page_WMI/WMI_Menu_BOV_Vertical/ContentFrame/pageCount')).trim(), '.*Page 1/8.*', true)
@@ -51,7 +52,8 @@ WebUI.verifyMatch(actText, '.*PAGE 1.*', true)
 WebUI.setText(findTestObject('Page_WMI/WMI_Menu_BOV_Vertical/ContentFrame/input_PageNumber'), '7')
 WebUI.sendKeys(findTestObject('Page_WMI/WMI_Menu_BOV_Vertical/ContentFrame/input_PageNumber'), Keys.chord(Keys.ENTER))
 WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
-CustomKeywords.'actions.Common.waitForImageToRender'(findTestObject('Page_WMI/WMI_Menu_BOV_Vertical/ContentFrame/iFrame_Image_EPMMultipageViewer'))
+WebUI.waitForElementNotVisible(findTestObject('Page_WMI/WMI_Menu_BOV_Vertical/ContentFrame/image_Processing'), GlobalVariable.G_LongTimeout)
+CustomKeywords.'actions.Common.waitForImageRender'(findTestObject('Page_WMI/WMI_Menu_BOV_Vertical/ContentFrame/image'))
 
 'Verify page count summary'
 WebUI.verifyMatch(WebUI.getText(findTestObject('Page_WMI/WMI_Menu_BOV_Vertical/ContentFrame/pageCount')).trim(), '.*Page 7/8.*', true)

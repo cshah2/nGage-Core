@@ -35,7 +35,8 @@ if(!(FLAG_P1_WMI_DOC061 && isPresent)){
 
 'Pre-Requisite : Open newly created document from recent grid'
 CustomKeywords.'actions.Common.openDocumentFromRecentGrid'('WMI Menu BOV Vertical')
-CustomKeywords.'actions.Common.waitForImageToRender'(findTestObject('Page_WMI/WMI_Menu_BOV_Vertical/ContentFrame/iFrame_Image_EPMMultipageViewer'))
+WebUI.waitForElementNotVisible(findTestObject('Page_WMI/WMI_Menu_BOV_Vertical/ContentFrame/image_Processing'), GlobalVariable.G_LongTimeout)
+CustomKeywords.'actions.Common.waitForImageRender'(findTestObject('Page_WMI/WMI_Menu_BOV_Vertical/ContentFrame/image'))
 
 'Open on Thumbnail'
 CustomKeywords.'actions.Common.openThumbnail'(findTestObject('Page_WMI/WMI_Menu_BOV_Vertical/ContentFrame/button_Thumbnail_Toggle'))
@@ -47,7 +48,8 @@ WebUI.verifyElementVisible(findTestObject('Page_WMI/WMI_Menu_BOV_Vertical/Conten
 'Click on Thumbnail 2'
 WebUI.click(findTestObject('Page_WMI/WMI_Menu_BOV_Vertical/ContentFrame/thumbnail_2'))
 WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
-CustomKeywords.'actions.Common.waitForImageToRender'(findTestObject('Page_WMI/WMI_Menu_BOV_Vertical/ContentFrame/iFrame_Image_EPMMultipageViewer'))
+WebUI.waitForElementNotVisible(findTestObject('Page_WMI/WMI_Menu_BOV_Vertical/ContentFrame/image_Processing'), GlobalVariable.G_LongTimeout)
+CustomKeywords.'actions.Common.waitForImageRender'(findTestObject('Page_WMI/WMI_Menu_BOV_Vertical/ContentFrame/image'))
 
 String image2 =  ImageUtil.captureImage()
 String actText = CustomKeywords.'actions.OCR.readTextFromImage'(image2)
@@ -60,7 +62,8 @@ CustomKeywords.'actions.Common.openThumbnail'(findTestObject('Page_WMI/WMI_Menu_
 'Click on Thumbnail 2'
 WebUI.click(findTestObject('Page_WMI/WMI_Menu_BOV_Vertical/ContentFrame/thumbnail_4'))
 WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
-CustomKeywords.'actions.Common.waitForImageToRender'(findTestObject('Page_WMI/WMI_Menu_BOV_Vertical/ContentFrame/iFrame_Image_EPMMultipageViewer'))
+WebUI.waitForElementNotVisible(findTestObject('Page_WMI/WMI_Menu_BOV_Vertical/ContentFrame/image_Processing'), GlobalVariable.G_LongTimeout)
+CustomKeywords.'actions.Common.waitForImageRender'(findTestObject('Page_WMI/WMI_Menu_BOV_Vertical/ContentFrame/image'))
 
 String image4 =  ImageUtil.captureImage()
 actText = CustomKeywords.'actions.OCR.readTextFromImage'(image4)

@@ -10,6 +10,7 @@ import org.apache.commons.lang3.StringUtils
 import org.apache.commons.lang3.math.NumberUtils
 import org.openqa.selenium.By
 import org.openqa.selenium.Dimension
+import org.openqa.selenium.JavascriptExecutor
 import org.openqa.selenium.Keys
 import org.openqa.selenium.Point
 import org.openqa.selenium.StaleElementReferenceException
@@ -19,6 +20,7 @@ import org.openqa.selenium.interactions.Actions
 import org.openqa.selenium.support.ui.ExpectedConditions
 import org.openqa.selenium.support.ui.FluentWait
 import org.openqa.selenium.support.ui.Select
+import org.openqa.selenium.support.ui.WebDriverWait
 
 import com.gargoylesoftware.htmlunit.javascript.background.JavaScriptExecutor
 import com.kms.katalon.core.annotation.Keyword
@@ -29,6 +31,7 @@ import com.kms.katalon.core.util.KeywordUtil
 import com.kms.katalon.core.webui.common.WebUiCommonHelper
 import com.kms.katalon.core.webui.driver.DriverFactory
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+import com.google.common.base.Predicate
 
 import internal.GlobalVariable as GlobalVariable
 import utils.WebUtil
@@ -1138,11 +1141,14 @@ public class Common {
 		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/span_ui-button-icon-primary ui'))
 	}
 
-	@Keyword
-	def waitForImageToRender(TestObject to) {
-		waitForFrameToLoad(to)
-		WebUI.delay(5)
-	}
+//	@Keyword
+//	def waitForImageToRender(TestObject to) {
+//		//		waitForFrameToLoad(to)
+//		//		WebUI.delay(5)
+//
+//		WebUI.waitForElementNotVisible(findTestObject('Page_WMI/WMI_Menu_BOV_Vertical/ContentFrame/image_Processing'), GlobalVariable.G_LongTimeout)
+//		waitForImageRender(findTestObject('Page_WMI/WMI_Menu_BOV_Vertical/ContentFrame/image'))
+//	}
 
 	@Keyword
 	def createDocument_Correspondence(String firstName, String lastName, String toEmail, String template) {
@@ -1848,23 +1854,66 @@ public class Common {
 		try {
 			WebUI.click(findTestObject('Page_nGage_Dashboard/Home/Home Menu'))
 			WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
-	
+
 			WebUI.click(findTestObject('Page_nGage_Dashboard/Home/a_Recent Documents'))
 			waitForFrameToLoad(findTestObject('Page_nGage_Dashboard/iframe_iframe_103'))
-	
+
 			//Validate atleast 1 record is present in the grid.
 			WebUI.verifyElementPresent(findTestObject('Page_nGage_Dashboard/Home/tableRow_recentDocuments_firstRow'), GlobalVariable.G_LongTimeout);
-	
+
 			int colNo = new Table().getColumnNumber(findTestObject('Page_nGage_Dashboard/Home/tableHeader_RecentDocuments'), columnName)
-	
+
 			//Sort Record in grid by DocID Descending
 			new Table().clickColumnHeader(findTestObject('Page_nGage_Dashboard/Home/tableHeader_RecentDocuments'), 'Doc ID')
 			new Table().clickColumnHeader(findTestObject('Page_nGage_Dashboard/Home/tableHeader_RecentDocuments'), 'Doc ID')
-	
+
 			return new Table().isRecordPresentInTable(findTestObject('Page_nGage_Dashboard/Home/table_MyDocumentResults'), rowNo, colNo, expText)
 		}
 		catch(Exception e) {
 			return false
 		}
+	}
+	
+	@Keyword
+	def waitForImageRender(TestObject to) {
+
+		WebElement image
+		List<WebElement> list
+		boolean isLoaded = false
+		def startTime = System.currentTimeMillis()
+		def endTime = startTime + TimeUnit.SECONDS.toMillis(GlobalVariable.G_LongTimeout)
+		def currentTime = System.currentTimeMillis()
+		int i = 0  
+
+		while(currentTime < endTime) {
+
+			println "Inside loop "+i
+			image = WebUtil.getWebElement(to)
+			list = new ArrayList<WebElement>()
+			list.add(image)
+	
+			isLoaded = (Boolean)WebUI.executeJavaScript('return arguments[0].complete && typeof arguments[0].naturalWidth != \"undefined\" && arguments[0].naturalWidth > 0', list)
+			WebUI.switchToDefaultContent()
+			
+			if(isLoaded) {
+				break
+			}
+			else {
+				WebUtil.delay(500)
+				currentTime = System.currentTimeMillis()
+			}
+			i++
+			
+		}
+		
+		if(isLoaded) {
+			KeywordUtil.markPassed('Wait complete')
+		}
+		else {
+			WebUI.takeScreenshot()
+			KeywordUtil.markFailedAndStop('Image not rendered within 120 sec')
+		}
+		
+		WebUI.switchToDefaultContent()
 	}
 }

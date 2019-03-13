@@ -49,10 +49,11 @@ CustomKeywords.'actions.Table.clickCell'(findTestObject('Page_nGage_Dashboard/Ho
 'Switch to WMI and wait for page load'
 WebUI.switchToWindowIndex(1)
 WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
-CustomKeywords.'actions.Common.waitForImageToRender'(findTestObject('Page_WMI/SM Web Service/DB_0002/iFrame_Image_EPMMultipageViewer'))
+WebUI.waitForElementNotVisible(findTestObject('Page_WMI/SM Web Service/DB_0002/image_Processing'), GlobalVariable.G_LongTimeout)
+CustomKeywords.'actions.Common.waitForImageRender'(findTestObject('Page_WMI/SM Web Service/DB_0002/image'))
 
 'Verify Intial page count summary'
-WebUI.verifyMatch(WebUI.getText(findTestObject('Page_WMI/SM Web Service/DB_0001/lbl_PageSummary')).trim(), '.*Page 1/8.*', true)
+WebUI.verifyMatch(WebUI.getText(findTestObject('Page_WMI/SM Web Service/DB_0002/lbl_PageSummary')).trim(), '.*Page 1/8.*', true)
 
 String image1 =  ImageUtil.captureImage()
 String actText = CustomKeywords.'actions.OCR.readTextFromImage'(image1)

@@ -107,7 +107,7 @@ public class WebUtil {
 		WebDriver driver = DriverFactory.getWebDriver()
 		return driver.getWindowHandle();
 	}
-	
+
 	public static void openBrowser() {
 		WebUI.openBrowser('')
 		WebUI.maximizeWindow()

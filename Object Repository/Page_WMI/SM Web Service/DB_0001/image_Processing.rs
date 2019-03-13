@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description>//body/div[@unselectable='on']/div</description>
-   <name>image</name>
+   <name>image_Processing</name>
    <tag></tag>
-   <elementGuidId>14fc5a4b-2b0b-4eca-81a0-5f36577a0bc3</elementGuidId>
+   <elementGuidId>e85986e2-5fe1-4557-8210-b866f74731d4</elementGuidId>
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//body//img[contains(@style,'visible;')]</value>
+         <value>//div[@id='EPMMultiPageViewer1_divShowProcessing']</value>
       </entry>
       <entry>
          <key>BASIC</key>
@@ -21,6 +21,6 @@
       <matchCondition>equals</matchCondition>
       <name>ref_element</name>
       <type>Main</type>
-      <value>Object Repository/Page_WMI/Clipboard/iFrame_Image_EPMMultipageViewer</value>
+      <value>Object Repository/Page_WMI/SM Web Service/DB_0001/iframe_WestContainer</value>
    </webElementProperties>
 </WebElementEntity>

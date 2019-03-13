@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//body/div[@unselectable='on']/canvas</value>
+         <value>//body//img[contains(@style,'visible;')]</value>
       </entry>
       <entry>
          <key>BASIC</key>

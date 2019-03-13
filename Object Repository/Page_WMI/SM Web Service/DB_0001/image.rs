@@ -6,12 +6,12 @@
    <elementGuidId>5da7ffe5-67e0-47e3-bffe-e6719bca0efc</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>BASIC</key>
-         <value>//*[@ref_element = 'Object Repository/Page_WMI/WMI_Menu_BOV_Vertical/ContentFrame/iFrame_Image_EPMMultipageViewer']</value>
+         <key>XPATH</key>
+         <value>//body//img[contains(@style,'visible;')]</value>
       </entry>
       <entry>
-         <key>XPATH</key>
-         <value>//body/div[@unselectable='on']/canvas</value>
+         <key>BASIC</key>
+         <value>//*[@ref_element = 'Object Repository/Page_WMI/WMI_Menu_BOV_Vertical/ContentFrame/iFrame_Image_EPMMultipageViewer']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
