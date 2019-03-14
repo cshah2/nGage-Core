@@ -35,7 +35,8 @@ public enum DocType {
 	ROUTE_FROM_ENTRY_INTERACTIVE_USER("Route from Entry Interactive User"),
 	CORRESPONDENCE("Correspondence"),
 	EVENT_FOR_REQUIRED_FIELD("Event for req field"),
-	RELOAD_ON_POSTBACK_NO_SPLIT_T("ReloadOnPostbackNoSplit T")
+	RELOAD_ON_POSTBACK_NO_SPLIT_T("ReloadOnPostbackNoSplit T"),
+	RENDER_AS_LABEL("Render As Label")
 
 	private final String text
 

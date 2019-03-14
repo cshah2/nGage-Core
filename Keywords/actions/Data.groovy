@@ -111,6 +111,10 @@ public class Data {
 				reloadOnPostBackNoSplitT(data)
 				break
 
+			case DocType.RENDER_AS_LABEL:
+				renderAsLabel(data)
+				break
+
 			default:
 				WebUI.takeScreenshot()
 				KeywordUtil.markFailedAndStop('Unable to create document, Invalid docType provided : '+docType)
@@ -450,7 +454,7 @@ public class Data {
 		WebUI.waitForElementVisible(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/process_Event For Required Field/a_Save'), GlobalVariable.G_LongTimeout)
 		new Window().clickElementAndWaitForWindowClose(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/process_Event For Required Field/a_Save'), GlobalVariable.G_LongTimeout)
 	}
-	
+
 	private void reloadOnPostBackNoSplitT(Map<Fields, String> data) {
 
 		//Get Data from Map
@@ -465,5 +469,18 @@ public class Data {
 		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 		WebUI.waitForElementVisible(findTestObject('Page_WMI_NEW/DoNotReloadOnPostBack/NoSplit_T/span_Close'), GlobalVariable.G_LongTimeout)
 		new Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI_NEW/DoNotReloadOnPostBack/NoSplit_T/span_Close'),GlobalVariable.G_LongTimeout)
+	}
+	
+	private void renderAsLabel(Map<Fields, String> data) {
+		
+		//Get Data from Map
+		
+		//Fill Form
+		
+		//Click on Save button and close window button
+		WebUI.click(findTestObject('Page_WMI_NEW/Master_Object_Feature/Render_As_Label/span_Save'))
+		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+		new Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI_NEW/Master_Object_Feature/Render_As_Label/span_Close Window'), GlobalVariable.G_LongTimeout)
+
 	}
 }

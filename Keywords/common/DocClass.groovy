@@ -33,6 +33,7 @@ public enum DocClass {
 	CORRESPONDENCE("Correspondence"),
 	EVENT_FOR_REQUIRED_FIELD("Event for Req Fld"),
 	DO_NOT_RELOAD_ON_POSTBACK("DoNotReloadOnPostback"),
+	MASTER_OBJECT_FEATURE("Master Object Feature")
 
 	private final String text
 

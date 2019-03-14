@@ -1318,37 +1318,37 @@ public class Common {
 
 	}
 
-//	@Keyword
-//	def createDocument_ReloadOnPostBack(String BM_String) {
-//
-//		'Switch to main window'
-//		WebUI.switchToWindowTitle('Savana nGage')
-//
-//		'Create a new BovDocTwoRow Document'
-//		WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))
-//		selectDocClassAndDocTypeForGlobalNew('DoNotReloadOnPostback', 'ReloadOnPostbackNoSplit T')
-//		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'))
-//
-//		'Switch to new Window'
-//		//WebUI.switchToWindowTitle('(Doc ID: NEW )')
-//		WebUI.switchToWindowIndex(1)
-//		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
-//
-//		'Fill the details required'
-//		WebUI.setText(findTestObject('Page_WMI_NEW/DoNotReloadOnPostBack/NoSplit_T/input_BM String'), BM_String)
-//
-//		'Save details and close'
-//		WebUI.click(findTestObject('Page_WMI_NEW/DoNotReloadOnPostBack/NoSplit_T/span_Save'))
-//		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
-//
-//		'Click close window'
-//		WebUI.waitForElementVisible(findTestObject('Page_WMI_NEW/DoNotReloadOnPostBack/NoSplit_T/span_Close'), GlobalVariable.G_LongTimeout)
-//		new Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI_NEW/DoNotReloadOnPostBack/NoSplit_T/span_Close'),GlobalVariable.G_LongTimeout)
-//
-//		'Switch to main window and close'
-//		WebUI.switchToWindowTitle('Savana nGage')
-//		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/span_ui-button-icon-primary ui'))
-//	}
+	//	@Keyword
+	//	def createDocument_ReloadOnPostBack(String BM_String) {
+	//
+	//		'Switch to main window'
+	//		WebUI.switchToWindowTitle('Savana nGage')
+	//
+	//		'Create a new BovDocTwoRow Document'
+	//		WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))
+	//		selectDocClassAndDocTypeForGlobalNew('DoNotReloadOnPostback', 'ReloadOnPostbackNoSplit T')
+	//		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'))
+	//
+	//		'Switch to new Window'
+	//		//WebUI.switchToWindowTitle('(Doc ID: NEW )')
+	//		WebUI.switchToWindowIndex(1)
+	//		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+	//
+	//		'Fill the details required'
+	//		WebUI.setText(findTestObject('Page_WMI_NEW/DoNotReloadOnPostBack/NoSplit_T/input_BM String'), BM_String)
+	//
+	//		'Save details and close'
+	//		WebUI.click(findTestObject('Page_WMI_NEW/DoNotReloadOnPostBack/NoSplit_T/span_Save'))
+	//		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+	//
+	//		'Click close window'
+	//		WebUI.waitForElementVisible(findTestObject('Page_WMI_NEW/DoNotReloadOnPostBack/NoSplit_T/span_Close'), GlobalVariable.G_LongTimeout)
+	//		new Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI_NEW/DoNotReloadOnPostBack/NoSplit_T/span_Close'),GlobalVariable.G_LongTimeout)
+	//
+	//		'Switch to main window and close'
+	//		WebUI.switchToWindowTitle('Savana nGage')
+	//		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/span_ui-button-icon-primary ui'))
+	//	}
 
 	@Keyword
 	def createBulkDocuments_ReloadOnPostBack(int requiredDocsCount) {
@@ -1400,32 +1400,32 @@ public class Common {
 		WebUI.switchToDefaultContent()
 	}
 
-	@Keyword
-	def createDocument_RenderAsLabel() {
-
-		'Switch to main window'
-		WebUI.switchToWindowTitle('Savana nGage')
-
-		'Create a new BovDocTwoRow Document'
-		WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))
-
-		selectDocClassAndDocTypeForGlobalNew('Master Object Feature', 'Render As Label')
-		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'))
-
-		WebUI.switchToWindowIndex(1)
-		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
-
-		'Click Save'
-		WebUI.click(findTestObject('Page_WMI_NEW/Master_Object_Feature/Render_As_Label/span_Save'))
-		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
-
-		'Click close window'
-		new Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI_NEW/Master_Object_Feature/Render_As_Label/span_Close Window'), GlobalVariable.G_LongTimeout)
-
-		'Switch to main window and close'
-		WebUI.switchToWindowTitle('Savana nGage')
-		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/span_ui-button-icon-primary ui'))
-	}
+//	@Keyword
+//	def createDocument_RenderAsLabel() {
+//
+//		'Switch to main window'
+//		WebUI.switchToWindowTitle('Savana nGage')
+//
+//		'Create a new BovDocTwoRow Document'
+//		WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))
+//
+//		selectDocClassAndDocTypeForGlobalNew('Master Object Feature', 'Render As Label')
+//		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'))
+//
+//		WebUI.switchToWindowIndex(1)
+//		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+//
+//		'Click Save'
+//		WebUI.click(findTestObject('Page_WMI_NEW/Master_Object_Feature/Render_As_Label/span_Save'))
+//		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+//
+//		'Click close window'
+//		new Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI_NEW/Master_Object_Feature/Render_As_Label/span_Close Window'), GlobalVariable.G_LongTimeout)
+//
+//		'Switch to main window and close'
+//		WebUI.switchToWindowTitle('Savana nGage')
+//		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/span_ui-button-icon-primary ui'))
+//	}
 
 	@Keyword
 	def createBulkDocuments_RenderAsLabel(int requiredDocsCount) {
@@ -1443,7 +1443,7 @@ public class Common {
 		if(recordCount < requiredDocsCount) {
 			int extraDocsRequired = requiredDocsCount-recordCount
 			for(int i = 1; i <= extraDocsRequired; i++) {
-				createDocument_RenderAsLabel()
+				new Data().create(DocClass.MASTER_OBJECT_FEATURE, DocType.RENDER_AS_LABEL, null)
 			}
 		}
 
