@@ -11,6 +11,10 @@ import com.kms.katalon.core.testdata.TestData as TestData
 import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+
+import common.DocClass
+import common.DocType
+import common.Fields
 import internal.GlobalVariable as GlobalVariable
 import static utils.Consts.*
 
@@ -18,9 +22,9 @@ import static utils.Consts.*
 CustomKeywords.'actions.Common.login'()
 
 'Create Document if not present'
-if(!FLAG_P1_REPO_DOC11) {
-	CustomKeywords.'actions.Common.createDocument_RequiredFieldDT'(P1_REPO_BMTEXT_DOC11, P1_REPO_BMSTRING_DOC11, P1_REPO_INT_DOC11, P1_REPO_DATETIMEREQ_DOC11, P1_REPO_DATEREQ_DOC11)
-	FLAG_P1_REPO_DOC11 = true
+if(!FLAG_P1_REPO_DOC121) {
+	CustomKeywords.'actions.Data.create'(DocClass.REQUIRED_FIELD_DC, DocType.REQUIRED_FIELD_DT, P1_REPO_DOC121)
+	FLAG_P1_REPO_DOC121 = true
 }
 
 'Expand Repository Menu'

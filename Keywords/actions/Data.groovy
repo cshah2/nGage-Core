@@ -91,6 +91,10 @@ public class Data {
 				multiPageViewerWithDragAndDrop(data)
 				break
 
+			case DocType.REQUIRED_FIELD_DT:
+				requiredFieldDT(data)
+				break
+
 			default:
 				WebUI.takeScreenshot()
 				KeywordUtil.markFailedAndStop('Unable to create document, Invalid docType provided : '+docType)
@@ -318,9 +322,9 @@ public class Data {
 		new Common().waitForFrameToLoad(findTestObject('Page_WMI_NEW/VerticalMenuWizard/ShowVerticalMenu_True/iframe_Menus_ContentPlaceHolde'))
 		new Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI_NEW/VerticalMenuWizard/ShowVerticalMenu_True/a_Close Window'), GlobalVariable.G_LongTimeout)
 	}
-	
+
 	private void multiPageViewerWithDragAndDrop(Map<Fields, String> data) {
-		
+
 		//Get Data from Map
 		String stringField = data.get(Fields.STRING_FIELD)
 		String fileName = data.get(Fields.FILE_NAME)
@@ -335,5 +339,32 @@ public class Data {
 		WebUI.mouseOver(findTestObject('Page_WMI_NEW/MultiPage_Viewer_DD/span_standard_actions'))
 		WebUI.waitForElementVisible(findTestObject('Page_WMI_NEW/MultiPage_Viewer_DD/a_Save'), GlobalVariable.G_LongTimeout)
 		new Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI_NEW/MultiPage_Viewer_DD/a_Save'), GlobalVariable.G_LongTimeout)
+	}
+	
+	private void requiredFieldDT(Map<Fields, String> data) {
+		
+		//Get Data from Map
+		String bmText = data.get(Fields.BM_TEXT)
+		String bmString = data.get(Fields.BM_STRING)
+		String bmInt = data.get(Fields.BM_INT)
+		String dateTime = data.get(Fields.DATE_TIME)
+		String date = data.get(Fields.DATE)
+
+		//Fill Form
+		if(StringUtils.isNotBlank(bmText))
+			WebUI.setText(findTestObject('Page_WMI_NEW/Required_Field_DT/input_BM Text'), bmText)
+		if(StringUtils.isNotBlank(bmString))
+			WebUI.setText(findTestObject('Page_WMI_NEW/Required_Field_DT/input_BM String required'), bmString)
+		if(StringUtils.isNotBlank(bmInt))
+			WebUI.setText(findTestObject('Page_WMI_NEW/Required_Field_DT/input_BM Int'), bmInt)
+		if(StringUtils.isNotBlank(dateTime))
+			new Common().setText_Date(findTestObject('Page_WMI_NEW/Required_Field_DT/input_Date Time Required'), dateTime)
+		if(StringUtils.isNotBlank(date))
+			new Common().setText_Date(findTestObject('Page_WMI_NEW/Required_Field_DT/input_Date Required'), date)
+
+		//Click on Save button
+		WebUI.mouseOver(findTestObject('Page_WMI_NEW/Required_Field_DT/span_Standard Actions'))
+		WebUI.waitForElementVisible(findTestObject('Page_WMI_NEW/Required_Field_DT/a_Save'), GlobalVariable.G_LongTimeout)
+		new Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI_NEW/Required_Field_DT/a_Save'),GlobalVariable.G_LongTimeout)
 	}
 }

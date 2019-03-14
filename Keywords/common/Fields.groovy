@@ -22,12 +22,17 @@ public enum Fields {
 	TEMPLATE_NAME,		//Complaint Template
 	TEMPLATE_TEXT,		//Complaint Template
 	CUSTOMER_ID,		//WMI Menu Bov, WMI Menu Default, WMI Menu DocTwoRow
-	BM_STRING,			//WMI Menu Bov, WMI Menu Default, WMI Menu DocTwoRow
+	BM_STRING,			//WMI Menu Bov, WMI Menu Default, WMI Menu DocTwoRow, Required Field DT
 	CUSTOMER_NAME,		//WMI Menu Bov, WMI Menu Default, WMI Menu DocTwoRow
 	UPLOAD_FILE,		//WMI Menu Bov, WMI Menu Default, WMI Menu DocTwoRow, SM WEB SERVICE, Vertical Menu Wizard
 	STRING_FIELD,		//SM WEB SERVICE
 	FILE_NAME,			//SM WEB SERVICE
 	FIRST_NAME,			//Vertical Menu Wizard
 	LAST_NAME,			//Vertical Menu Wizard
-	AMOUNT				//Vertical Menu Wizard
+	AMOUNT,				//Vertical Menu Wizard
+	BM_TEXT,			//Required Field DT
+	BM_INT,				//Required Field DT
+	DATE_TIME,			//Required Field DT
+	DATE				//Required Field DT
+	
 }

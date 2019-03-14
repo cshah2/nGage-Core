@@ -22,21 +22,21 @@ import common.Fields
 
 public class Consts {
 
-//	public static final String SMOKE_HOME001_STRINGFIELD = 'Chintan Shah'
-//	public static final String SMOKE_HOME001_FILENAME = 'Automation test document'
-//	public static String SMOKE_HOME001_DOCID
-//
-//	public static final String SMOKE_HOME002_STRINGFIELD = 'Chintan Shah'
-//	public static final String SMOKE_HOME002_FILENAME = 'Automation test document'
-//	public static String SMOKE_HOME002_DOCID
-//
-//	public static final String SMOKE_HOME003_STRINGFIELD = 'Chintan Shah'
-//	public static final String SMOKE_HOME003_FILENAME = 'Automation test document'
-//	public static String SMOKE_HOME003_DOCID
-//
-//	public static final String SMOKE_HOME005_STRINGFIELD = 'Chintan Shah'
-//	public static final String SMOKE_HOME005_FILENAME = 'Automation test document'
-//	public static String SMOKE_HOME005_DOCID
+	//	public static final String SMOKE_HOME001_STRINGFIELD = 'Chintan Shah'
+	//	public static final String SMOKE_HOME001_FILENAME = 'Automation test document'
+	//	public static String SMOKE_HOME001_DOCID
+	//
+	//	public static final String SMOKE_HOME002_STRINGFIELD = 'Chintan Shah'
+	//	public static final String SMOKE_HOME002_FILENAME = 'Automation test document'
+	//	public static String SMOKE_HOME002_DOCID
+	//
+	//	public static final String SMOKE_HOME003_STRINGFIELD = 'Chintan Shah'
+	//	public static final String SMOKE_HOME003_FILENAME = 'Automation test document'
+	//	public static String SMOKE_HOME003_DOCID
+	//
+	//	public static final String SMOKE_HOME005_STRINGFIELD = 'Chintan Shah'
+	//	public static final String SMOKE_HOME005_FILENAME = 'Automation test document'
+	//	public static String SMOKE_HOME005_DOCID
 
 	public static final String SMOKE_HOME007_BMSTRING = 'Automation test document'
 	public static String SMOKE_HOME007_DOCID
@@ -185,12 +185,12 @@ public class Consts {
 	public static final String P1_REPO_FIELD2_DOC10 = 'CShah'
 	public static final String P1_REPO_FIELD5_DOC10 = '01-01-2020'
 
-	//Document 11 - Required field DT
-	public static final String P1_REPO_BMTEXT_DOC11 = 'TEXT'
-	public static final String P1_REPO_BMSTRING_DOC11 = 'STRING REQ'
-	public static final String P1_REPO_INT_DOC11 = '30'
-	public static final String P1_REPO_DATETIMEREQ_DOC11 = '07-01-2018 03:00:00 AM'
-	public static final String P1_REPO_DATEREQ_DOC11 = '10-01-2018'
+//	//Document 11 - Required field DT
+//	public static final String P1_REPO_BMTEXT_DOC11 = 'TEXT'
+//	public static final String P1_REPO_BMSTRING_DOC11 = 'STRING REQ'
+//	public static final String P1_REPO_INT_DOC11 = '30'
+//	public static final String P1_REPO_DATETIMEREQ_DOC11 = '07-01-2018 03:00:00 AM'
+//	public static final String P1_REPO_DATEREQ_DOC11 = '10-01-2018'
 
 	//Document A-F - Date time DT - Filter test
 	public static final String P1_REPO_DOCA_BMDATE = '01-01-2018'
@@ -937,5 +937,16 @@ public class Consts {
 		SMOKE_WMI_DOC102.put(Fields.FILE_NAME, 'No File')
 	}
 
+	//121 - 140 For Required Field DC / DT (Repository)
+	public static final Map<Fields, String> P1_REPO_DOC121 //Used in WMI Menu Testing
+	public static boolean FLAG_P1_REPO_DOC121 = false
+	static {
+		P1_REPO_DOC121 = new HashMap<Fields, String>()
+		P1_REPO_DOC121.put(Fields.BM_TEXT, 'TEXT')
+		P1_REPO_DOC121.put(Fields.BM_STRING, 'STRING REQ')
+		P1_REPO_DOC121.put(Fields.BM_INT, '30')
+		P1_REPO_DOC121.put(Fields.DATE_TIME, '07-01-2018 03:00:00 AM')
+		P1_REPO_DOC121.put(Fields.DATE, '10-01-2018')
+	}
 }
 

@@ -30,7 +30,8 @@ public enum DocType {
 	SM_WEBSERVICE_FILE_2("StorageServer 0002"),								//Encryption OFF
 	SM_WEBSERVICE_DB_2("Storage Server 0002"),								//Encryption OFF
 	SHOW_VERTICAL_MENU_TRUE("ShowVerticalMenu-True"),						//Loan Application
-	MULTIPAGE_VIEWER_WITH_DRAG_DROP("MultipageViewer with drag and drop")
+	MULTIPAGE_VIEWER_WITH_DRAG_DROP("MultipageViewer with drag and drop"),
+	REQUIRED_FIELD_DT("Required field DT")
 
 	private final String text
 
