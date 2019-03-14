@@ -27,7 +27,7 @@ String docID = ''
 CustomKeywords.'actions.Common.login'()
 
 'Create new Document'
-CustomKeywords.'actions.Common.createDocument_MultiPageViewerWithDragAndDrop'('Chintan Shah', 'No File', '')
+CustomKeywords.'actions.Data.create'(DocClass.BUSINESS_MODEL_VIEW, DocType.MULTIPAGE_VIEWER_WITH_DRAG_DROP, P1_WMI_DOC101)
 
 'Go to Recent Documents tab'
 CustomKeywords.'actions.MenuBar.clickTreeMenu'('HOME', 'Recent Documents')

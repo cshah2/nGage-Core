@@ -25,11 +25,12 @@ public enum DocType {
 	WMI_MENU_BOV_VERTICAL("WMI Menu BOV Vertical"),
 	WMI_MENU_DEFAULT("WMI Menu Default"),
 	WMI_MENU_DOCTWOROW("WMI Menu DocTwoRow"),
-	SM_WEBSERVICE_FILE_1("Storage Server0001 File Object"),	//Encryption ON
-	SM_WEBSERVICE_DB_1("Storage Server 0001"),				//Encryption ON
-	SM_WEBSERVICE_FILE_2("StorageServer 0002"),				//Encryption OFF
-	SM_WEBSERVICE_DB_2("Storage Server 0002"),				//Encryption OFF
-	SHOW_VERTICAL_MENU_TRUE("ShowVerticalMenu-True")		//Loan Application
+	SM_WEBSERVICE_FILE_1("Storage Server0001 File Object"),					//Encryption ON
+	SM_WEBSERVICE_DB_1("Storage Server 0001"),								//Encryption ON
+	SM_WEBSERVICE_FILE_2("StorageServer 0002"),								//Encryption OFF
+	SM_WEBSERVICE_DB_2("Storage Server 0002"),								//Encryption OFF
+	SHOW_VERTICAL_MENU_TRUE("ShowVerticalMenu-True"),						//Loan Application
+	MULTIPAGE_VIEWER_WITH_DRAG_DROP("MultipageViewer with drag and drop")
 
 	private final String text
 

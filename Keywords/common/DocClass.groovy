@@ -26,7 +26,8 @@ public enum DocClass {
 	SM_WEBSERVICE_DB_1("StorageSrvr0001DbObject"),		//Encryption ON
 	SM_WEBSERVICE_FILE_2("StorageSrvr0002 FileObject"),	//Encryption OFF
 	SM_WEBSERVICE_DB_2("StorageSrvr0002 Db object"),	//Encryption OFF
-	VERTICAL_MENU_WIZARD("Vertical Menu Wizard")		//Loan Application
+	VERTICAL_MENU_WIZARD("Vertical Menu Wizard"),		//Loan Application
+	BUSINESS_MODEL_VIEW("Business Model View")
 
 	private final String text
 

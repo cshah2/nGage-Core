@@ -87,6 +87,10 @@ public class Data {
 				showVerticalMenuTrue(data)
 				break
 
+			case DocType.MULTIPAGE_VIEWER_WITH_DRAG_DROP:
+				multiPageViewerWithDragAndDrop(data)
+				break
+
 			default:
 				WebUI.takeScreenshot()
 				KeywordUtil.markFailedAndStop('Unable to create document, Invalid docType provided : '+docType)
@@ -291,7 +295,7 @@ public class Data {
 	}
 
 	private void showVerticalMenuTrue(Map<Fields, String> data) {
-		
+
 		//Get Data from Map
 		String firstName = data.get(Fields.FIRST_NAME)
 		String lastName = data.get(Fields.LAST_NAME)
@@ -313,5 +317,23 @@ public class Data {
 		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 		new Common().waitForFrameToLoad(findTestObject('Page_WMI_NEW/VerticalMenuWizard/ShowVerticalMenu_True/iframe_Menus_ContentPlaceHolde'))
 		new Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI_NEW/VerticalMenuWizard/ShowVerticalMenu_True/a_Close Window'), GlobalVariable.G_LongTimeout)
+	}
+	
+	private void multiPageViewerWithDragAndDrop(Map<Fields, String> data) {
+		
+		//Get Data from Map
+		String stringField = data.get(Fields.STRING_FIELD)
+		String fileName = data.get(Fields.FILE_NAME)
+
+		//Fill Form
+		if(StringUtils.isNotBlank(stringField))
+			WebUI.setText(findTestObject('Page_WMI_NEW/MultiPage_Viewer_DD/input_eform_mcb67676phBO_3_BOe'), stringField)
+		if(StringUtils.isNotBlank(fileName))
+			WebUI.setText(findTestObject('Page_WMI_NEW/MultiPage_Viewer_DD/input_eform_mcb67676phBO_3_BOe_1'), fileName)
+
+		//Click on Save button
+		WebUI.mouseOver(findTestObject('Page_WMI_NEW/MultiPage_Viewer_DD/span_standard_actions'))
+		WebUI.waitForElementVisible(findTestObject('Page_WMI_NEW/MultiPage_Viewer_DD/a_Save'), GlobalVariable.G_LongTimeout)
+		new Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI_NEW/MultiPage_Viewer_DD/a_Save'), GlobalVariable.G_LongTimeout)
 	}
 }
