@@ -29,7 +29,8 @@ public enum DocClass {
 	VERTICAL_MENU_WIZARD("Vertical Menu Wizard"),		//Loan Application
 	BUSINESS_MODEL_VIEW("Business Model View"),
 	REQUIRED_FIELD_DC("Required field DC"),
-	ROUTE_ADVANCE("Route Advance")
+	ROUTE_ADVANCE("Route Advance"),
+	CORRESPONDENCE("Correspondence")
 
 	private final String text
 

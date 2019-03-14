@@ -957,5 +957,15 @@ public class Consts {
 		P1_MW_DOC141.put(Fields.DESCRIPTION, 'Route Advance Description')
 	}
 	
-	
+	//161 - 180 For Correspondence
+	public static final Map<Fields, String> P1_MW_DOC161 //Used in WMI Menu Testing
+	public static boolean FLAG_P1_MW_DOC161 = false
+	static {
+		P1_MW_DOC161 = new HashMap<Fields, String>()
+		P1_MW_DOC161.put(Fields.FIRST_NAME, 'Chintan')
+		P1_MW_DOC161.put(Fields.LAST_NAME, 'Shah')
+		P1_MW_DOC161.put(Fields.TO_EMAIL, 'c.s@abc.com')
+		P1_MW_DOC161.put(Fields.TEMPLATE, 'Template1')
+	}
+
 }

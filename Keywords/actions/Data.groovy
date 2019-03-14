@@ -98,6 +98,10 @@ public class Data {
 			case DocType.ROUTE_FROM_ENTRY_INTERACTIVE_USER:
 				routeFromEntryInteractiveUser(data)
 				break
+			
+			case DocType.CORRESPONDENCE:
+				correspondence(data)
+				break
 
 			default:
 				WebUI.takeScreenshot()
@@ -373,6 +377,7 @@ public class Data {
 	}
 	
 	private void routeFromEntryInteractiveUser(Map<Fields, String> data) {
+		
 		//Get Data from Map
 		String description = data.get(Fields.DESCRIPTION)
 
@@ -384,5 +389,34 @@ public class Data {
 		WebUI.mouseOver(findTestObject('Page_WMI_NEW/RouteAdvance/span_Standard Actions'))
 		WebUI.waitForElementVisible(findTestObject('Page_WMI_NEW/RouteAdvance/a_Save'), GlobalVariable.G_LongTimeout)
 		new Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI_NEW/RouteAdvance/a_Save'), GlobalVariable.G_LongTimeout)
+	}
+	
+	private void correspondence(Map<Fields, String> data) {
+		
+		//Get Data from Map
+		String firstName = data.get(Fields.FIRST_NAME)
+		String lastName = data.get(Fields.LAST_NAME)
+		String toEmail = data.get(Fields.TO_EMAIL)
+		String template = data.get(Fields.TEMPLATE)
+
+		//Fill Form
+		if(StringUtils.isNotBlank(firstName))
+			WebUI.setText(findTestObject('Page_WMI_NEW/Correspondence/input_First Name'), firstName)
+		if(StringUtils.isNotBlank(lastName))
+			WebUI.setText(findTestObject('Page_WMI_NEW/Correspondence/input_Last Name'), lastName)
+		if(StringUtils.isNotBlank(toEmail))
+			WebUI.setText(findTestObject('Page_WMI_NEW/Correspondence/input_To Email'), toEmail)
+		if(StringUtils.isNotBlank(template)) {
+			WebUI.selectOptionByLabel(findTestObject('Page_WMI_NEW/Correspondence/select_Template'), template, false)
+			WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+			WebUI.delay(2)
+			new Common().waitForFrameToLoad(findTestObject('Page_WMI_NEW/Correspondence/iframe_BodyText'))
+		}
+
+		//Click on Save button and close window button
+		WebUI.click(findTestObject('Page_WMI_NEW/Correspondence/span_Save'))
+		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+		WebUI.waitForElementVisible(findTestObject('Page_WMI/Correspondence/span_Close Window'), GlobalVariable.G_LongTimeout)
+		new Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI/Correspondence/span_Close Window'),GlobalVariable.G_LongTimeout)
 	}
 }

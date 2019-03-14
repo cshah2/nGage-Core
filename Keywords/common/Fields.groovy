@@ -27,13 +27,15 @@ public enum Fields {
 	UPLOAD_FILE,		//WMI Menu Bov, WMI Menu Default, WMI Menu DocTwoRow, SM WEB SERVICE, Vertical Menu Wizard
 	STRING_FIELD,		//SM WEB SERVICE
 	FILE_NAME,			//SM WEB SERVICE
-	FIRST_NAME,			//Vertical Menu Wizard
-	LAST_NAME,			//Vertical Menu Wizard
+	FIRST_NAME,			//Vertical Menu Wizard, Correspondence
+	LAST_NAME,			//Vertical Menu Wizard, Correspondence
 	AMOUNT,				//Vertical Menu Wizard
 	BM_TEXT,			//Required Field DT
 	BM_INT,				//Required Field DT
 	DATE_TIME,			//Required Field DT
 	DATE,				//Required Field DT
-	DESCRIPTION			//Route Advance
+	DESCRIPTION,		//Route Advance
+	TO_EMAIL,			//Correspondece
+	TEMPLATE			//Correspondece
 
 }
