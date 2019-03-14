@@ -115,6 +115,10 @@ public class Data {
 				renderAsLabel(data)
 				break
 
+			case DocType.REFERENCE_OBJECT_INLINE_CONTENT_VIEW:
+				referenceObjectInlineContentView(data)
+				break
+
 			default:
 				WebUI.takeScreenshot()
 				KeywordUtil.markFailedAndStop('Unable to create document, Invalid docType provided : '+docType)
@@ -470,17 +474,28 @@ public class Data {
 		WebUI.waitForElementVisible(findTestObject('Page_WMI_NEW/DoNotReloadOnPostBack/NoSplit_T/span_Close'), GlobalVariable.G_LongTimeout)
 		new Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI_NEW/DoNotReloadOnPostBack/NoSplit_T/span_Close'),GlobalVariable.G_LongTimeout)
 	}
-	
+
 	private void renderAsLabel(Map<Fields, String> data) {
-		
+
 		//Get Data from Map
-		
+
 		//Fill Form
-		
+
 		//Click on Save button and close window button
 		WebUI.click(findTestObject('Page_WMI_NEW/Master_Object_Feature/Render_As_Label/span_Save'))
 		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 		new Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI_NEW/Master_Object_Feature/Render_As_Label/span_Close Window'), GlobalVariable.G_LongTimeout)
+	}
+	
+	private void referenceObjectInlineContentView(Map<Fields, String> data) {
+		
+		//Get Data from Map
 
+		//Fill Form
+
+		//Click on Save button and close window button
+		WebUI.click(findTestObject('Page_WMI_NEW/Master_Object_Feature/Render_As_Label/span_Save'))
+		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+		new Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI_NEW/Master_Object_Feature/Render_As_Label/span_Close Window'), GlobalVariable.G_LongTimeout)
 	}
 }

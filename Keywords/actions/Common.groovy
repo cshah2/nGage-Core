@@ -1400,32 +1400,32 @@ public class Common {
 		WebUI.switchToDefaultContent()
 	}
 
-//	@Keyword
-//	def createDocument_RenderAsLabel() {
-//
-//		'Switch to main window'
-//		WebUI.switchToWindowTitle('Savana nGage')
-//
-//		'Create a new BovDocTwoRow Document'
-//		WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))
-//
-//		selectDocClassAndDocTypeForGlobalNew('Master Object Feature', 'Render As Label')
-//		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'))
-//
-//		WebUI.switchToWindowIndex(1)
-//		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
-//
-//		'Click Save'
-//		WebUI.click(findTestObject('Page_WMI_NEW/Master_Object_Feature/Render_As_Label/span_Save'))
-//		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
-//
-//		'Click close window'
-//		new Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI_NEW/Master_Object_Feature/Render_As_Label/span_Close Window'), GlobalVariable.G_LongTimeout)
-//
-//		'Switch to main window and close'
-//		WebUI.switchToWindowTitle('Savana nGage')
-//		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/span_ui-button-icon-primary ui'))
-//	}
+	//	@Keyword
+	//	def createDocument_RenderAsLabel() {
+	//
+	//		'Switch to main window'
+	//		WebUI.switchToWindowTitle('Savana nGage')
+	//
+	//		'Create a new BovDocTwoRow Document'
+	//		WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))
+	//
+	//		selectDocClassAndDocTypeForGlobalNew('Master Object Feature', 'Render As Label')
+	//		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'))
+	//
+	//		WebUI.switchToWindowIndex(1)
+	//		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+	//
+	//		'Click Save'
+	//		WebUI.click(findTestObject('Page_WMI_NEW/Master_Object_Feature/Render_As_Label/span_Save'))
+	//		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+	//
+	//		'Click close window'
+	//		new Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI_NEW/Master_Object_Feature/Render_As_Label/span_Close Window'), GlobalVariable.G_LongTimeout)
+	//
+	//		'Switch to main window and close'
+	//		WebUI.switchToWindowTitle('Savana nGage')
+	//		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/span_ui-button-icon-primary ui'))
+	//	}
 
 	@Keyword
 	def createBulkDocuments_RenderAsLabel(int requiredDocsCount) {
@@ -1452,32 +1452,32 @@ public class Common {
 		WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 	}
 
-	@Keyword
-	def createDocument_ReferenceObjectInlineContentView() {
-
-		'Switch to main window'
-		WebUI.switchToWindowTitle('Savana nGage')
-
-		'Create a new BovDocTwoRow Document'
-		WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))
-
-		selectDocClassAndDocTypeForGlobalNew('Reference Object Feature', 'Reference Object InlineContentView')
-		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'))
-
-		WebUI.switchToWindowIndex(1)
-		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
-
-		'Click Save'
-		WebUI.click(findTestObject('Page_WMI_NEW/Master_Object_Feature/Render_As_Label/span_Save'))
-		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
-
-		'Click close window'
-		new Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI_NEW/Master_Object_Feature/Render_As_Label/span_Close Window'), GlobalVariable.G_LongTimeout)
-
-		'Switch to main window and close'
-		WebUI.switchToWindowTitle('Savana nGage')
-		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/span_ui-button-icon-primary ui'))
-	}
+//	@Keyword
+//	def createDocument_ReferenceObjectInlineContentView() {
+//
+//		'Switch to main window'
+//		WebUI.switchToWindowTitle('Savana nGage')
+//
+//		'Create a new BovDocTwoRow Document'
+//		WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))
+//
+//		selectDocClassAndDocTypeForGlobalNew('Reference Object Feature', 'Reference Object InlineContentView')
+//		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'))
+//
+//		WebUI.switchToWindowIndex(1)
+//		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+//
+//		'Click Save'
+//		WebUI.click(findTestObject('Page_WMI_NEW/Master_Object_Feature/Render_As_Label/span_Save'))
+//		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+//
+//		'Click close window'
+//		new Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI_NEW/Master_Object_Feature/Render_As_Label/span_Close Window'), GlobalVariable.G_LongTimeout)
+//
+//		'Switch to main window and close'
+//		WebUI.switchToWindowTitle('Savana nGage')
+//		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/span_ui-button-icon-primary ui'))
+//	}
 
 
 	@Keyword
@@ -1496,7 +1496,7 @@ public class Common {
 		if(recordCount < requiredDocsCount) {
 			int extraDocsRequired = requiredDocsCount-recordCount
 			for(int i = 1; i <= extraDocsRequired; i++) {
-				createDocument_ReferenceObjectInlineContentView()
+				new Data().create(DocClass.REFERENCE_OBJECT_FEATURE, DocType.REFERENCE_OBJECT_INLINE_CONTENT_VIEW, null)
 			}
 		}
 

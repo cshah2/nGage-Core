@@ -25,18 +25,19 @@ public enum DocType {
 	WMI_MENU_BOV_VERTICAL("WMI Menu BOV Vertical"),
 	WMI_MENU_DEFAULT("WMI Menu Default"),
 	WMI_MENU_DOCTWOROW("WMI Menu DocTwoRow"),
-	SM_WEBSERVICE_FILE_1("Storage Server0001 File Object"),					//Encryption ON
-	SM_WEBSERVICE_DB_1("Storage Server 0001"),								//Encryption ON
-	SM_WEBSERVICE_FILE_2("StorageServer 0002"),								//Encryption OFF
-	SM_WEBSERVICE_DB_2("Storage Server 0002"),								//Encryption OFF
-	SHOW_VERTICAL_MENU_TRUE("ShowVerticalMenu-True"),						//Loan Application
+	SM_WEBSERVICE_FILE_1("Storage Server0001 File Object"),						//Encryption ON
+	SM_WEBSERVICE_DB_1("Storage Server 0001"),									//Encryption ON
+	SM_WEBSERVICE_FILE_2("StorageServer 0002"),									//Encryption OFF
+	SM_WEBSERVICE_DB_2("Storage Server 0002"),									//Encryption OFF
+	SHOW_VERTICAL_MENU_TRUE("ShowVerticalMenu-True"),							//Loan Application
 	MULTIPAGE_VIEWER_WITH_DRAG_DROP("MultipageViewer with drag and drop"),
 	REQUIRED_FIELD_DT("Required field DT"),
 	ROUTE_FROM_ENTRY_INTERACTIVE_USER("Route from Entry Interactive User"),
 	CORRESPONDENCE("Correspondence"),
 	EVENT_FOR_REQUIRED_FIELD("Event for req field"),
 	RELOAD_ON_POSTBACK_NO_SPLIT_T("ReloadOnPostbackNoSplit T"),
-	RENDER_AS_LABEL("Render As Label")
+	RENDER_AS_LABEL("Render As Label"),
+	REFERENCE_OBJECT_INLINE_CONTENT_VIEW("Reference Object InlineContentView")
 
 	private final String text
 
