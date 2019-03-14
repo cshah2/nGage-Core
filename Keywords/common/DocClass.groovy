@@ -30,7 +30,8 @@ public enum DocClass {
 	BUSINESS_MODEL_VIEW("Business Model View"),
 	REQUIRED_FIELD_DC("Required field DC"),
 	ROUTE_ADVANCE("Route Advance"),
-	CORRESPONDENCE("Correspondence")
+	CORRESPONDENCE("Correspondence"),
+	EVENT_FOR_REQUIRED_FIELD("Event for Req Fld")
 
 	private final String text
 

@@ -11,6 +11,10 @@ import com.kms.katalon.core.testdata.TestData as TestData
 import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+
+import common.DocClass
+import common.DocType
+import common.Fields
 import internal.GlobalVariable as GlobalVariable
 import static utils.Consts.*
 
@@ -18,8 +22,18 @@ import static utils.Consts.*
 CustomKeywords.'actions.Common.login'()
 
 'Create Documents'
-CustomKeywords.'actions.Common.createDocument_EventForRequiredField'(P1_EVENTFOREQ_DROPDOWN_DOC1, P1_EVENTFOREQ_TEXT_DOC1, P1_EVENTFOREQ_DATE_DOC1)
-CustomKeywords.'actions.Common.createDocument_EventForRequiredField'(P1_EVENTFOREQ_DROPDOWN_DOC2, P1_EVENTFOREQ_TEXT_DOC2, P1_EVENTFOREQ_DATE_DOC2)
+if(!FLAG_P1_MW_DOC181) {
+	CustomKeywords.'actions.Data.create'(DocClass.EVENT_FOR_REQUIRED_FIELD, DocType.EVENT_FOR_REQUIRED_FIELD, P1_MW_DOC181)
+	FLAG_P1_MW_DOC181 = true
+}
+if(!FLAG_P1_MW_DOC182) {
+	CustomKeywords.'actions.Data.create'(DocClass.EVENT_FOR_REQUIRED_FIELD, DocType.EVENT_FOR_REQUIRED_FIELD, P1_MW_DOC182)
+	FLAG_P1_MW_DOC182 = true
+}
+
+String dropDown1 = P1_MW_DOC181.get(Fields.DROP_DOWN_CONTROL)
+
+String dropDown2 = P1_MW_DOC182.get(Fields.DROP_DOWN_CONTROL)
 
 'Click on My Work link from left menu'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_My Work Left Menu'))
@@ -35,7 +49,7 @@ CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Reposi
 
 'set filter criteria'
 WebUI.selectOptionByLabel(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/process_Event For Required Field/select_BM String WL Operator'), '=', false)
-WebUI.selectOptionByLabel(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/process_Event For Required Field/select_BM String WL'), 'Value 1', false)
+WebUI.selectOptionByLabel(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/process_Event For Required Field/select_BM String WL'), dropDown1, false)
 
 'click on search button'
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/btn_Search'))
@@ -48,4 +62,4 @@ CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dash
 int bmStringWL_Position=CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/tableHeader_MyWorkSearchResult'), 'String WL')
 
 'verify search result '
-CustomKeywords.'actions.Table.verifyAllValuesInColumnMatches'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'),bmStringWL_Position, 'Value 1')
+CustomKeywords.'actions.Table.verifyAllValuesInColumnMatches'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'),bmStringWL_Position, dropDown1)

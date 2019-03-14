@@ -33,7 +33,8 @@ public enum DocType {
 	MULTIPAGE_VIEWER_WITH_DRAG_DROP("MultipageViewer with drag and drop"),
 	REQUIRED_FIELD_DT("Required field DT"),
 	ROUTE_FROM_ENTRY_INTERACTIVE_USER("Route from Entry Interactive User"),
-	CORRESPONDENCE("Correspondence")
+	CORRESPONDENCE("Correspondence"),
+	EVENT_FOR_REQUIRED_FIELD("Event for req field")
 
 	private final String text
 

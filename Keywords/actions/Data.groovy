@@ -94,13 +94,17 @@ public class Data {
 			case DocType.REQUIRED_FIELD_DT:
 				requiredFieldDT(data)
 				break
-				
+
 			case DocType.ROUTE_FROM_ENTRY_INTERACTIVE_USER:
 				routeFromEntryInteractiveUser(data)
 				break
-			
+
 			case DocType.CORRESPONDENCE:
 				correspondence(data)
+				break
+				
+			case DocType.EVENT_FOR_REQUIRED_FIELD:
+				eventForRequiredField(data)
 				break
 
 			default:
@@ -375,9 +379,9 @@ public class Data {
 		WebUI.waitForElementVisible(findTestObject('Page_WMI_NEW/Required_Field_DT/a_Save'), GlobalVariable.G_LongTimeout)
 		new Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI_NEW/Required_Field_DT/a_Save'),GlobalVariable.G_LongTimeout)
 	}
-	
+
 	private void routeFromEntryInteractiveUser(Map<Fields, String> data) {
-		
+
 		//Get Data from Map
 		String description = data.get(Fields.DESCRIPTION)
 
@@ -390,9 +394,9 @@ public class Data {
 		WebUI.waitForElementVisible(findTestObject('Page_WMI_NEW/RouteAdvance/a_Save'), GlobalVariable.G_LongTimeout)
 		new Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI_NEW/RouteAdvance/a_Save'), GlobalVariable.G_LongTimeout)
 	}
-	
+
 	private void correspondence(Map<Fields, String> data) {
-		
+
 		//Get Data from Map
 		String firstName = data.get(Fields.FIRST_NAME)
 		String lastName = data.get(Fields.LAST_NAME)
@@ -418,5 +422,28 @@ public class Data {
 		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 		WebUI.waitForElementVisible(findTestObject('Page_WMI/Correspondence/span_Close Window'), GlobalVariable.G_LongTimeout)
 		new Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI/Correspondence/span_Close Window'),GlobalVariable.G_LongTimeout)
+	}
+	
+	private void eventForRequiredField(Map<Fields, String> data) {
+		
+		//Get Data from Map
+		String dropDownControl = data.get(Fields.DROP_DOWN_CONTROL)
+		String stringField = data.get(Fields.STRING_FIELD)
+		String date = data.get(Fields.DATE)
+		
+		//Fill Form
+		if(StringUtils.isNotBlank(dropDownControl)) {
+			WebUI.selectOptionByLabel(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/process_Event For Required Field/select_MasterObjectDropdownControl'), dropDownControl, false)
+			new Common().waitForTabLoading(null, GlobalVariable.G_LongTimeout)
+		}
+		if(StringUtils.isNotBlank(stringField))
+			WebUI.setText(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/process_Event For Required Field/input_String Field (Value Chan'), stringField)
+		if(StringUtils.isNotBlank(date))
+			new Common().setText_Date(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/process_Event For Required Field/input_Date Field (Visibility C'), date)
+
+		//Click on Save button and close window button
+		WebUI.mouseOver(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/process_Event For Required Field/span_Actions'))
+		WebUI.waitForElementVisible(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/process_Event For Required Field/a_Save'), GlobalVariable.G_LongTimeout)
+		new Window().clickElementAndWaitForWindowClose(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/process_Event For Required Field/a_Save'), GlobalVariable.G_LongTimeout)
 	}
 }

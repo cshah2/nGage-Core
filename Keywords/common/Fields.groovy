@@ -25,7 +25,7 @@ public enum Fields {
 	BM_STRING,			//WMI Menu Bov, WMI Menu Default, WMI Menu DocTwoRow, Required Field DT
 	CUSTOMER_NAME,		//WMI Menu Bov, WMI Menu Default, WMI Menu DocTwoRow
 	UPLOAD_FILE,		//WMI Menu Bov, WMI Menu Default, WMI Menu DocTwoRow, SM WEB SERVICE, Vertical Menu Wizard
-	STRING_FIELD,		//SM WEB SERVICE
+	STRING_FIELD,		//SM WEB SERVICE, Event For Required Field
 	FILE_NAME,			//SM WEB SERVICE
 	FIRST_NAME,			//Vertical Menu Wizard, Correspondence
 	LAST_NAME,			//Vertical Menu Wizard, Correspondence
@@ -33,9 +33,10 @@ public enum Fields {
 	BM_TEXT,			//Required Field DT
 	BM_INT,				//Required Field DT
 	DATE_TIME,			//Required Field DT
-	DATE,				//Required Field DT
+	DATE,				//Required Field DT, Event For Required Field
 	DESCRIPTION,		//Route Advance
 	TO_EMAIL,			//Correspondece
-	TEMPLATE			//Correspondece
+	TEMPLATE,			//Correspondece
+	DROP_DOWN_CONTROL	//Event For Required Field
 
 }

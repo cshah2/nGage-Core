@@ -1505,37 +1505,37 @@ public class Common {
 		WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 	}
 
-	@Keyword
-	def createDocument_EventForRequiredField(String dropDownControl, String textValue, String date) {
-
-		'Switch to main window'
-		WebUI.switchToWindowTitle('Savana nGage')
-
-		'Create a new BovDocTwoRow Document'
-		WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))
-
-		selectDocClassAndDocTypeForGlobalNew('Event for Req Fld', 'Event for req field')
-		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'))
-
-		WebUI.switchToWindowIndex(1)
-		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
-
-		'Enter Data'
-		WebUI.selectOptionByLabel(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/process_Event For Required Field/select_MasterObjectDropdownControl'), dropDownControl, false)
-		waitForTabLoading(null, GlobalVariable.G_LongTimeout)
-		//WebUI.clearText(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/process_Event For Required Field/input_String Field (Value Chan'))
-		WebUI.setText(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/process_Event For Required Field/input_String Field (Value Chan'), textValue)
-		setText_Date(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/process_Event For Required Field/input_Date Field (Visibility C'), date)
-
-		'Click Save and close window'
-		WebUI.mouseOver(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/process_Event For Required Field/span_Actions'))
-		WebUI.waitForElementVisible(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/process_Event For Required Field/a_Save'), GlobalVariable.G_LongTimeout)
-		new Window().clickElementAndWaitForWindowClose(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/process_Event For Required Field/a_Save'), GlobalVariable.G_LongTimeout)
-
-		'Switch to main window and close'
-		WebUI.switchToWindowTitle('Savana nGage')
-		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/span_ui-button-icon-primary ui'))
-	}
+//	@Keyword
+//	def createDocument_EventForRequiredField(String dropDownControl, String textValue, String date) {
+//
+//		'Switch to main window'
+//		WebUI.switchToWindowTitle('Savana nGage')
+//
+//		'Create a new BovDocTwoRow Document'
+//		WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))
+//
+//		selectDocClassAndDocTypeForGlobalNew('Event for Req Fld', 'Event for req field')
+//		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'))
+//
+//		WebUI.switchToWindowIndex(1)
+//		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+//
+//		'Enter Data'
+//		WebUI.selectOptionByLabel(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/process_Event For Required Field/select_MasterObjectDropdownControl'), dropDownControl, false)
+//		waitForTabLoading(null, GlobalVariable.G_LongTimeout)
+//		//WebUI.clearText(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/process_Event For Required Field/input_String Field (Value Chan'))
+//		WebUI.setText(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/process_Event For Required Field/input_String Field (Value Chan'), textValue)
+//		setText_Date(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/process_Event For Required Field/input_Date Field (Visibility C'), date)
+//
+//		'Click Save and close window'
+//		WebUI.mouseOver(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/process_Event For Required Field/span_Actions'))
+//		WebUI.waitForElementVisible(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/process_Event For Required Field/a_Save'), GlobalVariable.G_LongTimeout)
+//		new Window().clickElementAndWaitForWindowClose(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/process_Event For Required Field/a_Save'), GlobalVariable.G_LongTimeout)
+//
+//		'Switch to main window and close'
+//		WebUI.switchToWindowTitle('Savana nGage')
+//		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/span_ui-button-icon-primary ui'))
+//	}
 
 	@Keyword
 	def createDocument_ForSingleResultView() {
