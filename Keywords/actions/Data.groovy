@@ -102,9 +102,13 @@ public class Data {
 			case DocType.CORRESPONDENCE:
 				correspondence(data)
 				break
-				
+
 			case DocType.EVENT_FOR_REQUIRED_FIELD:
 				eventForRequiredField(data)
+				break
+
+			case DocType.RELOAD_ON_POSTBACK_NO_SPLIT_T:
+				reloadOnPostBackNoSplitT(data)
 				break
 
 			default:
@@ -423,14 +427,14 @@ public class Data {
 		WebUI.waitForElementVisible(findTestObject('Page_WMI/Correspondence/span_Close Window'), GlobalVariable.G_LongTimeout)
 		new Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI/Correspondence/span_Close Window'),GlobalVariable.G_LongTimeout)
 	}
-	
+
 	private void eventForRequiredField(Map<Fields, String> data) {
-		
+
 		//Get Data from Map
 		String dropDownControl = data.get(Fields.DROP_DOWN_CONTROL)
 		String stringField = data.get(Fields.STRING_FIELD)
 		String date = data.get(Fields.DATE)
-		
+
 		//Fill Form
 		if(StringUtils.isNotBlank(dropDownControl)) {
 			WebUI.selectOptionByLabel(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/process_Event For Required Field/select_MasterObjectDropdownControl'), dropDownControl, false)
@@ -445,5 +449,21 @@ public class Data {
 		WebUI.mouseOver(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/process_Event For Required Field/span_Actions'))
 		WebUI.waitForElementVisible(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/process_Event For Required Field/a_Save'), GlobalVariable.G_LongTimeout)
 		new Window().clickElementAndWaitForWindowClose(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/process_Event For Required Field/a_Save'), GlobalVariable.G_LongTimeout)
+	}
+	
+	private void reloadOnPostBackNoSplitT(Map<Fields, String> data) {
+
+		//Get Data from Map
+		String bmString = data.get(Fields.BM_STRING)
+
+		//Fill Form
+		if(StringUtils.isNotBlank(bmString))
+			WebUI.setText(findTestObject('Page_WMI_NEW/DoNotReloadOnPostBack/NoSplit_T/input_BM String'), bmString)
+
+		//Click on Save button and close window button
+		WebUI.click(findTestObject('Page_WMI_NEW/DoNotReloadOnPostBack/NoSplit_T/span_Save'))
+		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+		WebUI.waitForElementVisible(findTestObject('Page_WMI_NEW/DoNotReloadOnPostBack/NoSplit_T/span_Close'), GlobalVariable.G_LongTimeout)
+		new Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI_NEW/DoNotReloadOnPostBack/NoSplit_T/span_Close'),GlobalVariable.G_LongTimeout)
 	}
 }

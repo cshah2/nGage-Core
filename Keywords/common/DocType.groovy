@@ -34,7 +34,8 @@ public enum DocType {
 	REQUIRED_FIELD_DT("Required field DT"),
 	ROUTE_FROM_ENTRY_INTERACTIVE_USER("Route from Entry Interactive User"),
 	CORRESPONDENCE("Correspondence"),
-	EVENT_FOR_REQUIRED_FIELD("Event for req field")
+	EVENT_FOR_REQUIRED_FIELD("Event for req field"),
+	RELOAD_ON_POSTBACK_NO_SPLIT_T("ReloadOnPostbackNoSplit T")
 
 	private final String text
 

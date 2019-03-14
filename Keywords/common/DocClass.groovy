@@ -31,7 +31,8 @@ public enum DocClass {
 	REQUIRED_FIELD_DC("Required field DC"),
 	ROUTE_ADVANCE("Route Advance"),
 	CORRESPONDENCE("Correspondence"),
-	EVENT_FOR_REQUIRED_FIELD("Event for Req Fld")
+	EVENT_FOR_REQUIRED_FIELD("Event for Req Fld"),
+	DO_NOT_RELOAD_ON_POSTBACK("DoNotReloadOnPostback"),
 
 	private final String text
 

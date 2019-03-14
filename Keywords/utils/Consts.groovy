@@ -262,15 +262,15 @@ public class Consts {
 	//	public static final String P1_MW_DOC6_AMOUNT = '6000'
 	//	public static String P1_MW_DOC6_DOCID = ''
 
-//	//Document 7 - Event for Required Field
-//	public static final String P1_MW_DOC7_DROPDOWN = 'Value 1'
-//	public static final String P1_MW_DOC7_TEXT = 'prasad'
-//	public static final String P1_MW_DOC7_DATE = '01-01-2018'
-//
-//	//Document 8 - Event for Required Field
-//	public static final String P1_MW_DOC8_DROPDOWN = 'Value 2'
-//	public static final String P1_MW_DOC8_TEXT = 'chintan'
-//	public static final String P1_MW_DOC8_DATE = '01-01-2019'
+	//	//Document 7 - Event for Required Field
+	//	public static final String P1_MW_DOC7_DROPDOWN = 'Value 1'
+	//	public static final String P1_MW_DOC7_TEXT = 'prasad'
+	//	public static final String P1_MW_DOC7_DATE = '01-01-2018'
+	//
+	//	//Document 8 - Event for Required Field
+	//	public static final String P1_MW_DOC8_DROPDOWN = 'Value 2'
+	//	public static final String P1_MW_DOC8_TEXT = 'chintan'
+	//	public static final String P1_MW_DOC8_DATE = '01-01-2019'
 
 	//Document for charts testing
 	//Document 9 - Closure Action
@@ -559,13 +559,13 @@ public class Consts {
 	//	public static final String P1_LOANAPPL_LASTNAME_DOC3 = 'Patil'
 	//	public static final String P1_LOANAPPL_AMOUNT_DOC3 = '5000'
 
-//	public static final String P1_EVENTFOREQ_DROPDOWN_DOC1 = 'Value 1'
-//	public static final String P1_EVENTFOREQ_TEXT_DOC1 = 'prasad'
-//	public static final String P1_EVENTFOREQ_DATE_DOC1 = '01-01-2018'
-//
-//	public static final String P1_EVENTFOREQ_DROPDOWN_DOC2 = 'Value 2'
-//	public static final String P1_EVENTFOREQ_TEXT_DOC2 = 'chintan'
-//	public static final String P1_EVENTFOREQ_DATE_DOC2 = '01-01-2019'
+	//	public static final String P1_EVENTFOREQ_DROPDOWN_DOC1 = 'Value 1'
+	//	public static final String P1_EVENTFOREQ_TEXT_DOC1 = 'prasad'
+	//	public static final String P1_EVENTFOREQ_DATE_DOC1 = '01-01-2018'
+	//
+	//	public static final String P1_EVENTFOREQ_DROPDOWN_DOC2 = 'Value 2'
+	//	public static final String P1_EVENTFOREQ_TEXT_DOC2 = 'chintan'
+	//	public static final String P1_EVENTFOREQ_DATE_DOC2 = '01-01-2019'
 
 	public static final String P1_WMI_RO028_DATE = '01-01-2018'
 
@@ -948,7 +948,7 @@ public class Consts {
 		P1_REPO_DOC121.put(Fields.DATE_TIME, '07-01-2018 03:00:00 AM')
 		P1_REPO_DOC121.put(Fields.DATE, '10-01-2018')
 	}
-	
+
 	//141 - 160 For Route Advance
 	public static final Map<Fields, String> P1_MW_DOC141
 	public static boolean FLAG_P1_MW_DOC141 = false
@@ -956,7 +956,7 @@ public class Consts {
 		P1_MW_DOC141 = new HashMap<Fields, String>()
 		P1_MW_DOC141.put(Fields.DESCRIPTION, 'Route Advance Description')
 	}
-	
+
 	//161 - 180 For Correspondence
 	public static final Map<Fields, String> P1_MW_DOC161
 	public static boolean FLAG_P1_MW_DOC161 = false
@@ -969,7 +969,7 @@ public class Consts {
 	}
 
 	//181 - 200 For Event For Required Fields
-	public static final Map<Fields, String> P1_MW_DOC181 
+	public static final Map<Fields, String> P1_MW_DOC181
 	public static boolean FLAG_P1_MW_DOC181 = false
 	static {
 		P1_MW_DOC181 = new HashMap<Fields, String>()
@@ -985,5 +985,13 @@ public class Consts {
 		P1_MW_DOC182.put(Fields.DROP_DOWN_CONTROL, 'Value 2')
 		P1_MW_DOC182.put(Fields.STRING_FIELD, 'chintan')
 		P1_MW_DOC182.put(Fields.DATE, '01-01-2019')
+	}
+	
+	//201 - 220 For Reload On Post back
+	public static final Map<Fields, String> P1_MW_DOC201
+	public static boolean FLAG_P1_MW_DOC201 = false
+	static {
+		P1_MW_DOC201 = new HashMap<Fields, String>()
+		P1_MW_DOC201.put(Fields.BM_STRING, 'Chintan Shah')
 	}
 }
