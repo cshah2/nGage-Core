@@ -589,37 +589,37 @@ public class Common {
 		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/span_ui-button-icon-primary ui'))
 	}
 
-//	@Keyword
-//	def createDocument_RequiredFieldDT(String BM_Text, String BM_String_Required, String BM_int, String DateTime_Required, String Date_Required) {
-//
-//		'Switch to main window'
-//		WebUI.switchToWindowTitle('Savana nGage')
-//
-//		'Create a new BovDocTwoRow Document'
-//		WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))
-//		selectDocClassAndDocTypeForGlobalNew('Required field DC', 'Required field DT')
-//		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'))
-//
-//		'Switch to new Window'
-//		WebUI.switchToWindowTitle('(Doc ID: NEW )')
-//		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
-//
-//		'Fill the details required'
-//		setText_Date(findTestObject('Page_WMI_NEW/Required_Field_DT/input_BM Text'), BM_Text)
-//		WebUI.setText(findTestObject('Page_WMI_NEW/Required_Field_DT/input_BM String required'), BM_String_Required)
-//		WebUI.setText(findTestObject('Page_WMI_NEW/Required_Field_DT/input_BM Int'), BM_int)
-//		setText_Date(findTestObject('Page_WMI_NEW/Required_Field_DT/input_Date Time Required'), DateTime_Required)
-//		setText_Date(findTestObject('Page_WMI_NEW/Required_Field_DT/input_Date Required'), Date_Required)
-//
-//		'Save details and close'
-//		WebUI.mouseOver(findTestObject('Page_WMI_NEW/Required_Field_DT/span_Standard Actions'))
-//		WebUI.waitForElementVisible(findTestObject('Page_WMI_NEW/Required_Field_DT/a_Save'), GlobalVariable.G_LongTimeout)
-//		new Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI_NEW/Required_Field_DT/a_Save'),GlobalVariable.G_LongTimeout)
-//
-//		'Switch to main window and close'
-//		WebUI.switchToWindowTitle('Savana nGage')
-//		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/span_ui-button-icon-primary ui'))
-//	}
+	//	@Keyword
+	//	def createDocument_RequiredFieldDT(String BM_Text, String BM_String_Required, String BM_int, String DateTime_Required, String Date_Required) {
+	//
+	//		'Switch to main window'
+	//		WebUI.switchToWindowTitle('Savana nGage')
+	//
+	//		'Create a new BovDocTwoRow Document'
+	//		WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))
+	//		selectDocClassAndDocTypeForGlobalNew('Required field DC', 'Required field DT')
+	//		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'))
+	//
+	//		'Switch to new Window'
+	//		WebUI.switchToWindowTitle('(Doc ID: NEW )')
+	//		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+	//
+	//		'Fill the details required'
+	//		setText_Date(findTestObject('Page_WMI_NEW/Required_Field_DT/input_BM Text'), BM_Text)
+	//		WebUI.setText(findTestObject('Page_WMI_NEW/Required_Field_DT/input_BM String required'), BM_String_Required)
+	//		WebUI.setText(findTestObject('Page_WMI_NEW/Required_Field_DT/input_BM Int'), BM_int)
+	//		setText_Date(findTestObject('Page_WMI_NEW/Required_Field_DT/input_Date Time Required'), DateTime_Required)
+	//		setText_Date(findTestObject('Page_WMI_NEW/Required_Field_DT/input_Date Required'), Date_Required)
+	//
+	//		'Save details and close'
+	//		WebUI.mouseOver(findTestObject('Page_WMI_NEW/Required_Field_DT/span_Standard Actions'))
+	//		WebUI.waitForElementVisible(findTestObject('Page_WMI_NEW/Required_Field_DT/a_Save'), GlobalVariable.G_LongTimeout)
+	//		new Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI_NEW/Required_Field_DT/a_Save'),GlobalVariable.G_LongTimeout)
+	//
+	//		'Switch to main window and close'
+	//		WebUI.switchToWindowTitle('Savana nGage')
+	//		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/span_ui-button-icon-primary ui'))
+	//	}
 
 	@Keyword
 	def createDocument_MyWorkDateTime(String docClass, String docType, String startDate, String endDate, String startDateTime, String endDateTime, String BM_Text) {
@@ -729,34 +729,34 @@ public class Common {
 		}
 	}
 
-	@Keyword
-	def createDocument_MultiPageViewerWithDragAndDrop(String stringField, String fileName, String filePath) {
-
-		'Switch to main window'
-		WebUI.switchToWindowTitle('Savana nGage')
-
-		'Create a new BovDocTwoRow Document'
-		WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))
-		selectDocClassAndDocTypeForGlobalNew('Business Model View', 'MultipageViewer with drag and drop')
-		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'))
-
-		'Switch to new Window'
-		WebUI.switchToWindowTitle('(Doc ID: NEW )')
-		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
-
-		//Set data in fields
-		WebUI.setText(findTestObject('Page_WMI_NEW/MultiPage_Viewer_DD/input_eform_mcb67676phBO_3_BOe'), stringField)
-		WebUI.setText(findTestObject('Page_WMI_NEW/MultiPage_Viewer_DD/input_eform_mcb67676phBO_3_BOe_1'), fileName)
-
-		//Click on Save button
-		WebUI.mouseOver(findTestObject('Page_WMI_NEW/MultiPage_Viewer_DD/span_standard_actions'))
-		WebUI.waitForElementVisible(findTestObject('Page_WMI_NEW/MultiPage_Viewer_DD/a_Save'), GlobalVariable.G_LongTimeout)
-		new Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI_NEW/MultiPage_Viewer_DD/a_Save'), GlobalVariable.G_LongTimeout)
-
-		'Switch to main window and close'
-		WebUI.switchToWindowTitle('Savana nGage')
-		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/span_ui-button-icon-primary ui'))
-	}
+//	@Keyword
+//	def createDocument_MultiPageViewerWithDragAndDrop(String stringField, String fileName, String filePath) {
+//
+//		'Switch to main window'
+//		WebUI.switchToWindowTitle('Savana nGage')
+//
+//		'Create a new BovDocTwoRow Document'
+//		WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))
+//		selectDocClassAndDocTypeForGlobalNew('Business Model View', 'MultipageViewer with drag and drop')
+//		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'))
+//
+//		'Switch to new Window'
+//		WebUI.switchToWindowTitle('(Doc ID: NEW )')
+//		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+//
+//		//Set data in fields
+//		WebUI.setText(findTestObject('Page_WMI_NEW/MultiPage_Viewer_DD/input_eform_mcb67676phBO_3_BOe'), stringField)
+//		WebUI.setText(findTestObject('Page_WMI_NEW/MultiPage_Viewer_DD/input_eform_mcb67676phBO_3_BOe_1'), fileName)
+//
+//		//Click on Save button
+//		WebUI.mouseOver(findTestObject('Page_WMI_NEW/MultiPage_Viewer_DD/span_standard_actions'))
+//		WebUI.waitForElementVisible(findTestObject('Page_WMI_NEW/MultiPage_Viewer_DD/a_Save'), GlobalVariable.G_LongTimeout)
+//		new Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI_NEW/MultiPage_Viewer_DD/a_Save'), GlobalVariable.G_LongTimeout)
+//
+//		'Switch to main window and close'
+//		WebUI.switchToWindowTitle('Savana nGage')
+//		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/span_ui-button-icon-primary ui'))
+//	}
 
 	//	@Keyword
 	//	def createDocument_WMIMenuBovVertical(String BM_String, String filePath) {
@@ -1035,63 +1035,63 @@ public class Common {
 	//	}
 
 
-	@Keyword
-	def createDocument_RouteAdvance(String description) {
+//	@Keyword
+//	def createDocument_RouteAdvance(String description) {
+//
+//		'Switch to main window'
+//		WebUI.switchToWindowTitle('Savana nGage')
+//
+//		'Create a new BovDocTwoRow Document'
+//		WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))
+//		selectDocClassAndDocTypeForGlobalNew('Route Advance', 'Route from Entry Interactive User')
+//		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'))
+//
+//		'Switch to new Window'
+//		WebUI.switchToWindowIndex(1)
+//		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+//
+//		'Fill the details required'
+//		WebUI.setText(findTestObject('Page_WMI_NEW/RouteAdvance/input_Description'), description)
+//
+//		'Save details and close'
+//		WebUI.mouseOver(findTestObject('Page_WMI_NEW/RouteAdvance/span_Standard Actions'))
+//		WebUI.waitForElementVisible(findTestObject('Page_WMI_NEW/RouteAdvance/a_Save'), GlobalVariable.G_LongTimeout)
+//		new Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI_NEW/RouteAdvance/a_Save'), GlobalVariable.G_LongTimeout)
+//
+//		'Switch to main window and close'
+//		WebUI.switchToWindowTitle('Savana nGage')
+//		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/span_ui-button-icon-primary ui'))
+//	}
 
-		'Switch to main window'
-		WebUI.switchToWindowTitle('Savana nGage')
 
-		'Create a new BovDocTwoRow Document'
-		WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))
-		selectDocClassAndDocTypeForGlobalNew('Route Advance', 'Route from Entry Interactive User')
-		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'))
-
-		'Switch to new Window'
-		WebUI.switchToWindowIndex(1)
-		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
-
-		'Fill the details required'
-		WebUI.setText(findTestObject('Page_WMI_NEW/RouteAdvance/input_Description'), description)
-
-		'Save details and close'
-		WebUI.mouseOver(findTestObject('Page_WMI_NEW/RouteAdvance/span_Standard Actions'))
-		WebUI.waitForElementVisible(findTestObject('Page_WMI_NEW/RouteAdvance/a_Save'), GlobalVariable.G_LongTimeout)
-		new Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI_NEW/RouteAdvance/a_Save'), GlobalVariable.G_LongTimeout)
-
-		'Switch to main window and close'
-		WebUI.switchToWindowTitle('Savana nGage')
-		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/span_ui-button-icon-primary ui'))
-	}
-
-
-	@Keyword
-	def createDocument_ProcessForTaskDT(String customerName, String customerDetails) {
-
-		'Switch to main window'
-		WebUI.switchToWindowTitle('Savana nGage')
-
-		'Create a new BovDocTwoRow Document'
-		WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))
-		selectDocClassAndDocTypeForGlobalNew('Closure Action', 'ProcessforTaskDT')
-		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'))
-
-		'Switch to new Window'
-		WebUI.switchToWindowTitle('(Doc ID: NEW )')
-		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
-
-		'Fill the details required'
-		WebUI.setText(findTestObject('Page_WMI_NEW/ProcessForTaskDT/input_Customer Name'), customerName)
-		WebUI.setText(findTestObject('Page_WMI_NEW/ProcessForTaskDT/input_Customer Details'), customerDetails)
-
-		'Save details and close'
-		WebUI.mouseOver(findTestObject('Page_WMI_NEW/ProcessForTaskDT/span_Actions'))
-		WebUI.waitForElementVisible(findTestObject('Page_WMI_NEW/ProcessForTaskDT/a_Save'), GlobalVariable.G_LongTimeout)
-		new Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI_NEW/ProcessForTaskDT/a_Save'),GlobalVariable.G_LongTimeout)
-
-		'Switch to main window and close'
-		WebUI.switchToWindowTitle('Savana nGage')
-		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/span_ui-button-icon-primary ui'))
-	}
+//	@Keyword
+//	def createDocument_ProcessForTaskDT(String customerName, String customerDetails) {
+//
+//		'Switch to main window'
+//		WebUI.switchToWindowTitle('Savana nGage')
+//
+//		'Create a new BovDocTwoRow Document'
+//		WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))
+//		selectDocClassAndDocTypeForGlobalNew('Closure Action', 'ProcessforTaskDT')
+//		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'))
+//
+//		'Switch to new Window'
+//		WebUI.switchToWindowTitle('(Doc ID: NEW )')
+//		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+//
+//		'Fill the details required'
+//		WebUI.setText(findTestObject('Page_WMI_NEW/ProcessForTaskDT/input_Customer Name'), customerName)
+//		WebUI.setText(findTestObject('Page_WMI_NEW/ProcessForTaskDT/input_Customer Details'), customerDetails)
+//
+//		'Save details and close'
+//		WebUI.mouseOver(findTestObject('Page_WMI_NEW/ProcessForTaskDT/span_Actions'))
+//		WebUI.waitForElementVisible(findTestObject('Page_WMI_NEW/ProcessForTaskDT/a_Save'), GlobalVariable.G_LongTimeout)
+//		new Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI_NEW/ProcessForTaskDT/a_Save'),GlobalVariable.G_LongTimeout)
+//
+//		'Switch to main window and close'
+//		WebUI.switchToWindowTitle('Savana nGage')
+//		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/span_ui-button-icon-primary ui'))
+//	}
 
 	@Keyword
 	def verifyElementsCount(TestObject to, int expCount) {

@@ -33,6 +33,7 @@ public enum Fields {
 	BM_TEXT,			//Required Field DT
 	BM_INT,				//Required Field DT
 	DATE_TIME,			//Required Field DT
-	DATE				//Required Field DT
-	
+	DATE,				//Required Field DT
+	DESCRIPTION			//Route Advance
+
 }

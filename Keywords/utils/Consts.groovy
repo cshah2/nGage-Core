@@ -185,12 +185,12 @@ public class Consts {
 	public static final String P1_REPO_FIELD2_DOC10 = 'CShah'
 	public static final String P1_REPO_FIELD5_DOC10 = '01-01-2020'
 
-//	//Document 11 - Required field DT
-//	public static final String P1_REPO_BMTEXT_DOC11 = 'TEXT'
-//	public static final String P1_REPO_BMSTRING_DOC11 = 'STRING REQ'
-//	public static final String P1_REPO_INT_DOC11 = '30'
-//	public static final String P1_REPO_DATETIMEREQ_DOC11 = '07-01-2018 03:00:00 AM'
-//	public static final String P1_REPO_DATEREQ_DOC11 = '10-01-2018'
+	//	//Document 11 - Required field DT
+	//	public static final String P1_REPO_BMTEXT_DOC11 = 'TEXT'
+	//	public static final String P1_REPO_BMSTRING_DOC11 = 'STRING REQ'
+	//	public static final String P1_REPO_INT_DOC11 = '30'
+	//	public static final String P1_REPO_DATETIMEREQ_DOC11 = '07-01-2018 03:00:00 AM'
+	//	public static final String P1_REPO_DATEREQ_DOC11 = '10-01-2018'
 
 	//Document A-F - Date time DT - Filter test
 	public static final String P1_REPO_DOCA_BMDATE = '01-01-2018'
@@ -948,5 +948,14 @@ public class Consts {
 		P1_REPO_DOC121.put(Fields.DATE_TIME, '07-01-2018 03:00:00 AM')
 		P1_REPO_DOC121.put(Fields.DATE, '10-01-2018')
 	}
+	
+	//141 - 160 For Route Advance
+	public static final Map<Fields, String> P1_MW_DOC141 //Used in WMI Menu Testing
+	public static boolean FLAG_P1_MW_DOC141 = false
+	static {
+		P1_MW_DOC141 = new HashMap<Fields, String>()
+		P1_MW_DOC141.put(Fields.DESCRIPTION, 'Route Advance Description')
+	}
+	
+	
 }
-

@@ -94,6 +94,10 @@ public class Data {
 			case DocType.REQUIRED_FIELD_DT:
 				requiredFieldDT(data)
 				break
+				
+			case DocType.ROUTE_FROM_ENTRY_INTERACTIVE_USER:
+				routeFromEntryInteractiveUser(data)
+				break
 
 			default:
 				WebUI.takeScreenshot()
@@ -340,9 +344,9 @@ public class Data {
 		WebUI.waitForElementVisible(findTestObject('Page_WMI_NEW/MultiPage_Viewer_DD/a_Save'), GlobalVariable.G_LongTimeout)
 		new Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI_NEW/MultiPage_Viewer_DD/a_Save'), GlobalVariable.G_LongTimeout)
 	}
-	
+
 	private void requiredFieldDT(Map<Fields, String> data) {
-		
+
 		//Get Data from Map
 		String bmText = data.get(Fields.BM_TEXT)
 		String bmString = data.get(Fields.BM_STRING)
@@ -366,5 +370,19 @@ public class Data {
 		WebUI.mouseOver(findTestObject('Page_WMI_NEW/Required_Field_DT/span_Standard Actions'))
 		WebUI.waitForElementVisible(findTestObject('Page_WMI_NEW/Required_Field_DT/a_Save'), GlobalVariable.G_LongTimeout)
 		new Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI_NEW/Required_Field_DT/a_Save'),GlobalVariable.G_LongTimeout)
+	}
+	
+	private void routeFromEntryInteractiveUser(Map<Fields, String> data) {
+		//Get Data from Map
+		String description = data.get(Fields.DESCRIPTION)
+
+		//Fill Form
+		if(StringUtils.isNotBlank(description))
+			WebUI.setText(findTestObject('Page_WMI_NEW/RouteAdvance/input_Description'), description)
+
+		//Click on Save button
+		WebUI.mouseOver(findTestObject('Page_WMI_NEW/RouteAdvance/span_Standard Actions'))
+		WebUI.waitForElementVisible(findTestObject('Page_WMI_NEW/RouteAdvance/a_Save'), GlobalVariable.G_LongTimeout)
+		new Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI_NEW/RouteAdvance/a_Save'), GlobalVariable.G_LongTimeout)
 	}
 }

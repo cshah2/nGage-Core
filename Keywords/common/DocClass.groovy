@@ -28,7 +28,8 @@ public enum DocClass {
 	SM_WEBSERVICE_DB_2("StorageSrvr0002 Db object"),	//Encryption OFF
 	VERTICAL_MENU_WIZARD("Vertical Menu Wizard"),		//Loan Application
 	BUSINESS_MODEL_VIEW("Business Model View"),
-	REQUIRED_FIELD_DC("Required field DC")
+	REQUIRED_FIELD_DC("Required field DC"),
+	ROUTE_ADVANCE("Route Advance")
 
 	private final String text
 

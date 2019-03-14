@@ -11,6 +11,10 @@ import com.kms.katalon.core.testdata.TestData as TestData
 import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+
+import common.DocClass
+import common.DocType
+import common.Fields
 import internal.GlobalVariable as GlobalVariable
 import static utils.DateUtil.*
 import static utils.Consts.*
@@ -19,8 +23,9 @@ import static utils.Consts.*
 CustomKeywords.'actions.Common.login'()
 
 'Create Route Advance Document'
-String description = 'Test - '+getCurrentDateTime(FORMAT_DATETIME)
-CustomKeywords.'actions.Common.createDocument_RouteAdvance'(description)
+CustomKeywords.'actions.Data.create'(DocClass.ROUTE_ADVANCE, DocType.ROUTE_FROM_ENTRY_INTERACTIVE_USER, P1_MW_DOC141)
+FLAG_P1_MW_DOC141 = true
+String description = P1_MW_DOC141.get(Fields.DESCRIPTION)
 
 'Click on My Work link from left menu'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_My Work Left Menu'))
