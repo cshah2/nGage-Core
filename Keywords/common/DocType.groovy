@@ -37,7 +37,8 @@ public enum DocType {
 	EVENT_FOR_REQUIRED_FIELD("Event for req field"),
 	RELOAD_ON_POSTBACK_NO_SPLIT_T("ReloadOnPostbackNoSplit T"),
 	RENDER_AS_LABEL("Render As Label"),
-	REFERENCE_OBJECT_INLINE_CONTENT_VIEW("Reference Object InlineContentView")
+	REFERENCE_OBJECT_INLINE_CONTENT_VIEW("Reference Object InlineContentView"),
+	RENDER_ALL_FIELD_TYPES("Render All Field Types")
 
 	private final String text
 

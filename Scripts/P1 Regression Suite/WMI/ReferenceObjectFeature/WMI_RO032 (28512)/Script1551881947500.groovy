@@ -11,14 +11,17 @@ import com.kms.katalon.core.testdata.TestData as TestData
 import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+
+import common.DocClass
+import common.DocType
 import internal.GlobalVariable as GlobalVariable
-import utils.Consts
+import static utils.Consts.*
 
 'Login Into Application'
 CustomKeywords.'actions.Common.login'()
 
 'Create document for render all field types'
-CustomKeywords.'actions.Common.createDocument_RenderAllField'('10', '', '', '', '', '', '', '', '', '', '')
+CustomKeywords.'actions.Data.create'(DocClass.MASTER_OBJECT_FEATURE, DocType.RENDER_ALL_FIELD_TYPES, P1_REPO_DOC221)
 
 'Create a new Refrence Object Feature Document'
 WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))
@@ -54,7 +57,7 @@ WebUI.waitForElementPresent(findTestObject('Object Repository/Page_WMI_NEW/Refer
 WebUI.verifyElementVisible(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Reference Object Import/tab_Reference Object/dialog_span_Doc Type Label'))
 
 'enter date for document'
-CustomKeywords.'actions.Common.setText_Date'(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Reference Object Import/tab_Reference Object/dialog_input_renderastextbox'), Consts.P1_WMI_RO028_DATE)
+CustomKeywords.'actions.Common.setText_Date'(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Reference Object Import/tab_Reference Object/dialog_input_renderastextbox'), P1_WMI_RO028_DATE)
 
 'save and close document'
 WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Reference Object Import/tab_Reference Object/dialog_span_Save'))
@@ -81,4 +84,4 @@ WebUI.switchToWindowIndex(1)
 WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 
 'verify opened document'
-WebUI.verifyElementAttributeValue(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Reference Object Import/tab_Reference Object/input_Date'), 'value', Consts.P1_WMI_RO028_DATE, GlobalVariable.G_LongTimeout)
+WebUI.verifyElementAttributeValue(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Reference Object Import/tab_Reference Object/input_Date'), 'value', P1_WMI_RO028_DATE, GlobalVariable.G_LongTimeout)

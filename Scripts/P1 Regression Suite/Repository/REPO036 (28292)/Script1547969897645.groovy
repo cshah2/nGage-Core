@@ -11,6 +11,10 @@ import com.kms.katalon.core.testdata.TestData as TestData
 import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+
+import common.DocClass
+import common.DocType
+import common.Fields
 import internal.GlobalVariable as GlobalVariable
 import static utils.Consts.*
 
@@ -18,10 +22,12 @@ import static utils.Consts.*
 CustomKeywords.'actions.Common.login'()
 
 'Create document is not present'
-if(!FLAG_P1_REPO_DOC10) {
-	CustomKeywords.'actions.Common.createDocument_RenderAllField'(P1_REPO_FIELD1_DOC10, P1_REPO_FIELD2_DOC10, '', '', P1_REPO_FIELD5_DOC10, '', '', '', '', '', '')
-	FLAG_P1_REPO_DOC10 = true
+if(!FLAG_P1_REPO_DOC221) {
+	CustomKeywords.'actions.Data.create'(DocClass.MASTER_OBJECT_FEATURE, DocType.RENDER_ALL_FIELD_TYPES, P1_REPO_DOC221)
+	FLAG_P1_REPO_DOC221 = true
 }
+
+String date = P1_REPO_DOC221.get(Fields.DATE)
 
 'Expand Repository Menu'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Repository/h3_Repository Menu'))
@@ -32,7 +38,7 @@ WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 CustomKeywords.'actions.Common.selectRepositoryAndSearchFor'('Business Model', 'Business Model')
 
 'Enter Only End Date in Search field'
-CustomKeywords.'actions.Common.setText_Date'(findTestObject('Page_nGage_Dashboard/Repository/input_BM___Date_From'), P1_REPO_FIELD5_DOC10)
+CustomKeywords.'actions.Common.setText_Date'(findTestObject('Page_nGage_Dashboard/Repository/input_BM___Date_From'), date)
 
 'Click on Search button'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Repository/input_btnSearch'))
@@ -47,5 +53,5 @@ WebUI.waitForElementVisible(findTestObject('Object Repository/Page_nGage_Dashboa
 
 String toolTipValue = WebUI.getText(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/BrowseResults Tab/Browser_ToolTip')).trim()
 WebUI.verifyMatch(toolTipValue, '.*Business Model - Business Model.*', true)
-String expValueLine2 = '.*BM Date >= '+P1_REPO_FIELD5_DOC10+'.*'
+String expValueLine2 = '.*BM Date >= '+date+'.*'
 WebUI.verifyMatch(toolTipValue, expValueLine2, true)

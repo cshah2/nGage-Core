@@ -19,24 +19,32 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable
 
 public enum Fields {
-	TEMPLATE_NAME,		//Complaint Template
-	TEMPLATE_TEXT,		//Complaint Template
-	CUSTOMER_ID,		//WMI Menu Bov, WMI Menu Default, WMI Menu DocTwoRow
-	BM_STRING,			//WMI Menu Bov, WMI Menu Default, WMI Menu DocTwoRow, Required Field DT
-	CUSTOMER_NAME,		//WMI Menu Bov, WMI Menu Default, WMI Menu DocTwoRow
-	UPLOAD_FILE,		//WMI Menu Bov, WMI Menu Default, WMI Menu DocTwoRow, SM WEB SERVICE, Vertical Menu Wizard
-	STRING_FIELD,		//SM WEB SERVICE, Event For Required Field
-	FILE_NAME,			//SM WEB SERVICE
-	FIRST_NAME,			//Vertical Menu Wizard, Correspondence
-	LAST_NAME,			//Vertical Menu Wizard, Correspondence
-	AMOUNT,				//Vertical Menu Wizard
-	BM_TEXT,			//Required Field DT
-	BM_INT,				//Required Field DT
-	DATE_TIME,			//Required Field DT
-	DATE,				//Required Field DT, Event For Required Field
-	DESCRIPTION,		//Route Advance
-	TO_EMAIL,			//Correspondece
-	TEMPLATE,			//Correspondece
-	DROP_DOWN_CONTROL	//Event For Required Field
+	TEMPLATE_NAME,				//Complaint Template
+	TEMPLATE_TEXT,				//Complaint Template
+	CUSTOMER_ID,				//WMI Menu Bov, WMI Menu Default, WMI Menu DocTwoRow
+	BM_STRING,					//WMI Menu Bov, WMI Menu Default, WMI Menu DocTwoRow, Required Field DT
+	CUSTOMER_NAME,				//WMI Menu Bov, WMI Menu Default, WMI Menu DocTwoRow
+	UPLOAD_FILE,				//WMI Menu Bov, WMI Menu Default, WMI Menu DocTwoRow, SM WEB SERVICE, Vertical Menu Wizard
+	STRING_FIELD,				//SM WEB SERVICE, Event For Required Field, Render All Field Types
+	FILE_NAME,					//SM WEB SERVICE
+	FIRST_NAME,					//Vertical Menu Wizard, Correspondence
+	LAST_NAME,					//Vertical Menu Wizard, Correspondence
+	AMOUNT,						//Vertical Menu Wizard
+	BM_TEXT,					//Required Field DT
+	BM_INT,						//Required Field DT
+	DATE_TIME,					//Required Field DT, Render All Field Types
+	DATE,						//Required Field DT, Event For Required Field, Render All Field Types
+	DESCRIPTION,				//Route Advance
+	TO_EMAIL,					//Correspondece
+	TEMPLATE,					//Correspondece
+	DROP_DOWN_CONTROL,			//Event For Required Field
+	INTEGER_FIELD,				//Render All Field Types
+	STRING_FIELD_ON_FOCUS,		//Render All Field Types
+	STRING_FIELD_LOOKUP,		//Render All Field Types
+	CURRENCY_FIELD,				//Render All Field Types
+	FLOAT_FIELD,				//Render All Field Types
+	SMALL_INT_FIELD,			//Render All Field Types
+	TEXT_FIELD,					//Render All Field Types
+	EXT_NAME_FIELD				//Render All Field Types
 
 }

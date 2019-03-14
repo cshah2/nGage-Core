@@ -6,6 +6,7 @@ import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 
 import org.apache.commons.lang3.StringUtils
+import org.openqa.selenium.Keys
 
 import com.kms.katalon.core.annotation.Keyword
 import com.kms.katalon.core.checkpoint.Checkpoint
@@ -21,6 +22,7 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 
 import internal.GlobalVariable
+import utils.WebUtil
 import common.DocClass
 import common.DocType
 import common.Fields
@@ -117,6 +119,10 @@ public class Data {
 
 			case DocType.REFERENCE_OBJECT_INLINE_CONTENT_VIEW:
 				referenceObjectInlineContentView(data)
+				break
+				
+			case DocType.RENDER_ALL_FIELD_TYPES:
+				renderAllFieldTypes(data)
 				break
 
 			default:
@@ -486,9 +492,9 @@ public class Data {
 		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 		new Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI_NEW/Master_Object_Feature/Render_As_Label/span_Close Window'), GlobalVariable.G_LongTimeout)
 	}
-	
+
 	private void referenceObjectInlineContentView(Map<Fields, String> data) {
-		
+
 		//Get Data from Map
 
 		//Fill Form
@@ -497,5 +503,53 @@ public class Data {
 		WebUI.click(findTestObject('Page_WMI_NEW/Master_Object_Feature/Render_As_Label/span_Save'))
 		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 		new Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI_NEW/Master_Object_Feature/Render_As_Label/span_Close Window'), GlobalVariable.G_LongTimeout)
+	}
+	
+	private void renderAllFieldTypes(Map<Fields, String> data) {
+		
+		//Get Data from Map
+		String integerField = data.get(Fields.INTEGER_FIELD)
+		String stringFieldOnFocusAttr = data.get(Fields.STRING_FIELD_ON_FOCUS)
+		String stringFieldLookup = data.get(Fields.STRING_FIELD_LOOKUP)
+		String currencyField = data.get(Fields.CURRENCY_FIELD)
+		String dateField = data.get(Fields.DATE)
+		String floatField = data.get(Fields.FLOAT_FIELD)
+		String smallIntField = data.get(Fields.SMALL_INT_FIELD)
+		String textField = data.get(Fields.TEXT_FIELD)
+		String dateTimeField = data.get(Fields.DATE_TIME)
+		String stringField = data.get(Fields.STRING_FIELD)
+		String extNameField = data.get(Fields.EXT_NAME_FIELD)
+		
+		//Fill Form
+		if(StringUtils.isNotBlank(integerField))
+			WebUI.setText(findTestObject('Page_WMI_NEW/Master_Object/input_Integer Field'), integerField)
+		if(StringUtils.isNotBlank(stringFieldOnFocusAttr))
+			WebUI.setText(findTestObject('Page_WMI_NEW/Master_Object/input_String Field (with onfocussetcursorattheend attribute)'), stringFieldOnFocusAttr)
+		if(StringUtils.isNotBlank(stringFieldLookup))
+			WebUI.selectOptionByLabel(findTestObject('Page_WMI_NEW/Master_Object/select_String Field With Lookup'), stringFieldLookup, false)
+		if(StringUtils.isNotBlank(currencyField)) {
+			WebUI.setText(findTestObject('Page_WMI_NEW/Master_Object/input_Currency Field'), currencyField)
+			WebUI.sendKeys(findTestObject('Page_WMI_NEW/Master_Object/input_Currency Field'), Keys.chord(Keys.TAB))
+			WebUtil.delay(100)
+		}
+		if(StringUtils.isNotBlank(dateField))
+			new Common().setText_Date(findTestObject('Page_WMI_NEW/Master_Object/input_Date Field'), dateField)
+		if(StringUtils.isNotBlank(floatField))
+			WebUI.setText(findTestObject('Page_WMI_NEW/Master_Object/input_Float Field (Precision3minval-10maxval-100)'), floatField)
+		if(StringUtils.isNotBlank(smallIntField))
+			WebUI.setText(findTestObject('Page_WMI_NEW/Master_Object/input_Small Integer Field(minval-10maxval-100)'), smallIntField)
+		if(StringUtils.isNotBlank(textField))
+			WebUI.setText(findTestObject('Page_WMI_NEW/Master_Object/input_Text Field(with onfocusselectall attribute)'), textField)
+		if(StringUtils.isNotBlank(dateTimeField))
+			new Common().setText_Date(findTestObject('Page_WMI_NEW/Master_Object/input_DateTime Field'), dateTimeField)
+		if(StringUtils.isNotBlank(stringField))
+			WebUI.setText(findTestObject('Page_WMI_NEW/Master_Object/input_String Filed'), stringField)
+		if(StringUtils.isNotBlank(extNameField))
+			WebUI.setText(findTestObject('Page_WMI_NEW/Master_Object/input_Ext Name Field'), extNameField)
+
+		//Save details and close
+		WebUI.click(findTestObject('Page_WMI_NEW/Master_Object/span_Save'))
+		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+		new Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI_NEW/Master_Object/span_Close Window'),GlobalVariable.G_LongTimeout)
 	}
 }

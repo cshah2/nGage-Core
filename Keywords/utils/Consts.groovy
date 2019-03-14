@@ -181,9 +181,9 @@ public class Consts {
 	public static final String P1_REPO_DATETIMERANGETO_DOC4 = '09-02-2018 12:00:00 AM'
 
 	//Document 10 - Render All Field types
-	public static final String P1_REPO_FIELD1_DOC10 = '10'
-	public static final String P1_REPO_FIELD2_DOC10 = 'CShah'
-	public static final String P1_REPO_FIELD5_DOC10 = '01-01-2020'
+//	public static final String P1_REPO_FIELD1_DOC10 = '10'
+//	public static final String P1_REPO_FIELD2_DOC10 = 'CShah'
+//	public static final String P1_REPO_FIELD5_DOC10 = '01-01-2020'
 
 	//	//Document 11 - Required field DT
 	//	public static final String P1_REPO_BMTEXT_DOC11 = 'TEXT'
@@ -568,10 +568,7 @@ public class Consts {
 	//	public static final String P1_EVENTFOREQ_DATE_DOC2 = '01-01-2019'
 
 	public static final String P1_WMI_RO028_DATE = '01-01-2018'
-
-
 	public static final String P1_WCA008_PROCESSDUETIME = '12:00:00 AM'
-
 	public static final String P1_TIME_START = '12:00:00 AM'
 	public static final String P1_TIME_END = '11:59:59 PM'
 
@@ -993,5 +990,15 @@ public class Consts {
 	static {
 		P1_MW_DOC201 = new HashMap<Fields, String>()
 		P1_MW_DOC201.put(Fields.BM_STRING, 'Chintan Shah')
+	}
+	
+	//221 - 240 For Render All Field Types
+	public static final Map<Fields, String> P1_REPO_DOC221
+	public static boolean FLAG_P1_REPO_DOC221 = false
+	static {
+		P1_REPO_DOC221 = new HashMap<Fields, String>()
+		P1_REPO_DOC221.put(Fields.INTEGER_FIELD, '10')
+		P1_REPO_DOC221.put(Fields.STRING_FIELD_ON_FOCUS, 'CShah')
+		P1_REPO_DOC221.put(Fields.DATE, '01-01-2020')
 	}
 }

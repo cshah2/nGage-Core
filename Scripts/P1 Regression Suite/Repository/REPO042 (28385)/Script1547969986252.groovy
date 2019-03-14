@@ -18,10 +18,7 @@ import static utils.Consts.*
 CustomKeywords.'actions.Common.login'()
 
 'Create document is not present'
-if(!FLAG_P1_REPO_DOC10) {
-	CustomKeywords.'actions.Common.createDocument_RenderAllField'(P1_REPO_FIELD1_DOC10, P1_REPO_FIELD2_DOC10, '', '', P1_REPO_FIELD5_DOC10, '', '', '', '', '', '')
-	FLAG_P1_REPO_DOC10 = true
-}
+CustomKeywords.'actions.Common.createBulkDocuments_RenderAllFields'(2)
 
 'Verify the Repository Menu is visible'
 WebUI.verifyElementVisible(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/h3_Repository Menu'))

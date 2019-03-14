@@ -11,6 +11,9 @@ import com.kms.katalon.core.testdata.TestData as TestData
 import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+
+import common.DocClass
+import common.DocType
 import internal.GlobalVariable as GlobalVariable
 import static utils.Consts.*
 
@@ -18,10 +21,7 @@ import static utils.Consts.*
 CustomKeywords.'actions.Common.login'()
 
 'Create document is not present'
-if(!FLAG_P1_REPO_DOC10) {
-	CustomKeywords.'actions.Common.createDocument_RenderAllField'(P1_REPO_FIELD1_DOC10, P1_REPO_FIELD2_DOC10, '', '', P1_REPO_FIELD5_DOC10, '', '', '', '', '', '')
-	FLAG_P1_REPO_DOC10 = true
-}
+CustomKeywords.'actions.Common.createBulkDocuments_RenderAllFields'(1)
 
 'Expand Repository Menu'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Repository/h3_Repository Menu'))
@@ -44,7 +44,8 @@ else {
 }
 
 'Create another document render all fields'
-CustomKeywords.'actions.Common.createDocument_RenderAllField'('20', 'AMirvankar', '', '', '', '', '', '', '', '', '')
+CustomKeywords.'actions.Data.create'(DocClass.MASTER_OBJECT_FEATURE, DocType.RENDER_ALL_FIELD_TYPES, P1_REPO_DOC221)
+FLAG_P1_REPO_DOC221 = true
 
 'Right click on Render All Field Types Sub Menu'
 CustomKeywords.'actions.MenuBar.rightClickTreeMenu'('REPO', 'Business Model', 'Business Model', 'Render All Field Types')
