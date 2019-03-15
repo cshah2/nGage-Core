@@ -1090,7 +1090,7 @@ public class Consts {
 		P1_REPO_DOC249.put(Fields.DATE_TIME_RANGE, '09-20-2018 03:00:00 AM')
 	}
 	
-	public static final String P1_REPO_DOC249_D_RANGE_FROM_DATE = '3'
+	public static final String P1_REPO_DOC249_D_RANGE_FROM_DATE = '20'
 	public static final String P1_REPO_DOC249_D_RANGE_FROM_MONTH = 'Mar'
 	public static final String P1_REPO_DOC249_D_RANGE_FROM_YEAR = '2018'
 	public static final String P1_REPO_DOC249_D_RANGE_FROM = '03-20-2018'
