@@ -26,5 +26,5 @@ WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 CustomKeywords.'actions.Common.selectRepositoryAndSearchFor'('Date n Date time EDM', 'Date n Date time search class')
 
 'Enter date using calender picker'
-CustomKeywords.'actions.Calender.selectDate'(P1_REPO_DATERANGEFROM_DATE_DOC4, P1_REPO_DATERANGEFROM_MONTH_DOC4, P1_REPO_DATERANGEFROM_YEAR_DOC4, findTestObject('Page_nGage_Dashboard/Repository/calender_DateRange_From'))
-WebUI.verifyElementAttributeValue(findTestObject('Page_nGage_Dashboard/Repository/input_DateRange_From'), 'value', P1_REPO_DATERANGEFROM_DOC4, GlobalVariable.G_LongTimeout)
+CustomKeywords.'actions.Calender.selectDate'(P1_REPO_DOC249_D_RANGE_FROM_DATE, P1_REPO_DOC249_D_RANGE_FROM_MONTH, P1_REPO_DOC249_D_RANGE_FROM_YEAR, findTestObject('Page_nGage_Dashboard/Repository/calender_DateRange_From'))
+WebUI.verifyElementAttributeValue(findTestObject('Page_nGage_Dashboard/Repository/input_DateRange_From'), 'value', P1_REPO_DOC249_D_RANGE_FROM, GlobalVariable.G_LongTimeout)

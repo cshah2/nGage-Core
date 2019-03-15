@@ -86,8 +86,6 @@ public class Consts {
 	public static final String SMOKE_REPO001_STRINGFIELD = 'Chintan Shah'
 	public static final String SMOKE_REPO001_FILENAME = 'Automation test document'
 
-	public static String SMOKE_REPO006_SAVEDFILTER_RECORDCOUNT
-	public static String SMOKE_REPO006_SAVEDFILTERNAME
 
 	public static final String SMOKE_MWS002_CUSTOMERNAME = 'Chintan Shah'
 	public static final String SMOKE_MWS002_CUSTOMERDETAIL = 'Automation test document - MWS002'
@@ -143,47 +141,47 @@ public class Consts {
 	public static final String SMOKE_REPO002_START_FILTER = '12-12-2018'
 	public static final String SMOKE_REPO002_END_FILTER = '01-01-2019'
 
-	public static final String SMOKE_REPO_BMDATE_DOC1 = '12-01-2018'
-	public static final String SMOKE_REPO_DATERANGE_DOC1 = '12-05-2018'
-	public static final String SMOKE_REPO_BMDATETIME_DOC1 = '12-10-2018 12:00:00 PM'
-	public static final String SMOKE_REPO_DATETIMERANGE_DOC1 = '12-10-2018 12:00:00 PM'
-	public static final String SMOKE_REPO_DATERANGE_DOC1_START_FILTER = '12-03-2018'
-	public static final String SMOKE_REPO_DATERANGE_DOC1_END_FILTER = '12-07-2018'
+//	public static final String SMOKE_REPO_BMDATE_DOC1 = '12-01-2018'
+//	public static final String SMOKE_REPO_DATERANGE_DOC1 = '12-05-2018'
+//	public static final String SMOKE_REPO_BMDATETIME_DOC1 = '12-10-2018 12:00:00 PM'
+//	public static final String SMOKE_REPO_DATETIMERANGE_DOC1 = '12-10-2018 12:00:00 PM'
+//	public static final String SMOKE_REPO_DATERANGE_DOC1_START_FILTER = '12-03-2018'
+//	public static final String SMOKE_REPO_DATERANGE_DOC1_END_FILTER = '12-07-2018'
 
 
 	/* ######################## Refactored Documents ######################## */
 	//Document 0 - Date time DT
-	public static final String P1_REPO_BMDATE_DOC0 = '02-10-2019'
-	public static final String P1_REPO_DATERANGE_DOC0 = '02-11-2019'
-	public static final String P1_REPO_BMDATETIME_DOC0 = '02-13-2019 01:00:00 AM'
-	public static final String P1_REPO_DATETIMERANGE_DOC0 = '02-14-2019 03:00:00 AM'
-	public static final String P1_REPO_DATERANGE_DOC0_FILTER_TO = '02-09-2019'
-	public static final String P1_REPO_DATERANGE_DOC0_FILTER_FROM = '02-13-2019'
+//	public static final String P1_REPO_BMDATE_DOC0 = '02-10-2019'
+//	public static final String P1_REPO_DATERANGE_DOC0 = '02-11-2019'
+//	public static final String P1_REPO_BMDATETIME_DOC0 = '02-13-2019 01:00:00 AM'
+//	public static final String P1_REPO_DATETIMERANGE_DOC0 = '02-14-2019 03:00:00 AM'
+//	public static final String P1_REPO_DATERANGE_DOC0_FILTER_TO = '02-09-2019'
+//	public static final String P1_REPO_DATERANGE_DOC0_FILTER_FROM = '02-13-2019'
 
 	//Document 4 & 5 - Date time DT - Calender picker tests
-	public static final String P1_REPO_BMDATE_DOC4 = ''
-	public static final String P1_REPO_DATERANGE_DOC4 = ''
-	public static final String P1_REPO_BMDATETIME_DOC4 = ''
-	public static final String P1_REPO_DATETIMERANGE_DOC4 = '09-01-2018 12:00:00 AM'
-
-	public static final String P1_REPO_BMDATE_DOC5 = '01-20-2018'
-	public static final String P1_REPO_DATERANGE_DOC5 = '03-20-2018'
-	public static final String P1_REPO_BMDATETIME_DOC5 = '06-20-2018 01:00:00 AM'
-	public static final String P1_REPO_DATETIMERANGE_DOC5 = '09-20-2018 03:00:00 AM'
-
-	public static final String P1_REPO_DATETIMERANGEFROM_DATE_DOC4 = '31'
-	public static final String P1_REPO_DATETIMERANGEFROM_MONTH_DOC4 = 'Aug'
-	public static final String P1_REPO_DATETIMERANGEFROM_YEAR_DOC4 = '2018'
-	public static final String P1_REPO_DATETIMERANGEFROM_DOC4 = '08-31-2018 12:00:00 AM'
-	public static final String P1_REPO_DATETIMERANGETO_DATE_DOC4 = '2'
-	public static final String P1_REPO_DATETIMERANGETO_MONTH_DOC4 = 'Sep'
-	public static final String P1_REPO_DATETIMERANGETO_YEAR_DOC4 = '2018'
-	public static final String P1_REPO_DATETIMERANGETO_DOC4 = '09-02-2018 12:00:00 AM'
+//	public static final String P1_REPO_BMDATE_DOC4 = ''
+//	public static final String P1_REPO_DATERANGE_DOC4 = ''
+//	public static final String P1_REPO_BMDATETIME_DOC4 = ''
+//	public static final String P1_REPO_DATETIMERANGE_DOC4 = '09-01-2018 12:00:00 AM'
+//
+//	public static final String P1_REPO_BMDATE_DOC5 = '01-20-2018'
+//	public static final String P1_REPO_DATERANGE_DOC5 = '03-20-2018'
+//	public static final String P1_REPO_BMDATETIME_DOC5 = '06-20-2018 01:00:00 AM'
+//	public static final String P1_REPO_DATETIMERANGE_DOC5 = '09-20-2018 03:00:00 AM'
+//
+//	public static final String P1_REPO_DATETIMERANGEFROM_DATE_DOC4 = '31'
+//	public static final String P1_REPO_DATETIMERANGEFROM_MONTH_DOC4 = 'Aug'
+//	public static final String P1_REPO_DATETIMERANGEFROM_YEAR_DOC4 = '2018'
+//	public static final String P1_REPO_DATETIMERANGEFROM_DOC4 = '08-31-2018 12:00:00 AM'
+//	public static final String P1_REPO_DATETIMERANGETO_DATE_DOC4 = '2'
+//	public static final String P1_REPO_DATETIMERANGETO_MONTH_DOC4 = 'Sep'
+//	public static final String P1_REPO_DATETIMERANGETO_YEAR_DOC4 = '2018'
+//	public static final String P1_REPO_DATETIMERANGETO_DOC4 = '09-02-2018 12:00:00 AM'
 
 	//Document 10 - Render All Field types
-//	public static final String P1_REPO_FIELD1_DOC10 = '10'
-//	public static final String P1_REPO_FIELD2_DOC10 = 'CShah'
-//	public static final String P1_REPO_FIELD5_DOC10 = '01-01-2020'
+	//	public static final String P1_REPO_FIELD1_DOC10 = '10'
+	//	public static final String P1_REPO_FIELD2_DOC10 = 'CShah'
+	//	public static final String P1_REPO_FIELD5_DOC10 = '01-01-2020'
 
 	//	//Document 11 - Required field DT
 	//	public static final String P1_REPO_BMTEXT_DOC11 = 'TEXT'
@@ -192,36 +190,36 @@ public class Consts {
 	//	public static final String P1_REPO_DATETIMEREQ_DOC11 = '07-01-2018 03:00:00 AM'
 	//	public static final String P1_REPO_DATEREQ_DOC11 = '10-01-2018'
 
-	//Document A-F - Date time DT - Filter test
-	public static final String P1_REPO_DOCA_BMDATE = '01-01-2018'
-	public static final String P1_REPO_DOCA_DATERANGE = '02-01-2018'
-	public static final String P1_REPO_DOCA_BMDATETIME = '03-01-2018 01:00:00 AM'
-	public static final String P1_REPO_DOCA_DATETIMERANGE = '04-01-2018 01:00:00 AM'
-
-	public static final String P1_REPO_DOCB_BMDATE = '01-03-2018'
-	public static final String P1_REPO_DOCB_DATERANGE = '02-03-2018'
-	public static final String P1_REPO_DOCB_BMDATETIME = '03-03-2018 01:00:00 AM'
-	public static final String P1_REPO_DOCB_DATETIMERANGE = '04-03-2018 03:00:00 AM'
-
-	public static final String P1_REPO_DOCC_BMDATE = '01-05-2018'
-	public static final String P1_REPO_DOCC_DATERANGE = '02-05-2018'
-	public static final String P1_REPO_DOCC_BMDATETIME = '03-05-2018 01:00:00 AM'
-	public static final String P1_REPO_DOCC_DATETIMERANGE = '04-05-2018 03:00:00 AM'
-
-	public static final String P1_REPO_DOCD_BMDATE = '01-07-2018'
-	public static final String P1_REPO_DOCD_DATERANGE = '02-07-2018'
-	public static final String P1_REPO_DOCD_BMDATETIME = '03-07-2018 01:00:00 AM'
-	public static final String P1_REPO_DOCD_DATETIMERANGE = '04-07-2018 03:00:00 AM'
-
-	public static final String P1_REPO_DOCE_BMDATE = '01-09-2018'
-	public static final String P1_REPO_DOCE_DATERANGE = '02-09-2018'
-	public static final String P1_REPO_DOCE_BMDATETIME = '03-09-2018 01:00:00 AM'
-	public static final String P1_REPO_DOCE_DATETIMERANGE = '04-09-2018 03:00:00 AM'
-
-	public static final String P1_REPO_DOCF_BMDATE = ''
-	public static final String P1_REPO_DOCF_DATERANGE = ''
-	public static final String P1_REPO_DOCF_BMDATETIME = ''
-	public static final String P1_REPO_DOCF_DATETIMERANGE = ''
+//	//Document A-F - Date time DT - Filter test
+//	public static final String P1_REPO_DOCA_BMDATE = '01-01-2018'
+//	public static final String P1_REPO_DOCA_DATERANGE = '02-01-2018'
+//	public static final String P1_REPO_DOCA_BMDATETIME = '03-01-2018 01:00:00 AM'
+//	public static final String P1_REPO_DOCA_DATETIMERANGE = '04-01-2018 01:00:00 AM'
+//
+//	public static final String P1_REPO_DOCB_BMDATE = '01-03-2018'
+//	public static final String P1_REPO_DOCB_DATERANGE = '02-03-2018'
+//	public static final String P1_REPO_DOCB_BMDATETIME = '03-03-2018 01:00:00 AM'
+//	public static final String P1_REPO_DOCB_DATETIMERANGE = '04-03-2018 03:00:00 AM'
+//
+//	public static final String P1_REPO_DOCC_BMDATE = '01-05-2018'
+//	public static final String P1_REPO_DOCC_DATERANGE = '02-05-2018'
+//	public static final String P1_REPO_DOCC_BMDATETIME = '03-05-2018 01:00:00 AM'
+//	public static final String P1_REPO_DOCC_DATETIMERANGE = '04-05-2018 03:00:00 AM'
+//
+//	public static final String P1_REPO_DOCD_BMDATE = '01-07-2018'
+//	public static final String P1_REPO_DOCD_DATERANGE = '02-07-2018'
+//	public static final String P1_REPO_DOCD_BMDATETIME = '03-07-2018 01:00:00 AM'
+//	public static final String P1_REPO_DOCD_DATETIMERANGE = '04-07-2018 03:00:00 AM'
+//
+//	public static final String P1_REPO_DOCE_BMDATE = '01-09-2018'
+//	public static final String P1_REPO_DOCE_DATERANGE = '02-09-2018'
+//	public static final String P1_REPO_DOCE_BMDATETIME = '03-09-2018 01:00:00 AM'
+//	public static final String P1_REPO_DOCE_DATETIMERANGE = '04-09-2018 03:00:00 AM'
+//
+//	public static final String P1_REPO_DOCF_BMDATE = ''
+//	public static final String P1_REPO_DOCF_DATERANGE = ''
+//	public static final String P1_REPO_DOCF_BMDATETIME = ''
+//	public static final String P1_REPO_DOCF_DATETIMERANGE = ''
 
 	//Document for testing Folder configuration  (NO EDIT UNCHECKED)
 	//	//Document 0 - Loan Application Has document
@@ -451,11 +449,6 @@ public class Consts {
 
 	public static String P1_REPO014_SAVEDFILTER_RECORDCOUNT
 	public static String P1_REPO014_SAVEDFILTERNAME
-
-	public static final String P1_REPO_DATERANGEFROM_DATE_DOC4 = '31'
-	public static final String P1_REPO_DATERANGEFROM_MONTH_DOC4 = 'Aug'
-	public static final String P1_REPO_DATERANGEFROM_YEAR_DOC4 = '2018'
-	public static final String P1_REPO_DATERANGEFROM_DOC4 = '08-31-2018'
 
 	public static final String P1_MW084_STARTDATE = '01-01-2018'
 	public static final String P1_MW084_ENDDATE = '12-31-2025'
@@ -983,7 +976,7 @@ public class Consts {
 		P1_MW_DOC182.put(Fields.STRING_FIELD, 'chintan')
 		P1_MW_DOC182.put(Fields.DATE, '01-01-2019')
 	}
-	
+
 	//201 - 220 For Reload On Post back
 	public static final Map<Fields, String> P1_MW_DOC201
 	public static boolean FLAG_P1_MW_DOC201 = false
@@ -991,7 +984,7 @@ public class Consts {
 		P1_MW_DOC201 = new HashMap<Fields, String>()
 		P1_MW_DOC201.put(Fields.BM_STRING, 'Chintan Shah')
 	}
-	
+
 	//221 - 240 For Render All Field Types
 	public static final Map<Fields, String> P1_REPO_DOC221
 	public static boolean FLAG_P1_REPO_DOC221 = false
@@ -1001,4 +994,120 @@ public class Consts {
 		P1_REPO_DOC221.put(Fields.STRING_FIELD_ON_FOCUS, 'CShah')
 		P1_REPO_DOC221.put(Fields.DATE, '01-01-2020')
 	}
+	
+	//241 - 260 For Date Date Time DC / DT - Repository
+	public static final Map<Fields, String> P1_REPO_DOC241
+	public static boolean FLAG_P1_REPO_DOC241 = false
+	static {
+		P1_REPO_DOC241 = new HashMap<Fields, String>()
+		P1_REPO_DOC241.put(Fields.DATE, '01-01-2018')
+		P1_REPO_DOC241.put(Fields.DATE_RANGE, '02-01-2018')
+		P1_REPO_DOC241.put(Fields.DATE_TIME, '03-01-2018 01:00:00 AM')
+		P1_REPO_DOC241.put(Fields.DATE_TIME_RANGE, '03-01-2018 01:00:00 AM')
+	}
+
+	public static final Map<Fields, String> P1_REPO_DOC242
+	public static boolean FLAG_P1_REPO_DOC242 = false
+	static {
+		P1_REPO_DOC242 = new HashMap<Fields, String>()
+		P1_REPO_DOC242.put(Fields.DATE, '01-03-2018')
+		P1_REPO_DOC242.put(Fields.DATE_RANGE, '02-03-2018')
+		P1_REPO_DOC242.put(Fields.DATE_TIME, '03-03-2018 01:00:00 AM')
+		P1_REPO_DOC242.put(Fields.DATE_TIME_RANGE, '04-03-2018 03:00:00 AM')
+	}
+
+	public static final Map<Fields, String> P1_REPO_DOC243
+	public static boolean FLAG_P1_REPO_DOC243 = false
+	static {
+		P1_REPO_DOC243 = new HashMap<Fields, String>()
+		P1_REPO_DOC243.put(Fields.DATE, '01-05-2018')
+		P1_REPO_DOC243.put(Fields.DATE_RANGE, '02-05-2018')
+		P1_REPO_DOC243.put(Fields.DATE_TIME, '03-05-2018 01:00:00 AM')
+		P1_REPO_DOC243.put(Fields.DATE_TIME_RANGE, '04-05-2018 03:00:00 AM')
+	}
+
+	public static final Map<Fields, String> P1_REPO_DOC244
+	public static boolean FLAG_P1_REPO_DOC244 = false
+	static {
+		P1_REPO_DOC244 = new HashMap<Fields, String>()
+		P1_REPO_DOC244.put(Fields.DATE, '01-07-2018')
+		P1_REPO_DOC244.put(Fields.DATE_RANGE, '02-07-2018')
+		P1_REPO_DOC244.put(Fields.DATE_TIME, '03-07-2018 01:00:00 AM')
+		P1_REPO_DOC244.put(Fields.DATE_TIME_RANGE, '04-07-2018 03:00:00 AM')
+	}
+
+	public static final Map<Fields, String> P1_REPO_DOC245
+	public static boolean FLAG_P1_REPO_DOC245 = false
+	static {
+		P1_REPO_DOC245 = new HashMap<Fields, String>()
+		P1_REPO_DOC245.put(Fields.DATE, '01-09-2018')
+		P1_REPO_DOC245.put(Fields.DATE_RANGE, '02-09-2018')
+		P1_REPO_DOC245.put(Fields.DATE_TIME, '03-09-2018 01:00:00 AM')
+		P1_REPO_DOC245.put(Fields.DATE_TIME_RANGE, '04-09-2018 03:00:00 AM')
+	}
+
+	public static final Map<Fields, String> P1_REPO_DOC246
+	public static boolean FLAG_P1_REPO_DOC246 = false
+	static {
+		P1_REPO_DOC246 = new HashMap<Fields, String>()
+	}
+	
+	public static final Map<Fields, String> P1_REPO_DOC247
+	public static boolean FLAG_P1_REPO_DOC247 = false
+	static {
+		P1_REPO_DOC247 = new HashMap<Fields, String>()
+		P1_REPO_DOC247.put(Fields.DATE, '02-10-2019')
+		P1_REPO_DOC247.put(Fields.DATE_RANGE, '02-11-2019')
+		P1_REPO_DOC247.put(Fields.DATE_TIME, '02-13-2019 01:00:00 AM')
+		P1_REPO_DOC247.put(Fields.DATE_TIME_RANGE, '02-14-2019 03:00:00 AM')
+	}
+	public static final String P1_REPO_DOC247_FILTER_FROM = '02-09-2019' 
+	public static final String P1_REPO_DOC247_FILTER_TO = '02-13-2019'
+
+	public static final Map<Fields, String> P1_REPO_DOC248
+	public static boolean FLAG_P1_REPO_DOC248 = false
+	static {
+		P1_REPO_DOC248 = new HashMap<Fields, String>()
+		P1_REPO_DOC248.put(Fields.DATE_TIME_RANGE, '09-01-2018 12:00:00 AM')
+	}
+	public static final String P1_REPO_DOC248_DT_RANGE_FROM_DATE = '31'
+	public static final String P1_REPO_DOC248_DT_RANGE_FROM_MONTH = 'Aug'
+	public static final String P1_REPO_DOC248_DT_RANGE_FROM_YEAR = '2018'
+	public static final String P1_REPO_DOC248_DT_RANGE_FROM = '08-31-2018 12:00:00 AM'
+	
+	public static final String P1_REPO_DOC248_DT_RANGE_TO_DATE = '2'
+	public static final String P1_REPO_DOC248_DT_RANGE_TO_MONTH = 'Sep'
+	public static final String P1_REPO_DOC248_DT_RANGE_TO_YEAR = '2018'
+	public static final String P1_REPO_DOC248_DT_RANGE_TO = '09-02-2018 12:00:00 AM'
+
+	public static final Map<Fields, String> P1_REPO_DOC249
+	public static boolean FLAG_P1_REPO_DOC249 = false
+	static {
+		P1_REPO_DOC249 = new HashMap<Fields, String>()
+		P1_REPO_DOC249.put(Fields.DATE, '01-20-2018')
+		P1_REPO_DOC249.put(Fields.DATE_RANGE, '03-20-2018')
+		P1_REPO_DOC249.put(Fields.DATE_TIME, '06-20-2018 01:00:00 AM')
+		P1_REPO_DOC249.put(Fields.DATE_TIME_RANGE, '09-20-2018 03:00:00 AM')
+	}
+	
+	public static final String P1_REPO_DOC249_D_RANGE_FROM_DATE = '3'
+	public static final String P1_REPO_DOC249_D_RANGE_FROM_MONTH = 'Mar'
+	public static final String P1_REPO_DOC249_D_RANGE_FROM_YEAR = '2018'
+	public static final String P1_REPO_DOC249_D_RANGE_FROM = '03-20-2018'
+
+	
+	public static final Map<Fields, String> SMOKE_REPO_DOC241
+	public static boolean FLAG_SMOKE_REPO_DOC241 = false
+	static {
+		SMOKE_REPO_DOC241 = new HashMap<Fields, String>()
+		SMOKE_REPO_DOC241.put(Fields.DATE, '12-01-2018')
+		SMOKE_REPO_DOC241.put(Fields.DATE_RANGE, '12-05-2018')
+		SMOKE_REPO_DOC241.put(Fields.DATE_TIME, '12-10-2018 12:00:00 PM')
+		SMOKE_REPO_DOC241.put(Fields.DATE_TIME_RANGE, '12-10-2018 12:00:00 PM')
+	}
+	public static final String SMOKE_REPO_DOC241_FILTER_FROM = '12-03-2018'
+	public static final String SMOKE_REPO_DOC241_FILTER_TO = '12-07-2018'
+	public static String SMOKE_REPO006_SAVEDFILTER_RECORDCOUNT
+	public static String SMOKE_REPO006_SAVEDFILTERNAME
+
 }

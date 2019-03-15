@@ -38,7 +38,8 @@ public enum DocType {
 	RELOAD_ON_POSTBACK_NO_SPLIT_T("ReloadOnPostbackNoSplit T"),
 	RENDER_AS_LABEL("Render As Label"),
 	REFERENCE_OBJECT_INLINE_CONTENT_VIEW("Reference Object InlineContentView"),
-	RENDER_ALL_FIELD_TYPES("Render All Field Types")
+	RENDER_ALL_FIELD_TYPES("Render All Field Types"),
+	DATE_DATETIME_DT("Date DateTime DT")
 
 	private final String text
 

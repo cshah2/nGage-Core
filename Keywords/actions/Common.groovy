@@ -556,38 +556,38 @@ public class Common {
 		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 	}
 
-	@Keyword
-	def createDocument_DateTimeDT(String BM_Date, String DateRange, String BM_DateTime, String DateTimeRange) {
-
-		'Switch to main window'
-		WebUI.switchToWindowTitle('Savana nGage')
-
-		'Create a new BovDocTwoRow Document'
-		WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))
-		selectDocClassAndDocTypeForGlobalNew('Date Date Time DC', 'Date DateTime DT')
-		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'))
-
-		'Switch to new Window'
-		WebUI.switchToWindowTitle('Business Model WMI')
-		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
-
-		'Fill the details required'
-		setText_Date(findTestObject('Page_WMI_NEW/Date Date Time DT/input_BM Date'), BM_Date)
-		setText_Date(findTestObject('Page_WMI_NEW/Date Date Time DT/input_Date range'), DateRange)
-		setText_Date(findTestObject('Page_WMI_NEW/Date Date Time DT/input_BM DateTime'), BM_DateTime)
-		setText_Date(findTestObject('Page_WMI_NEW/Date Date Time DT/input_Date time range'), DateTimeRange)
-
-		'Save details and close'
-		WebUI.click(findTestObject('Page_WMI_NEW/Date Date Time DT/span_Save'))
-
-		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
-		waitForFrameToLoad(findTestObject('Page_WMI/Date Date Time DT/iframe_ContentPlaceHolder1'))
-		new Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI/Date Date Time DT/span_Close Window'), GlobalVariable.G_LongTimeout)
-
-		'Switch to main window and close'
-		WebUI.switchToWindowTitle('Savana nGage')
-		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/span_ui-button-icon-primary ui'))
-	}
+	//	@Keyword
+	//	def createDocument_DateTimeDT(String BM_Date, String DateRange, String BM_DateTime, String DateTimeRange) {
+	//
+	//		'Switch to main window'
+	//		WebUI.switchToWindowTitle('Savana nGage')
+	//
+	//		'Create a new BovDocTwoRow Document'
+	//		WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))
+	//		selectDocClassAndDocTypeForGlobalNew('Date Date Time DC', 'Date DateTime DT')
+	//		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'))
+	//
+	//		'Switch to new Window'
+	//		WebUI.switchToWindowTitle('Business Model WMI')
+	//		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+	//
+	//		'Fill the details required'
+	//		setText_Date(findTestObject('Page_WMI_NEW/Date Date Time DT/input_BM Date'), BM_Date)
+	//		setText_Date(findTestObject('Page_WMI_NEW/Date Date Time DT/input_Date range'), DateRange)
+	//		setText_Date(findTestObject('Page_WMI_NEW/Date Date Time DT/input_BM DateTime'), BM_DateTime)
+	//		setText_Date(findTestObject('Page_WMI_NEW/Date Date Time DT/input_Date time range'), DateTimeRange)
+	//
+	//		'Save details and close'
+	//		WebUI.click(findTestObject('Page_WMI_NEW/Date Date Time DT/span_Save'))
+	//
+	//		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+	//		waitForFrameToLoad(findTestObject('Page_WMI/Date Date Time DT/iframe_ContentPlaceHolder1'))
+	//		new Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI/Date Date Time DT/span_Close Window'), GlobalVariable.G_LongTimeout)
+	//
+	//		'Switch to main window and close'
+	//		WebUI.switchToWindowTitle('Savana nGage')
+	//		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/span_ui-button-icon-primary ui'))
+	//	}
 
 	//	@Keyword
 	//	def createDocument_RequiredFieldDT(String BM_Text, String BM_String_Required, String BM_int, String DateTime_Required, String Date_Required) {
@@ -1102,48 +1102,48 @@ public class Common {
 
 	}
 
-//	@Keyword
-//	def createDocument_RenderAllField(String integerField, String stringFieldOnFocusAttr, String stringFieldLookup,
-//			String currencyField, String dateField, String floatField, String smallIntField, String textField,
-//			String dateTimeField, String stringField, String extNameField) {
-//
-//		'Switch to main window'
-//		WebUI.switchToWindowTitle('Savana nGage')
-//
-//		'Create a new BovDocTwoRow Document'
-//		WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))
-//		selectDocClassAndDocTypeForGlobalNew('Master Object Feature', 'Render All Field Types')
-//		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'))
-//
-//		'Switch to new Window'
-//		WebUI.switchToWindowTitle('(Doc ID: NEW )')
-//		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
-//
-//		'Fill the details required'
-//		WebUI.setText(findTestObject('Page_WMI_NEW/Master_Object/input_Integer Field'), integerField)	//Integer field
-//		WebUI.setText(findTestObject('Page_WMI_NEW/Master_Object/input_String Field (with onfocussetcursorattheend attribute)'), stringFieldOnFocusAttr)	//String Field (with onfocussetcursorattheend attribute)
-//		WebUI.selectOptionByLabel(findTestObject('Page_WMI_NEW/Master_Object/select_String Field With Lookup'), stringFieldLookup, false)	//String Field With Lookup
-//		WebUI.setText(findTestObject('Page_WMI_NEW/Master_Object/input_Currency Field'), currencyField)	//Currency Field
-//		WebUI.sendKeys(findTestObject('Page_WMI_NEW/Master_Object/input_Currency Field'), Keys.chord(Keys.TAB))
-//		//WebUI.delay(2)
-//		WebUtil.delay(100)
-//		setText_Date(findTestObject('Page_WMI_NEW/Master_Object/input_Date Field'), dateField)
-//		WebUI.setText(findTestObject('Page_WMI_NEW/Master_Object/input_Float Field (Precision3minval-10maxval-100)'), floatField)	//Float Field (Precision:3,minval-10,maxval-100)
-//		WebUI.setText(findTestObject('Page_WMI_NEW/Master_Object/input_Small Integer Field(minval-10maxval-100)'), smallIntField)	//Small Integer Field(minval-10,maxval-100)
-//		WebUI.setText(findTestObject('Page_WMI_NEW/Master_Object/input_Text Field(with onfocusselectall attribute)'), textField)	//Text Field(with onfocusselectall attribute)
-//		setText_Date(findTestObject('Page_WMI_NEW/Master_Object/input_DateTime Field'), dateTimeField)	//DateTime Field
-//		WebUI.setText(findTestObject('Page_WMI_NEW/Master_Object/input_String Filed'), stringField)	//String Filed
-//		WebUI.setText(findTestObject('Page_WMI_NEW/Master_Object/input_Ext Name Field'), extNameField)	//Ext Name Field
-//
-//		'Save details and close'
-//		WebUI.click(findTestObject('Page_WMI_NEW/Master_Object/span_Save'))
-//		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
-//		new Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI_NEW/Master_Object/span_Close Window'),GlobalVariable.G_LongTimeout)
-//
-//		'Switch to main window and close'
-//		WebUI.switchToWindowTitle('Savana nGage')
-//		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/span_ui-button-icon-primary ui'))
-//	}
+	//	@Keyword
+	//	def createDocument_RenderAllField(String integerField, String stringFieldOnFocusAttr, String stringFieldLookup,
+	//			String currencyField, String dateField, String floatField, String smallIntField, String textField,
+	//			String dateTimeField, String stringField, String extNameField) {
+	//
+	//		'Switch to main window'
+	//		WebUI.switchToWindowTitle('Savana nGage')
+	//
+	//		'Create a new BovDocTwoRow Document'
+	//		WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))
+	//		selectDocClassAndDocTypeForGlobalNew('Master Object Feature', 'Render All Field Types')
+	//		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'))
+	//
+	//		'Switch to new Window'
+	//		WebUI.switchToWindowTitle('(Doc ID: NEW )')
+	//		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+	//
+	//		'Fill the details required'
+	//		WebUI.setText(findTestObject('Page_WMI_NEW/Master_Object/input_Integer Field'), integerField)	//Integer field
+	//		WebUI.setText(findTestObject('Page_WMI_NEW/Master_Object/input_String Field (with onfocussetcursorattheend attribute)'), stringFieldOnFocusAttr)	//String Field (with onfocussetcursorattheend attribute)
+	//		WebUI.selectOptionByLabel(findTestObject('Page_WMI_NEW/Master_Object/select_String Field With Lookup'), stringFieldLookup, false)	//String Field With Lookup
+	//		WebUI.setText(findTestObject('Page_WMI_NEW/Master_Object/input_Currency Field'), currencyField)	//Currency Field
+	//		WebUI.sendKeys(findTestObject('Page_WMI_NEW/Master_Object/input_Currency Field'), Keys.chord(Keys.TAB))
+	//		//WebUI.delay(2)
+	//		WebUtil.delay(100)
+	//		setText_Date(findTestObject('Page_WMI_NEW/Master_Object/input_Date Field'), dateField)
+	//		WebUI.setText(findTestObject('Page_WMI_NEW/Master_Object/input_Float Field (Precision3minval-10maxval-100)'), floatField)	//Float Field (Precision:3,minval-10,maxval-100)
+	//		WebUI.setText(findTestObject('Page_WMI_NEW/Master_Object/input_Small Integer Field(minval-10maxval-100)'), smallIntField)	//Small Integer Field(minval-10,maxval-100)
+	//		WebUI.setText(findTestObject('Page_WMI_NEW/Master_Object/input_Text Field(with onfocusselectall attribute)'), textField)	//Text Field(with onfocusselectall attribute)
+	//		setText_Date(findTestObject('Page_WMI_NEW/Master_Object/input_DateTime Field'), dateTimeField)	//DateTime Field
+	//		WebUI.setText(findTestObject('Page_WMI_NEW/Master_Object/input_String Filed'), stringField)	//String Filed
+	//		WebUI.setText(findTestObject('Page_WMI_NEW/Master_Object/input_Ext Name Field'), extNameField)	//Ext Name Field
+	//
+	//		'Save details and close'
+	//		WebUI.click(findTestObject('Page_WMI_NEW/Master_Object/span_Save'))
+	//		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+	//		new Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI_NEW/Master_Object/span_Close Window'),GlobalVariable.G_LongTimeout)
+	//
+	//		'Switch to main window and close'
+	//		WebUI.switchToWindowTitle('Savana nGage')
+	//		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/span_ui-button-icon-primary ui'))
+	//	}
 
 	//	@Keyword
 	//	def waitForImageToRender(TestObject to) {
@@ -1673,36 +1673,30 @@ public class Common {
 
 	@Keyword
 	def createDateFilterDataRepository() {
-		if(!FLAG_P1_DOCA_REPO) {
-			createDocument_DateTimeDT(P1_REPO_DOCA_BMDATE, P1_REPO_DOCA_DATERANGE, P1_REPO_DOCA_BMDATETIME, P1_REPO_DOCA_DATETIMERANGE)
-			FLAG_P1_DOCA_REPO = true
+		if(!FLAG_P1_REPO_DOC241) {
+			new Data().create(DocClass.DATE_DATETIME_DC, DocType.DATE_DATETIME_DT, P1_REPO_DOC241)
+			FLAG_P1_REPO_DOC241 = true
 		}
-
-		if(!FLAG_P1_DOCB_REPO) {
-			createDocument_DateTimeDT(P1_REPO_DOCB_BMDATE, P1_REPO_DOCB_DATERANGE, P1_REPO_DOCB_BMDATETIME, P1_REPO_DOCB_DATETIMERANGE)
-			FLAG_P1_DOCB_REPO = true
+		if(!FLAG_P1_REPO_DOC242) {
+			new Data().create(DocClass.DATE_DATETIME_DC, DocType.DATE_DATETIME_DT, P1_REPO_DOC242)
+			FLAG_P1_REPO_DOC242 = true
 		}
-
-		if(!FLAG_P1_DOCC_REPO) {
-			createDocument_DateTimeDT(P1_REPO_DOCC_BMDATE, P1_REPO_DOCC_DATERANGE, P1_REPO_DOCC_BMDATETIME, P1_REPO_DOCC_DATETIMERANGE)
-			FLAG_P1_DOCC_REPO = true
+		if(!FLAG_P1_REPO_DOC243) {
+			new Data().create(DocClass.DATE_DATETIME_DC, DocType.DATE_DATETIME_DT, P1_REPO_DOC243)
+			FLAG_P1_REPO_DOC243 = true
 		}
-
-		if(!FLAG_P1_DOCD_REPO) {
-			createDocument_DateTimeDT(P1_REPO_DOCD_BMDATE, P1_REPO_DOCD_DATERANGE, P1_REPO_DOCD_BMDATETIME, P1_REPO_DOCD_DATETIMERANGE)
-			FLAG_P1_DOCD_REPO = true
+		if(!FLAG_P1_REPO_DOC244) {
+			new Data().create(DocClass.DATE_DATETIME_DC, DocType.DATE_DATETIME_DT, P1_REPO_DOC244)
+			FLAG_P1_REPO_DOC244 = true
 		}
-
-		if(!FLAG_P1_DOCE_REPO) {
-			createDocument_DateTimeDT(P1_REPO_DOCE_BMDATE, P1_REPO_DOCE_DATERANGE, P1_REPO_DOCE_BMDATETIME, P1_REPO_DOCE_DATETIMERANGE)
-			FLAG_P1_DOCE_REPO = true
+		if(!FLAG_P1_REPO_DOC245) {
+			new Data().create(DocClass.DATE_DATETIME_DC, DocType.DATE_DATETIME_DT, P1_REPO_DOC245)
+			FLAG_P1_REPO_DOC245 = true
 		}
-
-		if(!FLAG_P1_DOCF_REPO) {
-			createDocument_DateTimeDT(P1_REPO_DOCF_BMDATE, P1_REPO_DOCF_DATERANGE, P1_REPO_DOCF_BMDATETIME, P1_REPO_DOCF_DATETIMERANGE)
-			FLAG_P1_DOCF_REPO = true
+		if(!FLAG_P1_REPO_DOC246) {
+			new Data().create(DocClass.DATE_DATETIME_DC, DocType.DATE_DATETIME_DT, P1_REPO_DOC246)
+			FLAG_P1_REPO_DOC246 = true
 		}
-
 	}
 
 	@Keyword

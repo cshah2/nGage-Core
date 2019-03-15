@@ -11,6 +11,9 @@ import com.kms.katalon.core.testdata.TestData as TestData
 import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+
+import common.DocClass
+import common.DocType
 import internal.GlobalVariable as GlobalVariable
 import static utils.Consts.*
 
@@ -18,8 +21,8 @@ import static utils.Consts.*
 CustomKeywords.'actions.Common.login'()
 
 'Create new Document'
-CustomKeywords.'actions.Common.createDocument_DateTimeDT'(P1_REPO_BMDATE_DOC4, P1_REPO_DATERANGE_DOC4, P1_REPO_BMDATETIME_DOC4, P1_REPO_DATETIMERANGE_DOC4)
-CustomKeywords.'actions.Common.createDocument_DateTimeDT'(P1_REPO_BMDATE_DOC5, P1_REPO_DATERANGE_DOC5, P1_REPO_BMDATETIME_DOC5, P1_REPO_DATETIMERANGE_DOC5)
+CustomKeywords.'actions.Data.create'(DocClass.DATE_DATETIME_DC, DocType.DATE_DATETIME_DT, P1_REPO_DOC248)
+CustomKeywords.'actions.Data.create'(DocClass.DATE_DATETIME_DC, DocType.DATE_DATETIME_DT, P1_REPO_DOC249)
 
 'Click on Repository Menu'
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/h3_Repository Menu'))
@@ -38,13 +41,13 @@ CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Da
 WebUI.selectOptionByLabel(findTestObject('Page_nGage_Dashboard/Repository/select_DateTimeRange'), '=', false)
 
 'Enter date in DateTime field'
-CustomKeywords.'actions.Calender.selectDateTime'(P1_REPO_DATETIMERANGEFROM_DATE_DOC4, P1_REPO_DATETIMERANGEFROM_MONTH_DOC4, P1_REPO_DATETIMERANGEFROM_YEAR_DOC4, findTestObject('Page_nGage_Dashboard/Repository/calender_DateTimeRange_From'))
+CustomKeywords.'actions.Calender.selectDateTime'(P1_REPO_DOC248_DT_RANGE_FROM_DATE, P1_REPO_DOC248_DT_RANGE_FROM_MONTH, P1_REPO_DOC248_DT_RANGE_FROM_YEAR, findTestObject('Page_nGage_Dashboard/Repository/calender_DateTimeRange_From'))
 String datetimeFrom = WebUI.getAttribute(findTestObject('Page_nGage_Dashboard/Repository/input_DateTimeRange_From'), 'value').toUpperCase()
-WebUI.verifyMatch(datetimeFrom, P1_REPO_DATETIMERANGEFROM_DOC4, false)
+WebUI.verifyMatch(datetimeFrom, P1_REPO_DOC248_DT_RANGE_FROM, false)
 
-CustomKeywords.'actions.Calender.selectDateTime'(P1_REPO_DATETIMERANGETO_DATE_DOC4, P1_REPO_DATETIMERANGETO_MONTH_DOC4, P1_REPO_DATETIMERANGETO_YEAR_DOC4, findTestObject('Page_nGage_Dashboard/Repository/calender_DateTimeRange_To'))
+CustomKeywords.'actions.Calender.selectDateTime'(P1_REPO_DOC248_DT_RANGE_TO_DATE, P1_REPO_DOC248_DT_RANGE_TO_MONTH, P1_REPO_DOC248_DT_RANGE_TO_YEAR, findTestObject('Page_nGage_Dashboard/Repository/calender_DateTimeRange_To'))
 String datetimeTo = WebUI.getAttribute(findTestObject('Page_nGage_Dashboard/Repository/input_DateTimeRange_To'), 'value').toUpperCase()
-WebUI.verifyMatch(datetimeTo, P1_REPO_DATETIMERANGETO_DOC4, false)
+WebUI.verifyMatch(datetimeTo, P1_REPO_DOC248_DT_RANGE_TO, false)
 
 'Click on Search button'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Repository/input_btnSearch'))
@@ -56,4 +59,4 @@ CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dash
 
 'Get the cell value to verify date format'
 int colNo_DateTimeRange = CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Page_nGage_Dashboard/Repository/table_Header_SearchResults'), 'Date time range')
-CustomKeywords.'actions.Table.verifyDateTimeFilter'(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/table_SearchResults'), colNo_DateTimeRange, P1_REPO_DATETIMERANGEFROM_DOC4, P1_REPO_DATETIMERANGETO_DOC4, 'between')
+CustomKeywords.'actions.Table.verifyDateTimeFilter'(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/table_SearchResults'), colNo_DateTimeRange, P1_REPO_DOC248_DT_RANGE_FROM, P1_REPO_DOC248_DT_RANGE_TO, 'between')

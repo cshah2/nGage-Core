@@ -11,6 +11,10 @@ import com.kms.katalon.core.testdata.TestData as TestData
 import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+
+import common.DocClass
+import common.DocType
+import common.Fields
 import internal.GlobalVariable as GlobalVariable
 import static utils.DateUtil.*
 import static utils.Consts.*
@@ -18,16 +22,16 @@ import static utils.Consts.*
 'Login into application'
 CustomKeywords.'actions.Common.login'()
 
-String BM_Date = P1_REPO_BMDATE_DOC0//Level1
-String DateRange = P1_REPO_DATERANGE_DOC0 // Level2
-String BM_DateTime = P1_REPO_BMDATETIME_DOC0 //Level 3
-String DateTimeRange = P1_REPO_DATETIMERANGE_DOC0 //Level 4
-
-if(!FLAG_P1_REPO_DOC0) {
-	'Create new Document'
-	CustomKeywords.'actions.Common.createDocument_DateTimeDT'(BM_Date, DateRange, BM_DateTime, DateTimeRange)
-	FLAG_P1_REPO_DOC0 = true
+'Create document if not present'
+if(!FLAG_P1_REPO_DOC247) {
+	CustomKeywords.'actions.Data.create'(DocClass.DATE_DATETIME_DC, DocType.DATE_DATETIME_DT, P1_REPO_DOC247)
+	FLAG_P1_REPO_DOC247 = true
 }
+
+String BM_Date = P1_REPO_DOC247.get(Fields.DATE)					//Level 1
+String DateRange = P1_REPO_DOC247.get(Fields.DATE_RANGE) 			//Level 2
+String BM_DateTime = P1_REPO_DOC247.get(Fields.DATE_TIME)			//Level 3
+String DateTimeRange = P1_REPO_DOC247.get(Fields.DATE_TIME_RANGE)	//Level 4
 
 'Click on Repository Menu'
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/h3_Repository Menu'))

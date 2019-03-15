@@ -16,6 +16,10 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WSBuiltInKeywords
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUiBuiltInKeywords
+
+import common.DocClass
+import common.DocType
+
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 import static utils.Consts.*
@@ -23,9 +27,10 @@ import static utils.Consts.*
 'Login Into Application'
 CustomKeywords.'actions.Common.login'()
 
-'Create Docuement if document is not created in previous test case SMOKE_REPO003'
-if(!FLAG_SMOKE_REPO003) {
-	CustomKeywords.'actions.Common.createDocument_DateTimeDT'(SMOKE_REPO_BMDATE_DOC1, SMOKE_REPO_DATERANGE_DOC1, SMOKE_REPO_BMDATETIME_DOC1, SMOKE_REPO_DATETIMERANGE_DOC1)
+'Create document'
+if(!FLAG_SMOKE_REPO_DOC241) {
+	CustomKeywords.'actions.Data.create'(DocClass.DATE_DATETIME_DC, DocType.DATE_DATETIME_DT, SMOKE_REPO_DOC241)
+	FLAG_SMOKE_REPO_DOC241 = true
 }
 
 'Expand Repository Menu'
@@ -37,7 +42,7 @@ WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 CustomKeywords.'actions.Common.selectRepositoryAndSearchFor'('Date n Date time EDM', 'Date n Date time search class')
 
 'Enter Start Date and End Date values'
-String filterStartDate = SMOKE_REPO_DATERANGE_DOC1_START_FILTER
+String filterStartDate = SMOKE_REPO_DOC241_FILTER_FROM
 CustomKeywords.'actions.Common.setText_Date'(findTestObject('Page_nGage_Dashboard/Repository/input_DateRange_From'), filterStartDate)
 
 'Click on Search button'

@@ -32,8 +32,8 @@ public enum Fields {
 	AMOUNT,						//Vertical Menu Wizard
 	BM_TEXT,					//Required Field DT
 	BM_INT,						//Required Field DT
-	DATE_TIME,					//Required Field DT, Render All Field Types
-	DATE,						//Required Field DT, Event For Required Field, Render All Field Types
+	DATE_TIME,					//Required Field DT, Render All Field Types, Date DateTime DT
+	DATE,						//Required Field DT, Event For Required Field, Render All Field Types, Date DateTime DT
 	DESCRIPTION,				//Route Advance
 	TO_EMAIL,					//Correspondece
 	TEMPLATE,					//Correspondece
@@ -45,6 +45,8 @@ public enum Fields {
 	FLOAT_FIELD,				//Render All Field Types
 	SMALL_INT_FIELD,			//Render All Field Types
 	TEXT_FIELD,					//Render All Field Types
-	EXT_NAME_FIELD				//Render All Field Types
+	EXT_NAME_FIELD,				//Render All Field Types
+	DATE_RANGE,					//Date DateTime DT
+	DATE_TIME_RANGE				//Date DateTime DT
 
 }

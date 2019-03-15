@@ -16,6 +16,11 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WSBuiltInKeywords
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUiBuiltInKeywords
+
+import common.DocClass
+import common.DocType
+import common.Fields
+
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 import static utils.DateUtil.*
@@ -24,16 +29,16 @@ import static utils.Consts.*
 'Login Into Application'
 CustomKeywords.'actions.Common.login'()
 
-String BM_Date = P1_REPO_BMDATE_DOC0//Level1
-String DateRange = P1_REPO_DATERANGE_DOC0 // Level2
-String BM_DateTime = P1_REPO_BMDATETIME_DOC0 //Level 3
-String DateTimeRange = P1_REPO_DATETIMERANGE_DOC0 //Level 4
-
-if(!FLAG_P1_REPO_DOC0) {
-	'Create new Document'
-	CustomKeywords.'actions.Common.createDocument_DateTimeDT'(BM_Date, DateRange, BM_DateTime, DateTimeRange)
-	FLAG_P1_REPO_DOC0 = true
+'Create document if not present'
+if(!FLAG_P1_REPO_DOC247) {
+	CustomKeywords.'actions.Data.create'(DocClass.DATE_DATETIME_DC, DocType.DATE_DATETIME_DT, P1_REPO_DOC247)
+	FLAG_P1_REPO_DOC247 = true
 }
+
+String BM_Date = P1_REPO_DOC247.get(Fields.DATE)					//Level 1
+String DateRange = P1_REPO_DOC247.get(Fields.DATE_RANGE) 			//Level 2
+String BM_DateTime = P1_REPO_DOC247.get(Fields.DATE_TIME)			//Level 3
+String DateTimeRange = P1_REPO_DOC247.get(Fields.DATE_TIME_RANGE)	//Level 4
 
 'Expand Repository Menu'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Repository/h3_Repository Menu'))
@@ -44,7 +49,7 @@ WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 CustomKeywords.'actions.Common.selectRepositoryAndSearchFor'('Date n Date time EDM', 'Date n Date time search class')
 
 'Enter End Date values'
-String filterEndDate = P1_REPO_DATERANGE_DOC0_FILTER_TO
+String filterEndDate = P1_REPO_DOC247_FILTER_TO
 CustomKeywords.'actions.Common.setText_Date'(findTestObject('Page_nGage_Dashboard/Repository/input_DateRange_To'), filterEndDate)
 
 'Click on Search button'

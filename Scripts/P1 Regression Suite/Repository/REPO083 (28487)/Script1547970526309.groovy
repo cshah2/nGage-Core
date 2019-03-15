@@ -11,6 +11,8 @@ import com.kms.katalon.core.testdata.TestData as TestData
 import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+
+import common.Fields
 import internal.GlobalVariable as GlobalVariable
 import static utils.DateUtil.*
 import static utils.Consts.*
@@ -26,10 +28,10 @@ WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/h3
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
-String tree_BM_Date = P1_REPO_DOCA_BMDATE
-String tree_DateRange = P1_REPO_DOCA_DATERANGE
-String tree_BM_DateTime = convert(P1_REPO_DOCA_BMDATETIME, FORMAT_DATETIME, FORMAT_DATE)
-String tree_DateTimeRange = convert(P1_REPO_DOCA_DATETIMERANGE, FORMAT_DATETIME, FORMAT_DATE)
+String tree_BM_Date = P1_REPO_DOC241.get(Fields.DATE)
+String tree_DateRange = P1_REPO_DOC241.get(Fields.DATE_RANGE)
+String tree_BM_DateTime = convert(P1_REPO_DOC241.get(Fields.DATE_TIME), FORMAT_DATETIME, FORMAT_DATE)
+String tree_DateTimeRange = convert(P1_REPO_DOC241.get(Fields.DATE_TIME_RANGE), FORMAT_DATETIME, FORMAT_DATE)
 
 CustomKeywords.'actions.MenuBar.verifyAllActivityNamesAreValidDate'('REPO', FORMAT_DATE, 'Date n Date time EDM','Date n Date time search class')
 CustomKeywords.'actions.MenuBar.verifyAllActivityNamesAreValidDate'('REPO', FORMAT_DATE, 'Date n Date time EDM','Date n Date time search class', tree_BM_Date)

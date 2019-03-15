@@ -11,6 +11,8 @@ import com.kms.katalon.core.testdata.TestData as TestData
 import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+
+import common.Fields
 import internal.GlobalVariable as GlobalVariable
 import static utils.Consts.*
 import static utils.DateUtil.*
@@ -26,7 +28,8 @@ WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/h3
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
-String filter_BM_DateTime = convert(P1_REPO_DOCC_BMDATETIME, FORMAT_DATETIME, FORMAT_DATE)
+String bmDateTime = P1_REPO_DOC243.get(Fields.DATE_TIME)
+String filter_BM_DateTime = convert(bmDateTime, FORMAT_DATETIME, FORMAT_DATE)
 
 'Select repository and search for value in drop down'
 CustomKeywords.'actions.Common.selectRepositoryAndSearchFor'('Date n Date time EDM', 'Date n Date time search class')
@@ -52,5 +55,5 @@ CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dash
 'Get the cell value to verify date format'
 int colNo_BMDateTime = CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Page_nGage_Dashboard/Repository/table_Header_SearchResults'), 'BM DateTime')
 CustomKeywords.'actions.Table.verifyDateFilter'(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/table_SearchResults'), colNo_BMDateTime, filter_BM_DateTime, '', '<')
-CustomKeywords.'actions.Table.verifyRecordPresentInColumn'(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/table_SearchResults'), colNo_BMDateTime, P1_REPO_DOCA_BMDATETIME)
-CustomKeywords.'actions.Table.verifyRecordPresentInColumn'(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/table_SearchResults'), colNo_BMDateTime, P1_REPO_DOCB_BMDATETIME)
+CustomKeywords.'actions.Table.verifyRecordPresentInColumn'(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/table_SearchResults'), colNo_BMDateTime, P1_REPO_DOC241.get(Fields.DATE_TIME))
+CustomKeywords.'actions.Table.verifyRecordPresentInColumn'(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/table_SearchResults'), colNo_BMDateTime, P1_REPO_DOC242.get(Fields.DATE_TIME))

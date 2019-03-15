@@ -34,7 +34,8 @@ public enum DocClass {
 	EVENT_FOR_REQUIRED_FIELD("Event for Req Fld"),
 	DO_NOT_RELOAD_ON_POSTBACK("DoNotReloadOnPostback"),
 	MASTER_OBJECT_FEATURE("Master Object Feature"),
-	REFERENCE_OBJECT_FEATURE("Reference Object Feature")
+	REFERENCE_OBJECT_FEATURE("Reference Object Feature"),
+	DATE_DATETIME_DC("Date Date Time DC")
 
 	private final String text
 

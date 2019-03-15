@@ -120,9 +120,13 @@ public class Data {
 			case DocType.REFERENCE_OBJECT_INLINE_CONTENT_VIEW:
 				referenceObjectInlineContentView(data)
 				break
-				
+
 			case DocType.RENDER_ALL_FIELD_TYPES:
 				renderAllFieldTypes(data)
+				break
+
+			case DocType.DATE_DATETIME_DT:
+				dateDateTimeDT(data)
 				break
 
 			default:
@@ -504,9 +508,9 @@ public class Data {
 		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 		new Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI_NEW/Master_Object_Feature/Render_As_Label/span_Close Window'), GlobalVariable.G_LongTimeout)
 	}
-	
+
 	private void renderAllFieldTypes(Map<Fields, String> data) {
-		
+
 		//Get Data from Map
 		String integerField = data.get(Fields.INTEGER_FIELD)
 		String stringFieldOnFocusAttr = data.get(Fields.STRING_FIELD_ON_FOCUS)
@@ -519,7 +523,7 @@ public class Data {
 		String dateTimeField = data.get(Fields.DATE_TIME)
 		String stringField = data.get(Fields.STRING_FIELD)
 		String extNameField = data.get(Fields.EXT_NAME_FIELD)
-		
+
 		//Fill Form
 		if(StringUtils.isNotBlank(integerField))
 			WebUI.setText(findTestObject('Page_WMI_NEW/Master_Object/input_Integer Field'), integerField)
@@ -551,5 +555,30 @@ public class Data {
 		WebUI.click(findTestObject('Page_WMI_NEW/Master_Object/span_Save'))
 		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 		new Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI_NEW/Master_Object/span_Close Window'),GlobalVariable.G_LongTimeout)
+	}
+	
+	private void dateDateTimeDT(Map<Fields, String> data) {
+		
+		//Get Data from Map
+		String date = data.get(Fields.DATE)
+		String dateRange = data.get(Fields.DATE_RANGE)
+		String dateTime = data.get(Fields.DATE_TIME)
+		String dateTimeRange = data.get(Fields.DATE_TIME_RANGE)
+		
+		//Fill Form
+		if(StringUtils.isNotBlank(date))
+			new Common().setText_Date(findTestObject('Page_WMI_NEW/Date Date Time DT/input_BM Date'), date)
+		if(StringUtils.isNotBlank(dateRange))
+			new Common().setText_Date(findTestObject('Page_WMI_NEW/Date Date Time DT/input_Date range'), dateRange)
+		if(StringUtils.isNotBlank(dateTime))
+			new Common().setText_Date(findTestObject('Page_WMI_NEW/Date Date Time DT/input_BM DateTime'), dateTime)
+		if(StringUtils.isNotBlank(dateTimeRange))
+			new Common().setText_Date(findTestObject('Page_WMI_NEW/Date Date Time DT/input_Date time range'), dateTimeRange)
+		
+		//Save details and close
+		WebUI.click(findTestObject('Page_WMI_NEW/Date Date Time DT/span_Save'))
+		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+		new Common().waitForFrameToLoad(findTestObject('Page_WMI/Date Date Time DT/iframe_ContentPlaceHolder1'))
+		new Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI/Date Date Time DT/span_Close Window'), GlobalVariable.G_LongTimeout)
 	}
 }
