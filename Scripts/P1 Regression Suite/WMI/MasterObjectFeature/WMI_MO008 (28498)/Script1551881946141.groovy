@@ -42,6 +42,7 @@ WebUI.sendKeys(findTestObject('Page_WMI_NEW/Master_Object_Feature/Render_As_Html
 
 'Click Save'
 WebUI.click(findTestObject('Page_WMI_NEW/Master_Object_Feature/Render_As_HtmlEdit/span_Save'))
+WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 
 'Click close window'
 CustomKeywords.'actions.Window.clickElementAndWaitForWindowClose'(findTestObject('Page_WMI_NEW/Master_Object_Feature/Render_As_HtmlEdit/span_Close Window'), GlobalVariable.G_LongTimeout)
