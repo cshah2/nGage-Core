@@ -11,6 +11,8 @@ import com.kms.katalon.core.testdata.TestData as TestData
 import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+
+import common.Fields
 import internal.GlobalVariable as GlobalVariable
 import static utils.Consts.*
 import static utils.DateUtil.*
@@ -26,9 +28,9 @@ WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_My Work Left Menu'))
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_iframe_105'))
 
-String treeDate = convert(P1_MW_DOCL_STARTDATETIME, FORMAT_DATETIME, FORMAT_DATE_TREE)
-String filterDate1 = convert(P1_MW_DOCL_STARTDATETIME, FORMAT_DATETIME, FORMAT_DATE)
-String filterDate2 = convert(P1_MW_DOCM_STARTDATETIME, FORMAT_DATETIME, FORMAT_DATE)
+String treeDate = convert(P1_MW_DOC301.get(Fields.START_DATE_TIME), FORMAT_DATETIME, FORMAT_DATE_TREE)
+String filterDate1 = convert(P1_MW_DOC301.get(Fields.START_DATE_TIME), FORMAT_DATETIME, FORMAT_DATE)
+String filterDate2 = convert(P1_MW_DOC302.get(Fields.START_DATE_TIME), FORMAT_DATETIME, FORMAT_DATE)
 
 'Expand Processes by Click on the Expand Icon and Verify Foldered data displayed (For Document 1)'
 CustomKeywords.'actions.MenuBar.clickTreeMenu'('My_Work','Processes','Datetimerequired','Datetimerequired', treeDate)

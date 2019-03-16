@@ -11,6 +11,9 @@ import com.kms.katalon.core.testdata.TestData as TestData
 import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+
+import common.DocClass
+import common.DocType
 import internal.GlobalVariable as GlobalVariable
 import static utils.Consts.*
 
@@ -18,14 +21,13 @@ import static utils.Consts.*
 CustomKeywords.'actions.Common.login'()
 
 'Create two document in Date Range Required and Date Time Range Required activity'
-if(!FLAG_P1_MW_DOCF) {
-	CustomKeywords.'actions.Common.createDocument_MyWorkDateTime'(DC_DATERANGEREQUIRED, DT_DATERANGEREQUIRED, P1_MW_DOCF_STARTDATE, P1_MW_DOCF_ENDDATE, P1_MW_DOCF_STARTDATETIME, P1_MW_DOCF_ENDDATETIME, "")
-	FLAG_P1_MW_DOCF = true
+if(!FLAG_P1_MW_DOC281) {
+	CustomKeywords.'actions.Data.create'(DocClass.DATE_RANGE_REQUIRED, DocType.DATE_RANGE_REQUIRED, P1_MW_DOC281)
+	FLAG_P1_MW_DOC281 = true
 }
-
-if(!FLAG_P1_MW_DOCQ) {
-	CustomKeywords.'actions.Common.createDocument_MyWorkDateTime'(DC_DATETIMERANGEREQUIRED, DT_DATETIMERANGEREQUIRED, P1_MW_DOCQ_STARTDATE, P1_MW_DOCQ_ENDDATE, P1_MW_DOCQ_STARTDATETIME, P1_MW_DOCQ_ENDDATETIME, "")
-	FLAG_P1_MW_DOCQ = true
+if(!FLAG_P1_MW_DOC321) {
+	CustomKeywords.'actions.Data.create'(DocClass.DATETIME_RANGE_REQUIRED, DocType.DATETIME_RANGE_REQUIRED, P1_MW_DOC321)
+	FLAG_P1_MW_DOC321 = true
 }
 
 'Click on My Work link from left menu'

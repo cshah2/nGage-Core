@@ -11,6 +11,8 @@ import com.kms.katalon.core.testdata.TestData as TestData
 import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+
+import common.Fields
 import internal.GlobalVariable as GlobalVariable
 import static utils.Consts.*
 import static utils.DateUtil.*
@@ -26,8 +28,8 @@ WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_My Work Left Menu'))
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_iframe_105'))
 
-String treeDate = convert(P1_MW_DOCC_STARTDATE, FORMAT_DATE, FORMAT_DATE_TREE)
-String filterDate = P1_MW_DOCC_STARTDATE
+String treeDate = convert(P1_MW_DOC263.get(Fields.START_DATE), FORMAT_DATE, FORMAT_DATE_TREE)
+String filterDate = P1_MW_DOC262.get(Fields.START_DATE)
 
 'Expand Processes by Click on the Expand Icon and Verify Foldered data displayed (For Document 1)'
 CustomKeywords.'actions.MenuBar.clickTreeMenu'('My_Work','Processes','Date Required','Daterequiredsearch', treeDate)
@@ -61,4 +63,4 @@ CustomKeywords.'actions.Table.verifyDateFilter'(findTestObject('Object Repositor
 
 int colNo_EndTestDate= CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/tableHeader_MyWorkSearchResult'),'Endtestdate')
 CustomKeywords.'actions.Table.verifyDateFilter'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), colNo_EndTestDate, '', '', 'Not Null')
-CustomKeywords.'actions.Table.verifyRecordPresentInColumn'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), colNo_EndTestDate, P1_MW_DOCC_ENDDATE)
+CustomKeywords.'actions.Table.verifyRecordPresentInColumn'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), colNo_EndTestDate, P1_MW_DOC263.get(Fields.END_DATE))

@@ -11,6 +11,8 @@ import com.kms.katalon.core.testdata.TestData as TestData
 import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+
+import common.Fields
 import internal.GlobalVariable as GlobalVariable
 import static utils.Consts.*
 import static utils.DateUtil.*
@@ -26,8 +28,8 @@ WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_My Work Left Menu'))
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_iframe_105'))
 
-String startDate = convert(P1_MW_DOCG_STARTDATE, FORMAT_DATE, FORMAT_DATE_TREE)
-String endDate = convert(P1_MW_DOCI_STARTDATE, FORMAT_DATE, FORMAT_DATE_TREE)
+String startDate = convert(P1_MW_DOC282.get(Fields.START_DATE), FORMAT_DATE, FORMAT_DATE_TREE)
+String endDate = convert(P1_MW_DOC284.get(Fields.START_DATE), FORMAT_DATE, FORMAT_DATE_TREE)
 
 'Expand Processes and Verify Date Required activity Displayed'
 CustomKeywords.'actions.MenuBar.clickTreeMenu'('My_Work','Processes','DateRange required','Date range required')
@@ -52,10 +54,10 @@ int columnPosition_StartTestDate= CustomKeywords.'actions.Table.getColumnNumber'
 println columnPosition_StartTestDate
 
 'verify search result'
-CustomKeywords.'actions.Table.verifyDateFilter'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), columnPosition_StartTestDate, P1_MW_DOCG_STARTDATE, P1_MW_DOCI_STARTDATE, 'between')
+CustomKeywords.'actions.Table.verifyDateFilter'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), columnPosition_StartTestDate, P1_MW_DOC282.get(Fields.START_DATE), P1_MW_DOC284.get(Fields.START_DATE), 'between')
 
-CustomKeywords.'actions.Table.verifyRecordNotPresentInColumn'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), columnPosition_StartTestDate, P1_MW_DOCF_STARTDATE)
-CustomKeywords.'actions.Table.verifyRecordPresentInColumn'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), columnPosition_StartTestDate, P1_MW_DOCG_STARTDATE)
-CustomKeywords.'actions.Table.verifyRecordPresentInColumn'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), columnPosition_StartTestDate, P1_MW_DOCH_STARTDATE)
-CustomKeywords.'actions.Table.verifyRecordPresentInColumn'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), columnPosition_StartTestDate, P1_MW_DOCI_STARTDATE)
-CustomKeywords.'actions.Table.verifyRecordNotPresentInColumn'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), columnPosition_StartTestDate, P1_MW_DOCJ_STARTDATE)
+CustomKeywords.'actions.Table.verifyRecordNotPresentInColumn'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), columnPosition_StartTestDate, P1_MW_DOC281.get(Fields.START_DATE))
+CustomKeywords.'actions.Table.verifyRecordPresentInColumn'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), columnPosition_StartTestDate, P1_MW_DOC282.get(Fields.START_DATE))
+CustomKeywords.'actions.Table.verifyRecordPresentInColumn'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), columnPosition_StartTestDate, P1_MW_DOC283.get(Fields.START_DATE))
+CustomKeywords.'actions.Table.verifyRecordPresentInColumn'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), columnPosition_StartTestDate, P1_MW_DOC284.get(Fields.START_DATE))
+CustomKeywords.'actions.Table.verifyRecordNotPresentInColumn'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), columnPosition_StartTestDate, P1_MW_DOC285.get(Fields.START_DATE))

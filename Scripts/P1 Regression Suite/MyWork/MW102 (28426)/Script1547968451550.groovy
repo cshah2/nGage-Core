@@ -11,6 +11,9 @@ import com.kms.katalon.core.testdata.TestData as TestData
 import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+
+import common.DocClass
+import common.DocType
 import internal.GlobalVariable as GlobalVariable
 import static utils.Consts.*
 import static utils.DateUtil.*
@@ -18,9 +21,9 @@ import static utils.DateUtil.*
 'Login Into Application'
 CustomKeywords.'actions.Common.login'()
 
-if(!FLAG_P1_MW_DOCP) {
-	CustomKeywords.'actions.Common.createDocument_MyWorkDateTime'(DC_DATETIMEREQUIRED, DT_DATETIMEREQUIRED, P1_MW_DOCP_STARTDATE, P1_MW_DOCP_ENDDATE, P1_MW_DOCP_STARTDATETIME, P1_MW_DOCP_ENDDATETIME, "")
-	FLAG_P1_MW_DOCP = true
+if(!FLAG_P1_MW_DOC305) {
+	CustomKeywords.'actions.Data.create'(DocClass.DATETIME_REQUIRED, DocType.DATETIME_REQUIRED, P1_MW_DOC305)
+	FLAG_P1_MW_DOC305 = true
 }
 
 'Click on My Work link from left menu'

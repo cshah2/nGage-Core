@@ -11,6 +11,9 @@ import com.kms.katalon.core.testdata.TestData as TestData
 import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+
+import common.DocClass
+import common.DocType
 import internal.GlobalVariable as GlobalVariable
 import static utils.Consts.*
 import static utils.DateUtil.*
@@ -19,9 +22,9 @@ import static utils.DateUtil.*
 CustomKeywords.'actions.Common.login'()
 
 'Create two document in Date Required activity'
-if (!(FLAG_P1_MW_DOCE)) {
-	CustomKeywords.'actions.Common.createDocument_MyWorkDateTime'(DC_DATEREQUIRED, DT_DATEREQUIRED, P1_MW_DOCE_STARTDATE, P1_MW_DOCE_ENDDATE, P1_MW_DOCE_STARTDATETIME, P1_MW_DOC_ENDDATETIME, '')
-    FLAG_P1_MW_DOCE = true
+if(!FLAG_P1_MW_DOC265) {
+	CustomKeywords.'actions.Data.create'(DocClass.DATE_REQUIRED, DocType.DATE_REQUIRED, P1_MW_DOC265)
+	FLAG_P1_MW_DOC265 = true
 }
 
 'Click on My Work link from left menu'

@@ -621,40 +621,40 @@ public class Common {
 	//		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/span_ui-button-icon-primary ui'))
 	//	}
 
-	@Keyword
-	def createDocument_MyWorkDateTime(String docClass, String docType, String startDate, String endDate, String startDateTime, String endDateTime, String BM_Text) {
-
-		'Switch to main window'
-		WebUI.switchToWindowTitle('Savana nGage')
-
-		'Create a new BovDocTwoRow Document'
-		WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))
-		selectDocClassAndDocTypeForGlobalNew(docClass, docType)
-		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'))
-
-		'Switch to new Window'
-		WebUI.switchToWindowTitle('Business Model WMI')
-		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
-
-		'Fill the details required'
-
-		setText_Date(findTestObject('Page_WMI_NEW/MyWork_DateTime/input_Start test date'), startDate)
-		setText_Date(findTestObject('Page_WMI_NEW/MyWork_DateTime/input_Endtestdate'), endDate)
-		setText_Date(findTestObject('Page_WMI_NEW/MyWork_DateTime/input_Start test datetime'), startDateTime)
-		setText_Date(findTestObject('Page_WMI_NEW/MyWork_DateTime/input_End test datetime'), endDateTime)
-		WebUI.setText(findTestObject('Page_WMI_NEW/MyWork_DateTime/input_BM Text'), BM_Text)
-
-		'Save details and close'
-		WebUI.click(findTestObject('Page_WMI_NEW/MyWork_DateTime/span_Save'))
-		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
-
-		waitForFrameToLoad(findTestObject('Page_WMI/MyWork_DateTime/iframe_ContentPlaceHolder'))
-		new Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI/MyWork_DateTime/span_Close Window'), GlobalVariable.G_LongTimeout)
-
-		'Switch to main window and close'
-		WebUI.switchToWindowTitle('Savana nGage')
-		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/span_ui-button-icon-primary ui'))
-	}
+//	@Keyword
+//	def createDocument_MyWorkDateTime(String docClass, String docType, String startDate, String endDate, String startDateTime, String endDateTime, String BM_Text) {
+//
+//		'Switch to main window'
+//		WebUI.switchToWindowTitle('Savana nGage')
+//
+//		'Create a new BovDocTwoRow Document'
+//		WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))
+//		selectDocClassAndDocTypeForGlobalNew(docClass, docType)
+//		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'))
+//
+//		'Switch to new Window'
+//		WebUI.switchToWindowTitle('Business Model WMI')
+//		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+//
+//		'Fill the details required'
+//
+//		setText_Date(findTestObject('Page_WMI_NEW/MyWork_DateTime/input_Start test date'), startDate)
+//		setText_Date(findTestObject('Page_WMI_NEW/MyWork_DateTime/input_Endtestdate'), endDate)
+//		setText_Date(findTestObject('Page_WMI_NEW/MyWork_DateTime/input_Start test datetime'), startDateTime)
+//		setText_Date(findTestObject('Page_WMI_NEW/MyWork_DateTime/input_End test datetime'), endDateTime)
+//		WebUI.setText(findTestObject('Page_WMI_NEW/MyWork_DateTime/input_BM Text'), BM_Text)
+//
+//		'Save details and close'
+//		WebUI.click(findTestObject('Page_WMI_NEW/MyWork_DateTime/span_Save'))
+//		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+//
+//		waitForFrameToLoad(findTestObject('Page_WMI/MyWork_DateTime/iframe_ContentPlaceHolder'))
+//		new Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI/MyWork_DateTime/span_Close Window'), GlobalVariable.G_LongTimeout)
+//
+//		'Switch to main window and close'
+//		WebUI.switchToWindowTitle('Savana nGage')
+//		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/span_ui-button-icon-primary ui'))
+//	}
 
 	@Keyword
 	def verifyTotalRecordCountFromPageSummary(TestObject to, int expCount) {
@@ -1720,123 +1720,109 @@ public class Common {
 
 	@Keyword
 	def createDateFilterDataMyWork() {
-		if(!FLAG_P1_MW_DOCA) {
-			createDocument_MyWorkDateTime(DC_DATEREQUIRED, DT_DATEREQUIRED, P1_MW_DOCA_STARTDATE, P1_MW_DOCA_ENDDATE, P1_MW_DOCA_STARTDATETIME, P1_MW_DOCA_ENDDATETIME, "")
-			FLAG_P1_MW_DOCA = true
+		
+		if(!FLAG_P1_MW_DOC261) {
+			new Data().create(DocClass.DATE_REQUIRED, DocType.DATE_REQUIRED, P1_MW_DOC261)
+			FLAG_P1_MW_DOC261 = true
 		}
-
-		if(!FLAG_P1_MW_DOCB) {
-			createDocument_MyWorkDateTime(DC_DATEREQUIRED, DT_DATEREQUIRED, P1_MW_DOCB_STARTDATE, P1_MW_DOCB_ENDDATE, P1_MW_DOCB_STARTDATETIME, P1_MW_DOCB_ENDDATETIME, "")
-			FLAG_P1_MW_DOCB = true
+		if(!FLAG_P1_MW_DOC262) {
+			new Data().create(DocClass.DATE_REQUIRED, DocType.DATE_REQUIRED, P1_MW_DOC262)
+			FLAG_P1_MW_DOC262 = true
 		}
-
-		if(!FLAG_P1_MW_DOCC) {
-			createDocument_MyWorkDateTime(DC_DATEREQUIRED, DT_DATEREQUIRED, P1_MW_DOCC_STARTDATE, P1_MW_DOCC_ENDDATE, P1_MW_DOCC_STARTDATETIME, P1_MW_DOCC_ENDDATETIME, "")
-			FLAG_P1_MW_DOCC = true
+		if(!FLAG_P1_MW_DOC263) {
+			new Data().create(DocClass.DATE_REQUIRED, DocType.DATE_REQUIRED, P1_MW_DOC263)
+			FLAG_P1_MW_DOC263 = true
 		}
-
-		if(!FLAG_P1_MW_DOCD) {
-			createDocument_MyWorkDateTime(DC_DATEREQUIRED, DT_DATEREQUIRED, P1_MW_DOCD_STARTDATE, P1_MW_DOCD_ENDDATE, P1_MW_DOCD_STARTDATETIME, P1_MW_DOCD_ENDDATETIME, "")
-			FLAG_P1_MW_DOCD = true
+		if(!FLAG_P1_MW_DOC264) {
+			new Data().create(DocClass.DATE_REQUIRED, DocType.DATE_REQUIRED, P1_MW_DOC264)
+			FLAG_P1_MW_DOC264 = true
 		}
-
-		if(!FLAG_P1_MW_DOCE) {
-			createDocument_MyWorkDateTime(DC_DATEREQUIRED, DT_DATEREQUIRED, P1_MW_DOCE_STARTDATE, P1_MW_DOCE_ENDDATE, P1_MW_DOCE_STARTDATETIME, P1_MW_DOCE_ENDDATETIME, "")
-			FLAG_P1_MW_DOCE = true
+		if(!FLAG_P1_MW_DOC265) {
+			new Data().create(DocClass.DATE_REQUIRED, DocType.DATE_REQUIRED, P1_MW_DOC265)
+			FLAG_P1_MW_DOC265 = true
 		}
 	}
 
 	@Keyword
 	def createDateRangeFilterDataMyWork() {
-		if(!FLAG_P1_MW_DOCF) {
-			createDocument_MyWorkDateTime(DC_DATERANGEREQUIRED, DT_DATERANGEREQUIRED, P1_MW_DOCF_STARTDATE, P1_MW_DOCF_ENDDATE, P1_MW_DOCF_STARTDATETIME, P1_MW_DOCF_ENDDATETIME, "")
-			FLAG_P1_MW_DOCF = true
+		
+		if(!FLAG_P1_MW_DOC281) {
+			new Data().create(DocClass.DATE_RANGE_REQUIRED, DocType.DATE_RANGE_REQUIRED, P1_MW_DOC281)
+			FLAG_P1_MW_DOC281 = true
 		}
-
-		if(!FLAG_P1_MW_DOCG) {
-			createDocument_MyWorkDateTime(DC_DATERANGEREQUIRED, DT_DATERANGEREQUIRED, P1_MW_DOCG_STARTDATE, P1_MW_DOCG_ENDDATE, P1_MW_DOCG_STARTDATETIME, P1_MW_DOCG_ENDDATETIME, "")
-			FLAG_P1_MW_DOCG = true
+		if(!FLAG_P1_MW_DOC282) {
+			new Data().create(DocClass.DATE_RANGE_REQUIRED, DocType.DATE_RANGE_REQUIRED, P1_MW_DOC282)
+			FLAG_P1_MW_DOC282 = true
 		}
-
-		if(!FLAG_P1_MW_DOCH) {
-			createDocument_MyWorkDateTime(DC_DATERANGEREQUIRED, DT_DATERANGEREQUIRED, P1_MW_DOCH_STARTDATE, P1_MW_DOCH_ENDDATE, P1_MW_DOCH_STARTDATETIME, P1_MW_DOCH_ENDDATETIME, "")
-			FLAG_P1_MW_DOCH = true
+		if(!FLAG_P1_MW_DOC283) {
+			new Data().create(DocClass.DATE_RANGE_REQUIRED, DocType.DATE_RANGE_REQUIRED, P1_MW_DOC283)
+			FLAG_P1_MW_DOC283 = true
 		}
-
-		if(!FLAG_P1_MW_DOCI) {
-			createDocument_MyWorkDateTime(DC_DATERANGEREQUIRED, DT_DATERANGEREQUIRED, P1_MW_DOCI_STARTDATE, P1_MW_DOCI_ENDDATE, P1_MW_DOCI_STARTDATETIME, P1_MW_DOCI_ENDDATETIME, "")
-			FLAG_P1_MW_DOCF = true
+		if(!FLAG_P1_MW_DOC284) {
+			new Data().create(DocClass.DATE_RANGE_REQUIRED, DocType.DATE_RANGE_REQUIRED, P1_MW_DOC284)
+			FLAG_P1_MW_DOC284 = true
 		}
-
-		if(!FLAG_P1_MW_DOCJ) {
-			createDocument_MyWorkDateTime(DC_DATERANGEREQUIRED, DT_DATERANGEREQUIRED, P1_MW_DOCJ_STARTDATE, P1_MW_DOCJ_ENDDATE, P1_MW_DOCJ_STARTDATETIME, P1_MW_DOCJ_ENDDATETIME, "")
-			FLAG_P1_MW_DOCJ = true
+		if(!FLAG_P1_MW_DOC285) {
+			new Data().create(DocClass.DATE_RANGE_REQUIRED, DocType.DATE_RANGE_REQUIRED, P1_MW_DOC285)
+			FLAG_P1_MW_DOC285 = true
 		}
-
-		if(!FLAG_P1_MW_DOCK) {
-			createDocument_MyWorkDateTime(DC_DATERANGEREQUIRED, DT_DATERANGEREQUIRED, P1_MW_DOCK_STARTDATE, P1_MW_DOCK_ENDDATE, P1_MW_DOCK_STARTDATETIME, P1_MW_DOCK_ENDDATETIME, "")
-			FLAG_P1_MW_DOCK = true
+		if(!FLAG_P1_MW_DOC286) {
+			new Data().create(DocClass.DATE_RANGE_REQUIRED, DocType.DATE_RANGE_REQUIRED, P1_MW_DOC286)
+			FLAG_P1_MW_DOC286 = true
 		}
 	}
 
 	@Keyword
 	def createDateTimeFilterDataMyWork() {
-		if(!FLAG_P1_MW_DOCL) {
-			createDocument_MyWorkDateTime(DC_DATETIMEREQUIRED, DT_DATETIMEREQUIRED, P1_MW_DOCL_STARTDATE, P1_MW_DOCL_ENDDATE, P1_MW_DOCL_STARTDATETIME, P1_MW_DOCL_ENDDATETIME, "")
-			FLAG_P1_MW_DOCL = true
+		
+		if(!FLAG_P1_MW_DOC301) {
+			new Data().create(DocClass.DATETIME_REQUIRED, DocType.DATETIME_REQUIRED, P1_MW_DOC301)
+			FLAG_P1_MW_DOC301 = true
 		}
-
-		if(!FLAG_P1_MW_DOCM) {
-			createDocument_MyWorkDateTime(DC_DATETIMEREQUIRED, DT_DATETIMEREQUIRED, P1_MW_DOCM_STARTDATE, P1_MW_DOCM_ENDDATE, P1_MW_DOCM_STARTDATETIME, P1_MW_DOCM_ENDDATETIME, "")
-			FLAG_P1_MW_DOCM = true
+		if(!FLAG_P1_MW_DOC302) {
+			new Data().create(DocClass.DATETIME_REQUIRED, DocType.DATETIME_REQUIRED, P1_MW_DOC302)
+			FLAG_P1_MW_DOC302 = true
 		}
-
-		if(!FLAG_P1_MW_DOCN) {
-			createDocument_MyWorkDateTime(DC_DATETIMEREQUIRED, DT_DATETIMEREQUIRED, P1_MW_DOCN_STARTDATE, P1_MW_DOCN_ENDDATE, P1_MW_DOCN_STARTDATETIME, P1_MW_DOCN_ENDDATETIME, "")
-			FLAG_P1_MW_DOCN = true
+		if(!FLAG_P1_MW_DOC303) {
+			new Data().create(DocClass.DATETIME_REQUIRED, DocType.DATETIME_REQUIRED, P1_MW_DOC303)
+			FLAG_P1_MW_DOC303 = true
 		}
-
-		if(!FLAG_P1_MW_DOCO) {
-			createDocument_MyWorkDateTime(DC_DATETIMEREQUIRED, DT_DATETIMEREQUIRED, P1_MW_DOCO_STARTDATE, P1_MW_DOCO_ENDDATE, P1_MW_DOCO_STARTDATETIME, P1_MW_DOCO_ENDDATETIME, "")
-			FLAG_P1_MW_DOCO = true
+		if(!FLAG_P1_MW_DOC304) {
+			new Data().create(DocClass.DATETIME_REQUIRED, DocType.DATETIME_REQUIRED, P1_MW_DOC304)
+			FLAG_P1_MW_DOC304 = true
 		}
-
-		if(!FLAG_P1_MW_DOCP) {
-			createDocument_MyWorkDateTime(DC_DATETIMEREQUIRED, DT_DATETIMEREQUIRED, P1_MW_DOCP_STARTDATE, P1_MW_DOCP_ENDDATE, P1_MW_DOCP_STARTDATETIME, P1_MW_DOCP_ENDDATETIME, "")
-			FLAG_P1_MW_DOCP = true
+		if(!FLAG_P1_MW_DOC305) {
+			new Data().create(DocClass.DATETIME_REQUIRED, DocType.DATETIME_REQUIRED, P1_MW_DOC305)
+			FLAG_P1_MW_DOC305 = true
 		}
 	}
 
 	@Keyword
 	def createDateTimeRangeFilterDataMyWork() {
-		if(!FLAG_P1_MW_DOCQ) {
-			createDocument_MyWorkDateTime(DC_DATETIMERANGEREQUIRED, DT_DATETIMERANGEREQUIRED, P1_MW_DOCQ_STARTDATE, P1_MW_DOCQ_ENDDATE, P1_MW_DOCQ_STARTDATETIME, P1_MW_DOCQ_ENDDATETIME, "")
-			FLAG_P1_MW_DOCQ = true
+		
+		if(!FLAG_P1_MW_DOC321) {
+			new Data().create(DocClass.DATETIME_RANGE_REQUIRED, DocType.DATETIME_RANGE_REQUIRED, P1_MW_DOC321)
+			FLAG_P1_MW_DOC321 = true
 		}
-
-		if(!FLAG_P1_MW_DOCR) {
-			createDocument_MyWorkDateTime(DC_DATETIMERANGEREQUIRED, DT_DATETIMERANGEREQUIRED, P1_MW_DOCR_STARTDATE, P1_MW_DOCR_ENDDATE, P1_MW_DOCR_STARTDATETIME, P1_MW_DOCR_ENDDATETIME, "")
-			FLAG_P1_MW_DOCR = true
+		if(!FLAG_P1_MW_DOC322) {
+			new Data().create(DocClass.DATETIME_RANGE_REQUIRED, DocType.DATETIME_RANGE_REQUIRED, P1_MW_DOC322)
+			FLAG_P1_MW_DOC322 = true
 		}
-
-		if(!FLAG_P1_MW_DOCS) {
-			createDocument_MyWorkDateTime(DC_DATETIMERANGEREQUIRED, DT_DATETIMERANGEREQUIRED, P1_MW_DOCS_STARTDATE, P1_MW_DOCS_ENDDATE, P1_MW_DOCS_STARTDATETIME, P1_MW_DOCS_ENDDATETIME, "")
-			FLAG_P1_MW_DOCS = true
+		if(!FLAG_P1_MW_DOC323) {
+			new Data().create(DocClass.DATETIME_RANGE_REQUIRED, DocType.DATETIME_RANGE_REQUIRED, P1_MW_DOC323)
+			FLAG_P1_MW_DOC323 = true
 		}
-
-		if(!FLAG_P1_MW_DOCT) {
-			createDocument_MyWorkDateTime(DC_DATETIMERANGEREQUIRED, DT_DATETIMERANGEREQUIRED, P1_MW_DOCT_STARTDATE, P1_MW_DOCT_ENDDATE, P1_MW_DOCT_STARTDATETIME, P1_MW_DOCT_ENDDATETIME, "")
-			FLAG_P1_MW_DOCT = true
+		if(!FLAG_P1_MW_DOC324) {
+			new Data().create(DocClass.DATETIME_RANGE_REQUIRED, DocType.DATETIME_RANGE_REQUIRED, P1_MW_DOC324)
+			FLAG_P1_MW_DOC324 = true
 		}
-
-		if(!FLAG_P1_MW_DOCU) {
-			createDocument_MyWorkDateTime(DC_DATETIMERANGEREQUIRED, DT_DATETIMERANGEREQUIRED, P1_MW_DOCU_STARTDATE, P1_MW_DOCU_ENDDATE, P1_MW_DOCU_STARTDATETIME, P1_MW_DOCU_ENDDATETIME, "")
-			FLAG_P1_MW_DOCU = true
+		if(!FLAG_P1_MW_DOC325) {
+			new Data().create(DocClass.DATETIME_RANGE_REQUIRED, DocType.DATETIME_RANGE_REQUIRED, P1_MW_DOC325)
+			FLAG_P1_MW_DOC325 = true
 		}
-
-		if(!FLAG_P1_MW_DOCV) {
-			createDocument_MyWorkDateTime(DC_DATETIMERANGEREQUIRED, DT_DATETIMERANGEREQUIRED, P1_MW_DOCV_STARTDATE, P1_MW_DOCV_ENDDATE, P1_MW_DOCV_STARTDATETIME, P1_MW_DOCV_ENDDATETIME, "")
-			FLAG_P1_MW_DOCV = true
+		if(!FLAG_P1_MW_DOC326) {
+			new Data().create(DocClass.DATETIME_RANGE_REQUIRED, DocType.DATETIME_RANGE_REQUIRED, P1_MW_DOC326)
+			FLAG_P1_MW_DOC326 = true
 		}
 	}
 

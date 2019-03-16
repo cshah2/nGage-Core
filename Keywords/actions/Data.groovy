@@ -129,6 +129,13 @@ public class Data {
 				dateDateTimeDT(data)
 				break
 
+			case DocType.DATE_REQUIRED:
+			case DocType.DATE_RANGE_REQUIRED:
+			case DocType.DATETIME_REQUIRED:
+			case DocType.DATETIME_RANGE_REQUIRED:
+				myWorkDateTime(data)
+				break
+
 			default:
 				WebUI.takeScreenshot()
 				KeywordUtil.markFailedAndStop('Unable to create document, Invalid docType provided : '+docType)
@@ -556,15 +563,15 @@ public class Data {
 		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 		new Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI_NEW/Master_Object/span_Close Window'),GlobalVariable.G_LongTimeout)
 	}
-	
+
 	private void dateDateTimeDT(Map<Fields, String> data) {
-		
+
 		//Get Data from Map
 		String date = data.get(Fields.DATE)
 		String dateRange = data.get(Fields.DATE_RANGE)
 		String dateTime = data.get(Fields.DATE_TIME)
 		String dateTimeRange = data.get(Fields.DATE_TIME_RANGE)
-		
+
 		//Fill Form
 		if(StringUtils.isNotBlank(date))
 			new Common().setText_Date(findTestObject('Page_WMI_NEW/Date Date Time DT/input_BM Date'), date)
@@ -574,11 +581,41 @@ public class Data {
 			new Common().setText_Date(findTestObject('Page_WMI_NEW/Date Date Time DT/input_BM DateTime'), dateTime)
 		if(StringUtils.isNotBlank(dateTimeRange))
 			new Common().setText_Date(findTestObject('Page_WMI_NEW/Date Date Time DT/input_Date time range'), dateTimeRange)
-		
+
 		//Save details and close
 		WebUI.click(findTestObject('Page_WMI_NEW/Date Date Time DT/span_Save'))
 		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 		new Common().waitForFrameToLoad(findTestObject('Page_WMI/Date Date Time DT/iframe_ContentPlaceHolder1'))
 		new Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI/Date Date Time DT/span_Close Window'), GlobalVariable.G_LongTimeout)
+	}
+	
+	private void myWorkDateTime(Map<Fields, String> data) {
+
+		//Date Required, Date Range Required, Date Time Required, Date Time Range Required
+		
+		//Get Data from Map
+		String startDate = data.get(Fields.START_DATE)
+		String endDate = data.get(Fields.END_DATE)
+		String startDateTime = data.get(Fields.START_DATE_TIME)
+		String endDateTime = data.get(Fields.END_DATE_TIME)
+		String bmText = data.get(Fields.BM_TEXT)
+
+		//Fill Form
+		if(StringUtils.isNotBlank(startDate))
+			new Common().setText_Date(findTestObject('Page_WMI_NEW/MyWork_DateTime/input_Start test date'), startDate)
+		if(StringUtils.isNotBlank(endDate))
+			new Common().setText_Date(findTestObject('Page_WMI_NEW/MyWork_DateTime/input_Endtestdate'), endDate)
+		if(StringUtils.isNotBlank(startDateTime))
+			new Common().setText_Date(findTestObject('Page_WMI_NEW/MyWork_DateTime/input_Start test datetime'), startDateTime)
+		if(StringUtils.isNotBlank(endDateTime))
+			new Common().setText_Date(findTestObject('Page_WMI_NEW/MyWork_DateTime/input_End test datetime'), endDateTime)
+		if(StringUtils.isNotBlank(bmText))
+			WebUI.setText(findTestObject('Page_WMI_NEW/MyWork_DateTime/input_BM Text'), bmText)
+
+		//Save details and close
+		WebUI.click(findTestObject('Page_WMI_NEW/MyWork_DateTime/span_Save'))
+		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+		new Common().waitForFrameToLoad(findTestObject('Page_WMI/MyWork_DateTime/iframe_ContentPlaceHolder'))
+		new Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI/MyWork_DateTime/span_Close Window'), GlobalVariable.G_LongTimeout)
 	}
 }

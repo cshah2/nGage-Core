@@ -11,6 +11,8 @@ import com.kms.katalon.core.testdata.TestData as TestData
 import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+
+import common.Fields
 import internal.GlobalVariable as GlobalVariable
 import static utils.Consts.*
 import static utils.DateUtil.*
@@ -26,8 +28,8 @@ WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_My Work Left Menu'))
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_iframe_105'))
 
-String treeDate = convert(P1_MW_DOCR_STARTDATETIME, FORMAT_DATETIME, FORMAT_DATE_TREE)
-String filterDate = convert(P1_MW_DOCR_STARTDATETIME, FORMAT_DATETIME, FORMAT_DATE)
+String treeDate = convert(P1_MW_DOC322.get(Fields.START_DATE_TIME), FORMAT_DATETIME, FORMAT_DATE_TREE)
+String filterDate = convert(P1_MW_DOC322.get(Fields.START_DATE_TIME), FORMAT_DATETIME, FORMAT_DATE)
 
 'Expand Processes and Verify Foldered Document Displayed'
 CustomKeywords.'actions.MenuBar.clickTreeMenu'('My_Work','Processes','Datetime range required','Date time range required', treeDate)
@@ -55,6 +57,6 @@ CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dash
 'Verify searched data (selected date in activity)should be displayed in the search result with Time'
 int colNo_StartTestDateTime= CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/tableHeader_MyWorkSearchResult'),'Start test datetime')
 
-CustomKeywords.'actions.Table.verifyRecordNotPresentInColumn'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), colNo_StartTestDateTime, P1_MW_DOCQ_STARTDATETIME)
-CustomKeywords.'actions.Table.verifyRecordPresentInColumn'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), colNo_StartTestDateTime, P1_MW_DOCR_STARTDATETIME)
-CustomKeywords.'actions.Table.verifyRecordNotPresentInColumn'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), colNo_StartTestDateTime, P1_MW_DOCS_STARTDATETIME)
+CustomKeywords.'actions.Table.verifyRecordNotPresentInColumn'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), colNo_StartTestDateTime, P1_MW_DOC321.get(Fields.START_DATE_TIME))
+CustomKeywords.'actions.Table.verifyRecordPresentInColumn'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), colNo_StartTestDateTime, P1_MW_DOC322.get(Fields.START_DATE_TIME))
+CustomKeywords.'actions.Table.verifyRecordNotPresentInColumn'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), colNo_StartTestDateTime, P1_MW_DOC323.get(Fields.START_DATE_TIME))

@@ -47,6 +47,10 @@ public enum Fields {
 	TEXT_FIELD,					//Render All Field Types
 	EXT_NAME_FIELD,				//Render All Field Types
 	DATE_RANGE,					//Date DateTime DT
-	DATE_TIME_RANGE				//Date DateTime DT
+	DATE_TIME_RANGE,			//Date DateTime DT
+	START_DATE,					//Date Required, Date Range Required, Date Time Required, Date Time Range Required
+	END_DATE,					//Date Required, Date Range Required, Date Time Required, Date Time Range Required
+	START_DATE_TIME,			//Date Required, Date Range Required, Date Time Required, Date Time Range Required
+	END_DATE_TIME				//Date Required, Date Range Required, Date Time Required, Date Time Range Required
 
 }

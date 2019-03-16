@@ -35,7 +35,12 @@ public enum DocClass {
 	DO_NOT_RELOAD_ON_POSTBACK("DoNotReloadOnPostback"),
 	MASTER_OBJECT_FEATURE("Master Object Feature"),
 	REFERENCE_OBJECT_FEATURE("Reference Object Feature"),
-	DATE_DATETIME_DC("Date Date Time DC")
+	DATE_DATETIME_DC("Date Date Time DC"),
+	DATE_REQUIRED("daterequiredsearch"),
+	DATE_RANGE_REQUIRED("daterangerequired"),
+	DATETIME_REQUIRED("Datetimerequired"),
+	DATETIME_RANGE_REQUIRED("Datetimerangerequired")
+	
 
 	private final String text
 

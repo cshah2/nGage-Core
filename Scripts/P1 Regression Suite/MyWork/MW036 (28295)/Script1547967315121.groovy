@@ -11,6 +11,9 @@ import com.kms.katalon.core.testdata.TestData as TestData
 import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+
+import common.DocClass
+import common.DocType
 import internal.GlobalVariable as GlobalVariable
 import static utils.Consts.*
 import static utils.DateUtil.*
@@ -19,9 +22,9 @@ import static utils.DateUtil.*
 CustomKeywords.'actions.Common.login'()
 
 'Create document if not present'
-if (!(FLAG_P1_MW_DOCA)) {
-	CustomKeywords.'actions.Common.createDocument_MyWorkDateTime'(DC_DATEREQUIRED, DT_DATEREQUIRED, P1_MW_DOCA_STARTDATE, P1_MW_DOCA_ENDDATE, P1_MW_DOCA_STARTDATETIME, P1_MW_DOCA_ENDDATETIME, '')
-    FLAG_P1_MW_DOCA = true
+if(!FLAG_P1_MW_DOC261) {
+	CustomKeywords.'actions.Data.create'(DocClass.DATE_REQUIRED, DocType.DATE_REQUIRED, P1_MW_DOC261)
+	FLAG_P1_MW_DOC261 = true
 }
 
 'Click on My Work link from left menu'

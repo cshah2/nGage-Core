@@ -11,6 +11,10 @@ import com.kms.katalon.core.testdata.TestData as TestData
 import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+
+import common.DocClass
+import common.DocType
+import common.Fields
 import internal.GlobalVariable as GlobalVariable
 import static utils.Consts.*
 import static utils.DateUtil.*
@@ -19,9 +23,9 @@ import static utils.DateUtil.*
 CustomKeywords.'actions.Common.login'()
 
 'Create a new Document in DateTimeRequired activity'
-if (!(FLAG_P1_MW_DOCA)) {
-	CustomKeywords.'actions.Common.createDocument_MyWorkDateTime'(DC_DATEREQUIRED, DT_DATEREQUIRED, P1_MW_DOCA_STARTDATE, P1_MW_DOCA_ENDDATE, P1_MW_DOCA_STARTDATETIME, P1_MW_DOCA_ENDDATETIME, '')
-    FLAG_P1_MW_DOCA = true
+if(!FLAG_P1_MW_DOC261) {
+	CustomKeywords.'actions.Data.create'(DocClass.DATE_REQUIRED, DocType.DATE_REQUIRED, P1_MW_DOC261)
+	FLAG_P1_MW_DOC261 = true
 }
 
 'Click on My Work link from left menu'
@@ -29,8 +33,8 @@ WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_My Work Left Menu'))
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_iframe_105'))
 
-String treeDate1 = convert(P1_MW_DOCA_STARTDATE, FORMAT_DATE, FORMAT_DATE_TREE)
-String treeDate2 = convert(P1_MW_DOCA_ENDDATE, FORMAT_DATE, FORMAT_DATE_TREE)
+String treeDate1 = convert(P1_MW_DOC261.get(Fields.START_DATE), FORMAT_DATE, FORMAT_DATE_TREE)
+String treeDate2 = convert(P1_MW_DOC261.get(Fields.END_DATE), FORMAT_DATE, FORMAT_DATE_TREE)
 
 'Expand Processes by Click on the Expand Icon and Verify Foldered data displayed'
 CustomKeywords.'actions.MenuBar.clickTreeMenu'('My_Work', 'Processes', 'Date Required', 'Daterequiredsearch', treeDate1)

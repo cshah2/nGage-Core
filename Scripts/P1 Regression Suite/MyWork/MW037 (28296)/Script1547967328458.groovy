@@ -3,6 +3,9 @@ import static utils.Consts.*
 
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 
+import common.DocClass
+import common.DocType
+import common.Fields
 import internal.GlobalVariable as GlobalVariable
 import static utils.DateUtil.*
 
@@ -10,15 +13,16 @@ import static utils.DateUtil.*
 CustomKeywords.'actions.Common.login'()
 
 'Create document if not present'
-if (!(FLAG_P1_MW_DOCA)) {
-	CustomKeywords.'actions.Common.createDocument_MyWorkDateTime'(DC_DATEREQUIRED, DT_DATEREQUIRED, P1_MW_DOCA_STARTDATE, P1_MW_DOCA_ENDDATE, P1_MW_DOCA_STARTDATETIME, P1_MW_DOCA_ENDDATETIME, '')
-	FLAG_P1_MW_DOCA = true
+if(!FLAG_P1_MW_DOC261) {
+	CustomKeywords.'actions.Data.create'(DocClass.DATE_REQUIRED, DocType.DATE_REQUIRED, P1_MW_DOC261)
+	FLAG_P1_MW_DOC261 = true
+}
+if(!FLAG_P1_MW_DOC262) {
+	CustomKeywords.'actions.Data.create'(DocClass.DATE_REQUIRED, DocType.DATE_REQUIRED, P1_MW_DOC262)
+	FLAG_P1_MW_DOC262 = true
 }
 
-if (!(FLAG_P1_MW_DOCB)) {
-	CustomKeywords.'actions.Common.createDocument_MyWorkDateTime'(DC_DATEREQUIRED, DT_DATEREQUIRED, P1_MW_DOCB_STARTDATE, P1_MW_DOCB_ENDDATE, P1_MW_DOCB_STARTDATETIME, P1_MW_DOCB_ENDDATETIME, '')
-	FLAG_P1_MW_DOCB = true
-}
+String filterDate = P1_MW_DOC261.get(Fields.START_DATE)
 
 'Click on My Work link from left menu'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_My Work Left Menu'))
@@ -45,7 +49,7 @@ WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/My_Work/search_
 WebUI.selectOptionByLabel(findTestObject('Page_nGage_Dashboard/My_Work/Process_Date Required/select_StartDate_operator'), '=', false)
 
 'Enter Date for Document'
-CustomKeywords.'actions.Common.setText_Date'(findTestObject('Page_nGage_Dashboard/My_Work/Process_Date Required/input_StartDate'), P1_MW_DOCA_STARTDATE)
+CustomKeywords.'actions.Common.setText_Date'(findTestObject('Page_nGage_Dashboard/My_Work/Process_Date Required/input_StartDate'), filterDate)
 
 'Click on Search button'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/btn_Search'))
@@ -57,7 +61,7 @@ CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dash
 
 'Verify Search Result'
 int colNo_StartTestDate= CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/tableHeader_MyWorkSearchResult'),'Start test date')
-CustomKeywords.'actions.Table.verifyDateFilter'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), colNo_StartTestDate, P1_MW_DOCA_STARTDATE, '', '=')
+CustomKeywords.'actions.Table.verifyDateFilter'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), colNo_StartTestDate, filterDate, '', '=')
 
 'Open Search bar'
 WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/My_Work/h3_Search Bar'), GlobalVariable.G_LongTimeout)
