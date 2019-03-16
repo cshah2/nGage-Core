@@ -11,6 +11,10 @@ import com.kms.katalon.core.testdata.TestData as TestData
 import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+
+import common.DocClass
+import common.DocType
+import common.Fields
 import internal.GlobalVariable as GlobalVariable
 import static utils.DateUtil.*
 
@@ -18,13 +22,20 @@ import static utils.DateUtil.*
 CustomKeywords.'actions.Common.login'()
 
 'Create Closure Action document'
-//String timeformat = getCurrentDateTime('hhmmss')
 String primary_CustName = 'Chintan Shah - PWCA003'
 String primary_CustDesc = 'Workflow closure action - PWCA003'
 String attached_CustName = 'Chintan Shah - AWCA003'
 String attached_CustDesc = 'Workflow closure action - AWCA003'
 
-CustomKeywords.'actions.Common.createDocument_ClosureAction'(primary_CustName, primary_CustDesc)
+Map<Fields, String> primary = new HashMap<Fields, String>()
+primary.put(Fields.CUSTOMER_NAME, primary_CustName)
+primary.put(Fields.CUSTOMER_DETAIL, primary_CustDesc)
+
+Map<Fields, String> attached = new HashMap<Fields, String>()
+primary.put(Fields.CUSTOMER_NAME, attached_CustName)
+primary.put(Fields.CUSTOMER_DETAIL, attached_CustDesc)
+
+CustomKeywords.'actions.Data.create'(DocClass.CLOSURE_ACTION, DocType.CLOSURE_ACTION, primary)
 
 'Click on My Work link from left menu'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_My Work Left Menu'))
@@ -130,17 +141,9 @@ TestObject refresh = findTestObject('Page_nGage_Dashboard/My_Work/table_refreshB
 
 CustomKeywords.'actions.Table.refreshUntilRecordFoundInTable'(table, tableHeader, refresh, docIDPrimary, colNo_DocID, GlobalVariable.G_LongTimeout)
 
-//'Sort records by Doc ID descending'
-//CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/My_Work/tableHeader_MyWorkSearchResult'), 'Doc ID')
-//CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/My_Work/tableHeader_MyWorkSearchResult'), 'Doc ID')
-
 'Store DocID value of attached document'
-//String docIDAttached = CustomKeywords.'actions.Table.getCellText'(findTestObject('Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), 1, colNo_DocID)
 int docIDAttachedint = Integer.parseInt(docIDPrimary)+1
 String docIDAttached = docIDAttachedint.toString()
-
-//'Verify primary document is now present in grid'
-//CustomKeywords.'actions.Table.verifyCellContainsValue'(findTestObject('Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), 2, colNo_DocID, docIDPrimary)
 
 'Re-open primary document'
 CustomKeywords.'actions.Table.clickCell'(findTestObject('Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), 2, colNo_DocID)

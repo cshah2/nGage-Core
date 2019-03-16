@@ -11,7 +11,11 @@ import com.kms.katalon.core.testdata.TestData as TestData
 import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+
+import common.DocClass
+import common.DocType
 import internal.GlobalVariable as GlobalVariable
+import static utils.Consts.*
 
 'Login Into Application'
 CustomKeywords.'actions.Common.login'()
@@ -37,7 +41,8 @@ int colNo_DocID = CustomKeywords.'actions.Table.getColumnNumber'(findTestObject(
 String docId = CustomKeywords.'actions.Table.getCellText'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), 1, colNo_DocID)
 
 'Create new document'
-CustomKeywords.'actions.Common.createDocument_ClosureAction'('Chintan Shah', 'Result grid refresh test')
+CustomKeywords.'actions.Data.create'(DocClass.CLOSURE_ACTION, DocType.CLOSURE_ACTION, P1_WMI_DOC341)
+FLAG_P1_WMI_DOC341 = true
 
 'Click on refresh button in result grid'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/td_refreshGrid MyWorkSearchResult'))

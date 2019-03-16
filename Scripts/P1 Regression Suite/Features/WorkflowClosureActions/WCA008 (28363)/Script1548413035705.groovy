@@ -11,6 +11,10 @@ import com.kms.katalon.core.testdata.TestData as TestData
 import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+
+import common.DocClass
+import common.DocType
+import common.Fields
 import internal.GlobalVariable as GlobalVariable
 import utils.DateUtil
 
@@ -21,11 +25,14 @@ import static utils.Consts.*
 CustomKeywords.'actions.Common.login'()
 
 'Create Closure Action document'
-//String timeformat = getCurrentDateTime('hhmmss')
 String primary_CustName = 'Chintan Shah - PWCA008'
 String primary_CustDesc = 'Workflow closure action - PWCA008'
 
-CustomKeywords.'actions.Common.createDocument_ClosureAction'(primary_CustName, primary_CustDesc)
+Map<Fields, String> primary = new HashMap<Fields, String>()
+primary.put(Fields.CUSTOMER_NAME, primary_CustName)
+primary.put(Fields.CUSTOMER_DETAIL, primary_CustDesc)
+
+CustomKeywords.'actions.Data.create'(DocClass.CLOSURE_ACTION, DocType.CLOSURE_ACTION, primary)
 
 'Click on My Work link from left menu'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_My Work Left Menu'))
@@ -145,19 +152,9 @@ CustomKeywords.'actions.Window.clickElementAndWaitForWindowClose'(findTestObject
 'Switch back to parent window'
 WebUI.switchToWindowIndex(0)
 
-//'Calculated expected process due date'
-////String currDate = getCurrentDateTime(FORMAT_DATE)
-//String currDate = getCurrentDateTimeMinusDays(0, FORMAT_DATE)
-//String businessDate = getBusinessDays(currDate, FORMAT_DATE, 4)
-//String expProcessDueDate = businessDate+' '+P1_WCA008_PROCESSDUETIME
-
 'Store Process Due date value of primary document'
 String processDueDate_After = CustomKeywords.'actions.Table.getCellText'(findTestObject('Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), 1, colNo_ProcessDueDate)
-
-//'Verify process due date matches'
-//CustomKeywords.'actions.Table.verifyCellContainsValue'(findTestObject('Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), 1, colNo_ProcessDueDate, expProcessDueDate)
 
 'Verify New process due date is less than original process due date'
 println "Process Due date original = "+processDueDate_original+"After event = "+processDueDate_After
 WebUI.verifyEqual(DateUtil.dateTimeFilter('<', processDueDate_After, processDueDate_original, ''),true)
-

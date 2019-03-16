@@ -16,6 +16,8 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 
 import common.ChartType
+import common.DocClass
+import common.DocType
 import internal.GlobalVariable as GlobalVariable
 import static utils.Consts.*
 
@@ -23,9 +25,9 @@ import static utils.Consts.*
 CustomKeywords.'actions.Common.login'()
 
 'Create Docuement if not present'
-if(!FLAG_P1_MW_DOC9) {
-	CustomKeywords.'actions.Common.createDocument_ClosureAction'(P1_MW_DOC9_CUSTNAME, P1_MW_DOC9_CUSTDESC)
-	FLAG_P1_MW_DOC9 = true
+if(!FLAG_P1_MW_DOC341) {
+	CustomKeywords.'actions.Data.create'(DocClass.CLOSURE_ACTION, DocType.CLOSURE_ACTION, P1_MW_DOC341)
+	FLAG_P1_MW_DOC341 = true
 }
 
 'Click on My Work link from left menu'

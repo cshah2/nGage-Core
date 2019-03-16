@@ -14,13 +14,26 @@ import com.kms.katalon.core.testdata.TestData as TestData
 import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+
+import common.DocClass
+import common.DocType
+import common.Fields
 import internal.GlobalVariable as GlobalVariable
+import static utils.Consts.*
 
 'Login Into Application'
 CustomKeywords.'actions.Common.login'()
 
 'Create document'
-CustomKeywords.'actions.Common.createDocument_ClosureAction'('Chintan Shah', 'Test Cse - MW125')
+if(!FLAG_P1_WMI_DOC341) {
+	CustomKeywords.'actions.Data.create'(DocClass.CLOSURE_ACTION, DocType.CLOSURE_ACTION, P1_WMI_DOC341)
+	FLAG_P1_WMI_DOC341 = true
+}
+
+if(!FLAG_P1_WMI_DOC342) {
+	CustomKeywords.'actions.Data.create'(DocClass.CLOSURE_ACTION, DocType.CLOSURE_ACTION, P1_WMI_DOC342)
+	FLAG_P1_WMI_DOC342 = true
+}
 
 'Click on My Work link from left menu'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_My Work Left Menu'))
@@ -35,7 +48,7 @@ WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/h3_Se
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/iframe_work_items'))
 
 'enter search value(customer name)'
-WebUI.setText(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Closure Action/input_Search_Customer Name'), 'Chintan Shah')
+WebUI.setText(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Closure Action/input_Search_Customer Name'), P1_WMI_DOC341.get(Fields.CUSTOMER_NAME))
 
 'Click On Search Button'
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/btn_Search'))
@@ -44,4 +57,4 @@ CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Reposi
 int CustomerName_indexPosition=CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/tableHeader_MyWorkSearchResult'), 'Customer Name')
 
 'verify search result'
-CustomKeywords.'actions.Table.verifyAllValuesInColumnMatches'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'),CustomerName_indexPosition,'Chintan Shah')
+CustomKeywords.'actions.Table.verifyAllValuesInColumnMatches'(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'),CustomerName_indexPosition, P1_WMI_DOC341.get(Fields.CUSTOMER_NAME))

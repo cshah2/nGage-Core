@@ -11,13 +11,25 @@ import com.kms.katalon.core.testdata.TestData as TestData
 import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+
+import common.DocClass
+import common.DocType
 import internal.GlobalVariable as GlobalVariable
+import static utils.Consts.*
 
 'Login Into Application'
 CustomKeywords.'actions.Common.login'()
 
 'Create document closure action'
-CustomKeywords.'actions.Common.createDocument_ClosureAction'('Chintan Shah', 'Description')
+if(!FLAG_P1_WMI_DOC341) {
+	CustomKeywords.'actions.Data.create'(DocClass.CLOSURE_ACTION, DocType.CLOSURE_ACTION, P1_WMI_DOC341)
+	FLAG_P1_WMI_DOC341 = true
+}
+
+if(!FLAG_P1_WMI_DOC342) {
+	CustomKeywords.'actions.Data.create'(DocClass.CLOSURE_ACTION, DocType.CLOSURE_ACTION, P1_WMI_DOC342)
+	FLAG_P1_WMI_DOC342 = true
+}
 
 'Click on My Work link from left menu'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_My Work Left Menu'))
@@ -46,11 +58,6 @@ WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Folde
 'click close button'
 WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Folder_Configuration/button_Close'))
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
-
-//'Expand activity A'
-//WebUI.waitForElementVisible(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/a_Activity A'), 0)
-//WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/Closure Action/icon_Expand ActivityA'))
-//WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
 'verify sorted order of sub menus (Descending by name)'
 List<String> subMenusDesc = CustomKeywords.'actions.MenuBar.getAllSubMenus'('My_Work','Processes','Closure Action','Activity A')

@@ -11,6 +11,9 @@ import com.kms.katalon.core.testdata.TestData as TestData
 import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+
+import common.DocClass
+import common.DocType
 import internal.GlobalVariable as GlobalVariable
 import static utils.Consts.*
 
@@ -18,7 +21,10 @@ import static utils.Consts.*
 CustomKeywords.'actions.Common.login'()
 
 'Create Document'
-CustomKeywords.'actions.Common.createDocument_ClosureAction'('Chintan Shah', 'P1 - MW128')
+if(!FLAG_P1_WMI_DOC341) {
+	CustomKeywords.'actions.Data.create'(DocClass.CLOSURE_ACTION, DocType.CLOSURE_ACTION, P1_WMI_DOC341)
+	FLAG_P1_WMI_DOC341 = true
+}
 
 'Click on My Work link from left menu'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_My Work Left Menu'))
@@ -47,7 +53,6 @@ WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
 'Verify the foldered date group should be displayed with only Date (not with time)'
 CustomKeywords.'actions.MenuBar.verifyAllActivityNamesAreValidDate'('My_Work', FORMAT_DATE_TREE,'Processes','Closure Action','Activity A')
-//TODO: Issue pending from Dev for Date format in tree MY_WORK
 
 'Right click tree menu'
 CustomKeywords.'actions.MenuBar.rightClickTreeMenu'('MY_WORK', 'Processes', 'Closure Action', 'Activity A')

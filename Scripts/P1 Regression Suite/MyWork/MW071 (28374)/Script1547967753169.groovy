@@ -11,6 +11,10 @@ import com.kms.katalon.core.testdata.TestData as TestData
 import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+
+import common.DocClass
+import common.DocType
+import common.Fields
 import internal.GlobalVariable as GlobalVariable
 import static utils.Consts.*
 
@@ -18,14 +22,14 @@ import static utils.Consts.*
 CustomKeywords.'actions.Common.login'()
 
 'Create Docuements if not present'
-if(!FLAG_P1_MW_DOC9) {
-	CustomKeywords.'actions.Common.createDocument_ClosureAction'(P1_MW_DOC9_CUSTNAME, P1_MW_DOC9_CUSTDESC)
-	FLAG_P1_MW_DOC9 = true
+if(!FLAG_P1_WMI_DOC341) {
+	CustomKeywords.'actions.Data.create'(DocClass.CLOSURE_ACTION, DocType.CLOSURE_ACTION, P1_WMI_DOC341)
+	FLAG_P1_WMI_DOC341 = true
 }
 
-if(!FLAG_P1_MW_DOC10) {
-	CustomKeywords.'actions.Common.createDocument_ClosureAction'(P1_MW_DOC10_CUSTNAME, P1_MW_DOC10_CUSTDESC)
-	FLAG_P1_MW_DOC10 = true
+if(!FLAG_P1_WMI_DOC342) {
+	CustomKeywords.'actions.Data.create'(DocClass.CLOSURE_ACTION, DocType.CLOSURE_ACTION, P1_WMI_DOC342)
+	FLAG_P1_WMI_DOC342 = true
 }
 
 'Click on My Work link from left menu'
@@ -41,7 +45,7 @@ CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Reposi
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/h3_Search Bar'))
 
 'Enter Customer Name filter critieria'
-WebUI.setText(findTestObject('Page_nGage_Dashboard/My_Work/search_Customer Name'), P1_MW_DOC9_CUSTNAME)
+WebUI.setText(findTestObject('Page_nGage_Dashboard/My_Work/search_Customer Name'), P1_WMI_DOC341.get(Fields.CUSTOMER_NAME))
 
 'Click on Search button'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/btn_Search'))
@@ -49,4 +53,4 @@ CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Da
 
 'Verify correct records are displayed as per filter'
 int colNo_CustomerName = CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Page_nGage_Dashboard/My_Work/tableHeader_MyWorkSearchResult'), 'Customer Name')
-CustomKeywords.'actions.Table.verifyAllValuesInColumnMatches'(findTestObject('Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), colNo_CustomerName, P1_MW_DOC9_CUSTNAME)
+CustomKeywords.'actions.Table.verifyAllValuesInColumnMatches'(findTestObject('Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), colNo_CustomerName, P1_WMI_DOC341.get(Fields.CUSTOMER_NAME))

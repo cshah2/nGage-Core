@@ -16,6 +16,10 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WSBuiltInKeywords
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUiBuiltInKeywords
+
+import common.DocClass
+import common.DocType
+
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 import static utils.Consts.*
@@ -25,8 +29,9 @@ import static utils.DateUtil.*
 CustomKeywords.'actions.Common.login'()
 
 'Create Docuement if document is not created in previous test case SMOKE_MW003'
-if(!FLAG_SMOKE_MW003) {
-	CustomKeywords.'actions.Common.createDocument_ClosureAction'(SMOKE_MYWORK003_CUSTOMERNAME, SMOKE_MYWORK003_CUSTOMERDETAIL)
+if(!FLAG_SMOKE_WMI_DOC341) {
+	CustomKeywords.'actions.Data.create'(DocClass.CLOSURE_ACTION, DocType.CLOSURE_ACTION, SMOKE_WMI_DOC341)
+	FLAG_SMOKE_WMI_DOC341 = true
 }
 
 'Click on My Work link from left menu'

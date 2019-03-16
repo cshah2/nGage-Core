@@ -11,6 +11,10 @@ import com.kms.katalon.core.testdata.TestData as TestData
 import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+
+import common.DocClass
+import common.DocType
+import common.Fields
 import internal.GlobalVariable as GlobalVariable
 import utils.DateUtil
 
@@ -18,13 +22,20 @@ import utils.DateUtil
 CustomKeywords.'actions.Common.login'()
 
 'Create Closure Action document'
-//String timeformat = DateUtil.getCurrentDateTime('hhmmss')
 String primary_CustName = 'Chintan Shah - PWCA002'
 String primary_CustDesc = 'Workflow closure action - PWCA002'
 String attached_CustName = 'Chintan Shah - AWCA002'
 String attached_CustDesc = 'Workflow closure action - AWCA002'
 
-CustomKeywords.'actions.Common.createDocument_ClosureAction'(primary_CustName, primary_CustDesc)
+Map<Fields, String> primary = new HashMap<Fields, String>()
+primary.put(Fields.CUSTOMER_NAME, primary_CustName)
+primary.put(Fields.CUSTOMER_DETAIL, primary_CustDesc)
+
+Map<Fields, String> attached = new HashMap<Fields, String>()
+primary.put(Fields.CUSTOMER_NAME, attached_CustName)
+primary.put(Fields.CUSTOMER_DETAIL, attached_CustDesc)
+
+CustomKeywords.'actions.Data.create'(DocClass.CLOSURE_ACTION, DocType.CLOSURE_ACTION, primary)
 
 'Click on My Work link from left menu'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_My Work Left Menu'))
@@ -45,7 +56,7 @@ CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dash
 'Store DocID value of primary document'
 String docIDPrimary = CustomKeywords.'actions.Table.getCellText'(findTestObject('Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'), 1, colNo_DocID)
 
-CustomKeywords.'actions.Common.createDocument_ClosureAction'(attached_CustName, attached_CustDesc)
+CustomKeywords.'actions.Data.create'(DocClass.CLOSURE_ACTION, DocType.CLOSURE_ACTION, attached)
 
 WebUI.refresh()
 WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)

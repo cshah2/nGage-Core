@@ -11,6 +11,10 @@ import com.kms.katalon.core.testdata.TestData as TestData
 import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+
+import common.DocClass
+import common.DocType
+import common.Fields
 import internal.GlobalVariable as GlobalVariable
 import static utils.Consts.*
 
@@ -18,7 +22,7 @@ import static utils.Consts.*
 CustomKeywords.'actions.Common.login'()
 
 'Create Document'
-CustomKeywords.'actions.Common.createDocument_ClosureAction'(P1_REPO_CLOSURE_CUSTOMERNAME_DOC1, P1_REPO_CLOSURE_CUSTOMERDESC_DOC1)
+CustomKeywords.'actions.Data.create'(DocClass.CLOSURE_ACTION, DocType.CLOSURE_ACTION, P1_WMI_DOC341)
 
 'Expand Repository Menu'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Repository/h3_Repository Menu'))
@@ -57,8 +61,8 @@ WebUI.click(findTestObject('Page_WMI/Closure Action/span_Customer Information'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_WMI/Closure Action/iframe_ContentPlaceHolder1_iPa'))
 
 'Verify Customer information in window 1 for DocID = 101756'
-WebUI.verifyElementAttributeValue(findTestObject('Page_WMI/Closure Action/input_eform_Customer_Name'), 'value', P1_REPO_CLOSURE_CUSTOMERNAME_DOC1, GlobalVariable.G_LongTimeout)
-WebUI.verifyElementAttributeValue(findTestObject('Page_WMI/Closure Action/input_eform_Customer_Details'), 'value', P1_REPO_CLOSURE_CUSTOMERDESC_DOC1, GlobalVariable.G_LongTimeout)
+WebUI.verifyElementAttributeValue(findTestObject('Page_WMI/Closure Action/input_eform_Customer_Name'), 'value', P1_WMI_DOC341.get(Fields.CUSTOMER_NAME), GlobalVariable.G_LongTimeout)
+WebUI.verifyElementAttributeValue(findTestObject('Page_WMI/Closure Action/input_eform_Customer_Details'), 'value', P1_WMI_DOC341.get(Fields.CUSTOMER_DETAIL), GlobalVariable.G_LongTimeout)
 
 'Verify opened window'
 CustomKeywords.'actions.Window.verifyOpenWindowCount'(2)

@@ -16,18 +16,26 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WSBuiltInKeywords
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUiBuiltInKeywords
+
+import common.DocClass
+import common.DocType
+
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
-import utils.Consts
+import static utils.Consts.*
 
 'Login Into Application'
 CustomKeywords.'actions.Common.login'()
 
 'Create Docuement'
-CustomKeywords.'actions.Common.createDocument_ClosureAction'(Consts.SMOKE_MYWORK009_CUSTOMERNAME1, Consts.SMOKE_MYWORK009_CUSTOMERDETAIL1)
-
-'Create Docuement'
-CustomKeywords.'actions.Common.createDocument_ClosureAction'(Consts.SMOKE_MYWORK009_CUSTOMERNAME2, Consts.SMOKE_MYWORK009_CUSTOMERDETAIL2)
+if(!FLAG_SMOKE_WMI_DOC341) {
+	CustomKeywords.'actions.Data.create'(DocClass.CLOSURE_ACTION, DocType.CLOSURE_ACTION, SMOKE_WMI_DOC341)
+	FLAG_SMOKE_WMI_DOC341 = true
+}
+if(!FLAG_SMOKE_WMI_DOC342) {
+	CustomKeywords.'actions.Data.create'(DocClass.CLOSURE_ACTION, DocType.CLOSURE_ACTION, SMOKE_WMI_DOC342)
+	FLAG_SMOKE_WMI_DOC342 = true
+}
 
 'Click on My Work link from left menu'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_My Work Left Menu'))

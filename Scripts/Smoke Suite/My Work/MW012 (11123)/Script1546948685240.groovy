@@ -30,10 +30,6 @@ CustomKeywords.'actions.Common.login'()
 'Create documents if not available already'
 CustomKeywords.'actions.Common.createBulkDocuments_ClosureAction'(3)
 
-//'Create 2 documents'
-//CustomKeywords.'actions.Common.createDocument_ClosureAction'(SMOKE_MYWORK003_CUSTOMERNAME, SMOKE_MYWORK003_CUSTOMERDETAIL)
-//CustomKeywords.'actions.Common.createDocument_ClosureAction'(SMOKE_MYWORK003_CUSTOMERNAME, SMOKE_MYWORK003_CUSTOMERDETAIL)
-
 'Click on My Work link from left menu'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_My Work Left Menu'))
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
@@ -59,13 +55,6 @@ WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/My_Work/table_s
 'Enter Doc ID value for serch'
 WebUI.selectOptionByLabel(findTestObject('Page_nGage_Dashboard/My_Work/search_Operator_DocID'), '>=', false)
 WebUI.setText(findTestObject('Page_nGage_Dashboard/My_Work/search_DocID'), docID)
-//
-//'Enter search filter process due date - start and end'
-//String _startDate = getCurrentDateTimeMinusDays(0, FORMAT_DATETIME)
-//String _endDate = getCurrentDateTimeMinusDays(-10, FORMAT_DATETIME)
-//CustomKeywords.'actions.Common.setText_Date'(findTestObject('Page_nGage_Dashboard/My_Work/search_ProcessDueDate_Start'), _startDate)
-//CustomKeywords.'actions.Common.setText_Date'(findTestObject('Page_nGage_Dashboard/My_Work/search_ProcessDueDate_End'), _endDate)
-////TODO: Issue pending from Dev for Date format in system field is in 24 hr format instead of 12
 
 'Click on search button'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/btn_Search'))

@@ -621,40 +621,40 @@ public class Common {
 	//		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/span_ui-button-icon-primary ui'))
 	//	}
 
-//	@Keyword
-//	def createDocument_MyWorkDateTime(String docClass, String docType, String startDate, String endDate, String startDateTime, String endDateTime, String BM_Text) {
-//
-//		'Switch to main window'
-//		WebUI.switchToWindowTitle('Savana nGage')
-//
-//		'Create a new BovDocTwoRow Document'
-//		WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))
-//		selectDocClassAndDocTypeForGlobalNew(docClass, docType)
-//		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'))
-//
-//		'Switch to new Window'
-//		WebUI.switchToWindowTitle('Business Model WMI')
-//		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
-//
-//		'Fill the details required'
-//
-//		setText_Date(findTestObject('Page_WMI_NEW/MyWork_DateTime/input_Start test date'), startDate)
-//		setText_Date(findTestObject('Page_WMI_NEW/MyWork_DateTime/input_Endtestdate'), endDate)
-//		setText_Date(findTestObject('Page_WMI_NEW/MyWork_DateTime/input_Start test datetime'), startDateTime)
-//		setText_Date(findTestObject('Page_WMI_NEW/MyWork_DateTime/input_End test datetime'), endDateTime)
-//		WebUI.setText(findTestObject('Page_WMI_NEW/MyWork_DateTime/input_BM Text'), BM_Text)
-//
-//		'Save details and close'
-//		WebUI.click(findTestObject('Page_WMI_NEW/MyWork_DateTime/span_Save'))
-//		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
-//
-//		waitForFrameToLoad(findTestObject('Page_WMI/MyWork_DateTime/iframe_ContentPlaceHolder'))
-//		new Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI/MyWork_DateTime/span_Close Window'), GlobalVariable.G_LongTimeout)
-//
-//		'Switch to main window and close'
-//		WebUI.switchToWindowTitle('Savana nGage')
-//		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/span_ui-button-icon-primary ui'))
-//	}
+	//	@Keyword
+	//	def createDocument_MyWorkDateTime(String docClass, String docType, String startDate, String endDate, String startDateTime, String endDateTime, String BM_Text) {
+	//
+	//		'Switch to main window'
+	//		WebUI.switchToWindowTitle('Savana nGage')
+	//
+	//		'Create a new BovDocTwoRow Document'
+	//		WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))
+	//		selectDocClassAndDocTypeForGlobalNew(docClass, docType)
+	//		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'))
+	//
+	//		'Switch to new Window'
+	//		WebUI.switchToWindowTitle('Business Model WMI')
+	//		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+	//
+	//		'Fill the details required'
+	//
+	//		setText_Date(findTestObject('Page_WMI_NEW/MyWork_DateTime/input_Start test date'), startDate)
+	//		setText_Date(findTestObject('Page_WMI_NEW/MyWork_DateTime/input_Endtestdate'), endDate)
+	//		setText_Date(findTestObject('Page_WMI_NEW/MyWork_DateTime/input_Start test datetime'), startDateTime)
+	//		setText_Date(findTestObject('Page_WMI_NEW/MyWork_DateTime/input_End test datetime'), endDateTime)
+	//		WebUI.setText(findTestObject('Page_WMI_NEW/MyWork_DateTime/input_BM Text'), BM_Text)
+	//
+	//		'Save details and close'
+	//		WebUI.click(findTestObject('Page_WMI_NEW/MyWork_DateTime/span_Save'))
+	//		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+	//
+	//		waitForFrameToLoad(findTestObject('Page_WMI/MyWork_DateTime/iframe_ContentPlaceHolder'))
+	//		new Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI/MyWork_DateTime/span_Close Window'), GlobalVariable.G_LongTimeout)
+	//
+	//		'Switch to main window and close'
+	//		WebUI.switchToWindowTitle('Savana nGage')
+	//		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/span_ui-button-icon-primary ui'))
+	//	}
 
 	@Keyword
 	def verifyTotalRecordCountFromPageSummary(TestObject to, int expCount) {
@@ -789,34 +789,34 @@ public class Common {
 	//		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/span_ui-button-icon-primary ui'))
 	//	}
 
-	@Keyword
-	def createDocument_ClosureAction(String customerName, String customerDetails) {
-
-		'Switch to main window'
-		WebUI.switchToWindowTitle('Savana nGage')
-
-		'Create a new BovDocTwoRow Document'
-		WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))
-		selectDocClassAndDocTypeForGlobalNew('Closure Action', 'Closure Action')
-		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'))
-
-		'Switch to new Window'
-		WebUI.switchToWindowTitle('(Doc ID: NEW )')
-		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
-
-		'Fill the details required'
-		WebUI.setText(findTestObject('Page_WMI_NEW/Closure_Action/input_Customer Name'), customerName)
-		WebUI.setText(findTestObject('Page_WMI_NEW/Closure_Action/input_Customer Details'), customerDetails)
-
-		'Save details and close'
-		WebUI.mouseOver(findTestObject('Page_WMI_NEW/Closure_Action/span_Actions'))
-		WebUI.waitForElementVisible(findTestObject('Page_WMI_NEW/Closure_Action/a_Save'), GlobalVariable.G_LongTimeout)
-		new Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI_NEW/Closure_Action/a_Save'),GlobalVariable.G_LongTimeout)
-
-		'Switch to main window and close'
-		WebUI.switchToWindowTitle('Savana nGage')
-		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/span_ui-button-icon-primary ui'))
-	}
+	//	@Keyword
+	//	def createDocument_ClosureAction(String customerName, String customerDetails) {
+	//
+	//		'Switch to main window'
+	//		WebUI.switchToWindowTitle('Savana nGage')
+	//
+	//		'Create a new BovDocTwoRow Document'
+	//		WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))
+	//		selectDocClassAndDocTypeForGlobalNew('Closure Action', 'Closure Action')
+	//		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'))
+	//
+	//		'Switch to new Window'
+	//		WebUI.switchToWindowTitle('(Doc ID: NEW )')
+	//		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+	//
+	//		'Fill the details required'
+	//		WebUI.setText(findTestObject('Page_WMI_NEW/Closure_Action/input_Customer Name'), customerName)
+	//		WebUI.setText(findTestObject('Page_WMI_NEW/Closure_Action/input_Customer Details'), customerDetails)
+	//
+	//		'Save details and close'
+	//		WebUI.mouseOver(findTestObject('Page_WMI_NEW/Closure_Action/span_Actions'))
+	//		WebUI.waitForElementVisible(findTestObject('Page_WMI_NEW/Closure_Action/a_Save'), GlobalVariable.G_LongTimeout)
+	//		new Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI_NEW/Closure_Action/a_Save'),GlobalVariable.G_LongTimeout)
+	//
+	//		'Switch to main window and close'
+	//		WebUI.switchToWindowTitle('Savana nGage')
+	//		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/span_ui-button-icon-primary ui'))
+	//	}
 
 	@Keyword
 	def waitForElementVisible(TestObject to, int timeout) {
@@ -1208,7 +1208,7 @@ public class Common {
 		if(recordCount < requiredDocsCount) {
 			int extraDocsRequired = requiredDocsCount-recordCount
 			for(int i = 1; i <= extraDocsRequired; i++) {
-				createDocument_ClosureAction('Chintan Shah', 'Document '+i)
+				new Data().create(DocClass.CLOSURE_ACTION, DocType.CLOSURE_ACTION, P1_WMI_DOC341)
 			}
 		}
 		WebUI.refresh()
@@ -1720,7 +1720,7 @@ public class Common {
 
 	@Keyword
 	def createDateFilterDataMyWork() {
-		
+
 		if(!FLAG_P1_MW_DOC261) {
 			new Data().create(DocClass.DATE_REQUIRED, DocType.DATE_REQUIRED, P1_MW_DOC261)
 			FLAG_P1_MW_DOC261 = true
@@ -1745,7 +1745,7 @@ public class Common {
 
 	@Keyword
 	def createDateRangeFilterDataMyWork() {
-		
+
 		if(!FLAG_P1_MW_DOC281) {
 			new Data().create(DocClass.DATE_RANGE_REQUIRED, DocType.DATE_RANGE_REQUIRED, P1_MW_DOC281)
 			FLAG_P1_MW_DOC281 = true
@@ -1774,7 +1774,7 @@ public class Common {
 
 	@Keyword
 	def createDateTimeFilterDataMyWork() {
-		
+
 		if(!FLAG_P1_MW_DOC301) {
 			new Data().create(DocClass.DATETIME_REQUIRED, DocType.DATETIME_REQUIRED, P1_MW_DOC301)
 			FLAG_P1_MW_DOC301 = true
@@ -1799,7 +1799,7 @@ public class Common {
 
 	@Keyword
 	def createDateTimeRangeFilterDataMyWork() {
-		
+
 		if(!FLAG_P1_MW_DOC321) {
 			new Data().create(DocClass.DATETIME_RANGE_REQUIRED, DocType.DATETIME_RANGE_REQUIRED, P1_MW_DOC321)
 			FLAG_P1_MW_DOC321 = true

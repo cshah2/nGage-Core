@@ -11,6 +11,10 @@ import com.kms.katalon.core.testdata.TestData as TestData
 import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+
+import common.DocClass
+import common.DocType
+import common.Fields
 import internal.GlobalVariable as GlobalVariable
 import static utils.DateUtil.*
 
@@ -18,11 +22,14 @@ import static utils.DateUtil.*
 CustomKeywords.'actions.Common.login'()
 
 'Create Closure Action document'
-//String timeformat = getCurrentDateTime('hhmmss')
 String primary_CustName = 'Chintan Shah - PWCA007'
 String primary_CustDesc = 'Workflow closure action - PWCA007'
 
-CustomKeywords.'actions.Common.createDocument_ClosureAction'(primary_CustName, primary_CustDesc)
+Map<Fields, String> primary = new HashMap<Fields, String>()
+primary.put(Fields.CUSTOMER_NAME, primary_CustName)
+primary.put(Fields.CUSTOMER_DETAIL, primary_CustDesc)
+
+CustomKeywords.'actions.Data.create'(DocClass.CLOSURE_ACTION, DocType.CLOSURE_ACTION, primary)
 
 'Click on My Work link from left menu'
 WebUI.click(findTestObject('Page_nGage_Dashboard/My_Work/a_My Work Left Menu'))

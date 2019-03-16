@@ -136,6 +136,10 @@ public class Data {
 				myWorkDateTime(data)
 				break
 
+			case DocType.CLOSURE_ACTION:
+				closureAction(data)
+				break
+
 			default:
 				WebUI.takeScreenshot()
 				KeywordUtil.markFailedAndStop('Unable to create document, Invalid docType provided : '+docType)
@@ -588,11 +592,11 @@ public class Data {
 		new Common().waitForFrameToLoad(findTestObject('Page_WMI/Date Date Time DT/iframe_ContentPlaceHolder1'))
 		new Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI/Date Date Time DT/span_Close Window'), GlobalVariable.G_LongTimeout)
 	}
-	
+
 	private void myWorkDateTime(Map<Fields, String> data) {
 
 		//Date Required, Date Range Required, Date Time Required, Date Time Range Required
-		
+
 		//Get Data from Map
 		String startDate = data.get(Fields.START_DATE)
 		String endDate = data.get(Fields.END_DATE)
@@ -617,5 +621,23 @@ public class Data {
 		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 		new Common().waitForFrameToLoad(findTestObject('Page_WMI/MyWork_DateTime/iframe_ContentPlaceHolder'))
 		new Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI/MyWork_DateTime/span_Close Window'), GlobalVariable.G_LongTimeout)
+	}
+	
+	private void closureAction(Map<Fields, String> data) {
+		
+		//Get Data from Map
+		String custName = data.get(Fields.CUSTOMER_NAME)
+		String custDetail = data.get(Fields.CUSTOMER_DETAIL)
+		
+		//Fill Form
+		if(StringUtils.isNotBlank(custName))
+			WebUI.setText(findTestObject('Page_WMI_NEW/Closure_Action/input_Customer Name'), custName)
+		if(StringUtils.isNotBlank(custDetail))
+			WebUI.setText(findTestObject('Page_WMI_NEW/Closure_Action/input_Customer Details'), custDetail)
+
+		//Save details and close
+		WebUI.mouseOver(findTestObject('Page_WMI_NEW/Closure_Action/span_Actions'))
+		WebUI.waitForElementVisible(findTestObject('Page_WMI_NEW/Closure_Action/a_Save'), GlobalVariable.G_LongTimeout)
+		new Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI_NEW/Closure_Action/a_Save'),GlobalVariable.G_LongTimeout)
 	}
 }

@@ -23,7 +23,7 @@ public enum Fields {
 	TEMPLATE_TEXT,				//Complaint Template
 	CUSTOMER_ID,				//WMI Menu Bov, WMI Menu Default, WMI Menu DocTwoRow
 	BM_STRING,					//WMI Menu Bov, WMI Menu Default, WMI Menu DocTwoRow, Required Field DT
-	CUSTOMER_NAME,				//WMI Menu Bov, WMI Menu Default, WMI Menu DocTwoRow
+	CUSTOMER_NAME,				//WMI Menu Bov, WMI Menu Default, WMI Menu DocTwoRow, Closure Actions
 	UPLOAD_FILE,				//WMI Menu Bov, WMI Menu Default, WMI Menu DocTwoRow, SM WEB SERVICE, Vertical Menu Wizard
 	STRING_FIELD,				//SM WEB SERVICE, Event For Required Field, Render All Field Types
 	FILE_NAME,					//SM WEB SERVICE
@@ -51,6 +51,6 @@ public enum Fields {
 	START_DATE,					//Date Required, Date Range Required, Date Time Required, Date Time Range Required
 	END_DATE,					//Date Required, Date Range Required, Date Time Required, Date Time Range Required
 	START_DATE_TIME,			//Date Required, Date Range Required, Date Time Required, Date Time Range Required
-	END_DATE_TIME				//Date Required, Date Range Required, Date Time Required, Date Time Range Required
-
+	END_DATE_TIME,				//Date Required, Date Range Required, Date Time Required, Date Time Range Required
+	CUSTOMER_DETAIL
 }

@@ -45,7 +45,7 @@ public enum DocType {
 	DATETIME_REQUIRED("Datetimerequired"),
 	DATETIME_RANGE_REQUIRED("Datetimerangerequired")
 
-	
+
 
 	private final String text
 
