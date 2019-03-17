@@ -215,28 +215,6 @@ public class Common {
 		waitForFrameToLoad(findTestObject('Page_nGage_Dashboard/iframe_ifrmCreateNew'))
 	}
 
-	//	@Keyword
-	//	def createDocument_WMIMenuBovVertical() {
-	//
-	//		WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))
-	//		selectDocClassAndDocTypeForGlobalNew('WMI Menu', 'WMI Menu BOV Vertical')
-	//		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'))
-	//
-	//		WebUI.switchToWindowTitle('(Doc ID: NEW )')
-	//		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
-	//
-	//		String filePath = RunConfiguration.getProjectDir().replace('/', '\\')+'\\Data Files\\FileUploads\\50 Pages PDF file.pdf'
-	//		WebUI.setText(findTestObject('Page_WMI_NEW/WMI_Menu_BOV_Vertical/input_String field'), 'New Document with Attachement')
-	//		WebUI.uploadFile(findTestObject('Page_WMI_NEW/WMI_Menu_BOV_Vertical/input__file_upload'), filePath)
-	//
-	//		WebUI.mouseOver(findTestObject('Page_WMI_NEW/WMI_Menu_BOV_Vertical/menu_Standard Actions'))
-	//		WebUI.waitForElementVisible(findTestObject('Page_WMI_NEW/WMI_Menu_BOV_Vertical/button_Save'), GlobalVariable.G_LongTimeout)
-	//		new Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI_NEW/WMI_Menu_BOV_Vertical/button_Save'), GlobalVariable.G_LongTimeout)
-	//
-	//		WebUI.switchToWindowTitle('Savana nGage')
-	//		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/span_ui-button-icon-primary ui'))
-	//	}
-
 	@Keyword
 	def openDocumentFromRecentGrid(String documentTitle) {
 		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/a_Recent Documents'))
@@ -347,138 +325,9 @@ public class Common {
 		}
 	}
 
-	//	@Keyword
-	//	def createDocument_WMIMenuBov() {
-	//
-	//		'Switch to main window'
-	//		WebUI.switchToWindowTitle('Savana nGage')
-	//
-	//		'Create a new BovDocTwoRow Document'
-	//		WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))
-	//		selectDocClassAndDocTypeForGlobalNew('WMI Menu', 'WMI Menu BOV')
-	//		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'))
-	//
-	//		'Switch to new Window'
-	//		WebUI.switchToWindowTitle('(Doc ID: NEW )')
-	//		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
-	//
-	//		'Fill the details required'
-	//		String filePath = RunConfiguration.getProjectDir().replace('/', '\\')+'\\Data Files\\FileUploads\\50 Pages PDF file.pdf'
-	//		WebUI.selectOptionByLabel(findTestObject('Object Repository/Page_WMI_NEW/WMI_Menu_BOV/selectCustomerId'), '200',false)
-	//		WebUI.sendKeys(findTestObject('Object Repository/Page_WMI_NEW/WMI_Menu_BOV/inputBMString'), 'Test1')
-	//		WebUI.sendKeys(findTestObject('Object Repository/Page_WMI_NEW/WMI_Menu_BOV/inputCustomerName'), 'Roshan')
-	//		WebUI.uploadFile(findTestObject('Object Repository/Page_WMI_NEW/WMI_Menu_BOV/inputUpload'), filePath)
-	//
-	//		'Save details and close'
-	//		WebUI.mouseOver(findTestObject('Object Repository/Page_WMI_NEW/WMI_Menu_BOV/buttonStandardActions'))
-	//		WebUI.waitForElementVisible(findTestObject('Object Repository/Page_WMI_NEW/WMI_Menu_BOV/buttonSave'), GlobalVariable.G_LongTimeout)
-	//		new Window().clickElementAndWaitForWindowClose(findTestObject('Object Repository/Page_WMI_NEW/WMI_Menu_BOV/buttonSave'),GlobalVariable.G_LongTimeout)
-	//
-	//		'Switch to main window and close'
-	//		WebUI.switchToWindowTitle('Savana nGage')
-	//		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/span_ui-button-icon-primary ui'))
-	//	}
-
-	//	@Keyword
-	//	def createDocument_WMIMenuBovDefault() {
-	//
-	//		'Switch to main window'
-	//		WebUI.switchToWindowTitle('Savana nGage')
-	//
-	//		'Create a new BovDefault Document'
-	//		WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))
-	//		selectDocClassAndDocTypeForGlobalNew('WMI Menu', 'WMI Menu Default')
-	//		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'))
-	//
-	//		'Switch to new Window'
-	//		WebUI.switchToWindowTitle('(Doc ID: NEW )')
-	//		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
-	//
-	//		'Fill the details required'
-	//		String filePath = RunConfiguration.getProjectDir().replace('/', '\\')+'\\Data Files\\FileUploads\\50 Pages PDF file.pdf'
-	//		WebUI.selectOptionByLabel(findTestObject('Object Repository/Page_WMI_NEW/WMI_Menu_BOV_Default/customerID'), '200',false)
-	//		WebUI.sendKeys(findTestObject('Object Repository/Page_WMI_NEW/WMI_Menu_BOV_Default/BMString'), 'Test1')
-	//		WebUI.sendKeys(findTestObject('Object Repository/Page_WMI_NEW/WMI_Menu_BOV_Default/customerName'), 'Roshan')
-	//		WebUI.uploadFile(findTestObject('Object Repository/Page_WMI_NEW/WMI_Menu_BOV_Default/chooseFile'), filePath)
-	//
-	//		'Save details and close'
-	//		WebUI.mouseOver(findTestObject('Object Repository/Page_WMI_NEW/WMI_Menu_BOV_Default/standardActionsUIButton'))
-	//		WebUI.waitForElementVisible(findTestObject('Object Repository/Page_WMI_NEW/WMI_Menu_BOV_Default/Save'), GlobalVariable.G_LongTimeout)
-	//		new Window().clickElementAndWaitForWindowClose(findTestObject('Object Repository/Page_WMI_NEW/WMI_Menu_BOV_Default/Save'),GlobalVariable.G_LongTimeout)
-	//
-	//		'Switch to main window and close'
-	//		WebUI.switchToWindowTitle('Savana nGage')
-	//		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/span_ui-button-icon-primary ui'))
-	//	}
-
-	//	@Keyword
-	//	def createDocument_WMIMenuBovDocTwoRow() {
-	//
-	//		'Switch to main window'
-	//		WebUI.switchToWindowTitle('Savana nGage')
-	//
-	//		'Create a new BovDocTwoRow Document'
-	//		WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))
-	//		selectDocClassAndDocTypeForGlobalNew('WMI Menu', 'WMI Menu DocTwoRow')
-	//		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'))
-	//
-	//		'Switch to new Window'
-	//		WebUI.switchToWindowTitle('(Doc ID: NEW )')
-	//		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
-	//
-	//		'Fill the details required'
-	//		String filePath = RunConfiguration.getProjectDir().replace('/', '\\')+'\\Data Files\\FileUploads\\50 Pages PDF file.pdf'
-	//		WebUI.selectOptionByLabel(findTestObject('Object Repository/Page_WMI_NEW/WMI_Menu_BOV_DocTwoRow/customerId'), '200',false)
-	//		WebUI.sendKeys(findTestObject('Object Repository/Page_WMI_NEW/WMI_Menu_BOV_DocTwoRow/BMString'), 'Test1')
-	//		WebUI.sendKeys(findTestObject('Object Repository/Page_WMI_NEW/WMI_Menu_BOV_DocTwoRow/customerName'), 'Roshan')
-	//		WebUI.uploadFile(findTestObject('Object Repository/Page_WMI_NEW/WMI_Menu_BOV_DocTwoRow/chooseFile'), filePath)
-	//
-	//		'Save details and close'
-	//		WebUI.mouseOver(findTestObject('Object Repository/Page_WMI_NEW/WMI_Menu_BOV_DocTwoRow/dropdownStandardActions'))
-	//		WebUI.waitForElementVisible(findTestObject('Object Repository/Page_WMI_NEW/WMI_Menu_BOV_DocTwoRow/Save'), GlobalVariable.G_LongTimeout)
-	//		new Window().clickElementAndWaitForWindowClose(findTestObject('Object Repository/Page_WMI_NEW/WMI_Menu_BOV_DocTwoRow/Save'),GlobalVariable.G_LongTimeout)
-	//
-	//		'Switch to main window and close'
-	//		WebUI.switchToWindowTitle('Savana nGage')
-	//		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/span_ui-button-icon-primary ui'))
-	//	}
-
 	@Keyword
 	def verifyDateFormat(String inputDate,String inputDateFormat)
 	{
-		//		Date date=dateFormat.parse(inputDate)
-		//
-		//		//int dd=12, mm=12, yy=2012;
-		//		int dd=date.getDate()
-		//		int mm=date.getMonth()
-		//		int yy=date.getYear()
-		//
-		//		String output="";
-		//		// check year
-		//		if (yy >= 1900 && yy <= 9999) {
-		//			// check month
-		//			if (mm >= 1 && mm <= 12) {
-		//				// check days
-		//				if ((dd >= 1 && dd <= 31) && (mm == 1 || mm == 3 || mm == 5 || mm == 7 ||
-		//				mm == 8 || mm == 10 || mm == 12))
-		//					output+="Date is valid.\n";  //printf("Date is valid.\n");
-		//				else if ((dd >= 1 && dd <= 30) &&
-		//				(mm == 4 || mm == 6 || mm == 9 || mm == 11))
-		//					output+="Date is valid.\n";
-		//				else if ((dd >= 1 && dd <= 28) && (mm == 2))
-		//					output+="Date is valid.\n";
-		//				else if (dd == 29 && mm == 2 &&
-		//				(yy % 400 == 0 || (yy % 4 == 0 && yy % 100 != 0)))
-		//					output+="Date is valid.\n";
-		//				else
-		//					output+="Date is invalid.\n";
-		//			} else {
-		//				output+="Month is not valid\n";
-		//			}
-		//		} else {
-		//			output+="Year is not valid\n";
-		//		}
-		//		System.out.println(output);
 		try {
 			SimpleDateFormat dateFormat=new SimpleDateFormat(inputDateFormat)
 			dateFormat.parse(inputDate)
@@ -556,106 +405,6 @@ public class Common {
 		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 	}
 
-	//	@Keyword
-	//	def createDocument_DateTimeDT(String BM_Date, String DateRange, String BM_DateTime, String DateTimeRange) {
-	//
-	//		'Switch to main window'
-	//		WebUI.switchToWindowTitle('Savana nGage')
-	//
-	//		'Create a new BovDocTwoRow Document'
-	//		WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))
-	//		selectDocClassAndDocTypeForGlobalNew('Date Date Time DC', 'Date DateTime DT')
-	//		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'))
-	//
-	//		'Switch to new Window'
-	//		WebUI.switchToWindowTitle('Business Model WMI')
-	//		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
-	//
-	//		'Fill the details required'
-	//		setText_Date(findTestObject('Page_WMI_NEW/Date Date Time DT/input_BM Date'), BM_Date)
-	//		setText_Date(findTestObject('Page_WMI_NEW/Date Date Time DT/input_Date range'), DateRange)
-	//		setText_Date(findTestObject('Page_WMI_NEW/Date Date Time DT/input_BM DateTime'), BM_DateTime)
-	//		setText_Date(findTestObject('Page_WMI_NEW/Date Date Time DT/input_Date time range'), DateTimeRange)
-	//
-	//		'Save details and close'
-	//		WebUI.click(findTestObject('Page_WMI_NEW/Date Date Time DT/span_Save'))
-	//
-	//		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
-	//		waitForFrameToLoad(findTestObject('Page_WMI/Date Date Time DT/iframe_ContentPlaceHolder1'))
-	//		new Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI/Date Date Time DT/span_Close Window'), GlobalVariable.G_LongTimeout)
-	//
-	//		'Switch to main window and close'
-	//		WebUI.switchToWindowTitle('Savana nGage')
-	//		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/span_ui-button-icon-primary ui'))
-	//	}
-
-	//	@Keyword
-	//	def createDocument_RequiredFieldDT(String BM_Text, String BM_String_Required, String BM_int, String DateTime_Required, String Date_Required) {
-	//
-	//		'Switch to main window'
-	//		WebUI.switchToWindowTitle('Savana nGage')
-	//
-	//		'Create a new BovDocTwoRow Document'
-	//		WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))
-	//		selectDocClassAndDocTypeForGlobalNew('Required field DC', 'Required field DT')
-	//		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'))
-	//
-	//		'Switch to new Window'
-	//		WebUI.switchToWindowTitle('(Doc ID: NEW )')
-	//		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
-	//
-	//		'Fill the details required'
-	//		setText_Date(findTestObject('Page_WMI_NEW/Required_Field_DT/input_BM Text'), BM_Text)
-	//		WebUI.setText(findTestObject('Page_WMI_NEW/Required_Field_DT/input_BM String required'), BM_String_Required)
-	//		WebUI.setText(findTestObject('Page_WMI_NEW/Required_Field_DT/input_BM Int'), BM_int)
-	//		setText_Date(findTestObject('Page_WMI_NEW/Required_Field_DT/input_Date Time Required'), DateTime_Required)
-	//		setText_Date(findTestObject('Page_WMI_NEW/Required_Field_DT/input_Date Required'), Date_Required)
-	//
-	//		'Save details and close'
-	//		WebUI.mouseOver(findTestObject('Page_WMI_NEW/Required_Field_DT/span_Standard Actions'))
-	//		WebUI.waitForElementVisible(findTestObject('Page_WMI_NEW/Required_Field_DT/a_Save'), GlobalVariable.G_LongTimeout)
-	//		new Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI_NEW/Required_Field_DT/a_Save'),GlobalVariable.G_LongTimeout)
-	//
-	//		'Switch to main window and close'
-	//		WebUI.switchToWindowTitle('Savana nGage')
-	//		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/span_ui-button-icon-primary ui'))
-	//	}
-
-	//	@Keyword
-	//	def createDocument_MyWorkDateTime(String docClass, String docType, String startDate, String endDate, String startDateTime, String endDateTime, String BM_Text) {
-	//
-	//		'Switch to main window'
-	//		WebUI.switchToWindowTitle('Savana nGage')
-	//
-	//		'Create a new BovDocTwoRow Document'
-	//		WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))
-	//		selectDocClassAndDocTypeForGlobalNew(docClass, docType)
-	//		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'))
-	//
-	//		'Switch to new Window'
-	//		WebUI.switchToWindowTitle('Business Model WMI')
-	//		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
-	//
-	//		'Fill the details required'
-	//
-	//		setText_Date(findTestObject('Page_WMI_NEW/MyWork_DateTime/input_Start test date'), startDate)
-	//		setText_Date(findTestObject('Page_WMI_NEW/MyWork_DateTime/input_Endtestdate'), endDate)
-	//		setText_Date(findTestObject('Page_WMI_NEW/MyWork_DateTime/input_Start test datetime'), startDateTime)
-	//		setText_Date(findTestObject('Page_WMI_NEW/MyWork_DateTime/input_End test datetime'), endDateTime)
-	//		WebUI.setText(findTestObject('Page_WMI_NEW/MyWork_DateTime/input_BM Text'), BM_Text)
-	//
-	//		'Save details and close'
-	//		WebUI.click(findTestObject('Page_WMI_NEW/MyWork_DateTime/span_Save'))
-	//		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
-	//
-	//		waitForFrameToLoad(findTestObject('Page_WMI/MyWork_DateTime/iframe_ContentPlaceHolder'))
-	//		new Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI/MyWork_DateTime/span_Close Window'), GlobalVariable.G_LongTimeout)
-	//
-	//		'Switch to main window and close'
-	//		WebUI.switchToWindowTitle('Savana nGage')
-	//		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/span_ui-button-icon-primary ui'))
-	//	}
-
 	@Keyword
 	def verifyTotalRecordCountFromPageSummary(TestObject to, int expCount) {
 		String text = WebUI.getText(to).trim()
@@ -729,95 +478,6 @@ public class Common {
 		}
 	}
 
-	//	@Keyword
-	//	def createDocument_MultiPageViewerWithDragAndDrop(String stringField, String fileName, String filePath) {
-	//
-	//		'Switch to main window'
-	//		WebUI.switchToWindowTitle('Savana nGage')
-	//
-	//		'Create a new BovDocTwoRow Document'
-	//		WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))
-	//		selectDocClassAndDocTypeForGlobalNew('Business Model View', 'MultipageViewer with drag and drop')
-	//		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'))
-	//
-	//		'Switch to new Window'
-	//		WebUI.switchToWindowTitle('(Doc ID: NEW )')
-	//		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
-	//
-	//		//Set data in fields
-	//		WebUI.setText(findTestObject('Page_WMI_NEW/MultiPage_Viewer_DD/input_eform_mcb67676phBO_3_BOe'), stringField)
-	//		WebUI.setText(findTestObject('Page_WMI_NEW/MultiPage_Viewer_DD/input_eform_mcb67676phBO_3_BOe_1'), fileName)
-	//
-	//		//Click on Save button
-	//		WebUI.mouseOver(findTestObject('Page_WMI_NEW/MultiPage_Viewer_DD/span_standard_actions'))
-	//		WebUI.waitForElementVisible(findTestObject('Page_WMI_NEW/MultiPage_Viewer_DD/a_Save'), GlobalVariable.G_LongTimeout)
-	//		new Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI_NEW/MultiPage_Viewer_DD/a_Save'), GlobalVariable.G_LongTimeout)
-	//
-	//		'Switch to main window and close'
-	//		WebUI.switchToWindowTitle('Savana nGage')
-	//		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/span_ui-button-icon-primary ui'))
-	//	}
-
-	//	@Keyword
-	//	def createDocument_WMIMenuBovVertical(String BM_String, String filePath) {
-	//
-	//		'Switch to main window'
-	//		WebUI.switchToWindowTitle('Savana nGage')
-	//
-	//		'Create a new BovDocTwoRow Document'
-	//		WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))
-	//		selectDocClassAndDocTypeForGlobalNew('WMI Menu', 'WMI Menu BOV Vertical')
-	//		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'))
-	//
-	//		'Switch to new Window'
-	//		WebUI.switchToWindowTitle('(Doc ID: NEW )')
-	//		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
-	//
-	//		'Fill the details required'
-	//		WebUI.setText(findTestObject('Page_WMI_NEW/WMI_Menu_BOV_Vertical/input_String field'), BM_String)
-	//		if(StringUtils.isNotBlank(filePath)) {
-	//			WebUI.uploadFile(findTestObject('Page_WMI_NEW/WMI_Menu_BOV_Vertical/input__file_upload'), filePath)
-	//		}
-	//
-	//		'Save details and close'
-	//		WebUI.mouseOver(findTestObject('Object Repository/Page_WMI_NEW/WMI_Menu_BOV/buttonStandardActions'))
-	//		WebUI.waitForElementVisible(findTestObject('Object Repository/Page_WMI_NEW/WMI_Menu_BOV/buttonSave'), GlobalVariable.G_LongTimeout)
-	//		new Window().clickElementAndWaitForWindowClose(findTestObject('Object Repository/Page_WMI_NEW/WMI_Menu_BOV/buttonSave'),GlobalVariable.G_LongTimeout)
-	//
-	//		'Switch to main window and close'
-	//		WebUI.switchToWindowTitle('Savana nGage')
-	//		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/span_ui-button-icon-primary ui'))
-	//	}
-
-	//	@Keyword
-	//	def createDocument_ClosureAction(String customerName, String customerDetails) {
-	//
-	//		'Switch to main window'
-	//		WebUI.switchToWindowTitle('Savana nGage')
-	//
-	//		'Create a new BovDocTwoRow Document'
-	//		WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))
-	//		selectDocClassAndDocTypeForGlobalNew('Closure Action', 'Closure Action')
-	//		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'))
-	//
-	//		'Switch to new Window'
-	//		WebUI.switchToWindowTitle('(Doc ID: NEW )')
-	//		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
-	//
-	//		'Fill the details required'
-	//		WebUI.setText(findTestObject('Page_WMI_NEW/Closure_Action/input_Customer Name'), customerName)
-	//		WebUI.setText(findTestObject('Page_WMI_NEW/Closure_Action/input_Customer Details'), customerDetails)
-	//
-	//		'Save details and close'
-	//		WebUI.mouseOver(findTestObject('Page_WMI_NEW/Closure_Action/span_Actions'))
-	//		WebUI.waitForElementVisible(findTestObject('Page_WMI_NEW/Closure_Action/a_Save'), GlobalVariable.G_LongTimeout)
-	//		new Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI_NEW/Closure_Action/a_Save'),GlobalVariable.G_LongTimeout)
-	//
-	//		'Switch to main window and close'
-	//		WebUI.switchToWindowTitle('Savana nGage')
-	//		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/span_ui-button-icon-primary ui'))
-	//	}
-
 	@Keyword
 	def waitForElementVisible(TestObject to, int timeout) {
 
@@ -857,22 +517,6 @@ public class Common {
 
 		WebUI.waitForElementPresent(findTestObject('Page_WMI_NEW/visibleLoader'), 5)
 		WebUI.waitForElementNotPresent(findTestObject('Page_WMI_NEW/visibleLoader'), timeout)
-
-		//		if(iframe != null) {
-		//			WebUI.switchToFrame(iframe, timeout)
-		//		} else {
-		//			WebUI.switchToFrame(findTestObject('Page_WMI_NEW/iframe_Close Window_ContentPla'), timeout)
-		//		}
-		//
-		//		WebDriver driver = DriverFactory.getWebDriver()
-		//		FluentWait<WebDriver> wait = new FluentWait<WebDriver>(driver)
-		//				.withTimeout(timeout, TimeUnit.SECONDS)
-		//				.pollingEvery(3, TimeUnit.SECONDS)
-		//				.ignoring(StaleElementReferenceException.class)
-		//
-		//		wait.until(ExpectedConditions.not(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//img[contains(@src,'orange_daisy.g')]/../../../div[contains(@style,'block')]"))))
-		//
-		//		WebUI.switchToDefaultContent()
 	}
 
 	@Keyword
@@ -932,167 +576,6 @@ public class Common {
 		WebUI.delay(3)
 	}
 
-	//	@Keyword
-	//	def createDocument_VerticalMenuWizard() {
-	//
-	//		'Switch to main window'
-	//		WebUI.switchToWindowTitle('Savana nGage')
-	//
-	//		'Create a new BovDocTwoRow Document'
-	//		WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))
-	//		selectDocClassAndDocTypeForGlobalNew('Vertical Menu Wizard', 'ShowVerticalMenu-True')
-	//		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'))
-	//
-	//		'Switch to new Window'
-	//		WebUI.switchToWindowIndex(1)
-	//		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
-	//
-	//		'Fill the details required'
-	//		WebUI.setText(findTestObject('Page_WMI_NEW/VerticalMenuWizard/ShowVerticalMenu_True/input_First Name'), 'Chintan')
-	//		WebUI.setText(findTestObject('Page_WMI_NEW/VerticalMenuWizard/ShowVerticalMenu_True/input_Last Name'), 'Shah')
-	//		WebUI.setText(findTestObject('Page_WMI_NEW/VerticalMenuWizard/ShowVerticalMenu_True/input_Amount'), '50000')
-	//
-	//		'Save details and close'
-	//		WebUI.click(findTestObject('Page_WMI_NEW/VerticalMenuWizard/ShowVerticalMenu_True/span_Save'))
-	//		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
-	//		waitForFrameToLoad(findTestObject('Page_WMI_NEW/VerticalMenuWizard/ShowVerticalMenu_True/iframe_Menus_ContentPlaceHolde'))
-	//
-	//		new Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI_NEW/VerticalMenuWizard/ShowVerticalMenu_True/a_Close Window'), GlobalVariable.G_LongTimeout)
-	//
-	//		'Switch to main window and close'
-	//		WebUI.switchToWindowTitle('Savana nGage')
-	//		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/span_ui-button-icon-primary ui'))
-	//
-	//	}
-
-	//	@Keyword
-	//	def createDocument_VerticalMenuWizard(String firstName, String lastName, String amount) {
-	//
-	//		'Switch to main window'
-	//		WebUI.switchToWindowTitle('Savana nGage')
-	//
-	//		'Create a new BovDocTwoRow Document'
-	//		WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))
-	//		selectDocClassAndDocTypeForGlobalNew('Vertical Menu Wizard', 'ShowVerticalMenu-True')
-	//		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'))
-	//
-	//		'Switch to new Window'
-	//		WebUI.switchToWindowIndex(1)
-	//		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
-	//
-	//		'Fill the details required'
-	//		WebUI.setText(findTestObject('Page_WMI_NEW/VerticalMenuWizard/ShowVerticalMenu_True/input_First Name'), firstName)
-	//		WebUI.setText(findTestObject('Page_WMI_NEW/VerticalMenuWizard/ShowVerticalMenu_True/input_Last Name'), lastName)
-	//		WebUI.setText(findTestObject('Page_WMI_NEW/VerticalMenuWizard/ShowVerticalMenu_True/input_Amount'), amount)
-	//
-	//		'Save details and close'
-	//		WebUI.click(findTestObject('Page_WMI_NEW/VerticalMenuWizard/ShowVerticalMenu_True/span_Save'))
-	//		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
-	//		waitForFrameToLoad(findTestObject('Page_WMI_NEW/VerticalMenuWizard/ShowVerticalMenu_True/iframe_Menus_ContentPlaceHolde'))
-	//
-	//		new Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI_NEW/VerticalMenuWizard/ShowVerticalMenu_True/a_Close Window'), GlobalVariable.G_LongTimeout)
-	//
-	//		'Switch to main window and close'
-	//		WebUI.switchToWindowTitle('Savana nGage')
-	//		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/span_ui-button-icon-primary ui'))
-	//
-	//	}
-
-	//	@Keyword
-	//	def createDocument_VerticalMenuWizard(String firstName, String lastName, String amount, String filePath) {
-	//
-	//		'Switch to main window'
-	//		WebUI.switchToWindowTitle('Savana nGage')
-	//
-	//		'Create a new BovDocTwoRow Document'
-	//		WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))
-	//		selectDocClassAndDocTypeForGlobalNew('Vertical Menu Wizard', 'ShowVerticalMenu-True')
-	//		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'))
-	//
-	//		'Switch to new Window'
-	//		WebUI.switchToWindowIndex(1)
-	//		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
-	//
-	//		'Fill the details required'
-	//		WebUI.setText(findTestObject('Page_WMI_NEW/VerticalMenuWizard/ShowVerticalMenu_True/input_First Name'), firstName)
-	//		WebUI.setText(findTestObject('Page_WMI_NEW/VerticalMenuWizard/ShowVerticalMenu_True/input_Last Name'), lastName)
-	//		WebUI.setText(findTestObject('Page_WMI_NEW/VerticalMenuWizard/ShowVerticalMenu_True/input_Amount'), amount)
-	//		if(StringUtils.isNotBlank(filePath)) {
-	//			WebUI.setText(findTestObject('Page_WMI_NEW/VerticalMenuWizard/ShowVerticalMenu_True/input_File Upload'), filePath)
-	//		}
-	//
-	//		'Save details and close'
-	//		WebUI.click(findTestObject('Page_WMI_NEW/VerticalMenuWizard/ShowVerticalMenu_True/span_Save'))
-	//		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
-	//		waitForFrameToLoad(findTestObject('Page_WMI_NEW/VerticalMenuWizard/ShowVerticalMenu_True/iframe_Menus_ContentPlaceHolde'))
-	//
-	//		new Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI_NEW/VerticalMenuWizard/ShowVerticalMenu_True/a_Close Window'), GlobalVariable.G_LongTimeout)
-	//
-	//		'Switch to main window and close'
-	//		WebUI.switchToWindowTitle('Savana nGage')
-	//		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/span_ui-button-icon-primary ui'))
-	//
-	//	}
-
-
-	//	@Keyword
-	//	def createDocument_RouteAdvance(String description) {
-	//
-	//		'Switch to main window'
-	//		WebUI.switchToWindowTitle('Savana nGage')
-	//
-	//		'Create a new BovDocTwoRow Document'
-	//		WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))
-	//		selectDocClassAndDocTypeForGlobalNew('Route Advance', 'Route from Entry Interactive User')
-	//		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'))
-	//
-	//		'Switch to new Window'
-	//		WebUI.switchToWindowIndex(1)
-	//		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
-	//
-	//		'Fill the details required'
-	//		WebUI.setText(findTestObject('Page_WMI_NEW/RouteAdvance/input_Description'), description)
-	//
-	//		'Save details and close'
-	//		WebUI.mouseOver(findTestObject('Page_WMI_NEW/RouteAdvance/span_Standard Actions'))
-	//		WebUI.waitForElementVisible(findTestObject('Page_WMI_NEW/RouteAdvance/a_Save'), GlobalVariable.G_LongTimeout)
-	//		new Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI_NEW/RouteAdvance/a_Save'), GlobalVariable.G_LongTimeout)
-	//
-	//		'Switch to main window and close'
-	//		WebUI.switchToWindowTitle('Savana nGage')
-	//		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/span_ui-button-icon-primary ui'))
-	//	}
-
-
-	//	@Keyword
-	//	def createDocument_ProcessForTaskDT(String customerName, String customerDetails) {
-	//
-	//		'Switch to main window'
-	//		WebUI.switchToWindowTitle('Savana nGage')
-	//
-	//		'Create a new BovDocTwoRow Document'
-	//		WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))
-	//		selectDocClassAndDocTypeForGlobalNew('Closure Action', 'ProcessforTaskDT')
-	//		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'))
-	//
-	//		'Switch to new Window'
-	//		WebUI.switchToWindowTitle('(Doc ID: NEW )')
-	//		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
-	//
-	//		'Fill the details required'
-	//		WebUI.setText(findTestObject('Page_WMI_NEW/ProcessForTaskDT/input_Customer Name'), customerName)
-	//		WebUI.setText(findTestObject('Page_WMI_NEW/ProcessForTaskDT/input_Customer Details'), customerDetails)
-	//
-	//		'Save details and close'
-	//		WebUI.mouseOver(findTestObject('Page_WMI_NEW/ProcessForTaskDT/span_Actions'))
-	//		WebUI.waitForElementVisible(findTestObject('Page_WMI_NEW/ProcessForTaskDT/a_Save'), GlobalVariable.G_LongTimeout)
-	//		new Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI_NEW/ProcessForTaskDT/a_Save'),GlobalVariable.G_LongTimeout)
-	//
-	//		'Switch to main window and close'
-	//		WebUI.switchToWindowTitle('Savana nGage')
-	//		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/span_ui-button-icon-primary ui'))
-	//	}
-
 	@Keyword
 	def verifyElementsCount(TestObject to, int expCount) {
 
@@ -1101,95 +584,6 @@ public class Common {
 		WebUI.verifyEqual(elements.size(), expCount)
 
 	}
-
-	//	@Keyword
-	//	def createDocument_RenderAllField(String integerField, String stringFieldOnFocusAttr, String stringFieldLookup,
-	//			String currencyField, String dateField, String floatField, String smallIntField, String textField,
-	//			String dateTimeField, String stringField, String extNameField) {
-	//
-	//		'Switch to main window'
-	//		WebUI.switchToWindowTitle('Savana nGage')
-	//
-	//		'Create a new BovDocTwoRow Document'
-	//		WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))
-	//		selectDocClassAndDocTypeForGlobalNew('Master Object Feature', 'Render All Field Types')
-	//		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'))
-	//
-	//		'Switch to new Window'
-	//		WebUI.switchToWindowTitle('(Doc ID: NEW )')
-	//		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
-	//
-	//		'Fill the details required'
-	//		WebUI.setText(findTestObject('Page_WMI_NEW/Master_Object/input_Integer Field'), integerField)	//Integer field
-	//		WebUI.setText(findTestObject('Page_WMI_NEW/Master_Object/input_String Field (with onfocussetcursorattheend attribute)'), stringFieldOnFocusAttr)	//String Field (with onfocussetcursorattheend attribute)
-	//		WebUI.selectOptionByLabel(findTestObject('Page_WMI_NEW/Master_Object/select_String Field With Lookup'), stringFieldLookup, false)	//String Field With Lookup
-	//		WebUI.setText(findTestObject('Page_WMI_NEW/Master_Object/input_Currency Field'), currencyField)	//Currency Field
-	//		WebUI.sendKeys(findTestObject('Page_WMI_NEW/Master_Object/input_Currency Field'), Keys.chord(Keys.TAB))
-	//		//WebUI.delay(2)
-	//		WebUtil.delay(100)
-	//		setText_Date(findTestObject('Page_WMI_NEW/Master_Object/input_Date Field'), dateField)
-	//		WebUI.setText(findTestObject('Page_WMI_NEW/Master_Object/input_Float Field (Precision3minval-10maxval-100)'), floatField)	//Float Field (Precision:3,minval-10,maxval-100)
-	//		WebUI.setText(findTestObject('Page_WMI_NEW/Master_Object/input_Small Integer Field(minval-10maxval-100)'), smallIntField)	//Small Integer Field(minval-10,maxval-100)
-	//		WebUI.setText(findTestObject('Page_WMI_NEW/Master_Object/input_Text Field(with onfocusselectall attribute)'), textField)	//Text Field(with onfocusselectall attribute)
-	//		setText_Date(findTestObject('Page_WMI_NEW/Master_Object/input_DateTime Field'), dateTimeField)	//DateTime Field
-	//		WebUI.setText(findTestObject('Page_WMI_NEW/Master_Object/input_String Filed'), stringField)	//String Filed
-	//		WebUI.setText(findTestObject('Page_WMI_NEW/Master_Object/input_Ext Name Field'), extNameField)	//Ext Name Field
-	//
-	//		'Save details and close'
-	//		WebUI.click(findTestObject('Page_WMI_NEW/Master_Object/span_Save'))
-	//		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
-	//		new Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI_NEW/Master_Object/span_Close Window'),GlobalVariable.G_LongTimeout)
-	//
-	//		'Switch to main window and close'
-	//		WebUI.switchToWindowTitle('Savana nGage')
-	//		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/span_ui-button-icon-primary ui'))
-	//	}
-
-	//	@Keyword
-	//	def waitForImageToRender(TestObject to) {
-	//		//		waitForFrameToLoad(to)
-	//		//		WebUI.delay(5)
-	//
-	//		WebUI.waitForElementNotVisible(findTestObject('Page_WMI/WMI_Menu_BOV_Vertical/ContentFrame/image_Processing'), GlobalVariable.G_LongTimeout)
-	//		waitForImageRender(findTestObject('Page_WMI/WMI_Menu_BOV_Vertical/ContentFrame/image'))
-	//	}
-
-	//	@Keyword
-	//	def createDocument_Correspondence(String firstName, String lastName, String toEmail, String template) {
-	//
-	//		'Switch to main window'
-	//		WebUI.switchToWindowTitle('Savana nGage')
-	//
-	//		'Create a new BovDocTwoRow Document'
-	//		WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))
-	//		selectDocClassAndDocTypeForGlobalNew('Correspondence', 'Correspondence')
-	//		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'))
-	//
-	//		'Switch to new Window'
-	//		WebUI.switchToWindowIndex(1)
-	//		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
-	//
-	//		'Fill the details required'
-	//		WebUI.setText(findTestObject('Page_WMI_NEW/Correspondence/input_First Name'), firstName)
-	//		WebUI.setText(findTestObject('Page_WMI_NEW/Correspondence/input_Last Name'), lastName)
-	//		WebUI.setText(findTestObject('Page_WMI_NEW/Correspondence/input_To Email'), toEmail)
-	//		WebUI.selectOptionByLabel(findTestObject('Page_WMI_NEW/Correspondence/select_Template'), template, false)
-	//		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
-	//		WebUI.delay(2)
-	//		waitForFrameToLoad(findTestObject('Page_WMI_NEW/Correspondence/iframe_BodyText'))
-	//
-	//		'Save details and close'
-	//		WebUI.click(findTestObject('Page_WMI_NEW/Correspondence/span_Save'))
-	//		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
-	//
-	//		'Click close window'
-	//		WebUI.waitForElementVisible(findTestObject('Page_WMI/Correspondence/span_Close Window'), GlobalVariable.G_LongTimeout)
-	//		new Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI/Correspondence/span_Close Window'),GlobalVariable.G_LongTimeout)
-	//
-	//		'Switch to main window and close'
-	//		WebUI.switchToWindowTitle('Savana nGage')
-	//		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/span_ui-button-icon-primary ui'))
-	//	}
 
 	@Keyword
 	def createBulkDocuments_ClosureAction(int requiredDocsCount){
@@ -1241,8 +635,6 @@ public class Common {
 		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 		WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 	}
-
-
 
 	@Keyword
 	def createBulkDocuments_RenderAllFields(int requiredDocsCount) {
@@ -1318,38 +710,6 @@ public class Common {
 
 	}
 
-	//	@Keyword
-	//	def createDocument_ReloadOnPostBack(String BM_String) {
-	//
-	//		'Switch to main window'
-	//		WebUI.switchToWindowTitle('Savana nGage')
-	//
-	//		'Create a new BovDocTwoRow Document'
-	//		WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))
-	//		selectDocClassAndDocTypeForGlobalNew('DoNotReloadOnPostback', 'ReloadOnPostbackNoSplit T')
-	//		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'))
-	//
-	//		'Switch to new Window'
-	//		//WebUI.switchToWindowTitle('(Doc ID: NEW )')
-	//		WebUI.switchToWindowIndex(1)
-	//		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
-	//
-	//		'Fill the details required'
-	//		WebUI.setText(findTestObject('Page_WMI_NEW/DoNotReloadOnPostBack/NoSplit_T/input_BM String'), BM_String)
-	//
-	//		'Save details and close'
-	//		WebUI.click(findTestObject('Page_WMI_NEW/DoNotReloadOnPostBack/NoSplit_T/span_Save'))
-	//		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
-	//
-	//		'Click close window'
-	//		WebUI.waitForElementVisible(findTestObject('Page_WMI_NEW/DoNotReloadOnPostBack/NoSplit_T/span_Close'), GlobalVariable.G_LongTimeout)
-	//		new Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI_NEW/DoNotReloadOnPostBack/NoSplit_T/span_Close'),GlobalVariable.G_LongTimeout)
-	//
-	//		'Switch to main window and close'
-	//		WebUI.switchToWindowTitle('Savana nGage')
-	//		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/span_ui-button-icon-primary ui'))
-	//	}
-
 	@Keyword
 	def createBulkDocuments_ReloadOnPostBack(int requiredDocsCount) {
 
@@ -1373,9 +733,7 @@ public class Common {
 		WebUI.refresh()
 		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 		WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
-
 	}
-
 
 	@Keyword
 	def verifyElementHasFocus(TestObject toLocator) {
@@ -1399,33 +757,6 @@ public class Common {
 		}
 		WebUI.switchToDefaultContent()
 	}
-
-	//	@Keyword
-	//	def createDocument_RenderAsLabel() {
-	//
-	//		'Switch to main window'
-	//		WebUI.switchToWindowTitle('Savana nGage')
-	//
-	//		'Create a new BovDocTwoRow Document'
-	//		WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))
-	//
-	//		selectDocClassAndDocTypeForGlobalNew('Master Object Feature', 'Render As Label')
-	//		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'))
-	//
-	//		WebUI.switchToWindowIndex(1)
-	//		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
-	//
-	//		'Click Save'
-	//		WebUI.click(findTestObject('Page_WMI_NEW/Master_Object_Feature/Render_As_Label/span_Save'))
-	//		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
-	//
-	//		'Click close window'
-	//		new Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI_NEW/Master_Object_Feature/Render_As_Label/span_Close Window'), GlobalVariable.G_LongTimeout)
-	//
-	//		'Switch to main window and close'
-	//		WebUI.switchToWindowTitle('Savana nGage')
-	//		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/span_ui-button-icon-primary ui'))
-	//	}
 
 	@Keyword
 	def createBulkDocuments_RenderAsLabel(int requiredDocsCount) {
@@ -1452,34 +783,6 @@ public class Common {
 		WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 	}
 
-	//	@Keyword
-	//	def createDocument_ReferenceObjectInlineContentView() {
-	//
-	//		'Switch to main window'
-	//		WebUI.switchToWindowTitle('Savana nGage')
-	//
-	//		'Create a new BovDocTwoRow Document'
-	//		WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))
-	//
-	//		selectDocClassAndDocTypeForGlobalNew('Reference Object Feature', 'Reference Object InlineContentView')
-	//		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'))
-	//
-	//		WebUI.switchToWindowIndex(1)
-	//		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
-	//
-	//		'Click Save'
-	//		WebUI.click(findTestObject('Page_WMI_NEW/Master_Object_Feature/Render_As_Label/span_Save'))
-	//		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
-	//
-	//		'Click close window'
-	//		new Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI_NEW/Master_Object_Feature/Render_As_Label/span_Close Window'), GlobalVariable.G_LongTimeout)
-	//
-	//		'Switch to main window and close'
-	//		WebUI.switchToWindowTitle('Savana nGage')
-	//		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/span_ui-button-icon-primary ui'))
-	//	}
-
-
 	@Keyword
 	def createBulkDocuments_ReferenceObjectInlineContentView(int requiredDocsCount) {
 
@@ -1504,38 +807,6 @@ public class Common {
 		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 		WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 	}
-
-	//	@Keyword
-	//	def createDocument_EventForRequiredField(String dropDownControl, String textValue, String date) {
-	//
-	//		'Switch to main window'
-	//		WebUI.switchToWindowTitle('Savana nGage')
-	//
-	//		'Create a new BovDocTwoRow Document'
-	//		WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))
-	//
-	//		selectDocClassAndDocTypeForGlobalNew('Event for Req Fld', 'Event for req field')
-	//		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'))
-	//
-	//		WebUI.switchToWindowIndex(1)
-	//		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
-	//
-	//		'Enter Data'
-	//		WebUI.selectOptionByLabel(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/process_Event For Required Field/select_MasterObjectDropdownControl'), dropDownControl, false)
-	//		waitForTabLoading(null, GlobalVariable.G_LongTimeout)
-	//		//WebUI.clearText(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/process_Event For Required Field/input_String Field (Value Chan'))
-	//		WebUI.setText(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/process_Event For Required Field/input_String Field (Value Chan'), textValue)
-	//		setText_Date(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/process_Event For Required Field/input_Date Field (Visibility C'), date)
-	//
-	//		'Click Save and close window'
-	//		WebUI.mouseOver(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/process_Event For Required Field/span_Actions'))
-	//		WebUI.waitForElementVisible(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/process_Event For Required Field/a_Save'), GlobalVariable.G_LongTimeout)
-	//		new Window().clickElementAndWaitForWindowClose(findTestObject('Object Repository/Page_nGage_Dashboard/My_Work/process_Event For Required Field/a_Save'), GlobalVariable.G_LongTimeout)
-	//
-	//		'Switch to main window and close'
-	//		WebUI.switchToWindowTitle('Savana nGage')
-	//		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/span_ui-button-icon-primary ui'))
-	//	}
 
 	@Keyword
 	def createDocument_ForSingleResultView() {
@@ -1575,8 +846,6 @@ public class Common {
 		def endTime = startTime + TimeUnit.SECONDS.toMillis(timeout)
 		def currentTime = System.currentTimeMillis()
 		boolean isLoaded = false
-
-
 
 		while(currentTime < endTime) {
 			try {
@@ -1826,7 +1095,6 @@ public class Common {
 		}
 	}
 
-
 	@Keyword
 	def isRecordPresentInRecentGridTable(int rowNo, String columnName, String expText) {
 
@@ -1894,5 +1162,17 @@ public class Common {
 		}
 
 		WebUI.switchToDefaultContent()
+	}
+	
+	@Keyword
+	def verifyMatch(String actualText, String expectedText, boolean isRegex) {
+		
+		try {
+			WebUI.verifyMatch(actualText, expectedText, isRegex)
+		}
+		catch(Exception e) {
+			WebUI.takeScreenshot()
+			KeywordUtil.markFailedAndStop(e.toString())	
+		}
 	}
 }

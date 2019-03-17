@@ -72,9 +72,10 @@ CustomKeywords.'actions.Table.clickCell'(findTestObject('Page_nGage_Dashboard/Ho
 'Switch to WMI and wait for page load'
 WebUI.switchToWindowIndex(1)
 WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_WMI/WMI_Menu_BOV/iframe_Close_ContentPlaceHolde'))
 
 'Verify URL'
-WebUI.verifyMatch(WebUI.getUrl(), '.*SplitContainer.aspx.*', true)
+CustomKeywords.'actions.Common.verifyMatch'(WebUI.getUrl(), '.*SplitContainer.aspx.*', true)
 CustomKeywords.'actions.Window.clickElementAndWaitForWindowClose'(findTestObject('Page_WMI/WMI_Menu_BOV/span_Close'), GlobalVariable.G_LongTimeout)
 WebUI.switchToWindowIndex(0)
 
@@ -85,9 +86,10 @@ CustomKeywords.'actions.Table.clickCell'(findTestObject('Page_nGage_Dashboard/Ho
 'Switch to WMI and wait for page load'
 WebUI.switchToWindowIndex(1)
 WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_WMI/WMI_Menu_BOV_Default/iframe_Close_ContentPlaceHolde'))
 
 'Verify URL'
-WebUI.verifyMatch(WebUI.getUrl(), '.*SplitContainer.aspx.*', true)
+CustomKeywords.'actions.Common.verifyMatch'(WebUI.getUrl(), '.*SplitContainer.aspx.*', true)
 CustomKeywords.'actions.Window.clickElementAndWaitForWindowClose'(findTestObject('Object Repository/Page_WMI/WMI_Menu_BOV_Default/span_Close'), GlobalVariable.G_LongTimeout)
 WebUI.switchToWindowIndex(0)
 
@@ -98,8 +100,9 @@ CustomKeywords.'actions.Table.clickCell'(findTestObject('Page_nGage_Dashboard/Ho
 'Switch to WMI and wait for page load'
 WebUI.switchToWindowIndex(1)
 WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_WMI/WMI_Menu_BOV_DocTwoRow/iframe_Close_ContentPlaceHolde'))
 
 'Verify URL'
-WebUI.verifyMatch(WebUI.getUrl(), '.*SplitContainer.aspx.*', true)
+CustomKeywords.'actions.Common.verifyMatch'(WebUI.getUrl(), '.*SplitContainer.aspx.*', true)
 CustomKeywords.'actions.Window.clickElementAndWaitForWindowClose'(findTestObject('Object Repository/Page_WMI/WMI_Menu_BOV_DocTwoRow/span_Close'), GlobalVariable.G_LongTimeout)
 WebUI.switchToWindowIndex(0)

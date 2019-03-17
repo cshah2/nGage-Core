@@ -130,7 +130,7 @@ WebUI.waitForElementVisible(findTestObject('Page_WMI/WMI_Menu_BOV/a_AttachFromFa
 WebUI.click(findTestObject('Page_WMI/WMI_Menu_BOV/a_AttachFromFavorites'))
 WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_WMI/WMI_Menu_BOV/iframe_Close_ContentPlaceHolde'))
-WebUI.verifyMatch(WebUI.getAttribute(findTestObject('Object Repository/Page_WMI/WMI_Menu_BOV/iframe_Close_ContentPlaceHolde'), 'src'), '.*AttachFavorite.aspx.*', true)
+CustomKeywords.'actions.Common.verifyMatch'(WebUI.getAttribute(findTestObject('Object Repository/Page_WMI/WMI_Menu_BOV/iframe_Close_ContentPlaceHolde'), 'src'), '.*AttachFavorite.aspx.*', true)
 
 'Select 1st Document in the table and attach it'
 docID = CustomKeywords.'actions.Table.getCellText'(findTestObject('Page_WMI/WMI_Menu_BOV/Attachements/table_AttachFromFavorite_Documents'), 1, 6)
@@ -167,7 +167,7 @@ WebUI.waitForElementVisible(findTestObject('Page_WMI/WMI_Menu_BOV_Default/a_Atta
 WebUI.click(findTestObject('Page_WMI/WMI_Menu_BOV_Default/a_AttachFromFavorites'))
 WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_WMI/WMI_Menu_BOV_Default/iframe_Close_ContentPlaceHolde'))
-WebUI.verifyMatch(WebUI.getAttribute(findTestObject('Object Repository/Page_WMI/WMI_Menu_BOV_Default/iframe_Close_ContentPlaceHolde'), 'src'), '.*AttachFavorite.aspx.*', true)
+CustomKeywords.'actions.Common.verifyMatch'(WebUI.getAttribute(findTestObject('Object Repository/Page_WMI/WMI_Menu_BOV_Default/iframe_Close_ContentPlaceHolde'), 'src'), '.*AttachFavorite.aspx.*', true)
 
 'Select 1st Document in the table and attache it'
 docID = CustomKeywords.'actions.Table.getCellText'(findTestObject('Page_WMI/WMI_Menu_BOV_Default/Attachements/table_AttachFromFavorite_Documents'), 1, 6)
@@ -203,7 +203,7 @@ WebUI.waitForElementVisible(findTestObject('Page_WMI/WMI_Menu_BOV_DocTwoRow/a_At
 WebUI.click(findTestObject('Page_WMI/WMI_Menu_BOV_DocTwoRow/a_AttachFromFavorites'))
 WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_WMI/WMI_Menu_BOV_DocTwoRow/iframe_Close_ContentPlaceHolde'))
-WebUI.verifyMatch(WebUI.getAttribute(findTestObject('Object Repository/Page_WMI/WMI_Menu_BOV_DocTwoRow/iframe_Close_ContentPlaceHolde'), 'src'), '.*AttachFavorite.aspx.*', true)
+CustomKeywords.'actions.Common.verifyMatch'(WebUI.getAttribute(findTestObject('Object Repository/Page_WMI/WMI_Menu_BOV_DocTwoRow/iframe_Close_ContentPlaceHolde'), 'src'), '.*AttachFavorite.aspx.*', true)
 
 'Select 1st Document in the table and attache it'
 docID = CustomKeywords.'actions.Table.getCellText'(findTestObject('Page_WMI/WMI_Menu_BOV_DocTwoRow/Attachements/table_AttachFromFavorite_Documents'), 1, 6)

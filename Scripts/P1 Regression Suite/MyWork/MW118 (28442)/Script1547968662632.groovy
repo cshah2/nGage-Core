@@ -29,7 +29,7 @@ WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work/iframe_iframe_105'))
 
 String treeDate = convert(P1_MW_DOC263.get(Fields.START_DATE), FORMAT_DATE, FORMAT_DATE_TREE)
-String filterDate = P1_MW_DOC262.get(Fields.START_DATE)
+String filterDate = P1_MW_DOC263.get(Fields.START_DATE)
 
 'Expand Processes by Click on the Expand Icon and Verify Foldered data displayed (For Document 1)'
 CustomKeywords.'actions.MenuBar.clickTreeMenu'('My_Work','Processes','Date Required','Daterequiredsearch', treeDate)

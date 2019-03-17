@@ -32,8 +32,8 @@ primary.put(Fields.CUSTOMER_NAME, primary_CustName)
 primary.put(Fields.CUSTOMER_DETAIL, primary_CustDesc)
 
 Map<Fields, String> attached = new HashMap<Fields, String>()
-primary.put(Fields.CUSTOMER_NAME, attached_CustName)
-primary.put(Fields.CUSTOMER_DETAIL, attached_CustDesc)
+attached.put(Fields.CUSTOMER_NAME, attached_CustName)
+attached.put(Fields.CUSTOMER_DETAIL, attached_CustDesc)
 
 CustomKeywords.'actions.Data.create'(DocClass.CLOSURE_ACTION, DocType.CLOSURE_ACTION, primary)
 

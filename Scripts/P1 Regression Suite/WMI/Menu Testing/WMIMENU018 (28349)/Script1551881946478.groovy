@@ -83,7 +83,7 @@ WebUI.waitForElementVisible(findTestObject('Page_WMI/WMI_Menu_BOV/a_Send To Rece
 WebUI.click(findTestObject('Page_WMI/WMI_Menu_BOV/a_Send To Recepient By Email'))
 WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_WMI/WMI_Menu_BOV/iframe_Close_ContentPlaceHolde'))
-WebUI.verifyMatch(WebUI.getAttribute(findTestObject('Object Repository/Page_WMI/WMI_Menu_BOV/iframe_Close_ContentPlaceHolde'), 'src'), '.*SendEmail.aspx.*', true)
+CustomKeywords.'actions.Common.verifyMatch'(WebUI.getAttribute(findTestObject('Object Repository/Page_WMI/WMI_Menu_BOV/iframe_Close_ContentPlaceHolde'), 'src'), '.*SendEmail.aspx.*', true)
 CustomKeywords.'actions.Window.clickElementAndWaitForWindowClose'(findTestObject('Page_WMI/WMI_Menu_BOV/span_Close'), GlobalVariable.G_LongTimeout)
 WebUI.switchToWindowIndex(0)
 
@@ -106,7 +106,7 @@ WebUI.waitForElementVisible(findTestObject('Page_WMI/WMI_Menu_BOV_Default/a_Send
 WebUI.click(findTestObject('Page_WMI/WMI_Menu_BOV_Default/a_Send To Recepient By Email'))
 WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_WMI/WMI_Menu_BOV_Default/iframe_Close_ContentPlaceHolde'))
-WebUI.verifyMatch(WebUI.getAttribute(findTestObject('Object Repository/Page_WMI/WMI_Menu_BOV_Default/iframe_Close_ContentPlaceHolde'), 'src'), '.*SendEmail.aspx.*', true)
+CustomKeywords.'actions.Common.verifyMatch'(WebUI.getAttribute(findTestObject('Object Repository/Page_WMI/WMI_Menu_BOV_Default/iframe_Close_ContentPlaceHolde'), 'src'), '.*SendEmail.aspx.*', true)
 CustomKeywords.'actions.Window.clickElementAndWaitForWindowClose'(findTestObject('Object Repository/Page_WMI/WMI_Menu_BOV_Default/span_Close'), GlobalVariable.G_LongTimeout)
 WebUI.switchToWindowIndex(0)
 
@@ -128,6 +128,6 @@ WebUI.waitForElementVisible(findTestObject('Page_WMI/WMI_Menu_BOV_DocTwoRow/a_Se
 WebUI.click(findTestObject('Page_WMI/WMI_Menu_BOV_DocTwoRow/a_Send To Recepient By Email'))
 WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_WMI/WMI_Menu_BOV_DocTwoRow/iframe_Close_ContentPlaceHolde'))
-WebUI.verifyMatch(WebUI.getAttribute(findTestObject('Object Repository/Page_WMI/WMI_Menu_BOV_DocTwoRow/iframe_Close_ContentPlaceHolde'), 'src'), '.*SendEmail.aspx.*', true)
+CustomKeywords.'actions.Common.verifyMatch'(WebUI.getAttribute(findTestObject('Object Repository/Page_WMI/WMI_Menu_BOV_DocTwoRow/iframe_Close_ContentPlaceHolde'), 'src'), '.*SendEmail.aspx.*', true)
 CustomKeywords.'actions.Window.clickElementAndWaitForWindowClose'(findTestObject('Object Repository/Page_WMI/WMI_Menu_BOV_DocTwoRow/span_Close'), GlobalVariable.G_LongTimeout)
 WebUI.switchToWindowIndex(0)
