@@ -22,7 +22,7 @@ WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Report/IFrame_108'))
 
 'Right click on report'
-CustomKeywords.'actions.Report.rightClickReport'('New Group', 'new catagory', 'BASE REPORT')
+CustomKeywords.'actions.MenuBar.rightClickTreeMenu'('REPORT', 'New Group', 'new catagory', 'BASE REPORT')
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
 'Select option COPY on context menu'

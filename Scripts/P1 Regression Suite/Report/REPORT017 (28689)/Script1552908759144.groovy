@@ -26,19 +26,24 @@ WebUI.click(findTestObject('Page_nGage_Dashboard/Report/Expand_Security Manageme
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
 'Click Report User Listing'
-CustomKeywords.'actions.Report.clickReport'('Administration', 'Security Management', 'User Listing')
+CustomKeywords.'actions.MenuBar.clickTreeMenu'('REPORT', 'Administration', 'Security Management', 'User Listing')
+CustomKeywords.'actions.Common.waitForReportToLoad'(GlobalVariable.G_LongTimeout)
 
 'Click User Group Membership Report'
-CustomKeywords.'actions.Report.clickReport'('Administration', 'Security Management', 'User Group Membership')
+CustomKeywords.'actions.MenuBar.clickTreeMenu'('REPORT', 'Administration', 'Security Management', 'User Group Membership')
+CustomKeywords.'actions.Common.waitForReportToLoad'(GlobalVariable.G_LongTimeout)
 
 'Click on User Group Listing Report'
-CustomKeywords.'actions.Report.clickReport'('Administration', 'Security Management', 'User Group Listing')
+CustomKeywords.'actions.MenuBar.clickTreeMenu'('REPORT', 'Administration', 'Security Management', 'User Group Listing')
+CustomKeywords.'actions.Common.waitForReportToLoad'(GlobalVariable.G_LongTimeout)
 
 'Click on User Access to Document Classes Report'
-CustomKeywords.'actions.Report.clickReport'('Administration', 'Security Management', 'User Access to Document Classes')
+CustomKeywords.'actions.MenuBar.clickTreeMenu'('REPORT', 'Administration', 'Security Management', 'User Access to Document Classes')
+CustomKeywords.'actions.Common.waitForReportToLoad'(GlobalVariable.G_LongTimeout)
 
 'Click on Audit of Standard Document Action Report'
-CustomKeywords.'actions.Report.clickReport'('Administration', 'Security Management', 'Audit of Standard Document Action')
+CustomKeywords.'actions.MenuBar.clickTreeMenu'('REPORT', 'Administration', 'Security Management', 'Audit of Standard Document Action')
+CustomKeywords.'actions.Common.waitForReportToLoad'(GlobalVariable.G_LongTimeout)
 
 'Verify all tabs are open'
 WebUI.verifyElementPresent(findTestObject('Page_nGage_Dashboard/Report/tab_User Listing'), GlobalVariable.G_LongTimeout)

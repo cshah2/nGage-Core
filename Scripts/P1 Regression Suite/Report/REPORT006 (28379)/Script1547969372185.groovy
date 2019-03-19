@@ -26,7 +26,8 @@ WebUI.click(findTestObject('Page_nGage_Dashboard/Report/Expand_Security Manageme
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
 'Click Report User Listing'
-CustomKeywords.'actions.Report.clickReport'('Administration', 'Security Management', 'User Listing')
+CustomKeywords.'actions.MenuBar.clickTreeMenu'('REPORT', 'Administration', 'Security Management', 'User Listing')
+CustomKeywords.'actions.Common.waitForReportToLoad'(GlobalVariable.G_LongTimeout)
 
 'Verify Report is loaded'
 WebUI.verifyElementVisible(findTestObject('Page_nGage_Dashboard/Report/User Listing/ToolBar_1'))

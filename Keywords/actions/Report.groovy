@@ -97,36 +97,36 @@ public class Report {
 	}
 
 	/* ############################# KEYWORDS ##################################### */	
-	@Keyword
-	def clickReport(String lvl_one, String lvl_two, String lvl_three) {
-		
-		try {
-			setLevelOne()
-			setLevelTwo(lvl_one)
-			setLevelThree(lvl_one, lvl_two)
-			lvlThree.get(lvl_three).click()
-		}
-		catch(Exception e) {
-			WebUI.takeScreenshot()
-			KeywordUtil.markFailedAndStop('Unable to click report '+lvl_one+' -> '+lvl_two+' -> '+lvl_three+'\n'+e.toString())
-		}
-		new Common().waitForReportToLoad(GlobalVariable.G_ReportTimeout)
-	}
+//	@Keyword
+//	def clickReport(String lvl_one, String lvl_two, String lvl_three) {
+//		
+//		try {
+//			setLevelOne()
+//			setLevelTwo(lvl_one)
+//			setLevelThree(lvl_one, lvl_two)
+//			lvlThree.get(lvl_three).click()
+//		}
+//		catch(Exception e) {
+//			WebUI.takeScreenshot()
+//			KeywordUtil.markFailedAndStop('Unable to click report '+lvl_one+' -> '+lvl_two+' -> '+lvl_three+'\n'+e.toString())
+//		}
+//		new Common().waitForReportToLoad(GlobalVariable.G_ReportTimeout)
+//	}
 
-	@Keyword
-	def rightClickReport(String lvl_one, String lvl_two, String lvl_three) {
-		try {
-			setLevelOne()
-			setLevelTwo(lvl_one)
-			setLevelThree(lvl_one, lvl_two)
-			Actions actions = new Actions(driver)
-			actions.contextClick(lvlThree.get(lvl_three)).build().perform()
-		}
-		catch(Exception e) {
-			WebUI.takeScreenshot()
-			KeywordUtil.markFailedAndStop('Unable to right click report '+lvl_one+' -> '+lvl_two+' -> '+lvl_three+'\n'+e.toString())
-		}
-	}
+//	@Keyword
+//	def rightClickReport(String lvl_one, String lvl_two, String lvl_three) {
+//		try {
+//			setLevelOne()
+//			setLevelTwo(lvl_one)
+//			setLevelThree(lvl_one, lvl_two)
+//			Actions actions = new Actions(driver)
+//			actions.contextClick(lvlThree.get(lvl_three)).build().perform()
+//		}
+//		catch(Exception e) {
+//			WebUI.takeScreenshot()
+//			KeywordUtil.markFailedAndStop('Unable to right click report '+lvl_one+' -> '+lvl_two+' -> '+lvl_three+'\n'+e.toString())
+//		}
+//	}
 
 	@Keyword
 	def verifyReportIsPresentUnderSubGroup(String lvl_one, String lvl_two, String reportName) {

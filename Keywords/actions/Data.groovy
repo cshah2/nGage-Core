@@ -629,6 +629,7 @@ public class Data {
 		String custName = data.get(Fields.CUSTOMER_NAME)
 		String custDetail = data.get(Fields.CUSTOMER_DETAIL)
 
+		WebUI.waitForElementVisible(findTestObject('Page_WMI_NEW/Closure_Action/input_Customer Name'), GlobalVariable.G_LongTimeout)
 		//Fill Form
 		if(StringUtils.isNotBlank(custName))
 			WebUI.setText(findTestObject('Page_WMI_NEW/Closure_Action/input_Customer Name'), custName)

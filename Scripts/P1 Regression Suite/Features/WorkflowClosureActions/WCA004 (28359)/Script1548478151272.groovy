@@ -32,8 +32,8 @@ primary.put(Fields.CUSTOMER_NAME, primary_CustName)
 primary.put(Fields.CUSTOMER_DETAIL, primary_CustDesc)
 
 Map<Fields, String> attached = new HashMap<Fields, String>()
-primary.put(Fields.CUSTOMER_NAME, attached_CustName)
-primary.put(Fields.CUSTOMER_DETAIL, attached_CustDesc)
+attached.put(Fields.CUSTOMER_NAME, attached_CustName)
+attached.put(Fields.CUSTOMER_DETAIL, attached_CustDesc)
 
 CustomKeywords.'actions.Data.create'(DocClass.CLOSURE_ACTION, DocType.CLOSURE_ACTION, primary)
 
@@ -191,12 +191,7 @@ CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Da
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
 'Select Repository - Advance Search tab'
-WebUI.selectOptionByLabel(findTestObject('Page_nGage_Dashboard/Repository/select_Repository Drop Down'), 'Closure', false)
-CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
-
-'Selinput_btnSearchect Search For - Advance Search tab'
-WebUI.selectOptionByLabel(findTestObject('Page_nGage_Dashboard/Repository/select_Search For Drop Down'), 'Closure', false)
-CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
+CustomKeywords.'actions.Common.selectRepositoryAndSearchFor'('Closure', 'Closure')
 
 'Click on Search button'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Repository/input_btnSearch'))

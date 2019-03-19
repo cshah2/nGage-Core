@@ -27,7 +27,7 @@ CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Da
 CustomKeywords.'actions.Report.verifyReportIsPresentUnderSubGroup'('New Group', 'new catagory', COPY_REPORT_NAME)
 
 'Right click on report'
-CustomKeywords.'actions.Report.rightClickReport'('New Group', 'new catagory', COPY_REPORT_NAME)
+CustomKeywords.'actions.MenuBar.rightClickTreeMenu'('REPORT', 'New Group', 'new catagory', COPY_REPORT_NAME)
 WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 
 'Select option RENAME on context menu'
