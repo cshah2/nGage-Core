@@ -38,15 +38,15 @@ public class Consts {
 	//	public static final String SMOKE_HOME005_FILENAME = 'Automation test document'
 	//	public static String SMOKE_HOME005_DOCID
 
-//	public static final String SMOKE_HOME007_BMSTRING = 'Automation test document'
-//	public static String SMOKE_HOME007_DOCID
-//
-//	public static final String SMOKE_HOME008_BMSTRING = 'Automation test document - Document HOME008'
-//	public static String SMOKE_HOME008_DOCID
+	//	public static final String SMOKE_HOME007_BMSTRING = 'Automation test document'
+	//	public static String SMOKE_HOME007_DOCID
+	//
+	//	public static final String SMOKE_HOME008_BMSTRING = 'Automation test document - Document HOME008'
+	//	public static String SMOKE_HOME008_DOCID
 
-//	public static final String SMOKE_MYWORK003_CUSTOMERNAME = 'Chintan Shah'
-//	public static final String SMOKE_MYWORK003_CUSTOMERDETAIL = 'Automation test document'
-//	public static String SMOKE_MYWORK003_DOCID
+	//	public static final String SMOKE_MYWORK003_CUSTOMERNAME = 'Chintan Shah'
+	//	public static final String SMOKE_MYWORK003_CUSTOMERDETAIL = 'Automation test document'
+	//	public static String SMOKE_MYWORK003_DOCID
 
 	//	public static final String SMOKE_CORRESPONDENCE_FIRSTNAME = 'Chintan'
 	//	public static final String SMOKE_CORRESPONDENCE_LASTNAME = 'Shah'
@@ -57,43 +57,43 @@ public class Consts {
 
 
 
-//	public static final String SMOKE_MW001_FILTERDATE = '12-12-2018'
+	//	public static final String SMOKE_MW001_FILTERDATE = '12-12-2018'
 
-//	public static final String SMOKE_MYWORK009_CUSTOMERNAME1 = 'Chintan Shah'
-//	public static final String SMOKE_MYWORK009_CUSTOMERDETAIL1 = 'Automation test document'
-//
-//	public static final String SMOKE_MYWORK009_CUSTOMERNAME2 = 'Atul Mirvankar'
-//	public static final String SMOKE_MYWORK009_CUSTOMERDETAIL2 = 'Automation test document'
+	//	public static final String SMOKE_MYWORK009_CUSTOMERNAME1 = 'Chintan Shah'
+	//	public static final String SMOKE_MYWORK009_CUSTOMERDETAIL1 = 'Automation test document'
+	//
+	//	public static final String SMOKE_MYWORK009_CUSTOMERNAME2 = 'Atul Mirvankar'
+	//	public static final String SMOKE_MYWORK009_CUSTOMERDETAIL2 = 'Automation test document'
 
-//	public static final String SMOKE_MYWORK018_CUSTOMERNAME = 'Chintan Shah'
-//	public static final String SMOKE_MYWORK018_CUSTOMERDETAIL = 'Automation test document - MYWORK018'
-//	public static String SMOKE_MYWORK018_DOCID
-//
-//	public static final String SMOKE_MYWORK021_CUSTOMERNAME = 'Chintan Shah'
-//	public static final String SMOKE_MYWORK021_CUSTOMERDETAIL = 'Automation test document - MYWORK021'
-//
-//	public static final String SMOKE_MYWORK022_CUSTOMERNAME = 'Chintan Shah'
-//	public static final String SMOKE_MYWORK022_CUSTOMERDETAIL = 'Automation test document - MYWORK022'
-//	public static String SMOKE_MYWORK022_DOCID
-//
-//	public static final String SMOKE_MYWORK023_CUSTOMERNAME = 'Chintan Shah'
-//	public static final String SMOKE_MYWORK023_CUSTOMERDETAIL = 'Automation test document - MYWORK023'
-//	public static String SMOKE_MYWORK023_DOCID
+	//	public static final String SMOKE_MYWORK018_CUSTOMERNAME = 'Chintan Shah'
+	//	public static final String SMOKE_MYWORK018_CUSTOMERDETAIL = 'Automation test document - MYWORK018'
+	//	public static String SMOKE_MYWORK018_DOCID
+	//
+	//	public static final String SMOKE_MYWORK021_CUSTOMERNAME = 'Chintan Shah'
+	//	public static final String SMOKE_MYWORK021_CUSTOMERDETAIL = 'Automation test document - MYWORK021'
+	//
+	//	public static final String SMOKE_MYWORK022_CUSTOMERNAME = 'Chintan Shah'
+	//	public static final String SMOKE_MYWORK022_CUSTOMERDETAIL = 'Automation test document - MYWORK022'
+	//	public static String SMOKE_MYWORK022_DOCID
+	//
+	//	public static final String SMOKE_MYWORK023_CUSTOMERNAME = 'Chintan Shah'
+	//	public static final String SMOKE_MYWORK023_CUSTOMERDETAIL = 'Automation test document - MYWORK023'
+	//	public static String SMOKE_MYWORK023_DOCID
 
-//	public static final String SMOKE_REPO001_STRINGFIELD = 'Chintan Shah'
-//	public static final String SMOKE_REPO001_FILENAME = 'Automation test document'
+	//	public static final String SMOKE_REPO001_STRINGFIELD = 'Chintan Shah'
+	//	public static final String SMOKE_REPO001_FILENAME = 'Automation test document'
 
 
-//	public static final String SMOKE_MWS002_CUSTOMERNAME = 'Chintan Shah'
-//	public static final String SMOKE_MWS002_CUSTOMERDETAIL = 'Automation test document - MWS002'
-//	public static String SMOKE_MWS002_DOCID
+	//	public static final String SMOKE_MWS002_CUSTOMERNAME = 'Chintan Shah'
+	//	public static final String SMOKE_MWS002_CUSTOMERDETAIL = 'Automation test document - MWS002'
+	//	public static String SMOKE_MWS002_DOCID
 
-//	public static final String SMOKE_MWS004_CUSTOMERNAME = 'Chintan Shah'
-//	public static final String SMOKE_MWS004_CUSTOMERDETAIL = 'Automation test document - MWS004'
-//
-//	public static final String SMOKE_MWS007_CUSTOMERNAME = 'Chintan Shah'
-//	public static final String SMOKE_MWS007_CUSTOMERDETAIL = 'Automation test document - MWS007'
-//	public static String SMOKE_MWS007_DOCID
+	//	public static final String SMOKE_MWS004_CUSTOMERNAME = 'Chintan Shah'
+	//	public static final String SMOKE_MWS004_CUSTOMERDETAIL = 'Automation test document - MWS004'
+	//
+	//	public static final String SMOKE_MWS007_CUSTOMERNAME = 'Chintan Shah'
+	//	public static final String SMOKE_MWS007_CUSTOMERDETAIL = 'Automation test document - MWS007'
+	//	public static String SMOKE_MWS007_DOCID
 
 
 
@@ -403,8 +403,8 @@ public class Consts {
 	//	public static final String P1_REPO_CLOSURE_CUSTOMERNAME_DOC1 = 'Chintan Shah'
 	//	public static final String P1_REPO_CLOSURE_CUSTOMERDESC_DOC1 = 'P1 - REPO - OPEN ALL DOCUMENTS'
 
-//	public static String P1_REPO014_SAVEDFILTER_RECORDCOUNT
-//	public static String P1_REPO014_SAVEDFILTERNAME
+	//	public static String P1_REPO014_SAVEDFILTER_RECORDCOUNT
+	//	public static String P1_REPO014_SAVEDFILTERNAME
 
 	//	public static final String P1_MW084_STARTDATE = '01-01-2018'
 	//	public static final String P1_MW084_ENDDATE = '12-31-2025'
@@ -484,14 +484,14 @@ public class Consts {
 	//	public static final String P1_MW_PROCESSFORTASK_CUSTOMERDESC_DOC8 = 'Assigned'
 	//	public static String P1_MW_PROCESSFORTASK_DOCID_DOC8
 
-//	public static final String P1_MW083_STARTDATE = '01-01-2020'
-//	public static final String P1_MW083_STARTDATETIME = '03-30-2017 12:00:00 AM'
-//	public static final String P1_MW083_STARTDATE_DATE = '1'
-//	public static final String P1_MW083_STARTDATE_MONTH = 'Jan'
-//	public static final String P1_MW083_STARTDATE_YEAR = '2020'
-//	public static final String P1_MW083_STARTDATETIME_DATE = '30'
-//	public static final String P1_MW083_STARTDATETIME_MONTH = 'Mar'
-//	public static final String P1_MW083_STARTDATETIME_YEAR = '2017'
+	//	public static final String P1_MW083_STARTDATE = '01-01-2020'
+	//	public static final String P1_MW083_STARTDATETIME = '03-30-2017 12:00:00 AM'
+	//	public static final String P1_MW083_STARTDATE_DATE = '1'
+	//	public static final String P1_MW083_STARTDATE_MONTH = 'Jan'
+	//	public static final String P1_MW083_STARTDATE_YEAR = '2020'
+	//	public static final String P1_MW083_STARTDATETIME_DATE = '30'
+	//	public static final String P1_MW083_STARTDATETIME_MONTH = 'Mar'
+	//	public static final String P1_MW083_STARTDATETIME_YEAR = '2017'
 
 	//	public static final String P1_LOANAPPL_FIRSTNAME_DOC1 = 'Chintan'
 	//	public static final String P1_LOANAPPL_LASTNAME_DOC1 = 'Shah'
@@ -516,8 +516,8 @@ public class Consts {
 	//	public static final String P1_EVENTFOREQ_TEXT_DOC2 = 'chintan'
 	//	public static final String P1_EVENTFOREQ_DATE_DOC2 = '01-01-2019'
 
-	
-//	public static final String P1_WCA008_PROCESSDUETIME = '12:00:00 AM'
+
+	//	public static final String P1_WCA008_PROCESSDUETIME = '12:00:00 AM'
 
 	/*
 	 * Doc Class and Doc Type Variables
@@ -541,53 +541,53 @@ public class Consts {
 	/* All variable listed below are flag representing documents are successfully created.
 	 *  These flags are useful for test cases which are dependent on data created in another test case*/
 
-//	public static boolean FLAG_SMOKE_MWS004 	= false
-//	public static boolean FLAG_SMOKE_MW003 		= false
-//	public static boolean FLAG_SMOKE_REPO003 	= false
-//
-//	public static boolean FLAG_P1_REPO_DOC0		= false
-//	public static boolean FLAG_P1_REPO_DOC10	= false
-//	public static boolean FLAG_P1_REPO_DOC11	= false
-//	public static boolean FLAG_P1_DOCA_REPO		= false
-//	public static boolean FLAG_P1_DOCB_REPO		= false
-//	public static boolean FLAG_P1_DOCC_REPO		= false
-//	public static boolean FLAG_P1_DOCD_REPO		= false
-//	public static boolean FLAG_P1_DOCE_REPO		= false
-//	public static boolean FLAG_P1_DOCF_REPO		= false
-//
-//	public static boolean FLAG_P1_MW_DOC0 		= false
-//	public static boolean FLAG_P1_MW_DOC1 		= false
-//	public static boolean FLAG_P1_MW_DOC2 		= false
-//	public static boolean FLAG_P1_MW_DOC3 		= false
-//	public static boolean FLAG_P1_MW_DOC4 		= false
-//	public static boolean FLAG_P1_MW_DOC5 		= false
-//	public static boolean FLAG_P1_MW_DOC6 		= false
-//	public static boolean FLAG_P1_MW_DOC7 		= false
-//	public static boolean FLAG_P1_MW_DOC8 		= false
-//	public static boolean FLAG_P1_MW_DOC9 		= false
-//	public static boolean FLAG_P1_MW_DOC10 		= false
-//	public static boolean FLAG_P1_MW_DOCA 		= false
-//	public static boolean FLAG_P1_MW_DOCB 		= false
-//	public static boolean FLAG_P1_MW_DOCC 		= false
-//	public static boolean FLAG_P1_MW_DOCD 		= false
-//	public static boolean FLAG_P1_MW_DOCE 		= false
-//	public static boolean FLAG_P1_MW_DOCF 		= false
-//	public static boolean FLAG_P1_MW_DOCG 		= false
-//	public static boolean FLAG_P1_MW_DOCH 		= false
-//	public static boolean FLAG_P1_MW_DOCI 		= false
-//	public static boolean FLAG_P1_MW_DOCJ 		= false
-//	public static boolean FLAG_P1_MW_DOCK 		= false
-//	public static boolean FLAG_P1_MW_DOCL 		= false
-//	public static boolean FLAG_P1_MW_DOCM 		= false
-//	public static boolean FLAG_P1_MW_DOCN 		= false
-//	public static boolean FLAG_P1_MW_DOCO 		= false
-//	public static boolean FLAG_P1_MW_DOCP 		= false
-//	public static boolean FLAG_P1_MW_DOCQ 		= false
-//	public static boolean FLAG_P1_MW_DOCR 		= false
-//	public static boolean FLAG_P1_MW_DOCS 		= false
-//	public static boolean FLAG_P1_MW_DOCT 		= false
-//	public static boolean FLAG_P1_MW_DOCU 		= false
-//	public static boolean FLAG_P1_MW_DOCV 		= false
+	//	public static boolean FLAG_SMOKE_MWS004 	= false
+	//	public static boolean FLAG_SMOKE_MW003 		= false
+	//	public static boolean FLAG_SMOKE_REPO003 	= false
+	//
+	//	public static boolean FLAG_P1_REPO_DOC0		= false
+	//	public static boolean FLAG_P1_REPO_DOC10	= false
+	//	public static boolean FLAG_P1_REPO_DOC11	= false
+	//	public static boolean FLAG_P1_DOCA_REPO		= false
+	//	public static boolean FLAG_P1_DOCB_REPO		= false
+	//	public static boolean FLAG_P1_DOCC_REPO		= false
+	//	public static boolean FLAG_P1_DOCD_REPO		= false
+	//	public static boolean FLAG_P1_DOCE_REPO		= false
+	//	public static boolean FLAG_P1_DOCF_REPO		= false
+	//
+	//	public static boolean FLAG_P1_MW_DOC0 		= false
+	//	public static boolean FLAG_P1_MW_DOC1 		= false
+	//	public static boolean FLAG_P1_MW_DOC2 		= false
+	//	public static boolean FLAG_P1_MW_DOC3 		= false
+	//	public static boolean FLAG_P1_MW_DOC4 		= false
+	//	public static boolean FLAG_P1_MW_DOC5 		= false
+	//	public static boolean FLAG_P1_MW_DOC6 		= false
+	//	public static boolean FLAG_P1_MW_DOC7 		= false
+	//	public static boolean FLAG_P1_MW_DOC8 		= false
+	//	public static boolean FLAG_P1_MW_DOC9 		= false
+	//	public static boolean FLAG_P1_MW_DOC10 		= false
+	//	public static boolean FLAG_P1_MW_DOCA 		= false
+	//	public static boolean FLAG_P1_MW_DOCB 		= false
+	//	public static boolean FLAG_P1_MW_DOCC 		= false
+	//	public static boolean FLAG_P1_MW_DOCD 		= false
+	//	public static boolean FLAG_P1_MW_DOCE 		= false
+	//	public static boolean FLAG_P1_MW_DOCF 		= false
+	//	public static boolean FLAG_P1_MW_DOCG 		= false
+	//	public static boolean FLAG_P1_MW_DOCH 		= false
+	//	public static boolean FLAG_P1_MW_DOCI 		= false
+	//	public static boolean FLAG_P1_MW_DOCJ 		= false
+	//	public static boolean FLAG_P1_MW_DOCK 		= false
+	//	public static boolean FLAG_P1_MW_DOCL 		= false
+	//	public static boolean FLAG_P1_MW_DOCM 		= false
+	//	public static boolean FLAG_P1_MW_DOCN 		= false
+	//	public static boolean FLAG_P1_MW_DOCO 		= false
+	//	public static boolean FLAG_P1_MW_DOCP 		= false
+	//	public static boolean FLAG_P1_MW_DOCQ 		= false
+	//	public static boolean FLAG_P1_MW_DOCR 		= false
+	//	public static boolean FLAG_P1_MW_DOCS 		= false
+	//	public static boolean FLAG_P1_MW_DOCT 		= false
+	//	public static boolean FLAG_P1_MW_DOCU 		= false
+	//	public static boolean FLAG_P1_MW_DOCV 		= false
 
 
 
@@ -602,7 +602,7 @@ public class Consts {
 	public static final String P1_TIME_START = '12:00:00 AM'
 	public static final String P1_TIME_END = '11:59:59 PM'
 	public static final String TREE_EMPTY = '[Empty]'
-	
+
 	public static final String DATETIME_APPLICATION = 'MM-dd-yyyy HH:mm:ss a'
 	public static final String DATE_APPLICATION_TREE = 'MM/dd/yyyy'
 
@@ -614,8 +614,9 @@ public class Consts {
 
 	public static String ORIGINAL_WINDOW_HANDLE //Not to be deleted
 	
+	public static String EST_TIMEZONE = "America/New_York" //Not to be deleted
 
-	
+
 	/* -------- TREE --------*/
 	public static final String MW_LVL0 = 'Processes'
 	public static final String MW_LVL1_COMPLAINTS_TEMPLATE = "Complaints Template"
@@ -623,7 +624,7 @@ public class Consts {
 
 	public static final String REPO_LVL1_COMPLAINTS_TEMPLATE = "Complaint Templates"
 	public static final String REPO_LVL2_COMPLAINT_TEMPLATE = "Complaint Templates"
-	
+
 
 
 
@@ -955,7 +956,7 @@ public class Consts {
 		P1_REPO_DOC221.put(Fields.STRING_FIELD_ON_FOCUS, 'CShah')
 		P1_REPO_DOC221.put(Fields.DATE, '01-01-2020')
 	}
-	
+
 	public static final String SMOKE_WMI005_FIELD1 = '50'
 	public static final String SMOKE_WMI005_FIELD2 = 'WMI005-Automation'
 	public static final String SMOKE_WMI005_FIELD3 = 'Value 2'
@@ -1355,7 +1356,7 @@ public class Consts {
 		SMOKE_WMI_DOC341.put(Fields.CUSTOMER_NAME, 'Chintan Shah')
 		SMOKE_WMI_DOC341.put(Fields.CUSTOMER_DETAIL, 'Automation test document')
 	}
-	
+
 	public static final Map<Fields, String> SMOKE_WMI_DOC342
 	public static boolean FLAG_SMOKE_WMI_DOC342 = false
 	static {
@@ -1366,7 +1367,7 @@ public class Consts {
 	public static final String SMOKE_MWS003_FILTER_DOCID = '106845'
 	public static final String SMOKE_MWS003_FILTER_STARTDATETIME = '01-01-2018 12:00:00 AM'
 	public static final String SMOKE_MWS003_FILTER_ENDDATETIME = '02-28-2018 12:00:00 AM'
-	
+
 	public static final String SMOKE_REPO002_DOCID = '100003'
 	public static final String SMOKE_REPO002_START_FILTER = '12-12-2018'
 	public static final String SMOKE_REPO002_END_FILTER = '01-01-2019'

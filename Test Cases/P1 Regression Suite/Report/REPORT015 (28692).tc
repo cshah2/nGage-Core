@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Regression Test Reports: Open multiple report , verfiy context menu - close all menu tab</description>
+   <name>REPORT015 (28692)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>ef136101-99ec-4349-9ba0-24b78d32ace6</testCaseGuid>
+</TestCaseEntity>

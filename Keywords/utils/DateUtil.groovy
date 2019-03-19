@@ -86,12 +86,12 @@ public class DateUtil {
 				if(!actualDate.equals(""))
 					status= true
 				break
-				
+
 			case 'between'://inclusive range check
 				if(filterDate1.compareTo(actualDate) * actualDate.compareTo(filterDate2) >= 0)
 					status = true
 				break
-				
+
 			case 'not between'://excluding range check
 				if(!(filterDate1.compareTo(actualDate) * actualDate.compareTo(filterDate2) >= 0))
 					status = true
@@ -166,12 +166,12 @@ public class DateUtil {
 				if(!actualDate.equals(""))
 					status= true
 				break
-				
+
 			case 'between'://inclusive range check
 				if(filterDate1.compareTo(actualDate) * actualDate.compareTo(filterDate2) >= 0)
 					status = true
 				break
-			
+
 			case 'not between'://excluding range check
 				if(!(filterDate1.compareTo(actualDate) * actualDate.compareTo(filterDate2) >= 0))
 					status = true
@@ -193,6 +193,11 @@ public class DateUtil {
 	public static String getCurrentDateTime(String _format) {
 		Date now = new Date()
 		return now.format(_format, TimeZone.getTimeZone('UTC')).toString()
+	}
+	
+	public static String getCurrentDateTime(String _format, String timezone) {
+		Date now = new Date()
+		return now.format(_format, TimeZone.getTimeZone(timezone)).toString()
 	}
 
 	public static String getCurrentDateTimeMinusDays(int days) {

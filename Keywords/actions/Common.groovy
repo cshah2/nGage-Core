@@ -1163,16 +1163,38 @@ public class Common {
 
 		WebUI.switchToDefaultContent()
 	}
-	
+
 	@Keyword
 	def verifyMatch(String actualText, String expectedText, boolean isRegex) {
-		
+
 		try {
 			WebUI.verifyMatch(actualText, expectedText, isRegex)
 		}
 		catch(Exception e) {
 			WebUI.takeScreenshot()
-			KeywordUtil.markFailedAndStop(e.toString())	
+			KeywordUtil.markFailedAndStop(e.toString())
 		}
+	}
+
+	@Keyword
+	def verifyElementMaskedProperty(TestObject to, boolean isMasked, String expMask) {
+		
+		String jScriptMasked = 'return arguments[0].MaskedEditBehavior != undefined && arguments[0].MaskedEditBehavior._EmptyMask == "'+expMask+'"'
+		String jScriptNoMasked = 'return arguments[0].MaskedEditBehavior == undefined'
+		boolean isMatching = false
+		
+		WebElement e = WebUtil.getWebElement(to)
+		List<WebElement> list = new ArrayList<WebElement>()
+		list.add(e)
+		
+
+		if(isMasked) {
+			isMatching = (Boolean)WebUI.executeJavaScript(jScriptMasked, list)
+		}
+		else {
+			isMatching = (Boolean)WebUI.executeJavaScript(jScriptNoMasked, list)
+		}
+		WebUI.verifyEqual(isMatching, true)
+		WebUI.switchToDefaultContent()
 	}
 }

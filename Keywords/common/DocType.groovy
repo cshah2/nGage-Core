@@ -43,7 +43,8 @@ public enum DocType {
 	DATE_REQUIRED("daterequiredsearch"),
 	DATE_RANGE_REQUIRED("daterangerequired"),
 	DATETIME_REQUIRED("Datetimerequired"),
-	DATETIME_RANGE_REQUIRED("Datetimerangerequired")
+	DATETIME_RANGE_REQUIRED("Datetimerangerequired"),
+	FIELD_MASK("Field Mask")
 
 
 

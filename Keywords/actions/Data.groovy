@@ -622,13 +622,13 @@ public class Data {
 		new Common().waitForFrameToLoad(findTestObject('Page_WMI/MyWork_DateTime/iframe_ContentPlaceHolder'))
 		new Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI/MyWork_DateTime/span_Close Window'), GlobalVariable.G_LongTimeout)
 	}
-	
+
 	private void closureAction(Map<Fields, String> data) {
-		
+
 		//Get Data from Map
 		String custName = data.get(Fields.CUSTOMER_NAME)
 		String custDetail = data.get(Fields.CUSTOMER_DETAIL)
-		
+
 		//Fill Form
 		if(StringUtils.isNotBlank(custName))
 			WebUI.setText(findTestObject('Page_WMI_NEW/Closure_Action/input_Customer Name'), custName)

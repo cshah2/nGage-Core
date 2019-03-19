@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Regression Test Personalisation : SAVBPM-54466 - Display Last User Login info on the Run Time UI</description>
+   <name>HOME001 (28649)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>8e8ac2cd-05c5-4bbc-880c-b4fe9b3bb004</testCaseGuid>
+</TestCaseEntity>

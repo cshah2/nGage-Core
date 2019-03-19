@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Regression Test Reports : Reprort- verfiy Copy report with existing name</description>
+   <name>REPORT013 (28671)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>c3f6db7d-e1f2-451b-a527-0b326a2ba4aa</testCaseGuid>
+</TestCaseEntity>
