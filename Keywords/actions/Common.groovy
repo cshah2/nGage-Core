@@ -1178,15 +1178,15 @@ public class Common {
 
 	@Keyword
 	def verifyElementMaskedProperty(TestObject to, boolean isMasked, String expMask) {
-		
+
 		String jScriptMasked = 'return arguments[0].MaskedEditBehavior != undefined && arguments[0].MaskedEditBehavior._EmptyMask == "'+expMask+'"'
 		String jScriptNoMasked = 'return arguments[0].MaskedEditBehavior == undefined'
 		boolean isMatching = false
-		
+
 		WebElement e = WebUtil.getWebElement(to)
 		List<WebElement> list = new ArrayList<WebElement>()
 		list.add(e)
-		
+
 
 		if(isMasked) {
 			isMatching = (Boolean)WebUI.executeJavaScript(jScriptMasked, list)

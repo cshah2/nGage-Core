@@ -19,6 +19,7 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable
 
 public enum DocType {
+	
 	CLOSURE_ACTION("Closure Action"),
 	COMPLAINT_TEMPLATE("Complaint Template"),
 	WMI_MENU_BOV("WMI Menu BOV"),
@@ -44,9 +45,16 @@ public enum DocType {
 	DATE_RANGE_REQUIRED("daterangerequired"),
 	DATETIME_REQUIRED("Datetimerequired"),
 	DATETIME_RANGE_REQUIRED("Datetimerangerequired"),
-	FIELD_MASK("Field Mask")
-
-
+	FIELD_MASK("Field Mask"),
+	INTERFACE_TEST_PR_ACTIVITY1("InterfaceTestPRDocTypeActivity1"),
+	INTERFACE_TEST_PR_ACTIVITY2("InterfaceTestPRDocTypeActivity2"),
+	INTERFACE_TEST_PR_ACTIVITY3("InterfaceTestPRDocTypeActivity3"),
+	INTERFACE_TEST_PR_ACTIVITY4("InterfaceTestPRDocTypeActivity4"),
+	INTERFACE_TEST_PR_ACTIVITY6("InterfaceTestPRDocTypeActivity6"),
+	INTERFACE_TEST_PR_RULES_ITEM_RELATED("InterfaceTestPRDocTypeExecRules_ItemRelated"),
+	INTERFACE_TEST_PR_RULES_OTHER("InterfaceTestPRDocTypeExecRules_Other"),
+	INTERFACE_TEST_PR_RULES_PROCESS_INSTANCE("InterfaceTestPRDocTypeExecRules_ProcessInstance"),
+	INTERFACE_TEST_PR_LIBRARY_ACTIVITY01("InterfaceTestPRLibraryActivity01")
 
 	private final String text
 

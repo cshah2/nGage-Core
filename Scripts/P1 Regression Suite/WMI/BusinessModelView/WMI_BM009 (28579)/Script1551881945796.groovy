@@ -84,9 +84,9 @@ int expectedRows = 2
 int rowCount = CustomKeywords.'actions.Table.getRowsCount'(findTestObject('Page_WMI_NEW/BusinessModelView/StandardGrid/AuditHistory/table_ActualRow'))
 WebUI.verifyEqual(rowCount, expectedRows)
 
-'Verify page count is 2'
+'Verify pages'
 String pageCount = WebUI.getText(findTestObject('Page_WMI_NEW/BusinessModelView/StandardGrid/AuditHistory/page_Count'))
 String[] actualPageCount = pageCount.split('of ')
-String actualPageCount1 = actualPageCount[0]
-String actualPageCount2 = actualPageCount[1]
-WebUI.verifyEqual(actualPageCount2, expectedRows)
+String actualPageCount1 = actualPageCount[0].trim()
+String actualPageCount2 = actualPageCount[1].trim()
+WebUI.verifyEqual(actualPageCount2, '3')
