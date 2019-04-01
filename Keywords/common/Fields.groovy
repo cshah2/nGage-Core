@@ -52,5 +52,8 @@ public enum Fields {
 	END_DATE,					//Date Required, Date Range Required, Date Time Required, Date Time Range Required
 	START_DATE_TIME,			//Date Required, Date Range Required, Date Time Required, Date Time Range Required
 	END_DATE_TIME,				//Date Required, Date Range Required, Date Time Required, Date Time Range Required
-	CUSTOMER_DETAIL
+	CUSTOMER_DETAIL,
+	TEST_ID,					//InterfaceTest PR Doc
+	TEST_NAME,					//InterfaceTest PR Doc
+	TEST_DATE					//InterfaceTest PR Doc
 }

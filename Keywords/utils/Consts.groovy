@@ -613,7 +613,7 @@ public class Consts {
 	public static final String FORMAT_DATE_TREE = 'MM-dd-yyyy' //TODO: To be deleted once code is fixed.
 
 	public static String ORIGINAL_WINDOW_HANDLE //Not to be deleted
-	
+
 	public static String EST_TIMEZONE = "America/New_York" //Not to be deleted
 
 
@@ -1372,5 +1372,14 @@ public class Consts {
 	public static final String SMOKE_REPO002_START_FILTER = '12-12-2018'
 	public static final String SMOKE_REPO002_END_FILTER = '01-01-2019'
 
+	//361 - 380 For Interface DocClass PR
+	public static final Map<Fields, String> P1_WMI_DOC361
+	public static boolean FLAG_P1_WMI_DOC361 = false
+	static {
+		P1_WMI_DOC361 = new HashMap<Fields, String>()
+		P1_WMI_DOC361.put(Fields.TEST_ID, '1')
+		P1_WMI_DOC361.put(Fields.TEST_NAME, 'Action Tests')
+		P1_WMI_DOC361.put(Fields.TEST_DATE, '03-01-2019')
+	}
 
 }

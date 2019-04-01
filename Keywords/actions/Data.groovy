@@ -140,6 +140,18 @@ public class Data {
 				closureAction(data)
 				break
 
+			case DocType.INTERFACE_TEST_PR_ACTIVITY1:
+			case DocType.INTERFACE_TEST_PR_ACTIVITY2:
+			case DocType.INTERFACE_TEST_PR_ACTIVITY3:
+			case DocType.INTERFACE_TEST_PR_ACTIVITY4:
+			case DocType.INTERFACE_TEST_PR_ACTIVITY6:
+			case DocType.INTERFACE_TEST_PR_LIBRARY_ACTIVITY01:
+			case DocType.INTERFACE_TEST_PR_RULES_ITEM_RELATED:
+			case DocType.INTERFACE_TEST_PR_RULES_OTHER:
+			case DocType.INTERFACE_TEST_PR_RULES_PROCESS_INSTANCE:
+				interfaceTestPR(data)
+				break
+
 			default:
 				WebUI.takeScreenshot()
 				KeywordUtil.markFailedAndStop('Unable to create document, Invalid docType provided : '+docType)
@@ -640,5 +652,28 @@ public class Data {
 		WebUI.mouseOver(findTestObject('Page_WMI_NEW/Closure_Action/span_Actions'))
 		WebUI.waitForElementVisible(findTestObject('Page_WMI_NEW/Closure_Action/a_Save'), GlobalVariable.G_LongTimeout)
 		new Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI_NEW/Closure_Action/a_Save'),GlobalVariable.G_LongTimeout)
+	}
+
+	private void interfaceTestPR(Map<Fields, String> data) {
+
+		//Get Data from Map
+		String testId = data.get(Fields.TEST_ID)
+		String testName = data.get(Fields.TEST_NAME)
+		String testDate = data.get(Fields.TEST_DATE)
+
+		WebUI.waitForElementVisible(findTestObject('Page_WMI_NEW/Interface Test PR/input_TestID'), GlobalVariable.G_LongTimeout)
+		//Fill Form
+		if(StringUtils.isNotBlank(testId))
+			WebUI.setText(findTestObject('Page_WMI_NEW/Interface Test PR/input_TestID'), testId)
+		if(StringUtils.isNotBlank(testName))
+			WebUI.setText(findTestObject('Page_WMI_NEW/Interface Test PR/input_TestName'), testName)
+		if(StringUtils.isNotBlank(testDate))
+			new Common().setText_Date(findTestObject('Page_WMI_NEW/Interface Test PR/input_TestDate'), testDate)
+
+		//Save details and close
+		WebUI.click(findTestObject('Page_WMI_NEW/Interface Test PR/btn_Save'))
+		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+		new Common().waitForFrameToLoad(findTestObject('Page_WMI_NEW/Interface Test PR/iframe_ContentPlaceHolder1_iPage'))
+		new Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI_NEW/Interface Test PR/btn_Close Window'),GlobalVariable.G_LongTimeout)
 	}
 }
