@@ -89,7 +89,7 @@ String pageCount = WebUI.getText(findTestObject('Page_WMI_NEW/BusinessModelView/
 String[] actualPageCount = pageCount.split('of ')
 String actualPageCount1 = actualPageCount[0]
 String actualPageCount2 = actualPageCount[1]
-WebUI.verifyEqual(actualPageCount2, expectedRows)
+WebUI.verifyEqual(actualPageCount2, '3')
 
 'Verify Back to top link is visible'
 WebUI.verifyElementVisible(findTestObject('Page_WMI_NEW/BusinessModelView/StandardGrid/AuditHistory/a_ Back to Top'))

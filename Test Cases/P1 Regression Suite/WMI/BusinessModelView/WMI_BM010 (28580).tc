@@ -3,6 +3,6 @@
    <description>Regression Test WMI - Standard grid - Audit History (hidefooter=false)</description>
    <name>WMI_BM010 (28580)</name>
    <tag></tag>
-   <comment></comment>
+   <comment>Add 3 records to Audit History tab (One record is already present due to 1st save operation) Hence creating 2 records</comment>
    <testCaseGuid>f1fe1d5f-3c91-4528-935c-a237360cd65a</testCaseGuid>
 </TestCaseEntity>
