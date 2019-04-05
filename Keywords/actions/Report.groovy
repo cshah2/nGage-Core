@@ -341,7 +341,7 @@ public class Report {
 		WebUI.verifyElementVisible(findTestObject('Page_nGage_Dashboard/Report/Design_CommonFields/tab_Style'))
 		WebUI.verifyElementVisible(findTestObject('Page_nGage_Dashboard/Report/Design_CommonFields/tab_Filters'))
 		WebUI.verifyElementVisible(findTestObject('Page_nGage_Dashboard/Report/Design_CommonFields/tab_Preview'))
-
-		WebUI.verifyOptionSelectedByLabel(findTestObject('Page_nGage_Dashboard/Report/Design_CommonFields/select_DataSource'), expectedDataSource, false, GlobalVariable.G_LongTimeout)
+		
+		WebUI.verifyOptionSelectedByLabel(findTestObject('Page_nGage_Dashboard/Report/Design_CommonFields/select_DataSource'), "(?i)"+expectedDataSource+"(?i)", true, GlobalVariable.G_LongTimeout)
 	}
 }
