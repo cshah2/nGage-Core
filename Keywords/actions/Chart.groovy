@@ -32,7 +32,7 @@ import utils.WebUtil
 public class Chart {
 
 
-	/* ##################### KEYWORDS ##################### */
+	/* ##################### KEYWORDS #####################  */
 
 	@Keyword
 	def verifyNumberOfSlices(TestObject chartLocator, int expCount, ChartType type) {
