@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Regression Test WMI : Feature test-WMI Segment template: Verify the Menu ( Close) on document.</description>
+   <name>WMIST002(28647)</name>
+   <tag></tag>
+   <comment>verify login and create new document with Doc Class-WMI Segment and Doc type-WMI Segment</comment>
+   <testCaseGuid>42699cf3-5719-4b77-8aca-57c226978bbb</testCaseGuid>
+</TestCaseEntity>

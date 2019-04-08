@@ -4,7 +4,17 @@
    <name>span_Save</name>
    <tag></tag>
    <elementGuidId>ae6f804d-5ff7-4993-899e-5ef3fddf8f85</elementGuidId>
-   <selectorMethod>BASIC</selectorMethod>
+   <selectorCollection>
+      <entry>
+         <key>XPATH</key>
+         <value>//li[@id='actionsMenu_Submenu_1']/a/span</value>
+      </entry>
+      <entry>
+         <key>BASIC</key>
+         <value>//span[(text() = ' Save' or . = ' Save') and @ref_element = 'Object Repository/Page_WMI_NEW/Master_Object_Feature/Render_As_Label/iframe_ContentPlaceHolder1']</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
    <webElementProperties>
       <isSelected>true</isSelected>

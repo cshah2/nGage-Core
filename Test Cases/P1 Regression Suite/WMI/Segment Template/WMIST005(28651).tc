@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Regression Test WMI  :  Feature test-WMI Segment template: Verify the Menu ( Audit History Menu, Revision History Menu) on document.</description>
+   <name>WMIST005(28651)</name>
+   <tag></tag>
+   <comment>verify login and create new document with Doc Class-WMI Segment and Doc type-WMI Segment</comment>
+   <testCaseGuid>ee22921d-d5e9-423d-ae14-d0c5ad65d9a5</testCaseGuid>
+</TestCaseEntity>

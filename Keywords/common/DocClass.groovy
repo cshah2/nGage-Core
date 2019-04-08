@@ -19,7 +19,7 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable
 
 public enum DocClass {
-	
+
 	CLOSURE_ACTION("Closure Action"),
 	COMPLAINTS_TEMPLATES("Complaints Templates"),
 	WMI_MENU("WMI Menu"),
@@ -41,7 +41,8 @@ public enum DocClass {
 	DATE_RANGE_REQUIRED("daterangerequired"),
 	DATETIME_REQUIRED("Datetimerequired"),
 	DATETIME_RANGE_REQUIRED("Datetimerangerequired"),
-	INTERFACE_TEST_PR("InterfaceTestPRDocClass")
+	INTERFACE_TEST_PR("InterfaceTestPRDocClass"),
+	WMI_SEGMENT("WMI Segment")
 
 
 	private final String text

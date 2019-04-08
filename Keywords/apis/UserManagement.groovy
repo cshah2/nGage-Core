@@ -58,18 +58,18 @@ public class UserManagement {
 
 	@Keyword
 	def updateUserManagement(int userId, String password, String pwdChangedDate, String lastLoginDate, int invalidLoginCount, boolean pwdNeverExpires, boolean mustChangePwd) {
-		
+
 		JSONObject bodyObj = new JSONObject()
 		bodyObj.put('Id', new Integer(userId))
 		bodyObj.put('UPwd', password)
-		
+
 		if(pwdChangedDate == null) {
 			bodyObj.put('PwdLastChanged',DateUtil.getCurrentDateTime(DateTimeFormatter.ISO_OFFSET_DATE_TIME))
 		}
 		else {
 			bodyObj.put('PwdLastChanged',pwdChangedDate)
 		}
-		
+
 		if(lastLoginDate == null) {
 			bodyObj.put('LastLoginDate',DateUtil.getCurrentDateTime(DateTimeFormatter.ISO_OFFSET_DATE_TIME))
 		}
@@ -80,12 +80,11 @@ public class UserManagement {
 		bodyObj.put('PwdNeverExpires', new Boolean(pwdNeverExpires))
 		bodyObj.put('MustChangePwd', new Boolean(mustChangePwd))
 		bodyObj.put('SendWelcomeMessage', new Boolean(false))
-		
-		put_SingleUser(userId, bodyObj.toJSONString(), true)
 
-	} 
-	
-	
+		put_SingleUser(userId, bodyObj.toJSONString(), true)
+	}
+
+
 	@Keyword
 	def updatePasswordForUser(int userId, String password) {
 
@@ -100,7 +99,7 @@ public class UserManagement {
 		bodyObj.put('PwdNeverExpires', new Boolean(false))
 		bodyObj.put('MustChangePwd', new Boolean(false))
 		bodyObj.put('SendWelcomeMessage', new Boolean(false))
-		
+
 		put_SingleUser(userId, bodyObj.toJSONString(), true)
 
 		//patch_SingleUser(userId, bodyObj.toJSONString(), true)

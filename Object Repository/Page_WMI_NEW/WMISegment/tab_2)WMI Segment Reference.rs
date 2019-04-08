@@ -1,20 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>btn_Save</name>
+   <name>tab_2)WMI Segment Reference</name>
    <tag></tag>
-   <elementGuidId>c2e978de-d3c2-4bf5-a524-3442ebe82b01</elementGuidId>
+   <elementGuidId>e4e61596-e88a-4eff-aa79-50a7319412b8</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>XPATH</key>
-         <value>//li[@id='actionsMenu_Submenu_1']/a/span</value>
-      </entry>
-      <entry>
          <key>BASIC</key>
-         <value>//span[(text() = ' Save' or . = ' Save') and @ref_element = 'Object Repository/Page_WMI_NEW/Complaints Templates/Complaint Template/iframe_ContentPlaceHolder1']</value>
+         <value>//span[(text() = '2) WMI Segment Reference object' or . = '2) WMI Segment Reference object')]</value>
       </entry>
    </selectorCollection>
-   <selectorMethod>XPATH</selectorMethod>
+   <selectorMethod>BASIC</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
    <webElementProperties>
       <isSelected>true</isSelected>
@@ -24,49 +20,54 @@
       <value>span</value>
    </webElementProperties>
    <webElementProperties>
-      <isSelected>false</isSelected>
-      <matchCondition>equals</matchCondition>
-      <name>class</name>
-      <type>Main</type>
-      <value>ui-button-text</value>
-   </webElementProperties>
-   <webElementProperties>
       <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
       <name>text</name>
       <type>Main</type>
-      <value> Save</value>
+      <value>2) WMI Segment Reference object</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>id(&quot;actionsMenu_Submenu_1&quot;)/a[@class=&quot;ui-button ui-widget ui-button-text-only ui-state-default ui-state-hover&quot;]/span[@class=&quot;ui-button-text&quot;]</value>
+      <value>id(&quot;__tab_eform_mcb67676_TabContainer_4_TabRef_2&quot;)/span[1]</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
       <name>ref_element</name>
       <type>Main</type>
-      <value>Object Repository/Page_WMI_NEW/Complaints Templates/Complaint Template/iframe_ContentPlaceHolder1</value>
+      <value>Object Repository/Page_WMI_NEW/WMISegment/iframe_Close_ContentPlaceHolde</value>
    </webElementProperties>
    <webElementXpaths>
       <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:idRelative</name>
-      <value>//li[@id='actionsMenu_Submenu_1']/a/span</value>
+      <value>//a[@id='__tab_eform_mcb67676_TabContainer_4_TabRef_2']/span</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:neighbor</name>
-      <value>(.//*[normalize-space(text()) and normalize-space(.)='Delete'])[1]/preceding::span[1]</value>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='* Duplicate values will be ignored.'])[1]/following::span[9]</value>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='of 1003'])[1]/preceding::span[2]</value>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='>'])[1]/preceding::span[3]</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:position</name>
-      <value>//span</value>
+      <value>//span[2]/span/span/a/span</value>
    </webElementXpaths>
 </WebElementEntity>

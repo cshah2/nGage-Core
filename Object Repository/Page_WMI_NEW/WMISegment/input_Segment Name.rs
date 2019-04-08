@@ -1,65 +1,90 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>iframe_Close Window_ContentPla (1)</name>
+   <name>input_Segment Name</name>
    <tag></tag>
-   <elementGuidId>0ae24679-19f0-4cf0-ac05-5b52a2353a44</elementGuidId>
+   <elementGuidId>f589d064-5959-47dd-9f4d-e254cd9bfb9b</elementGuidId>
    <selectorCollection>
       <entry>
+         <key>XPATH</key>
+         <value>//input[@id='eform_mcb67676_phBO_3_BO_eidmKey_WMI_Segment_Name']</value>
+      </entry>
+      <entry>
          <key>BASIC</key>
-         <value>//iframe[@id = 'ContentPlaceHolder1_iPage']</value>
+         <value>//input[@name = 'eform_mcb67676$phBO_3_BO$eidmKey_WMI_Segment_Name' and @type = 'text' and @id = 'eform_mcb67676_phBO_3_BO_eidmKey_WMI_Segment_Name' and @ref_element = 'Object Repository/Page_WMI_NEW/WMISegment/temp/iframe_Close_ContentPlaceHolde']</value>
       </entry>
    </selectorCollection>
-   <selectorMethod>BASIC</selectorMethod>
+   <selectorMethod>XPATH</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
    <webElementProperties>
       <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
       <name>tag</name>
       <type>Main</type>
-      <value>iframe</value>
+      <value>input</value>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>name</name>
+      <type>Main</type>
+      <value>eform_mcb67676$phBO_3_BO$eidmKey_WMI_Segment_Name</value>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>type</name>
+      <type>Main</type>
+      <value>text</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
-      <name>src</name>
+      <name>maxlength</name>
       <type>Main</type>
-      <value>PropertyNoMenuJQ.aspx?loc=IMPORT&amp;did=&amp;revid=&amp;pid=&amp;tid=&amp;dtid=100035&amp;dcid=100004&amp;highlight=&amp;sdid=&amp;opm=IE&amp;opwm=&amp;odighaw=&amp;dwid=New&amp;pdwid=&amp;aid=&amp;epmSTAGEDDOCUMENTID=&amp;epmSTAGEDFILETYPE=&amp;fvid=&amp;ConID=&amp;ConType=&amp;OnChngDcDt=&amp;preFilledFields=&amp;mode=&amp;nid=CASEVIEW</value>
+      <value>20</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
       <name>id</name>
       <type>Main</type>
-      <value>ContentPlaceHolder1_iPage</value>
+      <value>eform_mcb67676_phBO_3_BO_eidmKey_WMI_Segment_Name</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
-      <name>frameborder</name>
+      <name>tabindex</name>
       <type>Main</type>
-      <value>0</value>
+      <value>1</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
-      <name>height</name>
+      <name>class</name>
       <type>Main</type>
-      <value>100%</value>
+      <value>inputclass</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
-      <name>width</name>
+      <name>onkeyup</name>
       <type>Main</type>
-      <value>100%</value>
+      <value>return ismaxlength(this,'20',event);</value>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>tabseq</name>
+      <type>Main</type>
+      <value>1</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>id(&quot;ContentPlaceHolder1_iPage&quot;)</value>
+      <value>id(&quot;eform_mcb67676_phBO_3_BO_eidmKey_WMI_Segment_Name&quot;)</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
@@ -72,42 +97,42 @@
       <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:attributes</name>
-      <value>//iframe[@id='ContentPlaceHolder1_iPage']</value>
+      <value>//input[@id='eform_mcb67676_phBO_3_BO_eidmKey_WMI_Segment_Name']</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:idRelative</name>
-      <value>//table[@id='tblMain']/tbody/tr[2]/td/iframe</value>
+      <value>//div[@id='eform_mcb67676_phBO_3_BO_secpnl_2']/table/tbody/tr/td/table/tbody/tr[2]/td[3]/input</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:neighbor</name>
-      <value>(.//*[normalize-space(text()) and normalize-space(.)='Close Window'])[1]/following::iframe[1]</value>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Segment Name'])[1]/following::input[1]</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:neighbor</name>
-      <value>(.//*[normalize-space(text()) and normalize-space(.)='WMI Harness'])[1]/following::iframe[1]</value>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='WMI Segment Master Reference Object'])[2]/following::input[1]</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:neighbor</name>
-      <value>(.//*[normalize-space(text()) and normalize-space(.)='Menus'])[1]/preceding::iframe[1]</value>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Segment Address'])[1]/preceding::input[1]</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:neighbor</name>
-      <value>(.//*[normalize-space(text()) and normalize-space(.)='Capture object:'])[1]/preceding::iframe[1]</value>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='dummy'])[1]/preceding::input[3]</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:position</name>
-      <value>//iframe</value>
+      <value>//td[3]/input</value>
    </webElementXpaths>
 </WebElementEntity>

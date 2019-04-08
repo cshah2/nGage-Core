@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>table_MyDocumentResults</name>
+   <name>title_menu</name>
    <tag></tag>
-   <elementGuidId>6dc61733-805c-4105-94d2-2cd66b228341</elementGuidId>
+   <elementGuidId>7cefc482-505a-4149-acb9-e033d0ee2d32</elementGuidId>
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//table[@id='tblMyDocumentsResults']</value>
+         <value>//span[@id='menuLabel']</value>
       </entry>
       <entry>
          <key>BASIC</key>
-         <value>//*[@ref_element = 'Object Repository/Page_nGage_Dashboard/iframe_iframe_103']</value>
+         <value></value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
@@ -21,6 +21,6 @@
       <matchCondition>equals</matchCondition>
       <name>ref_element</name>
       <type>Main</type>
-      <value>Object Repository/Page_nGage_Dashboard/iframe_iframe_103</value>
+      <value>Object Repository/Page_WMI_NEW/WMISegment/iframe_Close_ContentPlaceHolde</value>
    </webElementProperties>
 </WebElementEntity>

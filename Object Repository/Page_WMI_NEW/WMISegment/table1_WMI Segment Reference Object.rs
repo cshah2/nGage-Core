@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>table_MyDocumentResults</name>
+   <name>table1_WMI Segment Reference Object</name>
    <tag></tag>
-   <elementGuidId>6dc61733-805c-4105-94d2-2cd66b228341</elementGuidId>
+   <elementGuidId>2847af46-d122-4bef-b3b0-c94806fc629d</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>XPATH</key>
-         <value>//table[@id='tblMyDocumentsResults']</value>
+         <key>BASIC</key>
       </entry>
       <entry>
-         <key>BASIC</key>
-         <value>//*[@ref_element = 'Object Repository/Page_nGage_Dashboard/iframe_iframe_103']</value>
+         <key>XPATH</key>
+         <value>//table[@id='eform_mcb67676_TabContainer_4_TabRef_1_phBO_4_BO_grc']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
@@ -21,6 +20,6 @@
       <matchCondition>equals</matchCondition>
       <name>ref_element</name>
       <type>Main</type>
-      <value>Object Repository/Page_nGage_Dashboard/iframe_iframe_103</value>
+      <value>Object Repository/Page_WMI_NEW/WMISegment/iframe_Close_ContentPlaceHolde</value>
    </webElementProperties>
 </WebElementEntity>

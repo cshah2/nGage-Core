@@ -19,7 +19,7 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable
 
 public enum DocType {
-	
+
 	CLOSURE_ACTION("Closure Action"),
 	COMPLAINT_TEMPLATE("Complaint Template"),
 	WMI_MENU_BOV("WMI Menu BOV"),
@@ -54,7 +54,10 @@ public enum DocType {
 	INTERFACE_TEST_PR_RULES_ITEM_RELATED("InterfaceTestPRDocTypeExecRules_ItemRelated"),
 	INTERFACE_TEST_PR_RULES_OTHER("InterfaceTestPRDocTypeExecRules_Other"),
 	INTERFACE_TEST_PR_RULES_PROCESS_INSTANCE("InterfaceTestPRDocTypeExecRules_ProcessInstance"),
-	INTERFACE_TEST_PR_LIBRARY_ACTIVITY01("InterfaceTestPRLibraryActivity01")
+	INTERFACE_TEST_PR_LIBRARY_ACTIVITY01("InterfaceTestPRLibraryActivity01"),
+	WMI_SEGMENT("WMI Segment"),
+	WMI_SEGMENT_EXT("WMI Segment ext"),
+	WMI_SEGMENT_MASTER_REFERENCE_OBJECT("WMI Segment Master Reference Object")
 
 	private final String text
 

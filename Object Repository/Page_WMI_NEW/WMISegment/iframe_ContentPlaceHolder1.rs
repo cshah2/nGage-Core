@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>iframe_Close Window_ContentPla (1)</name>
+   <name>iframe_ContentPlaceHolder1</name>
    <tag></tag>
-   <elementGuidId>0ae24679-19f0-4cf0-ac05-5b52a2353a44</elementGuidId>
+   <elementGuidId>7a73f0d2-70f4-49c3-b240-2722101494d6</elementGuidId>
    <selectorCollection>
+      <entry>
+         <key>XPATH</key>
+         <value>//iframe[@id='ContentPlaceHolder1_iPage']</value>
+      </entry>
       <entry>
          <key>BASIC</key>
          <value>//iframe[@id = 'ContentPlaceHolder1_iPage']</value>
@@ -24,7 +28,7 @@
       <matchCondition>equals</matchCondition>
       <name>src</name>
       <type>Main</type>
-      <value>PropertyNoMenuJQ.aspx?loc=IMPORT&amp;did=&amp;revid=&amp;pid=&amp;tid=&amp;dtid=100035&amp;dcid=100004&amp;highlight=&amp;sdid=&amp;opm=IE&amp;opwm=&amp;odighaw=&amp;dwid=New&amp;pdwid=&amp;aid=&amp;epmSTAGEDDOCUMENTID=&amp;epmSTAGEDFILETYPE=&amp;fvid=&amp;ConID=&amp;ConType=&amp;OnChngDcDt=&amp;preFilledFields=&amp;mode=&amp;nid=CASEVIEW</value>
+      <value>PropertyNoMenuJQ.aspx?loc=IMPORT&amp;did=&amp;revid=&amp;pid=&amp;tid=&amp;dtid=100001&amp;dcid=100001&amp;highlight=&amp;sdid=&amp;opm=IE&amp;opwm=&amp;odighaw=&amp;dwid=New&amp;pdwid=&amp;aid=&amp;epmSTAGEDDOCUMENTID=&amp;epmSTAGEDFILETYPE=&amp;fvid=&amp;ConID=&amp;ConType=&amp;OnChngDcDt=&amp;preFilledFields=&amp;mode=&amp;nid=CASEVIEW</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
@@ -60,13 +64,6 @@
       <name>xpath</name>
       <type>Main</type>
       <value>id(&quot;ContentPlaceHolder1_iPage&quot;)</value>
-   </webElementProperties>
-   <webElementProperties>
-      <isSelected>true</isSelected>
-      <matchCondition>equals</matchCondition>
-      <name>ref_element</name>
-      <type>Main</type>
-      <value>Object Repository/Page_WMI_NEW/WMISegment/iframe_Close_ContentPlaceHolde</value>
    </webElementProperties>
    <webElementXpaths>
       <isSelected>true</isSelected>

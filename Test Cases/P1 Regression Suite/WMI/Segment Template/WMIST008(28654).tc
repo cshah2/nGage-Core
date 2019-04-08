@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Regression Test WMI : Feature test-WMI Segment template: Verify the Menu ( Business Process History) on document.</description>
+   <name>WMIST008(28654)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>e40825c5-8456-4ec5-8fda-41a9872aed4a</testCaseGuid>
+</TestCaseEntity>

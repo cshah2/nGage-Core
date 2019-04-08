@@ -853,7 +853,7 @@ public class Table {
 			WebUI.takeScreenshot()
 			KeywordUtil.markFailedAndStop('Expected row not found in table')
 		}
-	}
+	}	
 
 	@Keyword
 	def refreshUntilRecordFoundInTable(TestObject table, TestObject tableHeader, TestObject refresh, String expText, int colNo, int timeout) {
@@ -891,16 +891,16 @@ public class Table {
 			KeywordUtil.markFailedAndStop('Record '+expText+' not found in grid')
 		}
 	}
-	
+
 	def isRecordPresentInTable(TestObject tableLocator, int rowNo, int colNo, String expValue) {
-		
+
 		WebElement table = WebUtil.getWebElement(tableLocator)
 		List<WebElement> rows = getAllRows(table)
 		List<WebElement> cells = getAllCells(rows.get(rowNo-1))
 		WebElement cell = cells.get(colNo-1)
 		String actText = cell.getText().trim()
 		WebUI.switchToDefaultContent()
-		
+
 		boolean isRecordPresent = false
 		if(actText.equalsIgnoreCase(expValue)) {
 			println "Value "+expValue+" found in column No : "+colNo
@@ -912,5 +912,5 @@ public class Table {
 		}
 	}
 
-	
+
 }

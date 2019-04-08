@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Regression Test WMI : Feature test-WMI Segment template: Verify the Menu ( Reference object ) on document.</description>
+   <name>WMIST007(28653)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>46dbd8df-f5d6-4281-b5e0-f175bf04e311</testCaseGuid>
+</TestCaseEntity>

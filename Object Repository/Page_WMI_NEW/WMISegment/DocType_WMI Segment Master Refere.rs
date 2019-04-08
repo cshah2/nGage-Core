@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>iframe_Close Window_ContentPla (1)</name>
+   <name>DocType_WMI Segment Master Refere</name>
    <tag></tag>
-   <elementGuidId>0ae24679-19f0-4cf0-ac05-5b52a2353a44</elementGuidId>
+   <elementGuidId>83bc7ce3-0d6c-4c91-9937-97172221da48</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//iframe[@id = 'ContentPlaceHolder1_iPage']</value>
+         <value>//span[(text() = 'WMI Segment Master Reference Object' or . = 'WMI Segment Master Reference Object') and @ref_element = 'Object Repository/Page_WMI_NEW/WMISegment/temp/iframe_Close_ContentPlaceHolde']</value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>//div[@id='eform_mcb67676_phBO_3_BO_secpnl_2']/table/tbody/tr/td/table/tbody/tr/td[3]/span</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -17,49 +21,28 @@
       <matchCondition>equals</matchCondition>
       <name>tag</name>
       <type>Main</type>
-      <value>iframe</value>
+      <value>span</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
-      <name>src</name>
+      <name>class</name>
       <type>Main</type>
-      <value>PropertyNoMenuJQ.aspx?loc=IMPORT&amp;did=&amp;revid=&amp;pid=&amp;tid=&amp;dtid=100035&amp;dcid=100004&amp;highlight=&amp;sdid=&amp;opm=IE&amp;opwm=&amp;odighaw=&amp;dwid=New&amp;pdwid=&amp;aid=&amp;epmSTAGEDDOCUMENTID=&amp;epmSTAGEDFILETYPE=&amp;fvid=&amp;ConID=&amp;ConType=&amp;OnChngDcDt=&amp;preFilledFields=&amp;mode=&amp;nid=CASEVIEW</value>
+      <value>FieldVal</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
-      <name>id</name>
+      <name>text</name>
       <type>Main</type>
-      <value>ContentPlaceHolder1_iPage</value>
-   </webElementProperties>
-   <webElementProperties>
-      <isSelected>false</isSelected>
-      <matchCondition>equals</matchCondition>
-      <name>frameborder</name>
-      <type>Main</type>
-      <value>0</value>
-   </webElementProperties>
-   <webElementProperties>
-      <isSelected>false</isSelected>
-      <matchCondition>equals</matchCondition>
-      <name>height</name>
-      <type>Main</type>
-      <value>100%</value>
-   </webElementProperties>
-   <webElementProperties>
-      <isSelected>false</isSelected>
-      <matchCondition>equals</matchCondition>
-      <name>width</name>
-      <type>Main</type>
-      <value>100%</value>
+      <value>WMI Segment Master Reference Object</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>id(&quot;ContentPlaceHolder1_iPage&quot;)</value>
+      <value>id(&quot;eform_mcb67676_phBO_3_BO_secpnl_2&quot;)/table[1]/tbody[1]/tr[1]/td[1]/table[1]/tbody[1]/tr[1]/td[@class=&quot;FieldValCell&quot;]/span[@class=&quot;FieldVal&quot;]</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
@@ -71,43 +54,37 @@
    <webElementXpaths>
       <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
-      <name>xpath:attributes</name>
-      <value>//iframe[@id='ContentPlaceHolder1_iPage']</value>
-   </webElementXpaths>
-   <webElementXpaths>
-      <isSelected>false</isSelected>
-      <matchCondition>equals</matchCondition>
       <name>xpath:idRelative</name>
-      <value>//table[@id='tblMain']/tbody/tr[2]/td/iframe</value>
+      <value>//div[@id='eform_mcb67676_phBO_3_BO_secpnl_2']/table/tbody/tr/td/table/tbody/tr/td[3]/span</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:neighbor</name>
-      <value>(.//*[normalize-space(text()) and normalize-space(.)='Close Window'])[1]/following::iframe[1]</value>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Doc Type'])[1]/following::span[1]</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:neighbor</name>
-      <value>(.//*[normalize-space(text()) and normalize-space(.)='WMI Harness'])[1]/following::iframe[1]</value>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Test Information'])[1]/following::span[2]</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:neighbor</name>
-      <value>(.//*[normalize-space(text()) and normalize-space(.)='Menus'])[1]/preceding::iframe[1]</value>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Segment Name'])[1]/preceding::span[1]</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:neighbor</name>
-      <value>(.//*[normalize-space(text()) and normalize-space(.)='Capture object:'])[1]/preceding::iframe[1]</value>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Segment Address'])[1]/preceding::span[2]</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:position</name>
-      <value>//iframe</value>
+      <value>//tr[2]/td/table/tbody/tr/td[2]/div/table/tbody/tr/td/table/tbody/tr/td[3]/span</value>
    </webElementXpaths>
 </WebElementEntity>
