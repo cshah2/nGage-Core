@@ -4,6 +4,12 @@
    <name>span_Save</name>
    <tag></tag>
    <elementGuidId>2e7867c1-2fae-4537-a115-02a5f7c746cb</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>//span[(text() = ' Save' or . = ' Save') and @ref_element = 'Object Repository/Page_WMI_NEW/BusinessModelView/StandardGrid/Notes/iframe_Close Window_ContentPla (1)']</value>
+      </entry>
+   </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
    <webElementProperties>
@@ -39,7 +45,7 @@
       <matchCondition>equals</matchCondition>
       <name>ref_element</name>
       <type>Main</type>
-      <value>Object Repository/Page_WMI_NEW/BusinessModelView/StandardGrid/Notes/iframe_Close Window_ContentPla (1)</value>
+      <value>Object Repository/Page_WMI_NEW/BusinessModelView/StandardGrid/Notes/iframe_Close Window_ContentPla</value>
    </webElementProperties>
    <webElementXpaths>
       <isSelected>true</isSelected>

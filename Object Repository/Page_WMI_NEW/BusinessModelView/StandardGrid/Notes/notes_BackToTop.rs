@@ -20,6 +20,6 @@
       <matchCondition>equals</matchCondition>
       <name>ref_element</name>
       <type>Main</type>
-      <value>Object Repository/Page_WMI_NEW/BusinessModelView/StandardGrid/Notes/iframe_Close Window_ContentPla (1)</value>
+      <value>Object Repository/Page_WMI_NEW/BusinessModelView/StandardGrid/Notes/iframe_Close Window_ContentPla</value>
    </webElementProperties>
 </WebElementEntity>
