@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestSuiteEntity>
    <description>Smoke Test suite for RunTime UI.</description>
-   <name>WebUI-Smoke</name>
+   <name>SMOKE</name>
    <tag></tag>
    <isRerun>false</isRerun>
    <mailRecipient>apatil@savanainc.com;cshah@savanainc.com;</mailRecipient>
