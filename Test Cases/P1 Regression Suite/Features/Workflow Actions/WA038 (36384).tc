@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>A56_UpdateGlobalProcessVariables</description>
+   <name>WA038 (36384)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>a9333060-4481-49d6-966d-19dd67d98566</testCaseGuid>
+</TestCaseEntity>

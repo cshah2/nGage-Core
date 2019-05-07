@@ -1,86 +1,97 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>btn_A24_ForeignDataUpdateParametrized</name>
+   <name>tableHeader_Activities</name>
    <tag></tag>
-   <elementGuidId>2d96e300-4cf7-4d41-8ff6-302ede7ceb3a</elementGuidId>
+   <elementGuidId>5779e1c8-860e-4e6d-aec3-ad75c79b4e9b</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//span[(text() = ' A24_ForeignDataUpdateParametrized' or . = ' A24_ForeignDataUpdateParametrized') and @ref_element = 'Object Repository/Page_WMI/Interface Test PR/iframe_ContentPlaceHolder1_iPage']</value>
+         <value>//textarea[@id = 'txtWfAuditDescription' and @ref_element = 'Object Repository/Page_WMI/Interface Test PR/Business Process Audit/iframe_ContentPlaceHolder1_iPage']</value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>//table[@aria-labelledby='gbox_JQGridWFAuditActivities' and @class='ui-jqgrid-htable']</value>
       </entry>
    </selectorCollection>
-   <selectorMethod>BASIC</selectorMethod>
+   <selectorMethod>XPATH</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
    <webElementProperties>
       <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
       <name>tag</name>
       <type>Main</type>
-      <value>span</value>
-   </webElementProperties>
-   <webElementProperties>
-      <isSelected>false</isSelected>
-      <matchCondition>equals</matchCondition>
-      <name>class</name>
-      <type>Main</type>
-      <value>ui-button-text</value>
+      <value>textarea</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
-      <name>text</name>
+      <name>id</name>
       <type>Main</type>
-      <value> A24_ForeignDataUpdateParametrized</value>
+      <value>txtWfAuditDescription</value>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>wrap</name>
+      <type>Main</type>
+      <value>hard</value>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>rows</name>
+      <type>Main</type>
+      <value>10</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>id(&quot;actionsMenu_Submenu_9&quot;)/a[@class=&quot;ui-button ui-widget ui-button-text-only ui-state-default ui-state-hover&quot;]/span[@class=&quot;ui-button-text&quot;]</value>
+      <value>id(&quot;txtWfAuditDescription&quot;)</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
       <name>ref_element</name>
       <type>Main</type>
-      <value>Object Repository/Page_WMI/Interface Test PR/iframe_ContentPlaceHolder1_iPage</value>
+      <value>Object Repository/Page_WMI/Closure Action/BPMProcessAudit/iframe_Close Window_ContentPla</value>
    </webElementProperties>
    <webElementXpaths>
       <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
+      <name>xpath:attributes</name>
+      <value>//textarea[@id='txtWfAuditDescription']</value>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
       <name>xpath:idRelative</name>
-      <value>//li[@id='actionsMenu_Submenu_9']/a/span</value>
+      <value>//div[@id='descWFAudit']/table/tbody/tr[2]/td/textarea</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:neighbor</name>
-      <value>(.//*[normalize-space(text()) and normalize-space(.)='A9_BarcodeSPlit'])[1]/following::span[1]</value>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Showing 1 - 3 of 3'])[1]/following::textarea[1]</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:neighbor</name>
-      <value>(.//*[normalize-space(text()) and normalize-space(.)='A8_AssignUserOrUserGroup'])[1]/following::span[2]</value>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)=concat('id(', '&quot;', 'txtWfAuditDescription', '&quot;', ')')])[1]/preceding::textarea[1]</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:neighbor</name>
-      <value>(.//*[normalize-space(text()) and normalize-space(.)='A44_AddRelatedItemEndDateTest'])[1]/preceding::span[1]</value>
-   </webElementXpaths>
-   <webElementXpaths>
-      <isSelected>false</isSelected>
-      <matchCondition>equals</matchCondition>
-      <name>xpath:neighbor</name>
-      <value>(.//*[normalize-space(text()) and normalize-space(.)='Save'])[1]/preceding::span[2]</value>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Warning'])[1]/preceding::textarea[1]</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:position</name>
-      <value>//li[9]/a/span</value>
+      <value>//textarea</value>
    </webElementXpaths>
 </WebElementEntity>

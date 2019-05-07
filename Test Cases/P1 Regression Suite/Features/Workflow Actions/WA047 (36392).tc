@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Action Interface-A53_StartWorkitemInAnotherProcess</description>
+   <name>WA047 (36392)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>52c6d545-36e6-40c7-bbb6-53fe3ee2539b</testCaseGuid>
+</TestCaseEntity>

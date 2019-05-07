@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>A23_ForeignDataUpdateAdvanced</description>
+   <name>WA021 (36119)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>fe3c2285-37b4-4432-986e-bb3822ed0b01</testCaseGuid>
+</TestCaseEntity>

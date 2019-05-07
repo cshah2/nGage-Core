@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>A17_2_CreatePDFDocFromTXTHTML</description>
+   <name>WA018 (36375)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>94d14039-a47e-4ad8-80e9-746fb5b29b63</testCaseGuid>
+</TestCaseEntity>

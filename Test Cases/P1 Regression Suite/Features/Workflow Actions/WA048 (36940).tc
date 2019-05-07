@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Action Name : A17_ConvertItemToPDF</description>
+   <name>WA048 (36940)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>5753041b-efe1-4de4-b7c1-b6624f8fe0f7</testCaseGuid>
+</TestCaseEntity>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>A36_SendSMTPEmailNotification</description>
+   <name>WA027 (36312)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>587a8ec2-c998-4c95-b41a-7ae04ee155a7</testCaseGuid>
+</TestCaseEntity>

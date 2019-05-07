@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Action Name : A37_SetAutoImportNextRunDate</description>
+   <name>WA044 (36943)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>f1082891-ccde-4978-955a-8b95dedcd129</testCaseGuid>
+</TestCaseEntity>

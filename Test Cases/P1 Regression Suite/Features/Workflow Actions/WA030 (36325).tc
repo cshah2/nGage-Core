@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>A38_2_SetCalculated_BusinessHours</description>
+   <name>WA030 (36325)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>a0d3b06d-72e9-4918-8cac-485e21c3535c</testCaseGuid>
+</TestCaseEntity>
