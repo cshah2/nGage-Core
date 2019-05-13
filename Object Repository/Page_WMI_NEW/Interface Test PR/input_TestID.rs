@@ -4,7 +4,17 @@
    <name>input_TestID</name>
    <tag></tag>
    <elementGuidId>94f31f9e-b540-4e12-9a75-7c3d88f67657</elementGuidId>
-   <selectorMethod>BASIC</selectorMethod>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>//input[@id = 'eform_mcb67676_FieldKey_TestID' and @ref_element = 'Object Repository/Page_WMI_NEW/Interface Test PR/iframe_ContentPlaceHolder1_iPage']</value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>//input[translate(@id,'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz') = 'eform_mcb67676_fieldkey_testid']</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
    <webElementProperties>
       <isSelected>true</isSelected>
