@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Rule Name:	Check Item Has Related Item</description>
+   <name>WR021 (36637)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>611d5e0f-01d4-4e04-8d99-29402fc4b95f</testCaseGuid>
+</TestCaseEntity>

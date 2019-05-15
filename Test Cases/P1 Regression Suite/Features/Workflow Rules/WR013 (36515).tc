@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Rule Name:	Check Server COnfigurations</description>
+   <name>WR013 (36515)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>b51caf90-34bf-4cc2-96eb-abeec520e174</testCaseGuid>
+</TestCaseEntity>

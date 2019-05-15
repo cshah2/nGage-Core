@@ -57,7 +57,8 @@ public enum DocType {
 	INTERFACE_TEST_PR_LIBRARY_ACTIVITY01("InterfaceTestPRLibraryActivity01"),
 	WMI_SEGMENT("WMI Segment"),
 	WMI_SEGMENT_EXT("WMI Segment ext"),
-	WMI_SEGMENT_MASTER_REFERENCE_OBJECT("WMI Segment Master Reference Object")
+	WMI_SEGMENT_MASTER_REFERENCE_OBJECT("WMI Segment Master Reference Object"),
+	INTERFACE_TEST_PR_RULES_USER_RELATED("InterfaceTestPRDocTypeExecRules_UserRelated")
 
 	private final String text
 

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Rule Name:	Chek If Item Exists in Another Process</description>
+   <name>WR016 (36585)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>0ef30a58-b65f-4915-81f1-95dc89a9b007</testCaseGuid>
+</TestCaseEntity>

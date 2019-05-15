@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>subMenu_AtttachNewDocument</name>
+   <tag></tag>
+   <elementGuidId>af865882-ce27-4f4b-8642-a55427c4b620</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>XPATH</key>
+         <value>//li[@id='ui-id-4']/a</value>
+      </entry>
+      <entry>
+         <key>BASIC</key>
+         <value>//a[(text() = ' Attach New Document' or . = ' Attach New Document')]</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>BASIC</selectorMethod>
+   <useRalativeImagePath>false</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>tag</name>
+      <type>Main</type>
+      <value>a</value>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>href</name>
+      <type>Main</type>
+      <value>urlredirect.aspx?loc=EDM&amp;did=3466686F2F326758796D7742685854562B4C4D5851673D3D&amp;revid=&amp;pid=&amp;tid=&amp;dtid=100332&amp;dcid=100059&amp;highlight=&amp;sdid=&amp;opm=IE&amp;opwm=&amp;odighaw=&amp;dwid=New&amp;pdwid=&amp;aid=&amp;epmSTAGEDDOCUMENTID=&amp;epmSTAGEDFILETYPE=&amp;fvid=&amp;ConID=&amp;ConType=&amp;OnChngDcDt=&amp;preFilledFields=&amp;mode=&amp;splitterframe=mainContainerFrame&amp;nid=ATTACHNEW&amp;split=True</value>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>text</name>
+      <type>Main</type>
+      <value> Attach New Document</value>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>id(&quot;ui-id-4&quot;)/a[1]</value>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>ref_element</name>
+      <type>Main</type>
+      <value>Object Repository/Page_WMI/Interface Test PR/Attach New Document/iframe_mainContainerFrame</value>
+   </webElementProperties>
+</WebElementEntity>

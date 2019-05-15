@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Rule Name:	Check User COnfigurations</description>
+   <name>WR009 (36502)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>1e1d9718-3be4-4757-b2ee-08529d228826</testCaseGuid>
+</TestCaseEntity>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Rule Name:	Check Item Object type</description>
+   <name>WR025 (36640)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>da929970-b390-4a59-983e-6152e336bb29</testCaseGuid>
+</TestCaseEntity>

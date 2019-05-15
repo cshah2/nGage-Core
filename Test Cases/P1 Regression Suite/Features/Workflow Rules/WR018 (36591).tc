@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Rule Name:	Chek If Item has notes</description>
+   <name>WR018 (36591)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>90485937-df52-4d48-90f8-c6239b2c789c</testCaseGuid>
+</TestCaseEntity>

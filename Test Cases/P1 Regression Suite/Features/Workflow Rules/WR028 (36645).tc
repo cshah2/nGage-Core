@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Rule Name:	Chek Is item deleted</description>
+   <name>WR028 (36645)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>e2ae2c60-35aa-4d1c-9c56-46a119fc3e9b</testCaseGuid>
+</TestCaseEntity>

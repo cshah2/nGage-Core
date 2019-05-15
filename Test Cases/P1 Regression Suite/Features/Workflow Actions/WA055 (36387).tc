@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Action Name : A55_TransitToAnotherProcess</description>
+   <name>WA055 (36387)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>b1e7728b-c14b-4d18-9bec-aadb956560be</testCaseGuid>
+</TestCaseEntity>

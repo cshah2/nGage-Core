@@ -1382,4 +1382,14 @@ public class Consts {
 		P1_WMI_DOC361.put(Fields.TEST_DATE, '03-01-2019')
 	}
 
+	public static final Map<Fields, String> P1_WMI_DOC362
+	public static boolean FLAG_P1_WMI_DOC362 = false
+	static {
+		P1_WMI_DOC362 = new HashMap<Fields, String>()
+		P1_WMI_DOC362.put(Fields.TEST_ID, '100786')
+		P1_WMI_DOC362.put(Fields.TEST_NAME, 'Danish')
+		P1_WMI_DOC362.put(Fields.TEST_DATE, '05-14-2019')
+		
+	}
+
 }

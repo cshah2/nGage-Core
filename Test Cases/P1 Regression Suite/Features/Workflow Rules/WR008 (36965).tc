@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Rule Name:  Check Activity Mode/Event Level</description>
+   <name>WR008 (36965)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>a17d1b4a-de2e-448f-9897-0464cd8eb5d3</testCaseGuid>
+</TestCaseEntity>

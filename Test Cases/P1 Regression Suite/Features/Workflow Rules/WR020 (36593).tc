@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Rule Name:	Chek Item Field Values</description>
+   <name>WR020 (36593)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>f891aa24-5de4-4932-86b7-853d618a69ad</testCaseGuid>
+</TestCaseEntity>

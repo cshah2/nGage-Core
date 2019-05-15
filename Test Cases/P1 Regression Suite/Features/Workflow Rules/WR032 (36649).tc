@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Rule Name:	Call web service</description>
+   <name>WR032 (36649)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>a5adf34f-1faf-472c-9ef1-a6ecd27d0d15</testCaseGuid>
+</TestCaseEntity>

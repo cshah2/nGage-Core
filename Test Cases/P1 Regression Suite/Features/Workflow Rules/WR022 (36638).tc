@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Rule Name:	Chek Item Has Related Item With Notes</description>
+   <name>WR022 (36638)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>ef94dbc0-2878-4439-a2aa-e416dfd833c9</testCaseGuid>
+</TestCaseEntity>

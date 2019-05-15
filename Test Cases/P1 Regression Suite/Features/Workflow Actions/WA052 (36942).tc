@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Action Name : A31_ResetProcessInstanceStatus</description>
+   <name>WA052 (36942)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>ba370484-1898-4923-929a-e4214bb258c1</testCaseGuid>
+</TestCaseEntity>

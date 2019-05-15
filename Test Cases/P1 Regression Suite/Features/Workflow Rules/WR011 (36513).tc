@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Rule Name:	CheckUser UserGroups</description>
+   <name>WR011 (36513)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>f1331ea1-b30d-42ce-99d0-84f194914a8f</testCaseGuid>
+</TestCaseEntity>

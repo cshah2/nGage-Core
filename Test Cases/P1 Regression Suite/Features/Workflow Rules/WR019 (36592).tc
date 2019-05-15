@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Rule Name:	Chek If Item is checked out</description>
+   <name>WR019 (36592)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>9fea4a3c-5518-45e2-aea5-31884952ce60</testCaseGuid>
+</TestCaseEntity>

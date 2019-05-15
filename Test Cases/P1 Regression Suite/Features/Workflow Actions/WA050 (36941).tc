@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Action Name : A19_DataFeedStaging</description>
+   <name>WA050 (36941)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>4af13f2e-28df-42ff-9cb9-12726d3e39f2</testCaseGuid>
+</TestCaseEntity>

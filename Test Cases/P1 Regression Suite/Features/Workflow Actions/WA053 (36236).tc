@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Action Name : A32_RouteToAnotherActivity</description>
+   <name>WA053 (36236)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>e03cb6d2-1092-4954-a928-75676fa11ffd</testCaseGuid>
+</TestCaseEntity>

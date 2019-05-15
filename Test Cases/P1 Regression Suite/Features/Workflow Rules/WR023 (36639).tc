@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Rule Name:	Check Item Revision</description>
+   <name>WR023 (36639)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>4520b474-4ed5-4f12-9095-54aa2d91f489</testCaseGuid>
+</TestCaseEntity>

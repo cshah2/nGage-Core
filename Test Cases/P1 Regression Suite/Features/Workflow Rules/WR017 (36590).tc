@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Rule Name:	Chek If Item Field Exists</description>
+   <name>WR017 (36590)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>bdb557c6-0087-44a8-8f1f-a623c5f7fa7c</testCaseGuid>
+</TestCaseEntity>

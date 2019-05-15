@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Rule Name:	Chek related Item FieldValue</description>
+   <name>WR027 (36643)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>ea8bf89b-1086-42aa-a343-57574cdde986</testCaseGuid>
+</TestCaseEntity>

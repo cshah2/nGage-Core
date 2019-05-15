@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Rule Name:	Check Global Process Variable Value</description>
+   <name>WR001 (36471)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>fa812c4d-a70b-470a-bb03-a584f88874f6</testCaseGuid>
+</TestCaseEntity>

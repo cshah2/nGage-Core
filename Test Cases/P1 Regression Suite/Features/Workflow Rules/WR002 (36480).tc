@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Rule Name:	Check If Item Exists</description>
+   <name>WR002 (36480)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>f22b87ed-3f39-4897-b187-f210245daeb1</testCaseGuid>
+</TestCaseEntity>

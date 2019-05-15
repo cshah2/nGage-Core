@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Rule Name:	Check Process and Pinst variable value</description>
+   <name>WR005 (36496)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>92113455-641d-470e-8e08-66610ddd5194</testCaseGuid>
+</TestCaseEntity>

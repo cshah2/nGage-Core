@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Rule Name:	CheckUser If Disabled</description>
+   <name>WR012 (36514)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>f1343f61-cca2-4af1-955f-d679a275d665</testCaseGuid>
+</TestCaseEntity>

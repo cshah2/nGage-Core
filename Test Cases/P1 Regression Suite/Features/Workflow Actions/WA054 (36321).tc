@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Action Name : A40_ShowCustomMessage</description>
+   <name>WA054 (36321)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>77364167-d6ab-4f9f-94b9-f054909c128c</testCaseGuid>
+</TestCaseEntity>
