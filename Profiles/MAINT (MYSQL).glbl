@@ -16,7 +16,7 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'http://savphlpetest64/Sav.Main.UI'</initValue>
+      <initValue>'http://savphlpedev64/Sav.Maint.UI'</initValue>
       <name>BaseURL</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
