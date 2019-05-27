@@ -44,6 +44,9 @@ CustomKeywords.'actions.Common.setText_Date'(findTestObject('Page_nGage_Dashboar
 WebUI.click(findTestObject('Page_nGage_Dashboard/Repository/input_btnSearch'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/iframe_ADVMAINTAB_iframe'))
 
+'Wait for Result Table'
+WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/Repository/table_SearchResults'), GlobalVariable.G_LongTimeout)
+
 'Verify table contains atleast 1 record'
 int rowCount = CustomKeywords.'actions.Table.getRowsCount'(findTestObject('Page_nGage_Dashboard/Repository/table_SearchResults'))
 WebUI.verifyGreaterThan(rowCount, 0)

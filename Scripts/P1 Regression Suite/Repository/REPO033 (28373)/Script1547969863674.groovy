@@ -53,6 +53,9 @@ CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Reposi
 WebUI.click(findTestObject('Page_nGage_Dashboard/Repository/Closure_Tab/searchButton_ClosureTab'))
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/Closure_Tab/iframe_Closure'))
 
+'Wait for Result Table'
+WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/Repository/Closure_Tab/table_SearchResultCount_ClosureTab'), GlobalVariable.G_LongTimeout)
+
 'Verify records in table'
 WebUI.verifyMatch(WebUI.getText(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/Closure_Tab/table_SearchResultCount_ClosureTab')), '.*Showing 1 - .*', true)
 
