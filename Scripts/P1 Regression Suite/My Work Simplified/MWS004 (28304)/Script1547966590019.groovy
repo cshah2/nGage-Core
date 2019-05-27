@@ -27,11 +27,17 @@ WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/My_Work_Simplif
 WebUI.selectOptionByLabel(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/select_Auto Import Controlled'), 'Correspondence Generation - Correspondence', false)
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/iframe_iframe_110'))
 
-'Verify pagination summary'
-String pageSummary = WebUI.getText(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/table_PaginationSummary'))
-WebUI.verifyMatch(pageSummary, '.*Showing 1 - 25 of.*', true)
-
-'Check row count of table should be 25rows'
+'Get Rows count'
 int rowsCount = CustomKeywords.'actions.Table.getRowsCount'(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/table_SearchResult'))
-WebUI.verifyEqual(rowsCount, 25)
 
+'Verify pagination summary'
+String expPageSummary
+if(rowsCount > 999) {
+	 expPageSummary = 'Showing 1 - 999'
+}
+else {
+	expPageSummary = 'Showing 1 - '+rowsCount+' of '+rowsCount
+}
+
+String pageSummary = WebUI.getText(findTestObject('Page_nGage_Dashboard/My_Work_Simplified/table_PaginationSummary'))
+WebUI.verifyMatch(pageSummary, '.*'+expPageSummary+'.*', true)

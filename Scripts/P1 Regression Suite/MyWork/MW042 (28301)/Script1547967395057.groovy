@@ -30,9 +30,13 @@ CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Da
 
 'Verify record count in activity and tree matches'
 int recordCount = CustomKeywords.'actions.MenuBar.getRecordCountInActivity'('MY_WORK', 'Processes', 'Correspondence Generation', 'Correspondence')
-println "Records Count = "+recordCount
 CustomKeywords.'actions.Common.verifyTotalRecordCountFromPageSummary'(findTestObject('Page_nGage_Dashboard/My_Work/table_pagination_summary'), recordCount)
 
-'Verify number of records per page is 25'
+'Verify number of records per page'
 int rowCount = CustomKeywords.'actions.Table.getRowsCount'(findTestObject('Page_nGage_Dashboard/My_Work/table_MyWorkSearchResults'))
-WebUI.verifyEqual(rowCount, 25)
+if(recordCount > 999) {
+	WebUI.verifyEqual(rowCount, 999)
+}
+else {
+	WebUI.verifyEqual(rowCount, recordCount)
+}
