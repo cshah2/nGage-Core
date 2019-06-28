@@ -55,6 +55,7 @@ WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_WMI_NEW/Reference_Object_Inline/iframe_ContentPlaceHolder1_iPa'))
 
 'Verify NewDocument fields are loaded inline'
+WebUI.waitForElementVisible(findTestObject('Page_WMI_NEW/Reference_Object_Inline/span_InlineNew_Description'), GlobalVariable.G_LongTimeout)
 WebUI.verifyElementVisible(findTestObject('Page_WMI_NEW/Reference_Object_Inline/button_InlineNew_Save'))	//Save button
 WebUI.verifyElementVisible(findTestObject('Page_WMI_NEW/Reference_Object_Inline/button_InlineNew_Close'))	//Close button
 WebUI.verifyElementVisible(findTestObject('Page_WMI_NEW/Reference_Object_Inline/span_InlineNew_Description'))	//Description
