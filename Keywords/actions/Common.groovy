@@ -22,7 +22,6 @@ import org.openqa.selenium.support.ui.FluentWait
 import org.openqa.selenium.support.ui.Select
 import org.openqa.selenium.support.ui.WebDriverWait
 
-import com.gargoylesoftware.htmlunit.javascript.background.JavaScriptExecutor
 import com.kms.katalon.core.annotation.Keyword
 import com.kms.katalon.core.configuration.RunConfiguration
 import com.kms.katalon.core.exception.StepFailedException

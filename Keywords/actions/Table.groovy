@@ -853,7 +853,7 @@ public class Table {
 			WebUI.takeScreenshot()
 			KeywordUtil.markFailedAndStop('Expected row not found in table')
 		}
-	}	
+	}
 
 	@Keyword
 	def refreshUntilRecordFoundInTable(TestObject table, TestObject tableHeader, TestObject refresh, String expText, int colNo, int timeout) {
