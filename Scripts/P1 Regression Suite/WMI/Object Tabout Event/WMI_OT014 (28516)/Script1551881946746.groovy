@@ -18,6 +18,7 @@ import utils.DateUtil
 'Login Into Application'
 CustomKeywords.'actions.Common.login'()
 
+//Create Document 1
 'Create a new Object Tabout Events Document'
 WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))
 
@@ -29,6 +30,10 @@ WebUI.click(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'))
 WebUI.switchToWindowTitle('(Doc ID: NEW )')
 WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 
+'Set Date in Date field Required'
+String dateRequired1 = DateUtil.getCurrentDateTime(Consts.FORMAT_DATETIME)
+CustomKeywords.'actions.Common.setText_Date'(findTestObject('Page_WMI_NEW/Object Tabout Event/Radio List Event/input_Date Field (Required)_ef'), dateRequired1)
+
 'Click On Save Button'
 WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/span_Save'))
 WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
@@ -36,8 +41,33 @@ WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 'Close Window'
 CustomKeywords.'actions.Window.clickElementAndWaitForWindowClose'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/span_Close Window'),GlobalVariable.G_LongTimeout)
 
-'Switch to parent window '
+'Switch to parent window'
 WebUI.switchToWindowIndex(0)
+
+//Create Document 2
+'Verify Doc class and Doc type dropdowns should be displayed'
+CustomKeywords.'actions.Common.selectDocClassAndDocTypeForGlobalNew'('Object Tabout Events', 'Radio List Event')
+WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'), GlobalVariable.G_LongTimeout)
+WebUI.click(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'))
+
+WebUI.switchToWindowTitle('(Doc ID: NEW )')
+WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+
+'Set Date in Date field Required'
+String dateRequired2 = DateUtil.getCurrentDateTime(Consts.FORMAT_DATETIME)
+CustomKeywords.'actions.Common.setText_Date'(findTestObject('Page_WMI_NEW/Object Tabout Event/Radio List Event/input_Date Field (Required)_ef'), dateRequired2)
+
+'Click On Save Button'
+WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/span_Save'))
+WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+
+'Close Window'
+CustomKeywords.'actions.Window.clickElementAndWaitForWindowClose'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/span_Close Window'),GlobalVariable.G_LongTimeout)
+
+'Switch to parent window'
+WebUI.switchToWindowIndex(0)
+
+'Close popup dialog for create new document'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Home/span_ui-button-icon-primary ui'))
 
 'Navigate to Recent Documents'
@@ -48,8 +78,9 @@ CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Da
 CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/Home/tableHeader_RecentDocuments'), 'Doc ID')
 CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/Home/tableHeader_RecentDocuments'), 'Doc ID')
 
-'Open recent document'
-CustomKeywords.'actions.Table.clickCell'(findTestObject('Object Repository/Page_nGage_Dashboard/Home/table_MyDocumentResults'), 1, 7)
+'Open second document from Grid'
+int rowNo = 2
+CustomKeywords.'actions.Table.clickCell'(findTestObject('Object Repository/Page_nGage_Dashboard/Home/table_MyDocumentResults'), rowNo, 7)
 WebUI.switchToWindowIndex(1)
 WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 
@@ -57,6 +88,9 @@ WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 WebUI.verifyElementVisible(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/span_Business Model View - Rad'))
 String actualtext= WebUI.getText(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/span_Business Model View - Rad'))
 WebUI.verifyMatch(actualtext, 'Business Model View - Radio List Event', false)
+
+'Scroll to radio button'
+WebUI.scrollToElement(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/tab_SingleResultView/input_Value2_ReferenceObject'), GlobalVariable.G_LongTimeout)
 
 'Click on Value 2 radio button from refrence object'
 WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/tab_SingleResultView/input_Value2_ReferenceObject'))
@@ -66,15 +100,18 @@ CustomKeywords.'actions.Common.waitForTabLoading'(null, GlobalVariable.G_LongTim
 WebUI.verifyElementPresent(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/tab_SingleResultView/td_InformationSingleResultView'), GlobalVariable.G_LongTimeout)
 WebUI.verifyElementPresent(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/tab_SingleResultView/span_This WMI imparts - Field'), GlobalVariable.G_LongTimeout)
 
-'Verify date field should be disaply as required filed'
+'Clear Date field value'
+WebUI.clearText(findTestObject('Page_WMI_NEW/Object Tabout Event/Radio List Event/tab_SingleResultView/input_DateField_Required'))
+
+'Click on Save button on Master object'
 WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/span_Save'))
 WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
-String errorMessage = WebUI.getText(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/div_errorMessage'))
-WebUI.verifyElementText(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/div_errorMessage'), errorMessage)
 
-'Verify date field should not be disaply as required filed'
-WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/tab_SingleResultView/input_DateField_Required'))
-WebUI.verifyElementNotPresent(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/tab_SingleResultView/div_Required'),GlobalVariable.G_LongTimeout)
+'Verify div error message is not displayed'
+WebUI.verifyElementNotVisible(findTestObject('Page_WMI_NEW/Object Tabout Event/Radio List Event/div_errorMessage'))
+
+'Scroll to radio button'
+WebUI.scrollToElement(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/tab_SingleResultView/input_Value2_ReferenceObject'), GlobalVariable.G_LongTimeout)
 
 'Verify Integer field should Not be visible'
 WebUI.verifyElementNotVisible(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/tab_SingleResultView/input_Integer Field (Visible)_'))

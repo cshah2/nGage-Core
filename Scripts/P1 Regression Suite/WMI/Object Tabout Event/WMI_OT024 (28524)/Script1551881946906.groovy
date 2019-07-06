@@ -16,27 +16,31 @@ import internal.GlobalVariable as GlobalVariable
 'Login Into Application'
 CustomKeywords.'actions.Common.login'()
 
-'Select Doc Class as "Object Tab Out Events" and Doc type as "checkbox list Event" from the dropdowns and click on OK button'
+//Create Document 1
+'Click on New button'
 WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))
+
+'Select Doc Class as "Object Tab Out Events" and Doc type as "checkbox list Event" from the dropdowns and click on OK button'
 CustomKeywords.'actions.Common.selectDocClassAndDocTypeForGlobalNew'('Object Tabout Events', 'Checkbox List Event')
 WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'), GlobalVariable.G_LongTimeout)
 WebUI.click(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'))
 
-WebUI.switchToWindowTitle('(Doc ID: NEW )')
+'Switch to new window'
+WebUI.switchToWindowIndex(1)
 WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 
-'Click on WMI Harness page'
-WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Inline_Result_View/span_WMI Harness'))
-CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Inline_Result_View/iframe_ContentPlaceHolder1_iPage'))
-
-'Click on Save button'
+'Click on Save'
 WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Inline_Result_View/span_Save'))
+WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 
-'Click on Close Window button'
+'close WMI'
 CustomKeywords.'actions.Window.clickElementAndWaitForWindowClose'(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Inline_Result_View/span_Close Window'), GlobalVariable.G_LongTimeout)
 
 'Switch to main window'
 WebUI.switchToWindowIndex(0)
+
+'Close popup dialog for create new document'
+WebUI.click(findTestObject('Page_nGage_Dashboard/Home/span_ui-button-icon-primary ui'))
 
 'Click on Recent Document'
 CustomKeywords.'actions.MenuBar.clickTreeMenu'('HOME', 'Recent Documents')
@@ -47,28 +51,25 @@ CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dash
 CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/Home/tableHeader_RecentDocuments'), 'Doc ID')
 
 'Open Document'
-int colNo_DocID = CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Page_nGage_Dashboard/Home/tableHeader_RecentDocuments'), 'Doc ID')
-CustomKeywords.'actions.Table.clickCell'(findTestObject('Page_nGage_Dashboard/Home/table_MyDocumentResults'), 1, colNo_DocID)
+int rowNo = 1
+CustomKeywords.'actions.Table.clickCell'(findTestObject('Page_nGage_Dashboard/Home/table_MyDocumentResults'), rowNo, 5)
 
 'Switch to WMI Window'
 WebUI.switchToWindowIndex(1)
 WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 
-'Click on Value 3 or Value 4 or Value 5 check box from refrence object'
-WebUI.uncheck(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/CheckboxListEvent/chkbox1_ReferenceObjectSelectOption'))
+'Wait for Single Result view to load'
+WebUI.waitForElementPresent(findTestObject('Page_WMI_NEW/Object Tabout Event/CheckboxListEvent/chkbox3_ReferenceObjectSelectOption'), GlobalVariable.G_LongTimeout)
+
+'Scroll to element'
+WebUI.scrollToElement(findTestObject('Page_WMI_NEW/Object Tabout Event/CheckboxListEvent/chkbox3_ReferenceObjectSelectOption'), GlobalVariable.G_LongTimeout)
+
+'Select checkbox option 3 in Single Result View'
+WebUI.check(findTestObject('Page_WMI_NEW/Object Tabout Event/CheckboxListEvent/chkbox3_ReferenceObjectSelectOption'))
 CustomKeywords.'actions.Common.waitForTabLoading'(null, GlobalVariable.G_LongTimeout)
 
-WebUI.check(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/CheckboxListEvent/chkbox3_ReferenceObjectSelectOption'))
-CustomKeywords.'actions.Common.waitForTabLoading'(null, GlobalVariable.G_LongTimeout)
+'Verify value in input field'
+WebUI.verifyElementAttributeValue(findTestObject('Page_WMI_NEW/Object Tabout Event/CheckboxListEvent/input_StringField_ReferenceObject'), 'value', 'You have selected other option', GlobalVariable.G_LongTimeout)
 
-'String Field(Value Change) text box value should be change as You selected Option 2 '
-String fieldValue = WebUI.getAttribute(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/CheckboxListEvent/input_StringField_ReferenceObject'), 'value')
-println "Field value is "+fieldValue
-WebUI.verifyMatch(fieldValue, 'You have selected other option', false)
-
-'verify Lookup field(Override Lookup)dropdowns value should be change '
-WebUI.verifyElementPresent(findTestObject('Page_WMI_NEW/Object Tabout Event/CheckboxListEvent/option_Lookup Field_Reference Object Import'), GlobalVariable.G_LongTimeout)
-WebUI.verifyElementPresent(findTestObject('Page_WMI_NEW/Object Tabout Event/CheckboxListEvent/option_Lookup Field_Reference Object Grid Features'), GlobalVariable.G_LongTimeout)
-WebUI.verifyElementPresent(findTestObject('Page_WMI_NEW/Object Tabout Event/CheckboxListEvent/option_Lookup Field_Reference Object InlineResultView'), GlobalVariable.G_LongTimeout)
-WebUI.verifyElementPresent(findTestObject('Page_WMI_NEW/Object Tabout Event/CheckboxListEvent/option_Lookup Field_Reference Object InlineNew'), GlobalVariable.G_LongTimeout)
-WebUI.verifyElementPresent(findTestObject('Page_WMI_NEW/Object Tabout Event/CheckboxListEvent/option_Lookup Field_Reference Object InlineContentView'), GlobalVariable.G_LongTimeout)
+'Verify drop down does contains option'
+WebUI.verifyOptionPresentByLabel(findTestObject('Page_WMI_NEW/Object Tabout Event/CheckboxListEvent/select_LookupField_ReferenceObject'), 'Render As Label', false, GlobalVariable.G_LongTimeout)

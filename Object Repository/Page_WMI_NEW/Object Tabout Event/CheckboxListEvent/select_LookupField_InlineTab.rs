@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>div_Required</name>
+   <name>select_LookupField_InlineTab</name>
    <tag></tag>
-   <elementGuidId>eff6f55b-dd16-43b6-bc30-c5e7f4f151f2</elementGuidId>
+   <elementGuidId>5c0cd44c-31a1-4d76-a233-0ebd86857eb9</elementGuidId>
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//div[@id=&quot;eform_mcb67676_TabContainer_4_TabRef_1_phBO_4_BO_secpnl_2&quot;]//td[text()='Required']</value>
+         <value>//select[@id='eform_mcb67676_TabContainer_4_TabRef_2_phBO_5_BO_eidmKey_BM_String']</value>
       </entry>
       <entry>
          <key>BASIC</key>
@@ -20,6 +20,6 @@
       <matchCondition>equals</matchCondition>
       <name>ref_element</name>
       <type>Main</type>
-      <value>Object Repository/Page_WMI_NEW/Object Tabout Event/Label Event/tab_SingleResultView/iframe_Close Window_ContentPla</value>
+      <value>Object Repository/Page_WMI_NEW/Object Tabout Event/CheckboxListEvent/iframe_Close Window_ContentPla</value>
    </webElementProperties>
 </WebElementEntity>

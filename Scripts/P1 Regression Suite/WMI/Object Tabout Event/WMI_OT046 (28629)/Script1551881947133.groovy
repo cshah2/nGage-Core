@@ -16,10 +16,12 @@ import internal.GlobalVariable as GlobalVariable
 'Login Into Application'
 CustomKeywords.'actions.Common.login'()
 
+'Click on a Global new button'
+WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))
+
 //create doc 2 times
 //1.
-'Create a new Refrence Object Feature Document'
-WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))
+'Create a new Nested lookup event document'
 CustomKeywords.'actions.Common.selectDocClassAndDocTypeForGlobalNew'('Object Tabout Events', 'Nested Lookup Event')
 WebUI.click(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'))
 
@@ -33,7 +35,7 @@ CustomKeywords.'actions.Window.clickElementAndWaitForWindowClose'(findTestObject
 WebUI.switchToWindowIndex(0)
 
 //2.
-'Create a new Refrence Object Feature Document'
+'Create a new Nested lookup event document'
 WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))
 CustomKeywords.'actions.Common.selectDocClassAndDocTypeForGlobalNew'('Object Tabout Events', 'Nested Lookup Event')
 WebUI.click(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'))
@@ -45,7 +47,6 @@ WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Textbox with Section Event/span_Save'))
 WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 CustomKeywords.'actions.Window.clickElementAndWaitForWindowClose'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Textbox with Section Event/span_Close Window'),GlobalVariable.G_LongTimeout)
-WebUI.switchToWindowIndex(0)
 
 'Switch to parent window '
 WebUI.switchToWindowIndex(0)
@@ -59,8 +60,9 @@ CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Da
 CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/Home/tableHeader_RecentDocuments'), 'Doc ID')
 CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/Home/tableHeader_RecentDocuments'), 'Doc ID')
 
-'Open recent document'
-CustomKeywords.'actions.Table.clickCell'(findTestObject('Object Repository/Page_nGage_Dashboard/Home/table_MyDocumentResults'), 1, 7)
+'Open second document'
+int rowNo = 2
+CustomKeywords.'actions.Table.clickCell'(findTestObject('Object Repository/Page_nGage_Dashboard/Home/table_MyDocumentResults'), rowNo, 7)
 WebUI.switchToWindowIndex(1)
 WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 
@@ -70,18 +72,20 @@ WebUI.verifyElementVisible(findTestObject('Object Repository/Page_WMI_NEW/Object
 'click on tab inline view'
 WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Nested Lookup Event/tab_InlineView'))
 
-'sort GVGrid records according to Doc ID'
+'sort records according to Doc ID in inline table'
 WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Nested Lookup Event/tab_Inline View/a_Column Doc ID'))
 CustomKeywords.'actions.Common.waitForTabLoading'(null, GlobalVariable.G_LongTimeout)
 WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Nested Lookup Event/tab_Inline View/a_Column Doc ID'))
 CustomKeywords.'actions.Common.waitForTabLoading'(null, GlobalVariable.G_LongTimeout)
 
-'Click on same documnt from refrence object grid '
-CustomKeywords.'actions.Table.clickCell'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Nested Lookup Event/tab_Inline View/table_GVGrid'), 2, 5)
+'Click on first document in the grid'
+int inlineRowNo = 1
+CustomKeywords.'actions.Table.clickCell'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Nested Lookup Event/tab_Inline View/table_GVGrid'), inlineRowNo, 5)
 CustomKeywords.'actions.Common.waitForTabLoading'(null, GlobalVariable.G_LongTimeout)
 
 'From Inline View of refrence object value 1 from Nested Level 1 dropdown'
-WebUI.selectOptionByValue(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Nested Lookup Event/tab_Inline View/select_Master Object Nest Level 1'), '1', false)
+String ddOptionlvl1 = 'Value 1'
+WebUI.selectOptionByLabel(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Nested Lookup Event/tab_Inline View/select_Master Object Nest Level 1'), ddOptionlvl1, false)
 CustomKeywords.'actions.Common.waitForTabLoading'(null, GlobalVariable.G_LongTimeout)
 
 'verify In Nested level 2 drop down value1, value2,value3, value4,value5 should be fillup'
@@ -92,7 +96,8 @@ WebUI.verifyOptionPresentByLabel(findTestObject('Object Repository/Page_WMI_NEW/
 WebUI.verifyOptionPresentByLabel(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Nested Lookup Event/tab_Inline View/select_Master Object Nest Level 2'), 'Value 5', false, GlobalVariable.G_LongTimeout)
 
 'From master object select value 1 from Nested Level 2 dropdown'
-WebUI.selectOptionByLabel(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Nested Lookup Event/tab_Inline View/select_Master Object Nest Level 2'), 'Value 1', false)
+String ddOptionlvl2 = 'Value 1'
+WebUI.selectOptionByLabel(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Nested Lookup Event/tab_Inline View/select_Master Object Nest Level 2'), ddOptionlvl2, false)
 CustomKeywords.'actions.Common.waitForTabLoading'(null, GlobalVariable.G_LongTimeout)
 
 'In Nested level 3 drop down values -true ,false should be fill up'
@@ -100,13 +105,42 @@ WebUI.verifyOptionPresentByLabel(findTestObject('Object Repository/Page_WMI_NEW/
 WebUI.verifyOptionPresentByLabel(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Nested Lookup Event/tab_Inline View/select_Master Object Nest Level 3'), 'False', false, GlobalVariable.G_LongTimeout)
 
 'From master object select True from Nested Level 3 dropdown'
-WebUI.selectOptionByLabel(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Nested Lookup Event/tab_Inline View/select_Master Object Nest Level 3'), 'True', false)
+String ddOptionlvl3 = 'True'
+WebUI.selectOptionByLabel(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Nested Lookup Event/tab_Inline View/select_Master Object Nest Level 3'), ddOptionlvl3, false)
 CustomKeywords.'actions.Common.waitForTabLoading'(null, GlobalVariable.G_LongTimeout)
 
 'Click on Save from refence object'
 WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Nested Lookup Event/tab_Inline View/input_Nested Lookup Event  Save'))
 WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 
-'verify document saved'
-String docType= CustomKeywords.'actions.Table.getCellText'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Nested Lookup Event/tab_Inline View/table_GVGrid'), 2, 6)
-WebUI.verifyMatch(docType, 'Nested Lookup Event', false)
+'Close WMI'
+CustomKeywords.'actions.Window.clickElementAndWaitForWindowClose'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Textbox with Section Event/span_Close Window'),GlobalVariable.G_LongTimeout)
+
+'Switch to parent window'
+WebUI.switchToWindowIndex(0)
+
+'Navigate to Recent Documents'
+CustomKeywords.'actions.MenuBar.clickTreeMenu'('HOME', 'Recent Documents')
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/iframe_iframe_103'))
+
+'Sort records DocID Descending'
+CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/Home/tableHeader_RecentDocuments'), 'Doc ID')
+CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/Home/tableHeader_RecentDocuments'), 'Doc ID')
+
+'Open second document'
+rowNo = 1
+CustomKeywords.'actions.Table.clickCell'(findTestObject('Object Repository/Page_nGage_Dashboard/Home/table_MyDocumentResults'), rowNo, 7)
+WebUI.switchToWindowIndex(1)
+WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+
+'verify opened document type'
+WebUI.verifyElementVisible(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Nested Lookup Event/span_(Title)Business Model View - Nes'))
+
+'Verify correct value is selected in drop down 1'
+WebUI.verifyOptionSelectedByLabel(findTestObject('Page_WMI_NEW/Object Tabout Event/Nested Lookup Event/select_Master Object Nest Level 1'), ddOptionlvl1, false, GlobalVariable.G_LongTimeout)
+
+'Verify correct value is selected in drop down 2'
+WebUI.verifyOptionSelectedByLabel(findTestObject('Page_WMI_NEW/Object Tabout Event/Nested Lookup Event/select_Master Object Nest Level 2'), ddOptionlvl2, false, GlobalVariable.G_LongTimeout)
+
+'Verify correct value is selected in drop down 3'
+WebUI.verifyOptionSelectedByLabel(findTestObject('Page_WMI_NEW/Object Tabout Event/Nested Lookup Event/select_Master Object Nest Level 3'), ddOptionlvl3, false, GlobalVariable.G_LongTimeout)

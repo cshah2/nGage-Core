@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>div_Required</name>
+   <name>lbl_TopErrorMessage</name>
    <tag></tag>
-   <elementGuidId>eff6f55b-dd16-43b6-bc30-c5e7f4f151f2</elementGuidId>
+   <elementGuidId>36a215b9-a468-4aa0-b528-2835815e1dda</elementGuidId>
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//div[@id=&quot;eform_mcb67676_TabContainer_4_TabRef_1_phBO_4_BO_secpnl_2&quot;]//td[text()='Required']</value>
+         <value>//div[@id='eform_mcb67676_msgDiv']</value>
       </entry>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
@@ -20,6 +21,6 @@
       <matchCondition>equals</matchCondition>
       <name>ref_element</name>
       <type>Main</type>
-      <value>Object Repository/Page_WMI_NEW/Object Tabout Event/Label Event/tab_SingleResultView/iframe_Close Window_ContentPla</value>
+      <value>Object Repository/Page_WMI_NEW/Object Tabout Event/Label Event/iframe_Close Window_ContentPla</value>
    </webElementProperties>
 </WebElementEntity>

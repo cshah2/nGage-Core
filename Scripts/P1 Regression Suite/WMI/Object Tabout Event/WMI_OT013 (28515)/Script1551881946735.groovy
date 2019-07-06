@@ -18,6 +18,7 @@ import utils.DateUtil
 'Login Into Application'
 CustomKeywords.'actions.Common.login'()
 
+//Create Document 1
 'Create a new Object Tabout Events Document'
 WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))
 
@@ -30,8 +31,8 @@ WebUI.switchToWindowTitle('(Doc ID: NEW )')
 WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 
 'Set Date in Date field Required'
-String dateRequired = DateUtil.getCurrentDateTime(Consts.FORMAT_DATETIME)
-CustomKeywords.'actions.Common.setText_Date'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/tab_SingleResultView/input_DateField_Required'), dateRequired)
+String dateRequired1 = DateUtil.getCurrentDateTime(Consts.FORMAT_DATETIME)
+CustomKeywords.'actions.Common.setText_Date'(findTestObject('Page_WMI_NEW/Object Tabout Event/Radio List Event/input_Date Field (Required)_ef'), dateRequired1)
 
 'Click On Save Button'
 WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/span_Save'))
@@ -42,6 +43,31 @@ CustomKeywords.'actions.Window.clickElementAndWaitForWindowClose'(findTestObject
 
 'Switch to parent window'
 WebUI.switchToWindowIndex(0)
+
+//Create Document 2
+'Verify Doc class and Doc type dropdowns should be displayed'
+CustomKeywords.'actions.Common.selectDocClassAndDocTypeForGlobalNew'('Object Tabout Events', 'Radio List Event')
+WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'), GlobalVariable.G_LongTimeout)
+WebUI.click(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'))
+
+WebUI.switchToWindowTitle('(Doc ID: NEW )')
+WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+
+'Set Date in Date field Required'
+String dateRequired2 = DateUtil.getCurrentDateTime(Consts.FORMAT_DATETIME)
+CustomKeywords.'actions.Common.setText_Date'(findTestObject('Page_WMI_NEW/Object Tabout Event/Radio List Event/input_Date Field (Required)_ef'), dateRequired2)
+
+'Click On Save Button'
+WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/span_Save'))
+WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+
+'Close Window'
+CustomKeywords.'actions.Window.clickElementAndWaitForWindowClose'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/span_Close Window'),GlobalVariable.G_LongTimeout)
+
+'Switch to parent window'
+WebUI.switchToWindowIndex(0)
+
+'Close popup dialog for create new document'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Home/span_ui-button-icon-primary ui'))
 
 'Navigate to Recent Documents'
@@ -52,9 +78,10 @@ CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Da
 CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/Home/tableHeader_RecentDocuments'), 'Doc ID')
 CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/Home/tableHeader_RecentDocuments'), 'Doc ID')
 
-'Open recent document'
+'Open second document from recents grid'
+int rowNo = 2
 int colNo_DocID = CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Page_nGage_Dashboard/Home/tableHeader_RecentDocuments'), 'Doc ID')
-CustomKeywords.'actions.Table.clickCell'(findTestObject('Object Repository/Page_nGage_Dashboard/Home/table_MyDocumentResults'), 1,colNo_DocID)
+CustomKeywords.'actions.Table.clickCell'(findTestObject('Object Repository/Page_nGage_Dashboard/Home/table_MyDocumentResults'), rowNo, colNo_DocID)
 WebUI.switchToWindowIndex(1)
 WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 
