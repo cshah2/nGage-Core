@@ -1389,7 +1389,6 @@ public class Consts {
 		P1_WMI_DOC362.put(Fields.TEST_ID, '100786')
 		P1_WMI_DOC362.put(Fields.TEST_NAME, 'Danish')
 		P1_WMI_DOC362.put(Fields.TEST_DATE, '05-14-2019')
-		
-	}
 
+	}
 }

@@ -58,7 +58,10 @@ public enum DocType {
 	WMI_SEGMENT("WMI Segment"),
 	WMI_SEGMENT_EXT("WMI Segment ext"),
 	WMI_SEGMENT_MASTER_REFERENCE_OBJECT("WMI Segment Master Reference Object"),
-	INTERFACE_TEST_PR_RULES_USER_RELATED("InterfaceTestPRDocTypeExecRules_UserRelated")
+	INTERFACE_TEST_PR_RULES_USER_RELATED("InterfaceTestPRDocTypeExecRules_UserRelated"),
+	STANDARD_GRID("Standard Grid"),
+	TEXTBOX_WITH_SECTION_EVENT("Textbox With Section Event"),
+	RADIO_LIST_EVENT("Radio List Event")
 
 	private final String text
 

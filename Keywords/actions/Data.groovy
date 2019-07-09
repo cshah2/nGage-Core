@@ -22,6 +22,8 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 
 import internal.GlobalVariable
+import utils.Consts
+import utils.DateUtil
 import utils.WebUtil
 import common.DocClass
 import common.DocType
@@ -150,6 +152,18 @@ public class Data {
 			case DocType.INTERFACE_TEST_PR_RULES_OTHER:
 			case DocType.INTERFACE_TEST_PR_RULES_PROCESS_INSTANCE:
 				interfaceTestPR(data)
+				break
+
+			case DocType.STANDARD_GRID:
+				standardGrid(data)
+				break
+
+			case DocType.TEXTBOX_WITH_SECTION_EVENT:
+				textboxWithSectionEvent(data)
+				break
+				
+			case DocType.RADIO_LIST_EVENT:
+				radioListEvent(null)
 				break
 
 			default:
@@ -676,4 +690,61 @@ public class Data {
 		new Common().waitForFrameToLoad(findTestObject('Page_WMI_NEW/Interface Test PR/iframe_ContentPlaceHolder1_iPage'))
 		new Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI_NEW/Interface Test PR/btn_Close Window'),GlobalVariable.G_LongTimeout)
 	}
+
+	private void standardGrid(Map<Fields, String> data) {
+		//Click on Save button
+		WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Inline_Result_View/span_Save'))
+		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+
+		//Click on Close Window button
+		WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Inline_Result_View/span_Close Window'))
+	}
+
+	private void textboxWithSectionEvent(Map<Fields, String> data) {
+
+		//Wait for WMI to load
+		WebUI.waitForElementVisible(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Textbox with Section Event/span_(Title)Textbox With Section Event'), GlobalVariable.G_LongTimeout)
+
+		//enter value (Show) in text box Master Object Event
+		WebUI.setText(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Textbox with Section Event/input_Master Object Event_efor'), 'Show')
+		WebUI.sendKeys(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Textbox with Section Event/input_Master Object Event_efor'), Keys.chord(Keys.TAB))
+
+		//Wait for Event to complete
+		new actions.Common().waitForTabLoading(null, GlobalVariable.G_LongTimeout)
+
+		//Save WMI
+		WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Textbox with Section Event/span_Save'))
+		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+
+		//Close WMI
+		new actions.Window().clickElementAndWaitForWindowClose(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Textbox with Section Event/span_Close Window'),GlobalVariable.G_LongTimeout)
+	}
+	
+	private void radioListEvent(Map<Fields, String> data) {
+		
+		'Wait for WMI to load'
+		WebUI.verifyElementVisible(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/span_Business Model View - Rad'))
+		
+		'Click on Value 1 radio button from master object'
+		WebUI.waitForElementVisible(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/input_Value1_MasterObject'),GlobalVariable.G_LongTimeout)
+		WebUI.check(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/input_Value1_MasterObject'))
+		
+		'Wait for event to complete'
+		new actions.Common().waitForTabLoading(null, GlobalVariable.G_LongTimeout)
+		
+		String inputValue = DateUtil.getCurrentDateTime(Consts.FORMAT_DATETIME)
+		'Enter value in date field'
+		new actions.Common().setText_Date(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/input_Date Field (Required)_ef'), inputValue)
+		
+		'Enter value in String field'
+		new actions.Common().setText_Date(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/input_String Field (Style)_efo'), inputValue)
+		
+		'Save WMI'
+		WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/span_Save'))
+		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+		
+		'Close WMI'
+		new actions.Window().clickElementAndWaitForWindowClose(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/span_Close Window'),GlobalVariable.G_LongTimeout)
+	}
+	
 }

@@ -42,8 +42,8 @@ public enum DocClass {
 	DATETIME_REQUIRED("Datetimerequired"),
 	DATETIME_RANGE_REQUIRED("Datetimerangerequired"),
 	INTERFACE_TEST_PR("InterfaceTestPRDocClass"),
-	WMI_SEGMENT("WMI Segment")
-
+	WMI_SEGMENT("WMI Segment"),
+	OBJECT_TABOUT_EVENT("Object Tabout Events")
 
 	private final String text
 
