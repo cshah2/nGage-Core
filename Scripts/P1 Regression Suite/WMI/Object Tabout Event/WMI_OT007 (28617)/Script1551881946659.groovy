@@ -88,6 +88,3 @@ WebUI.verifyElementAttributeValue(findTestObject('Page_WMI_NEW/Object Tabout Eve
 
 'verify Sample section is visble in Master object'
 WebUI.verifyElementVisible(findTestObject('Page_WMI_NEW/Object Tabout Event/Textbox with Section Event/span_Sample Section - Visible'))
-
-'Close WMI'
-CustomKeywords.'actions.Window.clickElementAndWaitForWindowClose'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Textbox with Section Event/span_Close Window'),GlobalVariable.G_LongTimeout)

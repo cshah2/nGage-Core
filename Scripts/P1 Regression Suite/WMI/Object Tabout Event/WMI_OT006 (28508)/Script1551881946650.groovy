@@ -81,6 +81,3 @@ WebUI.verifyElementPresent(findTestObject('Page_WMI_NEW/Object Tabout Event/Text
 
 'verify background color'
 CustomKeywords.'actions.Common.verifyCssValue'(findTestObject('Page_WMI_NEW/Object Tabout Event/Textbox with Section Event/div_Sample Section'), 'background-color', 'rgba(255, 165, 0, 1)')
-
-'Close WMI'
-CustomKeywords.'actions.Window.clickElementAndWaitForWindowClose'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Textbox with Section Event/span_Close Window'),GlobalVariable.G_LongTimeout)

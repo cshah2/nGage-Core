@@ -69,6 +69,3 @@ WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 
 'verify opened document'
 WebUI.verifyElementAttributeValue(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Textbox with Section Event/input_Master Object Event_efor'), 'value', 'Background', GlobalVariable.G_LongTimeout)
-
-'Close WMI'
-CustomKeywords.'actions.Window.clickElementAndWaitForWindowClose'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Textbox with Section Event/span_Close Window'),GlobalVariable.G_LongTimeout)
