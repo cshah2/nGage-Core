@@ -382,7 +382,7 @@ public class Data {
 			WebUI.setText(findTestObject('Page_WMI_NEW/VerticalMenuWizard/ShowVerticalMenu_True/input_First Name'), firstName)
 		if(StringUtils.isNotBlank(lastName))
 			WebUI.setText(findTestObject('Page_WMI_NEW/VerticalMenuWizard/ShowVerticalMenu_True/input_Last Name'), lastName)
-		if(StringUtils.isNotBlank(file))
+		if(StringUtils.isNotBlank(amount))
 			WebUI.setText(findTestObject('Page_WMI_NEW/VerticalMenuWizard/ShowVerticalMenu_True/input_Amount'), amount)
 		if(StringUtils.isNotBlank(file))
 			WebUI.uploadFile(findTestObject('Page_WMI_NEW/WMI_Menu_BOV_Vertical/input__file_upload'), file)
@@ -707,7 +707,7 @@ public class Data {
 
 		//enter value (Show) in text box Master Object Event
 		WebUI.setText(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Textbox with Section Event/input_Master Object Event_efor'), 'Show')
-		WebUI.sendKeys(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Textbox with Section Event/input_Master Object Event_efor'), Keys.chord(Keys.TAB))
+		WebUI.sendKeys(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Textbox with Section Event/input_Master Object Event_efor'), Keys.chord(Keys.ENTER))
 
 		//Wait for Event to complete
 		new actions.Common().waitForTabLoading(null, GlobalVariable.G_LongTimeout)

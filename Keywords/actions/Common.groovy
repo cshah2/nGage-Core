@@ -241,6 +241,8 @@ public class Common {
 	@Keyword
 	def openDocumentFromRecentGrid(int rowNo) {
 		
+		WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/Home/a_Recent Documents'), GlobalVariable.G_LongTimeout)
+		
 		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/a_Recent Documents'))
 		waitForFrameToLoad(findTestObject('Page_nGage_Dashboard/iframe_iframe_103'))
 

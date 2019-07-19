@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//div[@id='eform_mcb67676_TabContainer_4_TabRef_2_phBO_5_BO_secpnl_1']</value>
+         <value>//div[contains(@class,'ReferenceObjectTab')]//div[contains(@id,'eform_mcb67676_TabContainer_4_TabRef_2_phBO_5_BO_secpnl') and contains(@style,'display')]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
@@ -61,24 +61,28 @@
       <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:idRelative</name>
+      <type>Main</type>
       <value>//div[@id='eform_mcb67676_TabContainer_4_TabRef_2_phBO_5_BO_secpnl_1']/table</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:neighbor</name>
+      <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='Reference Object Event (inlineresultview)'])[1]/following::table[2]</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:neighbor</name>
+      <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='This WMI imparts - Events in TextBox with Reference Section'])[2]/following::table[5]</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:position</name>
+      <type>Main</type>
       <value>//div[2]/table/tbody/tr/td/div[2]/div/fieldset/table/tbody/tr[4]/td/div[2]/table/tbody/tr[3]/td/table/tbody/tr/td[2]/div/table</value>
    </webElementXpaths>
 </WebElementEntity>

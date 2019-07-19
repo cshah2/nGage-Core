@@ -9,8 +9,12 @@
          <key>BASIC</key>
          <value>//span[@id = 'eform_mcb67676_TabContainer_4_TabRef_1_phBO_4_BO_BOstatic_1_BOstatic_0' and @ref_element = 'Object Repository/Page_WMI_NEW/Object Tabout Event/Textbox with Section Event/tab_SingleResultView/iframe_Close Window_ContentPla']</value>
       </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>//div[contains(@class,'ReferenceObjectTab')]//div[contains(@id,'eform_mcb67676_TabContainer_4_TabRef_1_phBO_4_BO_secpnl') and contains(@style,'display')]//*[text()='Sample Section']</value>
+      </entry>
    </selectorCollection>
-   <selectorMethod>BASIC</selectorMethod>
+   <selectorMethod>XPATH</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
    <webElementProperties>
       <isSelected>true</isSelected>
@@ -72,42 +76,49 @@
       <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:attributes</name>
+      <type>Main</type>
       <value>//span[@id='eform_mcb67676_TabContainer_4_TabRef_1_phBO_4_BO_BOstatic_1_BOstatic_0']</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:idRelative</name>
+      <type>Main</type>
       <value>//div[@id='eform_mcb67676_TabContainer_4_TabRef_1_phBO_4_BO_secpnl_1']/table/tbody/tr[2]/td/table/tbody/tr/td[3]/span</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:neighbor</name>
+      <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='Action'])[2]/following::span[1]</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:neighbor</name>
+      <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='Sample Section'])[2]/following::span[2]</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:neighbor</name>
+      <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='Revise'])[2]/preceding::span[1]</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:neighbor</name>
+      <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='Replace'])[2]/preceding::span[1]</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:position</name>
+      <type>Main</type>
       <value>//div[2]/div/table/tbody/tr/td/div[2]/div/fieldset/table/tbody/tr[4]/td/div[2]/table/tbody/tr[3]/td/table/tbody/tr/td[2]/div/table/tbody/tr[2]/td/table/tbody/tr/td[3]/span</value>
    </webElementXpaths>
 </WebElementEntity>

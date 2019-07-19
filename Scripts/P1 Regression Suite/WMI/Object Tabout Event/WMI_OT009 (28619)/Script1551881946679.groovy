@@ -68,12 +68,17 @@ CustomKeywords.'actions.Common.verifyCssValue'(findTestObject('Object Repository
 WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Textbox with Section Event/span_Save Grid Doc'))
 WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 
+'Wait for WMI to load'
+WebUI.waitForElementVisible(findTestObject('Page_WMI_NEW/Object Tabout Event/Textbox with Section Event/span_(Title)Textbox With Section Event'), GlobalVariable.G_LongTimeout)
+
 'Close WMI'
 CustomKeywords.'actions.Window.clickElementAndWaitForWindowClose'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Textbox with Section Event/span_Close Window'),GlobalVariable.G_LongTimeout)
-WebUI.switchToWindowIndex(0)
 
 'Switch to parent window'
 WebUI.switchToWindowIndex(0)
+
+'Clear cookies and Login back into portal'
+CustomKeywords.'actions.Common.login'()
 
 'Open first document from recent grid'
 CustomKeywords.'actions.Common.openDocumentFromRecentGrid'(1)
@@ -89,3 +94,6 @@ WebUI.verifyElementPresent(findTestObject('Page_WMI_NEW/Object Tabout Event/Text
 
 'verify background color'
 CustomKeywords.'actions.Common.verifyCssValue'(findTestObject('Page_WMI_NEW/Object Tabout Event/Textbox with Section Event/div_Sample Section'), 'background-color', 'rgba(255, 165, 0, 1)')
+
+'Close WMI'
+CustomKeywords.'actions.Window.clickElementAndWaitForWindowClose'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Textbox with Section Event/span_Close Window'),GlobalVariable.G_LongTimeout)
