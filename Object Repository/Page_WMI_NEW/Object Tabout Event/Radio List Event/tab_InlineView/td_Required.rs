@@ -7,11 +7,10 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value></value>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//div[@id='eform_mcb67676_TabContainer_4_TabRef_2_phBO_5_BO_secpnl_2']//td[text()='Required']  </value>
+         <value>//div[contains(@class,'ReferenceObjectTab')]//table[contains(@id,'_popupTable')]//td[text()='Required']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

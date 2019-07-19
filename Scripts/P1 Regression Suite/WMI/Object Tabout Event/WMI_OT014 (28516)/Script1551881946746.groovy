@@ -58,7 +58,7 @@ WebUI.sendKeys(findTestObject('Page_WMI_NEW/Object Tabout Event/Radio List Event
 'Verify Error message is not displayed for date field'
 WebUI.verifyElementNotPresent(findTestObject('Page_WMI_NEW/Object Tabout Event/Radio List Event/tab_SingleResultView/div_Required'), GlobalVariable.G_LongTimeout)
 
-'Scroll to Inline view section'
+'Scroll to Single result view section'
 WebUI.scrollToElement(findTestObject('Page_WMI_NEW/Object Tabout Event/Radio List Event/tab_SingleResultView/input_StringField_ReferenceObject'), GlobalVariable.G_LongTimeout)
 
 String inputValue = DateUtil.getCurrentDateTime(Consts.FORMAT_DATETIME)
@@ -86,6 +86,9 @@ CustomKeywords.'actions.Window.clickElementAndWaitForWindowClose'(findTestObject
 
 'Switch to parent window'
 WebUI.switchToWindowIndex(0)
+
+'Clear cookies and Login back into portal'
+CustomKeywords.'actions.Common.login'()
 
 'Open document from recents grid'
 CustomKeywords.'actions.Common.openDocumentFromRecentGrid'(1)

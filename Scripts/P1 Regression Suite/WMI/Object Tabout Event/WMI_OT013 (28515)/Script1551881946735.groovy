@@ -90,6 +90,9 @@ CustomKeywords.'actions.Window.clickElementAndWaitForWindowClose'(findTestObject
 'Switch to parent window'
 WebUI.switchToWindowIndex(0)
 
+'Clear cookies and Login back into portal'
+CustomKeywords.'actions.Common.login'()
+
 'Open document from recents grid'
 CustomKeywords.'actions.Common.openDocumentFromRecentGrid'(1)
 
