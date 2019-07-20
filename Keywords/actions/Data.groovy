@@ -186,6 +186,10 @@ public class Data {
 				nestedLookupEvent(null)
 				break
 
+			case DocType.ONLOAD_AND_SETFOCUS_EVENT:
+				onloadAndSetFocusEvent(null)
+				break
+
 			default:
 				WebUI.takeScreenshot()
 				KeywordUtil.markFailedAndStop('Unable to create document, Invalid docType provided : '+docType)
@@ -821,9 +825,9 @@ public class Data {
 		'Closw WMI'
 		new actions.Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI_NEW/Object Tabout Event/DropDown Event/btn_CloseWindow'), GlobalVariable.G_LongTimeout)
 	}
-	
+
 	private void nestedLookupEvent(Map<Fields, String> data) {
-		
+
 		'Wait for WMI to load'
 		WebUI.waitForElementVisible(findTestObject('Page_WMI_NEW/Object Tabout Event/Nested Lookup Event/select_Level1'), GlobalVariable.G_LongTimeout)
 
@@ -834,4 +838,18 @@ public class Data {
 		'Closw WMI'
 		new actions.Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI_NEW/Object Tabout Event/Nested Lookup Event/btn_CloseWindow'), GlobalVariable.G_LongTimeout)
 	}
+	
+	private void onloadAndSetFocusEvent(Map<Fields, String> data) {
+		
+		'Wait for WMI to load'
+		WebUI.waitForElementVisible(findTestObject('Page_WMI_NEW/Object Tabout Event/DoNotSetValueOnLoad SetFocus Event/chkbox_Control'), GlobalVariable.G_LongTimeout)
+
+		'Save WMI'
+		WebUI.click(findTestObject('Page_WMI_NEW/Object Tabout Event/DoNotSetValueOnLoad SetFocus Event/btn_Save'))
+		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+
+		'Closw WMI'
+		new actions.Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI_NEW/Object Tabout Event/DoNotSetValueOnLoad SetFocus Event/btn_CloseWindow'), GlobalVariable.G_LongTimeout)
+	}
+		
 }

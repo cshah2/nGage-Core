@@ -11,92 +11,73 @@ import com.kms.katalon.core.testdata.TestData as TestData
 import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+
+import common.DocClass
+import common.DocType
 import internal.GlobalVariable as GlobalVariable
 
 'Login Into Application'
 CustomKeywords.'actions.Common.login'()
 
-//No. 1
-'Select Doc Class as "Object Tab Out Events" and Doc type as "DoNotSetValueOnLoad and SetFocus Event" from the dropdowns and click on OK button'
-WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))
-CustomKeywords.'actions.Common.selectDocClassAndDocTypeForGlobalNew'('Object Tabout Events', 'DoNotSetValueOnLoad and SetFocus Event')
-WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'), GlobalVariable.G_LongTimeout)
-WebUI.click(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'))
+'Create Document 1 - Textbox with section event'
+CustomKeywords.'actions.Data.create'(DocClass.OBJECT_TABOUT_EVENT, DocType.ONLOAD_AND_SETFOCUS_EVENT, null)
 
-'Switch to new window'
-WebUI.switchToWindowIndex(1)
+'Create Document 2 - Textbox with section event'
+CustomKeywords.'actions.Data.create'(DocClass.OBJECT_TABOUT_EVENT, DocType.ONLOAD_AND_SETFOCUS_EVENT, null)
+
+'Open second document from recent grid'
+CustomKeywords.'actions.Common.openDocumentFromRecentGrid'(2)
+
+'Wait for Page to load'
+WebUI.waitForElementVisible(findTestObject('Page_WMI_NEW/Object Tabout Event/DoNotSetValueOnLoad SetFocus Event/chkbox_Control'), GlobalVariable.G_LongTimeout)
+
+'click on tab inline view'
+WebUI.click(findTestObject('Page_WMI_NEW/Object Tabout Event/DoNotSetValueOnLoad SetFocus Event/tab_InlineView'))
+
+'sort grid records in descending accordindg to docID'
+WebUI.click(findTestObject('Page_WMI_NEW/Object Tabout Event/DoNotSetValueOnLoad SetFocus Event/InlineView/tableHeader_DocID'))
+CustomKeywords.'actions.Common.waitForTabLoading'(null, GlobalVariable.G_LongTimeout)
+WebUI.click(findTestObject('Page_WMI_NEW/Object Tabout Event/DoNotSetValueOnLoad SetFocus Event/InlineView/tableHeader_DocID'))
+CustomKeywords.'actions.Common.waitForTabLoading'(null, GlobalVariable.G_LongTimeout)
+
+'click on first record in the grid'
+CustomKeywords.'actions.Table.clickCell'(findTestObject('Page_WMI_NEW/Object Tabout Event/DoNotSetValueOnLoad SetFocus Event/InlineView/table_InlineResultView'), 1, 5)
+CustomKeywords.'actions.Common.waitForTabLoading'(null, GlobalVariable.G_LongTimeout)
+
+'Scroll to Inline result view'
+WebUI.scrollToElement(findTestObject('Page_WMI_NEW/Object Tabout Event/DoNotSetValueOnLoad SetFocus Event/InlineView/input_CurrencyField'), GlobalVariable.G_LongTimeout)
+
+'Uncheck checkbox'
+WebUI.uncheck(findTestObject('Page_WMI_NEW/Object Tabout Event/DoNotSetValueOnLoad SetFocus Event/InlineView/chkbox_Control'))
+
+'Wait for Javascript event to complete'
+CustomKeywords.'actions.Common.waitForTabLoading'(null, GlobalVariable.G_LongTimeout)
+
+'Verify text in String field'
+String expText = 'Checkbox is un-checked'
+WebUI.verifyElementAttributeValue(findTestObject('Page_WMI_NEW/Object Tabout Event/DoNotSetValueOnLoad SetFocus Event/InlineView/input_StringField'), 'value', expText, GlobalVariable.G_LongTimeout)
+
+'Verify currency field does not have focus'
+CustomKeywords.'actions.Common.verifyElementNotHasFocus'(findTestObject('Page_WMI_NEW/Object Tabout Event/DoNotSetValueOnLoad SetFocus Event/InlineView/input_CurrencyField'))
+
+'Click on Inline Save button'
+WebUI.click(findTestObject('Page_WMI_NEW/Object Tabout Event/DoNotSetValueOnLoad SetFocus Event/InlineView/btn_Save'))
 WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 
-'Click on Save button'
-WebUI.click(findTestObject('Page_WMI_NEW/Object Tabout Event/DoNotSetValueOnLoad SetFocus Event/InlineView/span_Save'))
+'Close WMI'
+CustomKeywords.'actions.Window.clickElementAndWaitForWindowClose'(findTestObject('Page_WMI_NEW/Object Tabout Event/DoNotSetValueOnLoad SetFocus Event/btn_CloseWindow'), GlobalVariable.G_LongTimeout)
 
-'Click on Close Window button'
-WebUI.click(findTestObject('Page_WMI_NEW/Object Tabout Event/DoNotSetValueOnLoad SetFocus Event/InlineView/span_Close Window'))
-
-'Switch to main window'
+'Switch to parent window'
 WebUI.switchToWindowIndex(0)
 
-//No. 2
-'Select Doc Class as "Object Tab Out Events" and Doc type as "DoNotSetValueOnLoad and SetFocus Event" from the dropdowns and click on OK button'
-WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))
-CustomKeywords.'actions.Common.selectDocClassAndDocTypeForGlobalNew'('Object Tabout Events', 'DoNotSetValueOnLoad and SetFocus Event')
-WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'), GlobalVariable.G_LongTimeout)
-WebUI.click(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'))
+'Clear cookies and Login back into portal'
+CustomKeywords.'actions.Common.login'()
 
-'Switch to new window'
-WebUI.switchToWindowIndex(1)
-WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+'Open first document from recent grid'
+CustomKeywords.'actions.Common.openDocumentFromRecentGrid'(1)
 
-'Click on Save button'
-WebUI.click(findTestObject('Page_WMI_NEW/Object Tabout Event/DoNotSetValueOnLoad SetFocus Event/InlineView/span_Save'))
+'Verify Checkbox control is unchecked'
+WebUI.verifyElementNotChecked(findTestObject('Page_WMI_NEW/Object Tabout Event/DoNotSetValueOnLoad SetFocus Event/chkbox_Control'), GlobalVariable.G_LongTimeout)
 
-'Click on Close Window button'
-WebUI.click(findTestObject('Page_WMI_NEW/Object Tabout Event/DoNotSetValueOnLoad SetFocus Event/InlineView/span_Close Window'))
-
-'Switch to main window'
-WebUI.switchToWindowIndex(0)
-
-'Click on Recent Document'
-CustomKeywords.'actions.MenuBar.clickTreeMenu'('HOME', 'Recent Documents')
-CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/iframe_iframe_103'))
-
-'Sort Record in grid by DocID Descending'
-CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/Home/tableHeader_RecentDocuments'), 'Doc ID')
-CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/Home/tableHeader_RecentDocuments'), 'Doc ID')
-
-'Open Document'
-int colNo_DocID = CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Page_nGage_Dashboard/Home/tableHeader_RecentDocuments'), 'Doc ID')
-CustomKeywords.'actions.Table.clickCell'(findTestObject('Page_nGage_Dashboard/Home/table_MyDocumentResults'), 2, colNo_DocID)
-
-'Switch to WMI Window'
-WebUI.switchToWindowIndex(1)
-WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
-
-'Verify the tabs SingleresultView and inlineView, click on InlineView tab'
-WebUI.verifyElementVisible(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/DoNotSetValueOnLoad SetFocus Event/InlineView/a_SingleResultView'))
-WebUI.verifyElementVisible(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/DoNotSetValueOnLoad SetFocus Event/InlineView/a_InlineView'))
-
-'Click on tab Inline result view'
-WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/DoNotSetValueOnLoad SetFocus Event/InlineView/a_InlineView'))
-
-'Select document from the grid'
-CustomKeywords.'actions.Table.clickCell'(findTestObject('Page_WMI_NEW/Object Tabout Event/DoNotSetValueOnLoad SetFocus Event/InlineView/table_InlineResultView'), 1, 6)
-
-'Inline document should get opened with save and button'
-CustomKeywords.'actions.Common.waitForTabLoading'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/DoNotSetValueOnLoad SetFocus Event/InlineView/iframe_Close Window_ContentPla'), GlobalVariable.G_LongTimeout)
-
-'Verify the fields reference object checkbox control (checkbox), String field (text box with view check box is un-checked) and currency field text box.'
-WebUI.verifyElementVisible(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/DoNotSetValueOnLoad SetFocus Event/InlineView/input_ReferenceObjectCheckBox'))
-WebUI.verifyElementVisible(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/DoNotSetValueOnLoad SetFocus Event/InlineView/input_StringField'))
-WebUI.verifyElementNotChecked(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/DoNotSetValueOnLoad SetFocus Event/InlineView/input_StringField'), GlobalVariable.G_LongTimeout)
-WebUI.verifyElementVisible(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/DoNotSetValueOnLoad SetFocus Event/InlineView/input_CurrencyField'))
-
-'Verify that reference object checkbox control (checkbox) is unchecked'
-WebUI.verifyElementNotChecked(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/DoNotSetValueOnLoad SetFocus Event/InlineView/input_ReferenceObjectCheckBox'), GlobalVariable.G_LongTimeout)
-
-'String field (text box with view check box is un-checked)'
-String stringField = WebUI.getAttribute(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/DoNotSetValueOnLoad SetFocus Event/InlineView/input_StringField'), 'value')
-WebUI.verifyMatch('Checkbox is unchecked', stringField, false)
- 
-'No cursor control in currency field text box.'
-CustomKeywords.'actions.Common.verifyElementNotHasFocus'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/DoNotSetValueOnLoad SetFocus Event/InlineView/input_CurrencyField'))
+'Verify text in String field'
+WebUI.verifyElementAttributeValue(findTestObject('Page_WMI_NEW/Object Tabout Event/DoNotSetValueOnLoad SetFocus Event/input_StringField'), 'value', expText, GlobalVariable.G_LongTimeout)

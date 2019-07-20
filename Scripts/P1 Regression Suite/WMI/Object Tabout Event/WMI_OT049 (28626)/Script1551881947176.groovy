@@ -11,46 +11,60 @@ import com.kms.katalon.core.testdata.TestData as TestData
 import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+
+import common.DocClass
+import common.DocType
 import internal.GlobalVariable as GlobalVariable
 
 'Login Into Application'
 CustomKeywords.'actions.Common.login'()
 
-'Create a new Refrence Object Feature Document'
-WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))
-CustomKeywords.'actions.Common.selectDocClassAndDocTypeForGlobalNew'('Object Tabout Events', 'DoNotSetValueOnLoad and SetFocus Event')
-WebUI.click(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'))
+'Create Document 1 - Textbox with section event'
+CustomKeywords.'actions.Data.create'(DocClass.OBJECT_TABOUT_EVENT, DocType.ONLOAD_AND_SETFOCUS_EVENT, null)
 
-WebUI.switchToWindowTitle('(Doc ID: NEW )')
+'Create Document 2 - Textbox with section event'
+CustomKeywords.'actions.Data.create'(DocClass.OBJECT_TABOUT_EVENT, DocType.ONLOAD_AND_SETFOCUS_EVENT, null)
+
+'Open second document from recent grid'
+CustomKeywords.'actions.Common.openDocumentFromRecentGrid'(2)
+
+'Wait for Page to load'
+WebUI.waitForElementVisible(findTestObject('Page_WMI_NEW/Object Tabout Event/DoNotSetValueOnLoad SetFocus Event/chkbox_Control'), GlobalVariable.G_LongTimeout)
+
+'Scroll to Single result view'
+WebUI.scrollToElement(findTestObject('Page_WMI_NEW/Object Tabout Event/DoNotSetValueOnLoad SetFocus Event/SingleResultView_tab/input_CurrencyField'), GlobalVariable.G_LongTimeout)
+
+'Uncheck checkbox'
+WebUI.uncheck(findTestObject('Page_WMI_NEW/Object Tabout Event/DoNotSetValueOnLoad SetFocus Event/SingleResultView_tab/chkbox_Control'))
+
+'Wait for Javascript event to complete'
+CustomKeywords.'actions.Common.waitForTabLoading'(null, GlobalVariable.G_LongTimeout)
+
+'Verify text in String field'
+String expText = 'Checkbox is un-checked'
+WebUI.verifyElementAttributeValue(findTestObject('Page_WMI_NEW/Object Tabout Event/DoNotSetValueOnLoad SetFocus Event/SingleResultView_tab/input_StringField'), 'value', expText, GlobalVariable.G_LongTimeout)
+
+'Verify currency field does not have focus'
+CustomKeywords.'actions.Common.verifyElementNotHasFocus'(findTestObject('Page_WMI_NEW/Object Tabout Event/DoNotSetValueOnLoad SetFocus Event/SingleResultView_tab/input_CurrencyField'))
+
+'Save WMI'
+WebUI.click(findTestObject('Page_WMI_NEW/Object Tabout Event/DoNotSetValueOnLoad SetFocus Event/btn_Save'))
 WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 
-'Verify Business Model View - DoNotSetValueOnLoad and SetFocus Event doc should be open'
-WebUI.verifyElementVisible(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/DoNotSetValueOnLoad SetFocus Event/span_(Title)Business Model View - DoN'))
-String actualtext= WebUI.getText(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/DoNotSetValueOnLoad SetFocus Event/span_(Title)Business Model View - DoN'))
-WebUI.verifyMatch(actualtext, 'Business Model View - DoNotSetValueOnLoad and SetFocus Event', false)
+'Close WMI'
+CustomKeywords.'actions.Window.clickElementAndWaitForWindowClose'(findTestObject('Page_WMI_NEW/Object Tabout Event/DoNotSetValueOnLoad SetFocus Event/btn_CloseWindow'), GlobalVariable.G_LongTimeout)
 
-'Verify the tabs SingleresultView and inlineView'
-WebUI.verifyElementPresent(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/DoNotSetValueOnLoad SetFocus Event/tab_InlineView'),GlobalVariable.G_LongTimeout)
-WebUI.verifyElementPresent(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/DoNotSetValueOnLoad SetFocus Event/tab_SingleResultView'),GlobalVariable.G_LongTimeout)
+'Switch to parent window'
+WebUI.switchToWindowIndex(0)
 
-'Click on SingleresultView tab'
-WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/DoNotSetValueOnLoad SetFocus Event/tab_SingleResultView'))
+'Clear cookies and Login back into portal'
+CustomKeywords.'actions.Common.login'()
 
-'Verify SingleResultView Tab got Opened'
-WebUI.verifyElementVisible(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/DoNotSetValueOnLoad SetFocus Event/SingleResultView_tab/span_(header)SingleResultView'))
-WebUI.verifyElementVisible(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/DoNotSetValueOnLoad SetFocus Event/SingleResultView_tab/span_(title)This WMI imparts - Field'))
+'Open first document from recent grid'
+CustomKeywords.'actions.Common.openDocumentFromRecentGrid'(1)
 
-'Verify All Fields Visible Under SingleResultView Tab'
-WebUI.verifyElementVisible(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/DoNotSetValueOnLoad SetFocus Event/SingleResultView_tab/input_Reference Object CheckBox'))
-WebUI.verifyElementVisible(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/DoNotSetValueOnLoad SetFocus Event/SingleResultView_tab/input_String Field'))
-WebUI.verifyElementVisible(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/DoNotSetValueOnLoad SetFocus Event/SingleResultView_tab/input_Currency Field'))
+'Verify Checkbox control is unchecked'
+WebUI.verifyElementNotChecked(findTestObject('Page_WMI_NEW/Object Tabout Event/DoNotSetValueOnLoad SetFocus Event/chkbox_Control'), GlobalVariable.G_LongTimeout)
 
-'Verify that reference object checkbox control (checkbox) is unchecked '
-WebUI.verifyElementNotChecked(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/DoNotSetValueOnLoad SetFocus Event/SingleResultView_tab/input_Reference Object CheckBox'),GlobalVariable.G_LongTimeout)
-
-'Verify String Field (text box with view check box is un-checked) is Present'
-String textOfStringField = WebUI.getAttribute(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/DoNotSetValueOnLoad SetFocus Event/SingleResultView_tab/input_String Field'),'value')
-WebUI.verifyMatch(textOfStringField, 'Checkbox is unchecked', false)
-
-'Verify no cursor control in currency feild text box'
-CustomKeywords.'actions.Common.verifyElementNotHasFocus'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/DoNotSetValueOnLoad SetFocus Event/SingleResultView_tab/input_Currency Field'))
+'Verify text in String field'
+WebUI.verifyElementAttributeValue(findTestObject('Page_WMI_NEW/Object Tabout Event/DoNotSetValueOnLoad SetFocus Event/input_StringField'), 'value', expText, GlobalVariable.G_LongTimeout)

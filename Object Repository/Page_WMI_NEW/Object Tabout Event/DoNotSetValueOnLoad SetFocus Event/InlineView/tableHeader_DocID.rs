@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>a_InlineView</name>
+   <name>tableHeader_DocID</name>
    <tag></tag>
-   <elementGuidId>52492a4a-76e9-453f-a0d2-6e233c27aacd</elementGuidId>
+   <elementGuidId>f2b79fd4-00d2-4007-b63d-5f0f3613abe9</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>id(&quot;eform_mcb67676_TabContainer_4_TabRef_2_phBO_5_BO_grc&quot;)/tbody[1]/tr[@class=&quot;GVRowOpened&quot;]/td[7]</value>
+      </entry>
+   </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
    <webElementProperties>
@@ -11,42 +17,28 @@
       <matchCondition>equals</matchCondition>
       <name>tag</name>
       <type>Main</type>
-      <value>a</value>
+      <value>td</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
-      <name>class</name>
+      <name>onclick</name>
       <type>Main</type>
-      <value>ajax__tab_tab</value>
-   </webElementProperties>
-   <webElementProperties>
-      <isSelected>true</isSelected>
-      <matchCondition>equals</matchCondition>
-      <name>id</name>
-      <type>Main</type>
-      <value>__tab_eform_mcb67676_TabContainer_4_TabRef_2</value>
+      <value>__doPostBack('eform_mcb67676$TabContainer_4$TabRef_2$phBO_5_BO$grc','Select$0');SetInlineviewDisplay('eform_mcb67676_TabContainer_4_TabRef_2_phBO_5_BO_fileTableRow','eform_mcb67676_TabContainer_4_TabRef_2_phBO_5_BO_fieldsTableRow' , false);</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
-      <matchCondition>equals</matchCondition>
-      <name>href</name>
-      <type>Main</type>
-      <value>#</value>
-   </webElementProperties>
-   <webElementProperties>
-      <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
       <name>text</name>
       <type>Main</type>
-      <value>InlineView</value>
+      <value>1030</value>
    </webElementProperties>
    <webElementProperties>
-      <isSelected>false</isSelected>
+      <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>id(&quot;__tab_eform_mcb67676_TabContainer_4_TabRef_2&quot;)</value>
+      <value>id(&quot;eform_mcb67676_TabContainer_4_TabRef_2_phBO_5_BO_grc&quot;)/tbody[1]/tr[@class=&quot;GVRowOpened&quot;]/td[7]</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
@@ -59,42 +51,49 @@
       <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:attributes</name>
-      <value>//a[@id='__tab_eform_mcb67676_TabContainer_4_TabRef_2']</value>
+      <type>Main</type>
+      <value>(//td[@onclick=&quot;__doPostBack('eform_mcb67676$TabContainer_4$TabRef_2$phBO_5_BO$grc','Select$0');SetInlineviewDisplay('eform_mcb67676_TabContainer_4_TabRef_2_phBO_5_BO_fileTableRow','eform_mcb67676_TabContainer_4_TabRef_2_phBO_5_BO_fieldsTableRow' , false);&quot;])[7]</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:idRelative</name>
-      <value>//span[@id='eform_mcb67676_TabContainer_4_TabRef_2_tab']/span/span/a</value>
+      <type>Main</type>
+      <value>//table[@id='eform_mcb67676_TabContainer_4_TabRef_2_phBO_5_BO_grc']/tbody/tr[3]/td[7]</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:neighbor</name>
-      <value>(.//*[normalize-space(text()) and normalize-space(.)='SingleResultView'])[1]/following::a[1]</value>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='BM Currency'])[1]/following::td[7]</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:neighbor</name>
-      <value>(.//*[normalize-space(text()) and normalize-space(.)='* Duplicate values will be ignored.'])[1]/following::a[2]</value>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='BM Text'])[1]/following::td[8]</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:neighbor</name>
-      <value>(.//*[normalize-space(text()) and normalize-space(.)='SingleResultView'])[2]/preceding::a[1]</value>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='DoNotSetValueOnLoad and SetFocus Event'])[1]/preceding::td[2]</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
-      <name>xpath:href</name>
-      <value>(//a[contains(@href, '#')])[6]</value>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Checkbox is un-checked'])[1]/preceding::td[5]</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:position</name>
-      <value>//span[2]/span/span/a</value>
+      <type>Main</type>
+      <value>//div[2]/table/tbody/tr/td/div[2]/div/fieldset/table/tbody/tr[3]/td/div[2]/div/table/tbody/tr[3]/td[7]</value>
    </webElementXpaths>
 </WebElementEntity>
