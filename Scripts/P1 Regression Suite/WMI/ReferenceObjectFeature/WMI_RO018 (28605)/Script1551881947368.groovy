@@ -61,7 +61,7 @@ WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feat
 WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 
 'Save Document from Bussiness Model'
-WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/ImportMode_Interactive/span_Save'))
+WebUI.click(findTestObject('Page_WMI_NEW/Reference_Object_Feature/ImportMode_Interactive/btn_Save'))
 WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 
 String windowTitle= WebUI.getWindowTitle()
@@ -70,7 +70,7 @@ String windowTitleAfterSave = str_array[0].trim()
 println windowTitleAfterSave
 
 'Close Window() and If Error Present Document will not get Close'
-CustomKeywords.'actions.Window.clickElementAndWaitForWindowClose'(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/ImportMode_Interactive/span_Close Window'), GlobalVariable.G_LongTimeout)
+CustomKeywords.'actions.Window.clickElementAndWaitForWindowClose'(findTestObject('Page_WMI_NEW/Reference_Object_Feature/ImportMode_Interactive/btn_CloseWindow'), GlobalVariable.G_LongTimeout)
 
 'Switch to parent window'
 WebUI.switchToWindowIndex(0)
@@ -99,7 +99,7 @@ WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 WebUI.verifyMatch(docTypeInRecentDocuments, windowTitleAfterSave,false)
 
 'Close Window() and If Error Present Document will not get Close'
-CustomKeywords.'actions.Window.clickElementAndWaitForWindowClose'(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/ImportMode_Interactive/span_Close Window'), GlobalVariable.G_LongTimeout)
+CustomKeywords.'actions.Window.clickElementAndWaitForWindowClose'(findTestObject('Page_WMI_NEW/Reference_Object_Feature/ImportMode_Interactive/btn_CloseWindow'), GlobalVariable.G_LongTimeout)
 
 
 

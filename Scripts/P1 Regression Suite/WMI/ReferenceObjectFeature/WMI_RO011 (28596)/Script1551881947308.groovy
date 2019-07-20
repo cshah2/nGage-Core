@@ -28,7 +28,7 @@ WebUI.switchToWindowTitle('(Doc ID: NEW )')
 WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 
 'Click on Save from master object'
-WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/ImportMode_Interactive/span_Save'))
+WebUI.click(findTestObject('Page_WMI_NEW/Reference_Object_Feature/ImportMode_Interactive/btn_Save'))
 WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 WebUI.switchToWindowIndex(1)
 
@@ -37,7 +37,7 @@ String[] str_array = windowTitle.split("-")
 String windowTitleAfterSave = str_array[0].trim()
 
 'Close Window() and If Error Present Document will not get Close'
-CustomKeywords.'actions.Window.clickElementAndWaitForWindowClose'(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/ImportMode_Interactive/span_Close Window'), GlobalVariable.G_LongTimeout)
+CustomKeywords.'actions.Window.clickElementAndWaitForWindowClose'(findTestObject('Page_WMI_NEW/Reference_Object_Feature/ImportMode_Interactive/btn_CloseWindow'), GlobalVariable.G_LongTimeout)
 
 'Switch to parent window'
 WebUI.switchToWindowIndex(0)
@@ -105,7 +105,7 @@ CustomKeywords.'actions.Common.setTextJQuery'(findTestObject('Object Repository/
 WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/ImportMode_Interactive/tab3_Interactive/input_New (Render All Field Ty'))
 
 'Close Window'
-CustomKeywords.'actions.Window.clickElementAndWaitForWindowClose'(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/ImportMode_Interactive/span_Close Window'), GlobalVariable.G_LongTimeout)
+CustomKeywords.'actions.Window.clickElementAndWaitForWindowClose'(findTestObject('Page_WMI_NEW/Reference_Object_Feature/ImportMode_Interactive/btn_CloseWindow'), GlobalVariable.G_LongTimeout)
 
 'Switch to parent window'
 WebUI.switchToWindowIndex(0)
