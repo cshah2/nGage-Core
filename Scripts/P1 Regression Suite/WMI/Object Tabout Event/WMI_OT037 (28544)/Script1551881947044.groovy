@@ -11,6 +11,9 @@ import com.kms.katalon.core.testdata.TestData as TestData
 import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+
+import common.DocClass
+import common.DocType
 import internal.GlobalVariable as GlobalVariable
 
 'Login Into Application'
@@ -20,71 +23,55 @@ CustomKeywords.'actions.Common.login'()
 WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))
 
 'Verify Doc class and Doc type dropdowns should be displayed'
-CustomKeywords.'actions.Common.selectDocClassAndDocTypeForGlobalNew'('Object Tabout Events', 'DropDown Event')
+CustomKeywords.'actions.Common.selectDocClassAndDocTypeForGlobalNew'(DocClass.OBJECT_TABOUT_EVENT.toString(), DocType.DROPDOWN_EVENT.toString())
 WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'), GlobalVariable.G_LongTimeout)
 WebUI.click(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'))
 
-WebUI.switchToWindowTitle('(Doc ID: NEW )')
-WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
-
-'Verify Business Model View - DropDown Event doc should be open'
-WebUI.verifyElementVisible(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/DropDown Event/span_Business Model View - Dro'))
-String actualtext= WebUI.getText(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/DropDown Event/span_Business Model View - Dro'))
-WebUI.verifyMatch(actualtext, 'Business Model View - DropDown Event', false)
-WebUI.verifyElementVisible(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/DropDown Event/span_This WMI imparts - Field'))
-WebUI.verifyElementVisible(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/DropDown Event/td_InformationDropDown Event'))
-
-'From master object select Value 3 from drop down'
-WebUI.selectOptionByValue(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/DropDown Event/select_Value 1Value 2Value 3Va'),'3', false)
-CustomKeywords.'actions.Common.waitForTabLoading'(null, GlobalVariable.G_LongTimeout)
-
-'Verify In String Filed value should be "Selected Value (Value 3 or above)"'
-String getText = WebUI.getAttribute(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/DropDown Event/input_String Field (Value Chan'),'value')
-WebUI.verifyMatch(getText,'Selected Value (Value 3 or above)', false)
-
-'Verify Date Field is Visible'
-WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/DropDown Event/input_Date Field (Visibility C'))
-WebUI.verifyElementPresent(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/DropDown Event/input_Date Field (Visibility C'),GlobalVariable.G_LongTimeout)
-
-'Click On Save'
-WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/DropDown Event/span_Save'))
-WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
-
-'Get Window Title of Saved Document'
-String windowTitle= WebUI.getWindowTitle()
-String[] str_array = windowTitle.split("-")
-String windowTitleAfterSave = str_array[0].trim()
-println windowTitleAfterSave
-
-'Close Window() and If Error Present Document will not get Close'
-CustomKeywords.'actions.Window.clickElementAndWaitForWindowClose'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/DropDown Event/span_Close Window'),GlobalVariable.G_LongTimeout)
-
-'Switch to parent window '
-WebUI.switchToWindowIndex(0)
-WebUI.click(findTestObject('Page_nGage_Dashboard/Home/span_ui-button-icon-primary ui'))
-
-'Navigate to Recent Documents'
-CustomKeywords.'actions.MenuBar.clickTreeMenu'('HOME', 'Recent Documents')
-CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/iframe_iframe_103'))
-
-'Sort records DocID Descending'
-CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/Home/tableHeader_RecentDocuments'), 'Doc ID')
-CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/Home/tableHeader_RecentDocuments'), 'Doc ID')
-
-'Get Document Type from Recent Documents'
-int docTypeColumnPosition =CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Page_nGage_Dashboard/Home/tableHeader_RecentDocuments'),'Doc Type')
-String docTypeInRecentDoc = CustomKeywords.'actions.Table.getCellText'(findTestObject('Object Repository/Page_nGage_Dashboard/Home/table_MyDocumentResults'), 1,docTypeColumnPosition)
-
-'Open recent document'
-CustomKeywords.'actions.Table.clickCell'(findTestObject('Object Repository/Page_nGage_Dashboard/Home/table_MyDocumentResults'), 1, 7)
+'Switch to WMI Page'
 WebUI.switchToWindowIndex(1)
 WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 
-'Verify Document Got Opened'
-WebUI.verifyMatch(docTypeInRecentDoc, windowTitleAfterSave,false)
+'Wait for WMI to load'
+WebUI.waitForElementVisible(findTestObject('Page_WMI_NEW/Object Tabout Event/DropDown Event/select_DropdownControl'), GlobalVariable.G_LongTimeout)
 
-'Verify Saved Document'
-WebUI.verifyOptionPresentByValue(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/DropDown Event/select_Value 1Value 2Value 3Va'), '3', false, GlobalVariable.G_LongTimeout)
+'Select Value 1 in drop down'
+String option = 'Value 3'
+WebUI.selectOptionByLabel(findTestObject('Page_WMI_NEW/Object Tabout Event/DropDown Event/select_DropdownControl'), option, false)
 
-'Close Window() and If Error Present Document will not get Close'
-CustomKeywords.'actions.Window.clickElementAndWaitForWindowClose'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/DropDown Event/span_Close Window'),GlobalVariable.G_LongTimeout)
+'Wait for Javascript event to complete'
+CustomKeywords.'actions.Common.waitForTabLoading'(null, GlobalVariable.G_LongTimeout)
+
+'Verify value in String field'
+String expText = 'Selected Value (Value 3 or above)'
+WebUI.verifyElementAttributeValue(findTestObject('Page_WMI_NEW/Object Tabout Event/DropDown Event/input_StringField'), 'value', expText, GlobalVariable.G_LongTimeout)
+
+'Verify Date Field is Visible'
+WebUI.verifyElementVisible(findTestObject('Page_WMI_NEW/Object Tabout Event/DropDown Event/input_DateField'))
+
+'Save WMI'
+WebUI.click(findTestObject('Page_WMI_NEW/Object Tabout Event/DropDown Event/btn_Save'))
+WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+
+'Close WMI'
+CustomKeywords.'actions.Window.clickElementAndWaitForWindowClose'(findTestObject('Page_WMI_NEW/Object Tabout Event/DropDown Event/btn_CloseWindow'), GlobalVariable.G_LongTimeout)
+
+'Switch to parent window '
+WebUI.switchToWindowIndex(0)
+
+'Clode global new popup dialog'
+WebUI.click(findTestObject('Page_nGage_Dashboard/Home/span_ui-button-icon-primary ui'))
+
+'Open first document from recent grid'
+CustomKeywords.'actions.Common.openDocumentFromRecentGrid'(1)
+
+'Wait for WMI to load'
+WebUI.waitForElementVisible(findTestObject('Page_WMI_NEW/Object Tabout Event/DropDown Event/select_DropdownControl'), GlobalVariable.G_LongTimeout)
+
+'Verify option selected in drop down field'
+WebUI.verifyOptionSelectedByLabel(findTestObject('Page_WMI_NEW/Object Tabout Event/DropDown Event/select_DropdownControl'), option, false, GlobalVariable.G_LongTimeout)
+
+'Verify value in String field'
+WebUI.verifyElementAttributeValue(findTestObject('Page_WMI_NEW/Object Tabout Event/DropDown Event/input_StringField'), 'value', expText, GlobalVariable.G_LongTimeout)
+
+'Verify Date Field is Visible'
+WebUI.verifyElementVisible(findTestObject('Page_WMI_NEW/Object Tabout Event/DropDown Event/input_DateField'))

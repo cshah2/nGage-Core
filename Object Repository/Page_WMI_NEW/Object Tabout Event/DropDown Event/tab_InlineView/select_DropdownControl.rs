@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>input_Save</name>
+   <name>select_DropdownControl</name>
    <tag></tag>
-   <elementGuidId>028fa143-7bc5-4584-87aa-c619bb7084f8</elementGuidId>
+   <elementGuidId>a9eb966e-7174-4672-9af2-d71ad3ea6ff3</elementGuidId>
    <selectorMethod>BASIC</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
    <webElementProperties>
@@ -11,63 +11,71 @@
       <matchCondition>equals</matchCondition>
       <name>tag</name>
       <type>Main</type>
-      <value>input</value>
-   </webElementProperties>
-   <webElementProperties>
-      <isSelected>true</isSelected>
-      <matchCondition>equals</matchCondition>
-      <name>type</name>
-      <type>Main</type>
-      <value>submit</value>
+      <value>select</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
       <name>name</name>
       <type>Main</type>
-      <value>eform_mcb67676$TabContainer_4$TabRef_2$phBO_5_BO$btnSaveInlineDoc</value>
+      <value>eform_mcb67676$TabContainer_4$TabRef_2$phBO_5_BO$eidmKey_BM_String_WL</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
-      <name>value</name>
+      <name>onchange</name>
       <type>Main</type>
-      <value>Save</value>
+      <value>javascript:setTimeout('__doPostBack(\'eform_mcb67676$TabContainer_4$TabRef_2$phBO_5_BO$eidmKey_BM_String_WL\',\'\')', 0)</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
       <name>id</name>
       <type>Main</type>
-      <value>eform_mcb67676_TabContainer_4_TabRef_2_phBO_5_BO_btnSaveInlineDoc</value>
+      <value>eform_mcb67676_TabContainer_4_TabRef_2_phBO_5_BO_eidmKey_BM_String_WL</value>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>tabindex</name>
+      <type>Main</type>
+      <value>1</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>class</name>
       <type>Main</type>
-      <value>suite-button ui-button ui-widget ui-state-default ui-corner-all ui-state-hover</value>
+      <value>FieldValDrp</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
-      <name>formnovalidate</name>
+      <name>tabseq</name>
       <type>Main</type>
-      <value>formnovalidate</value>
+      <value>1</value>
    </webElementProperties>
    <webElementProperties>
-      <isSelected>false</isSelected>
+      <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
-      <name>role</name>
+      <name>text</name>
       <type>Main</type>
-      <value>button</value>
+      <value>
+										
+										Value 1
+										Value 2
+										Value 3
+										Value 4
+										Value 5
+
+									</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>id(&quot;eform_mcb67676_TabContainer_4_TabRef_2_phBO_5_BO_btnSaveInlineDoc&quot;)</value>
+      <value>id(&quot;eform_mcb67676_TabContainer_4_TabRef_2_phBO_5_BO_eidmKey_BM_String_WL&quot;)</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
@@ -80,42 +88,49 @@
       <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:attributes</name>
-      <value>//input[@id='eform_mcb67676_TabContainer_4_TabRef_2_phBO_5_BO_btnSaveInlineDoc']</value>
+      <type>Main</type>
+      <value>//select[@id='eform_mcb67676_TabContainer_4_TabRef_2_phBO_5_BO_eidmKey_BM_String_WL']</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:idRelative</name>
-      <value>//span[@id='leftspan']/input</value>
+      <type>Main</type>
+      <value>//div[@id='eform_mcb67676_TabContainer_4_TabRef_2_phBO_5_BO_secpnl_2']/table/tbody/tr[2]/td/table/tbody/tr/td[3]/select</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:neighbor</name>
-      <value>(.//*[normalize-space(text()) and normalize-space(.)='DropDown Event - 01/10/2019'])[2]/following::input[1]</value>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Reference Object Dropdown Control'])[2]/following::select[1]</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:neighbor</name>
-      <value>(.//*[normalize-space(text()) and normalize-space(.)='Chintan Shah'])[5]/following::input[2]</value>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='This WMI imparts - Field Events in DropDown for Reference Object'])[2]/following::select[1]</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:neighbor</name>
-      <value>(.//*[normalize-space(text()) and normalize-space(.)='Information:InlineView'])[1]/preceding::input[5]</value>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='String Field (Value Change)'])[3]/preceding::select[1]</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:neighbor</name>
-      <value>(.//*[normalize-space(text()) and normalize-space(.)='This WMI imparts - Field Events in DropDown for Reference Object'])[2]/preceding::input[5]</value>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Date Field (Visibility Change)'])[3]/preceding::select[1]</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:position</name>
-      <value>//span/input</value>
+      <type>Main</type>
+      <value>//div[2]/table/tbody/tr/td/div[2]/div/fieldset/table/tbody/tr[4]/td/div[2]/table/tbody/tr[2]/td/table/tbody/tr/td[2]/div/table/tbody/tr[2]/td/table/tbody/tr/td[3]/select</value>
    </webElementXpaths>
 </WebElementEntity>

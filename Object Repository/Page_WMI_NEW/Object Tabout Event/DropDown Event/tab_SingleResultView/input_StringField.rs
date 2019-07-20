@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>select_Value 1Value 2Value 3Va</name>
+   <name>input_StringField</name>
    <tag></tag>
-   <elementGuidId>bb72e5d8-3fcd-4351-931c-48e2acfaacf1</elementGuidId>
+   <elementGuidId>adcb604d-63a9-4246-b1de-9eb3bb72af77</elementGuidId>
    <selectorMethod>BASIC</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
    <webElementProperties>
@@ -11,71 +11,77 @@
       <matchCondition>equals</matchCondition>
       <name>tag</name>
       <type>Main</type>
-      <value>select</value>
+      <value>input</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
       <name>name</name>
       <type>Main</type>
-      <value>eform_mcb67676$TabContainer_4$TabRef_1$phBO_4_BO$eidmKey_BM_String_WL</value>
+      <value>eform_mcb67676$TabContainer_4$TabRef_1$phBO_4_BO$eidmKey_BM_String</value>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>type</name>
+      <type>Main</type>
+      <value>text</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
-      <name>onchange</name>
+      <name>value</name>
       <type>Main</type>
-      <value>javascript:setTimeout('__doPostBack(\'eform_mcb67676$TabContainer_4$TabRef_1$phBO_4_BO$eidmKey_BM_String_WL\',\'\')', 0)</value>
+      <value>Selected Value (Value 1)</value>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>maxlength</name>
+      <type>Main</type>
+      <value>200</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
       <name>id</name>
       <type>Main</type>
-      <value>eform_mcb67676_TabContainer_4_TabRef_1_phBO_4_BO_eidmKey_BM_String_WL</value>
+      <value>eform_mcb67676_TabContainer_4_TabRef_1_phBO_4_BO_eidmKey_BM_String</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>tabindex</name>
       <type>Main</type>
-      <value>1</value>
+      <value>2</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>class</name>
       <type>Main</type>
-      <value>FieldValDrp</value>
+      <value>inputclass</value>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>onkeyup</name>
+      <type>Main</type>
+      <value>return ismaxlength(this,'200',event);</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>tabseq</name>
       <type>Main</type>
-      <value>1</value>
-   </webElementProperties>
-   <webElementProperties>
-      <isSelected>true</isSelected>
-      <matchCondition>equals</matchCondition>
-      <name>text</name>
-      <type>Main</type>
-      <value>
-																				
-																				Value 1
-																				Value 2
-																				Value 3
-																				Value 4
-																				Value 5
-
-																			</value>
+      <value>2</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>id(&quot;eform_mcb67676_TabContainer_4_TabRef_1_phBO_4_BO_eidmKey_BM_String_WL&quot;)</value>
+      <value>id(&quot;eform_mcb67676_TabContainer_4_TabRef_1_phBO_4_BO_eidmKey_BM_String&quot;)</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
@@ -88,42 +94,49 @@
       <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:attributes</name>
-      <value>//select[@id='eform_mcb67676_TabContainer_4_TabRef_1_phBO_4_BO_eidmKey_BM_String_WL']</value>
+      <type>Main</type>
+      <value>//input[@id='eform_mcb67676_TabContainer_4_TabRef_1_phBO_4_BO_eidmKey_BM_String']</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:idRelative</name>
-      <value>//div[@id='eform_mcb67676_TabContainer_4_TabRef_1_phBO_4_BO_secpnl_2']/table/tbody/tr[2]/td/table/tbody/tr/td[3]/select</value>
+      <type>Main</type>
+      <value>//div[@id='eform_mcb67676_TabContainer_4_TabRef_1_phBO_4_BO_secpnl_2']/table/tbody/tr[2]/td/table/tbody/tr[2]/td[3]/input</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:neighbor</name>
-      <value>(.//*[normalize-space(text()) and normalize-space(.)='Reference Object Dropdown Control'])[1]/following::select[1]</value>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='String Field (Value Change)'])[2]/following::input[1]</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:neighbor</name>
-      <value>(.//*[normalize-space(text()) and normalize-space(.)='This WMI imparts - Field Events in DropDown for Reference Object'])[1]/following::select[1]</value>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Reference Object Dropdown Control'])[1]/following::input[1]</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:neighbor</name>
-      <value>(.//*[normalize-space(text()) and normalize-space(.)='String Field (Value Change)'])[2]/preceding::select[1]</value>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Date Field (Visibility Change)'])[2]/preceding::input[1]</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:neighbor</name>
-      <value>(.//*[normalize-space(text()) and normalize-space(.)='Date Field (Visibility Change)'])[2]/preceding::select[1]</value>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Revise'])[2]/preceding::input[3]</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:position</name>
-      <value>//div[2]/div/table/tbody/tr/td/div[2]/div/fieldset/table/tbody/tr[4]/td/div[2]/table/tbody/tr[2]/td/table/tbody/tr/td[2]/div/table/tbody/tr[2]/td/table/tbody/tr/td[3]/select</value>
+      <type>Main</type>
+      <value>//div[2]/div/table/tbody/tr/td/div[2]/div/fieldset/table/tbody/tr[4]/td/div[2]/table/tbody/tr[2]/td/table/tbody/tr/td[2]/div/table/tbody/tr[2]/td/table/tbody/tr[2]/td[3]/input</value>
    </webElementXpaths>
 </WebElementEntity>

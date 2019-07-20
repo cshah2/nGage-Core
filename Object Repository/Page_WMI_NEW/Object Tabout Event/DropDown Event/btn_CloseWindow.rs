@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>span_Save</name>
+   <name>btn_CloseWindow</name>
    <tag></tag>
-   <elementGuidId>77590b38-bbdf-4edb-913b-07e4f3e44e37</elementGuidId>
+   <elementGuidId>36dc09c9-f860-4d35-b458-ae93ba36e223</elementGuidId>
    <selectorMethod>BASIC</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
    <webElementProperties>
@@ -25,38 +25,48 @@
       <matchCondition>equals</matchCondition>
       <name>text</name>
       <type>Main</type>
-      <value> Save</value>
+      <value> Close Window</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>id(&quot;actionsMenu_Submenu_1&quot;)/a[@class=&quot;ui-button ui-widget ui-button-text-only ui-state-default ui-state-hover&quot;]/span[@class=&quot;ui-button-text&quot;]</value>
-   </webElementProperties>
-   <webElementProperties>
-      <isSelected>true</isSelected>
-      <matchCondition>equals</matchCondition>
-      <name>ref_element</name>
-      <type>Main</type>
-      <value>Object Repository/Page_WMI_NEW/Object Tabout Event/DropDown Event/iframe_Close Window_ContentPla</value>
+      <value>id(&quot;masterPageMenu&quot;)/li[@class=&quot;ui-menubar-item&quot;]/a[@class=&quot;ui-button ui-widget ui-button-text-only ui-state-default ui-state-hover&quot;]/span[@class=&quot;ui-button-text&quot;]</value>
    </webElementProperties>
    <webElementXpaths>
       <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:idRelative</name>
-      <value>//li[@id='actionsMenu_Submenu_1']/a/span</value>
+      <type>Main</type>
+      <value>//ul[@id='masterPageMenu']/li[2]/a/span</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:neighbor</name>
-      <value>(.//*[normalize-space(text()) and normalize-space(.)='Delete'])[1]/preceding::span[1]</value>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='WMI Harness'])[1]/following::span[1]</value>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Menus'])[1]/preceding::span[1]</value>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Capture object:'])[1]/preceding::span[2]</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:position</name>
-      <value>//span</value>
+      <type>Main</type>
+      <value>//li[2]/a/span</value>
    </webElementXpaths>
 </WebElementEntity>

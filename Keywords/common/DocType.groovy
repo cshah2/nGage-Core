@@ -64,7 +64,9 @@ public enum DocType {
 	RADIO_LIST_EVENT("Radio List Event"),
 	CHECKBOX_LIST_EVENT("Checkbox List Event"),
 	CHECKBOX_EVENT("Checkbox Event"),
-	LABEL_EVENT("Label Event")
+	LABEL_EVENT("Label Event"),
+	DROPDOWN_EVENT("DropDown Event")
+	
 
 	private final String text
 

@@ -11,27 +11,39 @@
    <rerunFailedTestCasesOnly>false</rerunFailedTestCasesOnly>
    <testSuiteGuid>230b2853-26c8-4ef9-b857-25aaa1522450</testSuiteGuid>
    <testCaseLink>
-      <guid>58d38759-5296-41f0-b342-2acd6ad33e0f</guid>
+      <guid>6e777229-51d9-4cc8-9b13-ac909d50e1dd</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/P1 Regression Suite/WMI/Object Tabout Event/WMI_OT028 (28526)</testCaseId>
+      <testCaseId>Test Cases/P1 Regression Suite/WMI/Object Tabout Event/WMI_OT043 (28554)</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>ffa90ed5-ab27-46fa-ba52-bde6f665805b</guid>
+      <guid>cd1760d1-98c1-4868-bad4-3e57cf14f7fc</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/P1 Regression Suite/WMI/Object Tabout Event/WMI_OT029 (28527)</testCaseId>
+      <testCaseId>Test Cases/P1 Regression Suite/WMI/Object Tabout Event/WMI_OT042 (28553)</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>9b7ba186-5797-4e33-a907-dc5a1620da0f</guid>
+      <guid>61e32f8d-bdc7-46fd-8bc7-fbd4c12e8db2</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/P1 Regression Suite/WMI/Object Tabout Event/WMI_OT030 (28529)</testCaseId>
+      <testCaseId>Test Cases/P1 Regression Suite/WMI/Object Tabout Event/WMI_OT041 (28552)</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>2180a6f0-ceac-4a37-9a6f-a68f2e5ec69e</guid>
+      <guid>e4573cad-00d9-4cab-8d0b-e3ee2bd0a37c</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/P1 Regression Suite/WMI/Object Tabout Event/WMI_OT031 (28530)</testCaseId>
+      <testCaseId>Test Cases/P1 Regression Suite/WMI/Object Tabout Event/WMI_OT040 (28550)</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>492baf12-b88e-4688-a0cd-6aa74c9b3911</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/P1 Regression Suite/WMI/Object Tabout Event/WMI_OT039 (28549)</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>afd218e3-28dd-4d08-829f-c4fe2d1632c4</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/P1 Regression Suite/WMI/Object Tabout Event/WMI_OT038 (28547)</testCaseId>
    </testCaseLink>
 </TestSuiteEntity>

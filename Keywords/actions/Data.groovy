@@ -178,6 +178,10 @@ public class Data {
 				labelEvent(null)
 				break
 
+			case DocType.DROPDOWN_EVENT:
+				dropdownEvent(null)
+				break
+
 			default:
 				WebUI.takeScreenshot()
 				KeywordUtil.markFailedAndStop('Unable to create document, Invalid docType provided : '+docType)
@@ -784,20 +788,33 @@ public class Data {
 		'Close WMI'
 		new actions.Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI_NEW/Object Tabout Event/CheckBox Event/span_Close Window'), GlobalVariable.G_LongTimeout)
 	}
-	
+
 	private void labelEvent(Map<Fields, String> data) {
-		
+
 		'Wait for WMI to load'
 		WebUI.waitForElementVisible(findTestObject('Page_WMI_NEW/Object Tabout Event/Label Event/lbl_Control1'), GlobalVariable.G_LongTimeout)
-		
+
 		'Enter Integer'
 		WebUI.setText(findTestObject('Page_WMI_NEW/Object Tabout Event/Label Event/input_IntegerField'), '1')
-		
+
 		'Save WMI'
 		WebUI.click(findTestObject('Page_WMI_NEW/Object Tabout Event/Label Event/btn_Save'))
 		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
-		
+
 		'Close WMI'
 		new actions.Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI_NEW/Object Tabout Event/Label Event/btn_CloseWindow'), GlobalVariable.G_LongTimeout)
+	}
+	
+	private void dropdownEvent(Map<Fields, String> data) {
+		
+		'Wait for WMI to load'
+		WebUI.waitForElementVisible(findTestObject('Page_WMI_NEW/Object Tabout Event/DropDown Event/select_DropdownControl'), GlobalVariable.G_LongTimeout)
+		
+		'Save WMI'
+		WebUI.click(findTestObject('Page_WMI_NEW/Object Tabout Event/DropDown Event/btn_Save'))
+		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+		
+		'Closw WMI'
+		new actions.Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI_NEW/Object Tabout Event/DropDown Event/btn_CloseWindow'), GlobalVariable.G_LongTimeout)
 	}
 }

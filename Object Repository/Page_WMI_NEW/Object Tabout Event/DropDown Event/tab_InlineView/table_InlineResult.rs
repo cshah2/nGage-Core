@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>tr_ThirdRow_TableGVGrid</name>
+   <name>table_InlineResult</name>
    <tag></tag>
-   <elementGuidId>cfa3bfc7-df2c-4b82-b4e2-2169684fde10</elementGuidId>
+   <elementGuidId>bd584a1e-3388-46d1-977e-6cba22bf1e2f</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>BASIC</key>
-         <value></value>
+         <key>XPATH</key>
+         <value> //table[@id='eform_mcb67676_TabContainer_4_TabRef_2_phBO_5_BO_grc']</value>
       </entry>
       <entry>
-         <key>XPATH</key>
-         <value>//*[@id=&quot;eform_mcb67676_TabContainer_4_TabRef_2_phBO_5_BO_grc&quot;]/tbody/tr[4]/td[8]</value>
+         <key>BASIC</key>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
