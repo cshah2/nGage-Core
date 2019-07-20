@@ -16,79 +16,55 @@ import internal.GlobalVariable as GlobalVariable
 'Login Into Application'
 CustomKeywords.'actions.Common.login'()
 
-'select Doc Class as "Object Tabout Event " and Doc type as "Check Box event" from the dropdowns and click on OK button'
-WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))
-CustomKeywords.'actions.Common.selectDocClassAndDocTypeForGlobalNew'('Object Tabout Events', 'Checkbox Event')
-WebUI.click(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'))
+'Open first document from recent grid'
+CustomKeywords.'actions.Common.openDocumentFromRecentGrid'(2)
 
-WebUI.switchToWindowTitle('(Doc ID: NEW )')
-WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+'Wait for WMI to load'
+WebUI.verifyElementVisible(findTestObject('Page_WMI_NEW/Object Tabout Event/CheckBox Event/chkbox_Control'))
 
-'verify Business Model View -Checkbox Event doc should be open'
-WebUI.verifyElementVisible(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/CheckBox Event/span_(Title)Business Model View - Che'))
+'Scroll to Single Result view'
+WebUI.scrollToElement(findTestObject('Page_WMI_NEW/Object Tabout Event/CheckBox Event/tab_SingleResult/input_StringField'), GlobalVariable.G_LongTimeout)
 
-'click on save and close'
-WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/CheckBox Event/span_Save'))
-CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/CheckBox Event/iframe_Close Window_ContentPla'))
-WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/CheckBox Event/span_Close Window'))
+'Verify checkbox is checked'
+WebUI.verifyElementChecked(findTestObject('Page_WMI_NEW/Object Tabout Event/CheckBox Event/tab_SingleResult/chkbox_Control'), GlobalVariable.G_LongTimeout)
 
-'switch to main window'
-WebUI.switchToWindowIndex('0')
+'Uncheck Checkbox'
+WebUI.uncheck(findTestObject('Page_WMI_NEW/Object Tabout Event/CheckBox Event/tab_SingleResult/chkbox_Control'))
 
-'Close "create new" popup dialog'
-WebUI.switchToWindowTitle('Savana nGage')
-WebUI.click(findTestObject('Page_nGage_Dashboard/Home/span_ui-button-icon-primary ui'))
-//////////
-'Go to Recent Documents tab'
-WebUI.click(findTestObject('Page_nGage_Dashboard/Home/a_Recent Documents'))
-CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/iframe_iframe_103'))
-
-'Sort Record in grid by DocID Descending'
-CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/Home/tableHeader_RecentDocuments'), 'Doc ID')
-CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/Home/tableHeader_RecentDocuments'), 'Doc ID')
-
-'Open Document'
-WebUI.click(findTestObject('Page_nGage_Dashboard/Home/column_RecentDocuments LastAction'))
-WebUI.switchToWindowIndex(1)
-WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
-
-'verify Business Model View -Checkbox Event doc should be open'
-WebUI.verifyElementVisible(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/CheckBox Event/span_(Title)Business Model View - Che'))
-
-'Uncheck Master Object CheckBox Control check box'
-WebUI.uncheck(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/CheckBox Event/input_Master Object CheckBox C'))
+'Wait for event to complete'
 CustomKeywords.'actions.Common.waitForTabLoading'(null, GlobalVariable.G_LongTimeout)
 
-'verify check box is unchecked'
-WebUI.verifyElementNotChecked(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/CheckBox Event/input_Master Object CheckBox C'), GlobalVariable.G_LongTimeout)
+'Verify value in textbox field'
+String textValue = 'Checkbox is un-checked(not Read only)'
+WebUI.verifyElementAttributeValue(findTestObject('Page_WMI_NEW/Object Tabout Event/CheckBox Event/tab_SingleResult/input_StringField'), 'value', textValue, GlobalVariable.G_LongTimeout)
 
-'verify textbox is editable'
-WebUI.verifyElementAttributeValue(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/CheckBox Event/input_String Field (Value Chan'), 'value', 'Checkbox is un-checked(not Read only)', GlobalVariable.G_LongTimeout)
-//WebUI.verifyElementAttributeValue(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/CheckBox Event/input_String Field (Value Chan'), 'readonly', 'false', GlobalVariable.G_LongTimeout)
-WebUI.verifyElementNotHasAttribute(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/CheckBox Event/input_String Field (Value Chan'), 'readonly', GlobalVariable.G_LongTimeout)
+'Verify textbox field is not disabled'
+WebUI.verifyElementNotHasAttribute(findTestObject('Page_WMI_NEW/Object Tabout Event/CheckBox Event/tab_SingleResult/input_StringField'), 'readonly', GlobalVariable.G_LongTimeout)
 
-'click on save and close'
+'Save WMI'
 WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/CheckBox Event/span_Save'))
-CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/CheckBox Event/iframe_Close Window_ContentPla'))
-WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/CheckBox Event/span_Close Window'))
+WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+
+'Close WMI'
+CustomKeywords.'actions.Window.clickElementAndWaitForWindowClose'(findTestObject('Page_WMI_NEW/Object Tabout Event/CheckBox Event/span_Close Window'), GlobalVariable.G_LongTimeout)
 
 'switch to main window'
 WebUI.switchToWindowIndex('0')
 
-'Go to Recent Documents tab'
-WebUI.click(findTestObject('Page_nGage_Dashboard/Home/a_Recent Documents'))
-CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/iframe_iframe_103'))
+'Clear cookies and Login back into portal'
+CustomKeywords.'actions.Common.login'()
 
-'Sort Record in grid by DocID Descending'
-CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/Home/tableHeader_RecentDocuments'), 'Doc ID')
-CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/Home/tableHeader_RecentDocuments'), 'Doc ID')
+'Open first document from recent grid'
+CustomKeywords.'actions.Common.openDocumentFromRecentGrid'(1)
 
-'Open Document'
-WebUI.click(findTestObject('Page_nGage_Dashboard/Home/column_RecentDocuments LastAction'))
-WebUI.switchToWindowIndex(1)
-WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+'Wait for WMI to load'
+WebUI.verifyElementVisible(findTestObject('Page_WMI_NEW/Object Tabout Event/CheckBox Event/chkbox_Control'))
 
-'verify textbox in the opened document is editable'
-WebUI.verifyElementAttributeValue(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/CheckBox Event/input_String Field (Value Chan'), 'value', 'Checkbox is un-checked(not Read only)', GlobalVariable.G_LongTimeout)
-//WebUI.verifyElementAttributeValue(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/CheckBox Event/input_String Field (Value Chan'), 'readonly', 'false', GlobalVariable.G_LongTimeout)
-WebUI.verifyElementNotHasAttribute(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/CheckBox Event/input_String Field (Value Chan'), 'readonly', GlobalVariable.G_LongTimeout)
+'Verify checkbox is unchecked'
+WebUI.verifyElementNotChecked(findTestObject('Page_WMI_NEW/Object Tabout Event/CheckBox Event/chkbox_Control'), GlobalVariable.G_LongTimeout)
+
+'Verify value in textbox field'
+WebUI.verifyElementAttributeValue(findTestObject('Page_WMI_NEW/Object Tabout Event/CheckBox Event/input_StringField'), 'value', textValue, GlobalVariable.G_LongTimeout)
+
+'Verify textbox field is not disabled'
+WebUI.verifyElementNotHasAttribute(findTestObject('Page_WMI_NEW/Object Tabout Event/CheckBox Event/input_StringField'), 'readonly', GlobalVariable.G_LongTimeout)

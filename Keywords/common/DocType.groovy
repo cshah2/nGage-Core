@@ -62,7 +62,8 @@ public enum DocType {
 	STANDARD_GRID("Standard Grid"),
 	TEXTBOX_WITH_SECTION_EVENT("Textbox With Section Event"),
 	RADIO_LIST_EVENT("Radio List Event"),
-	CHECKBOX_LIST_EVENT("Checkbox List Event")
+	CHECKBOX_LIST_EVENT("Checkbox List Event"),
+	CHECKBOX_EVENT("Checkbox Event")
 
 	private final String text
 

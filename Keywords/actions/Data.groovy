@@ -170,6 +170,10 @@ public class Data {
 				checkboxListEvent(null)
 				break
 
+			case DocType.CHECKBOX_EVENT:
+				checkboxEvent(null)
+				break
+
 			default:
 				WebUI.takeScreenshot()
 				KeywordUtil.markFailedAndStop('Unable to create document, Invalid docType provided : '+docType)
@@ -763,5 +767,17 @@ public class Data {
 		'close WMI'
 		new actions.Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI_NEW/Object Tabout Event/CheckboxListEvent/btn_CloseWindow'), GlobalVariable.G_LongTimeout)
 	}
-
+	
+	private void checkboxEvent(Map<Fields, String> data) {
+		
+		'Wait for WMI to load'
+		WebUI.verifyElementVisible(findTestObject('Page_WMI_NEW/Object Tabout Event/CheckBox Event/chkbox_Control'))
+	
+		'Save WMI'
+		WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/CheckBox Event/span_Save'))
+		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+		
+		'Close WMI'
+		new actions.Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI_NEW/Object Tabout Event/CheckBox Event/span_Close Window'), GlobalVariable.G_LongTimeout)
+	}
 }

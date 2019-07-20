@@ -16,58 +16,57 @@ import internal.GlobalVariable as GlobalVariable
 'Login Into Application'
 CustomKeywords.'actions.Common.login'()
 
-'select Doc Class as "Object Tabout Event " and Doc type as "Check Box event" from the dropdowns and click on OK button' 
+'Click on Global New button'
 WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))
+
+'select Doc Class as "Object Tabout Event " and Doc type as "Check Box event" from the dropdowns and click on OK button' 
 CustomKeywords.'actions.Common.selectDocClassAndDocTypeForGlobalNew'('Object Tabout Events', 'Checkbox Event')
 WebUI.click(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'))
 
-WebUI.switchToWindowTitle('(Doc ID: NEW )')
+'Switch to WMI'
+WebUI.switchToWindowIndex(1)
 WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 
-'verify Business Model View -Checkbox Event doc should be open'
-WebUI.verifyElementVisible(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/CheckBox Event/span_(Title)Business Model View - Che'))
+'Wait for page to load'
+WebUI.verifyElementVisible(findTestObject('Page_WMI_NEW/Object Tabout Event/CheckBox Event/chkbox_Control'))
 
-'verify textbox is editable'
-WebUI.verifyElementAttributeValue(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/CheckBox Event/input_String Field (Value Chan'), 'value', 'Checkbox is un-checked(not Read only)', GlobalVariable.G_LongTimeout)
-//WebUI.verifyElementAttributeValue(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/CheckBox Event/input_String Field (Value Chan'), 'readonly', 'false', GlobalVariable.G_LongTimeout)
-WebUI.verifyElementNotHasAttribute(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/CheckBox Event/input_String Field (Value Chan'), 'readonly', GlobalVariable.G_LongTimeout)
+'Select Checkbox'
+WebUI.check(findTestObject('Page_WMI_NEW/Object Tabout Event/CheckBox Event/chkbox_Control'))
 
-'Check Master Object CheckBox Control check box'
-WebUI.check(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/CheckBox Event/input_Master Object CheckBox C'))
+'Wait for event to complete'
 CustomKeywords.'actions.Common.waitForTabLoading'(null, GlobalVariable.G_LongTimeout)
 
-'verify check box is checked'
-WebUI.verifyElementChecked(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/CheckBox Event/input_Master Object CheckBox C'), GlobalVariable.G_LongTimeout)
+'Verify value in textbox field'
+String textValue = 'Checkbox is checked (Readonly)'
+WebUI.verifyElementAttributeValue(findTestObject('Page_WMI_NEW/Object Tabout Event/CheckBox Event/input_StringField'), 'value', textValue, GlobalVariable.G_LongTimeout)
 
-'verify textbox value is not editable'
-WebUI.verifyElementAttributeValue(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/CheckBox Event/input_String Field (Value Chan'), 'value', 'Checkbox is checked (Readonly)', GlobalVariable.G_LongTimeout)
-WebUI.verifyElementAttributeValue(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/CheckBox Event/input_String Field (Value Chan'), 'readonly', 'true', GlobalVariable.G_LongTimeout)
+'Verify textbox field is disabled'
+WebUI.verifyElementHasAttribute(findTestObject('Page_WMI_NEW/Object Tabout Event/CheckBox Event/input_StringField'), 'readonly', GlobalVariable.G_LongTimeout)
 
-'click on save and close'
+'Save WMI'
 WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/CheckBox Event/span_Save'))
-CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/CheckBox Event/iframe_Close Window_ContentPla'))
-WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/CheckBox Event/span_Close Window'))
+WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+
+'Close WMI'
+CustomKeywords.'actions.Window.clickElementAndWaitForWindowClose'(findTestObject('Page_WMI_NEW/Object Tabout Event/CheckBox Event/span_Close Window'), GlobalVariable.G_LongTimeout)
 
 'switch to main window'
 WebUI.switchToWindowIndex('0')
 
 'Close "create new" popup dialog'
-WebUI.switchToWindowTitle('Savana nGage')
 WebUI.click(findTestObject('Page_nGage_Dashboard/Home/span_ui-button-icon-primary ui'))
 
-'Go to Recent Documents tab'
-WebUI.click(findTestObject('Page_nGage_Dashboard/Home/a_Recent Documents'))
-CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/iframe_iframe_103'))
+'Open first document from recent grid'
+CustomKeywords.'actions.Common.openDocumentFromRecentGrid'(1)
 
-'Sort Record in grid by DocID Descending'
-CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/Home/tableHeader_RecentDocuments'), 'Doc ID')
-CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/Home/tableHeader_RecentDocuments'), 'Doc ID')
+'Wait for WMI to load'
+WebUI.verifyElementVisible(findTestObject('Page_WMI_NEW/Object Tabout Event/CheckBox Event/chkbox_Control'))
 
-'Open Document'
-WebUI.click(findTestObject('Page_nGage_Dashboard/Home/column_RecentDocuments LastAction'))
-WebUI.switchToWindowIndex(1)
-WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+'Verify checkbox is checked'
+WebUI.verifyElementChecked(findTestObject('Page_WMI_NEW/Object Tabout Event/CheckBox Event/chkbox_Control'), GlobalVariable.G_LongTimeout)
 
-'verify textbox value is not editable'
-WebUI.verifyElementAttributeValue(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/CheckBox Event/input_String Field (Value Chan'), 'value', 'Checkbox is checked (Readonly)', GlobalVariable.G_LongTimeout)
-WebUI.verifyElementAttributeValue(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/CheckBox Event/input_String Field (Value Chan'), 'readonly', 'true', GlobalVariable.G_LongTimeout)
+'Verify value in textbox field'
+WebUI.verifyElementAttributeValue(findTestObject('Page_WMI_NEW/Object Tabout Event/CheckBox Event/input_StringField'), 'value', textValue, GlobalVariable.G_LongTimeout)
+
+'Verify textbox field is disabled'
+WebUI.verifyElementHasAttribute(findTestObject('Page_WMI_NEW/Object Tabout Event/CheckBox Event/input_StringField'), 'readonly', GlobalVariable.G_LongTimeout)
