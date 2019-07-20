@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>input_Float Field (Style Change)</name>
+   <name>input_IntegerField</name>
    <tag></tag>
-   <elementGuidId>1e8f42cb-fb94-4840-a922-07a0110505ef</elementGuidId>
+   <elementGuidId>6793fe1a-cabc-4248-83bc-6899fbdbddfb</elementGuidId>
    <selectorMethod>BASIC</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
    <webElementProperties>
@@ -18,7 +18,7 @@
       <matchCondition>equals</matchCondition>
       <name>name</name>
       <type>Main</type>
-      <value>eform_mcb67676$phBO_3_BO$eidmKey_BM_Float</value>
+      <value>eform_mcb67676$TabContainer_4$TabRef_2$phBO_5_BO$eidmKey_BM_Int</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
@@ -32,21 +32,21 @@
       <matchCondition>equals</matchCondition>
       <name>maxlength</name>
       <type>Main</type>
-      <value>16</value>
+      <value>9</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
       <name>id</name>
       <type>Main</type>
-      <value>eform_mcb67676_phBO_3_BO_eidmKey_BM_Float</value>
+      <value>eform_mcb67676_TabContainer_4_TabRef_2_phBO_5_BO_eidmKey_BM_Int</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>tabindex</name>
       <type>Main</type>
-      <value>3</value>
+      <value>2</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -58,78 +58,78 @@
    <webElementProperties>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
-      <name>float</name>
+      <name>integer</name>
       <type>Main</type>
       <value>true</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
-      <name>decimalplaces</name>
-      <type>Main</type>
-      <value>3</value>
-   </webElementProperties>
-   <webElementProperties>
-      <isSelected>false</isSelected>
-      <matchCondition>equals</matchCondition>
       <name>tabseq</name>
       <type>Main</type>
-      <value>3</value>
+      <value>2</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>id(&quot;eform_mcb67676_phBO_3_BO_eidmKey_BM_Float&quot;)</value>
+      <value>id(&quot;eform_mcb67676_TabContainer_4_TabRef_2_phBO_5_BO_eidmKey_BM_Int&quot;)</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
       <name>ref_element</name>
       <type>Main</type>
-      <value>Object Repository/Page_WMI_NEW/Object Tabout Event/Label Event/iframe_Close Window_ContentPla</value>
+      <value>Object Repository/Page_WMI_NEW/Object Tabout Event/Label Event/tab_InlineView/iframe_Close Window_ContentPla</value>
    </webElementProperties>
    <webElementXpaths>
       <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:attributes</name>
-      <value>//input[@id='eform_mcb67676_phBO_3_BO_eidmKey_BM_Float']</value>
+      <type>Main</type>
+      <value>//input[@id='eform_mcb67676_TabContainer_4_TabRef_2_phBO_5_BO_eidmKey_BM_Int']</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:idRelative</name>
-      <value>//div[@id='eform_mcb67676_phBO_3_BO_secpnl_2']/table/tbody/tr[2]/td[2]/table/tbody/tr[3]/td[3]/input</value>
+      <type>Main</type>
+      <value>//div[@id='eform_mcb67676_TabContainer_4_TabRef_2_phBO_5_BO_secpnl_2']/table/tbody/tr[2]/td[2]/table/tbody/tr[2]/td[3]/input</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:neighbor</name>
-      <value>(.//*[normalize-space(text()) and normalize-space(.)='Float Field (Style Change)'])[1]/following::input[1]</value>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='*'])[2]/following::input[1]</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:neighbor</name>
-      <value>(.//*[normalize-space(text()) and normalize-space(.)='*'])[1]/following::input[3]</value>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Integer Field (Required Change)'])[3]/following::input[1]</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:neighbor</name>
-      <value>(.//*[normalize-space(text()) and normalize-space(.)='Revise'])[1]/preceding::input[2]</value>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Float Field (Style Change)'])[3]/preceding::input[2]</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:neighbor</name>
-      <value>(.//*[normalize-space(text()) and normalize-space(.)='Replace'])[1]/preceding::input[3]</value>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Revise'])[3]/preceding::input[4]</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:position</name>
-      <value>//td[2]/table/tbody/tr[3]/td[3]/input</value>
+      <type>Main</type>
+      <value>//div[2]/table/tbody/tr/td/div[2]/div/fieldset/table/tbody/tr[4]/td/div[2]/table/tbody/tr[2]/td/table/tbody/tr/td[2]/div/table/tbody/tr[2]/td[2]/table/tbody/tr[2]/td[3]/input</value>
    </webElementXpaths>
 </WebElementEntity>

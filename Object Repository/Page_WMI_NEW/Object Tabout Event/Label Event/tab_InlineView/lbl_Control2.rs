@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>span_MasterObjectLabelControl2</name>
+   <name>lbl_Control2</name>
    <tag></tag>
    <elementGuidId>494f9f5c-6904-43ea-8672-25ebd357c329</elementGuidId>
    <selectorCollection>

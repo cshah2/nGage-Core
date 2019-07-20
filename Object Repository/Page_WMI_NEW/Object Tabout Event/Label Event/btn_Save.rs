@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>lbl__InputField_Required</name>
+   <name>btn_Save</name>
    <tag></tag>
-   <elementGuidId>5b18e89d-bff9-49db-9d0c-bb7e1e59c178</elementGuidId>
+   <elementGuidId>5072e32f-8161-450a-8b15-b51de9ce2013</elementGuidId>
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//div[@id='eform_mcb67676_phBO_3_BO_secpnl_2']//td[text()='Required']</value>
+         <value>//ul[@id='actionsMenu']/li/a/span[normalize-space(text())='Save']</value>
       </entry>
       <entry>
          <key>BASIC</key>

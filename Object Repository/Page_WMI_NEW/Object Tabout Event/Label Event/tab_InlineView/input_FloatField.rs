@@ -1,15 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>span_MasterObjectLabelControl2</name>
+   <name>input_FloatField</name>
    <tag></tag>
-   <elementGuidId>50d635d3-ab20-47e5-bb09-2f034c636fd7</elementGuidId>
-   <selectorCollection>
-      <entry>
-         <key>BASIC</key>
-         <value>//span[@id = 'eform_mcb67676_TabContainer_4_TabRef_1_phBO_4_BO_eidmKey_BM_text2' and @ref_element = 'Object Repository/Page_WMI_NEW/Object Tabout Event/Label Event/tab_SingleResultView/iframe_Close Window_ContentPla']</value>
-      </entry>
-   </selectorCollection>
+   <elementGuidId>93a6c5a4-73dd-46d2-a198-c3f6b9d246c0</elementGuidId>
    <selectorMethod>BASIC</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
    <webElementProperties>
@@ -17,104 +11,132 @@
       <matchCondition>equals</matchCondition>
       <name>tag</name>
       <type>Main</type>
-      <value>span</value>
+      <value>input</value>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>name</name>
+      <type>Main</type>
+      <value>eform_mcb67676$TabContainer_4$TabRef_2$phBO_5_BO$eidmKey_BM_Float</value>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>type</name>
+      <type>Main</type>
+      <value>text</value>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>maxlength</name>
+      <type>Main</type>
+      <value>16</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
       <name>id</name>
       <type>Main</type>
-      <value>eform_mcb67676_TabContainer_4_TabRef_1_phBO_4_BO_eidmKey_BM_text2</value>
+      <value>eform_mcb67676_TabContainer_4_TabRef_2_phBO_5_BO_eidmKey_BM_Float</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>tabindex</name>
       <type>Main</type>
-      <value>-1</value>
+      <value>3</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>class</name>
       <type>Main</type>
-      <value>FieldValLabel</value>
+      <value>inputclass</value>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>float</name>
+      <type>Main</type>
+      <value>true</value>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>decimalplaces</name>
+      <type>Main</type>
+      <value>3</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>tabseq</name>
       <type>Main</type>
-      <value>1</value>
-   </webElementProperties>
-   <webElementProperties>
-      <isSelected>false</isSelected>
-      <matchCondition>equals</matchCondition>
-      <name>text</name>
-      <type>Main</type>
-      <value>Condition2</value>
+      <value>3</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>id(&quot;eform_mcb67676_TabContainer_4_TabRef_1_phBO_4_BO_eidmKey_BM_String_Nested_Field&quot;)</value>
+      <value>id(&quot;eform_mcb67676_TabContainer_4_TabRef_2_phBO_5_BO_eidmKey_BM_Float&quot;)</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
       <name>ref_element</name>
       <type>Main</type>
-      <value>Object Repository/Page_WMI_NEW/Object Tabout Event/Label Event/tab_SingleResultView/iframe_Close Window_ContentPla</value>
+      <value>Object Repository/Page_WMI_NEW/Object Tabout Event/Label Event/tab_InlineView/iframe_Close Window_ContentPla</value>
    </webElementProperties>
    <webElementXpaths>
       <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:attributes</name>
       <type>Main</type>
-      <value>//span[@id='eform_mcb67676_TabContainer_4_TabRef_1_phBO_4_BO_eidmKey_BM_String_Nested_Field']</value>
+      <value>//input[@id='eform_mcb67676_TabContainer_4_TabRef_2_phBO_5_BO_eidmKey_BM_Float']</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:idRelative</name>
       <type>Main</type>
-      <value>//div[@id='eform_mcb67676_TabContainer_4_TabRef_1_phBO_4_BO_secpnl_2']/table/tbody/tr[2]/td[2]/table/tbody/tr/td[3]/span</value>
+      <value>//div[@id='eform_mcb67676_TabContainer_4_TabRef_2_phBO_5_BO_secpnl_2']/table/tbody/tr[2]/td[2]/table/tbody/tr[3]/td[3]/input</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:neighbor</name>
       <type>Main</type>
-      <value>(.//*[normalize-space(text()) and normalize-space(.)='Master Object Label Control2'])[2]/following::span[1]</value>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Float Field (Style Change)'])[3]/following::input[1]</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:neighbor</name>
       <type>Main</type>
-      <value>(.//*[normalize-space(text()) and normalize-space(.)='Currency Field (Style Change)'])[2]/following::span[2]</value>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='*'])[2]/following::input[3]</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:neighbor</name>
       <type>Main</type>
-      <value>(.//*[normalize-space(text()) and normalize-space(.)='Integer Field (Required Change)'])[2]/preceding::span[1]</value>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Revise'])[3]/preceding::input[2]</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:neighbor</name>
       <type>Main</type>
-      <value>(.//*[normalize-space(text()) and normalize-space(.)='*'])[2]/preceding::span[2]</value>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Replace'])[3]/preceding::input[3]</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:position</name>
       <type>Main</type>
-      <value>//div[2]/div/table/tbody/tr/td/div[2]/div/fieldset/table/tbody/tr[4]/td/div[2]/table/tbody/tr[2]/td/table/tbody/tr/td[2]/div/table/tbody/tr[2]/td[2]/table/tbody/tr/td[3]/span</value>
+      <value>//div[2]/table/tbody/tr/td/div[2]/div/fieldset/table/tbody/tr[4]/td/div[2]/table/tbody/tr[2]/td/table/tbody/tr/td[2]/div/table/tbody/tr[2]/td[2]/table/tbody/tr[3]/td[3]/input</value>
    </webElementXpaths>
 </WebElementEntity>

@@ -63,7 +63,8 @@ public enum DocType {
 	TEXTBOX_WITH_SECTION_EVENT("Textbox With Section Event"),
 	RADIO_LIST_EVENT("Radio List Event"),
 	CHECKBOX_LIST_EVENT("Checkbox List Event"),
-	CHECKBOX_EVENT("Checkbox Event")
+	CHECKBOX_EVENT("Checkbox Event"),
+	LABEL_EVENT("Label Event")
 
 	private final String text
 

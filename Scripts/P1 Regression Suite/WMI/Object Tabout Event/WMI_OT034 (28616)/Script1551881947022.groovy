@@ -16,179 +16,106 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.util.KeywordUtil
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+
+import common.DocClass
+import common.DocType
 import internal.GlobalVariable as GlobalVariable
 
 'Login Into Application'
 CustomKeywords.'actions.Common.login'()
 
-'Click on Global new button'
-WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))
+'Create Document 1 - Label Event'
+CustomKeywords.'actions.Data.create'(DocClass.OBJECT_TABOUT_EVENT, DocType.LABEL_EVENT, null)
 
-//Create Document 1 - Standard Grid (To ensure no error in single result view)
-'Create document'
-CustomKeywords.'actions.Common.selectDocClassAndDocTypeForGlobalNew'('Business Model View', 'Standard Grid')
-WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'), GlobalVariable.G_LongTimeout)
-WebUI.click(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'))
+'Create Document 2 - Label Event'
+CustomKeywords.'actions.Data.create'(DocClass.OBJECT_TABOUT_EVENT, DocType.LABEL_EVENT, null)
 
-WebUI.switchToWindowTitle('(Doc ID: NEW )')
-WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+'Open second document from recent grid'
+CustomKeywords.'actions.Common.openDocumentFromRecentGrid'(2)
 
-'Click on Save button'
-WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Inline_Result_View/span_Save'))
-WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
-
-'Click on Close Window button'
-WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Inline_Result_View/span_Close Window'))
-
-'Switch to main window'
-WebUI.switchToWindowIndex(0)
-
-//Create Document 2 - Label Event with valid data
-'Select Doc Class as "Object Tab Out Events" and Doc type as "Label Event" from the dropdowns and click on OK button'
-CustomKeywords.'actions.Common.selectDocClassAndDocTypeForGlobalNew'('Object Tabout Events', 'Label Event')
-WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'), GlobalVariable.G_LongTimeout)
-WebUI.click(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'))
-
-WebUI.switchToWindowTitle('(Doc ID: NEW )')
-WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
-
-'Enter Integer field value'
-CustomKeywords.'actions.Common.waitForElementVisible'(findTestObject('Page_WMI_NEW/Object Tabout Event/Label Event/input__IntegerField(RequiredChange)'), GlobalVariable.G_LongTimeout)
-String numericValueDoc1 = RandomStringUtils.randomNumeric(5)
-WebUI.setText(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Label Event/input__IntegerField(RequiredChange)'), numericValueDoc1)
-
-'Click on Save button'
-WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Inline_Result_View/span_Save'))
-WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
-
-'Click on Close Window button'
-CustomKeywords.'actions.Window.clickElementAndWaitForWindowClose'(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Inline_Result_View/span_Close Window'), GlobalVariable.G_LongTimeout)
-
-'Switch to main window'
-WebUI.switchToWindowIndex(0)
-
-//Create Document 3 - Label Event with valid data
-'Select Doc Class as "Object Tab Out Events" and Doc type as "Label Event" from the dropdowns and click on OK button'
-CustomKeywords.'actions.Common.selectDocClassAndDocTypeForGlobalNew'('Object Tabout Events', 'Label Event')
-WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'), GlobalVariable.G_LongTimeout)
-WebUI.click(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'))
-
-WebUI.switchToWindowTitle('(Doc ID: NEW )')
-WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
-
-'Enter Integer field value'
-CustomKeywords.'actions.Common.waitForElementVisible'(findTestObject('Page_WMI_NEW/Object Tabout Event/Label Event/input__IntegerField(RequiredChange)'), GlobalVariable.G_LongTimeout)
-String numericValueDoc2 = RandomStringUtils.randomNumeric(5)
-WebUI.setText(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Label Event/input__IntegerField(RequiredChange)'), numericValueDoc2)
-
-'Click on Save button'
-WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Inline_Result_View/span_Save'))
-WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
-
-'Click on Close Window button'
-CustomKeywords.'actions.Window.clickElementAndWaitForWindowClose'(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Inline_Result_View/span_Close Window'), GlobalVariable.G_LongTimeout)
-
-'Switch to main window'
-WebUI.switchToWindowIndex(0)
-
-'Close Global new popup dialog'
-WebUI.click(findTestObject('Page_nGage_Dashboard/Home/span_ui-button-icon-primary ui'))
-
-'Click on Recent Document'
-CustomKeywords.'actions.MenuBar.clickTreeMenu'('HOME', 'Recent Documents')
-CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/iframe_iframe_103'))
-
-'Sort Record in grid by DocID Descending'
-CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/Home/tableHeader_RecentDocuments'), 'Doc ID')
-CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/Home/tableHeader_RecentDocuments'), 'Doc ID')
-
-'Open Document'
-int rowNo = 2
-CustomKeywords.'actions.Table.clickCell'(findTestObject('Page_nGage_Dashboard/Home/table_MyDocumentResults'), rowNo, 5)
-
-'Switch to WMI Window'
-WebUI.switchToWindowIndex(1)
-WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
-
-'verify opened document'
-WebUI.verifyElementPresent(findTestObject('Object Repository/Page_WMI_NEW/Master_Object_Feature/Render_As_Label/span_Document(Title)'), GlobalVariable.G_LongTimeout)
+'Wait for page to load'
+WebUI.waitForElementVisible(findTestObject('Page_WMI_NEW/Object Tabout Event/Label Event/lbl_Control1'), GlobalVariable.G_LongTimeout)
 
 'click on tab inline view'
-WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Master_Object_Feature/Render_As_Label/span_tab_InlineView'))
+WebUI.click(findTestObject('Page_WMI_NEW/Object Tabout Event/Label Event/tab_Inline'))
 
-'Click on first row in Inline table'
+'sort grid records in descending accordindg to docID'
 WebUI.click(findTestObject('Page_WMI_NEW/Object Tabout Event/Label Event/tab_InlineView/tableHeader_DocID'))
 CustomKeywords.'actions.Common.waitForTabLoading'(null, GlobalVariable.G_LongTimeout)
 WebUI.click(findTestObject('Page_WMI_NEW/Object Tabout Event/Label Event/tab_InlineView/tableHeader_DocID'))
 CustomKeywords.'actions.Common.waitForTabLoading'(null, GlobalVariable.G_LongTimeout)
 
-'Click On first Row From Reference Grid'
-int inlineRowNo = 1
-CustomKeywords.'actions.Table.clickCell'(findTestObject('Page_WMI_NEW/Object Tabout Event/Label Event/tab_InlineView/table_InlineView'), inlineRowNo, 5)
+'click on first record in the grid'
+CustomKeywords.'actions.Table.clickCell'(findTestObject('Page_WMI_NEW/Object Tabout Event/Label Event/tab_InlineView/table_InlineView'), 1, 5)
 CustomKeywords.'actions.Common.waitForTabLoading'(null, GlobalVariable.G_LongTimeout)
 
-'Wait for Inline view to load'
-CustomKeywords.'actions.Common.waitForElementVisible'(findTestObject('Page_WMI_NEW/Object Tabout Event/Label Event/tab_InlineView/span_MasterObjectLabelControl1'), GlobalVariable.G_LongTimeout)
+'Scroll to Inline Result view'
+WebUI.scrollToElement(findTestObject('Page_WMI_NEW/Object Tabout Event/Label Event/tab_InlineView/input_FloatField'), GlobalVariable.G_LongTimeout)
 
-'Scroll to Inline view section'
-WebUI.scrollToElement(findTestObject('Page_WMI_NEW/Object Tabout Event/Label Event/tab_InlineView/input_Float Field (Style Chang'), GlobalVariable.G_LongTimeout)
+'Verify value in Label Control 1'
+WebUI.verifyElementText(findTestObject('Page_WMI_NEW/Object Tabout Event/Label Event/tab_InlineView/lbl_Control1'), 'Condition1')
 
-'verify Label Control 1 value is set Condition 1'
-WebUI.verifyMatch(WebUI.getText(findTestObject('Page_WMI_NEW/Object Tabout Event/Label Event/tab_InlineView/span_MasterObjectLabelControl1')), 'Condition1', false)
+'Verify value in Label Control 2'
+WebUI.verifyElementText(findTestObject('Page_WMI_NEW/Object Tabout Event/Label Event/tab_InlineView/lbl_Control2'), 'Condition2')
 
-'Curreny Field background should be red'
-String fieldColor= CustomKeywords.'actions.Common.getCssValue'(findTestObject('Page_WMI_NEW/Object Tabout Event/Label Event/tab_InlineView/input_Currency Field (Style Ch'), 'background-color')
-WebUI.verifyMatch(fieldColor, 'rgba(255, 0, 0, 1)', false)
+'Verify background color or currency field'
+CustomKeywords.'actions.Common.verifyCssValue'(findTestObject('Page_WMI_NEW/Object Tabout Event/Label Event/tab_InlineView/input_CurrencyField'), 'background-color', 'rgba(255, 0, 0, 1)')
 
-'In Inline view under reference object Label Control 2 value is set Condition 2 '
-WebUI.verifyMatch(WebUI.getText(findTestObject('Page_WMI_NEW/Object Tabout Event/Label Event/tab_InlineView/span_MasterObjectLabelControl2')), 'Condition2', false)
+'Verify backgound color of float field'
+CustomKeywords.'actions.Common.verifyCssValue'(findTestObject('Page_WMI_NEW/Object Tabout Event/Label Event/tab_InlineView/input_FloatField'), 'background-color', 'rgba(255, 255, 255, 1)')
 
-'Float Field background should be white'
-fieldColor=CustomKeywords.'actions.Common.getCssValue'(findTestObject('Page_WMI_NEW/Object Tabout Event/Label Event/tab_InlineView/input_Float Field (Style Chang'), 'background-color')
-WebUI.verifyMatch(fieldColor, 'rgba(255, 255, 255, 1)', false)
+'Clear Data from Integer field'
+WebUI.clearText(findTestObject('Page_WMI_NEW/Object Tabout Event/Label Event/tab_InlineView/input_IntegerField'))
 
-'Integer Field (Required Change) field should be required'
-WebUI.clearText(findTestObject('Page_WMI_NEW/Object Tabout Event/Label Event/tab_InlineView/input__IntegerFieldRequiredChange'))
-WebUI.sendKeys(findTestObject('Page_WMI_NEW/Object Tabout Event/Label Event/tab_InlineView/input__IntegerFieldRequiredChange'), Keys.chord(Keys.TAB))
+'Click on Save Button'
+WebUI.click(findTestObject('Page_WMI_NEW/Object Tabout Event/Label Event/tab_InlineView/btn_Save'))
+WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_WMI_NEW/Object Tabout Event/Label Event/iframe_Close Window_ContentPla'))
 
-'Click on Save'
-WebUI.click(findTestObject('Page_WMI_NEW/Object Tabout Event/Label Event/tab_InlineView/input_Save'))
-WebUI.delay(2)
+'Verify floating error message is displayed'
+WebUI.verifyElementVisible(findTestObject('Page_WMI_NEW/Object Tabout Event/Label Event/tab_InlineView/td_IntegerField Required'))
 
-'Verify div error message is displayed'
-WebUI.verifyElementPresent(findTestObject('Page_WMI_NEW/Object Tabout Event/Label Event/tab_InlineView/td_IntegerField Required'), GlobalVariable.G_LongTimeout)
+'Enter data in numeric field'
+String numericValue = '3000'
+WebUI.setText(findTestObject('Page_WMI_NEW/Object Tabout Event/Label Event/tab_InlineView/input_IntegerField'), numericValue)
 
-'Fillup the values in required filed'
-String numericValueInlineDoc = RandomStringUtils.randomNumeric(5)
-WebUI.setText(findTestObject('Page_WMI_NEW/Object Tabout Event/Label Event/tab_InlineView/input__IntegerFieldRequiredChange'), numericValueInlineDoc)
+'Enter data in String field'
+String stringValue = 'Amol Patil'
+WebUI.setText(findTestObject('Page_WMI_NEW/Object Tabout Event/Label Event/tab_InlineView/input_StringField'), stringValue)
 
-'Click on Save'
-WebUI.click(findTestObject('Page_WMI_NEW/Object Tabout Event/Label Event/tab_InlineView/input_Save'))
-
-'click on close'
-CustomKeywords.'actions.Window.clickElementAndWaitForWindowClose'(findTestObject('Object Repository/Page_WMI_NEW/Master_Object_Feature/Render_As_Label/span_Close Window'), GlobalVariable.G_LongTimeout)
-
-'Switch to parent window'
-WebUI.switchToWindowIndex(0)
-
-'Click on Recent Document'
-CustomKeywords.'actions.MenuBar.clickTreeMenu'('HOME', 'Recent Documents')
-CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/iframe_iframe_103'))
-
-'Sort Record in grid by DocID Descending'
-CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/Home/tableHeader_RecentDocuments'), 'Doc ID')
-CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/Home/tableHeader_RecentDocuments'), 'Doc ID')
-
-'Open Document'
-rowNo = 1
-CustomKeywords.'actions.Table.clickCell'(findTestObject('Page_nGage_Dashboard/Home/table_MyDocumentResults'), rowNo, 5)
-
-'Switch to WMI Window'
-WebUI.switchToWindowIndex(1)
+'Click on Save button'
+WebUI.click(findTestObject('Page_WMI_NEW/Object Tabout Event/Label Event/tab_InlineView/btn_Save'))
 WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 
-'verify opened document'
-WebUI.verifyElementPresent(findTestObject('Object Repository/Page_WMI_NEW/Master_Object_Feature/Render_As_Label/span_Document(Title)'), GlobalVariable.G_LongTimeout)
+'Click on Close Window button'
+CustomKeywords.'actions.Window.clickElementAndWaitForWindowClose'(findTestObject('Page_WMI_NEW/Object Tabout Event/Label Event/btn_CloseWindow'), GlobalVariable.G_LongTimeout)
 
-'Verify correct integer value is loaded in document'
-WebUI.verifyElementAttributeValue(findTestObject('Page_WMI_NEW/Object Tabout Event/Label Event/input__IntegerField(RequiredChange)'), 'Value', numericValueInlineDoc, GlobalVariable.G_LongTimeout)
+'Switch to main window'
+WebUI.switchToWindowIndex(0)
+
+'Clear cookies and Login back into portal'
+CustomKeywords.'actions.Common.login'()
+
+'Open first document from recent grid'
+CustomKeywords.'actions.Common.openDocumentFromRecentGrid'(1)
+
+'Wait for page to load'
+WebUI.waitForElementVisible(findTestObject('Page_WMI_NEW/Object Tabout Event/Label Event/lbl_Control1'), GlobalVariable.G_LongTimeout)
+
+'Verify value in Label Control 1'
+WebUI.verifyElementText(findTestObject('Page_WMI_NEW/Object Tabout Event/Label Event/lbl_Control1'), 'Condition1')
+
+'Verify value in Label Control 2'
+WebUI.verifyElementText(findTestObject('Page_WMI_NEW/Object Tabout Event/Label Event/lbl_Control2'), 'Condition2')
+
+'Verify background color or currency field'
+CustomKeywords.'actions.Common.verifyCssValue'(findTestObject('Page_WMI_NEW/Object Tabout Event/Label Event/input_CurrencyField'), 'background-color', 'rgba(255, 0, 0, 1)')
+
+'Verify backgound color of float field'
+CustomKeywords.'actions.Common.verifyCssValue'(findTestObject('Page_WMI_NEW/Object Tabout Event/Label Event/input_FloatField'), 'background-color', 'rgba(255, 255, 255, 1)')
+
+'Verify data in Integer field'
+WebUI.verifyElementAttributeValue(findTestObject('Page_WMI_NEW/Object Tabout Event/Label Event/input_IntegerField'), 'Value', numericValue, GlobalVariable.G_LongTimeout)
+
+'Verify data in String field'
+WebUI.verifyElementAttributeValue(findTestObject('Page_WMI_NEW/Object Tabout Event/Label Event/input_StringField'), 'Value', stringValue, GlobalVariable.G_LongTimeout)

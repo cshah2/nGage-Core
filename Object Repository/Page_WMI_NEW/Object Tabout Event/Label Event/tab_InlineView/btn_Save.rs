@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>input_Save</name>
+   <name>btn_Save</name>
    <tag></tag>
    <elementGuidId>b7ae9e71-26c0-430f-8573-851e6578c86b</elementGuidId>
    <selectorMethod>BASIC</selectorMethod>
