@@ -182,6 +182,10 @@ public class Data {
 				dropdownEvent(null)
 				break
 
+			case DocType.NESTED_LOOKUP_EVENT:
+				nestedLookupEvent(null)
+				break
+
 			default:
 				WebUI.takeScreenshot()
 				KeywordUtil.markFailedAndStop('Unable to create document, Invalid docType provided : '+docType)
@@ -804,17 +808,30 @@ public class Data {
 		'Close WMI'
 		new actions.Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI_NEW/Object Tabout Event/Label Event/btn_CloseWindow'), GlobalVariable.G_LongTimeout)
 	}
-	
+
 	private void dropdownEvent(Map<Fields, String> data) {
-		
+
 		'Wait for WMI to load'
 		WebUI.waitForElementVisible(findTestObject('Page_WMI_NEW/Object Tabout Event/DropDown Event/select_DropdownControl'), GlobalVariable.G_LongTimeout)
-		
+
 		'Save WMI'
 		WebUI.click(findTestObject('Page_WMI_NEW/Object Tabout Event/DropDown Event/btn_Save'))
 		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
-		
+
 		'Closw WMI'
 		new actions.Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI_NEW/Object Tabout Event/DropDown Event/btn_CloseWindow'), GlobalVariable.G_LongTimeout)
+	}
+	
+	private void nestedLookupEvent(Map<Fields, String> data) {
+		
+		'Wait for WMI to load'
+		WebUI.waitForElementVisible(findTestObject('Page_WMI_NEW/Object Tabout Event/Nested Lookup Event/select_Level1'), GlobalVariable.G_LongTimeout)
+
+		'Save WMI'
+		WebUI.click(findTestObject('Page_WMI_NEW/Object Tabout Event/Nested Lookup Event/btn_Save'))
+		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+
+		'Closw WMI'
+		new actions.Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI_NEW/Object Tabout Event/Nested Lookup Event/btn_CloseWindow'), GlobalVariable.G_LongTimeout)
 	}
 }

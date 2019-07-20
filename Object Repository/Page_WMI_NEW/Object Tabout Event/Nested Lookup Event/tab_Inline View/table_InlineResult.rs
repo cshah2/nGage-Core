@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>table_GVGrid</name>
+   <name>table_InlineResult</name>
    <tag></tag>
    <elementGuidId>515b837d-0ba9-4ecb-8551-3bfee9ba8891</elementGuidId>
    <selectorMethod>BASIC</selectorMethod>
@@ -213,30 +213,35 @@
       <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:attributes</name>
+      <type>Main</type>
       <value>//table[@id='eform_mcb67676_TabContainer_4_TabRef_2_phBO_5_BO_grc']</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:idRelative</name>
+      <type>Main</type>
       <value>//div[@id='eform_mcb67676_TabContainer_4_TabRef_2_phBO_5_BO_updResult']/div/table</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:neighbor</name>
+      <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='InlineView'])[2]/following::table[1]</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:neighbor</name>
+      <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='* Duplicate values will be ignored.'])[2]/following::table[4]</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:position</name>
+      <type>Main</type>
       <value>//td/div[2]/div/table</value>
    </webElementXpaths>
 </WebElementEntity>

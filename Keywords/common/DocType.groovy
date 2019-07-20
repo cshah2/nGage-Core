@@ -65,8 +65,10 @@ public enum DocType {
 	CHECKBOX_LIST_EVENT("Checkbox List Event"),
 	CHECKBOX_EVENT("Checkbox Event"),
 	LABEL_EVENT("Label Event"),
-	DROPDOWN_EVENT("DropDown Event")
+	DROPDOWN_EVENT("DropDown Event"),
+	NESTED_LOOKUP_EVENT("Nested Lookup Event")
 	
+
 
 	private final String text
 
