@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>select_LookupField_InlineTab</name>
+   <name>select_LookupField</name>
    <tag></tag>
    <elementGuidId>5c0cd44c-31a1-4d76-a233-0ebd86857eb9</elementGuidId>
    <selectorCollection>

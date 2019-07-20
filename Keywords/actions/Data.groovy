@@ -161,9 +161,13 @@ public class Data {
 			case DocType.TEXTBOX_WITH_SECTION_EVENT:
 				textboxWithSectionEvent(data)
 				break
-				
+
 			case DocType.RADIO_LIST_EVENT:
 				radioListEvent(null)
+				break
+
+			case DocType.CHECKBOX_LIST_EVENT:
+				checkboxListEvent(null)
 				break
 
 			default:
@@ -719,32 +723,45 @@ public class Data {
 		//Close WMI
 		new actions.Window().clickElementAndWaitForWindowClose(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Textbox with Section Event/span_Close Window'),GlobalVariable.G_LongTimeout)
 	}
-	
+
 	private void radioListEvent(Map<Fields, String> data) {
-		
+
 		'Wait for WMI to load'
 		WebUI.verifyElementVisible(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/span_Business Model View - Rad'))
-		
+
 		'Click on Value 1 radio button from master object'
 		WebUI.waitForElementVisible(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/input_Value1_MasterObject'),GlobalVariable.G_LongTimeout)
 		WebUI.check(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/input_Value1_MasterObject'))
-		
+
 		'Wait for event to complete'
 		new actions.Common().waitForTabLoading(null, GlobalVariable.G_LongTimeout)
-		
+
 		String inputValue = DateUtil.getCurrentDateTime(Consts.FORMAT_DATETIME)
 		'Enter value in date field'
 		new actions.Common().setText_Date(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/input_Date Field (Required)_ef'), inputValue)
-		
+
 		'Enter value in String field'
 		new actions.Common().setText_Date(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/input_String Field (Style)_efo'), inputValue)
-		
+
 		'Save WMI'
 		WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/span_Save'))
 		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
-		
+
 		'Close WMI'
 		new actions.Window().clickElementAndWaitForWindowClose(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/span_Close Window'),GlobalVariable.G_LongTimeout)
 	}
-	
+
+	private void checkboxListEvent(Map<Fields, String> data) {
+
+		'Wait for WMI to load'
+		WebUI.waitForElementVisible(findTestObject('Page_WMI_NEW/Object Tabout Event/CheckboxListEvent/chkbox_Value1'), GlobalVariable.G_LongTimeout)
+
+		'Click on Save'
+		WebUI.click(findTestObject('Page_WMI_NEW/Object Tabout Event/CheckboxListEvent/btn_Save'))
+		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+
+		'close WMI'
+		new actions.Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI_NEW/Object Tabout Event/CheckboxListEvent/btn_CloseWindow'), GlobalVariable.G_LongTimeout)
+	}
+
 }

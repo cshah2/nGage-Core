@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>cell_DocID</name>
+   <name>chkbox_Value3</name>
    <tag></tag>
-   <elementGuidId>65b24f4d-dcb6-46c9-a479-7c02369bb38e</elementGuidId>
+   <elementGuidId>f86866c7-60e0-4997-bea7-57d4d2c76f10</elementGuidId>
    <selectorMethod>BASIC</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
    <webElementProperties>
@@ -11,28 +11,49 @@
       <matchCondition>equals</matchCondition>
       <name>tag</name>
       <type>Main</type>
-      <value>td</value>
+      <value>input</value>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>id</name>
+      <type>Main</type>
+      <value>eform_mcb67676_phBO_3_BO_eidmKey_BM_String_WL_2</value>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>type</name>
+      <type>Main</type>
+      <value>checkbox</value>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>name</name>
+      <type>Main</type>
+      <value>eform_mcb67676$phBO_3_BO$eidmKey_BM_String_WL$2</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>onclick</name>
       <type>Main</type>
-      <value>__doPostBack('eform_mcb67676$TabContainer_4$TabRef_2$phBO_5_BO$grc','Select$0');SetInlineviewDisplay('eform_mcb67676_TabContainer_4_TabRef_2_phBO_5_BO_fileTableRow','eform_mcb67676_TabContainer_4_TabRef_2_phBO_5_BO_fieldsTableRow' , false);</value>
+      <value>javascript:setTimeout('__doPostBack(\'eform_mcb67676$phBO_3_BO$eidmKey_BM_String_WL$2\',\'\')', 0)</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
-      <name>text</name>
+      <name>tabindex</name>
       <type>Main</type>
-      <value>100003</value>
+      <value>5</value>
    </webElementProperties>
    <webElementProperties>
-      <isSelected>true</isSelected>
+      <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>id(&quot;eform_mcb67676_TabContainer_4_TabRef_2_phBO_5_BO_grc&quot;)/tbody[1]/tr[@class=&quot;GVRow&quot;]/td[7]</value>
+      <value>id(&quot;eform_mcb67676_phBO_3_BO_eidmKey_BM_String_WL_2&quot;)</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
@@ -45,42 +66,49 @@
       <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:attributes</name>
-      <value>(//td[@onclick=&quot;__doPostBack('eform_mcb67676$TabContainer_4$TabRef_2$phBO_5_BO$grc','Select$0');SetInlineviewDisplay('eform_mcb67676_TabContainer_4_TabRef_2_phBO_5_BO_fileTableRow','eform_mcb67676_TabContainer_4_TabRef_2_phBO_5_BO_fieldsTableRow' , false);&quot;])[7]</value>
+      <type>Main</type>
+      <value>//input[@id='eform_mcb67676_phBO_3_BO_eidmKey_BM_String_WL_2']</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:idRelative</name>
-      <value>//table[@id='eform_mcb67676_TabContainer_4_TabRef_2_phBO_5_BO_grc']/tbody/tr[3]/td[7]</value>
+      <type>Main</type>
+      <value>//table[@id='eform_mcb67676_phBO_3_BO_eidmKey_BM_String_WL']/tbody/tr[3]/td/input</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:neighbor</name>
-      <value>(.//*[normalize-space(text()) and normalize-space(.)='BM Text'])[1]/following::td[7]</value>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Value 2'])[1]/following::input[1]</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:neighbor</name>
-      <value>(.//*[normalize-space(text()) and normalize-space(.)='BM Small Int'])[1]/following::td[8]</value>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Value 1'])[1]/following::input[2]</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:neighbor</name>
-      <value>(.//*[normalize-space(text()) and normalize-space(.)='Render As TextBox'])[3]/preceding::td[2]</value>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Value 3'])[1]/preceding::input[1]</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:neighbor</name>
-      <value>(.//*[normalize-space(text()) and normalize-space(.)='Chintan Shah - 12-27-2018 06:53:48 AM'])[1]/preceding::td[5]</value>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Value 4'])[1]/preceding::input[2]</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:position</name>
-      <value>//tr[3]/td[7]</value>
+      <type>Main</type>
+      <value>//tr[3]/td/input</value>
    </webElementXpaths>
 </WebElementEntity>

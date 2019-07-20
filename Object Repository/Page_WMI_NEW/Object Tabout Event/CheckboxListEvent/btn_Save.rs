@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>option_Lookup Field_Reference Object InlineContentView</name>
+   <name>btn_Save</name>
    <tag></tag>
-   <elementGuidId>ef225290-4ac0-45ce-8b8c-d14545b5574e</elementGuidId>
+   <elementGuidId>de18e3a2-8229-409b-b799-e84462bbced6</elementGuidId>
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//select[@name='eform_mcb67676$phBO_3_BO$eidmKey_BM_String']/option[text()='Reference Object InlineContentView']</value>
+         <value>//ul[@id='actionsMenu']//span[normalize-space(text())='Save']</value>
       </entry>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

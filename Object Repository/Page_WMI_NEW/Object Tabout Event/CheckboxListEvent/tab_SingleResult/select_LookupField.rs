@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>td_(Header)DocID</name>
+   <name>select_LookupField</name>
    <tag></tag>
-   <elementGuidId>b5d70214-9142-4e79-ac86-f488749b9d8f</elementGuidId>
+   <elementGuidId>244a0a1f-9f8c-432e-b818-dfb8287ba8b8</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>BASIC</key>
-         <value></value>
+         <key>XPATH</key>
+         <value>//select[@id='eform_mcb67676_TabContainer_4_TabRef_1_phBO_4_BO_eidmKey_BM_String']</value>
       </entry>
       <entry>
-         <key>XPATH</key>
-         <value>//td/a[text()='Doc ID']</value>
+         <key>BASIC</key>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

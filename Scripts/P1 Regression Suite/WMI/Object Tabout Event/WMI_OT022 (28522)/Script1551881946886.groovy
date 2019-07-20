@@ -11,65 +11,73 @@ import com.kms.katalon.core.testdata.TestData as TestData
 import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+
+import common.DocClass
+import common.DocType
 import internal.GlobalVariable as GlobalVariable
 
 'Login Into Application'
 CustomKeywords.'actions.Common.login'()
 
-//Create Document 1
-'Click on New button'
-WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))
+'Create Document 1 - Checkbox List Event'
+CustomKeywords.'actions.Data.create'(DocClass.OBJECT_TABOUT_EVENT, DocType.CHECKBOX_LIST_EVENT, null)
 
-'Select Doc Class as "Object Tab Out Events" and Doc type as "checkbox list Event" from the dropdowns and click on OK button'
-CustomKeywords.'actions.Common.selectDocClassAndDocTypeForGlobalNew'('Object Tabout Events', 'Checkbox List Event')
-WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'), GlobalVariable.G_LongTimeout)
-WebUI.click(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'))
+'Create Document 2 - Checkbox List Event'
+CustomKeywords.'actions.Data.create'(DocClass.OBJECT_TABOUT_EVENT, DocType.CHECKBOX_LIST_EVENT, null)
 
-'Switch to new window'
-WebUI.switchToWindowIndex(1)
-WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+'Open second document from recent grid'
+CustomKeywords.'actions.Common.openDocumentFromRecentGrid'(2)
 
-'Click on Save'
+'Wait for page to load'
+WebUI.waitForElementVisible(findTestObject('Page_WMI_NEW/Object Tabout Event/CheckboxListEvent/chkbox_Value1'), GlobalVariable.G_LongTimeout)
+
+'Scroll to Single Result View'
+WebUI.scrollToElement(findTestObject('Page_WMI_NEW/Object Tabout Event/CheckboxListEvent/tab_SingleResult/select_LookupField'), GlobalVariable.G_LongTimeout)
+
+'Select Value 1 checkbox'
+WebUI.check(findTestObject('Page_WMI_NEW/Object Tabout Event/CheckboxListEvent/tab_SingleResult/chkbox_Value1'))
+
+'Wait for JavaScript event to complete'
+CustomKeywords.'actions.Common.waitForTabLoading'(null, GlobalVariable.G_LongTimeout)
+
+'Verify value displayed in String field'
+WebUI.verifyElementAttributeValue(findTestObject('Page_WMI_NEW/Object Tabout Event/CheckboxListEvent/tab_SingleResult/input_StringField'), 'value', 'You selected Option 1', GlobalVariable.G_LongTimeout)
+
+'Verify number of options present in drop down'
+int expOptions = 23
+WebUI.verifyEqual(WebUI.getNumberOfTotalOption(findTestObject('Page_WMI_NEW/Object Tabout Event/CheckboxListEvent/tab_SingleResult/select_LookupField')), expOptions)
+
+'Select option Render As Label from Drop down	'
+String option = 'Render As Label'
+WebUI.selectOptionByLabel(findTestObject('Page_WMI_NEW/Object Tabout Event/CheckboxListEvent/tab_SingleResult/select_LookupField'), option, false)
+
+'Save WMI'
 WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Inline_Result_View/span_Save'))
 WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 
-'close WMI'
-CustomKeywords.'actions.Window.clickElementAndWaitForWindowClose'(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Inline_Result_View/span_Close Window'), GlobalVariable.G_LongTimeout)
+'Close WMI'
+WebUI.click(findTestObject('Page_WMI_NEW/Object Tabout Event/CheckboxListEvent/btn_CloseWindow'))
 
 'Switch to main window'
 WebUI.switchToWindowIndex(0)
 
-'Close popup dialog for create new document'
-WebUI.click(findTestObject('Page_nGage_Dashboard/Home/span_ui-button-icon-primary ui'))
+'Clear cookies and Login back into portal'
+CustomKeywords.'actions.Common.login'()
 
-'Click on Recent Document'
-CustomKeywords.'actions.MenuBar.clickTreeMenu'('HOME', 'Recent Documents')
-CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/iframe_iframe_103'))
+'Open first document from recents grid'
+CustomKeywords.'actions.Common.openDocumentFromRecentGrid'(1)
 
-'Sort Record in grid by DocID Descending'
-CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/Home/tableHeader_RecentDocuments'), 'Doc ID')
-CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/Home/tableHeader_RecentDocuments'), 'Doc ID')
+'Wait for page to load'
+WebUI.waitForElementVisible(findTestObject('Page_WMI_NEW/Object Tabout Event/CheckboxListEvent/chkbox_Value1'), GlobalVariable.G_LongTimeout)
 
-'Open Document'
-int rowNo = 1
-CustomKeywords.'actions.Table.clickCell'(findTestObject('Page_nGage_Dashboard/Home/table_MyDocumentResults'), rowNo, 5)
+'Verify Checkbox 1 is checked'
+WebUI.verifyElementChecked(findTestObject('Page_WMI_NEW/Object Tabout Event/CheckboxListEvent/chkbox_Value1'), GlobalVariable.G_LongTimeout)
 
-'Switch to WMI Window'
-WebUI.switchToWindowIndex(1)
-WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+'Verify value displayed in String field'
+WebUI.verifyElementAttributeValue(findTestObject('Page_WMI_NEW/Object Tabout Event/CheckboxListEvent/input_StringField'), 'value', 'You selected Option 1', GlobalVariable.G_LongTimeout)
 
-'Wait for Single Result view to load'
-WebUI.waitForElementPresent(findTestObject('Page_WMI_NEW/Object Tabout Event/CheckboxListEvent/chkbox1_ReferenceObjectSelectOption'), GlobalVariable.G_LongTimeout)
+'Verify number of options present in drop down'
+WebUI.verifyEqual(WebUI.getNumberOfTotalOption(findTestObject('Page_WMI_NEW/Object Tabout Event/CheckboxListEvent/select_LookupField')), expOptions)
 
-'Scroll to element'
-WebUI.scrollToElement(findTestObject('Page_WMI_NEW/Object Tabout Event/CheckboxListEvent/chkbox1_ReferenceObjectSelectOption'), GlobalVariable.G_LongTimeout)
-
-'Select checkbox option 1 in Single Result View'
-WebUI.check(findTestObject('Page_WMI_NEW/Object Tabout Event/CheckboxListEvent/chkbox1_ReferenceObjectSelectOption'))
-CustomKeywords.'actions.Common.waitForTabLoading'(null, GlobalVariable.G_LongTimeout)
-
-'Verify value in input field'
-WebUI.verifyElementAttributeValue(findTestObject('Page_WMI_NEW/Object Tabout Event/CheckboxListEvent/input_StringField_ReferenceObject'), 'value', 'You selected Option 1', GlobalVariable.G_LongTimeout)
-
-'Verify drop down does not contains option'
-WebUI.verifyOptionNotPresentByLabel(findTestObject('Page_WMI_NEW/Object Tabout Event/CheckboxListEvent/select_LookupField_ReferenceObject'), 'Reference Object ImportMode Interactive', false, GlobalVariable.G_LongTimeout)
+'Verify selected option in drop down'
+WebUI.verifyOptionSelectedByLabel(findTestObject('Page_WMI_NEW/Object Tabout Event/CheckboxListEvent/select_LookupField'), option, false, GlobalVariable.G_LongTimeout)

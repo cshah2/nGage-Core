@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>option_Lookup Field_Reference Object Import</name>
+   <name>input_StringField</name>
    <tag></tag>
-   <elementGuidId>d104bfc8-15de-407f-b3dd-bce4199c5f8f</elementGuidId>
+   <elementGuidId>1a37bfd4-99c0-4d55-a09b-cbb72df53319</elementGuidId>
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//select[@name='eform_mcb67676$phBO_3_BO$eidmKey_BM_String']/option[text()='Reference Object Import']</value>
+         <value>//input[@id='eform_mcb67676_TabContainer_4_TabRef_2_phBO_5_BO_eidmKey_BM_Text']</value>
       </entry>
       <entry>
          <key>BASIC</key>

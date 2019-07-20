@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>popUpBox</name>
+   <name>input_StringField</name>
    <tag></tag>
-   <elementGuidId>93c39875-aa75-4b28-b293-ed473dd67bc9</elementGuidId>
+   <elementGuidId>8a3dd32d-9354-41f9-b04a-4829c32ed216</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>BASIC</key>
-         <value></value>
+         <key>XPATH</key>
+         <value>//input[@id='eform_mcb67676_TabContainer_4_TabRef_1_phBO_4_BO_eidmKey_BM_Text']</value>
       </entry>
       <entry>
-         <key>XPATH</key>
-         <value>//span[@class='ui-dialog-title']</value>
+         <key>BASIC</key>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

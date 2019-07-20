@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>backToTop_MasterObject</name>
+   <name>cell_DocID</name>
    <tag></tag>
-   <elementGuidId>d4c09748-c321-46b6-8a65-1c6c45a6d969</elementGuidId>
+   <elementGuidId>65b24f4d-dcb6-46c9-a479-7c02369bb38e</elementGuidId>
    <selectorMethod>BASIC</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
    <webElementProperties>
@@ -11,28 +11,28 @@
       <matchCondition>equals</matchCondition>
       <name>tag</name>
       <type>Main</type>
-      <value>a</value>
+      <value>td</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
-      <name>href</name>
+      <name>onclick</name>
       <type>Main</type>
-      <value>#</value>
+      <value>__doPostBack('eform_mcb67676$TabContainer_4$TabRef_2$phBO_5_BO$grc','Select$0');SetInlineviewDisplay('eform_mcb67676_TabContainer_4_TabRef_2_phBO_5_BO_fileTableRow','eform_mcb67676_TabContainer_4_TabRef_2_phBO_5_BO_fieldsTableRow' , false);</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>text</name>
       <type>Main</type>
-      <value>^ Back to Top</value>
+      <value>100003</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>id(&quot;eform_mcb67676_phBO_3_BO_TableCell6&quot;)/a[1]</value>
+      <value>id(&quot;eform_mcb67676_TabContainer_4_TabRef_2_phBO_5_BO_grc&quot;)/tbody[1]/tr[@class=&quot;GVRow&quot;]/td[7]</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
@@ -44,43 +44,50 @@
    <webElementXpaths>
       <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
+      <name>xpath:attributes</name>
+      <type>Main</type>
+      <value>(//td[@onclick=&quot;__doPostBack('eform_mcb67676$TabContainer_4$TabRef_2$phBO_5_BO$grc','Select$0');SetInlineviewDisplay('eform_mcb67676_TabContainer_4_TabRef_2_phBO_5_BO_fileTableRow','eform_mcb67676_TabContainer_4_TabRef_2_phBO_5_BO_fieldsTableRow' , false);&quot;])[7]</value>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
       <name>xpath:idRelative</name>
-      <value>//td[@id='eform_mcb67676_phBO_3_BO_TableCell6']/a</value>
-   </webElementXpaths>
-   <webElementXpaths>
-      <isSelected>false</isSelected>
-      <matchCondition>equals</matchCondition>
-      <name>xpath:link</name>
-      <value>(//a[contains(text(),'^ Back to Top')])[2]</value>
+      <type>Main</type>
+      <value>//table[@id='eform_mcb67676_TabContainer_4_TabRef_2_phBO_5_BO_grc']/tbody/tr[3]/td[7]</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:neighbor</name>
-      <value>(.//*[normalize-space(text()) and normalize-space(.)='Select a file:'])[1]/following::a[1]</value>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='BM Text'])[1]/following::td[7]</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:neighbor</name>
-      <value>(.//*[normalize-space(text()) and normalize-space(.)='Replace'])[1]/following::a[1]</value>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='BM Small Int'])[1]/following::td[8]</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:neighbor</name>
-      <value>(.//*[normalize-space(text()) and normalize-space(.)='dummy'])[1]/preceding::a[1]</value>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Render As TextBox'])[3]/preceding::td[2]</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
-      <name>xpath:href</name>
-      <value>(//a[contains(@href, '#')])[3]</value>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Chintan Shah - 12-27-2018 06:53:48 AM'])[1]/preceding::td[5]</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:position</name>
-      <value>//tr[6]/td/a</value>
+      <type>Main</type>
+      <value>//tr[3]/td[7]</value>
    </webElementXpaths>
 </WebElementEntity>

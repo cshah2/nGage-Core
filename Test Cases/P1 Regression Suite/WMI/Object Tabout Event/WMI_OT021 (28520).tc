@@ -3,6 +3,6 @@
    <description>Regression Test WMI-Check box list Event (Combination3)</description>
    <name>WMI_OT021 (28520)</name>
    <tag></tag>
-   <comment>Click on Value 3 or 4 or 5 check box from master object</comment>
+   <comment></comment>
    <testCaseGuid>9c261f18-c610-4c9e-bfd3-d576a66aeaff</testCaseGuid>
 </TestCaseEntity>

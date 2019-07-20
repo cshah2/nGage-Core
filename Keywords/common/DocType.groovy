@@ -61,7 +61,8 @@ public enum DocType {
 	INTERFACE_TEST_PR_RULES_USER_RELATED("InterfaceTestPRDocTypeExecRules_UserRelated"),
 	STANDARD_GRID("Standard Grid"),
 	TEXTBOX_WITH_SECTION_EVENT("Textbox With Section Event"),
-	RADIO_LIST_EVENT("Radio List Event")
+	RADIO_LIST_EVENT("Radio List Event"),
+	CHECKBOX_LIST_EVENT("Checkbox List Event")
 
 	private final String text
 

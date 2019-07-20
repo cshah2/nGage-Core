@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>option_Lookup Field_Reference Object InlineResultView</name>
+   <name>chkbox_Value1</name>
    <tag></tag>
-   <elementGuidId>2ef7f00e-f239-4c4b-a3d6-16ac5f0df916</elementGuidId>
+   <elementGuidId>aa3a5f2d-c904-4e69-a24f-1bf937a6ffe9</elementGuidId>
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//select[@name='eform_mcb67676$phBO_3_BO$eidmKey_BM_String']/option[text()='Reference Object InlineResultView']</value>
+         <value>//input[@id='eform_mcb67676_TabContainer_4_TabRef_2_phBO_5_BO_eidmKey_BM_String_WL_0']</value>
       </entry>
       <entry>
          <key>BASIC</key>
