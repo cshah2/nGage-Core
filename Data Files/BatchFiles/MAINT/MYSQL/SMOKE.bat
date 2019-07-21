@@ -14,7 +14,7 @@ set PRJ_PATH=%NGAGE_PROJECTS%\nGage-Core\WebUI.prj
 set TEST_SUITE=Test Suites/SMOKE
 set BROWSER=Chrome
 set API_KEY=f0588a0f-a994-4ff5-a41f-76b34822b760
-set EXECUTE_PROFILE = MAINT (MYSQL)
+set EXECUTE_PROFILE=MAINT (MYSQL)
 
 ::-------------------------------------------------------------------------
 ::---------- Run Automation Command ---------------------------------------
