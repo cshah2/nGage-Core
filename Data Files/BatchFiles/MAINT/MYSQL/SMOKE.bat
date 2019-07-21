@@ -19,4 +19,4 @@ set EXECUTE_PROFILE = MAINT (MYSQL)
 ::-------------------------------------------------------------------------
 ::---------- Run Automation Command ---------------------------------------
 ::-------------------------------------------------------------------------
-CALL cmd /c start katalon -noSplash  -runMode=console -consoleLog -projectPath="%PRJ_PATH%"" -statusDelay=60 -retry=0 -testSuitePath="%TEST_SUITE%" -executionProfile="%EXECUTE_PROFILE%" -browserType="%BROWSER%" -summaryReport -apiKey=%API_KEY%
+CALL cmd /c start katalon -noSplash  -runMode=console -consoleLog -projectPath="%PRJ_PATH%" -statusDelay=60 -retry=0 -testSuitePath="%TEST_SUITE%" -executionProfile="%EXECUTE_PROFILE%" -browserType="%BROWSER%" -summaryReport -apiKey=%API_KEY%
