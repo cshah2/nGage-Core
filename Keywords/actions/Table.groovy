@@ -604,7 +604,7 @@ public class Table {
 		boolean isIconFound = false
 
 		for(WebElement icon in icons) {
-			String actTitle = icon.getAttribute('title').toUpperCase()
+			String actTitle = icon.getAttribute('title').toUpperCase().trim()
 			if(actTitle.contains(expTitleAttr.toUpperCase())) {
 				isIconFound = true
 				break

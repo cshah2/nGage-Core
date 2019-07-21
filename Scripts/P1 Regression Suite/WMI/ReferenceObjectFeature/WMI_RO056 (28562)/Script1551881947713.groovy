@@ -34,7 +34,7 @@ WebUI.verifyElementVisible(findTestObject('Object Repository/Page_WMI_NEW/Refere
 WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Reference_Grid_feature/span_23) Reference Grid (viewa'))
 CustomKeywords.'actions.Common.waitForTabLoading'(null, GlobalVariable.G_LongTimeout)
 
-'verify tool tip icon displayed on the grid'
+'verify tool tip icon displayed in reference Section'
 CustomKeywords.'actions.Table.verifyButtonPresentInWMITable'(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Reference_Grid_feature/tab_23) Reference Grid (viewallitemstooltip-true)/table_GVGrid'), 'verify tooltip')
 
 'verify select all checkbox not present in the grid'

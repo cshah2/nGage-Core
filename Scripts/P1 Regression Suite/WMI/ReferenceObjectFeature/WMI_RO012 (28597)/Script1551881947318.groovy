@@ -71,19 +71,6 @@ WebUI.verifyElementVisible(findTestObject('Object Repository/Page_WMI_NEW/Refere
 WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/ImportMode_Interactive/tab4_Interactive/a_Render As CheckBox'))
 WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 
-'Scroll to Inline Doc'
-WebUI.scrollToElement(findTestObject('Page_WMI_NEW/Reference_Object_Feature/ImportMode_Interactive/tab4_Interactive/chkbox_StringType'), GlobalVariable.G_LongTimeout)
-
-'Select checkbox for SmallInt'
-WebUI.check(findTestObject('Page_WMI_NEW/Reference_Object_Feature/ImportMode_Interactive/tab4_Interactive/chkbox_SmallInt'))
-
-'Unselect chekbox for StringType'
-WebUI.uncheck(findTestObject('Page_WMI_NEW/Reference_Object_Feature/ImportMode_Interactive/tab4_Interactive/chkbox_StringType'))
-
-'Save Inline document'
-WebUI.click(findTestObject('Page_WMI_NEW/Reference_Object_Feature/ImportMode_Interactive/tab4_Interactive/btn_Save'))
-WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
-
 'Close WMI'
 CustomKeywords.'actions.Window.clickElementAndWaitForWindowClose'(findTestObject('Page_WMI_NEW/Reference_Object_Feature/ImportMode_Interactive/btn_CloseWindow'), GlobalVariable.G_LongTimeout)
 
@@ -93,8 +80,14 @@ WebUI.switchToWindowIndex(0)
 'Open first document from recent grid'
 CustomKeywords.'actions.Common.openDocumentFromRecentGrid'(1)
 
-'Verify Small Int checkbox is checked'
-WebUI.verifyElementChecked(findTestObject('Page_WMI_NEW/Master_Object_Feature/Render_As_Checkbox/checkbox_SmallInt'), GlobalVariable.G_LongTimeout)
+'Verify Small Int checkbox is visible'
+WebUI.verifyElementVisible(findTestObject('Page_WMI_NEW/Master_Object_Feature/Render_As_Checkbox/checkbox_SmallInt'))
+
+'Verify Small Int checkbox is not checked'
+WebUI.verifyElementNotChecked(findTestObject('Page_WMI_NEW/Master_Object_Feature/Render_As_Checkbox/checkbox_SmallInt'), GlobalVariable.G_LongTimeout)
+
+'Verify String type checkbox is visible'
+WebUI.verifyElementVisible(findTestObject('Page_WMI_NEW/Master_Object_Feature/Render_As_Checkbox/checkbox_String'))
 
 'Verify String type checkbox is not checked'
 WebUI.verifyElementNotChecked(findTestObject('Page_WMI_NEW/Master_Object_Feature/Render_As_Checkbox/checkbox_String'), GlobalVariable.G_LongTimeout)

@@ -38,7 +38,7 @@ WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feat
 CustomKeywords.'actions.Common.waitForTabLoading'(null, GlobalVariable.G_LongTimeout)
 
 '"Open all selected content" icon is displayed in grid'
-CustomKeywords.'actions.Table.verifyButtonPresentInWMITable'(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Reference_Grid_feature/tab_24) Reference Grid (ViewAllContents-true)/table_GVGrid'), 'Open all selected content')
+CustomKeywords.'actions.Table.verifyButtonPresentInWMITable'(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Reference_Grid_feature/tab_24) Reference Grid (ViewAllContents-true)/table_GVGrid'), 'Open all selected item')
 
 'check first record of grid'
 WebUI.check(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Reference_Grid_feature/tab_24) Reference Grid (ViewAllContents-true)/input_checkFirstRow'))

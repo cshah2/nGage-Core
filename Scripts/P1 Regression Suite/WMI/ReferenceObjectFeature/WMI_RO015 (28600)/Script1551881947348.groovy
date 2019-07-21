@@ -16,82 +16,73 @@ import internal.GlobalVariable as GlobalVariable
 'Login Into Application'
 CustomKeywords.'actions.Common.login'()
 
-'Create a new Refrence Object Feature Document'
+'Click on Global New button'
 WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))
+
+'Create a new Refrence Object Feature Document'
 CustomKeywords.'actions.Common.selectDocClassAndDocTypeForGlobalNew'('Reference Object Feature', 'Reference Object ImportMode Autocreate')
 WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'), GlobalVariable.G_LongTimeout)
 WebUI.click(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'))
 
-'switch to new window'
-WebUI.switchToWindowTitle('(Doc ID: NEW )')
+'Switch to WMI page'
+WebUI.switchToWindowIndex(1)
 WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 
-'Click on tab 3) Autocreate'
-WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/ImportMode_AutoCreate/span_3) AUTOCREATE'))
+'Wait for WMI to load'
+WebUI.waitForElementVisible(findTestObject('Page_WMI_NEW/Reference_Object_Feature/ImportMode_AutoCreate/lbl_Information'), GlobalVariable.G_LongTimeout)
 
-'Click on Save from master object'
+'Verify Information text of WMI'
+String expText = 'This WMI imparts Reference Object features for ImportMode Autocreate'
+WebUI.verifyElementText(findTestObject('Page_WMI_NEW/Reference_Object_Feature/ImportMode_AutoCreate/lbl_Information'), expText)
+
+'Save WMI'
 WebUI.click(findTestObject('Page_WMI_NEW/Reference_Object_Feature/ImportMode_Interactive/btn_Save'))
 WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 
-String windowTitle= WebUI.getWindowTitle()
-String[] str_array = windowTitle.split("-")
-String windowTitleAfterSave = str_array[0].trim()
-println 'string 1'+windowTitleAfterSave
-
-'Close Window() and If Error Present Document will not get Close'
+'Close WMI'
 CustomKeywords.'actions.Window.clickElementAndWaitForWindowClose'(findTestObject('Page_WMI_NEW/Reference_Object_Feature/ImportMode_Interactive/btn_CloseWindow'), GlobalVariable.G_LongTimeout)
 
 'Switch to parent window'
 WebUI.switchToWindowIndex(0)
+
+'Close Global new popup dialog'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Home/span_ui-button-icon-primary ui'))
 
-'Navigate to Recent Documents'
-CustomKeywords.'actions.MenuBar.clickTreeMenu'('HOME', 'Recent Documents')
-CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/iframe_iframe_103'))
+'Open first document from recent grid'
+CustomKeywords.'actions.Common.openDocumentFromRecentGrid'(1)
 
-'Sort records DocID Descending'
-CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/Home/tableHeader_RecentDocuments'), 'Doc ID')
-CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/Home/tableHeader_RecentDocuments'), 'Doc ID')
+'Wait for WMI to load'
+WebUI.waitForElementVisible(findTestObject('Page_WMI_NEW/Reference_Object_Feature/ImportMode_AutoCreate/lbl_Information'), GlobalVariable.G_LongTimeout)
 
-int docTypeColumnPosition =CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Page_nGage_Dashboard/Home/tableHeader_RecentDocuments'),'Doc Type')
-String columnNameofSavedDoc = CustomKeywords.'actions.Table.getCellText'(findTestObject('Object Repository/Page_nGage_Dashboard/Home/table_MyDocumentResults'), 1,docTypeColumnPosition)
-println 'string 2'+columnNameofSavedDoc
-
-'verify document is saved'
-WebUI.verifyMatch(windowTitleAfterSave, columnNameofSavedDoc, false)
-
-'Open saved doc from recent document'
-CustomKeywords.'actions.Table.clickCell'(findTestObject('Object Repository/Page_nGage_Dashboard/Home/table_MyDocumentResults'), 1, 7)
-WebUI.switchToWindowIndex(1)
-WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+'Verify Information text of WMI'
+WebUI.verifyElementText(findTestObject('Page_WMI_NEW/Reference_Object_Feature/ImportMode_AutoCreate/lbl_Information'), expText)
 
 'Click on tab 3) Autocreate'
 WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/ImportMode_AutoCreate/span_3) AUTOCREATE'))
 
-'Mouse hover On Dropdown New'
+'Peform mouse over on New button'
 WebUI.mouseOver(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/ImportMode_AutoCreate/tab3)AutoCreate/span_New'))
 WebUI.waitForElementVisible(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/ImportMode_AutoCreate/tab3)AutoCreate/a_Render All Field Types'), GlobalVariable.G_LongTimeout)
+
+'verify total document type list'
+CustomKeywords.'actions.Common.verifyElementsCount'(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/ImportMode_AutoCreate/tab3)AutoCreate/list_NewButton'), 95)
+
+'Click on Redner All Field Types'
 WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/ImportMode_AutoCreate/tab3)AutoCreate/a_Render All Field Types'))
 WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 
-'verify total document type list'
- CustomKeywords.'actions.Common.verifyElementsCount'(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/ImportMode_AutoCreate/tab3)AutoCreate/list_NewButton'), 95)
-
-'click on close window'
+'Close WMI'
 CustomKeywords.'actions.Window.clickElementAndWaitForWindowClose'(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/ImportMode_AutoCreate/span_Close Window'), GlobalVariable.G_LongTimeout)
 
 'switch to main window'
 WebUI.switchToWindowIndex(0)
 
-'Navigate to Recent Documents'
-CustomKeywords.'actions.MenuBar.clickTreeMenu'('HOME', 'Recent Documents')
-CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/iframe_iframe_103'))
+'Open First document from recent grid'
+CustomKeywords.'actions.Common.openDocumentFromRecentGrid'(1)
 
-'Refresh Recent Document'
-WebUI.click(findTestObject('Object Repository/Page_nGage_Dashboard/Home/span_Refresh Grid'))
-CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/iframe_iframe_103'))
+'Wait for WMI to load'
+WebUI.waitForElementVisible(findTestObject('Page_WMI/Master_Object/lbl_Information'), GlobalVariable.G_LongTimeout)
 
-'verify created document'
-docTypeColumnPosition =CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Page_nGage_Dashboard/Home/tableHeader_RecentDocuments'),'Doc Type')
-String docType= CustomKeywords.'actions.Table.getCellText'(findTestObject('Object Repository/Page_nGage_Dashboard/Home/table_MyDocumentResults'), 1, docTypeColumnPosition)
-WebUI.verifyMatch(docType, 'Render All Field Types', false)
+'Verify Information text of WMI'
+String expText2 = 'This WMI imparts - Renders all basic type of single value fields'
+WebUI.verifyElementText(findTestObject('Page_WMI/Master_Object/lbl_Information'), expText2)

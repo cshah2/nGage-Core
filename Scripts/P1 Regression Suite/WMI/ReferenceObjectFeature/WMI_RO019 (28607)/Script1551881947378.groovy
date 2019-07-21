@@ -17,92 +17,102 @@ import utils.DateUtil
 'Login Into Application'
 CustomKeywords.'actions.Common.login'()
 
-'Create a new Refrence Object Feature Document'
+'Click on Global New button'
 WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))
+
+'Create a new Refrence Object Feature Document'
 CustomKeywords.'actions.Common.selectDocClassAndDocTypeForGlobalNew'('Reference Object Feature', 'Reference Object ExtAppURL')
 WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'), GlobalVariable.G_LongTimeout)
 WebUI.click(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'))
 
-WebUI.switchToWindowTitle('(Doc ID: NEW )')
+'Switch to WMI Page'
+WebUI.switchToWindowIndex(1)
 WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+
+'Wait for page to load'
+WebUI.waitForElementVisible(findTestObject('Page_WMI_NEW/Reference_Object_Feature/ExtAppURL/lbl_Information'), GlobalVariable.G_LongTimeout)
+
+'Verify Information Text of WMI'
+String expText = 'This WMI imparts Reference Object features for ExtAppURL'
+WebUI.verifyElementText(findTestObject('Page_WMI_NEW/Reference_Object_Feature/ExtAppURL/lbl_Information'), expText)
 
 'Verify the various tabs for Extrappurl displayed'
 WebUI.verifyElementPresent(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/ExtAppURL/tab_1_ExtAppURL/span_Business Model View - Ref'),GlobalVariable.G_LongTimeout )
 WebUI.verifyElementPresent(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/ExtAppURL/tab_1_ExtAppURL/span_This WMI imparts Referenc'), GlobalVariable.G_LongTimeout)
 WebUI.verifyElementPresent(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/ExtAppURL/tab_2_ExtAppURL/span_2) Extappurl'), GlobalVariable.G_LongTimeout)
 
-'Verify tab 3)ExtAppURL displayes Reference Grid'
-
-CustomKeywords.'actions.Table.getCellText'(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/AdHoc_Filter/table_GVGrid'), 1,4)
-
-'click on tab 3) ExtAppURL'
-WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/ExtAppURL/tab_3_ExtAppURL/span_3) Extappurl'))
-CustomKeywords.'actions.Common.waitForTabLoading'(null, GlobalVariable.G_LongTimeout)
-
-'Verify 1) Extrappurl should be displayed with New dropdown having different Doc types'
-CustomKeywords.'actions.Common.verifyElementsCount'(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/ExtAppURL/tab_3_ExtAppURL/list_New'), 95)
-
-'Select Doc Type Render as Label'
-WebUI.mouseOver(findTestObject('Page_WMI_NEW/Reference_Object_Feature/ExtAppURL/tab_3_ExtAppURL/div_New'))
-WebUI.waitForElementVisible(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/ExtAppURL/tab_3_ExtAppURL/a_RenderAsLabel'),GlobalVariable.G_LongTimeout)
-WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/ExtAppURL/tab_3_ExtAppURL/a_RenderAsLabel'))
-CustomKeywords.'actions.Common.waitForTabLoading'(null, GlobalVariable.G_LongTimeout)
-
-'Verify related document should be displayed under reference grid as inline view'
-WebUI.verifyElementPresent(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/ExtAppURL/tab_1_ExtAppURL/span_This is WMI'),GlobalVariable.G_LongTimeout)
-
-
-'Verify New Chrome Browser with www.google.com URL is Opened simultaneously'
-WebUI.switchToWindowIndex(2)
+'Save WMI'
+WebUI.click(findTestObject('Page_WMI_NEW/Reference_Object_Feature/ExtAppURL/btn_Save'))
 WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 
-String actualURL = WebUI.getUrl()
-WebUI.verifyMatch(actualURL, '.*https://www.google.com.*', true)
-WebUI.closeWindowIndex(2)
-
-'Click on Save from Master Doc'
-WebUI.switchToWindowIndex(1)
-WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/ExtAppURL/tab_3_ExtAppURL/input_Save'))
-WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
-
-'Save Document from Bussiness Model'
-WebUI.click(findTestObject('Page_WMI_NEW/Reference_Object_Feature/ImportMode_Interactive/btn_Save'))
-WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
-
-String windowTitle= WebUI.getWindowTitle()
-String[] str_array = windowTitle.split("-")
-String windowTitleAfterSave = str_array[0].trim()
-println windowTitleAfterSave
-
-'Close Window() and If Error Present Document will not get Close'
-CustomKeywords.'actions.Window.clickElementAndWaitForWindowClose'(findTestObject('Page_WMI_NEW/Reference_Object_Feature/ImportMode_Interactive/btn_CloseWindow'), GlobalVariable.G_LongTimeout)
+'Close WMI'
+CustomKeywords.'actions.Window.clickElementAndWaitForWindowClose'(findTestObject('Page_WMI_NEW/Reference_Object_Feature/ExtAppURL/btn_CloseWindow'), GlobalVariable.G_LongTimeout)
 
 'Switch to parent window'
 WebUI.switchToWindowIndex(0)
+
+'Close "create new" popup dialog'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Home/span_ui-button-icon-primary ui'))
 
-'Navigate to Recent Documents'
-CustomKeywords.'actions.MenuBar.clickTreeMenu'('HOME', 'Recent Documents')
-CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/iframe_iframe_103'))
+'Open first document from Recent Grid'
+CustomKeywords.'actions.Common.openDocumentFromRecentGrid'(1)
 
-'Sort records DocID Descending'
-CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/Home/tableHeader_RecentDocuments'), 'Doc ID')
-CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dashboard/Home/tableHeader_RecentDocuments'), 'Doc ID')
+'Wait for page to load'
+WebUI.waitForElementVisible(findTestObject('Page_WMI_NEW/Reference_Object_Feature/ExtAppURL/lbl_Information'), GlobalVariable.G_LongTimeout)
 
-int DocTypeColumnPosition =CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Page_nGage_Dashboard/Home/tableHeader_RecentDocuments'),'Doc Type')
-println DocTypeColumnPosition
+'Verify Information Text of WMI'
+WebUI.verifyElementText(findTestObject('Page_WMI_NEW/Reference_Object_Feature/ExtAppURL/lbl_Information'), expText)
 
-String docTypeInRecentDocuments = CustomKeywords.'actions.Table.getCellText'(findTestObject('Object Repository/Page_nGage_Dashboard/Home/table_MyDocumentResults'),1,DocTypeColumnPosition)
-println docTypeInRecentDocuments
+'click on tab 3) ExtAppURL'
+WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/ExtAppURL/tab_3_ExtAppURL/span_3) Extappurl'))
 
-'Open Saved document from Recent Documents'
-CustomKeywords.'actions.Table.clickCell'(findTestObject('Object Repository/Page_nGage_Dashboard/Home/table_MyDocumentResults'), 1, DocTypeColumnPosition)
+'Peform Mouse over on New button'
+WebUI.mouseOver(findTestObject('Page_WMI_NEW/Reference_Object_Feature/ExtAppURL/tab_3_ExtAppURL/div_New'))
+WebUI.waitForElementVisible(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/ExtAppURL/tab_3_ExtAppURL/a_RenderAsLabel'),GlobalVariable.G_LongTimeout)
+
+'Verify count of options displayed in menu'
+CustomKeywords.'actions.Common.verifyElementsCount'(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/ExtAppURL/tab_3_ExtAppURL/list_New'), 95)
+
+'Click on option Render As Label'
+WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/ExtAppURL/tab_3_ExtAppURL/a_RenderAsLabel'))
+CustomKeywords.'actions.Common.waitForTabLoading'(null, GlobalVariable.G_LongTimeout)
+
+'Switch to new popup window'
+WebUI.switchToWindowIndex(2)
+WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+
+'Verify page url of new window contains google'
+WebUI.verifyMatch(WebUI.getUrl(), '.*google.*', true)
+
+'Close window'
+WebUI.closeWindowIndex(2)
+
+'Switch to WMI'
 WebUI.switchToWindowIndex(1)
 WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 
-'Verify Saved Document got Opened'
-WebUI.verifyMatch(docTypeInRecentDocuments, windowTitleAfterSave,false)
+'Wait for Inline doc to load'
+WebUI.waitForElementVisible(findTestObject('Page_WMI_NEW/Reference_Object_Feature/ExtAppURL/tab_3_ExtAppURL/lbl_Information_InlineDoc'), GlobalVariable.G_LongTimeout)
 
-'Close Window() and If Error Present Document will not get Close'
-CustomKeywords.'actions.Window.clickElementAndWaitForWindowClose'(findTestObject('Page_WMI_NEW/Reference_Object_Feature/ImportMode_Interactive/btn_CloseWindow'), GlobalVariable.G_LongTimeout)
+'Verify infomation text of inline doc'
+String expText2 = 'This WMI imparts - Control renderas Label'
+WebUI.verifyElementText(findTestObject('Page_WMI_NEW/Reference_Object_Feature/ExtAppURL/tab_3_ExtAppURL/lbl_Information_InlineDoc'), expText2)
 
+'Click on Save button'
+WebUI.click(findTestObject('Page_WMI_NEW/Reference_Object_Feature/ExtAppURL/tab_3_ExtAppURL/btn_Save'))
+WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+
+'Close WMI'
+CustomKeywords.'actions.Window.clickElementAndWaitForWindowClose'(findTestObject('Page_WMI_NEW/Reference_Object_Feature/ExtAppURL/btn_CloseWindow'), GlobalVariable.G_LongTimeout)
+
+'Switch to parent window'
+WebUI.switchToWindowIndex(0)
+
+'Open first document from Recent Grid'
+CustomKeywords.'actions.Common.openDocumentFromRecentGrid'(1)
+
+'Wait for page to load'
+WebUI.waitForElementVisible(findTestObject('Page_WMI_NEW/Master_Object_Feature/Render_As_Label/span_Information'), GlobalVariable.G_LongTimeout)
+
+'Verify Information Text of WMI'
+WebUI.verifyElementText(findTestObject('Page_WMI_NEW/Master_Object_Feature/Render_As_Label/span_Information'), expText2)
