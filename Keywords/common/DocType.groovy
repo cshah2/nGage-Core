@@ -67,7 +67,8 @@ public enum DocType {
 	LABEL_EVENT("Label Event"),
 	DROPDOWN_EVENT("DropDown Event"),
 	NESTED_LOOKUP_EVENT("Nested Lookup Event"),
-	ONLOAD_AND_SETFOCUS_EVENT("DoNotSetValueOnLoad and SetFocus Event")
+	ONLOAD_AND_SETFOCUS_EVENT("DoNotSetValueOnLoad and SetFocus Event"),
+	REF_OBJ_INLINE_RESULT_VIEW("Reference Object InlineResultView")
 
 	private final String text
 

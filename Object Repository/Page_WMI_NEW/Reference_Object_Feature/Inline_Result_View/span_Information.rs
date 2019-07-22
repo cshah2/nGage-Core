@@ -4,7 +4,17 @@
    <name>span_Information</name>
    <tag></tag>
    <elementGuidId>6389a472-b4ee-4136-b174-e58400ddb444</elementGuidId>
-   <selectorMethod>BASIC</selectorMethod>
+   <selectorCollection>
+      <entry>
+         <key>XPATH</key>
+         <value>//div[@id='eform_mcb67676_phBO_3_BO_secpnl_1']//span[@class='FieldVal']</value>
+      </entry>
+      <entry>
+         <key>BASIC</key>
+         <value>id(&quot;eform_mcb67676_phBO_3_BO_secpnl_1&quot;)/table[1]/tbody[1]/tr[2]/td[1]/table[1]/tbody[1]/tr[2]/td[1]/span[@class=&quot;FieldVal&quot;][count(. | //*[@ref_element = 'Object Repository/Page_WMI_NEW/Reference_Object_Feature/Inline_Result_View/iframe_Close Window_ContentPla']) = count(//*[@ref_element = 'Object Repository/Page_WMI_NEW/Reference_Object_Feature/Inline_Result_View/iframe_Close Window_ContentPla'])]</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -45,36 +55,42 @@
       <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:idRelative</name>
+      <type>Main</type>
       <value>//div[@id='eform_mcb67676_phBO_3_BO_secpnl_1']/table/tbody/tr[2]/td/table/tbody/tr[2]/td/span</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:neighbor</name>
+      <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='Information:'])[1]/following::span[2]</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:neighbor</name>
+      <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='Business Model View - Reference Object InlineResultView'])[1]/following::span[4]</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:neighbor</name>
+      <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)=concat('inlineresultview=', '&quot;', 'true', '&quot;', ',disablegridclick=', '&quot;', 'true', '&quot;', '')])[1]/preceding::span[10]</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:neighbor</name>
+      <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)=concat('inlineresultview=', '&quot;', 'true', '&quot;', ',disablegridclick=', '&quot;', 'false', '&quot;', '')])[1]/preceding::span[13]</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:position</name>
+      <type>Main</type>
       <value>//tr[2]/td/span</value>
    </webElementXpaths>
 </WebElementEntity>

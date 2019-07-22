@@ -14,6 +14,9 @@ import com.kms.katalon.core.testdata.TestData as TestData
 import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+
+import common.DocClass
+import common.DocType
 import internal.GlobalVariable as GlobalVariable
 import utils.Consts
 import utils.DateUtil
@@ -21,110 +24,80 @@ import utils.DateUtil
 'Login Into Application'
 CustomKeywords.'actions.Common.login'()
 
-'Create a new Refrence Object Feature Document'
-WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))
-CustomKeywords.'actions.Common.selectDocClassAndDocTypeForGlobalNew'('Reference Object Feature', 'Reference Object InlineResultView')
-WebUI.click(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'))
+'Create Document 1 - Reference Object inline result view'
+CustomKeywords.'actions.Data.create'(DocClass.REFERENCE_OBJECT_FEATURE, DocType.REF_OBJ_INLINE_RESULT_VIEW, null)
 
-WebUI.switchToWindowTitle('(Doc ID: NEW )')
+'Create Document 2 - Checkbox event'
+CustomKeywords.'actions.Data.create'(DocClass.OBJECT_TABOUT_EVENT, DocType.CHECKBOX_EVENT, null)
+
+'Open second document from recent grid'
+CustomKeywords.'actions.Common.openDocumentFromRecentGrid'(2)
+
+'Wait for WMI to load'
+WebUI.waitForElementVisible(findTestObject('Page_WMI_NEW/Reference_Object_Feature/Inline_Result_View/span_Information'), GlobalVariable.G_LongTimeout)
+
+'Verify Information text'
+String expText = 'This WMI imparts Reference Object features for InlineResultView and disablegridclick'
+WebUI.verifyElementText(findTestObject('Page_WMI_NEW/Reference_Object_Feature/Inline_Result_View/span_Information'), expText)
+
+'Click on Tab 2'
+WebUI.click(findTestObject('Page_WMI_NEW/Reference_Object_Feature/Inline_Result_View/tab2_InlineResultView'))
+WebUI.delay(1)
+
+'Sort records in Inline Result grid'
+WebUI.click(findTestObject('Page_WMI_NEW/Reference_Object_Feature/Inline_Result_View/Tab2_Inline_Result_View/tableHeader_DocID'))
+CustomKeywords.'actions.Common.waitForTabLoading'(null, GlobalVariable.G_LongTimeout)
+WebUI.click(findTestObject('Page_WMI_NEW/Reference_Object_Feature/Inline_Result_View/Tab2_Inline_Result_View/tableHeader_DocID'))
+CustomKeywords.'actions.Common.waitForTabLoading'(null, GlobalVariable.G_LongTimeout)
+
+'Click on first row in inline result view'
+CustomKeywords.'actions.Table.clickCell'(findTestObject('Page_WMI_NEW/Reference_Object_Feature/Inline_Result_View/Tab2_Inline_Result_View/table_InlineResultView'), 1, 5)
+CustomKeywords.'actions.Common.waitForTabLoading'(null, GlobalVariable.G_LongTimeout)
+
+'Wait for Inline document to load'
+WebUI.waitForElementVisible(findTestObject('Page_WMI_NEW/Reference_Object_Feature/Inline_Result_View/Tab2_Inline_Result_View/lbl_Information'), GlobalVariable.G_LongTimeout)
+
+'Scroll to Inline view'
+WebUI.scrollToElement(findTestObject('Page_WMI_NEW/Reference_Object_Feature/Inline_Result_View/Tab2_Inline_Result_View/input_StringField'), GlobalVariable.G_LongTimeout)
+
+'Verify Inline document is checkbox event'
+String expText1 = 'This WMI imparts - Field Events in CheckBox'
+WebUI.verifyElementText(findTestObject('Page_WMI_NEW/Reference_Object_Feature/Inline_Result_View/Tab2_Inline_Result_View/lbl_Information'), expText1)
+
+'Click on Checkbox Control'
+WebUI.check(findTestObject('Page_WMI_NEW/Reference_Object_Feature/Inline_Result_View/Tab2_Inline_Result_View/chkbox_Control'))
+
+'Wait for Javascript event to complete'
+CustomKeywords.'actions.Common.waitForTabLoading'(null, GlobalVariable.G_LongTimeout)
+
+'Verify Text value in input field reference object'
+String inputFieldText = 'Checkbox is checked (Readonly)'
+WebUI.verifyElementAttributeValue(findTestObject('Page_WMI_NEW/Reference_Object_Feature/Inline_Result_View/Tab2_Inline_Result_View/input_StringField'), 'value', inputFieldText, GlobalVariable.G_LongTimeout)
+
+'Save Inline Document'
+WebUI.click(findTestObject('Page_WMI_NEW/Reference_Object_Feature/Inline_Result_View/Tab2_Inline_Result_View/btn_Save'))
 WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 
-'Click on WMI Harness page'
-WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Inline_Result_View/span_WMI Harness'))
-CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Inline_Result_View/iframe_ContentPlaceHolder1_iPage'))
+'Close WMI'
+CustomKeywords.'actions.Window.clickElementAndWaitForWindowClose'(findTestObject('Page_WMI_NEW/Reference_Object_Feature/Inline_Result_View/span_Close Window'), GlobalVariable.G_LongTimeout)
 
-'Click on Save button'
-WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Inline_Result_View/span_Save'))
+'Switch to parent window'
+WebUI.switchToWindowIndex(0)
 
-'Wait for save operation to complete'
-WebUI.waitForElementVisible(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Inline_Result_View/span_Delete'), GlobalVariable.G_LongTimeout)
+'Clear cookies and Login back into portal'
+CustomKeywords.'actions.Common.login'()
 
-'Get Window title to verify the name in main window'
-String windowTitle = WebUI.getWindowTitle()
-String[] str_array = windowTitle.split("-")
-String windowTitleText = str_array[0].trim()
-String windowTitleDate = str_array[1].trim()
-'Click on Close Window'
-WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Inline_Result_View/span_Close Window'))
+'Open first document from recent grid'
+CustomKeywords.'actions.Common.openDocumentFromRecentGrid'(1)
 
-'Switch to main window and close'
-WebUI.switchToWindowTitle('Savana nGage')
-WebUI.click(findTestObject('Page_nGage_Dashboard/Home/span_ui-button-icon-primary ui'))
+'Wait for WMI to load'
+WebUI.waitForElementVisible(findTestObject('Page_WMI_NEW/Object Tabout Event/CheckBox Event/lbl_Information'), GlobalVariable.G_LongTimeout)
 
-'Navigate to Recent Documents'
-CustomKeywords.'actions.MenuBar.clickTreeMenu'('HOME', 'Recent Documents')
-CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_nGage_Dashboard/iframe_iframe_103'))
+'Verify Checkbox event document is loaded'
+WebUI.verifyElementText(findTestObject('Page_WMI_NEW/Object Tabout Event/CheckBox Event/lbl_Information'), expText1)
 
-'Get value from Document title from 1st row'
-int documentTitleColumn = CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Page_nGage_Dashboard/Home/tableHeader_RecentDocuments'), 'Document Title')
-String documentTitle = CustomKeywords.'actions.Table.getCellText'(findTestObject('Object Repository/Page_nGage_Dashboard/Home/table_MyDocumentResults'), 1, documentTitleColumn)
+'Verify Checkbox control is checked'
+WebUI.verifyElementChecked(findTestObject('Page_WMI_NEW/Object Tabout Event/CheckBox Event/chkbox_Control'), GlobalVariable.G_LongTimeout)
 
-'Verify document tile and window title is matching'
-WebUI.verifyMatch(documentTitle, '.*'+windowTitleText+'.*', true)
-WebUI.verifyMatch(documentTitle, '.*'+windowTitleDate+'.*', true)
-
-'Click and open the saved document from recent document table'
-CustomKeywords.'actions.Table.clickCell'(findTestObject('Object Repository/Page_nGage_Dashboard/Home/table_MyDocumentResults'), 1, documentTitleColumn)
-
-'Switch to opened window'
-WebUI.switchToWindowIndex(1)
-
-'Wait till the page loads'
-WebUI.waitForElementVisible(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Inline_Result_View/span_Delete'), GlobalVariable.G_LongTimeout)
-
-'Click on tab 2) InlineResultView'
-WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Inline_Result_View/tab2_InlineResultView'))
-
-'Click on the first row in table'
-WebUI.click(findTestObject('Page_WMI_NEW/Reference_Object_Feature/Inline_Result_View/Tab2_Inline_Result_View/table_CellBMString'))
-//CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Inline_Result_View/iframe_ContentPlaceHolder1_iPage'))
-////WebUI.delay(10)
-//CustomKeywords.'actions.Common.waitForElementVisible'(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Inline_Result_View/Tab2_Inline_Result_View/input_ReferenceObjectEvent'), GlobalVariable.G_LongTimeout)
-CustomKeywords.'actions.Common.waitForTabLoading'(null, GlobalVariable.G_LongTimeout)
-
-
-'Get value from Reference Object Event text box'
-String referenceTextBox = WebUI.getAttribute(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Inline_Result_View/Tab2_Inline_Result_View/input_ReferenceObjectEvent'), 'value').trim()
-
-'Modify value in Reference Object text box'
-String addText = DateUtil.getCurrentDateTimeMinusDays(0, Consts.FORMAT_DATETIME)
-CustomKeywords.'actions.Common.setTextJQuery'(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Inline_Result_View/Tab2_Inline_Result_View/input_ReferenceObjectEvent'), addText)
-
-'Click on Save button'
-WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Inline_Result_View/Tab2_Inline_Result_View/save_2InlineResultView_tab'))
-
-'Close the window'
-WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Inline_Result_View/span_Close Window'))
-
-'Switch to opened window'
-WebUI.switchToWindowTitle('Savana nGage')
-
-'Navigate to Recent docuements'
-CustomKeywords.'actions.MenuBar.clickTreeMenu'('HOME', 'Recent Documents')
-
-'Open the saved docuemnt'
-'Click and open the saved document from recent document table'
-CustomKeywords.'actions.Table.clickCell'(findTestObject('Object Repository/Page_nGage_Dashboard/Home/table_MyDocumentResults'), 1, documentTitleColumn)
-
-'Switch to opened window'
-WebUI.switchToWindowIndex(1)
-
-'Wait till the page loads'
-WebUI.waitForElementVisible(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Inline_Result_View/span_Delete'), GlobalVariable.G_LongTimeout)
-
-'Click on tab 2) InlineResultView'
-WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Inline_Result_View/tab2_InlineResultView'))
-
-'Click on the first row in table'
-WebUI.click(findTestObject('Page_WMI_NEW/Reference_Object_Feature/Inline_Result_View/Tab2_Inline_Result_View/table_CellBMString'))
-CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Inline_Result_View/iframe_ContentPlaceHolder1_iPage'))
-CustomKeywords.'actions.Common.waitForTabLoading'(null, GlobalVariable.G_LongTimeout)
-
-'Verify the document is opened in InlineView'
-WebUI.verifyElementVisible(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Inline_Result_View/Tab2_Inline_Result_View/input_ReferenceObjectEvent'))
-
-'Get value from Reference Object Event text box'
-String newReferenceTextBox = WebUI.getAttribute(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Inline_Result_View/Tab2_Inline_Result_View/input_ReferenceObjectEvent'), 'value')
-
-'Verify the text from Reference Object Event text box'
-WebUI.verifyMatch(newReferenceTextBox, addText, false)
+'Verify Text in String field'
+WebUI.verifyElementAttributeValue(findTestObject('Page_WMI_NEW/Object Tabout Event/CheckBox Event/input_StringField'), 'value', inputFieldText, GlobalVariable.G_LongTimeout)

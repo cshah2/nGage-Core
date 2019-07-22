@@ -63,6 +63,9 @@ CustomKeywords.'actions.Common.waitForTabLoading'(null, GlobalVariable.G_LongTim
 WebUI.mouseOver(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/ImportMode_Interactive/tab4_Interactive/span_New'))
 WebUI.delay(2)
 
+'Verify Count of options available in new button'
+CustomKeywords.'actions.Common.verifyElementsCount'(findTestObject('Page_WMI_NEW/Reference_Object_Feature/ImportMode_Interactive/tab4_Interactive/list_NewButton'), 2)
+
 'Verify Options with filter="Include" in Dropdown'
 WebUI.verifyElementVisible(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/ImportMode_Interactive/tab4_Interactive/a_Render As CheckBox'))
 WebUI.verifyElementVisible(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/ImportMode_Interactive/tab4_Interactive/a_Render As Label'))
