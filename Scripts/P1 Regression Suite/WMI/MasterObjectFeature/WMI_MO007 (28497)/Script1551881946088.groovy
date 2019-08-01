@@ -42,14 +42,16 @@ WebUI.verifyMatch(WebUI.getUrl(), 'https://www.google.com/', false)
 WebUI.closeWindowIndex(2)
 
 'Click on Static Link'
-WebUI.switchToWindowTitle('(Doc ID: NEW )')
+WebUI.switchToWindowIndex(1)
+CustomKeywords.'actions.Common.waitForTabLoading'(null, GlobalVariable.G_LongTimeout)
 WebUI.click(findTestObject('Page_WMI_NEW/Master_Object_Feature/Render_As_LinkButton/a_StaticLink'))
 WebUI.switchToWindowIndex(2)
 WebUI.verifyMatch(WebUI.getUrl(), 'https://www.msn.com/', false)
 WebUI.closeWindowIndex(2)
 
 'Click on Import Configured link'
-WebUI.switchToWindowTitle('(Doc ID: NEW )')
+WebUI.switchToWindowIndex(1)
+CustomKeywords.'actions.Common.waitForTabLoading'(null, GlobalVariable.G_LongTimeout)
 WebUI.click(findTestObject('Page_WMI_NEW/Master_Object_Feature/Render_As_LinkButton/a_ImportConfigured'))
 WebUI.verifyElementVisible(findTestObject('Page_WMI_NEW/Master_Object_Feature/Render_As_LinkButton/WMI_Dialog_Title'))
 WebUI.click(findTestObject('Page_WMI_NEW/Master_Object_Feature/Render_As_LinkButton/WMI_Dialog close icon'))
@@ -101,6 +103,7 @@ WebUI.closeWindowIndex(2)
 
 'Click on Static Link'
 WebUI.switchToWindowIndex(1)
+CustomKeywords.'actions.Common.waitForTabLoading'(null, GlobalVariable.G_LongTimeout)
 WebUI.click(findTestObject('Page_WMI_NEW/Master_Object_Feature/Render_As_LinkButton/a_StaticLink'))
 WebUI.switchToWindowIndex(2)
 WebUI.verifyMatch(WebUI.getUrl(), 'https://www.msn.com/', false)
@@ -108,6 +111,8 @@ WebUI.closeWindowIndex(2)
 
 'Click on Import Configured link'
 WebUI.switchToWindowIndex(1)
+CustomKeywords.'actions.Common.waitForTabLoading'(null, GlobalVariable.G_LongTimeout)
+WebUI.waitForElementClickable(findTestObject('Page_WMI_NEW/Master_Object_Feature/Render_As_LinkButton/a_ImportConfigured'), GlobalVariable.G_LongTimeout)
 WebUI.click(findTestObject('Page_WMI_NEW/Master_Object_Feature/Render_As_LinkButton/a_ImportConfigured'))
 WebUI.verifyElementVisible(findTestObject('Page_WMI_NEW/Master_Object_Feature/Render_As_LinkButton/WMI_Dialog_Title'))
 WebUI.click(findTestObject('Page_WMI_NEW/Master_Object_Feature/Render_As_LinkButton/WMI_Dialog close icon'))
