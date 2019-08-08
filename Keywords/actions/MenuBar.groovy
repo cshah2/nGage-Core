@@ -210,10 +210,11 @@ public class MenuBar {
 			WebDriver driver = DriverFactory.getWebDriver()
 			//driver.findElement(By.xpath(treeXpath.toString())).click()
 			WebElement lastNode = driver.findElement(By.xpath(treeXpath.toString()))
-			Actions asDriver = new Actions(driver)
-			asDriver.moveToElement(lastNode).build().perform()
+//			Actions asDriver = new Actions(driver)
+//			asDriver.moveToElement(lastNode).build().perform()
 //			WebDriverWait wait = new WebDriverWait(driver, 5)
 //			wait.until(ExpectedConditions.elementToBeClickable(lastNode))
+			new actions.Common().scrollToElement(lastNode)
 			lastNode.click()
 		}
 		catch(Exception e) {
@@ -222,7 +223,7 @@ public class MenuBar {
 			KeywordUtil.markFailedAndStop('Could not click on Tree menu'+e.toString())
 		}
 	}
-
+	
 	@Keyword
 	def doubleClickTreeMenu(String moduleName, String... menuPath) {
 
@@ -243,6 +244,7 @@ public class MenuBar {
 			WebDriver driver = DriverFactory.getWebDriver()
 			WebElement e = driver.findElement(By.xpath(treeXpath.toString()))
 
+			new actions.Common().scrollToElement(e)
 			Actions aDriver = new Actions(driver)
 			aDriver.doubleClick(e).build().perform()
 		}
@@ -272,6 +274,7 @@ public class MenuBar {
 			WebDriver driver = DriverFactory.getWebDriver()
 			WebElement e = driver.findElement(By.xpath(treeXpath.toString()))
 
+			new actions.Common().scrollToElement(e)
 			Actions aDriver = new Actions(driver)
 			aDriver.contextClick(e).build().perform()
 
@@ -300,8 +303,11 @@ public class MenuBar {
 			//treeXpath.append("/ul/li/a[starts-with(normalize-space(text()),'"+menuPath[size-1]+appendBrace+"')]")
 			treeXpath.append(xpathText(menuPath[size-1]+appendBrace))
 			WebDriver driver = DriverFactory.getWebDriver()
-			String nodeText = driver.findElement(By.xpath(treeXpath.toString())).getText()
-
+			
+			WebElement e = driver.findElement(By.xpath(treeXpath.toString()))
+			new actions.Common().scrollToElement(e)
+			
+			String nodeText = e.getText()
 
 			int startIndex = nodeText.lastIndexOf('(')+1
 			int endIndex = nodeText.length()-1
@@ -378,6 +384,8 @@ public class MenuBar {
 			li = a.findElement(By.xpath(".."))
 
 			if(!isAreaExpanded(li)) {
+				
+				new actions.Common().scrollToElement(a)
 				Actions asDriver = new Actions(driver)
 				asDriver.doubleClick(a).build().perform()
 				WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)

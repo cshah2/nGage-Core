@@ -54,6 +54,7 @@ public class Report {
 		WebElement parent = lvlOneElement.findElement(By.xpath(".."))
 		if(!isAreaExpanded(parent)) {
 			Actions actions = new Actions(driver)
+			new actions.Common().scrollToElement(lvlOneElement)
 			actions.doubleClick(lvlOneElement).build().perform()
 			WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 			setLevelOne()
@@ -73,6 +74,7 @@ public class Report {
 		WebElement parent = lvlTwoElement.findElement(By.xpath(".."))
 		if(!isAreaExpanded(parent)) {
 			Actions actions = new Actions(driver)
+			new actions.Common().scrollToElement(lvlTwoElement)
 			actions.doubleClick(lvlTwoElement).build().perform()
 			WebUI.waitForJQueryLoad(GlobalVariable.G_LongTimeout)
 			setLevelOne()
@@ -97,40 +99,40 @@ public class Report {
 	}
 
 	/* ############################# KEYWORDS ##################################### */	
-//	@Keyword
-//	def clickReport(String lvl_one, String lvl_two, String lvl_three) {
-//		
-//		try {
-//			setLevelOne()
-//			setLevelTwo(lvl_one)
-//			setLevelThree(lvl_one, lvl_two)
-//			lvlThree.get(lvl_three).click()
-//		}
-//		catch(Exception e) {
-//			WebUI.takeScreenshot()
-//			KeywordUtil.markFailedAndStop('Unable to click report '+lvl_one+' -> '+lvl_two+' -> '+lvl_three+'\n'+e.toString())
-//		}
-//		new Common().waitForReportToLoad(GlobalVariable.G_ReportTimeout)
-//	}
+	//	@Keyword
+	//	def clickReport(String lvl_one, String lvl_two, String lvl_three) {
+	//
+	//		try {
+	//			setLevelOne()
+	//			setLevelTwo(lvl_one)
+	//			setLevelThree(lvl_one, lvl_two)
+	//			lvlThree.get(lvl_three).click()
+	//		}
+	//		catch(Exception e) {
+	//			WebUI.takeScreenshot()
+	//			KeywordUtil.markFailedAndStop('Unable to click report '+lvl_one+' -> '+lvl_two+' -> '+lvl_three+'\n'+e.toString())
+	//		}
+	//		new Common().waitForReportToLoad(GlobalVariable.G_ReportTimeout)
+	//	}
 
-//	@Keyword
-//	def rightClickReport(String lvl_one, String lvl_two, String lvl_three) {
-//		try {
-//			setLevelOne()
-//			setLevelTwo(lvl_one)
-//			setLevelThree(lvl_one, lvl_two)
-//			Actions actions = new Actions(driver)
-//			actions.contextClick(lvlThree.get(lvl_three)).build().perform()
-//		}
-//		catch(Exception e) {
-//			WebUI.takeScreenshot()
-//			KeywordUtil.markFailedAndStop('Unable to right click report '+lvl_one+' -> '+lvl_two+' -> '+lvl_three+'\n'+e.toString())
-//		}
-//	}
+	//	@Keyword
+	//	def rightClickReport(String lvl_one, String lvl_two, String lvl_three) {
+	//		try {
+	//			setLevelOne()
+	//			setLevelTwo(lvl_one)
+	//			setLevelThree(lvl_one, lvl_two)
+	//			Actions actions = new Actions(driver)
+	//			actions.contextClick(lvlThree.get(lvl_three)).build().perform()
+	//		}
+	//		catch(Exception e) {
+	//			WebUI.takeScreenshot()
+	//			KeywordUtil.markFailedAndStop('Unable to right click report '+lvl_one+' -> '+lvl_two+' -> '+lvl_three+'\n'+e.toString())
+	//		}
+	//	}
 
 	@Keyword
 	def verifyReportIsPresentUnderSubGroup(String lvl_one, String lvl_two, String reportName) {
-		
+
 		boolean isFound = false
 		try {
 			setLevelOne()
@@ -155,7 +157,7 @@ public class Report {
 
 	@Keyword
 	def verifyReportIsNotPresentUnderSubGroup(String lvl_one, String lvl_two, String reportName) {
-		
+
 		boolean isNotFound = false
 		try {
 			setLevelOne()
@@ -203,7 +205,7 @@ public class Report {
 
 	@Keyword
 	def verifySubGroupIsNotPresentUnderGroup(String lvl_one, String subGroupName) {
-		
+
 		boolean isNotFound = false
 		try {
 			setLevelOne()
@@ -227,20 +229,20 @@ public class Report {
 
 	@Keyword
 	def verifyAllReportsUnderSubGroup(String lvl_one, String lvl_two, String... reportNames) {
-		
+
 		boolean isReportPresent = true
 		String notFoundReport = ''
-		
+
 		try {
 			setLevelOne()
 			setLevelTwo(lvl_one)
 			setLevelThree(lvl_one, lvl_two)
-	
+
 			int actReportCount = lvlThree.size()
 			int expReportCount = reportNames.length
 			WebUI.verifyEqual(actReportCount, expReportCount)
-	
-			
+
+
 			for(String reportName in reportNames) {
 				if(!lvlThree.containsKey(reportName)) {
 					isReportPresent = false
@@ -265,18 +267,18 @@ public class Report {
 
 	@Keyword
 	def verifyAllSubGroupsUnderGroup(String lvl_one, String... subGroups) {
-		
+
 		boolean isSubGroupPresent = true
 		String notFoundSubGroup = ''
 
 		try {
 			setLevelOne()
 			setLevelTwo(lvl_one)
-	
+
 			int actSubGroupsCount = lvlTwo.size()
 			int expSubGroupsCount = subGroups.length
 			WebUI.verifyEqual(actSubGroupsCount, expSubGroupsCount)
-	
+
 			for(String subGroup in subGroups) {
 				if(!lvlTwo.containsKey(subGroup)) {
 					isSubGroupPresent = false
@@ -341,7 +343,7 @@ public class Report {
 		WebUI.verifyElementVisible(findTestObject('Page_nGage_Dashboard/Report/Design_CommonFields/tab_Style'))
 		WebUI.verifyElementVisible(findTestObject('Page_nGage_Dashboard/Report/Design_CommonFields/tab_Filters'))
 		WebUI.verifyElementVisible(findTestObject('Page_nGage_Dashboard/Report/Design_CommonFields/tab_Preview'))
-		
+
 		WebUI.verifyOptionSelectedByLabel(findTestObject('Page_nGage_Dashboard/Report/Design_CommonFields/select_DataSource'), "(?i)"+expectedDataSource+"(?i)", true, GlobalVariable.G_LongTimeout)
 	}
 }

@@ -1228,4 +1228,20 @@ public class Common {
 		WebUI.verifyEqual(isMatching, true)
 		WebUI.switchToDefaultContent()
 	}
+	
+	@Keyword
+	def scrollToElement(TestObject to) {
+		WebElement e = WebUiCommonHelper.findWebElement(to, GlobalVariable.G_LongTimeout)
+		List<WebElement> list = new ArrayList<WebElement>()
+		list.add(e)
+		WebUI.executeJavaScript('arguments[0].scrollIntoViewIfNeeded()', list)
+	}
+
+	@Keyword
+	def scrollToElement(WebElement e) {
+		//WebElement e = WebUiCommonHelper.findWebElement(to, GlobalVariable.TIMEOUT)
+		List<WebElement> list = new ArrayList<WebElement>()
+		list.add(e)
+		WebUI.executeJavaScript('arguments[0].scrollIntoViewIfNeeded()', list)
+	}
 }
