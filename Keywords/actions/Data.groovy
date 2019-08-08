@@ -189,7 +189,7 @@ public class Data {
 			case DocType.ONLOAD_AND_SETFOCUS_EVENT:
 				onloadAndSetFocusEvent(null)
 				break
-				
+
 			case DocType.REF_OBJ_INLINE_RESULT_VIEW:
 				referenceObjectInlineResultView(null)
 				break
@@ -856,15 +856,15 @@ public class Data {
 		'Closw WMI'
 		new actions.Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI_NEW/Object Tabout Event/DoNotSetValueOnLoad SetFocus Event/btn_CloseWindow'), GlobalVariable.G_LongTimeout)
 	}
-	
+
 	private void referenceObjectInlineResultView(Map<Fields, String> data) {
-		
+
 		'Wait for WMI to load'
 		WebUI.waitForElementVisible(findTestObject('Page_WMI_NEW/Reference_Object_Feature/Inline_Result_View/span_Information'), GlobalVariable.G_LongTimeout)
-		
+
 		'Save WMI'
 		WebUI.click(findTestObject('Page_WMI_NEW/Reference_Object_Feature/Inline_Result_View/span_Save'))
-		
+
 		'Close WMI'
 		new actions.Window().clickElementAndWaitForWindowClose(findTestObject('Page_WMI_NEW/Reference_Object_Feature/Inline_Result_View/span_Close Window'), GlobalVariable.G_LongTimeout)
 	}

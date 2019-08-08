@@ -207,7 +207,7 @@ public class Common {
 	/* ############################  Common Action Keywords ############################ */
 	@Keyword
 	def selectDocClassAndDocTypeForGlobalNew(String docClass, String docType) {
-		
+
 		waitForFrameToLoad(findTestObject('Page_nGage_Dashboard/iframe_ifrmCreateNew'))
 		WebUI.selectOptionByLabel(findTestObject('Page_nGage_Dashboard/Home/select_ Show All AutoImportDCA'), docClass, false)
 		waitForFrameToLoad(findTestObject('Page_nGage_Dashboard/iframe_ifrmCreateNew'))
@@ -237,12 +237,12 @@ public class Common {
 
 		WebUI.switchToDefaultContent()
 	}
-	
+
 	@Keyword
 	def openDocumentFromRecentGrid(int rowNo) {
-		
+
 		WebUI.waitForElementVisible(findTestObject('Page_nGage_Dashboard/Home/a_Recent Documents'), GlobalVariable.G_LongTimeout)
-		
+
 		WebUI.click(findTestObject('Page_nGage_Dashboard/Home/a_Recent Documents'))
 		waitForFrameToLoad(findTestObject('Page_nGage_Dashboard/iframe_iframe_103'))
 
@@ -255,10 +255,10 @@ public class Common {
 
 		//Wait for table to be visible
 		WebUI.verifyElementPresent(findTestObject('Page_nGage_Dashboard/Home/tableRow_recentDocuments_firstRow'), GlobalVariable.G_LongTimeout);
-		
+
 		//Click on row number
 		new Table().clickCell(findTestObject('Page_nGage_Dashboard/Home/table_MyDocumentResults'), rowNo, 5)
-		
+
 		//Switch to WMI
 		WebUI.switchToWindowIndex(1)
 		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
