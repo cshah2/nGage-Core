@@ -137,8 +137,10 @@ public class Table {
 		for(int i = 0; i < headers.size() ; i++) {
 
 			WebDriver driver = DriverFactory.getWebDriver()
-			Actions aDriver = new Actions(driver)
-			aDriver.moveToElement(headers[i]).build().perform()
+			new actions.Common().scrollToElement(headers[i])
+
+//			Actions aDriver = new Actions(driver)
+//			aDriver.moveToElement(headers[i]).build().perform()
 
 			String actColumnName = headers[i].getText().replace('\u00A0',' ').trim()
 
@@ -464,8 +466,10 @@ public class Table {
 		for(int i = 0; i < headers.size() ; i++) {
 
 			WebDriver driver = DriverFactory.getWebDriver()
-			Actions aDriver = new Actions(driver)
-			aDriver.moveToElement(headers[i]).build().perform()
+			new actions.Common().scrollToElement(headers[i])
+			
+//			Actions aDriver = new Actions(driver)
+//			aDriver.moveToElement(headers[i]).build().perform()
 
 			String actColumnName = headers[i].getText().replace('\u00A0',' ').trim()
 
@@ -530,6 +534,11 @@ public class Table {
 	@Keyword
 	def verifyRecordsWithinRange(TestObject tableLocator, int colNo, double fromValue, double toValue) {
 		WebElement table = WebUtil.getWebElement(tableLocator)
+
+		if(colNo < 1) {
+			KeywordUtil.markFailedAndStop('Invalid Column number provided. '+colNo)
+		}
+
 		List<String> cellValues = getAllValuesFromColumn(table, colNo)
 		WebUI.switchToDefaultContent()
 
