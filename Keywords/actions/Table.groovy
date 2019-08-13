@@ -519,6 +519,23 @@ public class Table {
 			KeywordUtil.markFailedAndStop('Expected String '+expText+' is not found in actual String '+actText)
 		}
 	}
+	
+	@Keyword
+	def verifyCellNotContainsValue(TestObject tableLocator, int rowNo, int colNo, String expText) {
+		WebElement table = WebUtil.getWebElement(tableLocator)
+		List<WebElement> rows = getAllRows(table)
+		List<WebElement> cells = getAllCells(rows.get(rowNo-1))
+		WebElement cell = cells.get(colNo-1)
+		String actText = cell.getText().trim()
+		WebUI.switchToDefaultContent()
+		if(!actText.toLowerCase().contains(expText.toLowerCase())) {
+			KeywordUtil.markPassed('Expected String '+expText+' is not found in actual String '+actText)
+		}
+		else {
+			WebUI.takeScreenshot()
+			KeywordUtil.markFailedAndStop('Expected String '+expText+' is found in actual String '+actText)
+		}
+	}
 
 	@Keyword
 	def clickCell(TestObject tableLocator, int rowNo, int colNo) {

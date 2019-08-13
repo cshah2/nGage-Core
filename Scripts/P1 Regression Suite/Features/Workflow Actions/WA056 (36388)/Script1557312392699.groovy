@@ -128,4 +128,6 @@ CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_WMI/Interf
 int colNo_InterfaceName = CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Page_WMI/Interface Test PR/Business Process Audit/tableHeader_Audit'), 'Interface Name')
 int colNo_ReturnType = CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Page_WMI/Interface Test PR/Business Process Audit/tableHeader_Audit'), 'Return Type')
 CustomKeywords.'actions.Table.verifyCellContainsValue'(findTestObject('Page_WMI/Interface Test PR/Business Process Audit/table_Audit'), 1, colNo_InterfaceName, 'Stop Action')
-CustomKeywords.'actions.Table.verifyCellContainsValue'(findTestObject('Page_WMI/Interface Test PR/Business Process Audit/table_Audit'), 1, colNo_ReturnType, 'True')
+//CustomKeywords.'actions.Table.verifyCellContainsValue'(findTestObject('Page_WMI/Interface Test PR/Business Process Audit/table_Audit'), 1, colNo_ReturnType, 'True')
+//TODO: Discussed with Dev team, return type will always be blank or False, it will never be True
+CustomKeywords.'actions.Table.verifyCellNotContainsValue'(findTestObject('Page_WMI/Interface Test PR/Business Process Audit/table_Audit'), 1, colNo_ReturnType, 'False')

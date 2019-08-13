@@ -57,7 +57,49 @@ if(StringUtils.isNotBlank(testDate))
 WebUI.click(findTestObject('Page_WMI_NEW/Interface Test PR/btn_Save'))
 WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_WMI/Interface Test PR/iframe_ContentPlaceHolder1_iPage'))
-	
+
+'Mouse Hover on Attachments button'
+WebUI.mouseOver(findTestObject('Object Repository/Page_WMI/Interface Test PR/Attach New Document/menu_Attachments'))
+
+'Select option Attach new documents'
+WebUI.waitForElementVisible(findTestObject('Object Repository/Page_WMI/Interface Test PR/Attach New Document/subMenu_AtttachNewDocument'), GlobalVariable.G_LongTimeout)
+WebUI.click(findTestObject('Object Repository/Page_WMI/Interface Test PR/Attach New Document/subMenu_AtttachNewDocument'))
+WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_WMI/Interface Test PR/Attach New Document/iframe_mainContainerFrame'))
+
+'Select option in Doc Class drop down'
+WebUI.selectOptionByLabel(findTestObject('Object Repository/Page_WMI/Interface Test PR/Attach New Document/select_DocClass'), DocClass.INTERFACE_TEST_PR.toString(), false)
+WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_WMI/Interface Test PR/Attach New Document/iframe_mainContainerFrame'))
+
+'Select option in Doc Type drop down'
+WebUI.selectOptionByLabel(findTestObject('Object Repository/Page_WMI/Interface Test PR/Attach New Document/select_DocType'), DocType.INTERFACE_TEST_PR_ACTIVITY3.toString(), false)
+WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_WMI/Interface Test PR/Attach New Document/iframe_mainContainerFrame'))
+
+'Enter test ID'
+WebUI.clearText(findTestObject('Object Repository/Page_WMI/Interface Test PR/Attach New Document/input_TestID'))
+WebUI.setText(findTestObject('Object Repository/Page_WMI/Interface Test PR/Attach New Document/input_TestID'), '100786')
+
+'Enter test Date'
+WebUI.clearText(findTestObject('Object Repository/Page_WMI/Interface Test PR/Attach New Document/input_TestDate'))
+CustomKeywords.'actions.Common.setText_Date'(findTestObject('Object Repository/Page_WMI/Interface Test PR/Attach New Document/input_TestDate'), '05-14-2019')
+//WebUI.setText(findTestObject('Object Repository/Page_WMI/Interface Test PR/Attach New Document/input_TestDate'), '05-14-2019')
+
+'Enter test name'
+WebUI.clearText(findTestObject('Object Repository/Page_WMI/Interface Test PR/Attach New Document/textarea_TestName'))
+WebUI.setText(findTestObject('Object Repository/Page_WMI/Interface Test PR/Attach New Document/textarea_TestName'), 'Danish')
+
+'Click on attach document button'
+WebUI.click(findTestObject('Object Repository/Page_WMI/Interface Test PR/Attach New Document/button_Attach Document'))
+
+'click on OK button'
+WebUI.click(findTestObject('Object Repository/Page_WMI/Interface Test PR/Attach New Document/btn_Ok'))
+
+'Click on Loan View button'
+WebUI.click(findTestObject('Object Repository/Page_WMI/Interface Test PR_Rules/span_Loan View'))
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_WMI/Interface Test PR/iframe_ContentPlaceHolder1_iPage'))
+
 'Click on Action'
 CustomKeywords.'actions.Window.clickElementAndWaitForWindowClose'(findTestObject('Object Repository/Page_WMI/Interface Test PR/btn_A30_ReplaceItemByRelatedItem'), GlobalVariable.G_LongTimeout)
 
@@ -83,8 +125,8 @@ CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_nGage_Dash
 int colNo_DocType = CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Page_nGage_Dashboard/Home/tableHeader_RecentDocuments'), 'Doc Type')
 CustomKeywords.'actions.Table.verifyCellContainsValue'(findTestObject('Page_nGage_Dashboard/Home/table_MyDocumentResults'), 1, colNo_DocType, DocType.INTERFACE_TEST_PR_ACTIVITY3.toString())
 
-'Click on first row to open document'
-CustomKeywords.'actions.Table.clickCell'(findTestObject('Page_nGage_Dashboard/Home/table_MyDocumentResults'), 1, colNo_DocType)
+'Click on second row to open document'
+CustomKeywords.'actions.Table.clickCell'(findTestObject('Page_nGage_Dashboard/Home/table_MyDocumentResults'), 2, colNo_DocType)
 
 'Switch to WMI window'
 WebUI.switchToWindowIndex(1)
@@ -121,6 +163,5 @@ CustomKeywords.'actions.Table.clickColumnHeader'(findTestObject('Page_WMI/Interf
 'Verify Interface name and return type value in row number 2'
 int colNo_InterfaceName = CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Page_WMI/Interface Test PR/Business Process Audit/tableHeader_Audit'), 'Interface Name')
 int colNo_ReturnType = CustomKeywords.'actions.Table.getColumnNumber'(findTestObject('Page_WMI/Interface Test PR/Business Process Audit/tableHeader_Audit'), 'Return Type')
-CustomKeywords.'actions.Table.verifyCellContainsValue'(findTestObject('Page_WMI/Interface Test PR/Business Process Audit/table_Audit'), 1, colNo_InterfaceName, 'Replace Item by Related Item')
-CustomKeywords.'actions.Table.verifyCellContainsValue'(findTestObject('Page_WMI/Interface Test PR/Business Process Audit/table_Audit'), 1, colNo_ReturnType, 'True')
-
+CustomKeywords.'actions.Table.verifyCellContainsValue'(findTestObject('Page_WMI/Interface Test PR/Business Process Audit/table_Audit'), 2, colNo_InterfaceName, 'Replace Item by Related Item')
+CustomKeywords.'actions.Table.verifyCellContainsValue'(findTestObject('Page_WMI/Interface Test PR/Business Process Audit/table_Audit'), 2, colNo_ReturnType, 'True')

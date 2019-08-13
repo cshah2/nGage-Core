@@ -677,12 +677,6 @@
       <testCaseId>Test Cases/P1 Regression Suite/Features/Workflow Actions/WA049 (36201)</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>8a1e2e3b-e851-4fdb-a368-e919491c87ef</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/P1 Regression Suite/Features/Workflow Actions/WA050 (36941)</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
       <guid>e03c78d9-8db5-425d-90d8-14741cda2dad</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
