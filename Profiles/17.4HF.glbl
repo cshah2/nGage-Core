@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GlobalVariableEntities>
    <description></description>
-   <name>18.2HF</name>
+   <name>17.4HF</name>
    <tag></tag>
    <defaultProfile>false</defaultProfile>
    <GlobalVariableEntity>
@@ -16,7 +16,7 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'http://savphlpetest64/Sav.1820.HF.UI'</initValue>
+      <initValue>'http://savphlpetest64/Sav.174074.HF.UI'</initValue>
       <name>BaseURL</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
@@ -38,6 +38,11 @@
       <description></description>
       <initValue>'http://savphlpedev64/Sav.Maint.AdminApi'</initValue>
       <name>BaseAdminApiURL</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>[('MW067_UN') : 'Auto_BO_uncheck', ('MW066_UN') : 'Auto_BO_Check', ('MW065_UN') : 'Auto_AI_uncheck', ('MW064_UN') : 'Auto_AI_check', ('MW063_UN') : 'Auto_WI_uncheck', ('MW062_UN') : 'Auto_WI_Check']</initValue>
+      <name>Users</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>

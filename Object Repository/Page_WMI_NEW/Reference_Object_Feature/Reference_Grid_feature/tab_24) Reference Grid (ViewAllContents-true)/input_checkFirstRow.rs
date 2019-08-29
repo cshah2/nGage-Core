@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//input[@id='eform_mcb67676_TabContainer_4_TabRef_23_phBO_26_BO_grc_ctl03_Chkchk']</value>
+         <value>//input[@id='eform_mcb67676_TabContainer_4_TabRef_24_phBO_27_BO_grc_ctl03_Chkchk']</value>
       </entry>
       <entry>
          <key>BASIC</key>
