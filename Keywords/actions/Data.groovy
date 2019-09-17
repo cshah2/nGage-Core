@@ -726,7 +726,7 @@ public class Data {
 		WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 
 		//Click on Close Window button
-		WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Inline_Result_View/span_Close Window'))
+		new Window().clickElementAndWaitForWindowClose(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Inline_Result_View/span_Close Window'), GlobalVariable.G_LongTimeout)
 	}
 
 	private void textboxWithSectionEvent(Map<Fields, String> data) {

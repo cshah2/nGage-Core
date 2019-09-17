@@ -64,6 +64,7 @@ WebUI.click(findTestObject('Page_WMI/Complaints Templates/Complaint Template/btn
 WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 
 'Click on close button'
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_WMI/Complaints Templates/Complaint Template/iframe_ContentPlaceHolder1'))
 WebUI.click(findTestObject('Page_WMI/Complaints Templates/Complaint Template/btn_Close'))
 
 'Refresh web page'
