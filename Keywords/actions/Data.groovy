@@ -766,7 +766,8 @@ public class Data {
 		new actions.Common().setText_Date(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/input_Date Field (Required)_ef'), inputValue)
 
 		'Enter value in String field'
-		new actions.Common().setText_Date(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/input_String Field (Style)_efo'), inputValue)
+		//new actions.Common().setText_Date(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/input_String Field (Style)_efo'), inputValue)
+		WebUI.setText(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/input_String Field (Style)_efo'), inputValue)
 
 		'Save WMI'
 		WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Object Tabout Event/Radio List Event/span_Save'))
