@@ -48,6 +48,7 @@ CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Da
 'Verify Closure tab is opened'
 WebUI.verifyElementPresent(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/Business_Model_Tree/Tab_Closure'), GlobalVariable.G_LongTimeout)
 CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_nGage_Dashboard/Repository/iframe_iframe_104'))
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_nGage_Dashboard/Repository/Closure_Tab/iframe_Closure'))
 
 'Click on Search button on closure tab'
 WebUI.click(findTestObject('Page_nGage_Dashboard/Repository/Closure_Tab/searchButton_ClosureTab'))
