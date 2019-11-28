@@ -80,6 +80,7 @@ String BMText = 'Text - '+DateUtil.getCurrentDateTime(Consts.FORMAT_DATETIME)
 WebUI.setText(findTestObject('Page_WMI_NEW/Reference_Object_Feature/ImportMode_Interactive/tab2_Interactive/input_String Field (with onfoc'), BMText)
 
 'Click on Save from reference Object'
+WebUI.scrollToElement(findTestObject('Page_WMI_NEW/Reference_Object_Feature/ImportMode_Interactive/tab2_Interactive/btn_Save'), GlobalVariable.G_LongTimeout)
 WebUI.click(findTestObject('Page_WMI_NEW/Reference_Object_Feature/ImportMode_Interactive/tab2_Interactive/btn_Save'))
 WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 

@@ -177,7 +177,7 @@ public class Common {
 
 	@Keyword
 	def waitForFrameToLoad(TestObject iFrame) {
-		WebUtil.waitForAjax(DriverFactory.getWebDriver(), "MicrosoftAjax")
+		//WebUtil.waitForAjax(DriverFactory.getWebDriver(), "MicrosoftAjax")
 		WebUtil.switchFrameAndWaitForLoad(iFrame, GlobalVariable.G_LongTimeout)
 		WebUI.switchToDefaultContent()
 		WebUtil.delay(100)
@@ -1243,5 +1243,6 @@ public class Common {
 		List<WebElement> list = new ArrayList<WebElement>()
 		list.add(e)
 		WebUI.executeJavaScript('arguments[0].scrollIntoViewIfNeeded()', list)
+		WebUtil.delay(500)
 	}
 }

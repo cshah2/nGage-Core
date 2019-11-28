@@ -21,17 +21,20 @@ WebUI.click(findTestObject('Page_nGage_Dashboard/input_btnGlobalNew'))
 CustomKeywords.'actions.Common.selectDocClassAndDocTypeForGlobalNew'('Business Model View', 'Standard Grid')
 WebUI.click(findTestObject('Page_nGage_Dashboard/Home/input_btnsave'))
 
-
 'Switch to WMI'
 WebUI.switchToWindowIndex(1)
 WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 
 'Click on WMI Harness page'
 WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Inline_Result_View/span_WMI Harness'))
-CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Inline_Result_View/iframe_ContentPlaceHolder1_iPage'))
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_WMI_NEW/BusinessModelView/StandardGrid/iframe_ContentPlaceHolder1'))
 
 'Save WMI'
-WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/Inline_Result_View/span_Save'))
+WebUI.click(findTestObject('Page_WMI_NEW/BusinessModelView/StandardGrid/btn_Save'))
+
+'Wait for page load'
+WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_WMI_NEW/BusinessModelView/StandardGrid/iframe_ContentPlaceHolder1'))
 
 'Close WMI'
 CustomKeywords.'actions.Window.clickElementAndWaitForWindowClose'(findTestObject('Page_WMI_NEW/BusinessModelView/StandardGrid/a_Close Window'), GlobalVariable.G_LongTimeout)
@@ -80,8 +83,13 @@ WebUI.selectOptionByLabel(findTestObject('Object Repository/Page_WMI_NEW/Busines
 'Wait for WMI Fields to load'
 CustomKeywords.'actions.Common.waitForElementVisible'(findTestObject('Object Repository/Page_WMI_NEW/BusinessModelView/StandardGrid/Related_Document(Child)/textbox_BMString'), GlobalVariable.G_LongTimeout)
 
+'Wait for page load'
+//WebUI.delay(3)
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_WMI_NEW/BusinessModelView/StandardGrid/Related_Document(Child)/iframe_ContentPlaceHolder'))
+CustomKeywords.'actions.Common.waitForElementVisible'(findTestObject('Page_WMI_NEW/BusinessModelView/StandardGrid/Related_Document(Child)/btn_AttachDocument_AfterLoad'), GlobalVariable.G_LongTimeout)
+
 'Click on Attach Document'
-WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/BusinessModelView/StandardGrid/Related_Document(Child)/button_AttachDocument'))
+WebUI.click(findTestObject('Page_WMI_NEW/BusinessModelView/StandardGrid/Related_Document(Child)/btn_AttachDocument_AfterLoad'))
 
 'Verify success message on pop up dialog'
 CustomKeywords.'actions.Common.waitForElementVisible'(findTestObject('Object Repository/Page_WMI_NEW/BusinessModelView/StandardGrid/Related_Document(Child)/popUp_Message'), GlobalVariable.G_LongTimeout)
@@ -109,8 +117,13 @@ WebUI.selectOptionByLabel(findTestObject('Object Repository/Page_WMI_NEW/Busines
 'Wait for WMI Fields to load'
 CustomKeywords.'actions.Common.waitForElementVisible'(findTestObject('Object Repository/Page_WMI_NEW/BusinessModelView/StandardGrid/Related_Document(Child)/textbox_BMString'), GlobalVariable.G_LongTimeout)
 
+'Wait for page load'
+//WebUI.delay(3)
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_WMI_NEW/BusinessModelView/StandardGrid/Related_Document(Child)/iframe_ContentPlaceHolder'))
+CustomKeywords.'actions.Common.waitForElementVisible'(findTestObject('Page_WMI_NEW/BusinessModelView/StandardGrid/Related_Document(Child)/btn_AttachDocument_AfterLoad'), GlobalVariable.G_LongTimeout)
+
 'Click on Attach Document'
-WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/BusinessModelView/StandardGrid/Related_Document(Child)/button_AttachDocument'))
+WebUI.click(findTestObject('Page_WMI_NEW/BusinessModelView/StandardGrid/Related_Document(Child)/btn_AttachDocument_AfterLoad'))
 
 'Verify success message on pop up dialog'
 CustomKeywords.'actions.Common.waitForElementVisible'(findTestObject('Object Repository/Page_WMI_NEW/BusinessModelView/StandardGrid/Related_Document(Child)/popUp_Message'), GlobalVariable.G_LongTimeout)
@@ -138,8 +151,13 @@ WebUI.selectOptionByLabel(findTestObject('Object Repository/Page_WMI_NEW/Busines
 'Wait for WMI Fields to load'
 CustomKeywords.'actions.Common.waitForElementVisible'(findTestObject('Object Repository/Page_WMI_NEW/BusinessModelView/StandardGrid/Related_Document(Child)/textbox_BMString'), GlobalVariable.G_LongTimeout)
 
+'Wait for page load'
+//WebUI.delay(3)
+CustomKeywords.'actions.Common.waitForFrameToLoad'(findTestObject('Page_WMI_NEW/BusinessModelView/StandardGrid/Related_Document(Child)/iframe_ContentPlaceHolder'))
+CustomKeywords.'actions.Common.waitForElementVisible'(findTestObject('Page_WMI_NEW/BusinessModelView/StandardGrid/Related_Document(Child)/btn_AttachDocument_AfterLoad'), GlobalVariable.G_LongTimeout)
+
 'Click on Attach Document'
-WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/BusinessModelView/StandardGrid/Related_Document(Child)/button_AttachDocument'))
+WebUI.click(findTestObject('Page_WMI_NEW/BusinessModelView/StandardGrid/Related_Document(Child)/btn_AttachDocument_AfterLoad'))
 
 'Verify success message on pop up dialog'
 CustomKeywords.'actions.Common.waitForElementVisible'(findTestObject('Object Repository/Page_WMI_NEW/BusinessModelView/StandardGrid/Related_Document(Child)/popUp_Message'), GlobalVariable.G_LongTimeout)
@@ -171,5 +189,4 @@ WebUI.verifyEqual(actRowsCount, expectedRows)
 String pageCount = WebUI.getText(findTestObject('Page_WMI_NEW/BusinessModelView/StandardGrid/Related_Document(Child)/page_Count'))
 
 'Verify total page count is 2'
-//String[] actualPageCount = 
 WebUI.verifyEqual(pageCount.split('of ')[1], expectedRows)

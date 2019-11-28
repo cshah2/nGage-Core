@@ -76,6 +76,8 @@ String BMText = 'Text - '+DateUtil.getCurrentDateTime(Consts.FORMAT_DATETIME)
 CustomKeywords.'actions.Common.setTextJQuery'(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/ImportMode_Interactive/tab1_Interactive/tab1_dropdown_InlineForm/input_BM String'), BMText)
 
 'Click on Save from reference Object'
+//CustomKeywords.'actions.Common.scrollToElement'(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/ImportMode_Interactive/tab1_Interactive/tab1_dropdown_InlineForm/input_Save'))
+WebUI.scrollToElement(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/ImportMode_Interactive/tab1_Interactive/tab1_dropdown_InlineForm/input_Save'), GlobalVariable.G_LongTimeout)
 WebUI.click(findTestObject('Object Repository/Page_WMI_NEW/Reference_Object_Feature/ImportMode_Interactive/tab1_Interactive/tab1_dropdown_InlineForm/input_Save'))
 WebUI.waitForPageLoad(GlobalVariable.G_LongTimeout)
 

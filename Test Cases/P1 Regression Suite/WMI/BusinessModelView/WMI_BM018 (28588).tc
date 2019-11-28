@@ -3,8 +3,6 @@
    <description>Regression Test WMI - Standard grid - Related documents (Child) (pagesize=&quot;2&quot;)</description>
    <name>WMI_BM018 (28588)</name>
    <tag></tag>
-   <comment>Create document for Related Document (Child)
-Verify that maximum 2 Related documents entries are displayed in the grid.
-Navigate to Related Document (Child)</comment>
+   <comment></comment>
    <testCaseGuid>056b759f-6491-426f-8a7e-224287bd96c2</testCaseGuid>
 </TestCaseEntity>
