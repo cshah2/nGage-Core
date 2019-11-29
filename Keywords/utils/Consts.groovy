@@ -1376,10 +1376,11 @@ public class Consts {
 	public static final Map<Fields, String> P1_WMI_DOC361
 	public static boolean FLAG_P1_WMI_DOC361 = false
 	static {
+		String currdate = DateUtil.getCurrentDateTime(FORMAT_DATE)
 		P1_WMI_DOC361 = new HashMap<Fields, String>()
 		P1_WMI_DOC361.put(Fields.TEST_ID, '1')
 		P1_WMI_DOC361.put(Fields.TEST_NAME, 'Action Tests')
-		P1_WMI_DOC361.put(Fields.TEST_DATE, '03-01-2019')
+		P1_WMI_DOC361.put(Fields.TEST_DATE, currdate)
 	}
 
 	public static final Map<Fields, String> P1_WMI_DOC362
