@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GlobalVariableEntities>
    <description></description>
-   <name>MAIN (SQL)</name>
+   <name>MAINT (ORCL)</name>
    <tag></tag>
    <defaultProfile>false</defaultProfile>
    <GlobalVariableEntity>
@@ -16,7 +16,7 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'http://savphlpetest64/Sav.Main.UI'</initValue>
+      <initValue>'http://savphlpedev64/Sav.Maint.UI'</initValue>
       <name>BaseURL</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
@@ -31,7 +31,7 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'ORACLE_NGAGEQA'</initValue>
+      <initValue>'AWS_SQLSERVER_QA'</initValue>
       <name>Database</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
