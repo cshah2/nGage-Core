@@ -14,7 +14,7 @@ set PRJ_PATH=%NGAGE_PROJECTS%\nGage-Core\WebUI.prj
 set TEST_SUITE=Test Suites/P1 Modules/WMI
 set BROWSER=Chrome
 set API_KEY=f0588a0f-a994-4ff5-a41f-76b34822b760
-set EXECUTE_PROFILE=MAINT (SQL)
+set EXECUTE_PROFILE=MAINT (ORCL)
 
 ::-------------------------------------------------------------------------
 ::---------- Run Automation Command ---------------------------------------

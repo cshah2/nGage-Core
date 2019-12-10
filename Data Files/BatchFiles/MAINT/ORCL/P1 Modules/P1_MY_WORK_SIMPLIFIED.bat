@@ -1,7 +1,3 @@
-TASKKILL /F /IM KATALON.EXE /T
-TASKKILL /F /IM CHROMEDRIVER.EXE /T
-CALL cmd /c start katalon -noSplash  -runMode=console -consoleLog -projectPath="C:\Users\cshah\git\nGage-Core\WebUI.prj" -statusDelay=60 -retry=0 -testSuitePath="" -executionProfile="MAINT (SQL)" -browserType="Chrome" -summaryReport
-
 @echo off
 
 ::-------------------------------------------------------------------------
@@ -18,7 +14,7 @@ set PRJ_PATH=%NGAGE_PROJECTS%\nGage-Core\WebUI.prj
 set TEST_SUITE=Test Suites/P1 Modules/MY_WORK_SIMPLIFIED
 set BROWSER=Chrome
 set API_KEY=f0588a0f-a994-4ff5-a41f-76b34822b760
-set EXECUTE_PROFILE=MAINT (SQL)
+set EXECUTE_PROFILE=MAINT (ORCL)
 
 ::-------------------------------------------------------------------------
 ::---------- Run Automation Command ---------------------------------------

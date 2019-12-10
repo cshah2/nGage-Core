@@ -1,7 +1,3 @@
-TASKKILL /F /IM KATALON.EXE /T
-TASKKILL /F /IM CHROMEDRIVER.EXE /T
-CALL cmd /c start katalon -noSplash  -runMode=console -consoleLog -projectPath="C:\Users\cshah\git\nGage-Core\WebUI.prj" -statusDelay=60 -retry=0 -testSuitePath="" -executionProfile="MAINT (SQL)" -browserType="Chrome" -summaryReport
-
 @echo off
 
 ::-------------------------------------------------------------------------

@@ -31,7 +31,7 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'AWS_SQLSERVER_QA'</initValue>
+      <initValue>'ORACLE_NGAGEQA'</initValue>
       <name>Database</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
