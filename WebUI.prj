@@ -6,6 +6,7 @@
    <UUID>11b999a2-7d9a-4955-baf6-33ff133c11c9</UUID>
    <migratedVersion>5.9.0</migratedVersion>
    <pageLoadTimeout>0</pageLoadTimeout>
+   <projectFileLocation>C:\nGageAutomation\Projects\nGage-Core\WebUI.prj</projectFileLocation>
    <sourceContent>
       <sourceFolderList>
          <sourceFolderConfiguration>
