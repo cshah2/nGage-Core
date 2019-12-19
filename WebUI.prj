@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Project>
    <description>Test Automation project nGage-Core (RunTimeUI Project)</description>
-   <name>WebUI</name>
+   <name>nGage-Core</name>
    <tag></tag>
    <UUID>11b999a2-7d9a-4955-baf6-33ff133c11c9</UUID>
    <migratedVersion>5.9.0</migratedVersion>

@@ -52,10 +52,4 @@
       <isRun>true</isRun>
       <testCaseId>Test Cases/P1 Regression Suite/WMI/Segment Template/WMIST007(28653)</testCaseId>
    </testCaseLink>
-   <testCaseLink>
-      <guid>fae80826-cb38-43fc-a1c3-2c7a4bec661b</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/P1 Regression Suite/WMI/Segment Template/WMIST008(28654)</testCaseId>
-   </testCaseLink>
 </TestSuiteEntity>
